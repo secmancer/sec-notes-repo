@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "ddb40915f993a7a9",
+    "type": "split",
+    "children": [
+      {
+        "id": "1eba81fca452db52",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2f78f296d11108f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6bbb693ca82ff853",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b3469ba73bc7c55",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78b18c6ed4fc8809",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b7e391b689a59a74",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#include",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "87bbce2dc5487567",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 505.5
+  },
+  "right": {
+    "id": "4317a441acfd56b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "771c63abcd74ef1e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee8102f06e3ac6df",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e64a96091473d9db",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "237ed8d263ebba58",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md"
+              }
+            }
+          },
+          {
+            "id": "ecde52f43e119eab",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "1394d12fefa3a2cb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b0d6ca74888254e9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "obsidian-importer:Open Importer": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "2f78f296d11108f8",
+  "lastOpenFiles": [
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Capturing with Tcpdump.md",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Module Summary",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Getting Our Hands Dirty",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Digging in Deeper",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/All About Users",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Protocols",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Fundamentals",
+    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Overview",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Methods/CRUD API.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Methods/POST.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Methods/GET.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/HTTP Headers.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/HyperText Transfer Protocol (HTTP).md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/Hypertext Transfer Protocol Secure (HTTPS).md",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/Untitled",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Methods",
+    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154754.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154748.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154742.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154734.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154715.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_153403.png",
+    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Addressing/Subnetting.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Connection Establishment/Cryptography.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Connection Establishment/TCP-UDP Connections.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Connection Establishment/Authentication Protocols.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Connection Establishment/Key Exchange Mechanisms.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Protocols & Terminology/Vendor Specific Information.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Protocols & Terminology/Virtual Private Networks.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Protocols & Terminology/Wireless Networks.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Protocols & Terminology/Common Protocols.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Protocols & Terminology/Networking Key Terminology.md",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Screenshots/Screenshot_20240820_145808.png",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Screenshots/Screenshot_20240820_150802.png",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Screenshots/Screenshot_20240820_150823.png",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Screenshots/Screenshot_20240820_150836.png",
+    "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
+  ]
+}

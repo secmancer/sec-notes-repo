@@ -1,0 +1,23 @@
+### Questions
+- The flag will print in the banner upon successful login on the host via SSH.
+	- D0wn_the_rabbit_H0!3
+- Access the host as user1 and read the contents of the file "flag.txt" located in the users Desktop.
+	- Nice and Easy!
+- If you search and find the name of this host, you will find the flag for user2.
+	- ACADEMY-ICL11
+- How many hidden files exist on user3's Desktop?
+	- 101
+- User4 has a lot of files and folders in their Documents folder. The flag can be found within one of them.
+	- Digging in The nest
+- How many users exist on this host? (Excluding the DefaultAccount and WDAGUtility)
+	- 14
+- For this level, you need to find the Registered Owner of the host. The Owner name is the flag.]
+	- htb-student
+- For this level, you must successfully authenticate to the Domain Controller host at 172.16.5.155 via SSH after first authenticating to the target host. This host seems to have several PowerShell modules loaded, and this user's flag is hidden in one of them.
+	- Modules_make_pwsh_run!
+- This flag is the GivenName of a domain user with the Surname "Flag".
+	- Rick
+- Use the tasklist command to print running processes and then sort them in reverse order by name. The name of the process that begins with "vm" is the flag for this user.
+	- vmtoolsd.exe
+- What user account on the Domain Controller has many Event ID (4625) logon failures generated in rapid succession, which is indicative of a password brute forcing attack? The flag is the name of the user account.
+	- justalocaladmin
