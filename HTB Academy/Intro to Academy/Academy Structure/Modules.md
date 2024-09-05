@@ -1,39 +1,29 @@
 ### What is a Module?
-**Module**: core building block within the academy
-- Represents a single course that covers a specific topic within a path.
+- Module: learning block representing a specific cybersecurity related topic
+- Can be created from multiple, smaller sections or can be part of a group of other modules to create a path
 
-Like we have discussed earlier, modules are built from multiple **sections**, and multiple modules build a **path**.
-
-Clicking on the Modules page, it allows us to preview the summary.
-- Covers what is the expected outcome and what requirements are needed to start the module (if applicable)
-
-![[Screenshot_20240813_083332.png]]
 ### Types of Modules
+- 3 categories: Offensive, Defensive, General
+- 4 ratings: Fundamentals, Easy, Medium, Hard
 
-Modules are categorized into 3 areas: **Offensive**, **Defensive**, and **General**.
+### Module page
+- Allows you to like, rate, and search for modules based on specific categories, ratings, or other factors.
+![[new_bar.jpg]]
 
-They are also rated based on how difficult they are: **Fundamental**, **Easy**, **Medium**, and **Hard**.
-
-In the Modules page, we are able to filter out based on category and rating to find the one that works the best for us.
-
-![[Screenshot_20240813_083550 1.png]]
 ### Module Tiers
+- Modules are broken up into 5 tiers for cube costs/reward
+![[Screenshot_20240905_153435.png]]
+- Modules individually would cost a specific amount of cubes to unlock it, and then return 20% of those cubes back to you once the module was completed.
+- Tier 0 modules are considered free modules since they cost and reward the same amount of cubes, hence not affecting your balance after.
 
-Modules are split up into 5 tiers, with different cost to the module and reward for completing the entire module.
-
-![[Screenshot_20240813_083550 1.png]]
-
-A module costs a specific amount of cubes to unlock permanently, and always gives the user back 20% of those cubes as a reward for completing it.
-
-Tier 0 modules are the free modules, as they cost and reward the same amount of cubes back.
-
-**Note**: you must complete the modules completely to get the cubes back
-
-![[Screenshot_20240813_083849.png]]
 ### Completing a Module
+- You need to solve all exercises and mark all sections as completed to have it marked as completed.
+- Usually then, you take the Skills Assessment of a module to cover what you learned in the module you are in.
+- Once done, you are then able to fully complete the module and earn your reward.
+- You can share the achievement via social media, put out a review of it, and find suggestions on where to go next.
+- Each module completed rewards the user a badge.
 
-Completing a module involves solving all of the exercises and marking all sections that have been completed.
 
-You then usually face a Skill Assessment towards the end of a module, representing a real-world scenario of which the topic of the module is covered along with all of the knowledge discussed before.
-
-Once that is done, you are able to click the Finish button and complete the module. Doing so grants you the ability to write a review for it and also rewards you with a badge for the module along with the specified amount of cubes.
+### Questions
+- This module is a tier 0 "free" module. What is the total cubes that will be rewarded back to you by completing it? (2 cubes)
+	- Introduction

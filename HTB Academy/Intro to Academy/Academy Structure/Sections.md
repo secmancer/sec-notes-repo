@@ -1,29 +1,22 @@
 ### What is a Section?
-**Section**: smallest building block in the academy structure
-- Covers an area of the larger topic
-- Designed to be completed in one setting
+- Section: covers specific area of the larger, overall topic
+	- Designed to be completed in one setting
+
 ### Types of Sections
+- Two types: Theory, Interactive
+	- Theory sections build on foundational knowledge to understand upcoming practical/interactive sessions. They don't have these elements themselves.
+	- Interactive sections, denoted with a cube, have you learn through practical examples/demos.
 
-Two types are available: Theory Sections and Interactive Sections
-
-Theory Sections: no practical elements, but instead build the foundational knowledge necessary to understand and do and upcoming practical/interactive lessons down the road
-- Overall establishes the basics of the entire module
-
-Interactive sessions: are denoted with the cube icon and make up the majority of the module. This is where knowledge is then applied through examples/demos.
-
-![[Screenshot_20240813_090501.png]]
-
-Highly encourages to re-apply what we have learned to ensure better practice.
 ### My Workstation
+- A workstation (PwnBox) is provided to complete interactive sections
+- Uses Parrot OS, a Linux distro, to provide the necessary tools in helping you complete them and further yourself in the learning process.
+- Allows you to re-do any examples given to you as well
 
-Each modules provides a workstation (called PwnBox), installed with the Parrot OS Linux distro.
-- Installed with all of the tools to assist you in the overall learning process.
-
-This allows us to re-do any examples and solve exercises/skill assessments.
-
-It can be started by starting the Start Instance button at the end of a interactive session and/or in the separate My Workstation box on the right side of the screen.
 ### Completing a Section
+- All questions must be solved for the section to be completed.
+- Sections can be skipped over to have them be solved later on.
 
-Clicking Mark Complete and Next is necessary to completing the session. Questions must be solve if the section provides them.
 
-You are able to skip a section by clicking the Next button or clicking on another section. However, it must be completed at some point to ensure 100% module completion.
+### Questions:
+- Start your workstation, then use the integrated terminal to find the Linux OS flavor by running the following command: cat /etc/issue (3 cubes)
+	- Parrot
