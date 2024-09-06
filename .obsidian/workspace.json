@@ -81,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTB Academy/Intro to Academy/Next Steps/Next Steps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,9 +107,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "HTB Academy/Intro to Academy/Next Steps/Next Steps.md"
-              }
+              "state": {}
             }
           },
           {
@@ -127,7 +124,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HTB Academy/Intro to Academy/Next Steps/Next Steps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,22 +164,27 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "HTB Academy/Intro to Academy/Next Steps/Getting Help.md",
-    "HTB Academy/Intro to Academy/Introduction/Introduction.md",
-    "HTB Academy/Intro to Academy/Next Steps/Next Steps.md",
-    "HTB Academy/Intro to Academy/Academy Structure/Paths and Certifications.md",
-    "cpts_path.jpg",
-    "HTB Academy/Intro to Academy/Screenshots/os_path.jpg",
-    "HTB Academy/Intro to Academy/Academy Structure/Exercises.md",
-    "HTB Academy/Intro to Academy/Academy Structure/HTB Academy Structure.md",
-    "HTB Academy/Intro to Academy/Academy Structure/Sections.md",
-    "HTB Academy/Intro to Academy/Academy Structure/Modules.md",
-    "HTB Academy/Intro to Academy/Screenshots/small_steps.jpg",
-    "HTB Academy/Intro to Academy/Screenshots/Screenshot_20240905_153435.png",
-    "HTB Academy/Intro to Academy/Screenshots/new_bar.jpg",
-    "HTB Academy/Intro to Academy/Screenshots/structure2.png",
+    "HTB Academy/Learning Process/Learning Dependencies/Decision Making.md",
+    "HTB Academy/Learning Process/Learning Dependencies/Way of Learning.md",
+    "HTB Academy/Learning Process/Learning Overview/Documentation.md",
+    "HTB Academy/Learning Process/Mindset/Occam's Razor.md",
+    "HTB Academy/Learning Process/The Process/Attention.md",
+    "HTB Academy/1. Intro to Academy/Next Steps/Next Steps.md",
+    "HTB Academy/1. Intro to Academy/Next Steps/Getting Help.md",
+    "HTB Academy/1. Intro to Academy/Introduction/Introduction.md",
+    "HTB Academy/1. Intro to Academy/Academy Structure/Paths and Certifications.md",
+    "HTB Academy/1. Intro to Academy/Screenshots/cpts_path.jpg",
+    "HTB Academy/1. Intro to Academy/Screenshots/os_path.jpg",
+    "HTB Academy/1. Intro to Academy/Academy Structure/Exercises.md",
+    "HTB Academy/1. Intro to Academy/Academy Structure/HTB Academy Structure.md",
+    "HTB Academy/1. Intro to Academy/Academy Structure/Sections.md",
+    "HTB Academy/1. Intro to Academy/Academy Structure/Modules.md",
+    "HTB Academy/1. Intro to Academy/Screenshots/small_steps.jpg",
+    "HTB Academy/1. Intro to Academy/Screenshots/Screenshot_20240905_153435.png",
+    "HTB Academy/1. Intro to Academy/Screenshots/new_bar.jpg",
+    "HTB Academy/1. Intro to Academy/Screenshots/structure2.png",
     "HTB Academy/Intro to Academy/Screenshots/Screenshot_20240812_132247.png",
-    "HTB Academy/Intro to Academy/References/Intro_To_Academy_Module_Cheat_Sheet.pdf",
+    "HTB Academy/1. Intro to Academy/References/Intro_To_Academy_Module_Cheat_Sheet.pdf",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Capturing with Tcpdump.md",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Module Summary",
@@ -206,12 +207,9 @@
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
-    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
-    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154754.png",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154748.png",
     "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Screenshots/Screenshot_20240820_154742.png",
-    "Cybersecurity/HTB Academy/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
