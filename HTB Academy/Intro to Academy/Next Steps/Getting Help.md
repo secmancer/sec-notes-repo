@@ -1,0 +1,4 @@
+- Help button allows you to easily contact the support team and wiki page for any support issues
+- Fully guided learning mode is available for some subscriptions
+- Show Solution is also present for some as well.
+- Recommended to interact with the community through the sub-reddit, forums, or Discord server.
