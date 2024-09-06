@@ -1,0 +1,6 @@
+- Any limitations given on the exercise? Nope
+- So why were more options thought of?
+- This is because we weren't applying this way of thinking, or really, the hacker's way of thinking.
+	- "Outside The Box"
+- During this learning path, we will get more information that will help us find an answer.
+- We need to first understand the way of thinking we currently use, and make it clearer.
