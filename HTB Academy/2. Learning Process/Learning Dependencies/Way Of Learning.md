@@ -19,4 +19,11 @@ Now, back to the original math problem:
 
 Take this scenario:
 
-> 
+> You're standing still in a room, and your instructor instructs you to move across the room, and you start moving. After a while, the instructor put a chair in your way. What will you do? - You may sit down on this chair.
+
+We can change this scenario to something like this:
+
+> Your instructor instructs you to move to the other corner. We start moving, and the instructor puts a chair in our way again. What will we do? You will pass the chair and continue moving forward to the corner because you know your goal.
+
+- The biggest difference between the two is what we know our goal and know how we need to move on. We need to overcome the obstacles which are put in our way
+- Having no goal doesn't allow us to surpass the first obstacle. We would instead just distract ourselves from one topic to another.
