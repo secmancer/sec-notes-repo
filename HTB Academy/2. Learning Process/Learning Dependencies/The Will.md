@@ -33,3 +33,7 @@ Let's ask if this fear is real:
 - It's interesting, especially in our field, that many students react paradoxically.
 - Most who feel a particular fear during learning are unaware of what they are afraid of.
 - They believe in they are afraid of failing and not learning something well, but sometimes as soon as they get stuck on something, they give up often or not.
+- Is not that the failure they were afraid of all along and want to avoid? Yes actually.
+- These types of students find it easier to give up and fail than to keep learning and improving
+- Getting better inevitably happens when we keep practicing and trying different approaches.
+- We must keep a clear goal in mind to prevent this from happening so quickly.
