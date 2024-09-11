@@ -70,5 +70,29 @@ Term stress describes a characteristic of conditions and not characteristics of 
 
 Internal influences
 - Includes beliefs of our mindsets but also our attitudes
-- Such thingsc are always a two-sided sword that brings advantages and disadvantages
-- 
+- Such things are always a two-sided sword that brings advantages and disadvantages
+- One of this is perfectionism, which gives us the desire to do everything perfectly and flawlessly in a quick fashion
+
+It can be challenging to dampen these character traits since they occur unconsciously and therefore, are reflected in the form of emotions
+- Often, we ask ourselves: Why should we continue with it at all?
+- It's necessary to put our brain into a different mode to force it to function differently
+- This is known as creativity
+- One activity can be making music. Another one may be drawing.
+- We are forcing our brain to invent something new on the fly. We cannot focus on the mindset while developing this new thing as this requires a whole new set of thought processes to do so.
+- If we are here with no idea what to do, we can pursue some activity requiring us to do something new
+
+External influences
+- What others think and say about us
+- Strict deadlines may be set for us that we must be adhering to
+- However, this can be someone who tries to negatively affect us
+- This can be for a slew of different reasons
+- We still need to think a positive mindset in overtaking their thoughts of us to prove to ourselves that they are wrong
+
+If we think highly of someone or their abilities, we will value their statements much more, resulting in them being placed over our own opinions.
+
+We can eliminate external influences much easier than we think we can.
+- All we need is to have a clearly defined goal.
+- If we have a goal that we follow passionately, anyone won't be able to talk out of it easily
+- Less likely if we know that we can achieve this goal
+
+> Only the person who has taken the exact same journey as you can evaluate you and your decisions. Everything else is only assumptions.
