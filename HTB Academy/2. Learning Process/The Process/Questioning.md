@@ -42,3 +42,29 @@ This level of precision in a question can influence the quality and specificity 
 - This yields more actionable and relevant results, but precision doesn't make a question "good." Precision is a more useful categorization.****
 
 ### Questions in General
+On average, we ask between 3-5 questions per minute, though this varies by situation.
+
+Questions are essential to linking information in the brain and a crucial part of learning.
+- Learning material is like ingredients.
+- Questions are like the preparation method.
+- Just as a recipe guides cooking steps, questions guide our learning process.
+
+More precise questions lead to better understanding and results. For example:
+- Rough question: _"How can I hack X?"_
+- Precise question: _"How can I use the server's SMB service to identify user accounts?"
+
+People often struggle to ask the right questions, but asking the right ones can lead to valuable insights and effective decision-making.
+
+Questions help achieve specific goals:
+- **Past:** Understanding the reason for an event.
+- **Present:** Learning how something works.
+- **Future:** Predicting outcomes.
+
+**Three Core Aspects of Every Question:**
+- **Origin:** Where the question comes from.
+- **Process:** How the question is framed.
+- **Result/Goal:** The purpose or desired outcome.
+
+Question: "A sentence worded or expressed to elicit information."
+- **Issue:** This definition focuses on form and overlooks cases where questions do not directly result in acquiring information.
+
