@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d4101c8442ff1ea8",
+        "id": "820181ba2135e3a0",
         "type": "tabs",
         "children": [
           {
-            "id": "3f9cb3ee76091d4b",
+            "id": "84c311ee211f9b50",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,8 +165,13 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "3f9cb3ee76091d4b",
+  "active": "84c311ee211f9b50",
   "lastOpenFiles": [
+    "HTB Academy/3. Setting Up/Virtual Private Server/VPS Hardening.md",
+    "HTB Academy/3. Setting Up/Virtual Private Server/VPS Setup.md",
+    "HTB Academy/3. Setting Up/Virtual Private Server/VPS Providers.md",
+    "HTB Academy/3. Setting Up/Operating Systems/Windows.md",
+    "HTB Academy/3. Setting Up/Operating Systems/Linux.md",
     "HTB Academy/3. Setting Up/Introduction/Containers.md",
     "HTB Academy/3. Setting Up/Introduction/Virtualization.md",
     "HTB Academy/3. Setting Up/Introduction/Organization.md",
@@ -203,11 +208,6 @@
     "HTB Academy/2. Learning Process/Learning Dependencies/Learning Efficiency.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/Way Of Learning.md",
     "HTB Academy/2. Learning Process/Mindset/Talent.md",
-    "HTB Academy/2. Learning Process/Mindset/Way of Thinking.md",
-    "HTB Academy/2. Learning Process/Mindset/Think Outside the Box.md",
-    "HTB Academy/2. Learning Process/Mindset/Occam's Razor.md",
-    "HTB Academy/1. Intro to Academy/Academy Structure/Sections.md",
-    "HTB Academy/1. Intro to Academy/Academy Structure/Paths and Certifications.md",
     "HTB Academy/1. Intro to Academy/References/Intro_To_Academy_Module_Cheat_Sheet.pdf",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Module Summary",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Getting Our Hands Dirty",
