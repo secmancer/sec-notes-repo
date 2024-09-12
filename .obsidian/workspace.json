@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "75bcc92be56bb41b",
+        "id": "32cf904606952408",
         "type": "tabs",
         "children": [
           {
-            "id": "f54fe2ddcfeba782",
+            "id": "2957a66ce609513a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,8 +165,18 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "f54fe2ddcfeba782",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/5. Windows Fundamentals/Screenshots",
+    "HTB Academy/5. Windows Fundamentals/Introduction/Introduction to Windows.md",
+    "HTB Academy/5. Windows Fundamentals/Screenshots/Screenshot_20240912_151126.png",
+    "HTB Academy/5. Windows Fundamentals/Diving Deeper & Close Out",
+    "HTB Academy/5. Windows Fundamentals/Further Windows Usage",
+    "HTB Academy/5. Windows Fundamentals/Interacting with Windows",
+    "HTB Academy/5. Windows Fundamentals/Working with Services & Processes",
+    "HTB Academy/5. Windows Fundamentals/Core of the Operating System",
+    "HTB Academy/5. Windows Fundamentals/Introduction",
+    "HTB Academy/5. Windows Fundamentals",
     "HTB Academy/4. Linux Fundamentals/Tips & Tricks/Shortcuts.md",
     "HTB Academy/4. Linux Fundamentals/Linux Distributions vs Solaris/Solaris.md",
     "HTB Academy/4. Linux Fundamentals/Screenshots/Screenshot_20240912_150431.png",
@@ -184,7 +194,6 @@
     "HTB Academy/4. Linux Fundamentals/Screenshots/Screenshot_20240912_143917.png",
     "HTB Academy/4. Linux Fundamentals/Screenshots/Screenshot_20240912_142734.png",
     "HTB Academy/4. Linux Fundamentals/System Management/Containerization.md",
-    "HTB Academy/4. Linux Fundamentals/Screenshots/Screenshot_20240912_142709.png",
     "HTB Academy/4. Linux Fundamentals/System Management/File System Management.md",
     "HTB Academy/4. Linux Fundamentals/System Management/Backup and Restore.md",
     "HTB Academy/4. Linux Fundamentals/System Management/Working with Web Services.md",
@@ -201,17 +210,9 @@
     "HTB Academy/4. Linux Fundamentals/Workflow/Editing Files.md",
     "HTB Academy/4. Linux Fundamentals/Workflow/Working with Files and Directories.md",
     "HTB Academy/4. Linux Fundamentals/Workflow/Navigation.md",
-    "HTB Academy/4. Linux Fundamentals/The Shell/System Information.md",
     "HTB Academy/4. Linux Fundamentals/Screenshots",
     "HTB Academy/4. Linux Fundamentals/Tips & Tricks",
     "HTB Academy/4. Linux Fundamentals/Linux Distributions vs Solaris",
-    "HTB Academy/4. Linux Fundamentals/Linux Hardening",
-    "HTB Academy/4. Linux Fundamentals/Linux Networking",
-    "HTB Academy/4. Linux Fundamentals/System Management",
-    "HTB Academy/4. Linux Fundamentals/Workflow",
-    "HTB Academy/4. Linux Fundamentals/The Shell",
-    "HTB Academy/4. Linux Fundamentals/Introduction",
-    "HTB Academy/4. Linux Fundamentals",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
