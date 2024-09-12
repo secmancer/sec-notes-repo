@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "c89d6fbe29aed5f4",
+        "id": "8a0dee8818c8140c",
         "type": "tabs",
         "children": [
           {
-            "id": "66b58c52f0e73612",
+            "id": "f42b4d6c27e4f3d5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md"
+              }
             }
           },
           {
@@ -124,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,8 +173,15 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "f42b4d6c27e4f3d5",
   "lastOpenFiles": [
+    "HTB Academy/3. Setting Up/Introduction/Containers.md",
+    "HTB Academy/3. Setting Up/Introduction/Virtualization.md",
+    "HTB Academy/3. Setting Up/Introduction/Organization.md",
+    "HTB Academy/3. Setting Up/Introduction/Introduction.md",
+    "HTB Academy/3. Setting Up/Virtual Private Server",
+    "HTB Academy/3. Setting Up/Operating Systems",
+    "HTB Academy/3. Setting Up/Introduction",
     "HTB Academy/3. Setting Up",
     "HTB Academy/2. Learning Process/The Process/Learning Progress.md",
     "HTB Academy/2. Learning Process/The Process/Handling Frustration.md",
@@ -201,18 +216,11 @@
     "HTB Academy/2. Learning Process/Mindset/Occam's Razor.md",
     "HTB Academy/1. Intro to Academy/Academy Structure/Sections.md",
     "HTB Academy/1. Intro to Academy/Academy Structure/Paths and Certifications.md",
-    "HTB Academy/1. Intro to Academy/Academy Structure/Modules.md",
-    "HTB Academy/1. Intro to Academy/Academy Structure/HTB Academy Structure.md",
-    "HTB Academy/1. Intro to Academy/Academy Structure/Exercises.md",
     "HTB Academy/1. Intro to Academy/References/Intro_To_Academy_Module_Cheat_Sheet.pdf",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Module Summary",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Getting Our Hands Dirty",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Digging in Deeper",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/All About Users",
-    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Protocols",
-    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Fundamentals",
-    "Cybersecurity/HTB Academy/Introduction to Active Directory/Active Directory Overview",
-    "Cybersecurity/HTB Academy/Web Requests/HTTP Fundamentals/Untitled",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
