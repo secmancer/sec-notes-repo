@@ -19,9 +19,30 @@
 **Docker Installation**
 - **Linux:**
 ```
-
+sudo apt update -y
+sudo apt install docker.io -y
 ```
 - **Windows (with Chocolatey)**:
 ```
+IEX((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+choco upgrade chocolatey
+choco install docker-desktop
+```
 
+**Vagrant Overview**
+- **Vagrant** allows users to create, configure, and manage virtual machines using code in a **Vagrantfile**.
+- It supports providers like **VMware** and **Docker**.
+- VMs can be provisioned, started, and destroyed using the Vagrant CLI.
+
+**Vagrant Installation**
+- **Linux:**
+```
+sudo apt update -y
+sudo apt install virtualbox virtualbox-dkms vagrant
+```
+- **Windows (with Chocolatey):**
+```
+IEX((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+choco upgrade chocolatey
+cinst virtualbox cyg-get vagrant
 ```

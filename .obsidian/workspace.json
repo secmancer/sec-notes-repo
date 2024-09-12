@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "8a0dee8818c8140c",
+        "id": "d4101c8442ff1ea8",
         "type": "tabs",
         "children": [
           {
-            "id": "f42b4d6c27e4f3d5",
+            "id": "3f9cb3ee76091d4b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,9 +107,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md"
-              }
+              "state": {}
             }
           },
           {
@@ -131,7 +124,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HTB Academy/3. Setting Up/Introduction/Containers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -173,7 +165,7 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "f42b4d6c27e4f3d5",
+  "active": "3f9cb3ee76091d4b",
   "lastOpenFiles": [
     "HTB Academy/3. Setting Up/Introduction/Containers.md",
     "HTB Academy/3. Setting Up/Introduction/Virtualization.md",
