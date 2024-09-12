@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "820181ba2135e3a0",
+        "id": "1a073de8946b8ad5",
         "type": "tabs",
         "children": [
           {
-            "id": "84c311ee211f9b50",
+            "id": "0517cf9cd910e699",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,11 +165,17 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "84c311ee211f9b50",
+  "active": "0517cf9cd910e699",
   "lastOpenFiles": [
     "HTB Academy/3. Setting Up/Virtual Private Server/VPS Hardening.md",
+    "HTB Academy/3. Setting Up/Screenshots/Pasted image 20240912105123.png",
+    "HTB Academy/3. Setting Up/Screenshots/Screenshot_20240912_104853.png",
     "HTB Academy/3. Setting Up/Virtual Private Server/VPS Setup.md",
     "HTB Academy/3. Setting Up/Virtual Private Server/VPS Providers.md",
+    "HTB Academy/3. Setting Up/Screenshots",
+    "HTB Academy/3. Setting Up/Screenshots/Screenshot_20240912_103212.png",
+    "HTB Academy/3. Setting Up/Screenshots/Screenshot_20240912_103220 1.png",
+    "Screenshot_20240912_103220.png",
     "HTB Academy/3. Setting Up/Operating Systems/Windows.md",
     "HTB Academy/3. Setting Up/Operating Systems/Linux.md",
     "HTB Academy/3. Setting Up/Introduction/Containers.md",
@@ -195,24 +201,17 @@
     "HTB Academy/2. Learning Process/Learning Overview/Organization.md",
     "HTB Academy/2. Learning Process/Learning Overview/Documentation.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/Decision Making.md",
-    "HTB Academy/2. Learning Process/Screenshots/Screenshot_20240910_134435.png",
-    "HTB Academy/2. Learning Process/Screenshots/Screenshot_20240910_133956.png",
     "HTB Academy/2. Learning Process/Learning Dependencies/The Goal.md",
-    "HTB Academy/2. Learning Process/Screenshots/Screenshot_20240910_110443.png",
     "HTB Academy/2. Learning Process/Screenshots",
-    "HTB Academy/1. Intro to Academy/Screenshots/structure2.png",
-    "HTB Academy/1. Intro to Academy/Screenshots/small_steps.jpg",
     "HTB Academy/2. Learning Process/Learning Dependencies/The Will.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/The Brain.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/Learning Types.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/Learning Efficiency.md",
     "HTB Academy/2. Learning Process/Learning Dependencies/Way Of Learning.md",
-    "HTB Academy/2. Learning Process/Mindset/Talent.md",
     "HTB Academy/1. Intro to Academy/References/Intro_To_Academy_Module_Cheat_Sheet.pdf",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Module Summary",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Getting Our Hands Dirty",
     "Cybersecurity/HTB Academy/Introduction to Active Directory/Digging in Deeper",
-    "Cybersecurity/HTB Academy/Introduction to Active Directory/All About Users",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
