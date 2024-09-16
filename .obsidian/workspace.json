@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bcf1d9a308310ab8",
+        "id": "b99a5906c9bb7549",
         "type": "tabs",
         "children": [
           {
-            "id": "28224dd8b8578601",
+            "id": "ee0aae46dadd0e8e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -164,8 +164,21 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "28224dd8b8578601",
+  "active": "ee0aae46dadd0e8e",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/CRUD API.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/POST.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/GET.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/HTTP Methods and Codes.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/Screenshots/Screenshot_20240916_132027.png",
+    "HTB Academy/Information Security Foundations/12. Web Requests/Screenshots",
+    "HTB Academy/Information Security Foundations/12. Web Requests/Screenshots/Screenshot_20240916_131944.png",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HTTP Headers.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HyperText Transfer Protocol Secure (HTTPS).md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HyperText Transfer Protocol (HTTP).md",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods",
+    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment/Cryptography.md",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment/TCP-UDP Connections.md",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment/Authentication Protocols.md",
@@ -191,26 +204,13 @@
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Screenshots/forward_proxy.png",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Screenshots/Screenshot_20240916_113027.png",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Workflow/Networking Models.md",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Screenshots/packet_transfer.png",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Screenshots/net_models4.png",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Structure/Proxies.md",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Structure/Networking Topologies.md",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Structure/Network Types.md",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Screenshots",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Introduction/Networking Overview.md",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Protocols & Terminology",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Addressing",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Workflow",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Networking Structure",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Introduction",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Execution Flow/Debugging.md",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Execution Flow/Functions.md",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Script Control/Flow Control - Branches.md",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Script Control/Flow Control - Loops.md",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Screenshots",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Execution Flow",
-    "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting/Script Control",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
