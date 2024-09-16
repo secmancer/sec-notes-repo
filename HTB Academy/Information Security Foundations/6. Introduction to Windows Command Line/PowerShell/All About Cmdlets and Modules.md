@@ -154,3 +154,174 @@ C:\Users\htb-student\Documents\WindowsPowerShell\Modules;C:\Program Files\Window
 Modules can be permanently added by placing them in one of the directories listed in `PSModulePath`. However, in a penetration testing scenario, it's often more efficient to transfer specific scripts and import them as needed rather than modifying the module path permanently.
 
 
+### Execution Policy in PowerShell
+**Overview:**
+- PowerShell's execution policy is a feature designed to control the execution of scripts and modules. It's not a security control but a way to manage and restrict script execution based on administrative preferences.
+
+
+
+**Impact on Script Execution:**
+- If the execution policy is restrictive, you might encounter errors when attempting to run scripts. For example:
+```
+PS C:\Users\htb-student\Desktop\PowerSploit> Import-Module .\PowerSploit.psd1
+Import-Module : File C:\Users\htb-student\PowerSploit.psm1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+```
+
+
+
+**Checking Current Execution Policy:**
+- Use `Get-ExecutionPolicy` to determine the current policy setting:
+```
+PS C:\htb> Get-ExecutionPolicy
+Restricted
+```
+
+
+**Changing Execution Policy:**
+- To allow script execution, change the policy using `Set-ExecutionPolicy`. For example:
+```
+PS C:\htb> Set-ExecutionPolicy Undefined
+```
+- Setting it to `Undefined` removes restrictions.
+
+
+**Testing Script Import:**
+- After adjusting the execution policy, try importing the module again:
+```
+PS C:\Users\htb-student\Desktop\PowerSploit> Import-Module .\PowerSploit.psd1
+```
+
+
+
+**Temporary Policy Change:**
+- To avoid permanent changes, adjust the execution policy at the process level:
+```
+PS C:\htb> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+PS C:\htb> Get-ExecutionPolicy -List
+Scope       ExecutionPolicy
+-----       ---------------
+MachinePolicy   Undefined
+UserPolicy      Undefined
+Process         Bypass
+CurrentUser     Undefined
+LocalMachine    Bypass
+```
+
+
+
+**Viewing Imported Module's Cmdlets and Functions:**
+- Use `Get-Command -Module <modulename>` to see what commands are available in the imported module:
+```
+PS C:\htb> Get-Command -Module PowerSploit
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           Invoke-ProcessHunter                               3.0.0.0    PowerSploit
+Alias           Invoke-ShareFinder                                 3.0.0.0    PowerSploit
+Function        Add-Persistence                                    3.0.0.0    PowerSploit
+Function        Find-AVSignature                                   3.0.0.0    PowerSploit
+```
+
+
+
+**Best Practices:**
+- **Sysadmin Perspective:** Revert any execution policy changes after completing tasks to maintain system security.
+- **Pentester Perspective:** Be cautious with execution policy changes as they may signal a compromise. Ensure to clean up after your testing.
+
+
+**PowerShell Gallery:**
+- The PowerShell Gallery is a repository for PowerShell scripts, modules, and more, created by Microsoft and the community.
+- It provides a convenient platform for sharing and discovering PowerShell solutions.
+
+
+**PowerShellGet Module:**
+- `PowerShellGet` is built into PowerShell and helps manage modules and scripts from the PowerShell Gallery.
+
+
+
+**Functions in PowerShellGet:**
+- **Find-Command:** Searches for cmdlets, functions, workflows, aliases, and scripts.
+- **Find-DscResource:** Finds Desired State Configuration (DSC) resources.
+- **Find-Module:** Finds modules in the gallery.
+- **Find-Script:** Finds scripts in the gallery.
+- **Get-InstalledModule:** Lists installed modules.
+- **Get-InstalledScript:** Lists installed scripts.
+- **Get-PSRepository:** Lists registered repositories.
+- **Install-Module:** Installs a module from the gallery.
+- **Install-Script:** Installs a script from the gallery.
+- **Publish-Module:** Publishes a module to a repository.
+- **Register-PSRepository:** Registers a new repository.
+- **Uninstall-Module:** Uninstalls a module.
+- **Update-Module:** Updates an installed module.
+
+
+**Example Commands:**
+- **Finding a Module:**
+```
+PS C:\htb> Find-Module -Name AdminToolbox
+Version    Name                                Repository           Description
+-------    ----                                ----------           -----------
+11.0.8     AdminToolbox                        PSGallery            Master module for a col...
+```
+- **Installing a Module:**
+```
+PS C:\htb> Install-Module -Name AdminToolbox
+```
+- **Combining Find and Install:**
+```
+PS C:\htb> Find-Module -Name AdminToolbox | Install-Module
+```
+This command uses PowerShell's Pipeline to find and install the module in one step.
+
+
+**Auto-Import Behavior:**
+- Modern versions of PowerShell automatically import a module when you first run a cmdlet or function from it, so manual import is not required.
+
+
+
+**Manual Import for Custom Modules:**
+- For modules downloaded from GitHub or other sources, you'll need to manually import them unless modified in your PowerShell Profile.
+- PowerShell Profile locations can be found [here](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-powershell-profiles?view=powershell-7.3).
+
+
+
+**Using GitHub:**
+- GitHub offers additional content from the IT community.
+- Utilizing Git and GitHub requires knowledge of other tools and concepts, which will be covered in later sections.
+
+
+
+**Best Practices:**
+- Always review and validate modules and scripts from external sources before use.
+- Regularly update and manage installed modules to ensure you are using the latest versions with the latest features and security updates.
+
+
+### Tools To Be Aware Of
+Here are some essential PowerShell modules and projects for penetration testers and sysadmins:
+- **AdminToolbox:**
+    - A collection of modules designed for system administration tasks.
+    - Useful for managing Active Directory, Exchange, network management, file and storage issues, and more.
+- **ActiveDirectory:**
+    - Provides tools for managing Active Directory.
+    - Capabilities include managing users, groups, permissions, and other AD-related tasks.
+- **Empire / Situational Awareness:**
+    - A suite of PowerShell modules and scripts for gaining situational awareness on hosts and domains.
+    - Maintained by BC Security as part of the Empire Framework.
+- **Inveigh:**
+    - A tool for network spoofing and Man-in-the-Middle (MitM) attacks.
+    - Useful for performing various network attack techniques.
+- **BloodHound / SharpHound:**
+    - Allows for visual mapping of an Active Directory environment.
+    - Includes graphical analysis tools and data collectors written in C# and PowerShell.
+
+**Note:** Mastering PowerShell modules and cmdlets is crucial for working effectively with these tools. Familiarity with installing, importing, and examining modules and cmdlets will be valuable for various tasks in this module. If you encounter difficulties, refer back to this section for guidance.
+
+**Next Step:** Moving on to User and Group management.
+
+
+## Questions
+- What cmdlet can help us find modules that are loaded into our session?
+	- Get-Module
+- What module provides us with cmdlets built to manage package installation from the PowerShell Gallery?
+	- PowerShellGet
+- Take a moment to practice installing and loading modules on the target host. Answer "COMPLETE" when done.
+	- COMPLETE
