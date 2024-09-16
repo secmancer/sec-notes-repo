@@ -11,8 +11,12 @@
             "id": "867ad0d5f0c90ee9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md"
+              }
             }
           },
           {
@@ -124,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
