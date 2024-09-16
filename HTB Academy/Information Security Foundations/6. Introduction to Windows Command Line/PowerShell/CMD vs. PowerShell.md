@@ -192,3 +192,145 @@ It includes a command-line shell, an associated scripting language and a framewo
 <SNIP>
 ```
 
+
+
+**Finding Commands with `Get-Command`**:
+- **Purpose**: Helps find commands that may not be immediately remembered.
+
+**Basic Usage**:
+```
+**List All Commands**:
+PS C:\htb> Get-Command
+
+**Filter by Verb**:
+PS C:\htb> Get-Command -verb get
+
+
+_Alternative_: Use wildcard `get*`:
+PS C:\htb> Get-Command get*
+
+**Filter by Noun**:
+PS C:\htb> Get-Command -noun windows*
+```
+
+**Example Output**:
+- Lists cmdlets, aliases, and functions that match the search criteria.
+
+
+**Command History with `Get-History`**:
+- **Purpose**: View commands run in the current session.
+**Basic Usage**:
+```
+PS C:\htb> Get-History
+```
+**Re-run Commands**:
+- Use alias `r` followed by the command ID:
+```
+PS C:\htb> r 14
+```
+**Persistent History with PSReadLine**:
+- **View History File**:
+```
+PS C:\htb> Get-Content C:\Users\DLarusso\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+```
+- **Automatic Filtering**: PSReadLine filters sensitive information such as passwords, tokens, and API keys.
+
+**Clearing the Screen**:
+- **Purpose**: Remove all output from the console for a cleaner view.
+- **Commands**:
+- **Full Command**:
+```
+Clear-Host
+```
+- **Aliases**
+```
+clear
+cls
+```
+
+
+When working in a CLI environment, especially during tasks like pentesting, using hotkeys efficiently can greatly enhance productivity. Here are some useful hotkeys for PowerShell:
+
+**Hotkeys**
+- **CTRL+R**: Searchable history. Start typing after pressing this to see results that match previous commands.
+- **CTRL+L**: Quickly clears the screen.
+- **CTRL+ALT+Shift+?**: Displays the entire list of keyboard shortcuts recognized by PowerShell.
+- **Escape**: Clears the entire line being typed, instead of holding backspace.
+- **↑ (Up Arrow)**: Scrolls up through previous commands in the history.
+- **↓ (Down Arrow)**: Scrolls down through previous commands in the history.
+- **F7**: Opens a TUI (Text User Interface) with a scrollable interactive history of the current session.
+
+![[Screenshot_20240915_203349.png]]
+
+
+**Tab Completion**
+Tab completion is a powerful feature in PowerShell that helps speed up command input and reduces errors by suggesting and completing command names and parameters as you type. Here’s how to use it:
+- **Tab**: Pressing the Tab key will auto-complete the command or parameter based on the current context.
+- **SHIFT+Tab**: Use this combination to cycle backwards through possible completions.
+
+**Autocomplete Example**
+- As you type a command, pressing Tab will cycle through available options or complete the command for you.
+
+
+
+**Aliases**
+Aliases in PowerShell are shorthand names for cmdlets, commands, or executable files, making them quicker and easier to use. Here’s how to work with aliases:
+- **Get-Alias**: Lists all the default aliases available.
+```
+PS C:\Windows\system32> Get-Alias
+```
+**Sample Output:**
+```
+CommandType     Name                                               Version    Source
+-----------
+Alias           % -> ForEach-Object
+Alias           ? -> Where-Object
+Alias           ac -> Add-Content
+Alias           asnp -> Add-PSSnapin
+Alias           cat -> Get-Content
+Alias           cd -> Set-Location
+Alias           clear -> Clear-Host
+Alias           cls -> Clear-Host
+Alias           del -> Remove-Item
+Alias           dir -> Get-ChildItem
+```
+- **Set-Alias**: Creates a custom alias for a cmdlet.
+```
+PS C:\Windows\system32> Set-Alias -Name gh -Value Get-Help
+```
+This command sets `gh` as an alias for `Get-Help`.
+
+
+**Helpful Aliases**
+- `%` for `ForEach-Object`
+- `?` for `Where-Object`
+- `ac` for `Add-Content`
+- `cat` for `Get-Content`
+- `cd` for `Set-Location`
+- `clear` for `Clear-Host`
+- `cls` for `Clear-Host`
+- `del` for `Remove-Item`
+- `dir` for `Get-ChildItem`
+
+![[Screenshot_20240915_203547.png]]
+
+
+
+**Comparison with BASH**
+- Many PowerShell aliases are similar to commands widely used in BASH (Linux distributions).
+- This similarity can ease the transition for those familiar with BASH, as they might find equivalent commands and aliases in PowerShell that match their BASH counterparts.
+
+
+
+**Next Steps**
+- This section provided a comprehensive overview of essential PowerShell functionalities, including tab completion and aliases.
+- The next focus will be on exploring **PowerShell modules and cmdlets** in greater detail to enhance PowerShell proficiency.
+
+
+## Questions
+- What command string can we use to view the help documentation for the command Get-Location? (full string)
+	- Get-Help Get-Location
+- What command can we use to show us our current location on the host system?
+	- Get-Location
+- What hotkey can be used to clear our input line completely?
+	- ESCAPE
