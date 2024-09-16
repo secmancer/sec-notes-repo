@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "ccd21039c0c737a9",
+        "id": "502c11587506bce4",
         "type": "tabs",
         "children": [
           {
-            "id": "c595ef662a2fbe96",
+            "id": "f7d57ec2d8a23d8a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,9 +107,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md"
-              }
+              "state": {}
             }
           },
           {
@@ -131,7 +124,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,8 +164,22 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "f7d57ec2d8a23d8a",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Beyond This Module.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Skills Assessment.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/PowerShell Scripting and Automation.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_084434.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Interacting with The Web.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Networking Management from the CLI.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Windows Event Log.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_080259.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_083100.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_075410.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_075424.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_075417.png",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240916_074545.png",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with Services.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Finding & Filtering Content.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_215159.png",
@@ -182,18 +188,8 @@
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/User and Group Management.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_211620.png",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Beyond This Module.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Skills Assessment.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Introduction.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/PowerShell Scripting and Automation.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Interacting with The Web.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Networking Management from the CLI.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Windows Event Log.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/CMD vs. PowerShell.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_203547.png",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_203349.png",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_201708.png",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/Command Prompt Basics.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/Environment Variables.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/Gathering System Information.md",
@@ -203,10 +199,6 @@
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/System Navigation.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/Working with Directories and Files.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/CMD/Working with Scheduled Tasks.md",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_201948.png",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_201813.png",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_201430.png",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_195842.png",
     "HTB Academy/Information Security Foundations",
     "HTB Academy/Information Security Foundations/12. Web Requests",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications",
