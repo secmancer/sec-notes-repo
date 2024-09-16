@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ce10a615f798f80e",
+        "id": "7e6f2d7398564ca1",
         "type": "tabs",
         "children": [
           {
-            "id": "7a26369b1e99a0e6",
+            "id": "867ad0d5f0c90ee9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -164,8 +164,21 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "7a26369b1e99a0e6",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Beyond This Module.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong/Skills Assessment.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Introduction.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/PowerShell Scripting and Automation.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Interacting with The Web.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Networking Management from the CLI.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Windows Event Log.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with Services.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Finding & Filtering Content.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/Working with Files and Directories.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/User and Group Management.md",
+    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell/CMD vs. PowerShell.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_203547.png",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots/Screenshot_20240915_203349.png",
@@ -194,23 +207,11 @@
     "HTB Academy/Information Security Foundations/8. Introduction to Networking",
     "HTB Academy/Information Security Foundations/7. Introduction to Bash Scripting",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Screenshots",
-    "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Introduction.md",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/Finish Strong",
     "HTB Academy/Information Security Foundations/6. Introduction to Windows Command Line/PowerShell",
     "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
     "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
     "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
-    "image.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Further Windows Usage/Windows Subsystem for Linux (WSL).md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Interacting with Windows/Interacting with the Windows OS.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Interacting with Windows/Windows Sessions.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Working with Services & Processes/Service Permissions.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Working with Services & Processes/Windows Services & Processes.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Core of the Operating System/NTFS vs. Share Permissions.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Core of the Operating System/File System.md",
-    "HTB Academy/Information Security Foundations/5. Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
