@@ -267,7 +267,7 @@ sudo tcpdump -i eth0 less 64
 
 ## Questions
 - What filter will allow me to see traffic coming from or destined to the host with an ip of 10.10.20.1?
-	- insert answer here
+	- host 10.10.20.1
 - What filter will allow me to capture based on either of two options?
 	- or
 - True or False: TCPDump will resolve IPs to hostnames by default.
