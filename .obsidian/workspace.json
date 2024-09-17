@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0f8ac7c9ed9f5770",
+        "id": "3c37562c8ad83f08",
         "type": "tabs",
         "children": [
           {
-            "id": "de54acfd685b7fff",
+            "id": "beed55a3ade748f6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md"
+              }
             }
           },
           {
@@ -124,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,8 +172,29 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "de54acfd685b7fff",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_103615.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Capturing with Tcpdump (Fundamentals Labs).md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Addressing.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_101415.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_101230.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_101015.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_100539.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/workflow.png",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Analysis",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Next Steps/Next Steps.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
@@ -185,33 +214,12 @@
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Components/JavaScript.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Components/Cascading Style Sheets (CSS).md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Components/HTML.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/client-server-model.jpg",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Introduction to Web Applications/Front End vs. Back End.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/Screenshot_20240916_134049.png",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/frontend-components.jpg",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Introduction to Web Applications/Web Application Layout.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/image5-12.png",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/many-server-many-db-arch.jpg",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/many-server-one-db-arch.jpg",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Introduction to Web Applications/Introduction.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Next Steps",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Components",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Introduction to Web Applications",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/CRUD API.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/POST.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/GET.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods/HTTP Methods and Codes.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/Screenshots",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HTTP Headers.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HyperText Transfer Protocol Secure (HTTPS).md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals/HyperText Transfer Protocol (HTTP).md",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Methods",
-    "HTB Academy/Information Security Foundations/12. Web Requests/HTTP Fundamentals",
-    "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment/Cryptography.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
