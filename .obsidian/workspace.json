@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "91729fcfcc6f814d",
+        "id": "14dfcaf5bfa55d69",
         "type": "tabs",
         "children": [
           {
-            "id": "5ea5beb1d40364fb",
+            "id": "b0080c814a6d73e2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Why Active Directory?.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Why Active Directory?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Why Active Directory?.md"
+              }
             }
           },
           {
@@ -124,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Why Active Directory?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,36 +150,45 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 203.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-textgenerator-plugin:Generate Text!": false,
-      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
-      "obsidian-importer:Open Importer": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-kanban:Create new board": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-kanban:Create new board": false
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "obsidian-importer:Open Importer": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "5ea5beb1d40364fb",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
-    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Analysis with Wireshark.md",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Decrypting RDP connections.md",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Active Directory Research Over The Years.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Why Active Directory?.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Module Summary",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Getting Our Hands Dirty",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Digging in Deeper",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/All About Users",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
+    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark/Analysis with Wireshark.md",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_105426.png",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
@@ -192,8 +209,6 @@
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/workflow.png",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Wireshark",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Tcpdump",
-    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Analysis",
-    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Next Steps/Next Steps.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
@@ -203,15 +218,8 @@
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots/web_apps_relational_db.jpg",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components/Web Servers.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components/Back End Servers.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities/Cross-Site Request Forgery (CSRF).md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities/Cross-Site Scripting (XSS).md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities/HTML Injection.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities/Sensitive Data Exposure.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Screenshots",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Next Steps",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Front End Vulnerabilities",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
