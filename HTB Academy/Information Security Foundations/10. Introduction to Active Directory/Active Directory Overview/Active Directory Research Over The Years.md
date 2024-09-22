@@ -47,6 +47,3 @@ Active Directory has been a key focus for security researchers, with a significa
 
 - **2013**
   - **Responder Tool**: Released by Laurent Gaffie, it remains a key tool for network poisoning and SMB relay attacks in AD environments.
-
-#### **Conclusion**
-AD continues to present a vast and complex attack surface, with new vulnerabilities and tools emerging regularly. Staying updated with the latest research, tools, and techniques is critical for both securing AD and conducting penetration tests to uncover potential weaknesses before attackers do.
