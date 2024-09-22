@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "78011b1de132c5c6",
+        "id": "9e254b6b20e8297c",
         "type": "tabs",
         "children": [
           {
-            "id": "84ac40f20fc80dae",
+            "id": "fe02786e6806c2f5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md"
+              }
             }
           },
           {
@@ -124,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,12 +172,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "84ac40f20fc80dae",
+  "active": "fe02786e6806c2f5",
   "lastOpenFiles": [
+    "ntlm_auth.png",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Screenshots/dns_highlevel.png",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
-    "LDAP_auth.png",
-    "Kerb_auth.png",
-    "dns_highlevel.png",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Screenshots/LDAP_auth.png",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Screenshots/Kerb_auth.png",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Functionality.md",
