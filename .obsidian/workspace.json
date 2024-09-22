@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5b4f7dc813667458",
+        "id": "d9fb3f97fc795ed4",
         "type": "tabs",
         "children": [
           {
-            "id": "8e05cb691e1b1bb8",
+            "id": "b5cb73467aa998fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md"
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md"
               }
             }
           },
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
+                "file": "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,11 +172,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "8e05cb691e1b1bb8",
+  "active": "b5cb73467aa998fe",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Protocols",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Functionality.md",
+    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Terminology.md",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Screenshots/adobjects.png",
-    "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Screenshots/dn_rdn2.png",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Fundamentals/Active Directory Structure.md",
     "HTB Academy/Information Security Foundations/10. Introduction to Active Directory/Active Directory Overview/Active Directory Research Over The Years.md",
@@ -212,13 +216,10 @@
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Addressing.png",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_101415.png",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots/Screenshot_20240917_101230.png",
-    "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Screenshots",
     "HTB Academy/Information Security Foundations/9. Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Next Steps/Next Steps.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
     "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components/Development Frameworks & APIs.md",
-    "HTB Academy/Information Security Foundations/11. Introduction to Web Applications/Back End Components/Databases.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
