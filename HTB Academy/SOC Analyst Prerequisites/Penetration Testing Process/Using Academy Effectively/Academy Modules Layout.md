@@ -25,7 +25,7 @@
 - HTB has structured its learning materials to be challenging but effective.
 - Beginners or advanced users looking to improve can follow a recommended module sequence for specific penetration testing processes.
 
-![[0-PT-Process_png.png]]
+![[0-PT-Process_png 1.png]]
 
 
 **Pre-Engagement Stage**  
@@ -34,7 +34,7 @@
 - Contractual documents are drafted during this phase.
 - Essential information is exchanged between penetration testers and the client, depending on the type of assessment.
 
-![[0-PT-Process-PRE_png.png]]
+![[0-PT-Process-PRE_png 1.png]]
 
 **Path: Information Gathering**  
 - Focuses on identifying target systems before examination or attack.
@@ -88,7 +88,7 @@
 - **Goal-Oriented Approach:**
   - The method of gathering information should align with the assessment's goals. 
 
-![[0-PT-Process-IG_png.png]]
+![[0-PT-Process-IG_png 1.png]]
 
 ### Vulnerability Assessment Path Notes:
 
