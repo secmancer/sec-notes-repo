@@ -154,7 +154,7 @@
 - **Importance in Security Audits:**
   - Regular audits help ensure infrastructure remains protected against new vulnerabilities as databases and tools are updated.
 
-![[0-PT-Process-VA_png.png]]
+![[0-PT-Process-VA_png 1.png]]
 
 ### Paths After Vulnerability Assessment:
 
@@ -220,7 +220,7 @@
 - **Key Takeaway:**
   - A successful exploitation relies on a thorough understanding of the vulnerabilities and the specific configurations of the target system, allowing for tailored attack strategies that align with the organization’s use of its applications.
 
-![[0-PT-Process-EX_png.png]]
+![[0-PT-Process-EX_png 1.png]]
 
 ### Exploitation Stage Notes
 
@@ -330,7 +330,7 @@
   - Familiarity with both **Linux Privilege Escalation** and **Windows Privilege Escalation** techniques is essential.
   - Each OS has its own unique methods and vulnerabilities that can be exploited for privilege escalation.
 
-![[0-PT-Process-POEX_png.png]]
+![[0-PT-Process-POEX_png 1.png]]
 
 ### Post-Exploitation Paths
 
@@ -388,7 +388,7 @@
   - Utilize tools and techniques to discover other hosts and services within the network.
   - Can involve the use of legitimate network protocols and tools to avoid detection.
 
-![[0-PT-Process-LA_png.png]]
+![[0-PT-Process-LA_png 1.png]]
 
 ### Lateral Movement Paths
 
@@ -428,7 +428,7 @@ After achieving lateral movement within a network, there are three possible path
   - POCs are included in the documentation provided as part of a high-quality penetration test.
   - They allow administrators to independently confirm and validate the reported vulnerabilities.
 
-![[0-PT-Process-POC_png.png]]
+![[0-PT-Process-POC_png 1.png]]
 
 ### Post-Engagement Notes
 
