@@ -90,6 +90,6 @@ sudo nmap 10.129.2.28 -p 139 --packet-trace -n --disable-arp-ping -Pn
 
 ## Questions
 - Find all TCP ports on your target. Submit the total number of found TCP ports as the answer.
-	- answer
+	- 7
 - Enumerate the hostname of your target and submit it as the answer. (case-sensitive)
-	- answer
+	- NIX-NMAP-DEFAULT
