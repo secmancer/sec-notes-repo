@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "59d57b8db60faac9",
+        "id": "51dec71a065b43db",
         "type": "tabs",
         "children": [
           {
-            "id": "aeed3bfb173cadce",
+            "id": "66f0089717822ced",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Assembling & DIsassembling"
+              "title": "New tab"
             }
           }
         ]
@@ -191,12 +187,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "aeed3bfb173cadce",
+  "active": "66f0089717822ced",
   "lastOpenFiles": [
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/CPU Architecture.md",
@@ -210,10 +216,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Nmap Scripting Engine.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Service Enumeration.md",
@@ -221,17 +223,11 @@
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host and Port Scanning.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host Discovery.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Enumeration.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Preparing for Real-World Pentests/Practice.md",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Post-Engagement.md",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process_png 2.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Proof-of-Concept.md",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-POC_png 1.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Lateral Movement.md",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-LA_png 1.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Post-Exploitation.md",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-POEX_png 1.png",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-EX_png 1.png",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-VA_png 1.png",
