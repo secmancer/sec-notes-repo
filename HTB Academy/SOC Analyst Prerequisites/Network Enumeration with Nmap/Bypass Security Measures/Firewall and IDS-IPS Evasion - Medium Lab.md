@@ -2,4 +2,4 @@ After we conducted the first test and submitted our results to our client, the a
 
 ## Questions
 - After the configurations are transferred to the system, our client wants to know if it is possible to find out our target's DNS server version. Submit the DNS server version of the target as the answer.
-	- answer
+	- HTB{GoTtgUnyze9Psw4vGjcuMpHRp}

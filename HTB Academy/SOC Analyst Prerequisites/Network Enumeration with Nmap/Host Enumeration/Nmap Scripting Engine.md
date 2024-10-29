@@ -7,21 +7,21 @@ The **Nmap Scripting Engine (NSE)** allows users to extend Nmap's functionality 
 ### NSE Script Categories
 
 | **Category**  | **Description**                                                                 |
-|---------------|---------------------------------------------------------------------------------|
-| **auth**      | Determines authentication credentials.                                           |
-| **broadcast** | Broadcasts to discover hosts and adds them to scans.                             |
-| **brute**     | Attempts brute-force login using credentials.                                    |
-| **default**   | Default scripts executed with the `-sC` option.                                  |
-| **discovery** | Evaluates available services on the target.                                      |
-| **dos**       | Checks for Denial of Service vulnerabilities (rarely used to avoid disruption).  |
-| **exploit**   | Attempts to exploit known vulnerabilities.                                       |
-| **external**  | Uses external services for further processing.                                   |
-| **fuzzer**    | Sends unexpected data to services to find vulnerabilities (time-consuming).      |
-| **intrusive** | Runs scripts that might negatively affect the target.                            |
-| **malware**   | Detects malware infections.                                                      |
-| **safe**      | Runs non-intrusive scripts that don't harm the target.                           |
-| **version**   | Extends service version detection.                                               |
-| **vuln**      | Detects known vulnerabilities.                                                   |
+| ------------- | ------------------------------------------------------------------------------- |
+| **auth**      | Determines authentication credentials.                                          |
+| **broadcast** | Broadcasts to discover hosts and adds them to scans.                            |
+| **brute**     | Attempts brute-force login using credentials.                                   |
+| **default**   | Default scripts executed with the `-sC` option.                                 |
+| **discovery** | Evaluates available services on the target.                                     |
+| **dos**       | Checks for Denial of Service vulnerabilities (rarely used to avoid disruption). |
+| **exploit**   | Attempts to exploit known vulnerabilities.                                      |
+| **external**  | Uses external services for further processing.                                  |
+| **fuzzer**    | Sends unexpected data to services to find vulnerabilities (time-consuming).     |
+| **intrusive** | Runs scripts that might negatively affect the target.                           |
+| **malware**   | Detects malware infections.                                                     |
+| **safe**      | Runs non-intrusive scripts that don't harm the target.                          |
+| **version**   | Extends service version detection.                                              |
+| **vuln**      | Detects known vulnerabilities.                                                  |
 
 ---
 

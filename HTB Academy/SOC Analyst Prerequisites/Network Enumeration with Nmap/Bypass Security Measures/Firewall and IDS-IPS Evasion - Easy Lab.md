@@ -45,4 +45,4 @@ nmap -p 80 -sS -Pn -f <target>
 
 ## Questions
 - Our client wants to know if we can identify which operating system their provided machine is running on. Submit the OS name as the answer.
-	- answer
+	- Ubuntu

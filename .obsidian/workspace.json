@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "51dec71a065b43db",
+        "id": "e068f26948c99074",
         "type": "tabs",
         "children": [
           {
-            "id": "66f0089717822ced",
+            "id": "9f832a078a1f0e2c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -187,8 +187,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "66f0089717822ced",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Service Enumeration.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Nmap Scripting Engine.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host Discovery.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host and Port Scanning.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
@@ -196,10 +205,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
@@ -216,12 +221,7 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Nmap Scripting Engine.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Service Enumeration.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Saving the Results.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host and Port Scanning.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host Discovery.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration",
