@@ -141,3 +141,7 @@
 - **Step** through instructions or lines of code to follow program execution.
 - **Modify** values in registers and memory to test different scenarios without recompiling the code.
 - **GDB** is a powerful tool for debugging, reverse engineering, and testing changes in **Assembly code** and binaries, enabling us to understand a program’s behavior at every step.
+
+## Questions
+- Download the attached file, and find the hex value in 'rax' when we reach the instruction at  _ start+16?
+	- 0x21796d6564637708

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e068f26948c99074",
+        "id": "cce1818e703d4e0d",
         "type": "tabs",
         "children": [
           {
-            "id": "9f832a078a1f0e2c",
+            "id": "7f4f59d3526f43c4",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -187,8 +187,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "7f4f59d3526f43c4",
   "lastOpenFiles": [
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
@@ -204,9 +206,7 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
