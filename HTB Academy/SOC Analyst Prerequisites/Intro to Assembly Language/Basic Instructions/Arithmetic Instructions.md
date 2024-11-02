@@ -92,3 +92,8 @@ This approach is more efficient than using `mov` to load zero, as `xor` produces
 - **Binary Instructions** (`add`, `sub`, `imul`): Operate on two operands, with the result stored in the destination.
 - **Bitwise Instructions** (`not`, `and`, `or`, `xor`): Perform binary operations on each bit of the operands.
   - `xor` is especially useful for **zeroing registers** efficiently.
+
+
+## Questions
+- Add an instruction to the end of the attached code to "xor" "rbx" with "15". What is the hex value of 'rbx' at the end?
+	- answer

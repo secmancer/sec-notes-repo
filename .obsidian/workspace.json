@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cce1818e703d4e0d",
+        "id": "510750cff764976e",
         "type": "tabs",
         "children": [
           {
-            "id": "7f4f59d3526f43c4",
+            "id": "28a60153b7de41b7",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -187,8 +187,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7f4f59d3526f43c4",
+  "active": "28a60153b7de41b7",
   "lastOpenFiles": [
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
@@ -203,8 +205,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",

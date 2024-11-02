@@ -108,3 +108,7 @@ Data movement instructions are fundamental in assembly programming, allowing **d
   - Use `[ ]` brackets with `mov` to load the **value at an address**.
   - Use `lea` to load **addresses** directly, useful for offset calculations.
 - **Swapping Data**: `xchg` is a simple way to swap values between two locations.
+
+## Questions
+- Add an instruction at the end of the attached code to move the value in "rsp" to "rax". What is the hex value of "rax" at the end of program execution?
+	- 0x400
