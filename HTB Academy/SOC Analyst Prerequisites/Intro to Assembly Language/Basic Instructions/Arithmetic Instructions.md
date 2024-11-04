@@ -96,4 +96,4 @@ This approach is more efficient than using `mov` to load zero, as `xor` produces
 
 ## Questions
 - Add an instruction to the end of the attached code to "xor" "rbx" with "15". What is the hex value of 'rbx' at the end?
-	- answer
+	- 0x0

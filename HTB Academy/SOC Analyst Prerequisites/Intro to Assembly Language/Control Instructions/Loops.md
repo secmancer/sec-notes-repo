@@ -134,3 +134,7 @@ By leveraging loops, you can efficiently compute the Fibonacci sequence in assem
 - **Initializing** the first two Fibonacci numbers (`0` and `1`).
 - **Repeating** the process of summing and swapping numbers using a loop.
 - **Automating** the calculation for a set number of iterations using the `rcx` register and `loop` instruction.
+
+## Questions
+- Edit the attached assembly code to loop the "loop" label 5 times. What is the hex value of "rax" by the end?
+	- 0x100000000
