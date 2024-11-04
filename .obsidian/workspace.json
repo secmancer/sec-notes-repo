@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "386dc32d524fb7d7",
+        "id": "1b2e321690124fdb",
         "type": "tabs",
         "children": [
           {
-            "id": "49d86f67e0fc92f8",
+            "id": "c02dacf24c7a9f43",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -187,8 +187,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "49d86f67e0fc92f8",
+  "active": "c02dacf24c7a9f43",
   "lastOpenFiles": [
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
@@ -210,9 +215,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/CPU Architecture.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Computer Architecture.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Skills Assessment",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions",
@@ -221,8 +223,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Saving the Results.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process_png 2.png",
