@@ -1,4 +1,7 @@
-- Help button allows you to easily contact the support team and wiki page for any support issues
-- Fully guided learning mode is available for some subscriptions
-- Show Solution is also present for some as well.
-- Recommended to interact with the community through the sub-reddit, forums, or Discord server.
+- During your learning journey, you may face many hurdles and get stuck on specific challenges, and HTB Academy's got your back!
+- If you have any general questions about certain features within HTB Academy, then you can click on the `help button` found in the bottom-right corner of your screen.
+- If you are ever struggling with any exercises or skills assessments, then HTB Academy also provides detailed `solutions` for every exercise, for a `fully guided learning mode`.
+- You can simply click on the `Show Solution` button found underneath the question, and you'll be taken to its solution. 
+- _This feature is only available for students with an annual subscription and business customers._
+- Finally, we strongly recommend all students join our Hack The Box community, through which you can ask others for help or just chat about your learning journey. 
+- The best place to do so is through our [Hack The Box Discord server](https://discord.com/invite/hackthebox). You may also join our [Hack The Box Forum](https://forum.hackthebox.com) or our [Hack The Box Sub-reddit](https://www.reddit.com/r/hackthebox/)
