@@ -1,51 +1,33 @@
-- Learning can often be split up into two categories: Passive, Active
+- The Learning Pyramid can be represented in many different ways. It describes the learning efficiency of different types of practice.
 
 ### Passive Learning
-- With reading, we will learn only 10% of the whole knowledge.
-- By watching some demonstrations, we will not learn anything more than 30%.
+- If we follow the Learning Pyramid while going through the modules just by reading, we will learn only about `10%` of the whole penetration testing experience. By watching some demonstrations, we will not learn more than `30%`.
 
 ### Active Learning
-- When discussing with others in what we learned, we then start retaining up to 50% of our experience.
-- We can also practice on our own, in which our learning experience can grow up to 75%.
-- Example: reading all about car and traffic rules will not prepare us in how to drive a car
-- Information has certain levels of quality that we collect from, but it's important to remember that not all of it is helpful.
-- It can instead have the opposite effect in confusing and disorienting us.
-- Therefore, we need a repertoire, which we collect by practicing to understand the context of the topic we are researching.
-- Efficiency depends on the quality and usage of that information.
-- It also depends on our motivation, focus, and our goal.
-- Many different ways exist to stay motivated.
-- One is by recognizing success, even with the most minor successes. 
-- We must recognize our successes to see what we have made regarding progress. We already know how important a goal is, so if we know it, then we know the direction of our actions.
-- If we are focused, we'll notice when we drift out from our path. Following it will allow us to see how far we have come and look forward in making more progress.
-- At this point, looking at how much progress we have made is vital.
+- When we start to discuss our entire enumeration process, results, and findings with others, we will see different points of view, results, and information to compare with our own and find out what we missed. By using this type of active learning, we collect up to `50%` experience. Before we can discuss our results with others, we should practice on our own. So while we practice, our learning experience grows to `75%`.
+- We can imagine when we learn theory in driving school. We learn a lot about car and traffic rules. Using examples, we are shown situations that should lead us to specific actions and reactions to ensure road safety. We can learn as much as we want, but as soon as we get into the car for the first time, we will realize that all of this knowledge has still not taught us _how_ to drive a car.
+- Before moving on to the next exercise, we should talk about the information we collect. The information has a certain level of `quality`, but not all information is helpful. More than that, some information can confuse and disorient us completely. To learn to discern such information, we need a `repertoire` which we collect `by practicing`. Therefore, it is essential to understand the context of the topic we are researching.
+- Efficiency depends not only on the quality of information we find but on the usage of that information.
+- Moreover, it depends on our `motivation`, `focus`, and `our goal`.
+- There are many different ways to stay motivated. An excellent method that works very well is by recognizing success, even the most minor successes. We must recognize our successes and see that we have made progress. We already talked about how important it is to have a goal. When we know our goal, we know the direction of our actions. If we are focused on our goal, we will notice when we drift from our path. By following our path, we will automatically look back and see how far we have come. At this point, it is vital to notice the `progress` we have made.
+- `Progress is noticeable when the question that tortured us has lost its meaning.`
+- Looking back and seeing how far we have come will keep us motivated. Many people struggle during the learning process because they have to learn a lot of different topics. It is vital to take breaks and remain calm.
+- For example, if we attempt to force ourselves to learn Web Application Penetration Testing in two hours, it just will not work. There is too much information to handle and too many details inside the technical processes we must master.
+- To make it more clear, we will look at another example:
 
+> How do we empty a bottle of water? We turn the bottle around and let it flow, right? Why didn't we try to create a vortex by turning the bottle around the Y-Axis? By creating a vortex, we let oxygen flow into the bottle regularly, and the water can flow out without closing the bottle opening.
 
-Example: forcing ourselves to learn Web Application Penetration Testing in just two hours will not work. 
-- There is just too much information and details to handle and processes to master in such a short time-span.
-
-Let's look at another example:
-
->How do we empty a bottle of water? We turn the bottle around and let it flow, right?
-  Why didn't we try to create a vortex by turning the bottle around the Y-Axis?  
-  By creating a vortex, we let oxygen flow into the bottle regularly, and the water can flow out without closing the bottle opening.
-
-Same idea happens in learning. Learning too much without breaks will get us stuck quicker.
+- The same thing happens with learning. If we learn too much without taking breaks, we will get stuck.
 
 > "So, how many breaks do we need and how long should they be?"
 
-This is a question we must answer on our own as only ourselves will know what effects and consequences our own actions will have on us.
+- This is a question that we must answer on our own because only we know what effects and consequences our actions will have on us.
+- However, what happens when we get stuck? There are many ways that we become "stuck". It could be that we focused too much and lost the context of the task at hand, or we are tired and did not take enough breaks. 
+- Solving a problem like this requires `creativity`. In penetration testing, it is essential to pay attention to details that appear unimportant at first glance. If we look back, we will see some terms printed in **bold** and `green`, and if we take a closer look, we will see that they have an essential meaning in the process. 
+- Here it is crucial to train the eye to notice even the most minor details. All our knowledge and experiences are based on associations that connect us with different perceptions, such as colors and smells, for example, through different situations, known to us as memories. 
+- These will be recalled later either actively or passively.
+- This process also only takes place in the course of practice. In the next step, we will see how important it is through a small practical example.
 
-However, what happens when we get stuck?
-- Many ways we can get here.
-- Could be we focused too much and lost the content of the task at hand
-- We get tired and did not take enough breaks
-
-Solving a problem like this requires creativity. In penetration testing, it's essential to pay attention to details that may appear unimportant at first. 
-
-Looking back, we can see terms print as **bold** and <span style="color:rgb(0, 255, 0)">green</span>.
-- Taking a closer look, we can see these have essential meaning behind them
-- It's crucial to train the eyes to notice even the most minor details
-- All of our knowledge and experiences are based on associates that connect us with different perceptions, like colors and smells, for example.
-- These are known to us as memories, as we are able to recall these later actively or passively.
-
-This process only takes place in the course of practice. The next steps will see how important it is through a small practical example.
+> Optional Exercise
+> 
+> Collect as much information as possible about creativity and problem-solving. Put all the information together and create an overview. Find the best way for us to think creatively.

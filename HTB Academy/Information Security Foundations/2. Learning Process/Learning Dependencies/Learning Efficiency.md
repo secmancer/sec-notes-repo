@@ -1,42 +1,41 @@
-- Problem here: sheer size of the IT/cybersecurity field we are dealing with
-- As with the previous examples, there are a lot to learn and many topics to cover within technical areas like programming and informational technology.
-- Courses will be very technical, which is good for strengthening our skillsets
-- We need to understand how things work, how they are structured, and how to use them effectively.
-- Everything we need to be successful is out there, we just need to go get it.
-- Primary/most difficult objective: overcoming the combination of our knowledge, adaptation, and new information
-- Not easy to find what we need, where is what kind we need to know:
-	- What do we already know?`
-	- What do we not know yet?`
-- Even with this info that we do find, we still don't know how to use it yet.
-- Another problem is how we must handle this massive amount of info and adapting it into our strengths and weaknesses.
-
-Take this scenario:
+- The problem here is the sheer size of the information security field. As we saw in the example with programming languages, there is a lot to learn and many topics to cover. Many of the courses available are very technical. 
+- This is a good thing and essential for us to strengthen our skillsets. We have to understand how things work, how they are structured, and how to use them. 
+- All of the technical information we need to be successful in this field is already out there.
+- The primary and most difficult objective we must overcome is the `combination` of our knowledge, adaptation, and new information.
+- It often is not easy to find the information we need. First, we have to find out what kind of information we need.
+	- `What do we already know?`
+	- `What do we not know yet?`
+- Even if we find the information we need, we do not know how to use it because we do not have an overview.
+- Another major problem we must solve is handling this massive amount of information and adapting it to our strengths and weaknesses.
+- Imagine another scenario:
 
 > A student wants to learn how to assemble an engine. Before a student "can" assemble an engine, they start learning many theoretical concepts to prevent failure.
 
-- We first of all, have to fail. This is the most unavoidable and essential part of learning. This is one of the parts that will make us successful.
-- Experience is built on failures, as it examples how we need to handle different and sometimes adverse situations where something does not work as expected.
-- We will learn what we need, how to use it, and how to work with it, as it will allow us to see what kind of things can happen, collect our first practical experience, and improve our existing skills.
-- When taught with support and shown how to do something, a student can know how to do it independently, while also being able to learn all about the theoretical aspects more in-depth through proper practice and repetition.
 
-We will learn penetration testing basics, but also how to:
-- Learn faster
-- Structure our knowledge
-- Find the information we need
-- Get the overview
-
-Many companies are searching for good penetration testers and information security specialists to join their ranks, which begs the question:
+- However, first of all, we have to fail. It is an `unavoidable` and `essential` part of `learning`. This is one of the parts of the learning process which make us successful. 
+- Experience is built on failures. It explains that we know how to handle different and sometimes adverse situations where something does not work as expected.
+- `Academy` is structured in a way where the student starts to assemble an engine guided by the instructor. We will learn what we need, how to use it, and how to work with it. 
+- We will see what kind of things can happen, collect our first practical experience, and improve our existing skills. When a student was taught by an instructor who supported them and showed them how to assemble an engine, they would know how to do it independently. 
+- Moreover, the student can now learn all of the theoretical aspects more in-depth through practice and repetition.
+- In Academy, we will learn not only the basics of penetration testing but also how to:
+	- Learn faster
+	- Structure our knowledge
+	- Find the information we need
+	- Get the overview
+- Many companies are searching for **good** penetration testers and information security specialists.
 
 > "However, what does it mean to be good?"
 
-- For us to be good, we must know what we are doing.
-- If we have that, then we can be experienced with that topic
-- Experience means we can have a vast repertoire in the field, which comes from associations and practical experience additionally.
-- When we say practical experience, we of course want to know how much we have to practice in order to become competent at a specific task.
-- There is something called the 10,000-Hour rule, which essentially boils down to you spending 10,000 hours equates to being good at something. We, of course, don't want to be spend 10,000 hours learning just one skill.
-- Instead, we can look into something called the Pareto Principle, or 80/20 for something much more achievable.
-- It states that 20% of effort allows us to achieve 80% of the effect.
-- Conversely, this means 80% of the effort, we can achieve 20% of the effect, which is 100% missing.
-- We need to note though that it does not apply to everything, but can be used as a general rule applied to specific areas.
-- We can become excellent pretty fast, with the learning curve with active/passing learning being applied effectively
-- We can learn this with the Learning Pyramid.
+- To be good at something means we know `what we are doing`. If we know what we are doing, that means that we are `experienced` with this topic. Experience means we have a vast `repertoire` in this field. 
+- Repertoire comes from `associations` and `practical experience`. When we say practical experience, we want to know how much we have to practice to become competent at a specific task.
+- There is something called the "10,000-Hour Rule," which explains that you need to spend 10,000 hours on becoming good at something. We do not want to spend 10,000 hours learning a skill.
+- When we research this rule a bit, we will find a TEDx talk by [Josh Kaufman](https://ideas.ted.com/dont-have-10000-hours-to-learn-something-new-thats-fine-all-you-need-is-20-hours/) in which he explains it more in-depth. He proposes that we can learn something new in 20 hours, even working on it for just 45 minutes per day. 
+- This sounds much more attainable! At this point, we also should think about the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle), or the `80/20 rule`.
+- The `Pareto principle` states that with 20% of the effort, we can achieve 80% of the effect. Conversely, this means that with 80% of the effort, we can achieve the remaining 20% of the effect, which is 100% missing. 
+- However, it is essential to note that it does not apply to everything but is a general rule applied to specific areas.
+- The whole section above is an example of a simple association where we combine different approaches and information.
+- As Josh Kaufman explained, we can become excellent pretty fast. This is the so-called `learning curve`, including active and passive learning. These active and passive learning types can be found in the [Learning Pyramid.](https://en.wikipedia.org/wiki/Learning_pyramid)
+
+> Optional Exercise:
+> 
+> Collect as much information as possible about the "Learning Pyramid" and create an overview of it. Analyze your research process and document it. We will need it later.

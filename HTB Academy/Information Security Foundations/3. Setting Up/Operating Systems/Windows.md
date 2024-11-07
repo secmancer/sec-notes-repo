@@ -1,192 +1,291 @@
-Windows is useful as both a victim and a testbed for penetration testers.
-- It blends in enterprise environments, making testers less suspicious.
-- Easier navigation of Active Directory domains compared to Linux.
-- Better for interacting with SMB and network shares.
+- Windows computers serve an essential role as testbeds and victims for aspiring penetration testers like ourselves. However, it can make for a great penetration testing platform as well. There are some advantages to using Windows as our daily driver. It will blend in most enterprise environments so that we will appear physically and virtually less suspicious. It is easier to navigate and communicate with other hosts on an Active Directory domain if we use Windows versus Linux and some Python tooling. Traversing SMB and utilizing shares is much easier this way. With this in mind, it can be beneficial to familiarize ourselves with Windows and set a standard that ensures we have a stable and effective platform to perform our actions.
+- Building our penetration testing platform can help us in multiple ways:
+	1. Since we built it and installed only the tools necessary, we should have a better understanding of what is happening under the hood. This also allows us to ensure we do not have any unnecessary services running that could potentially be a risk to ourselves and the customer when on an engagement.
+	2. It provides us the flexibility of having multiple operating system types at our disposal if needed. These same systems used for our engagements can also serve as a testbed for payloads and exploits before launching them at the customer.
+	3. By building and testing the systems ourselves, we know they will function as intended during the penetration test and save ourselves time troubleshooting during the engagement.
+- With all this in mind, where do we start? Fortunately for us, there are many new features with Windows that were not available just a few years ago. `Windows Subsystem for Linux (WSL)` is an excellent example of this. It allows for Linux operating systems to run alongside our Windows install. This can help us by giving us a space to run tools developed for Linux right inside our Windows host without the need for a hypervisor program or installation of a third-party application such as VirtualBox or Docker.
+- This section will examine and install the core components we will need to get our systems in fighting shape, such as `WSL, Visual Studio Code, Python, Git, and the Chocolatey Package Manager`. Since we are utilizing this platform to perform penetration test functions, it will also require us to make changes to our host's security settings. Keep in mind, most exploitation tools and code are just that, `USED for EXPLOITATION` and can be harmful to your host if not careful. Be mindful of what we install and run. If we do not isolate these tools off, Windows Defender will almost certainly delete any detected files and applications it deems harmful, breaking our setup. OK, let us dive in.
 
-**Advantages of Building a Custom Platform:**
-- Custom-built platforms give a deeper understanding of what runs under the hood.
-- Ensures no unnecessary services, reducing risk during engagements.
-- Can serve as a testbed for exploits and payloads.
-- Building and testing beforehand reduces troubleshooting during live engagements.
 
-**Windows Subsystem for Linux (WSL):**
-- Allows Linux tools to run alongside Windows without needing a hypervisor.
-- Useful for running Linux-based tools on a Windows host.
+### Installation Requirements
+- The installation of the Windows VM is done in the same way as the Linux VM. We can do this on a bare-metal host or in a hypervisor. With either option, we have some requirements to think about when installing Windows 10.
 
-**Core Components to Install:**
-- **WSL**
-- **Visual Studio Code**
-- **Python**
-- **Git**
-- **Chocolatey Package Manager**
-- Adjust security settings to prevent Windows Defender from quarantining important tools.
+### Hardware Requirements
+![[Screenshot_20241107_151058.png]]
+- Ideally, we have a moderate processor that can handle intensive loads at times. If we are attempting to run Windows virtualized, our host will need at least four cores to give two to the VM. Windows can get a bit beefy with updates and tool installs, so 80G of storage or more is ideal. When it comes to RAM, 4G would be a minimum to ensure we do not have any latency or issues while performing our penetration tests.
 
-**Hardware Requirements for a Windows 10 VM:**
-- **Processor:** 1 GHz or greater, dual-core ideal.
-- **RAM:** Minimum 2GB, 4GB or more preferred.
-- **Storage:** Minimum 60GB, 80GB or more ideal for tools and updates.
-- **Network:** Preferably two network adapters.
 
-**Software Requirements:**
-- Use a licensed Windows product to comply with terms of use.
-- Start with a **Developer VM**:
-    - Windows 10 Version 2004
-    - Visual Studio 2019
-    - WSL with Ubuntu
-    - Pre-configured user: IEUser, password: Passw0rd!
+### Software Requirements
+- Unlike most Linux distributions, Windows is a licensed product. To stay in good standing, ensure we are adhering to the terms of use. For now, a great place to start is to grab a copy of a Developer VM [here](https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/). We can use this to begin building out our platform. The Developer Evaluation platform comes pre-configured with:
+![[Screenshot_20241107_151207.png]]
+- The VM comes pre-configured with a user: `IEUser` and Password `Passw0rd!`. It is a trial virtual machine, so it has an expiration date of 90 days. Keep this in mind when configuring it. Once we have a baseline VM, take a snapshot.
 
-**Core System Changes Before Installing Tools:**
-- Update the system to the latest version.
-- Install **WSL** and **Chocolatey**.
-- Exclude necessary tools from Windows Defender scans.
-- Take a snapshot of the host for backup.
 
-**Installing and Managing Updates via PowerShell:**
-- Check the execution policy:
-    - `Get-ExecutionPolicy -List`
-    - Temporarily set the execution policy for the process: `Set-ExecutionPolicy Unrestricted -Scope Process`.
-- Install the **PSWindowsUpdate** module:
-    - `Install-Module PSWindowsUpdate`
-    - Apply updates: `Install-WindowsUpdate -AcceptAll`
-    - Reboot the system: `Restart-Computer -Force`.
+### Core Changes
+- To prepare our Windows host, we have to make a few changes before installing our fun tools:
+	1. We will need to update our host to ensure it is working at the required level and keep our security posture as strong as possible.
+	2. We will want to install the Windows Subsystem for Linux and the [Chocolatey Package manager](https://chocolatey.org/). Once these tasks are completed, we can make our exclusions to Windows Defender scanning policies to ensure they will not quarantine our newly installed tools and scripts. From this point, it is now time to install our tools and scripts of choice.
+	3. We will finish our buildout by taking a backup or snapshot of the host to have a fallback point if something happens to it.
 
-### Chocolatey Package Manager
-- Chocolatey is a free and open-source software package management solution for Windows.
-- It automates the installation of software packages and handles dependencies.
-- Compatible with automation tools such as PowerShell, Ansible, and more.
-- Allows for centralized management of tools and scripts.
 
-**Key Features:**
-- **Automation**: Automates software installations, updates, and configurations.
-- **Dependencies**: Automatically handles dependencies required by the packages.
-- **Integration**: Works with PowerShell and other automation tools for efficient deployment.
+### Updates
+- To keep with our command-line use, we will work at utilizing the command-line whenever possible. To start installing updates on our host, we will need the PSWindowsUpdate module. To acquire it, we will open an administrator Powershell window and issue the following commands:
+```powershell-session
+PS C:\htb> Get-ExecutionPolicy -List
 
-**Installation Process:**
-- Install via PowerShell:
+Scope ExecutionPolicy
+----- ---------------
+MachinePolicy Undefined
+UserPolicy Undefined
+Process Undefined
+CurrentUser Undefined
+LocalMachine Undefined 
 ```
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
-- Downloads and installs Chocolatey.
-- Adds `choco` command to system path.
-- Restart PowerShell to ensure changes take effect.
-
-**Updating Chocolatey**:
-- Update to the latest version of Chocolatey using the following command:
-```
-choco upgrade chocolatey -y
-```
-- Ensures that Chocolatey is up-to-date.
-
-**Installing Packages:**
-- Install packages using the command:
-```
-choco install pkg1 pkg2 pkg3
-```
-- Installs multiple packages at once (e.g., Python, VSCode, Git).
-
-**Example**:
-```
-choco install python vscode git wsl2 openssh openvpn
-```
-- Installs listed packages along with necessary dependencies.****
-
-**Package Information:**
-- View details about a package using:
-```
-choco info pkg
-```
-- Shows metadata such as version, description, and download link.****
-
-**Helpful Commands:**
-- **Refreshing Environment Variables**:
-```
-RefreshEnv
-```
-- Updates PowerShell session with any new environment variables after installing packages.
-
-**Automation:**
-- Chocolatey allows automating the installation of frequently used tools through scripting.
-- A **packages.config** file (XML format) can be used to install a list of packages at once.
-
-**Commonly Used Packages for Penetration Testing:**
-- Python
-- VSCode
-- Git
-- WSL2
-- OpenSSH
-- OpenVPN
-
-Windows Terminal is a modern, customizable terminal emulator from Microsoft.
-- It supports multiple shell environments, including:
-	- Command Prompt
-	- PowerShell
-	- Windows Subsystem for Linux (WSL)
+- We must first check our systems Execution Policy to ensure we can download, load, and run modules and scripts. The above command will show us a list output with the policy set for each scope. In our case, we do not want this change to be permanent, so we will only change the ExecutionPolicy for the scope of `Process`.
 
 
-**Installation using Chocolatey:**
-1. Open PowerShell with administrator privileges.
-2. Run the following command to install Windows Terminal:
+### Execution Policy
+```powershell-session
+PS C:\htb> Set-ExecutionPolicy Unrestricted -Scope Process
+
+Execution Policy Change
+The execution policy helps protect you from scripts that you do not trust. 
+Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?
+[Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "N"): A
+
+PS C:\htb> Get-ExecutionPolicy -List
+
+Scope ExecutionPolicy
+----- ---------------
+MachinePolicy Undefined
+UserPolicy Undefined
+Process Unrestricted
+CurrentUser Undefined
+LocalMachine Undefined
 ```
-choco install microsoft-windows-terminal
+- Once we set our ExecutionPolicy, recheck it to make sure our change took effect. By changing the Process scope policy, we ensure our change is temporary and only applies to the current Powershell process. Changing it for any other scope will modify a registry setting and persist until we change it again.
+
+
+### #### PSWindowsUpdate
+- Now that we have our ExecutionPolicy set, let us install the PSWindowsUpdate module and apply our updates. We can do so by:
+```powershell-session
+PS C:\htb> Install-Module PSWindowsUpdate 
+
+Untrusted repository 
+You are installing the modules from an untrusted repository. If you trust this repository, 
+change its InstallationPolicy value by running the Set-PSRepository cmdlet. 
+Are you sure you want to install the modules from 'PSGallery'?
+[Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "N"): A 
+```
+- Once the module installation completes, we can import it and run our updates.
+```powershell-session
+PS C:\htb> Import-Module PSWindowsUpdate 
+
+PS C:\htb> Install-WindowsUpdate -AcceptAll
+
+X ComputerName Result KB Size Title
+- ------------ ------ -- ---- -----
+1 DESKTOP-3... Accepted KB2267602 510MB Security Intelligence Update for Microsoft Defender Antivirus - KB2267602...
+1 DESKTOP-3... Accepted 17MB VMware, Inc. - Display - 8.17.2.14
+2 DESKTOP-3... Downloaded KB2267602 510MB Security Intelligence Update for Microsoft Defender Antivirus - KB2267602...
+2 DESKTOP-3... Downloaded 17MB VMware, Inc. - Display - 8.17.2.14 3 DESKTOP-3... Installed KB2267602 510MB Security Intelligence Update for Microsoft Defender Antivirus - KB2267602... 3 DESKTOP-3... Installed 17MB VMware, Inc. - Display - 8.17.2.14 
+
+PS C:\htb> Restart-Computer -Force
+```
+- The above Powershell example will import the `PSWindowsUpdate` module, run the update installer, and then reboot the PC to apply changes. Be sure to run updates regularly, especially if we plan to use this host frequently and not destroy it at the end of each engagement. Now that we have our updates installed let us get our package manager and other essential core tools.
+
+### Chocolately Package Manager
+- Chocolatey is a free and open software package management solution that can manage the installation and dependencies for our software packages and scripts. It also allows for automation with Powershell, Ansible, and several other management solutions. Chocolatey will enable us to install the tools we need from one source instead of downloading and installing each tool individually from the internet. Follow the Powershell windows below to learn how to install Chocolatey and use it to gather and install our tools.
+- #### Chocolatey
+```powershell-session
+PS C:\htb> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.
+Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/0.10.15.
+Downloading https://community.chocolatey.org/api/v2/package/chocolatey/0.10.15 to C:\Users\DEMONS~1\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip
+Not using proxy.
+Extracting C:\Users\DEMONS~1\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\DEMONS~1\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+
+...SNIP...
+
+Chocolatey (choco.exe) is now ready.
+You can call choco from the command-line or PowerShell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+```
+- We have now installed chocolatey. The Powershell string we issued sets our ExecutionPolicy for the session and then downloads the installer from chocolatey.org and runs the script. Next, we will update chocolatey then start installing packages. To ensure no issues arise, it is recommended that we periodically restart our host.
+```powershell-session
+PS C:\htb> choco upgrade chocolatey -y 
+
+Chocolatey v0.10.15
+Upgrading the following packages:
+chocolatey
+By upgrading, you accept licenses for the packages.
+chocolatey v0.10.15 is the latest version available based on your source(s).
+
+Chocolatey upgraded 0/1 packages.
+See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+```
+- Now that we are sure chocolatey is up-to-date let us run our packages. We can use `choco` to install packages by issuing the `choco install pkg1 pkg2 pkg3` command listing out the package you need one by one separated by spaces. Alternatively, we can use a `packages.config` file for the installation. This is an XML file formatted so that chocolatey can install a list of packages. One helpful command to use is `choco info pkg`. It will show us various information about a package if it is available in the choco repository. See the [install page](https://docs.chocolatey.org/en-us/choco/commands/install) for more info on how to utilize chocolatey.
+```powershell-session
+PS C:\htb> choco info vscode 
+
+Chocolatey v0.10.15
+vscode 1.55.1 [Approved]
+Title: Visual Studio Code | Published: 4/9/2021
+Package approved as a trusted package on Apr 09 2021 01:34:23.
+Package testing status: Passing on Apr 09 2021 00:49:32.
+Number of Downloads: 1999367 | Downloads for this version: 19751
+Package url
+Chocolatey Package Source: https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/vscode
+Package Checksum: 'fTzzpEG+cspu7FUdqMbj8EqaD8cRIQ/cXtAUv7JGVB9uc23vuGNiuceqM94irt+nx8MGM0xAcBwdwBH+iE+tgQ==' (SHA512)
+Tags: microsoft visualstudiocode vscode development editor ide javascript typescript admin foss cross-platform
+Software Site: https://code.visualstudio.com/
+Software License: https://code.visualstudio.com/License
+Software Source: https://github.com/Microsoft/vscode
+Documentation: https://code.visualstudio.com/docs
+Issues: https://github.com/Microsoft/vscode/issues
+Summary: Visual Studio Code
+Description: Build and debug modern web and cloud applications. Code is free and available on your favorite platform - Linux, Mac OSX, and Windows.
+...SNIP...
+```
+- Above is an example of using the info option with chocolatey.
+```powershell-session
+PS C:\htb> choco install python vscode git wsl2 openssh openvpn 
+
+Chocolatey v0.10.15
+Installing the following packages:
+python;vscode;git;wsl2;openssh;openvpn 
+...SNIP... 
+
+Chocolatey installed 20/20 packages.
+See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+
+Installed:
+- kb2919355 v1.0.20160915
+- python v3.9.4
+- kb3033929 v1.0.5
+- chocolatey-core.extension v1.3.5.1
+- kb2999226 v1.0.20181019
+- python3 v3.9.4
+- openssh v8.0.0.1
+- vcredist2015 v14.0.24215.20170201
+- gpg4win-vanilla v2.3.4.20191021
+- vscode.install v1.55.1
+- wsl2 v2.0.0.20210122
+- kb2919442 v1.0.20160915
+- openvpn v2.4.7
+- git.install v2.31.1
+- vscode v1.55.1
+- vcredist140 v14.28.29913
+- kb3035131 v1.0.3
+- dotnet4.5.2 v4.5.2.20140902
+- git v2.31.1
+- chocolatey-windowsupdate.extension v1.0.4
+
+PS C:\htb> RefreshEnv 
+```
+- We can see in the terminal above that `choco` installed the packages we requested and pulled any dependencies required. Issuing the `RefreshEnv` command will update Powershell and any environment variables that were applied. Up to this point, we have our core tools installed. These tools will enable our operations. 
+- To install other packages, use the `choco install pkg` command to pull any operational tools we need. We have included a list of helpful packages that can aid us in completing a penetration test below. See the automation section further down to begin automating installing the tools and packages we commonly need and use.
+
+
+### Windows Terminal
+- Windows Terminal is Microsoft's updated release for a GUI terminal emulator. It supports using many different command-line tools to include Command Prompt, PowerShell, and Windows Subsystem for Linux. The terminal allows for the use of customizable themes, configurations, command-line arguments, and custom actions. A terminal is a versatile tool for managing multiple shell types and will quickly become a staple for most.
+- To install Terminal with Chocolatey:
+```powershell-session
+PS C:\htb> choco install microsoft-windows-terminal
+
+Chocolatey v0.10.15
+2 validations performed. 1 success(es), 1 warning(s), and 0 error(s).
+
+Validation Warnings:
+- A pending system reboot request has been detected, however, this is
+being ignored due to the current Chocolatey configuration. If you
+want to halt when this occurs, then either set the global feature
+using:
+choco feature enable -name=exitOnRebootDetected
+or pass the option --exit-when-reboot-detected.
+
+Installing the following packages:
+microsoft-windows-terminal
+By installing you accept licenses for the packages.
+Progress: Downloading microsoft-windows-terminal 1.6.10571.0... 100%
+
+microsoft-windows-terminal v1.6.10571.0 [Approved]
+microsoft-windows-terminal package files install completed. Performing other installation steps.
+Progress: 100% - Processing The install of microsoft-windows-terminal was successful.
+Software install location not explicitly set, could be in package or
+default install location if installer.
+
+Chocolatey installed 1/1 packages.
+See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log). 
 ```
 
-**Key Points:**
-- If a system reboot is pending, Chocolatey may ignore it based on your settings.
-- After installation, the terminal can be used for various command-line tasks with any of the supported shells.
 
-WSL2 is the second version of Microsoft’s architecture to run Linux distributions on Windows.
-- It allows running Bash scripts and Linux applications such as Vim and Python directly on Windows.
-- No need for a hypervisor (like VirtualBox or Hyper-V).
 
-**Benefits:**
-- Hybrid environment: Use Linux tools alongside Windows.
-- Interact with the Windows file-system from Linux.
+### Windows Subsystem for Linux 2
+- `Windows Subsystem for Linux 2` (`WSL2`) is the second iteration of Microsoft's architecture that allows users to run Linux instances, provides the ability to run Bash scripts and other apps like Vim, Python, etc. WSL also allows us to interact with the Windows operating system and file structure from a Unix instance. Best of all, it is done without the use of a hypervisor like VirtualBox or Hyper-V.
+- What does this mean for us? Having the ability to interact and utilize Linux native tools and applications from our Windows host provides us with a hybrid environment and the flexibility that comes with it. To install the subsystem, the quickest route is to utilize chocolatey.
+- #### Chocolatey - WSL2
+```powershell-session
+PS C:\htb> choco install WSL2
 
-**Installation using Chocolatey:**
-1. Install WSL2 by running the following command:
-```
-choco install wsl2
-```
+Chocolatey v0.10.15
+2 validations performed. 1 success(es), 1 warning(s), and 0 error(s).
+Installing the following packages:
+wsl2
+By installing you accept licenses for the packages.
+Progress: Downloading wsl2 2.0.0.20210122... 100%
 
-**Supported Linux Distributions:**
-- Ubuntu (16.04 LTS, 18.04 LTS, 20.04 LTS)
-- openSUSE Leap 15.1
-- SUSE Linux Enterprise Server 12 SP5, 15 SP1
-- Kali Linux
-- Debian GNU/Linux
-- Fedora Remix for WSL
-- Pengwin and Pengwin Enterprise
-- Alpine WSL
+wsl2 v2.0.0.20210122 [Approved]
+wsl2 package files install completed. Performing other installation steps.
+...SNIP...
+wsl2 may be able to be automatically uninstalled.
+The install of wsl2 was successful.
+Software installed as 'msi', install location is likely default.
 
-**How to Use WSL2:**
-- After installing a Linux distribution from the Microsoft Store, open PowerShell and run:
+Chocolatey installed 1/1 packages.
+See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
 ```
-bash
-```
-- This starts the Linux environment within Windows, allowing for seamless operations.
+- Once WSL is installed, we can add the Linux platform of our choice. The most common one to find is Ubuntu on the Microsoft store. Current Linux distributions supported for WSL are:
+	- [Ubuntu 16.04 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9), [18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q), and [20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
+	- [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
+	- [SUSE Linux Enterprise Server 12 SP5](https://www.microsoft.com/store/apps/9MZ3D1TRP8T1) and [15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
+	- [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
+	- [Debian GNU/Linux](https://www.microsoft.com/store/apps/9MSVKQC78PK6)
+	- [Fedora Remix for WSL](https://www.microsoft.com/store/apps/9n6gdm4k2hnc)
+	- [Pengwin](https://www.microsoft.com/store/apps/9NV1GV1PXZ6P) and [Pengwin Enterprise](https://www.microsoft.com/store/apps/9N8LP0X93VCP)
+	- [Alpine WSL](https://www.microsoft.com/store/apps/9p804crf0395)
+- To install the distribution of our choice, just click the link above, and it will take us to the Microsoft Store page for the distro. Once we have it installed, we need to open a PowerShell prompt and type `bash`.
+- From this point, we can use it as a regular OS, alongside our Windows install.
 
-Since the platform is being used for penetration testing, Windows Defender may flag some tools as harmful.
-- To prevent Windows Defender from disrupting operations, it's essential to add folder exclusions for key tools and scripts.
 
-**Exempting Folders from Windows Defender:**
-- Add exclusions to ensure Defender does not interfere with your tools:
+### Security Configurations and Defender Modifications
+- Since we will be using this platform as a penetration testing host, we may run into some issues with Windows Defender finding our tools unsavory. Windows Defender will scan and quarantine or remove anything it deems potentially harmful. To make sure Defender does not mess up our plans, we will add some exclusion rules to ensure our tools stay in place.
+- #### Windows Defender Exemptions for the Tools' Folders.
+	- `C:\Users\your user here\AppData\Local\Temp\chocolatey\`
+	- `C:\Users\your user here\Documents\git-repos\`
+	- `C:\Users\your user here\Documents\scripts\`
+- These three folders are just a start. As we add more tools and scripts, we may need to add more exclusions. To exclude these files, we will run a PowerShell command.
+- #### Adding Exclusions
+```powershell-session
+PS C:\htb> Add-MpPreference -ExclusionPath "C:\Users\your user here\AppData\Local\Temp\chocolatey\"
 ```
-C:\Users\your_user\AppData\Local\Temp\chocolatey\
-C:\Users\your_user\Documents\git-repos\
-C:\Users\your_user\Documents\scripts\
-```
-- To add these exclusions via PowerShell, use:
-```
-Add-MpPreference -ExclusionPath "C:\Users\your_user\AppData\Local\Temp\chocolatey\"
-```
-- Repeat this step for each folder you want to exclude.
+- Repeat the same steps for each folder we wish to exclude.
 
-**Automating with Chocolatey:**
-- Use Chocolatey for package management to streamline the installation of core tools and applications.
-- Create a PowerShell script to automate the initial install of key packages.
 
-Sample PowerShell Script:
-```
+### Tool Install Automation
+- Utilizing Chocolatey for package management makes it super easy to automate the initial install of core tools and applications. We can use a simple PowerShell script to pull everything for us in one run. Here is an example of a simple script to install some of our requirements. As usual, before executing any scripts, we need to change the execution policy. Once we have our initial script built, we can modify it as our toolkit changes and reuse it to speed up our setup process.
+- #### Choco Build Script
+```powershell
 # Choco build script
 
 write-host "*** Initial app install for core tools and packages. ***"
@@ -198,52 +297,57 @@ write-host "*** Beginning install, go grab a coffee. ***"
 choco upgrade wsl2 python git vscode openssh openvpn netcat nmap wireshark burp-suite-free-edition heidisql sysinternals putty golang neo4j-community openjdk
 
 write-host "*** Build complete, restoring GlobalConfirmation policy. ***"
-choco feature disable -n allowGlobalConfirmation
+choco feature disable -n allowGlobalCOnfirmation
 ```
+- When scripting with Chocolatey, the developers recommend a few rules to follow:
+	- always use `choco` or `choco.exe` as the command in your scripts. `cup` or `cinst` tends to misbehave when used in a script.
+	- when utilizing options like `-n` it is recommended that we use the extended option like `--name`.
+	- Do not use `--force` in scripts. It overrides Chocolatey's behavior.
+- Not all of our packages can be acquired from Chocolatey. Fortunately for us, a majority of what is left resides in Github. We can set up a script for this and download the repositories and binaries we need, then extract them to our scripts folder. Below we will build out a quick example of a Git script. First, let us see what it looks like to clone a repository to our local host.
 
-**Best Practices for Chocolatey Scripts:**
-- Always use `choco` or `choco.exe` for commands, avoiding shortcuts like `cup` or `cinst`.
-- Use extended options like `--name` instead of shorthand like `-n`.
-- Avoid using `--force` in scripts to maintain Chocolatey’s default behavior.
+### Git Clone
+```powershell-session
+PS C:\htb> git clone https://github.com/dafthack/DomainPasswordSpray.git
 
-**Cloning GitHub Repositories:**
-- Not all tools are available on Chocolatey, but most can be sourced from GitHub.
+Cloning into 'DomainPasswordSpray'...
+remote: Enumerating objects: 149, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (5/5), done.
+Receiving objects:  94% (141/149)(delta 1), reused 5 (delta 1), pack-reused 143
+Receiving objects: 100% (149/149), 51.70 KiB | 3.69 MiB/s, done.
+Resolving deltas: 100% (52/52), done.
+PS C:\Users\demonstrator\Documents\scripts> ls
 
-Sample Git Clone Command:
-```
-git clone https://github.com/dafthack/DomainPasswordSpray.git
-```
-- The repository is cloned into the designated folder, where you can access and run the tools.
 
-Folder Structure Example:
-```
-Directory: C:\Users\your_user\Documents\scripts
+    Directory: C:\Users\demonstrator\Documents\scripts
+
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
-d-----               4/16/2021   4:58 PM           DomainPasswordSpray
+d-----         4/16/2021   4:58 PM                DomainPasswordSpray
+
+
+PS C:\Users\demonstrator\Documents\scripts> cd .\DomainPasswordSpray\
+PS C:\Users\demonstrator\Documents\scripts\DomainPasswordSpray> ls
+
+
+    Directory: C:\Users\demonstrator\Documents\scripts\DomainPasswordSpray
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/16/2021   4:58 PM          19419 DomainPasswordSpray.ps1
+-a----         4/16/2021   4:58 PM           1086 LICENSE
+-a----         4/16/2021   4:58 PM           2678 README.md
 ```
+- We issued the `git clone` command with the URL to the repository we needed. From the output, we can tell it created a new folder in our scripts folder then populated it with the files from the GitHub repository.
 
-Testing VMs for penetration testing is essential to simulate target environments and test exploits before running them on live systems.
 
-Setting up VMs with different operating system versions and patch levels helps prepare for a variety of scenarios.
-
-**Why Use Testing VMs:**
-- Test how systems and exploits will react in a controlled environment.
-- Mirrors the target systems to ensure reliability when executing the exploit on real machines.
-
-**Windows 10 VM Example:**
-- Create Windows 10 VMs based on different versions, patches, and releases (e.g., Windows 10 version 1607, OS build 14393).
-- Instead of setting up multiple VMs, use **snapshots** to save configurations at various patch levels.
-
-**Steps for Creating Windows 10 Snapshots:**
-1. Start with a clean Windows 10 installation.
-2. Apply updates and patches incrementally, creating a snapshot after each patch.
-3. Download patches and updates from the **Microsoft Update Catalog** using the KB article number.
-
-### Tools for Installing Older Windows Versions
-These tools can help download and install older versions of Windows to create your testing VMs.
-- **Chocolatey**
-- **MediaCreationTool.bat**
-- **Microsoft Windows and Office ISO Download Tool**
-- **Rufus**
+### Testing VMs
+- It is common and very relevant to prepare our penetration testing VMs and VMs for the most common operating systems and their patch levels. This is especially necessary if we want to mirror our target machines and test our exploits before applying them to real machines. For example, we can install a Windows 10 VM that is built on different [patches](https://support.microsoft.com/en-us/topic/windows-10-update-history-24ea91f4-36e7-d8fd-0ddb-d79d9d0cdbda) and [releases](https://docs.microsoft.com/en-us/windows/release-health/release-information). This will save us considerable time in the course of our penetration tests to configure them again. These VMs will help us test our approach and exploits to understand better how the interconnected system might react to them because it may be that we will only have one attempt to execute the exploit.
+- The good thing here is that we do not have to set up 20 VMs for this but can work with snapshots. For example, we can start with Windows 10 version 1607 (OS build 14393) and update our system step by step and create a snapshot of the clean system from each of these updates and patches. Updates and patches can be downloaded from the [Microsoft Update Catalog](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4550994). We just need to use the `Kb article` designation, and there we will find the appropriate files to download and patch our systems.
+- Tools that can be used to install older versions of Windows:
+	- [Chocolatey](https://community.chocolatey.org/)
+	- [MediaCreationTool.bat](https://gist.github.com/AveYo/c74dc774a8fb81a332b5d65613187b15)
+	- [Microsoft Windows and Office ISO Download Tool](https://www.heidoc.net/joomla/technology-science/microsoft/67-microsoft-windows-and-office-iso-download-tool%EF%BB%BF)
+	- [Rufus](https://rufus.ie/en_US/)
