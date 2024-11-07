@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1c80f98bcb0fb6cd",
+        "id": "2e78af7483bc85ab",
         "type": "tabs",
         "children": [
           {
-            "id": "412eb99610d16fde",
+            "id": "a03a7cfcb8b775f1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "File and Directory Permissions"
+              "title": "New tab"
             }
           }
         ]
@@ -191,20 +187,27 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "412eb99610d16fde",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Automation.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Productivity Tips.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/Screenshot_20241107_114442 1.png",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/Screenshot_20241107_114442.png",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Terminal.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Security Tips.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/System Hierarchy.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Navigating around the OS.md",
+    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Graphical User Interface.md",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/Screenshot_20241106_221130.png",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/Screenshot_20241106_220936.png",
-    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/System Hierarchy.md",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/Screenshot_20241106_220812.png",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/D2.png",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/D1.png",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots/D3.png",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Screenshots",
-    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Navigating around the OS.md",
-    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Graphical User Interface.md",
-    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
-    "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/What is macOS?.md",
     "HTB Academy/Information Security Foundations/8. Introduction to Networking/Connection Establishment/Authentication Protocols.md",
     "HTB Academy/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS",
@@ -226,19 +229,11 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Skills Assessment",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process_png 2.png",
     "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-POC_png 1.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-LA_png 1.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-POEX_png 1.png",
-    "HTB Academy/SOC Analyst Prerequisites/Penetration Testing Process/Screenshots/0-PT-Process-EX_png 1.png",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
