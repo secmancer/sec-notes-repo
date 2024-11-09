@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d6cef153391a5be5",
+        "id": "9e7ed40feaee6a04",
         "type": "tabs",
         "children": [
           {
-            "id": "46e3a9a7092dedda",
+            "id": "0442df333902e08c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Filter Contents.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Filter Contents"
+              "title": "New tab"
             }
           }
         ]
@@ -91,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 300.5
   },
   "right": {
     "id": "4317a441acfd56b7",
@@ -203,53 +199,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "46e3a9a7092dedda",
+  "active": "0442df333902e08c",
   "lastOpenFiles": [
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/File Descriptors and Redirections.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Find Files and Directories.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_101019.png",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Editing Files.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_100309.png",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Working with Files and Directories.md",
+    "HTB Academy/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
+    "HTB Academy/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System",
+    "HTB Academy/Operating System Fundamentals/Windows Fundamentals/Introduction/Introduction to Windows.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Containerization.md",
+    "HTB Academy/Operating System Fundamentals/Windows Fundamentals/Introduction",
+    "HTB Academy/Operating System Fundamentals/Windows Fundamentals",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_003408.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_003240.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_003111.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/File System Management.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Backup and Restore.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Working with Web Services.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Network Services.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_001610.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Task Scheduling.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Service and Process Management.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/Package Management.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management/User Management.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_001324.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241109_000533.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_220259.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_215628.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Network Configuration.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_215200.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_215130.png",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Remote Desktop Protocols in Linux.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Linux Security.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/System Logs and Monitoring.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Distributions vs. Solaris/Solaris.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks/Shortcuts.md",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Permission Management.md",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Regular Expressions.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Working with Files and Directories.md",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Filter Contents.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Find Files and Directories.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/File Descriptors and Redirections.md",
+    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Editing Files.md",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Workflow/Navigation.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241108_094424.png",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/The Shell/System Information.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241107_185504.png",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/The Shell/Prompt Description.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/The Shell/Getting Help.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots/Screenshot_20241107_184002.png",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Introduction/Introduction to Shell.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Structure.md",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Distributions.md",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Methods/CRUD API.md",
-    "HTB Academy/Cracking into HTB/Web Requests/Screenshots/Screenshot_20241107_160428.png",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Methods/POST.md",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
-    "HTB Academy/Cracking into HTB/Web Requests/Screenshots/Screenshot_20241107_155507.png",
-    "HTB Academy/Cracking into HTB/Web Requests/Screenshots/Screenshot_20241107_155449.png",
-    "HTB Academy/Cracking into HTB/Web Requests/Screenshots/Screenshot_20241107_155419.png",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Fundamentals/HTTP Headers.md",
-    "HTB Academy/Cracking into HTB/Web Requests/Screenshots/Screenshot_20241107_155203.png",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocol Secure (HTTPS).md",
-    "HTB Academy/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocl (HTTP).md",
     "HTB Academy/Cracking into HTB/Web Requests/Screenshots",
     "HTB Academy/Cracking into HTB/Web Requests/HTTP Methods",
     "HTB Academy/Cracking into HTB/Web Requests/HTTP Fundamentals",
     "HTB Academy/Cracking into HTB/Web Requests",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Screenshots",
-    "HTB Academy/Information Security Foundations/Setting Up/Virtual Private Server/VPS Hardening.md",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Distributions vs. Solaris",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Hardening",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/Linux Networking",
-    "HTB Academy/Operating System Fundamentals/Linux Fundamentals/System Management",
-    "HTB Academy/Information Security Foundations/Setting Up/Virtual Private Server/VPS Setup.md",
-    "HTB Academy/Information Security Foundations/Setting Up/Virtual Private Server/VPS Providers.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
