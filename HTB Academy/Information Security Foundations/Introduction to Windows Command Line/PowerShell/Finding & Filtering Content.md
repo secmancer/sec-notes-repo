@@ -382,3 +382,49 @@ Mode                 LastWriteTime         Length Name
 ```
 - Our string worked, and we are now retrieving `multiple filetypes` from Get-ChildItem! Now that we have our list of interesting files, we could turn around and `pipe` those objects into another cmdlet (`Select-String`) that searches through their content for interesting strings and keywords or phrases. Let us see this in action.
 - #### Basic Search Query
+```powershell-session
+PS C:\htb> Get-ChildItem -Path C:\Users\MTanaka\ -Filter "*.txt" -Recurse -File | sls "Password","credential","key"
+
+CFP-Notes.txt:99:Lazzaro, N. (2004). Why we play games: Four keys to more emotion without story. Retrieved from:
+notes.txt:3:- Password: F@ll2022!
+wmic.txt:67:  wmic netlogin get name,badpasswordcount
+wmic.txt:69:Are the screensavers password protected? What is the timeout? good use: see that all systems are
+complying with policy evil use: find systems to walk up and use (assuming physical access is an option)
+```
+- Keep in mind, Select-string is `not` case sensitive by default. If we wish for it to be, we can feed it the -CaseSensitive modifier. Now we will combine our original file search with our content filter.
+- #### Combining the Searches
+```powershell-session
+PS C:\htb> Get-Childitem –Path C:\Users\MTanaka\ -File -Recurse -ErrorAction SilentlyContinue | where {($_. Name -like "*.txt" -or $_. Name -like "*.py" -or $_. Name -like "*.ps1" -or $_. Name -like "*.md" -or $_. Name -like "*.csv")} | sls "Password","credential","key","UserName"
+
+New-PC-Setup.md:56:  - getting your vpn key
+CFP-Notes.txt:99:Lazzaro, N. (2004). Why we play games: Four keys to more emotion without story. Retrieved from:
+notes.txt:3:- Password: F@ll2022!
+wmic.txt:54:  wmic computersystem get username
+wmic.txt:67:  wmic netlogin get name,badpasswordcount
+wmic.txt:69:Are the screensavers password protected? What is the timeout? good use: see that all systems are
+complying with policy evil use: find systems to walk up and use (assuming physical access is an option)
+wmic.txt:83:  wmic netuse get Name,username,connectiontype,localname
+```
+- Our commands in the pipeline are getting longer, but we can easily clean up our view to make it readable. Looking at our results, though, it was a much smoother process to feed our file list results into our keyword search. Notice that there are a few `new` additions in our command string. We added a line to have the command continue if an error occurs (`-ErrorAction SilentlyContinue`). This helps us to ensure that our entire pipeline stays intact when it happens along a file or directory it cannot read. Finding and filtering content can be an interesting puzzle in and of itself. Determining what words and strings will produce the best results is an ever-evolving task and will often vary based on the customer.
+
+
+### Helpful Directories to Check
+- While looking for valuable files and other content, we can check many more valuable files in many different places. The list below contains just a few tips and tricks that can be used in our search for loot.
+	- Looking in a Users `\AppData\` folder is a great place to start. Many applications store `configuration files`, `temp saves` of documents, and more.
+	- A Users home folder `C:\Users\User\` is a common storage place; things like VPN keys, SSH keys, and more are stored. Typically in `hidden` folders. (`Get-ChildItem -Hidden`)
+	- The Console History files kept by the host are an endless well of information, especially if you land on an administrator's host. You can check two different points:
+	    - `C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt`
+	    - `Get-Content (Get-PSReadlineOption).HistorySavePath`
+	- Checking a user's clipboard may also yield useful information. You can do so with `Get-Clipboard`
+	- Looking at Scheduled tasks can be helpful as well.
+- These are just a few interesting places to check. Use it as a starting point to build and maintain your own checklist as your skill and experiences grow.
+- We are growing our CLI Kung Fu quickly, and it's time to move on to the next challenge. As you progress, please try the examples shown on your own to get a feel for what can be done and how you can modify them. We are jumping into working with Services and processes for our next lesson.
+
+
+### Questions
+- What defines the functions our objects have?
+	- Methods
+- What Cmdlet can show us the properties and methods of an object?
+	- Get-Member
+- If we wanted to look through a directory and all sub-directories for something, what modifier would we use with the Get-ChildItem Cmdlet?
+	- -Recurse
