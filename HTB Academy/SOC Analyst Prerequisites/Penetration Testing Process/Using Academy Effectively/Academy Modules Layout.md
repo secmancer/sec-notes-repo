@@ -1,509 +1,484 @@
-**Hack The Box Origins and Evolution**  
-- HTB was initially a competitive platform for experienced professionals to practice hacking.
-- It wasn't designed for beginners, offering only CTF-style challenges with no hints or guidance.
-- Over time, HTB recognized the need for beginner-friendly content, leading to the creation of HTB Academy.
-- HTB Academy aims to guide beginners while also helping advanced practitioners upskill.
-- HTB also launched **Starting Point**, a guided approach to help users ease into the platform and eventually tackle competitive boxes.
+Hack The Box was initially created to give technical professionals a safe place to practice and develop hacking skills and was not ideally suited for beginners starting their IT/Security journeys. Hack The Box began as solely a competitive CTF platform with a mix of machines and challenges, each awarding varying amounts of points depending on the difficulty, to be solved from a "black box" approach, with no walkthrough, guidance, or even hints. As the platform evolved, we saw the need for more beginner-friendly content and a guided learning approach to supplement the competitive side of the platform. With that goal in mind, HTB Academy was born. We aim to provide beginner-friendly content while helping mid-level and advanced practitioners upskill in various areas. We also offer Starting Point on the main HTB platform, which aims to help users become more comfortable attacking individual targets using a guided approach and eventually transitioning to solving boxes independently and even playing the competitive boxes. Each person likely has their personal opinion of HTB, and it may not be for everyone. However, we would like to take the time to explain our point of view as experienced IT specialists from various fields, with many years of combined experience and different journeys from beginners to where we are today.
 
-**IT Overview and Importance of Fundamentals**  
-- IT encompasses various subfields: Cybersecurity, Information Security, Network Administration, etc.
-- Becoming proficient in IT requires dedication and effort, especially in cybersecurity, which demands a deeper understanding of many areas (networking, systems, databases, etc.).
-- Expertise in penetration testing relies on having in-depth knowledge of the systems being tested.
-- For example, web developers may master web technologies like HTML, CSS, and SQL but can still make critical security errors.
+IT (Information Technology) is a major business function of most organizations that focuses on building, administering, and supporting the computer technology used by organizations to achieve their mission. IT is a term often used to encompass many specialized sub-disciplines like Cybersecurity, Information Security, Software Development, Database Administration, Network Administration, and more. To become "good" in this field requires considerable practice and effort. Cyber security can be a very challenging discipline because it requires the basic knowledge necessary for a typical IT specialist and a much deeper understanding of all areas (networking, Linux and Windows systems administration, scripting, databases, etc.). We don't need to be experts in every single area of IT. However, the more experience and knowledge we have, the easier our job as an IT security specialist or penetration tester will become. We cannot work confidently as penetration testers if we don't have a deep understanding of the technologies we are assessing. For example, a web developer focuses only on developing web applications and websites. This generally requires knowledge of HTML, JavaScript, CSS, SQL, and server-side programming languages, such as PHP. Even if the developer has over ten years of experience in his field, it only takes one mistake for the entire web server to be unusable or for data to be stolen. As an attacker, the trick is to find a way to identify and exploit these errors.
 
-**HTB’s Teaching Philosophy**  
-- HTB aims to provide a structured, efficient learning path that focuses on building fundamental skills.
-- Many tasks are designed to encourage critical thinking and analytical skills, which are essential for success in penetration testing.
-- Learning analytical thinking requires practice, similar to mastering a musical instrument—it can’t be taught in one module.
-- The goal is to craft professionals who question everything and find nuances others miss.
+With this in mind, we have laid a foundation for our students because, in our experience, it is hard to know where to start. We have structured and built our learning material so that it may seem difficult `at first`, but with time you will realize that this is the easiest and most efficient way to teach such complex material efficiently. We want to make the learning process as easy and efficient as possible while emphasizing the core fundamentals and returning to them repeatedly. For example, many of our tasks are set up to get you to think in a certain way. We do this to help you develop the essential analytical skills that are imperative to be successful in a field that can have so much uncertainty. We want to help craft professionals who see things differently and question everything, which ultimately can help deliver more value to clients if you're able to find nuanced issues that other testers miss. We can't teach analytical skills and the ability to dig deeper and "question everything" in one single module or path. This can be compared to playing a musical instrument. We can't learn to play the guitar well without considerable practice. We can learn everything about a guitar, the history of guitars, the name of every component, etc., but if we pick one up without practice, we will not be able to produce music that is equivalent to our knowledge of guitars. This is the same in the field of penetration testing. We may know everything about the history of computers and be able to describe every component, but without deep hands-on experience, we won't be able to perform penetration testing at a high level.
 
-**Hands-on Learning and Practice**  
-- Practical, hands-on experience is crucial to developing skills in penetration testing.
-- Knowing the theory or history of computers is not enough without the ability to apply knowledge in real-world scenarios.
-  
-**Module Structure**  
-- HTB has structured its learning materials to be challenging but effective.
-- Beginners or advanced users looking to improve can follow a recommended module sequence for specific penetration testing processes.
+The remainder of this section will explain how we have structured the modules in the way that we did to give you insight into our thought process and teaching philosophy. Our primary focus is creating engaging and empowering training resources that benefit individuals at `ALL` skill levels.
 
-![[0-PT-Process_png 1.png]]
+The module listing shown corresponds to the sequence we recommend for beginners or advanced users who are 'stuck' to follow, in order to improve in specific areas at each stage of the penetration testing process.
 
-
-**Pre-Engagement Stage**  
-- The stage where key details are documented and agreed upon.
-- Main commitments, tasks, scope, and limitations are outlined.
-- Contractual documents are drafted during this phase.
-- Essential information is exchanged between penetration testers and the client, depending on the type of assessment.
-
-![[0-PT-Process-PRE_png 1.png]]
-
-**Path: Information Gathering**  
-- Focuses on identifying target systems before examination or attack.
-- Customers may provide minimal information, such as a domain name or IP addresses.
-
-**Foundational Modules:**  
-1. **Learning Process**
-   - Learn how the brain works to improve learning efficiency.
-   - Tier 0, 12 sections, 3 hours.
-
-2. **Linux Fundamentals**
-   - Understand the structure of Linux for exploitation.
-   - Tier 0, 18 sections, 6 hours.
-   - Learn Windows basics to handle systems efficiently.
-   - Tier 0, 14 sections, 6 hours.
-
-4. **Introduction to Networking**
-   - Essential to understand communication between hosts in internal/external networks.
-   - Tier 0, 12 sections, 3 hours.
-
-5. **Introduction to Web Applications**
-   - Learn how web applications function and their processes.
-   - Tier 0, 17 sections, 3 hours.
-
-6. **Web Requests**
-   - Understand various types of web requests and misconfigurations for potential exploitation.
-   - Tier 0, 8 sections, 4 hours.
-
-7. **JavaScript Deobfuscation**
-   - Understand and deobfuscate JavaScript to analyze dynamic web pages.
-   - Tier 0, 11 sections, 4 hours.
-
-8. **Introduction to Active Directory**
-   - Learn how companies manage large networks using Active Directory.
-   - Tier 0, 16 sections, 7 hours.
-
-9. **Getting Started**
-   - Includes tips and tricks for beginners, a walkthrough for solving vulnerable boxes.
-   - Tier 0, 23 sections, 8 hours.
-
-### Information Gathering Notes:
-- **Essential Part of Any Assessment:**
-  - Information gathering is foundational to all assessments.
-  
-- **Importance of Information:**
-  - The conclusions and actions taken are based on the information available.
-  
-- **Retrieval Skills:**
-  - Knowing how to retrieve information effectively is critical.
-
-- **Goal-Oriented Approach:**
-  - The method of gathering information should align with the assessment's goals. 
-
-![[0-PT-Process-IG_png 1.png]]
-
-### Vulnerability Assessment Path Notes:
-
-- **Vulnerability Assessment:**
-  - **Next stage after information gathering.**
-  - Involves using vulnerability scanners and manual analysis to find weaknesses in the target systems.
-
-- **Influence on Exploitation Stage:**
-  - The quality of information gathered determines how successful the exploitation will be.
-  - Detailed notes and thoroughness during information gathering are crucial for effective vulnerability assessment.
-
-- **Common Pitfall:**
-  - Jumping into exploitation without sufficient information gathering can waste time and cause missed opportunities.
-
-- **Key Focus Areas:**
-  - **Organization and patience** are essential.
-  - Keeping track of findings to revisit during exploitation is critical.
-  - **Time management** is vital to avoid wasting time during assessments.
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process.png)
 
 ---
 
-### Modules and Tools for Vulnerability Assessment:
+## Pre-Engagement
 
-1. **Network Enumeration with Nmap:**
-   - Perform network enumeration, identify targets, and bypass security measures like firewalls and IPS/IDS.
-   - **Level:** Tier I (Easy, Offensive)
-   - **Duration:** 12 sections, 7 hours
+The pre-engagement stage is where the main commitments, tasks, scope, limitations, and related agreements are documented in writing. During this stage, contractual documents are drawn up, and essential information is exchanged that is relevant for penetration testers and the client, depending on the type of assessment.
 
-2. **Footprinting:**
-   - Examine services running on hosts, identify footprints, and learn how to exploit misconfigurations.
-   - **Level:** Tier II (Medium, Offensive)
-   - **Duration:** 20 sections, 2 days
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-PRE.png)
 
-3. **Information Gathering - Web Edition:**
-   - Focus on web servers and applications, identifying hidden or developer-focused apps that may provide vulnerabilities.
-   - **Level:** Tier II (Easy, Offensive)
-   - **Duration:** 10 sections, 7 hours
+There is only one path we can take from here:
 
-4. **OSINT: Corporate Recon:**
-   - Open-source intelligence for finding information about target companies from public sources, including social media.
-   - **Level:** Tier IV (Hard, Offensive)
-   - **Duration:** 23 sections, 2 days
+| **Path** | **Description** |
+| --- | --- |
+| `Information Gathering` | Next, we move towards the `Information Gathering` stage. Before any target systems can be examined and attacked, we must first identify them. It may well be that the customer will not give us any information about their network and components other than a domain name or just a listing of in-scope IP addresses/network ranges. Therefore, we need to get an overview of the target web application(s) or network before proceeding further. |
 
+At this stage in the process, we should have a strong foundation that can be built through the following fundamental modules:
 
-### Vulnerability Assessment Notes:
-- **Two Main Approaches:**
-  1. **Automated Scanning:**
-     - Uses tools to check for known vulnerabilities by comparing target systems against a vulnerability database.
-     - Common practice in companies for regularly scheduled vulnerability assessments.
+#### 1\. Learning Process
 
-  2. **Manual Analysis:**
-     - Involves looking beyond automated results to identify potential vulnerabilities that may not be detected by tools.
-     - Requires a deeper understanding of systems, creativity, and the ability to connect various information points.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/9/logo.png)](https://academy.hackthebox.com/module/details/9) | To acquire this knowledge as quickly and as well as possible, we need to know how a human being's `Learning Process` works and how to avoid stumbling blocks during the process. In this module we learn the art of how our brain works and how we can use this knowledge to increase our learning efficiency dramatically.
+Tier 0FundamentalGeneral12 Sections+10 3 hours
 
-- **Purpose:**
-  - Identify weaknesses that can be exploited for gaining unauthorized access or privileges.
+ |
 
-- **Key Skills Required:**
-  - **Technical Knowledge:** Understanding how systems and applications function.
-  - **Creativity:** Thinking outside the box to exploit gaps that may not be obvious.
-  - **Problem-Solving:** Recognizing and interpreting connections between different pieces of information.
+In addition, we need fundamental knowledge about the world's most widely used operating systems. This includes `Linux` and `Windows` operating systems. Before we attack these systems, we first need to know how they work, so we can then learn how to best exploit them.
 
-- **Importance in Security Audits:**
-  - Regular audits help ensure infrastructure remains protected against new vulnerabilities as databases and tools are updated.
+#### 2\. Linux Fundamentals
 
-![[0-PT-Process-VA_png 1.png]]
+|  |  |
+| --- | --- |
+| [![](/storage/modules/18/logo.png)](https://academy.hackthebox.com/module/details/18) | Linux is one of the most stable operating systems today, and ubiquitous in corporate networks. `Linux Fundamentals` is essential so we learn its structure and can take the appropriate steps to achieve our goals.
+Tier 0FundamentalGeneral18 Sections+10 6 hours
 
-### Paths After Vulnerability Assessment:
+ |
 
-1. **Exploitation:**
-   - Involves actively exploiting a discovered vulnerability when we do not yet have access to a system.
-   - Requires preparing the tools and methods necessary to exploit identified gaps.
+#### 3\. Windows Fundamentals
 
-2. **Post-Exploitation:**
-   - Focuses on **privilege escalation** after gaining initial access.
-   - Involves interacting with the system and elevating privileges to gain more control over the system.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/49/logo.png)](https://academy.hackthebox.com/module/details/49) | On the other hand, Windows is one of the more user-friendly operating systems that most companies find in their IT infrastructure. It is essential to understand `Windows Fundamentals` to be able to handle the operating system in the best possible way and achieve the desired results.
+Tier 0FundamentalGeneral14 Sections+10 6 hours
 
-3. **Lateral Movement:**
-   - Moving from the exploited system to other systems in the network.
-   - May or may not require privilege escalation, depending on the circumstances.
+ |
 
-4. **Information Gathering (Revisiting):**
-   - Returning to gather more information if there’s insufficient data to proceed.
-   - Helps refine the understanding of the target and identify further vulnerabilities or entry points.
+All connected systems communicate via different networks, routes, and protocols on the Internet or internal network. To understand how interconnected systems function and communicate, we must work through some theoretical components to understand key functionality and specific terms.
 
----
+#### 4\. Introduction to Networking
 
-### Key Concepts:
+|  |  |
+| --- | --- |
+| [![](/storage/modules/34/logo.png)](https://academy.hackthebox.com/module/details/34) | Most of the information world is interconnected, and understanding how hosts communicate and find each other on the Internet and within internal networks is another fundamental building block that we must master. Without deep understanding of `Networking`, we will not be effective in assessing interconnected systems.
+Tier 0FundamentalGeneral12 Sections+10 3 hours
 
-- **Analysis & Experience:**
-  - Analysis improves with experience, helping to connect patterns and recognize vulnerabilities.
-  - This is similar to learning to read; familiarity with specific behaviors and setups helps us identify weak points.
+ |
 
-- **Vulnerability Assessment:**
-  - Using automated tools to detect known vulnerabilities.
-  - These tools provide insight into potential weaknesses and can reveal new attack paths.
-  
----
+Web applications represent a separate category. We are comfortable using a web browser and browsing websites. But what happens behind the scenes when we interact with a web application? Before attacking web applications, we must focus on how they function and the processes that occur on the backend when using a web application.
 
-### Skills for Future Stages:
+#### 5\. Introduction to Web Applications
 
-1. **File Transfers:**
-   - Essential for transferring required data to exploit vulnerabilities.
-   - Mastering file transfer techniques for both **Windows** and **Linux** systems is critical to avoid dead ends.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/75/logo.png)](https://academy.hackthebox.com/module/details/75) | Computer networking on the Internet is standardized over many layers and protocols. The most used type of applications are `Web Applications`. These are designed so that any user with a browser and internet connection can access the web pages on the Internet.
+Tier 0FundamentalGeneral17 Sections+10 3 hours
 
-2. **Shells & Payloads:**
-   - Knowing how to generate and transfer the right payloads to gain further access.
-   - Shells and payloads must be customized for the specific environment and system.
+ |
 
-3. **Metasploit Framework:**
-   - A versatile tool that aids in various attacks, including enumeration and privilege escalation.
-   - Learning its capabilities can speed up the exploitation process, but understanding its limitations is also important.
+#### 6\. Web Requests
 
+|  |  |
+| --- | --- |
+| [![](/storage/modules/35/logo.png)](https://academy.hackthebox.com/module/details/35) | The communication takes place through different types of `Web Requests`, which the web application processes with specific functions. We will cover various types of web requests and how web browsers use them in the background. Some web server misconfigurations may even grant us access to the system without having to even exploit a web application directly.
+Tier 0FundamentalGeneral8 Sections+10 4 hours
 
-### Exploitation Notes
+ |
 
-- **Definition:**
-  - Exploitation refers to the process of attacking a system or application by leveraging identified vulnerabilities found during the Information Gathering and Vulnerability Assessment stages.
+#### 7\. JavaScript Deobfuscation
 
-- **Process Overview:**
-  - **Information Gathering Stage:** Collecting data about the target systems and applications.
-  - **Vulnerability Assessment Stage:** Analyzing the collected information to identify potential weaknesses.
-  - **Preparation:** Developing strategies and methods for executing attacks based on the assessed vulnerabilities.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/41/logo.png)](https://academy.hackthebox.com/module/details/41) | Most web applications nowadays are dynamic and include `JavaScript`, which we must also be familiar with to handle the dynamics of the web page correctly. JavaScript is a very popular programming language and is often obfuscated to make it difficult for attackers (and defenders) to understand the exact functionality of the code.
+Tier 0FundamentalDefensive11 Sections+10 4 hours
 
-- **Considerations:**
-  - Many organizations may use the same applications, but configuration choices vary based on individual objectives and requirements.
-  - Understanding the unique configurations and contexts of each organization is critical, as the same application can serve different purposes across different environments.
+ |
 
-- **Key Takeaway:**
-  - A successful exploitation relies on a thorough understanding of the vulnerabilities and the specific configurations of the target system, allowing for tailored attack strategies that align with the organization’s use of its applications.
+As we know, large IT networks need to be closely managed and secured. Most companies have a management structure, as managing hundreds or thousands of systems remotely or physically one by one would be unreasonable. For this reason, various technologies exist to facilitate and accelerate remote management of users, systems, and other resources.
 
-![[0-PT-Process-EX_png 1.png]]
+#### 8\. Introduction to Active Directory
 
-### Exploitation Stage Notes
+|  |  |
+| --- | --- |
+| [![](/storage/modules/74/logo.png)](https://academy.hackthebox.com/module/details/74) | Nowadays, most companies use a structured way of managing hundreds or thousands of computers and users. `Active Directory` is used to simplify and speed up management for administrators.
+Tier 0FundamentalGeneral16 Sections+10 7 hours
 
-#### Paths After Initial Access
-1. **Information Gathering:**
-   - Once access is obtained, regardless of privileges, gather local system information.
-   - Information will be used for privilege escalation, lateral movement, or data exfiltration.
-   - Leads to the Vulnerability Assessment stage for analyzing findings.
+ |
 
-2. **Post-Exploitation:**
-   - Focuses on escalating privileges if the highest rights have not yet been attained.
-   - Involves Information Gathering, Vulnerability Assessment, Exploitation, and Lateral Movement from an internal perspective.
-   - Can lead back to Information Gathering if highest privileges are already achieved.
+#### 9\. Getting Started
 
-3. **Lateral Movement:**
-   - Can skip directly to this stage if the highest privileges are obtained on a dual-homed system.
-   - Allows enumeration of hosts previously inaccessible.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/77/logo.png)](https://academy.hackthebox.com/module/details/77) | What causes the most significant difficulty for most when starting out? The answer to this is much easier than most may imagine because all we have to do is `Get Started`. This module includes many tips and tricks for those just starting out, examples of what technologies we will see and what attack methods we will use, and a guided walkthrough of solving a vulnerable box, culminating in solving (for some of us) our first box without assistance.
+Tier 0FundamentalOffensive23 Sections+10 8 hours
 
-4. **Proof-of-Concept:**
-   - After gaining high privileges (e.g., Domain Admin in Active Directory), create a proof-of-concept to detail and potentially automate paths and activities.
-   - Available for technical department use.
-
-#### Network Protocols and Web Exploitation
-- The exploitation stage is divided into two areas:
-  1. **Network Protocols:**
-     - Understanding common protocols and their vulnerabilities is critical.
-     - Web servers and applications may contain exploitable information.
-     - Remotely exposed services may have misconfigurations or public vulnerabilities.
-
-- **Web Exploitation:**
-  - A vital area due to the variety of web technologies and frequent updates.
-  - Emphasizes strong enumeration and exploitation skills as web applications are often primary targets during penetration testing.
-
-#### Key Modules in Exploitation
-1. **Password Attacks:**
-   - Techniques for obtaining credentials remotely and locally on Windows and Linux systems.
-   - *Tier I, Medium, 18 Sections, 8 hours.*
-
-2. **Attacking Common Services:**
-   - Covers attacks on essential network services and web applications.
-   - *Tier II, Medium, 19 Sections, 8 hours.*
-
-3. **Pivoting, Tunneling & Port Forwarding:**
-   - Using exploited systems to communicate between networks or internal systems.
-   - *Tier II, Medium, 18 Sections, 2 days.*
-
-4. **Active Directory Enumeration & Attacks:**
-   - Understanding Active Directory's vulnerabilities and management.
-   - *Tier II, Medium, 36 Sections, 7 days.*
-
-#### Web Exploitation Modules
-1. **Using Web Proxies:**
-   - Analyze and manipulate HTTP/HTTPS requests and responses.
-   - *Tier II, Easy, 15 Sections, 8 hours.*
-
-2. **Attacking Web Applications with Ffuf:**
-   - Discovering application parameters for further exploitation.
-   - *Tier 0, Easy, 13 Sections, 5 hours.*
-
-3. **Login Brute Forcing:**
-   - Gaining access through authentication mechanism vulnerabilities.
-   - *Tier II, Easy, 11 Sections, 6 hours.*
-
-4. **SQL Injection Fundamentals:**
-   - Exploiting databases linked to web applications.
-   - *Tier 0, Medium, 17 Sections, 8 hours.*
-
-5. **SQLMap Essentials:**
-   - Using SQLMap to streamline attacks against web application databases.
-   - *Tier II, Easy, 11 Sections, 8 hours.*
-
-6. **Cross-Site Scripting (XSS):**
-   - Leveraging XSS vulnerabilities for various attacks.
-   - *Tier II, Easy, 10 Sections, 6 hours.*
-
-7. **File Inclusion:**
-   - Exploiting vulnerabilities to access or execute files.
-   - *Tier 0, Medium, 11 Sections, 8 hours.*
-
-8. **Command Injections:**
-   - Executing system commands directly through command injection vulnerabilities.
-   - *Tier II, Medium, 12 Sections, 6 hours.*
-
-9. **Advanced Web Attacks:**
-   - Involves vulnerabilities like HTTP Verb Tampering, IDOR, and XXE.
-   - *Tier II, Medium, 18 Sections, 2 days.*
-
-10. **Attacking Common Applications:**
-    - Strategies for attacking commonly used web applications.
-    - *Tier II, Medium, 22 Sections, 2 days.*
-
-
-### Post-Exploitation Notes
-- **Overview**: 
-  - After exploiting services to gain access to a system, obtaining the highest privileges is often not achieved immediately.
-  - Services are usually configured to be "isolated" to thwart potential attackers.
-  
-- **Privilege Escalation**:
-  - The primary focus in this stage is to bypass restrictions and escalate privileges.
-  - It can be challenging to escalate privileges effectively.
-
-- **Understanding Operating Systems**:
-  - A deep understanding of how the operating systems (OS) function is crucial for successful escalation.
-  - Techniques must be adapted based on the specific OS in use.
-
-- **Linux vs. Windows**:
-  - Familiarity with both **Linux Privilege Escalation** and **Windows Privilege Escalation** techniques is essential.
-  - Each OS has its own unique methods and vulnerabilities that can be exploited for privilege escalation.
-
-![[0-PT-Process-POEX_png 1.png]]
-
-### Post-Exploitation Paths
-
-**Overview**: After gaining access to a system, there are four potential paths depending on the progress made during exploitation.
-
-| **Path**                       | **Description**                                                                                                                                                                                                                                                                                                                             |
-|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Information Gathering / Pillaging** | - Before escalating privileges, gather an overview of the system's inner workings. <br>- Identify users and available options. <br>- This step, known as Pillaging, is essential and not optional. <br>- Leads to the vulnerability assessment stage for analysis and evaluation of gathered information.                                                      |
-| **Exploitation**               | - If sensitive information about the system is discovered, it can be used to exploit local applications or services with higher privileges. <br>- This allows for executing commands with escalated privileges.                                                                                                                                                           |
-| **Lateral Movement**           | - Directly move to Lateral Movement if certain conditions are met. <br>- If the highest privileges are achieved on a dual-homed system connecting two networks, use this host to enumerate previously inaccessible hosts.                                                                                                                                       |
-| **Proof-of-Concept**          | - After gaining the highest privileges, create a Proof-of-Concept by exploiting an internal system. <br>- Even if not all systems are taken over, having Domain Admin privileges in an Active Directory environment allows for free movement across the network. <br>- Document and potentially automate paths and activities for the technical department. |
+ |
 
 ---
 
-### Considerations for Operating Systems
+## Information Gathering
 
-- During penetration testing, it’s crucial to assess how far an attacker could go within a network.
-- There are various versions of operating systems, including:
-  - **Windows**: XP, 7, 8, 10, 11, and Server 2008, 2012, 2016, 2019.
-  - **Linux Distributions**: Ubuntu, Debian, Parrot OS, Arch, Deepin, Red Hat, Pop!_OS, etc.
-- Understanding each system’s individual weak points is essential for effective exploitation.
+Information gathering is an essential part of any assessment. Because information, the knowledge gained from it, the conclusions we draw, and the steps we take are based on the information available. This information must be obtained from somewhere, so it is critical to know how to retrieve it and best leverage it based on our assessment goals.
+
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-IG.png)
+
+From this stage, the next part of our path is clear:
+
+| **Path** | **Description** |
+| --- | --- |
+| `Vulnerability Assessment` | The next stop on our journey is `Vulnerability Assessment`, where we use the information found to identify potential weaknesses. We can use vulnerability scanners that will scan the target systems for known vulnerabilities and manual analysis where we try to look behind the scenes to discover where the potential vulnerabilities might lie. |
+
+The information we gather in advance will influence the results of the `Exploitation` stage. From this, we can see if we have collected enough or dived deep enough. Time, patience, and personal commitment all play a significant role in information gathering. This is when many penetration testers tend to jump straight into exploiting a potential vulnerability. This often fails and can lead, among other things, to a significant loss of time. Before attempting to exploit anything, we should have completed thorough information gathering, keeping detailed notes along the way, focusing on things to hone in on once we get to the exploitation stage. Most assessments are time-based, so we don't want to waste time bouncing around, which could lead to us missing something critical. Organization and patience are vital while being as thorough as possible.
+
+#### 10\. Network Enumeration with Nmap
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/19/logo.png)](https://academy.hackthebox.com/module/details/19) | Suppose we limit our scope to the corporate network infrastructure. In that case, we should know how to perform the `Network Enumeration with Nmap`, identify the potential targets, and bypass security measures like firewalls, intrusion prevention, and intrusion detection systems (IPS/IDS).
+Tier IEasyOffensive12 Sections+10 7 hours
+
+ |
+
+#### 11\. Footprinting
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/112/logo.png)](https://academy.hackthebox.com/module/details/112) | Once we have identified the potential targets, we need to know how the individual services of these hosts can be examined. It is essential to understand what these services are used for, how they can be misconfigured, and how we, as attackers, can exploit them for our purposes. Because every service that communicates via the network leaves its own `Footprint` that we have to discover, knowing these footprints will give us a more accurate picture of what steps we can take next as we head into the exploitation phase.
+Tier IIMediumOffensive20 Sections+20 2 days
+
+ |
+
+#### 12\. Information Gathering - Web Edition
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/144/logo.png)](https://academy.hackthebox.com/module/details/144) | In most cases, web servers and web applications contain a great deal of information that can be used against them. Since web is a vast technical area in its own right, it will be treated separately. A web server can run many web applications, and some of these applications may be only intended for the developers and administrators. Therefore, finding these is an essential part of our `Information Gathering - Web Edition`. We also want to discover as many web applications as possible and gather detailed information on their structure and function which will help inform our attacks.
+Tier IIEasyOffensive10 Sections+20 7 hours
+
+ |
+
+Things can become quite complex when we want to find information about a target company on the Internet. After all, sifting through various sources and social media platforms is time-consuming and requires a great deal of attention and patience.
+
+#### 13\. OSINT: Corporate Recon
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/28/logo.png)](https://academy.hackthebox.com/module/details/28) | This type of research is called open-source intelligence (OSINT) and has many subcategories. In summary, this process involves gathering information from all publicly available sources. `OSINT: Corporate Recon`, gives us a clear and structured approach that will allow us to work through many different types of data and information sources. A simple example would be finding a private SSH key that allows us to log into the corporate network as an administrator.
+Tier IVHardOffensive23 Sections+200 2 days
+
+ |
 
 ---
 
-### Linux Privilege Escalation
+## Vulnerability Assessment
 
-- Most web servers and critical infrastructure services run on Linux.
-- A strong understanding of Linux fundamentals is necessary due to widespread usage.
-- Many misconfigurations can occur in Linux systems, and identifying these flaws is crucial for privilege escalation.
+The vulnerability assessment stage is divided into two areas. On the one hand, it is an approach to scan for known vulnerabilities using automated tools. On the other hand, it is analyzing for potential vulnerabilities through the information found. Many companies conduct regular vulnerability assessment audits to check their infrastructure for new known vulnerabilities and compare them with the latest entries in these tools' databases.
+
+An analysis is more about `thinking outside the box`. We try to discover gaps and opportunities to trick the systems and applications to our advantage and gain unintended access or privileges. This requires creativity and a deep technical understanding. We must connect the various information points we obtain and understand its processes.
+
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-VA.png)
+
+From this stage, there are four paths we can take, depending on how far we have come:
+
+| **Path** | **Description** |
+| --- | --- |
+| `Exploitation` | The first we can jump into is the `Exploitation` stage. This happens when we do not yet have access to a system or application. Of course, this assumes that we have already identified at least one gap and prepared everything necessary to attempt to exploit it. |
+| `Post-Exploitation` | The second way leads to the `Post-Exploitation` stage, where we escalate privileges on the target system. This assumes that we are already on the target system and can interact with it. |
+| `Lateral Movement` | Our third option is the `Lateral Movement` stage, where we move from the already exploited system through the network and attack other systems. Again, this assumes that we are already on a target system and can interact with it. However, privilege escalation is not strictly necessary because interacting with the system already allows us to move further in the network under certain circumstances. Other times we will need to escalate privileges before moving laterally. Every assessment is different. |
+| `Information Gathering` | The last option is returning to the `Information Gathering` stage when we do not have enough information on hand. Here we can dig deeper to find more information that will give us a more accurate view. |
+
+The ability to analyze comes with time and experience. However, it also needs to be trained because proper analysis makes connections between different points and information. Connecting this information about the target network or target system and our experience will often allow us to recognize specific patterns. We can compare this to reading. Once we have read certain words often enough, we will know that word at some point and understand what it means just by looking at the letters.
+
+#### 14\. Vulnerability Assessment
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/108/logo.png)](https://academy.hackthebox.com/module/details/108) | After summarizing the information, we can use automated tools to scan the defined targets to detect known vulnerabilities in the systems. First, however, we need to know the scoring systems and learn how to configure and use these tools efficiently. The `Vulnerability Assessment` performed by these tools can give us a better overview of the potential vulnerabilities and the configuration of the target system. From this, new paths and opportunities can be revealed to us to help us find another way into the system.
+Tier 0EasyOffensive17 Sections+10 2 hours
+
+ |
+
+#### 15\. File Transfers
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/24/logo.png)](https://academy.hackthebox.com/module/details/24) | Before we can efficiently exploit the potential vulnerabilities, we need to be familiar with techniques and methods to transfer the required data to the target systems. This is because manual adjustments are often necessary to circumvent specific restrictions. Knowing the ways and means to perform `File Transfers` is an essential component that we must master and there are many ways to transfer files both to and from Windows and Linux hosts. If we have found a potential gap and do not know how to transfer the corresponding data to the target system, it will lead us to a dead end.
+Tier 0MediumOffensive8 Sections+10 3 hours
+
+ |
+
+#### 16\. Shells & Payloads
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/115/logo.png)](https://academy.hackthebox.com/module/details/115) | We also need to know what files we need to transfer to gain initial or further access to the systems. For this, it is necessary to know what `Shell & Payloads` are. With the help of the transmitted payloads, we get access to the command line of the target system. Many things have to be taken into consideration because these shells and payloads must be adapted to the environment and the targeted system.
+Tier IMediumOffensive17 Sections+10 2 days
+
+ |
+
+#### 17\. Using the Metasploit-Framework
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/39/logo.png)](https://academy.hackthebox.com/module/details/39) | In addition, there is a handy framework called `Metasploit-Framework` that covers many attacks, enumeration, and privilege escalation methods and makes it faster for us to configure and execute. It can help us speed up our processes and get into the target systems in a semi-automated way. However, before we can do this, we need to understand what this tool is capable of and its limitations.
+Tier 0EasyOffensive15 Sections+10 5 hours
+
+ |
 
 ---
 
-### Windows Privilege Escalation
+## Exploitation
 
-- Modern Windows systems may have stronger security measures, but administrator errors can occur.
-- Understanding how to find misconfigurations in Windows systems is essential for privilege escalation.
+Exploitation is the attack performed against a system or application based on the potential vulnerability discovered during our information gathering and enumeration. We use the information from the `Information Gathering` stage, analyze it in the `Vulnerability Assessment` stage, and prepare the potential attacks. Often many companies and systems use the same applications but make different decisions about their configuration. This is because the same application can often be used for various purposes, and each organization will have different objectives.
 
-### Lateral Movement
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-EX.png)
 
-**Definition**: Lateral movement refers to the techniques used to navigate through a corporate network after gaining initial access. It is crucial for expanding access and privileges within the network.
+From this stage, there are four paths we can take, depending on how far we have come:
 
-**Key Points**:
-- **Purpose**: 
-  - Allows for overlapping with other internal hosts.
-  - Facilitates further privilege escalation within the current subnet or other areas of the network.
+| **Path** | **Description** |
+| --- | --- |
+| `Information Gathering` | Once we have initial access to the target system, regardless of how high our privileges are at that moment, we need to gather information about the local system. Whether we use this new information for privilege escalation, lateral movement, or data exfiltration does not matter. Therefore, before we can take any further steps, we need to find out what we are dealing with. This inevitably takes us to the vulnerability assessment stage, where we analyze and evaluate the information we find. |
+| `Post-Exploitation` | `Post-exploitation` is mainly about escalating privileges if we have not yet attained the highest possible rights on the target host. As we know, more opportunities are open to us with higher privileges. This path actually includes the stages `Information Gathering`, `Vulnerability Assessment`, `Exploitation`, and `Lateral Movement` but from an internal perspective on the target system. The direct jump to post-exploitation is less frequent, but it does happen. Because through the exploitation stage, we may already have obtained the highest privileges, and from here on, we start again at `Information Gathering`. |
+| `Lateral Movement` | From here, we can also skip directly over to `Lateral Movement`. This can come under different conditions. If we have achieved the highest privileges on a dual-homed system used to connect two networks, we can likely use this host to start enumerating hosts that were not previously available to us. |
+| `Proof-of-Concept` | We can take the last path after gaining the highest privileges by exploiting an internal system. Of course, we do not necessarily have to have taken over all systems. However, if we have gained the Domain Admin privileges in an Active Directory environment, we can likely move freely across the entire network and perform any actions we can imagine. So we can create the `Proof-of-Concept` from our notes to detail and potentially automate the paths and activities and make them available to the technical department. |
 
-- **Access Requirements**:
-  - Requires access to at least one system within the corporate network.
-  - Initial privileges gained during the Exploitation stage do not significantly impact the ability to move laterally, as movement can occur without administrator rights.
+This stage is so comprehensive that it has been divided into two distinct areas. The first category is general network protocols often used and present in almost every network. The actual exploitation of the potential and existing vulnerabilities is based on the adaptability and knowledge of the different network protocols we will be dealing with. In addition, we need to be able to create an overview of the existing network to understand its individual components' purposes. In most cases, web servers and applications contain a great deal of information that can be used against them. As stated previously, since web is a vast technical area in its own right, it will be treated separately. We are also interested in the remotely exposed services running on the target hosts, as these may have misconfigurations or known public vulnerabilities that we can leverage for initial access. Finally, existing users also play a significant role in the overall network.
 
-- **Importance**:
-  - Enables attackers to explore and exploit other systems, potentially increasing their foothold and control within the network.
-  
-- **Techniques**:
-  - Utilize tools and techniques to discover other hosts and services within the network.
-  - Can involve the use of legitimate network protocols and tools to avoid detection.
+#### 18\. Password Attacks
 
-![[0-PT-Process-LA_png 1.png]]
+|  |  |
+| --- | --- |
+| [![](/storage/modules/147/logo.png)](https://academy.hackthebox.com/module/details/147) | If potential usernames or passwords were found during our information gathering, we may be able to use them specifically to perform `Password Attacks` on the systems and applications and authenticate ourselves. This module covers various methods to obtain credentials both remotely and locally on Windows and Linux systems.
+Tier IMediumOffensive18 Sections+10 8 hours
 
-### Lateral Movement Paths
+ |
 
-After achieving lateral movement within a network, there are three possible paths to take:
+#### 19\. Attacking Common Services
 
-| **Path**                     | **Description**                                                                                                                                                               |
-|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Vulnerability Assessment** | - If the penetration test is ongoing, we can transition to the Vulnerability Assessment stage. <br> - Here, we analyze information gathered during pillaging to identify vulnerable network services or applications with exploitable authentication mechanisms. |
-| **Information Gathering / Pillaging** | - Following successful lateral movement, we can return to the Pillaging stage. <br> - This involves local information gathering on the newly accessed target system to collect valuable data for further exploitation. |
-| **Proof-of-Concept**         | - After completing the last lateral movement and finalizing the attack on the corporate network, we summarize our findings. <br> - This may include automating certain processes to demonstrate the vulnerabilities identified during the engagement. |
+|  |  |
+| --- | --- |
+| [![](/storage/modules/116/logo.png)](https://academy.hackthebox.com/module/details/116) | Due to the variety of attacks that can be carried out, attacks on specific network services and web applications differ. Therefore, these are separated into different modules, as many specific attacks can only be carried out against web applications. However, there are many essential network services that can almost always be found in any corporate network. Therefore, knowing how to `Attack Common Services` is another major concept that needs to be covered in detail.
+Tier IIMediumOffensive19 Sections+20 8 hours
 
-### Additional Notes
-- Both Lateral Movement and Pillaging require access to a previously exploited system.
-- Techniques related to these paths are covered in various modules, including:
-  - Getting Started
-  - Linux Privilege Escalation
-  - Windows Privilege Escalation
-  - Other relevant areas to enhance understanding and effectiveness during penetration testing activities.
+ |
 
-### Proof-of-Concept (POC)
-- **Definition**: 
-  - The Proof-of-Concept (POC) serves as evidence that a discovered vulnerability exists.
+#### 20\. Pivoting, Tunneling & Port Forwarding
 
-- **Administrator Actions**:
-  - Upon receiving the penetration test report, administrators will attempt to reproduce the vulnerabilities to confirm their existence.
-  - No changes to business-critical processes will be made without verifying the vulnerability.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/158/logo.png)](https://academy.hackthebox.com/module/details/158) | When `Pivoting`, the exploited system is used as a node between the external and internal networks or between different internal networks. This is used to communicate with the internal systems to which we can usually not establish a direct connection from the Internet or another host in the internal network. It does not matter whether these are hosted on-premise or in the cloud. Network access and restrictions can be configured to and from specific hosts, even in the cloud. `Tunnels` must also be created to be able to transfer data securely. `Port forwarding` is often used to forward a local port to the port of an exploited system.
+Tier IIMediumOffensive18 Sections+20 2 days
 
-- **Considerations in Large Networks**:
-  - Large networks often consist of multiple interoperating systems and dependencies, necessitating thorough checks after any changes.
-  - Changes can be time-consuming and costly, as they may affect various systems and processes.
+ |
 
-- **Impact of Vulnerability Findings**:
-  - Just because a vulnerability is identified does not mean remediation is straightforward.
-  - Administrators must ensure that fixes do not negatively impact other systems or business operations.
+#### 21\. Active Directory Enumeration & Attacks
 
-- **Role of POCs in Penetration Testing**:
-  - POCs are included in the documentation provided as part of a high-quality penetration test.
-  - They allow administrators to independently confirm and validate the reported vulnerabilities.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/143/logo.png)](https://academy.hackthebox.com/module/details/143) | As we already know, most corporate networks are managed by administrators using Active Directory. Therefore, it is crucial to become familiar with this technology and how `Active Directory Enumeration & Attacks` can affect it. Its complexity can often lead to various vulnerabilities. Especially when administrators are careless or imprecise, vulnerabilities often arise that can lead to a complete domain takeover.
+Tier IIMediumOffensive36 Sections+20 7 days
 
-![[0-PT-Process-POC_png 1.png]]
+ |
 
-### Post-Engagement Notes
+#### Web Exploitation
 
-- **Single Path**:
-  - **Path**: Post-Engagement
-  - **Description**: This stage involves optimizing and improving the documentation from the penetration testing process. The refined documentation is sent to the customer after thorough review.
+Web exploitation is the second part of the exploitation stage. Many different technologies, improvements, features, and enhancements have been developed in this area over the last few years, and things are constantly evolving. As a result, many different components come into play when dealing with web applications. This includes many kinds of databases that require differing command syntax to interact with. Due to the diversity of web applications available to companies and their prevalence worldwide, we must deal with this area separately and focus intently on it. Web applications present a vast attack surface and are often the main accessible targets during external penetration testing engagements, so strong web enumeration and exploitation skills are paramount.
 
-- **Information Utilization**:
-  - After gathering all relevant information and exploiting identified vulnerabilities, automating individual steps becomes relatively straightforward.
+#### 22\. Using Web Proxies
 
-### Introduction to Python 3
+|  |  |
+| --- | --- |
+| [![](/storage/modules/110/logo.png)](https://academy.hackthebox.com/module/details/110) | Web servers and web applications work based on the HTTP/HTTPS protocol. Like other protocols, this protocol has a fixed structure for requests and responses. We will focus on `Using Web Proxies` to analyze and manipulate these requests. The way these requests and their HTTP headers can be manipulated plays a significant role in the results we can get from them. Even the absence of specific HTTP headers or too many allowed HTTP methods can be very dangerous for the webserver or web application quickly and easily.
+Tier IIEasyOffensive15 Sections+20 8 hours
 
-- **Overview**:
-  - Python is recognized as one of the easiest programming languages to learn while being powerful enough for various applications, including automation.
+ |
 
-- **Benefits of Using Python for Automation**:
-  - **Ease of Learning**: Its straightforward syntax makes it accessible for beginners.
-  - **Powerful Capabilities**: Suitable for automating many steps in penetration testing processes.
-  - **Code Documentation**: Python allows the inclusion of comments, enhancing understanding of how vulnerabilities are exploited step-by-step.
+#### 23\. Attacking Web Applications with Ffuf
 
-- **Course Structure**:
-  - **Tier**: I
-  - **Difficulty**: Easy
-  - **Sections**: 14
-  - **Estimated Time**: 10 hours
+|  |  |
+| --- | --- |
+| [![](/storage/modules/54/logo.png)](https://academy.hackthebox.com/module/details/54) | After learning which attack methods these web applications can be subject to, we can use many of these attack methods and start `Attacking Web Applications with Ffuf`. Since every web server and application works with many different parameters due to its link with the database, these parameters can be discovered manually and automatically. For this purpose, there are procedures and different possibilities that allow us to find these parameters to exploit further possible vulnerabilities.
+Tier 0EasyOffensive13 Sections+10 5 hours
 
-### Post-Engagement Notes
+ |
 
-- **Objective**:
-  - Clean up exploited systems to ensure they cannot be exploited using the tools deployed during testing.
-  
-- **Risks**:
-  - Leaving behind tools (e.g., bind shells) on systems can compromise security and endanger the network.
-  
-- **Actions Required**:
-  - Remove all content transferred during the penetration test to restore the corporate network to its original state.
-  - Document system changes, successful exploitation attempts, captured credentials, and uploaded files in the report's appendices.
-    - This helps clients correlate any alerts they receive with testing activities to differentiate between test actions and actual attacks.
+#### 24\. Login Brute Forcing
 
-- **Documentation**:
-  - Reconcile all notes with ongoing documentation to ensure no steps are overlooked.
-  - Provide a comprehensive, well-formatted report to clients.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/57/logo.png)](https://academy.hackthebox.com/module/details/57) | Authentication mechanisms are a vital target. Using these, we can gain access to different user accounts with the help of specific vulnerabilities. One of the most effective ways of gaining access is through `Login Brute Forcing`. Almost all web applications that offer any kind of user-specific functions work with the help of some sort of authentication mechanisms.
+Tier IIEasyOffensive11 Sections+20 6 hours
 
-### Documentation & Reporting
+ |
 
-- **Importance**:
-  - Proper documentation and reporting are crucial for organizing notes and delivering high-quality client deliverables.
+#### 25\. SQL Injection Fundamentals
 
-- **Benefits**:
-  - Streamlines report preparation, saving time and effort.
-  - Helps optimize note-taking and organization to enhance efficiency.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/33/logo.png)](https://academy.hackthebox.com/module/details/33) | Whether it manages products or users, most every web application works with at least one database. This database is linked to the web application in some way and may open up another attack category called SQL Injection. With an understanding of `SQL Injection Fundamentals`, we can manipulate or exploit the database for our purposes by abusing functionality contained within the web application.
+Tier 0MediumOffensive17 Sections+10 8 hours
 
-- **Course Structure**:
-  - **Tier**: II
-  - **Difficulty**: Easy
-  - **Sections**: 8
-  - **Estimated Time**: 20 hours (2 days)
+ |
 
-### Attacking Enterprise Networks
+#### 26\. SQLMap Essentials
 
-- **Overview**:
-  - Maintaining a comprehensive view of the various stages, contents, and challenges involved in attacking enterprise networks is vital.
-  
-- **Challenges**:
-  - The complexity of large networks can be daunting, leading to potential oversight of essential vulnerabilities.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/58/logo.png)](https://academy.hackthebox.com/module/details/58) | Many of the attacks against web application database are summarized in a tool called SQLMap and should therefore also be learned to speed up our process after manual inspection. `SQLMap Essentials` should be learned to apply the tool appropriately and adapt it to the web application.
+Tier IIEasyOffensive11 Sections+20 8 hours
 
-- **Focus Areas**:
-  - Understand strategies for effectively attacking enterprise networks.
-  - Identify vulnerabilities associated with a multitude of systems within a network.
+ |
 
-- **Course Structure**:
-  - **Tier**: II
-  - **Difficulty**: Medium
-  - **Sections**: 14
-  - **Estimated Time**: 20 hours (2 days)
+#### 27\. Cross-Site Scripting (XSS)
 
-### Additional Note
-- Brief overview of HTB Academy exercises and question presentation will follow, detailing their approach to penetration testing training.
+|  |  |
+| --- | --- |
+| [![](/storage/modules/103/logo.png)](https://academy.hackthebox.com/module/details/103) | `Cross-site Scripting (XSS)` is another of the most common attack categories. These vulnerabilities can be leveraged to launch various attacks, such as phishing, session hijacking, and others. Among other things, we can also potentially take over web sessions from other users or even administrators.
+Tier IIEasyOffensive10 Sections+20 6 hours
+
+ |
+
+#### 28\. File Inclusion
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/23/logo.png)](https://academy.hackthebox.com/module/details/23) | Depending on the webserver configuration and the web application, some vulnerabilities allow us some type of `File Inclusion`. For example, we may be able to acess files on the target system or use our own to execute code without being provided access by the developers or administrators.
+Tier 0MediumOffensive11 Sections+10 8 hours
+
+ |
+
+#### 29\. Command Injections
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/109/logo.png)](https://academy.hackthebox.com/module/details/109) | We do not always need to attack the database using SQL Injections or XSS. Often direct `Command Injections` can be used to execute system commands. Some command injections are easier to spot than others, which may require advanced knowledge of identifying and bypassing filters in place.
+Tier IIMediumOffensive12 Sections+20 6 hours
+
+ |
+
+#### 30\. Web Attacks
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/134/logo.png)](https://academy.hackthebox.com/module/details/134) | The other top 10 most critical vulnerabilities include HTTP Verb Tampering, IDOR, and XXE. These are more advanced `Web Attacks`, as they require some security filters and encodings to be bypassed.
+Tier IIMediumOffensive18 Sections+20 2 days
+
+ |
+
+#### 31\. Attacking Common Applications
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/113/logo.png)](https://academy.hackthebox.com/module/details/113) | Common web applications might be customized by administrators but are nevertheless used worldwide. Therefore, it is also essential to know how to `Attack Common Applications`.
+Tier IIMediumOffensive22 Sections+20 2 days
+
+ |
+
+---
+
+## Post-Exploitation
+
+In most cases, when we exploit certain services for our purposes to gain access to the system, we usually do not obtain the highest possible privileges. Because services are typically configured in a certain way "isolated" to stop potential attackers, bypassing these restrictions is the next step we take in this stage. However, it is not always easy to escalate the privileges. After gaining in-depth knowledge about how these operating systems function, we must adapt our techniques to the particular operating system and carefully study how `Linux Privilege Escalation` and `Windows Privilege Escalation` work.
+
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-POEX.png)
+
+From this stage, there are four paths we can take, depending on how far we have come:
+
+| **Path** | **Description** |
+| --- | --- |
+| `Information Gathering / Pillaging` | Before we can begin escalating privileges, we must first get an overview of the inner workings of the exploited system. After all, we do not know which users are on the system and what options are available to us up to this point. This step is also known as `Pillaging`. This path is not optional, as with the others, but essential. Again, entering the `Information Gathering` stage puts us in this perspective. This inevitably takes us to the vulnerability assessment stage, where we analyze and evaluate the information we find. |
+| `Exploitation` | Suppose we have found sensitive information about the system and its' contents. In that case, we can use it to exploit local applications or services with higher privileges to execute commands with those privileges. |
+| `Lateral Movement` | From here, we can also skip directly over to `Lateral Movement`. This can come under different conditions. If we have achieved the highest privileges on a dual-homed system used to connect two networks, we can likely use this host to start enumerating hosts that were not previously available to us. |
+| `Proof-of-Concept` | We can take the last path after gaining the highest privileges by exploiting an internal system. Of course, we do not necessarily have to have taken over all systems. However, if we have gained the Domain Admin privileges in an Active Directory environment, we can likely move freely across the entire network and perform any actions we can imagine. So we can create the `Proof-of-Concept` from our notes to detail and potentially automate the paths and activities and make them available to the technical department. |
+
+After we have gained access to a system, we must be able to take further steps from within the system. During a penetration test, customers often want to find out how far an attacker could go in their network. There are many different versions of operating systems. For example, we may run into Windows XP, Windows 7, 8, 10, 11, and Windows Server 2008, 2012, 2016, and 2019. There are also different distributions for Linux-based operating systems, such as Ubuntu, Debian, Parrot OS, Arch, Deepin, Redhat, Pop!\_OS, and many others. No matter which of these systems we get into, we have to find our way around it and understand the individual weak points that a system can have from within.
+
+#### 32\. Linux Privilege Escalation
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/51/logo.png)](https://academy.hackthebox.com/module/details/51) | The vast majority of web servers that make up the World Wide Web run Linux. In addition, we will find many Linux-based servers hosting critical infrastructure services that individuals & organizations use to be more productive and efficient in their daily work. Because of this widespread use of Linux, we must understand the fundamentals. There are many ways to misconfigure Linux systems. Discovering these flaws and taking advantage of them to escalate privileges is covered in `Linux Privilege Escalation`.
+Tier IIEasyOffensive28 Sections+20 8 hours
+
+ |
+
+#### 33\. Windows Privilege Escalation
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/67/logo.png)](https://academy.hackthebox.com/module/details/67) | Modern Windows systems, now have stronger security precautions (if an organization is diligent with patching), but administrator errors are possible in any environment. There are many different ways to find the misconfigurations in Windows-based systems, and we need them for `Windows Privilege Escalation`.
+Tier IIMediumOffensive33 Sections+20 4 days
+
+ |
+
+---
+
+## Lateral Movement
+
+Lateral movement is one of the essential components for moving through a corporate network. We can use it to overlap with other internal hosts and further escalate our privileges within the current subnet or another part of the network. However, just like `Pillaging`, the `Lateral Movement` stage requires access to at least one of the systems in the corporate network. In the Exploitation stage, the privileges gained do not play a critical role in the first instance since we can also move through the network without administrator rights.
+
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-LA.png)
+
+There are three paths we can take from this stage:
+
+| **Path** | **Description** |
+| --- | --- |
+| `Vulnerability Assessment` | If the penetration test is not finished yet, we can jump from here to the `Vulnerability Assessment` stage. Here, the information already obtained from pillaging is used and analyzed to assess where the network services or applications using an authentication mechanism that we may be able to exploit are running. |
+| `Information Gathering / Pillaging` | After a successful lateral movement, we can jump into `Pillaging` once again. This is local information gathering on the target system that we accessed. |
+| `Proof-of-Concept` | Once we have made the last possible lateral movement and completed our attack on the corporate network, we can summarize the information and steps we have collected and perhaps even automate certain sections that demonstrate vulnerability to the vulnerabilities we have found. |
+
+Since both `Lateral Movement` and `Pillaging` require access to an already exploited system, these techniques and methods are covered in different modules, such as `Getting Started`, `Linux Privilege Escalation`, and `Windows Privilege Escalation`, and many others.
+
+---
+
+## Proof-of-Concept
+
+The `Proof-Of-Concept` (`POC`) is merely proof that a vulnerability found exists. As soon as the administrators receive our report, they will try to confirm the vulnerabilities found by reproducing them. After all, no administrator will change business-critical processes without confirming the existence of a given vulnerability. A large network may have many interoperating systems and dependencies that must be checked after making a change, which can take a considerable amount of time and money. Just because a pentester found a given flaw, it doesn't mean that the organization can easily remediate it by just changing one system, as this could negatively affect the business. Administrators must carefully test fixes to ensure no other system is negatively impacted when a change is introduced. PoCs are sent along with the documentation as part of a high-quality penetration test, allowing administrators to use them to confirm the issues themselves.
+
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-POC.png)
+
+From this stage, there is only one path we can take:
+
+| **Path** | **Description** |
+| --- | --- |
+| `Post-Engagement` | At this point, we can only go to the post-engagement stage, where we optimize and improve the documentation and send it to the customer after an intensive review. |
+
+When we already have all the information we have collected and have used the vulnerability to our advantage, it does not take much effort to automate the individual steps for this.
+
+#### 34\. Introduction to Python 3
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/88/logo.png)](https://academy.hackthebox.com/module/details/88) | Python is one of the easiest programming languages to learn, and it is also quite powerful. This makes it easy to automate many steps and, with the help of comments in our code, to understand exactly how the vulnerability is exploited step-by-step. Therefore, `Introduction to Python 3` will be sufficient for most aspects of automation once we understand the structure of this programming language.
+Tier IEasyGeneral14 Sections+10 5 hours
+
+ |
+
+---
+
+## Post-Engagement
+
+The `Post-Engagement` stage also includes cleaning up the systems we exploit so that none of these systems can be exploited using our tools. For example, leaving a bind shell on a web server that does not require authentication and is easy to find will do the opposite of what we are trying to do. In this way, we endanger the network through our carelessness. Therefore, it is essential to remove all content that we have transferred to the systems during our penetration test so that the corporate network is left in the same state as before our penetration test. We also should note down any system changes, successful exploitation attempts, captured credentials, and uploaded files in the appendices of our report so our clients can cross-check this against any alerts they receive to prove that they were a result of our testing actions and not an actual attacker in the network.
+
+In addition, we have to reconcile all our notes with the documentation we have written in the meantime to make sure we have not skipped any steps and can provide a comprehensive, well-formatted and neat report to our clients.
+
+#### 35\. Documentation & Reporting
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/162/logo.png)](https://academy.hackthebox.com/module/details/162) | We need to understand proper `Documentation and Reporting`, how to stay organized and take detailed notes, and how to write effectively and deliver high quality client deliverables. Practice in this area will simplify preparation of our reports and save us considerable time. This module also helps us optimize our notetaking and organization, which we must adapt to our needs to work as efficiently as possible.
+Tier IIEasyGeneral8 Sections+20 2 days
+
+ |
+
+#### 36\. Attacking Enterprise Networks
+
+|  |  |
+| --- | --- |
+| [![](/storage/modules/163/logo.png)](https://academy.hackthebox.com/module/details/163) | It is essential to get and keep an overall view of all these stages, their contents, and possible challenges. `Attacking Enterprise Networks` can be a daunting task, and we can get lost in the diversity of our options and overlook some of the essentials. So instead, we need to familiarize ourselves with how to attack such large networks and what vulnerabilities may exist with a large number of systems in a network.
+Tier IIMediumOffensive14 Sections+20 2 days
+
+ |
+
+Now that we've covered the general layout of Academy modules regarding the penetration testing process, we'll briefly discuss how exercises and questions are presented in HTB Academy.

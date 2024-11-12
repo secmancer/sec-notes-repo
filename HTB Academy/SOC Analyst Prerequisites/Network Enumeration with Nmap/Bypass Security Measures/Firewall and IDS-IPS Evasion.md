@@ -1,170 +1,297 @@
-### Nmap Firewall and IDS/IPS Evasion Techniques
+`Nmap` gives us many different ways to bypass firewalls rules and IDS/IPS. These methods include the fragmentation of packets, the use of decoys, and others that we will discuss in this section.
 
-#### **1. Overview**
-- Nmap provides multiple methods to evade **firewalls** and **IDS/IPS** systems:
-  - **Packet fragmentation**: Breaking up packets to avoid detection.
-  - **Decoys**: Masking the real scan by simulating multiple source IPs.
-  - **Custom scan techniques** (e.g., SYN, ACK) to bypass specific security mechanisms.
+---
 
-#### **2. Firewalls**
-- **Function**: A firewall monitors and controls incoming/outgoing network traffic based on predefined security rules.
-- **Packet handling**: 
-  - Firewalls decide whether to **pass**, **ignore** (drop), or **block** (reject) packets.
-  - **Dropped packets**: No response is sent back (host silently ignores the packet).
-  - **Rejected packets**: Returned with an **RST flag** or **ICMP error codes**.
-  
-  Common ICMP error codes:
-  - **Net Unreachable**
-  - **Net Prohibited**
-  - **Host Unreachable**
-  - **Host Prohibited**
-  - **Port Unreachable**
-  - **Protocol Unreachable**
+## Firewalls
 
-#### **3. IDS/IPS (Intrusion Detection and Prevention Systems)**
-- **IDS**: Monitors the network for potential attacks, analyzing and reporting suspicious activities.
-- **IPS**: Acts after detection, preventing the attack by blocking or mitigating the potential threat.
-  - IDS/IPS typically rely on **pattern matching** or **signature detection**.
-  - Example: If an IDS detects a port scan, an IPS might block further scanning attempts.
+A firewall is a security measure against unauthorized connection attempts from external networks. Every firewall security system is based on a software component that monitors network traffic between the firewall and incoming data connections and decides how to handle the connection based on the rules that have been set. It checks whether individual network packets are being passed, ignored, or blocked. This mechanism is designed to prevent unwanted connections that could be potentially dangerous.
 
-#### **4. TCP ACK Scans for Firewall and IDS/IPS Evasion**
-- **TCP ACK scans (-sA)** are more difficult for firewalls and IDS/IPS to filter compared to **SYN scans (-sS)** or **Connect scans (-sT)**.
-  - **SYN scan (-sS)**: Sends a packet with a SYN flag to initiate a connection. Firewalls typically block these.
-  - **ACK scan (-sA)**: Sends only an ACK flag, simulating part of an established connection, making it harder for firewalls to detect.
-  
-  **Why ACK Scans Work**:
-  - **Firewalls** usually block incoming **SYN** flags from external networks, but **ACK** flags are often passed through since they appear to be part of an already established connection.
-  - The response to an ACK scan reveals whether a port is **filtered** (no response) or **unfiltered** (RST response).
+---
 
-#### **5. Example Scans and Results**
+## IDS/IPS
 
-- **SYN Scan Example (-sS)**:
-  - Command: `sudo nmap 10.129.2.28 -p 21,22,25 -sS -Pn -n --disable-arp-ping --packet-trace`
-  - Results:
-    - **Port 21 (FTP)**: Filtered (no response).
-    - **Port 22 (SSH)**: Open (SYN-ACK response).
-    - **Port 25 (SMTP)**: Filtered (no response).
-  - Explanation: The firewall or IDS/IPS allows the connection to **port 22** but blocks **ports 21 and 25**.
+Like the firewall, the intrusion detection system (`IDS`) and intrusion prevention system (`IPS`) are also software-based components. `IDS` scans the network for potential attacks, analyzes them, and reports any detected attacks. `IPS` complements `IDS` by taking specific defensive measures if a potential attack should have been detected. The analysis of such attacks is based on pattern matching and signatures. If specific patterns are detected, such as a service detection scan, `IPS` may prevent the pending connection attempts.
 
-- **ACK Scan Example (-sA)**:
-  - Command: `sudo nmap 10.129.2.28 -p 21,22,25 -sA -Pn -n --disable-arp-ping --packet-trace`
-  - Results:
-    - **Port 21 (FTP)**: Filtered (no response).
-    - **Port 22 (SSH)**: Unfiltered (RST response).
-    - **Port 25 (SMTP)**: Filtered (no response).
-  - Explanation: The **ACK scan** shows **port 22** is **unfiltered** (RST flag), while **ports 21 and 25** are filtered, meaning the firewall is blocking them.
+---
 
-#### **6. Key Nmap Scan Options for Evasion**
-| **Option**                  | **Description**                                                     |
-|-----------------------------|---------------------------------------------------------------------|
-| `-sS`                       | Performs a **SYN scan**.                                            |
-| `-sA`                       | Performs an **ACK scan**.                                           |
-| `-Pn`                       | Disables ICMP Echo requests (ping), useful for avoiding ping blocks.|
-| `-n`                        | Disables DNS resolution, increasing speed and avoiding DNS detection.|
-| `--disable-arp-ping`        | Disables ARP ping (useful for evading network discovery mechanisms).|
-| `--packet-trace`            | Displays all packets sent and received during the scan.             |
+#### Determine Firewalls and Their Rules
 
-#### **7. SYN vs ACK Scan Results**
-- **SYN Scan (-sS)**:
-  - Detects whether a port is **open** (SYN-ACK) or **filtered** (no response).
-- **ACK Scan (-sA)**:
-  - Useful for determining whether a port is **filtered** or **unfiltered** (based on RST response).
+We already know that when a port is shown as filtered, it can have several reasons. In most cases, firewalls have certain rules set to handle specific connections. The packets can either be `dropped`, or `rejected`. The `dropped` packets are ignored, and no response is returned from the host.
 
-#### **8. Summary of Scan Responses**
-- **SYN Scan (-sS)**: Firewall attempts to establish a connection if port is open, sending **SYN-ACK**.
-- **ACK Scan (-sA)**: Host responds with **RST** if the port is unfiltered, indicating the port's state (open/closed).
+This is different for `rejected` packets that are returned with an `RST` flag. These packets contain different types of ICMP error codes or contain nothing at all.
 
-#### **9. Additional Considerations**
-- Use **ACK scans** for stealthy detection in environments with firewalls and IDS/IPS.
-- SYN scans are more direct but may trigger IDS/IPS alarms if firewalls are in place.
-  
-### Nmap Techniques to Detect IDS/IPS
+Such errors can be:
 
-#### **1. IDS (Intrusion Detection System)**
-- **Purpose**: Monitors traffic and alerts administrators to potential attacks.
-- **Function**: **Passive** monitoring of network connections for suspicious patterns (e.g., port scans, unusual traffic).
-- **Action**: The administrator decides how to respond (e.g., block IPs or take manual action).
+- Net Unreachable
+- Net Prohibited
+- Host Unreachable
+- Host Prohibited
+- Port Unreachable
+- Proto Unreachable
 
-#### **2. IPS (Intrusion Prevention System)**
-- **Purpose**: Works alongside IDS, but actively **prevents attacks** by taking automated actions.
-- **Function**: **Active** security system that blocks or restricts traffic deemed suspicious, based on predefined rules.
+Nmap's TCP ACK scan (`-sA`) method is much harder to filter for firewalls and IDS/IPS systems than regular SYN (`-sS`) or Connect scans (`sT`) because they only send a TCP packet with only the `ACK` flag. When a port is closed or open, the host must respond with an `RST` flag. Unlike outgoing connections, all connection attempts (with the `SYN` flag) from external networks are usually blocked by firewalls. However, the packets with the `ACK` flag are often passed by the firewall because the firewall cannot determine whether the connection was first established from the external network or the internal network.
 
-#### **3. Challenges in Detecting IDS/IPS**
-- Detection of IDS/IPS is difficult because these systems **passively monitor** network traffic.
-- When IDS/IPS detects suspicious activity, such as an aggressive scan, the administrator may block the IP address or take defensive measures.
-  
-#### **4. Methods to Detect IDS/IPS Presence**
-1. **Single Host Scan**: 
-   - Use a **single VPS** to scan the target network.
-   - If the VPS IP is **blocked** after scanning, this indicates potential IDS/IPS action.
-   - Continue scanning with a different VPS if the initial host is blocked.
+If we look at these scans, we will see how the results differ.
 
-2. **Aggressive Scanning of a Specific Port**:
-   - If the network reacts to aggressive scanning (e.g., by blocking the IP), it may have **IDS/IPS protection**.
-   - Test different scan techniques to gauge how the network responds.
+#### SYN-Scan
 
-#### **5. Decoy Scans**
-- **Purpose**: Mask the true origin of the scan by using **decoy IP addresses**.
-- **How it works**:
-  - Nmap inserts random **decoy IPs** in the packet headers.
-  - The real IP address is hidden among the decoys, making it harder for the IDS/IPS to trace the actual attacker.
-  - **Important**: The decoy IPs must be active (alive), or the target may block the request due to **SYN-flooding** prevention mechanisms.
-  
-- **Example Command**: `nmap -p 80 -sS -Pn -n --disable-arp-ping --packet-trace -D RND:5`
-  - **-D RND:5**: Generates 5 random decoy IP addresses.
-  
-#### **6. Testing Firewall Rules with Decoys**
-- **Goal**: Test if firewalls or IDS/IPS systems block specific subnets or regions.
-- Use the **-S** option to specify a source IP address manually.
-- Example command:
-  - `nmap -n -Pn -p 445 -O -S 10.129.2.200 -e tun0`
-  - **-S**: Scans using a different source IP.
-  - **-e tun0**: Sends requests through a specified network interface.
+Firewall and IDS/IPS Evasion
 
-#### **7. DNS Proxying for Evasion**
-- By default, Nmap performs **reverse DNS resolution**. DNS queries often pass through firewalls.
-- Use Nmap’s **--dns-server** option to specify trusted DNS servers, especially useful when scanning from within a **DMZ** (Demilitarized Zone).
-- You can also use **TCP port 53** as a source port to evade certain IDS/IPS filtering mechanisms.
-  
-- **Example**:  
-  - Use **--source-port 53** to scan from a DNS port that may be trusted by firewalls.
-  - Command: `nmap -p 50000 -sS -Pn -n --disable-arp-ping --packet-trace --source-port 53`
-  - This technique can exploit weaker IDS/IPS configurations for trusted ports.
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 21,22,25 -sS -Pn -n --disable-arp-ping --packet-trace
 
-#### **8. SYN Scans from Filtered Ports**
-- Scanning through a **filtered port** helps determine how strict the firewall is.
-- If SYN packets from a trusted port like **port 53** (DNS) bypass the firewall, the system may trust traffic from that port.
-  
-- **Example**:
-  - `nmap -p50000 -sS -Pn -n --disable-arp-ping --packet-trace`
-  - A SYN scan with **port 53** as the source port may trick the firewall into allowing the connection.
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-21 14:56 CEST
+SENT (0.0278s) TCP 10.10.14.2:57347 > 10.129.2.28:22 S ttl=53 id=22412 iplen=44  seq=4092255222 win=1024 <mss 1460>
+SENT (0.0278s) TCP 10.10.14.2:57347 > 10.129.2.28:25 S ttl=50 id=62291 iplen=44  seq=4092255222 win=1024 <mss 1460>
+SENT (0.0278s) TCP 10.10.14.2:57347 > 10.129.2.28:21 S ttl=58 id=38696 iplen=44  seq=4092255222 win=1024 <mss 1460>
+RCVD (0.0329s) ICMP [10.129.2.28 > 10.10.14.2 Port 21 unreachable (type=3/code=3) ] IP [ttl=64 id=40884 iplen=72 ]
+RCVD (0.0341s) TCP 10.129.2.28:22 > 10.10.14.2:57347 SA ttl=64 id=0 iplen=44  seq=1153454414 win=64240 <mss 1460>
+RCVD (1.0386s) TCP 10.129.2.28:22 > 10.10.14.2:57347 SA ttl=64 id=0 iplen=44  seq=1153454414 win=64240 <mss 1460>
+SENT (1.1366s) TCP 10.10.14.2:57348 > 10.129.2.28:25 S ttl=44 id=6796 iplen=44  seq=4092320759 win=1024 <mss 1460>
+Nmap scan report for 10.129.2.28
+Host is up (0.0053s latency).
 
-#### **9. Detecting and Bypassing Firewall Rules**
-- If a port appears filtered, using different source IPs or trusted ports may yield better results.
-- IDS/IPS may not filter traffic from **trusted ports** like DNS (port 53), allowing for evasion.
+PORT   STATE    SERVICE
+21/tcp filtered ftp
+22/tcp open     ssh
+25/tcp filtered smtp
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 
-#### **10. Key Nmap Options for IDS/IPS Detection and Evasion**
-| **Option**                  | **Description**                                             |
-|-----------------------------|-------------------------------------------------------------|
-| `-D RND:5`                  | Generates 5 random decoy IP addresses to hide the real IP.  |
-| `-S <IP>`                   | Sets a different source IP address.                         |
-| `--source-port <port>`       | Sends traffic through a trusted port (e.g., port 53 for DNS).|
-| `--dns-server <ns>`          | Specifies DNS servers for reverse DNS resolution.           |
-| `-e <interface>`             | Uses the specified network interface (e.g., `tun0`).        |
+Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+```
 
-#### **11. Firewall and IDS/IPS Detection Workflow**
-1. **Initial Scan**: Conduct an initial scan with a single VPS to gauge the target’s defenses.
-2. **Detection**: If your IP is blocked, switch to a new VPS or use decoys to hide your identity.
-3. **Evasion Techniques**:
-   - Use decoy IPs or change source IP addresses.
-   - Use trusted ports like **port 53** to bypass IDS/IPS filtering.
-   - Use **DNS proxying** to route queries through trusted DNS servers.
-4. **Quiet Scanning**: Avoid aggressive scans; keep interactions as stealthy as possible to avoid detection.
+#### ACK-Scan
 
-#### **12. Practical Example - SYN Scan from DNS Port**
-- **Scenario**: Scanning a filtered port (50000) from **port 53** to evade detection.
-- **Command**:  
-  - `nmap -p50000 -sS -Pn -n --disable-arp-ping --packet-trace --source-port 53`
-  - The scan succeeded because **port 53** is trusted by the target's firewall.
+Firewall and IDS/IPS Evasion
 
-For more details on IDS/IPS evasion techniques, refer to [Nmap Evasion Documentation](https://nmap.org).
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 21,22,25 -sA -Pn -n --disable-arp-ping --packet-trace
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-21 14:57 CEST
+SENT (0.0422s) TCP 10.10.14.2:49343 > 10.129.2.28:21 A ttl=49 id=12381 iplen=40  seq=0 win=1024
+SENT (0.0423s) TCP 10.10.14.2:49343 > 10.129.2.28:22 A ttl=41 id=5146 iplen=40  seq=0 win=1024
+SENT (0.0423s) TCP 10.10.14.2:49343 > 10.129.2.28:25 A ttl=49 id=5800 iplen=40  seq=0 win=1024
+RCVD (0.1252s) ICMP [10.129.2.28 > 10.10.14.2 Port 21 unreachable (type=3/code=3) ] IP [ttl=64 id=55628 iplen=68 ]
+RCVD (0.1268s) TCP 10.129.2.28:22 > 10.10.14.2:49343 R ttl=64 id=0 iplen=40  seq=1660784500 win=0
+SENT (1.3837s) TCP 10.10.14.2:49344 > 10.129.2.28:25 A ttl=59 id=21915 iplen=40  seq=0 win=1024
+Nmap scan report for 10.129.2.28
+Host is up (0.083s latency).
+
+PORT   STATE      SERVICE
+21/tcp filtered   ftp
+22/tcp unfiltered ssh
+25/tcp filtered   smtp
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.15 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.28` | Scans the specified target. |
+| `-p 21,22,25` | Scans only the specified ports. |
+| `-sS` | Performs SYN scan on specified ports. |
+| `-sA` | Performs ACK scan on specified ports. |
+| `-Pn` | Disables ICMP Echo requests. |
+| `-n` | Disables DNS resolution. |
+| `--disable-arp-ping` | Disables ARP ping. |
+| `--packet-trace` | Shows all packets sent and received. |
+
+Please pay attention to the RCVD packets and its set flag we receive from our target. With the SYN scan (`-sS`) our target tries to establish the TCP connection by sending a packet back with the SYN-ACK (`SA`) flags set and with the ACK scan (`-sA`) we get the `RST` flag because TCP port 22 is open. For the TCP port 25, we do not receive any packets back, which indicates that the packets will be dropped.
+
+---
+
+## Detect IDS/IPS
+
+Unlike firewalls and their rules, the detection of IDS/IPS systems is much more difficult because these are passive traffic monitoring systems. `IDS systems` examine all connections between hosts. If the IDS finds packets containing the defined contents or specifications, the administrator is notified and takes appropriate action in the worst case.
+
+`IPS systems` take measures configured by the administrator independently to prevent potential attacks automatically. It is essential to know that IDS and IPS are different applications and that IPS serves as a complement to IDS.
+
+Several virtual private servers (`VPS`) with different IP addresses are recommended to determine whether such systems are on the target network during a penetration test. If the administrator detects such a potential attack on the target network, the first step is to block the IP address from which the potential attack comes. As a result, we will no longer be able to access the network using that IP address, and our Internet Service Provider (`ISP`) will be contacted and blocked from all access to the Internet.
+
+- `IDS systems` alone are usually there to help administrators detect potential attacks on their network. They can then decide how to handle such connections. We can trigger certain security measures from an administrator, for example, by aggressively scanning a single port and its service. Based on whether specific security measures are taken, we can detect if the network has some monitoring applications or not.
+    
+- One method to determine whether such `IPS system` is present in the target network is to scan from a single host (`VPS`). If at any time this host is blocked and has no access to the target network, we know that the administrator has taken some security measures. Accordingly, we can continue our penetration test with another `VPS`.
+    
+
+Consequently, we know that we need to be quieter with our scans and, in the best case, disguise all interactions with the target network and its services.
+
+---
+
+## Decoys
+
+There are cases in which administrators block specific subnets from different regions in principle. This prevents any access to the target network. Another example is when IPS should block us. For this reason, the Decoy scanning method (`-D`) is the right choice. With this method, Nmap generates various random IP addresses inserted into the IP header to disguise the origin of the packet sent. With this method, we can generate random (`RND`) a specific number (for example: `5`) of IP addresses separated by a colon (`:`). Our real IP address is then randomly placed between the generated IP addresses. In the next example, our real IP address is therefore placed in the second position. Another critical point is that the decoys must be alive. Otherwise, the service on the target may be unreachable due to SYN-flooding security mechanisms.
+
+#### Scan by Using Decoys
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 80 -sS -Pn -n --disable-arp-ping --packet-trace -D RND:5
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-21 16:14 CEST
+SENT (0.0378s) TCP 102.52.161.59:59289 > 10.129.2.28:80 S ttl=42 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+SENT (0.0378s) TCP 10.10.14.2:59289 > 10.129.2.28:80 S ttl=59 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+SENT (0.0379s) TCP 210.120.38.29:59289 > 10.129.2.28:80 S ttl=37 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+SENT (0.0379s) TCP 191.6.64.171:59289 > 10.129.2.28:80 S ttl=38 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+SENT (0.0379s) TCP 184.178.194.209:59289 > 10.129.2.28:80 S ttl=39 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+SENT (0.0379s) TCP 43.21.121.33:59289 > 10.129.2.28:80 S ttl=55 id=29822 iplen=44  seq=3687542010 win=1024 <mss 1460>
+RCVD (0.1370s) TCP 10.129.2.28:80 > 10.10.14.2:59289 SA ttl=64 id=0 iplen=44  seq=4056111701 win=64240 <mss 1460>
+Nmap scan report for 10.129.2.28
+Host is up (0.099s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.15 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.28` | Scans the specified target. |
+| `-p 80` | Scans only the specified ports. |
+| `-sS` | Performs SYN scan on specified ports. |
+| `-Pn` | Disables ICMP Echo requests. |
+| `-n` | Disables DNS resolution. |
+| `--disable-arp-ping` | Disables ARP ping. |
+| `--packet-trace` | Shows all packets sent and received. |
+| `-D RND:5` | Generates five random IP addresses that indicates the source IP the connection comes from. |
+
+The spoofed packets are often filtered out by ISPs and routers, even though they come from the same network range. Therefore, we can also specify our VPS servers' IP addresses and use them in combination with "`IP ID`" manipulation in the IP headers to scan the target.
+
+Another scenario would be that only individual subnets would not have access to the server's specific services. So we can also manually specify the source IP address (`-S`) to test if we get better results with this one. Decoys can be used for SYN, ACK, ICMP scans, and OS detection scans. So let us look at such an example and determine which operating system it is most likely to be.
+
+#### Testing Firewall Rule
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -n -Pn -p445 -O
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-22 01:23 CEST
+Nmap scan report for 10.129.2.28
+Host is up (0.032s latency).
+
+PORT    STATE    SERVICE
+445/tcp filtered microsoft-ds
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 3.14 seconds
+```
+
+#### Scan by Using Different Source IP
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -n -Pn -p 445 -O -S 10.129.2.200 -e tun0
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-22 01:16 CEST
+Nmap scan report for 10.129.2.28
+Host is up (0.010s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 2.6.32 (96%), Linux 3.2 - 4.9 (96%), Linux 2.6.32 - 3.10 (96%), Linux 3.4 - 3.10 (95%), Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), Synology DiskStation Manager 5.2-5644 (94%), Linux 2.6.32 - 2.6.35 (94%), Linux 2.6.32 - 3.5 (94%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 4.11 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.28` | Scans the specified target. |
+| `-n` | Disables DNS resolution. |
+| `-Pn` | Disables ICMP Echo requests. |
+| `-p 445` | Scans only the specified ports. |
+| `-O` | Performs operation system detection scan. |
+| `-S` | Scans the target by using different source IP address. |
+| `10.129.2.200` | Specifies the source IP address. |
+| `-e tun0` | Sends all requests through the specified interface. |
+
+---
+
+## DNS Proxying
+
+By default, `Nmap` performs a reverse DNS resolution unless otherwise specified to find more important information about our target. These DNS queries are also passed in most cases because the given web server is supposed to be found and visited. The DNS queries are made over the `UDP port 53`. The `TCP port 53` was previously only used for the so-called "`Zone transfers`" between the DNS servers or data transfer larger than 512 bytes. More and more, this is changing due to IPv6 and DNSSEC expansions. These changes cause many DNS requests to be made via TCP port 53.
+
+However, `Nmap` still gives us a way to specify DNS servers ourselves (`--dns-server <ns>,<ns>`). This method could be fundamental to us if we are in a demilitarized zone (`DMZ`). The company's DNS servers are usually more trusted than those from the Internet. So, for example, we could use them to interact with the hosts of the internal network. As another example, we can use `TCP port 53` as a source port (`--source-port`) for our scans. If the administrator uses the firewall to control this port and does not filter IDS/IPS properly, our TCP packets will be trusted and passed through.
+
+#### SYN-Scan of a Filtered Port
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p50000 -sS -Pn -n --disable-arp-ping --packet-trace
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-21 22:50 CEST
+SENT (0.0417s) TCP 10.10.14.2:33436 > 10.129.2.28:50000 S ttl=41 id=21939 iplen=44  seq=736533153 win=1024 <mss 1460>
+SENT (1.0481s) TCP 10.10.14.2:33437 > 10.129.2.28:50000 S ttl=46 id=6446 iplen=44  seq=736598688 win=1024 <mss 1460>
+Nmap scan report for 10.129.2.28
+Host is up.
+
+PORT      STATE    SERVICE
+50000/tcp filtered ibm-db2
+
+Nmap done: 1 IP address (1 host up) scanned in 2.06 seconds
+```
+
+#### SYN-Scan From DNS Port
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p50000 -sS -Pn -n --disable-arp-ping --packet-trace --source-port 53
+
+SENT (0.0482s) TCP 10.10.14.2:53 > 10.129.2.28:50000 S ttl=58 id=27470 iplen=44  seq=4003923435 win=1024 <mss 1460>
+RCVD (0.0608s) TCP 10.129.2.28:50000 > 10.10.14.2:53 SA ttl=64 id=0 iplen=44  seq=540635485 win=64240 <mss 1460>
+Nmap scan report for 10.129.2.28
+Host is up (0.013s latency).
+
+PORT      STATE SERVICE
+50000/tcp open  ibm-db2
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.28` | Scans the specified target. |
+| `-p 50000` | Scans only the specified ports. |
+| `-sS` | Performs SYN scan on specified ports. |
+| `-Pn` | Disables ICMP Echo requests. |
+| `-n` | Disables DNS resolution. |
+| `--disable-arp-ping` | Disables ARP ping. |
+| `--packet-trace` | Shows all packets sent and received. |
+| `--source-port 53` | Performs the scans from specified source port. |
+
+---
+
+Now that we have found out that the firewall accepts `TCP port 53`, it is very likely that IDS/IPS filters might also be configured much weaker than others. We can test this by trying to connect to this port by using `Netcat`.
+
+#### Connect To The Filtered Port
+
+Firewall and IDS/IPS Evasion
+
+```shell-session
+secmancer@htb[/htb]$ ncat -nv --source-port 53 10.129.2.28 50000
+
+Ncat: Version 7.80 ( https://nmap.org/ncat )
+Ncat: Connected to 10.129.2.28:50000.
+220 ProFTPd
+```
+
+---
+
+## Firewall and IDS/IPS Evasion Labs
+
+In the next three sections, we get different scenarios to practice where we have to scan our target. Firewall rules and IDS/IPS protect the systems, so we need to use the techniques shown to bypass the firewall rules and do this as quiet as possible. Otherwise, we will be blocked by IPS.

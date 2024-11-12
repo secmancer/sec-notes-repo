@@ -1,106 +1,131 @@
-### Nmap Output Formats
+## Different Formats
 
-Nmap provides different options to **save scan results** in various formats, each useful for different purposes like further analysis or reporting.
+While we run various scans, we should always save the results. We can use these later to examine the differences between the different scanning methods we have used. `Nmap` can save the results in 3 different formats.
 
-- **Normal output** (`-oN`): Saved with the `.nmap` extension.
-- **Grepable output** (`-oG`): Saved with the `.gnmap` extension.
-- **XML output** (`-oX`): Saved with the `.xml` extension.
+- Normal output (`-oN`) with the `.nmap` file extension
+- Grepable output (`-oG`) with the `.gnmap` file extension
+- XML output (`-oX`) with the `.xml` file extension
 
-For convenience, you can save results in **all formats simultaneously** using the `-oA` option. This creates three output files with the same base name but different extensions.
+We can also specify the option (`-oA`) to save the results in all formats. The command could look like this:
 
-#### Example Command:
-```bash
-sudo nmap 10.129.2.28 -p- -oA target
-```
-- **`10.129.2.28`**: The target IP address.
-- **`-p-`**: Scans all ports.
-- **`-oA target`**: Saves the results as `target.nmap`, `target.gnmap`, and `target.xml`.
+Saving the Results
 
----
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p- -oA target
 
-### Nmap Scan Example
-```
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-16 12:14 CEST
 Nmap scan report for 10.129.2.28
 Host is up (0.0091s latency).
+Not shown: 65525 closed ports
 PORT      STATE SERVICE
 22/tcp    open  ssh
 25/tcp    open  smtp
 80/tcp    open  http
 MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+
+Nmap done: 1 IP address (1 host up) scanned in 10.22 seconds
 ```
-- **Scan Duration**: 10.22 seconds
-- **Results**: 
-  - **Ports open**: 22 (SSH), 25 (SMTP), 80 (HTTP)
-  - **Host up**: Detected with 0.0091s latency.
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.28` | Scans the specified target. |
+| `-p-` | Scans all ports. |
+| `-oA target` | Saves the results in all formats, starting the name of each file with 'target'. |
+
+If no full path is given, the results will be stored in the directory we are currently in. Next, we look at the different formats `Nmap` has created for us.
+
+Saving the Results
+
+```shell-session
+secmancer@htb[/htb]$ ls
+
+target.gnmap target.xml  target.nmap
+```
+
+#### Normal Output
+
+Saving the Results
+
+```shell-session
+secmancer@htb[/htb]$ cat target.nmap
+
+# Nmap 7.80 scan initiated Tue Jun 16 12:14:53 2020 as: nmap -p- -oA target 10.129.2.28
+Nmap scan report for 10.129.2.28
+Host is up (0.053s latency).
+Not shown: 4 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+25/tcp open  smtp
+80/tcp open  http
+MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
+
+# Nmap done at Tue Jun 16 12:15:03 2020 -- 1 IP address (1 host up) scanned in 10.22 seconds
+```
+
+#### Grepable Output
+
+Saving the Results
+
+```shell-session
+secmancer@htb[/htb]$ cat target.gnmap
+
+# Nmap 7.80 scan initiated Tue Jun 16 12:14:53 2020 as: nmap -p- -oA target 10.129.2.28
+Host: 10.129.2.28 ()	Status: Up
+Host: 10.129.2.28 ()	Ports: 22/open/tcp//ssh///, 25/open/tcp//smtp///, 80/open/tcp//http///	Ignored State: closed (4)
+# Nmap done at Tue Jun 16 12:14:53 2020 -- 1 IP address (1 host up) scanned in 10.22 seconds
+```
+
+#### XML Output
+
+Saving the Results
+
+```shell-session
+secmancer@htb[/htb]$ cat target.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Tue Jun 16 12:14:53 2020 as: nmap -p- -oA target 10.129.2.28 -->
+<nmaprun scanner="nmap" args="nmap -p- -oA target 10.129.2.28" start="12145301719" startstr="Tue Jun 16 12:15:03 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="12145301719" endtime="12150323493"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.129.2.28" addrtype="ipv4"/>
+<address addr="DE:AD:00:00:BE:EF" addrtype="mac" vendor="Intel Corporate"/>
+<hostnames>
+</hostnames>
+<ports><extraports state="closed" count="4">
+<extrareasons reason="resets" count="4"/>
+</extraports>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+</ports>
+<times srtt="52614" rttvar="75640" to="355174"/>
+</host>
+<runstats><finished time="12150323493" timestr="Tue Jun 16 12:14:53 2020" elapsed="10.22" summary="Nmap done at Tue Jun 16 12:15:03 2020; 1 IP address (1 host up) scanned in 10.22 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
+```
 
 ---
 
-### File Formats
+## Style sheets
 
-1. **Normal Output (`.nmap` file)**:
-    - Plain-text format showing a human-readable scan summary.
-    - Includes port status, service identification, and host information.
-    ```bash
-    Nmap scan report for 10.129.2.28
-    Host is up (0.053s latency).
-    PORT   STATE SERVICE
-    22/tcp open  ssh
-    25/tcp open  smtp
-    80/tcp open  http
-    MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
-    ```
+With the XML output, we can easily create HTML reports that are easy to read, even for non-technical people. This is later very useful for documentation, as it presents our results in a detailed and clear way. To convert the stored results from XML format to HTML, we can use the tool `xsltproc`.
 
-2. **Grepable Output (`.gnmap` file)**:
-    - Designed for easy parsing with command-line tools like `grep`.
-    - Useful for automated analysis.
-    ```bash
-    Host: 10.129.2.28 ()	Status: Up
-    Ports: 22/open/tcp//ssh///, 25/open/tcp//smtp///, 80/open/tcp//http///
-    ```
+Saving the Results
 
-3. **XML Output (`.xml` file)**:
-    - Structured format, suitable for importing into other tools or generating reports.
-    - Can be converted to HTML using `xsltproc`.
-    ```xml
-    <nmaprun>
-      <host>
-        <address addr="10.129.2.28" addrtype="ipv4"/>
-        <port protocol="tcp" portid="22">
-          <state state="open"/>
-          <service name="ssh"/>
-        </port>
-        <port protocol="tcp" portid="25">
-          <state state="open"/>
-          <service name="smtp"/>
-        </port>
-        <port protocol="tcp" portid="80">
-          <state state="open"/>
-          <service name="http"/>
-        </port>
-      </host>
-    </nmaprun>
-    ```
+```shell-session
+secmancer@htb[/htb]$ xsltproc target.xml -o target.html
+```
 
----
+If we now open the HTML file in our browser, we see a clear and structured presentation of our results.
 
-### Converting XML to HTML
-- **Purpose**: Converts the XML output into a more readable HTML format, useful for documentation.
-- **Command**: 
-    ```bash
-    xsltproc target.xml -o target.html
-    ```
-    - Converts `target.xml` to `target.html`.
-    - When opened in a browser, it provides a clear and structured view of the scan results.
+#### Nmap Report
 
----
-
-### Summary of Key Options:
-- **`-oN`**: Saves output as plain text.
-- **`-oG`**: Saves output in grepable format.
-- **`-oX`**: Saves output in XML.
-- **`-oA`**: Saves results in all formats (plain text, grepable, XML).
-
-These output formats allow flexibility in how results are stored, analyzed, or presented, especially useful for both technical and non-technical audiences.
+![image](https://academy.hackthebox.com/storage/modules/19/nmap-report.png)
 
 More information about the output formats can be found at: [https://nmap.org/book/output.html](https://nmap.org/book/output.html)
 

@@ -1,204 +1,82 @@
-### Information Gathering Phase
-- **Initiation**:
-  - Begins once the pre-engagement phase is complete and all contractual terms have been signed.
+Once the pre-engagement phase has been completed, and all parties have signed all contractual terms and conditions, the `information gathering` phase begins. Information gathering is an essential part of any security assessment. This is the phase in which we gather all available information about the company, its employees and infrastructure, and how they are organized. Information gathering is the most frequent and vital phase throughout the penetration testing process, to which we will return again and again.
 
-- **Purpose**:
-  - To gather comprehensive information about the company, its employees, and infrastructure.
-  - This phase is crucial for identifying potential vulnerabilities and attack vectors.
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-IG.png)
 
-- **Importance**:
-  - Information gathering is the most frequent and vital phase throughout the penetration testing process.
-  - It serves as the foundation for further testing and assessment activities, making it essential for successful outcomes.
+All the steps we take to exploit the vulnerabilities are based on the information we enumerate about our targets. This phase can be considered the cornerstone of any penetration test. We can obtain the necessary information relevant to us in many different ways. However, we can divide them into the following categories:
 
-- **Activities Involved**:
-  - **Research**: Collect data on the organization’s structure, technologies in use, and operational practices.
-  - **Employee Information**: Identify key personnel, their roles, and potential targets for social engineering.
-  - **Infrastructure Mapping**: Understand the organization's network architecture, systems, and applications.
+- Open-Source Intelligence
+- Infrastructure Enumeration
+- Service Enumeration
+- Host Enumeration
 
-- **Revisiting**:
-  - Information gathering is not a one-time activity; it may need to be revisited throughout the penetration testing process as new information is obtained or as tests evolve.
+All four categories should and must be performed by us for each penetration test. This is because the `information` is the main component that leads us to successful penetration testing and identifying security vulnerabilities. We can get this information anywhere, whether on social media, job postings, individual hosts and servers, or even the employees. Information is continually being spread and shared everywhere.
 
-- **Key Techniques**:
-  - **Open Source Intelligence (OSINT)**: Utilize publicly available information from various sources (e.g., social media, websites, public records) to gather insights.
-  - **Network Scanning**: Identify active devices and services within the organization’s network.
-  - **Passive and Active Reconnaissance**: Collect data without alerting the target (passive) and engage directly with the systems (active) to gather further information.
+After all, we humans communicate by exchanging information, but network components and services communicate similarly. Any exchange of information always has a specific purpose. For computer networks, the aim is always to trigger a particular process. Be it storing data in a database, registering, generating specific values, or forwarding the information.
 
-![[0-PT-Process-IG_png 1.png]]
-### Importance of Information Gathering
+---
 
-- **Foundation of Exploitation**:
-  - Exploitation steps depend on the information gathered about targets.
-  - Information gathering is considered the cornerstone of penetration testing.
+## Open-Source Intelligence
 
-- **Categories of Information Gathering**:
-  1. **Open-Source Intelligence (OSINT)**
-  2. **Infrastructure Enumeration**
-  3. **Service Enumeration**
-  4. **Host Enumeration**
+Let's assume that our client wants us to see what information we can find about his company on the internet. For this purpose, we use what is known as `Open Source Intelligence` (`OSINT`). OSINT is a process for finding publicly available information on a target company or individuals that allows the identification of events (i.e., public and private meetings), external and internal dependencies, and connections. OSINT uses public (Open-Source) information from freely available sources to obtain the desired results. We can often find security-relevant and sensitive information from companies and their employees. Usually, the people who share such information are unaware that they are not the only ones who can access it.
 
-- **Necessity**:
-  - All four categories must be performed for each penetration test.
-  - Information is crucial for identifying security vulnerabilities and achieving successful penetration testing.
+It is possible to find highly sensitive information such as passwords, hashes, keys, tokens, and much more that can give us access to the network within just a few minutes. Repositories on sites like [Github](https://github.com/) or other development platforms are often not set up correctly, and external viewers can see this information. If this type of sensitive information is found at the onset of testing, the Incident Handling and Report section of the RoE should describe the procedure for reporting these types of critical security vulnerabilities. Publicly published passwords or SSH keys represent a critical security gap if they have not already been removed or changed. Therefore, our client's administrator must review this information before we proceed.
 
-- **Information Sources**:
-  - Data can be found on social media, job postings, individual hosts and servers, or employee information.
-  - Information sharing is prevalent and continuous in both human and network communications.
+#### Private and Public SSH Keys
 
-### Open-Source Intelligence (OSINT)
+![](https://academy.hackthebox.com/storage/modules/90/searchcode3.png)
 
-- **Definition**:
-  - A process for finding publicly available information on a target company or individuals.
-  - Helps identify events, dependencies, and connections related to the target.
+Developers often share whole sections of code on [StackOverflow](https://stackoverflow.com/) to show other developers a better overview of how their code works to help them solve their problems. This type of information can also be found very quickly and used against the company. Our task is to find such security holes and have them closed. We can learn much more from the [OSINT: Corporate Recon](https://academy.hackthebox.com/course/preview/osint-corporate-recon) module. It shows many different techniques for how we can find such information.
 
-- **Sources**:
-  - Publicly available sources provide insights into sensitive information, including passwords, hashes, keys, and tokens.
-  - Repositories on platforms like GitHub can expose sensitive data if not properly secured.
+---
 
-- **Risks**:
-  - Finding sensitive information early on can lead to critical security gaps.
-  - Client administrators must review any discovered vulnerabilities before proceeding.
+## Infrastructure Enumeration
 
-### Infrastructure Enumeration
+During the infrastructure enumeration, we try to overview the company's position on the internet and intranet. For this, we use OSINT and the first active scans. We use services such as DNS to create a map of the client's servers and hosts and develop an understanding of how their `infrastructure` is structured. This includes name servers, mail servers, web servers, cloud instances, and more. We make an accurate list of hosts and their IP addresses and compare them to our scope to see if they are included and listed.
 
-- **Objective**:
-  - To map the company’s position on the internet and intranet using OSINT and active scans.
-  - Identify and document the organization’s servers, hosts, and infrastructure.
+In this phase, we also try to determine the company's security measures. The more precise this information is, the easier it will be to disguise our attacks (`Evasive Testing`). But identifying firewalls, such as web application firewalls, also gives us an excellent understanding of what techniques could trigger an alarm for our customer and what methods can be used to avoid that alarm.
 
-- **Key Components**:
-  - Identify name servers, mail servers, web servers, cloud instances, etc.
-  - Determine the company’s security measures to disguise attacks (Evasive Testing).
+Here, it also does not matter "where" we are positioned, whether we are trying to gain an overview of the infrastructure from the outside (`external`) or examining the infrastructure from the inside (`internal`) of the network. Enumeration from inside the network gives us a good overview of the hosts and servers that we can use as targets for a `Password Spraying` attack, in which we use one password to attempt to authenticate with as many different user names as possible, hoping for one successful authentication attempt to grant us a foothold in the network. All these methods and techniques used for this purpose will be looked at in more detail in the individual modules.
 
-- **Internal vs. External Enumeration**:
-  - External enumeration provides an overview from outside the network.
-  - Internal enumeration reveals targets for attacks like Password Spraying.
+---
 
-### Service Enumeration
+## Service Enumeration
 
-- **Purpose**:
-  - Identify services allowing interaction with hosts or servers.
-  - Understand the versions of services and their functionalities.
+In service enumeration, we identify services that allow us to interact with the host or server over the network (or locally, from an internal perspective). Therefore, it is crucial to find out about the service, what `version` it is, what `information` it provides us, and the `reason` it can be used. Once we understand the background of what this service has been provisioned for, some logical conclusions can be drawn to provide us with several options.
 
-- **Version Analysis**:
-  - Check if services are up to date to uncover potential vulnerabilities.
-  - Administrators may avoid updates to maintain functionality, leaving vulnerabilities exposed.
+Many services have a version history that allows us to identify whether the installed version on the host or server is actually up to date or not. This will also help us find security vulnerabilities that remain with older versions in most cases. Many administrators are afraid to change applications that work, as it could harm the entire infrastructure. Therefore, administrators often prefer to accept the risk of leaving one or more vulnerabilities open and maintaining the functionality instead of closing the security gaps.
 
-### Host Enumeration
+---
 
-- **Process**:
-  - Examine each host listed in the scoping document to identify the operating system and running services.
-  - Use OSINT and active scans for configuration insights.
+## Host Enumeration
 
-- **Vulnerabilities**:
-  - Older, unsupported services may still pose security risks.
-  - Internal enumeration may reveal "secure" services that are misconfigured.
+Once we have a detailed list of the customer's infrastructure, we examine every single host listed in the scoping document. We try to identify which `operating system` is running on the host or server, which `services` it uses, which `versions` of the services, and much more. Again, apart from the active scans, we can also use various OSINT methods to tell us how this host or server may be configured.
 
-- **Internal Examination**:
-  - Investigate hosts after exploitation to find sensitive files and data during the Post-Exploitation phase.
+We can find many different services, such as an FTP server that the company uses to exchange data between employees and even allows anonymous access. Even today, there are many hosts and servers that the manufacturers no longer support. However, vulnerabilities are still found for these older versions of operating systems and services, which then remain and endanger our client's entire infrastructure.
 
-### Pillaging
+It does not matter here whether we examine each host or server externally or internally. However, from the internal perspective, we will find services that are often not accessible from the outside. Therefore, many administrators become careless and often consider these services "secure" because they are not directly accessible from the internet. Thus, many misconfigurations are often discovered here due to these assumptions or lax practices. During host enumeration, we try to determine what role this host or server plays and what network components it communicates with. In addition, we must also identify which `services` it uses for this purpose and on which `ports` they are located.
 
-- **Definition**:
-  - Performed during the Post-Exploitation stage to collect sensitive information from exploited hosts.
-  - Involves gathering data such as employee names and customer information.
+During internal host enumeration, which in most cases comes after the successful `Exploitation` of one or more vulnerabilities, we also examine the host or server from the inside. This means we look for sensitive `files`, local `services`, `scripts`, `applications`, `information`, and other things that could be stored on the host. This is also an essential part of the `Post-Exploitation` phase, where we try to exploit and elevate privileges.
 
-- **Importance**:
-  - Information obtained can demonstrate the impact of an attack and guide privilege escalation and lateral movement within the network.
+---
 
-- **Module Coverage**:
-  - Pillaging is integrated within various modules rather than being a standalone category.
-  - Relevant modules include:
-    - Network Enumeration with Nmap
-    - Active Directory Enumeration & Attacks
-    - Linux and Windows Privilege Escalation
-    - Attacking Common Services and Applications
+## Pillaging
 
-Here are the detailed notes on the **Penetration Testing Process**, focusing on the importance of information gathering and its various categories:
+Another essential step is `Pillaging`. After hitting the `Post-Exploitation` stage, pillaging is performed to collect sensitive information locally on the already exploited host, such as employee names, customer data, and much more. However, this information gathering only occurs after exploiting the target host and gaining access to it.
 
-### Importance of Information Gathering
+The information we can obtain on the exploited hosts can be divided into many different categories and varies greatly. This depends on the purpose of the host and its positioning in the corporate network. The administrators taking the security measures for these hosts also play a significant role. Nevertheless, such information can show the `impact` of a potential attack on our client and be used for further steps to `escalate our privileges` or `move laterally` further in the network.
 
-- **Foundation of Exploitation**:
-  - Exploitation steps depend on the information gathered about targets.
-  - Information gathering is considered the cornerstone of penetration testing.
+- Note that `HTB Academy` does not have a module explicitly focused on pillaging.
 
-- **Categories of Information Gathering**:
-  1. **Open-Source Intelligence (OSINT)**
-  2. **Infrastructure Enumeration**
-  3. **Service Enumeration**
-  4. **Host Enumeration**
+This is intentional for reasons we will clarify here. Pillaging alone is not a stage or a subcategory as many often describe but an integral part of the information gathering and privilege escalation stages that is inevitably performed locally on target systems.
 
-- **Necessity**:
-  - All four categories must be performed for each penetration test.
-  - Information is crucial for identifying security vulnerabilities and achieving successful penetration testing.
+- `Pillaging is explained in other modules separately, where we consider the corresponding steps valuable and necessary.`
 
-- **Information Sources**:
-  - Data can be found on social media, job postings, individual hosts and servers, or employee information.
-  - Information sharing is prevalent and continuous in both human and network communications.
+Here is a small list of modules where `Pillaging` is covered, but this topic will be covered in many other modules as well:
 
-### Open-Source Intelligence (OSINT)
+|  |  |  |
+| --- | --- | --- |
+| `Network Enumeration with Nmap` | `Getting Started` | `Password Attacks` |
+| `Active Directory Enumeration & Attacks` | `Linux Privilege Escalation` | `Windows Privilege Escalation` |
+| `Attacking Common Services` | `Attacking Common Applications` | `Attacking Enterprise Networks` |
 
-- **Definition**:
-  - A process for finding publicly available information on a target company or individuals.
-  - Helps identify events, dependencies, and connections related to the target.
-
-- **Sources**:
-  - Publicly available sources provide insights into sensitive information, including passwords, hashes, keys, and tokens.
-  - Repositories on platforms like GitHub can expose sensitive data if not properly secured.
-
-- **Risks**:
-  - Finding sensitive information early on can lead to critical security gaps.
-  - Client administrators must review any discovered vulnerabilities before proceeding.
-
-### Infrastructure Enumeration
-
-- **Objective**:
-  - To map the company’s position on the internet and intranet using OSINT and active scans.
-  - Identify and document the organization’s servers, hosts, and infrastructure.
-
-- **Key Components**:
-  - Identify name servers, mail servers, web servers, cloud instances, etc.
-  - Determine the company’s security measures to disguise attacks (Evasive Testing).
-
-- **Internal vs. External Enumeration**:
-  - External enumeration provides an overview from outside the network.
-  - Internal enumeration reveals targets for attacks like Password Spraying.
-
-### Service Enumeration
-
-- **Purpose**:
-  - Identify services allowing interaction with hosts or servers.
-  - Understand the versions of services and their functionalities.
-
-- **Version Analysis**:
-  - Check if services are up to date to uncover potential vulnerabilities.
-  - Administrators may avoid updates to maintain functionality, leaving vulnerabilities exposed.
-
-### Host Enumeration
-
-- **Process**:
-  - Examine each host listed in the scoping document to identify the operating system and running services.
-  - Use OSINT and active scans for configuration insights.
-
-- **Vulnerabilities**:
-  - Older, unsupported services may still pose security risks.
-  - Internal enumeration may reveal "secure" services that are misconfigured.
-
-- **Internal Examination**:
-  - Investigate hosts after exploitation to find sensitive files and data during the Post-Exploitation phase.
-
-### Pillaging
-
-- **Definition**:
-  - Performed during the Post-Exploitation stage to collect sensitive information from exploited hosts.
-  - Involves gathering data such as employee names and customer information.
-
-- **Importance**:
-  - Information obtained can demonstrate the impact of an attack and guide privilege escalation and lateral movement within the network.
-
-- **Module Coverage**:
-  - Pillaging is integrated within various modules rather than being a standalone category.
-  - Relevant modules include:
-    - Network Enumeration with Nmap
-    - Active Directory Enumeration & Attacks
-    - Linux and Windows Privilege Escalation
-    - Attacking Common Services and Applications
-
+We will interact with more than `150 targets` during the Penetration Tester Job Role Path and perform nine simulated mini penetration tests, giving us plenty of opportunities to work on and practice this topic. Furthermore, operating system-specific modules should be considered from the pillaging point of view because much of what is shown in those modules can be used for information retrieval or privilege escalation on the target systems.

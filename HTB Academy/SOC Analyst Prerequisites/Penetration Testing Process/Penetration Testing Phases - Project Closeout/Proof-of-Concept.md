@@ -1,90 +1,15 @@
 `Proof of Concept` (`PoC`) or `Proof of Principle` is a project management term. In project management, it serves as proof that a project is feasible in principle. The criteria for this can lie in technical or business factors. Therefore, it is the basis for further work, in our case, the necessary steps to secure the corporate network by confirming the discovered vulnerabilities. In other words, it serves as a decision-making basis for the further course of action. At the same time, it enables risks to be identified and minimized.
 
-![[0-PT-Process-POC_png 1.png]]
+![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-POC.png)
 
-### Lateral Movement Stage Overview
+This project step is often integrated into the development process for new application software (prototyping) or IT security solutions. For us in information security, this is where we prove vulnerabilities in operating systems or application software. We use this PoC to prove that a security problem exists so that the developers or administrators can validate it, reproduce it, see the impact, and test their remediation efforts. One of the most common examples used to prove software vulnerabilities is executing the calculator (calc.exe on Windows) on the target system. In principle, the PoC also assesses the probability of success of system access from actual exploitation.
 
-- **Purpose**: Test how far an attacker can **move** within the network and what vulnerabilities can be exploited from an **internal perspective**.
-  - This stage often includes revisiting previous phases (e.g., **Information Gathering**, **Vulnerability Assessment**, etc.).
-  - **Lateral Movement** is essential when direct privilege escalation on the initial system is not possible, but moving through the network is still achievable.
+A `PoC` can have many different representations. For example, `documentation` of the vulnerabilities found can also constitute a PoC. The more practical version of a PoC is a `script` or `code` that automatically exploits the vulnerabilities found. This demonstrates the flawless exploitation of the vulnerabilities. This variant is straightforward for an administrator or developer because they can see what steps our script takes to exploit the vulnerability.
 
-### Key Phases in Lateral Movement
+However, there is one significant disadvantage that has occurred from time to time. Once the administrators and developers have received such a script from us, it is easy for them to "fight" against our script. They focus on changing the systems so that the script we created no longer works. The important thing is that the script is only `one way` of exploiting a given vulnerability. Therefore, working against our script instead of with it and modifying and securing the systems so that our script no longer works does not mean that the information obtained from the script cannot be obtained in another way. It is an important aspect that should be discussed with the administrators and developers and explicitly mentioned and pointed out.
 
-1. **Pivoting**:
-   - **Objective**: Use the compromised system as a **proxy** to access otherwise **inaccessible internal systems**.
-   - **Technique**: Redirect network requests from the attacker’s machine through the compromised host to the internal network. This is also known as **Tunneling**.
-     - Example: Compromising a host to access systems that are not publicly reachable (e.g., printers, internal servers).
-   - **Importance**: Allows scanning and exploiting non-routable networks, providing deeper access into the target environment.
+The report they receive from us should help them see the entire picture, focus on the broader issues, and provide clear remediation advice. Including an attack chain walkthrough in the event of domain compromise during an internal is a great way to show how multiple flaws can be combined and how fixing one flaw will break the chain, but the other flaws will still exist. If these are not also fixed, there may be another path to get to the point where the attack chain was remediated and continue onwards. We should also drive this point home during our report review meeting.
 
-2. **Evasive Testing**:
-   - **Goal**: Avoid detection by bypassing security defenses such as **IPS/IDS**, **EDR**, or **network segmentation**.
-   - **Methods**: Adapt attack techniques based on how defenses operate and what alerts they trigger.
-   - **Focus**: Understanding **internal threat monitoring** systems and how to disguise lateral movement activities to evade detection.
+For example, if a user uses the password `Password123`, the underlying vulnerability is not the password but the `password policy`. If a Domain Admin is found to be using that password and it is changed, that one account will now have a stronger password, but the problem of weak passwords will likely still be endemic within the organization.
 
-3. **Information Gathering (Internal)**:
-   - **Overview**: After gaining access to the internal network, revisit the **Information Gathering** phase.
-   - **Scope**: Discover all reachable hosts and servers, then **enumerate** them individually to understand their roles, services, and potential weaknesses.
-   - **Internal Perspective**: Gathering information from **inside the network** reveals more hosts, configurations, and network architecture not visible externally.
-
-4. **Vulnerability Assessment (Internal)**:
-   - **Difference**: Internal vulnerability assessments often reveal more vulnerabilities than those exposed to the internet.
-     - More **configuration errors** and **access control issues** exist within internal networks.
-   - **Focus**: Identify vulnerabilities based on user roles and **group privileges** (e.g., a compromised developer account may have access to critical resources).
-   - **Targeted Information**: Look for **internal documents**, shared resources, and information that could further the attack or provide sensitive data.
-
-5. **(Privilege) Exploitation**:
-   - **Objective**: Use identified vulnerabilities to **escalate privileges** and gain access to more sensitive systems.
-   - **Methods**:
-     - **Cracking passwords** and **hashes** to gain higher-level access.
-     - Using existing credentials on other systems to exploit **shared accounts**.
-     - **Pass-the-hash**: A technique where intercepted hashes (e.g., NTLMv2 hashes) are used to authenticate without cracking.
-     - Tools like **Responder** can capture hashes for privilege escalation.
-   - **Outcome**: The goal is to move through the network and gain access to **multiple hosts** and **servers**.
-
-6. **Post-Exploitation (for each compromised system)**:
-   - **Objective**: Once new hosts or servers are accessed, go through the **Post-Exploitation** steps again for each system.
-     - **Collect data** from the system, created users, and business information.
-   - **Data Handling**: Be mindful of **data sensitivity rules** as outlined in the engagement contract.
-
----
-
-### Pivoting
-
-- **Purpose**: Enable access to internal systems that are **not directly accessible** from the attacker's machine.
-- **How it Works**:
-  - The compromised host acts as a **gateway** or **proxy** for the attacker’s machine.
-  - Allows access to **non-routable** internal networks, enabling further scanning and exploitation.
-  
-- **Example**: Compromising a device within a network (e.g., a server) and using it to reach systems that are not externally accessible (e.g., printers, local databases).
-
----
-
-### Privilege Exploitation & Pass-the-Hash
-
-- **Pass-the-Hash Attack**: 
-  - Intercept a **NTLMv2 hash** from a compromised system.
-  - Use the hash to **authenticate** as another user (e.g., an admin) on other systems without needing the password.
-  
-- **Privilege Escalation**:
-  - Essential for gaining higher-level access, such as **root** on Linux or **domain administrator** on Windows.
-  - Privileged access opens the door to **further lateral movement** and **network control**.
-
----
-
-### Post-Exploitation for Each System
-
-- **System Review**: Once a new system is compromised, conduct **Post-Exploitation** for each:
-  - **Collect information** on user accounts, sensitive files, and system configurations.
-  - **Document findings** thoroughly for the final report.
-  
-- **Proof-of-Concept**: 
-  - After completing the assessment, demonstrate the findings and help the client reproduce the results for remediation.
-
----
-
-### Key Takeaways
-
-- **Lateral Movement** is critical to testing **real-world attacker scenarios**, showing how an attacker could move across the network to gain further access or control.
-- **Pivoting** helps access otherwise unreachable systems, allowing for **deeper network penetration**.
-- **Privilege Escalation** and tools like **Responder** or **pass-the-hash** are essential techniques for gaining broader access and moving laterally.
-- **Post-Exploitation** must be performed for each compromised system, carefully handling sensitive data as per the engagement rules.
+If the password policy followed high standards, the user would not be able to use such a weak password. Administrators and developers are responsible for the functionality and the quality of their systems and applications. Furthermore, high quality stands for high standards, which we should emphasize through our remediation recommendations.

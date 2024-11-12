@@ -1,66 +1,201 @@
-### Nmap Performance Optimization Notes
+---
 
-#### **1. Scanning Performance**
-- Scanning speed and efficiency are critical when dealing with **extensive networks** or **low network bandwidth**.
-- Key options for controlling scan performance in Nmap:
-  - **Speed**: `-T <0-5>` adjusts scan timing templates (0 = slowest, 5 = fastest).
-  - **Parallelism**: `--min-parallelism <number>` defines how many operations are run in parallel.
-  - **Timeouts**: `--max-rtt-timeout <time>` specifies the maximum Round-Trip-Time (RTT) for packets.
-  - **Packet Rate**: `--min-rate <number>` sets the number of packets sent per second.
-  - **Retries**: `--max-retries <number>` controls how many retry attempts are made for each port.
+Scanning performance plays a significant role when we need to scan an extensive network or are dealing with low network bandwidth. We can use various options to tell `Nmap` how fast (`-T <0-5>`), with which frequency (`--min-parallelism <number>`), which timeouts (`--max-rtt-timeout <time>`) the test packets should have, how many packets should be sent simultaneously (`--min-rate <number>`), and with the number of retries (`--max-retries <number>`) for the scanned ports the targets should be scanned.
 
-#### **2. Timeouts (RTT)**
-- **RTT (Round-Trip-Time)**: The time taken to receive a response after sending a packet.
-  - Default initial RTT timeout: **100ms**.
-  - Example:
-    - **Default scan**: 256 IP addresses scanned in **39.44 seconds**.
-    - **Optimized scan** (adjusting RTT): Initial timeout set to **50ms**, maximum to **100ms**, reducing scan time to **12.29 seconds**.
-  - **Risk**: Over-optimizing RTT (too short) can **miss hosts**, as seen in the example where 2 fewer hosts were detected with optimized settings.
+---
 
-#### **3. Max Retries**
-- Controls the number of retries Nmap attempts when a response isn't received.
-  - **Default value**: **10 retries**.
-  - Reducing retries to **0** speeds up the scan but can cause **missed ports**.
-  - Example:
-    - **Default scan**: Detected **23 open ports**.
-    - **Reduced retries scan**: Detected **21 open ports**, illustrating the potential loss of data.
+## Timeouts
 
-#### **4. Packet Rate**
-- Setting the **minimum packet rate** (`--min-rate <number>`) controls how many packets are sent simultaneously.
-  - **Higher rate** → faster scans, but with increased network load.
-  - Example:
-    - **Default scan**: 256 IP addresses scanned in **29.83 seconds**.
-    - **Optimized scan** (min-rate 300): Reduced scan time to **8.67 seconds** with no difference in detected open ports (**23**).
+When Nmap sends a packet, it takes some time (`Round-Trip-Time` - `RTT`) to receive a response from the scanned port. Generally, `Nmap` starts with a high timeout (`--min-RTT-timeout`) of 100ms. Let us look at an example by scanning the whole network with 256 hosts, including the top 100 ports.
 
-#### **5. Timing Templates**
-- Nmap offers **six timing templates** for adjusting scan speed and aggressiveness:
-  - **-T 0 / paranoid**: Very slow, avoids detection (black-box tests).
-  - **-T 1 / sneaky**: Slow, avoids detection but faster than paranoid.
-  - **-T 2 / polite**: Slightly slower to avoid overloading networks.
-  - **-T 3 / normal**: Default setting, balanced speed.
-  - **-T 4 / aggressive**: Faster, potentially more detectable.
-  - **-T 5 / insane**: Fastest, may trigger security systems due to high traffic.
-  - Example:
-    - **Default scan (T3)**: Scanned 256 IPs in **32.44 seconds**.
-    - **Insane scan (T5)**: Reduced scan time to **18.07 seconds** with the same number of open ports detected (**23**).
+#### Default Scan
 
-#### **6. General Insights**
-- **Faster scans** improve efficiency but may lead to **incomplete data** (missed hosts/ports).
-- Performance improvements can be achieved by adjusting the following:
-  - **RTT timeouts** (`--initial-rtt-timeout`, `--max-rtt-timeout`).
-  - **Retries** (`--max-retries`).
-  - **Packet rates** (`--min-rate`).
-  - **Timing templates** (`-T 0-5`).
-- **Trade-offs**: Faster scans risk **missing data**, while slower scans ensure **greater accuracy**.
+Performance
 
-#### **Key Nmap Options Summary**
-| **Option**                  | **Description**                                             |
-|-----------------------------|-------------------------------------------------------------|
-| `-T <0-5>`                  | Adjusts timing template for scan speed/aggressiveness.      |
-| `--min-parallelism <number>` | Specifies minimum number of parallel operations.            |
-| `--max-rtt-timeout <time>`   | Sets maximum RTT timeout for test packets.                  |
-| `--min-rate <number>`        | Sets minimum number of packets sent per second.             |
-| `--max-retries <number>`     | Controls number of retries for each port scan.              |
-| `--initial-rtt-timeout <ms>` | Sets the initial RTT timeout value.                         |
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F
 
-For more detailed performance tips, refer to the Nmap documentation: [Nmap Performance Reference](https://nmap.org/book/man-performance.html).
+<SNIP>
+Nmap done: 256 IP addresses (10 hosts up) scanned in 39.44 seconds
+```
+
+#### Optimized RTT
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F --initial-rtt-timeout 50ms --max-rtt-timeout 100ms
+
+<SNIP>
+Nmap done: 256 IP addresses (8 hosts up) scanned in 12.29 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.0/24` | Scans the specified target network. |
+| `-F` | Scans top 100 ports. |
+| `--initial-rtt-timeout 50ms` | Sets the specified time value as initial RTT timeout. |
+| `--max-rtt-timeout 100ms` | Sets the specified time value as maximum RTT timeout. |
+
+When comparing the two scans, we can see that we found two hosts less with the optimized scan, but the scan took only a quarter of the time. From this, we can conclude that setting the initial RTT timeout (`--initial-rtt-timeout`) to too short a time period may cause us to overlook hosts.
+
+---
+
+## Max Retries
+
+Another way to increase scan speed is by specifying the retry rate of sent packets (`--max-retries`). The default value is `10`, but we can reduce it to `0`. This means if Nmap does not receive a response for a port, it won't send any more packets to that port and will skip it.
+
+#### Default Scan
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F | grep "/tcp" | wc -l
+
+23
+```
+
+#### Reduced Retries
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F --max-retries 0 | grep "/tcp" | wc -l
+
+21
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.0/24` | Scans the specified target network. |
+| `-F` | Scans top 100 ports. |
+| `--max-retries 0` | Sets the number of retries that will be performed during the scan. |
+
+Again, we recognize that accelerating can also have a negative effect on our results, which means we can overlook important information.
+
+---
+
+## Rates
+
+During a white-box penetration test, we may get whitelisted for the security systems to check the systems in the network for vulnerabilities and not only test the protection measures. If we know the network bandwidth, we can work with the rate of packets sent, which significantly speeds up our scans with `Nmap`. When setting the minimum rate (`--min-rate <number>`) for sending packets, we tell `Nmap` to simultaneously send the specified number of packets. It will attempt to maintain the rate accordingly.
+
+#### Default Scan
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F -oN tnet.default
+
+<SNIP>
+Nmap done: 256 IP addresses (10 hosts up) scanned in 29.83 seconds
+```
+
+#### Optimized Scan
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F -oN tnet.minrate300 --min-rate 300
+
+<SNIP>
+Nmap done: 256 IP addresses (10 hosts up) scanned in 8.67 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.0/24` | Scans the specified target network. |
+| `-F` | Scans top 100 ports. |
+| `-oN tnet.minrate300` | Saves the results in normal formats, starting the specified file name. |
+| `--min-rate 300` | Sets the minimum number of packets to be sent per second. |
+
+---
+
+#### Default Scan - Found Open Ports
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ cat tnet.default | grep "/tcp" | wc -l
+
+23
+```
+
+#### Optimized Scan - Found Open Ports
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ cat tnet.minrate300 | grep "/tcp" | wc -l
+
+23
+```
+
+---
+
+## Timing
+
+Because such settings cannot always be optimized manually, as in a black-box penetration test, `Nmap` offers six different timing templates (`-T <0-5>`) for us to use. These values (`0-5`) determine the aggressiveness of our scans. This can also have negative effects if the scan is too aggressive, and security systems may block us due to the produced network traffic. The default timing template used when we have defined nothing else is the normal (`-T 3`).
+
+- `-T 0` / `-T paranoid`
+- `-T 1` / `-T sneaky`
+- `-T 2` / `-T polite`
+- `-T 3` / `-T normal`
+- `-T 4` / `-T aggressive`
+- `-T 5` / `-T insane`
+
+These templates contain options that we can also set manually, and have seen some of them already. The developers determined the values set for these templates according to their best results, making it easier for us to adapt our scans to the corresponding network environment. The exact used options with their values we can find here: [https://nmap.org/book/performance-timing-templates.html](https://nmap.org/book/performance-timing-templates.html)
+
+#### Default Scan
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F -oN tnet.default 
+
+<SNIP>
+Nmap done: 256 IP addresses (10 hosts up) scanned in 32.44 seconds
+```
+
+#### Insane Scan
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -F -oN tnet.T5 -T 5
+
+<SNIP>
+Nmap done: 256 IP addresses (10 hosts up) scanned in 18.07 seconds
+```
+
+| **Scanning Options** | **Description** |
+| --- | --- |
+| `10.129.2.0/24` | Scans the specified target network. |
+| `-F` | Scans top 100 ports. |
+| `-oN tnet.T5` | Saves the results in normal formats, starting the specified file name. |
+| `-T 5` | Specifies the insane timing template. |
+
+---
+
+#### Default Scan - Found Open Ports
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ cat tnet.default | grep "/tcp" | wc -l
+
+23
+```
+
+#### Insane Scan - Found Open Ports
+
+Performance
+
+```shell-session
+secmancer@htb[/htb]$ cat tnet.T5 | grep "/tcp" | wc -l
+
+23
+```
+
+---
+
+More information about scan performance we can find at [https://nmap.org/book/man-performance.html](https://nmap.org/book/man-performance.html)
