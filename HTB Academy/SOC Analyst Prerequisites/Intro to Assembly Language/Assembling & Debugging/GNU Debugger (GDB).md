@@ -1,128 +1,131 @@
-## GNU Debugger (GDB) Notes
+Debugging is an important skill to learn for developers and pentesters alike. Debugging is a term used for finding and removing issues (i.e., bugs) from our code, hence the name de-bugging. When we develop a program, we will very frequently run into bugs in our code. It is not efficient to keep changing our code until it does what we expect of it. Instead, we perform debugging by setting breakpoints and seeing how our program acts on each of them and how our input changes between them, which should give us a clear idea of what is causing the `bug`.
 
-### **Overview**
-- **Debugging** is the process of identifying and fixing issues (bugs) in code.
-- **GDB** (GNU Debugger) is a powerful tool for debugging **Linux programs**, particularly useful for **Assembly** and **binary exploitation**.
-- **Breakpoints** allow us to pause program execution and examine memory and registers to debug efficiently.
-  
----
+Programs written in high-level languages can set breakpoints on specific lines and run the program through a debugger to monitor how they act. With Assembly, we deal with machine code represented as assembly instructions, so our breakpoints are set in the memory location in which our machine code is loaded, as we will see.
 
-### **Installing GDB and GEF**
-- **GDB** is pre-installed in many Linux distributions, including Parrot OS and PwnBox. If not installed, use:
-  ```bash
-  sudo apt-get update
-  sudo apt-get install gdb
-  ```
-
-- **GEF (GDB Enhanced Features)** is a plugin for reverse engineering and binary exploitation:
-  - Install GEF:
-    ```bash
-    wget -O ~/.gdbinit-gef.py -q https://gef.blah.cat/py
-    echo source ~/.gdbinit-gef.py >> ~/.gdbinit
-    ```
+To debug our binaries, we will be using a well-known debugger for Linux programs called [GNU Debugger](https://www.gnu.org/software/gdb/) (`GDB`). There are other similar debuggers for Linux, like [Radare](https://www.radare.org/r/) and [Hopper](https://www.hopperapp.com/), and for Windows, like [Immunity Debugger](https://www.immunityinc.com/products/debugger/) and [WinGDB](http://wingdb.com/). There are also powerful debuggers available for many platforms, like [IDA Pro](https://www.hex-rays.com/products/ida/) and [EDB](https://github.com/eteran/edb-debugger). In this module, we will be using GDB. It is the most reliable for Linux binaries since it is built and maintained directly by GNU, which gives it an excellent integration with the Linux system and its components.
 
 ---
 
-### **Running GDB with Assembly Code**
-1. **Starting GDB**:
-   - Run GDB with a binary file:
-     ```bash
-     gdb -q ./helloWorld
-     ```
-   - **GEF** will load automatically, shown by the `gef➤` prompt.
+## Installation
 
-2. **Using a Bash Script**:
-   - Use the **`assembler.sh` script** (created in earlier sections) to assemble, link, and run GDB in one step:
-     ```bash
-     ./assembler.sh helloWorld.s -g
-     ```
+GDB is installed in many Linux distributions, and it is also installed by default in Parrot OS and PwnBox. In case it is not installed in your VM, you can use `apt` to install it with the following commands:
 
----
+GNU Debugger (GDB)
 
-### **Basic GDB Commands**
+```shell-session
+secmancer@htb[/htb]$ sudo apt-get update
+secmancer@htb[/htb]$ sudo apt-get install gdb
+```
 
-#### **1. General Information**
-- **`info` command**: Provides various information about the program.
-  - Example: **View functions**:
-    ```bash
-    gef➤ info functions
-    ```
-  - Example: **View variables**:
-    ```bash
-    gef➤ info variables
-    ```
+One of the great features of `GDB` is its support for third-party plugins. An excellent plugin that is well maintained and has good documentation is [GEF](https://github.com/hugsy/gef). GEF is a free and open-source GDB plugin that is built precisely for reverse engineering and binary exploitation. This fact makes it a great tool to learn.
 
-#### **2. Help**
-- To get help on a specific command, use `help`:
-  ```bash
-  gef➤ help info
-  ```
+To add GEF to GDB, we can use the following commands:
+
+GNU Debugger (GDB)
+
+```shell-session
+secmancer@htb[/htb]$ wget -O ~/.gdbinit-gef.py -q https://gef.blah.cat/py
+secmancer@htb[/htb]$ echo source ~/.gdbinit-gef.py >> ~/.gdbinit
+```
 
 ---
 
-### **Disassembly in GDB**
-- To disassemble a function or section, use **`disas`**:
-  ```bash
-  gef➤ disas _start
-  ```
-  - Example output:
-    ```bash
-    Dump of assembler code for function _start:
-    0x0000000000401000 <+0>:   mov    eax,0x1
-    0x0000000000401005 <+5>:   mov    edi,0x1
-    0x000000000040100a <+10>:  movabs rsi,0x402000
-    0x0000000000401014 <+20>:  mov    edx,0x12
-    0x0000000000401019 <+25>:  syscall
-    ```
+## Getting Started
 
-- **Disassembly** is crucial for understanding the **machine code** and **memory addresses** associated with each instruction.
+Now that we have both tools installed, we can run gdb to debug our `HelloWorld` binary using the following commands, and GEF will be loaded automatically:
 
-#### **RIP-Relative Addressing**
-- In **Position-Independent Executables (PIE)**, memory addresses are relative to the instruction pointer (`$rip`), instead of absolute addresses, for security reasons.
-  - Example: `0x00000000004xxxxx` addresses.
-  - Disabling PIE can reduce the risk of **binary exploitation** but is generally used for added security.
+GNU Debugger (GDB)
 
----
+```shell-session
+secmancer@htb[/htb]$ gdb -q ./helloWorld
+...SNIP...
+gef➤
+```
 
-### **Breakpoints and Examining Data**
+As we can see from `gef➤`, GEF is loaded when GDB is run. If you ever run into any issues with `GEF`, you can consult with the [GEF Documentation](https://hugsy.github.io/gef/), and you will likely find a solution.
 
-#### **Setting Breakpoints**
-- **Breakpoints** stop execution at a specified point to examine the program's state.
-- Example: Set a breakpoint at the start of a function:
-  ```bash
-  gef➤ break _start
-  ```
+Going forward, we will frequently be assembling and linking our assembly code and then running it with `gdb`. To do so quickly, we can use the `assembler.sh` script we wrote in the previous section with the `-g` flag. It will assemble and link the code, and then run it with `gdb`, as follows:
 
-#### **Examining Data**
-- Once a breakpoint is hit, you can **inspect data** and **variables** in memory:
-  - View the contents of a register (e.g., `rax`):
-    ```bash
-    gef➤ info registers
-    ```
-  - Examine memory at a specific address:
-    ```bash
-    gef➤ x/10x $rax
-    ```
-    - `x/10x` displays **10 hexadecimal values** from the address held in `rax`.
+GNU Debugger (GDB)
+
+```shell-session
+secmancer@htb[/htb]$ ./assembler.sh helloWorld.s -g
+...SNIP...
+gef➤
+```
 
 ---
 
-### **Useful GDB Commands**
-- **Step through instructions**: Use `stepi` (step instruction) to move through code instruction by instruction:
-  ```bash
-  gef➤ stepi
-  ```
-- **Continue execution**: Resume execution after hitting a breakpoint:
-  ```bash
-  gef➤ continue
-  ```
-- **Print values**: Print the value of a specific variable or register:
-  ```bash
-  gef➤ print $rax
-  ```
+## Info
+
+Once `GDB` is started, we can use the `info` command to view general information about the program, like its functions or variables.
+
+Tip: If we want to understand how any command runs within `GDB`, we can use the `help CMD` command to get its documentation. For example, we can try executing `help info`
+
+#### Functions
+
+To start, we will use the `info` command to check which `functions` are defined within the binary:
+
+GNU Debugger (GDB)
+
+```shell-session
+gef➤  info functions
+
+All defined functions:
+
+Non-debugging symbols:
+0x0000000000401000  _start
+```
+
+As we can see, we found our main `_start` function.
+
+#### Variables
+
+We can also use the `info variables` command to view all available variables within the program:
+
+GNU Debugger (GDB)
+
+```shell-session
+gef➤  info variables
+
+All defined variables:
+
+Non-debugging symbols:
+0x0000000000402000  message
+0x0000000000402012  __bss_start
+0x0000000000402012  _edata
+0x0000000000402018  _end
+```
+
+As we can see, we find the `message`, along with some other default variables that define memory segments. We can do many things with functions, but we will focus on two main points: Disassembly and Breakpoints.
 
 ---
 
-### **Conclusion**
-- **GDB** is a crucial tool for debugging and reverse engineering **Assembly code** and **Linux binaries**.
-- Using **breakpoints**, **disassembly**, and **data examination**, GDB allows developers to step through their code, analyze memory, and troubleshoot issues efficiently.
+## Disassemble
+
+To view the instructions within a specific function, we can use the `disassemble` or `disas` command along with the function name, as follows:
+
+GNU Debugger (GDB)
+
+```shell-session
+gef➤  disas _start
+
+Dump of assembler code for function _start:
+   0x0000000000401000 <+0>:	mov    eax,0x1
+   0x0000000000401005 <+5>:	mov    edi,0x1
+   0x000000000040100a <+10>:	movabs rsi,0x402000
+   0x0000000000401014 <+20>:	mov    edx,0x12
+   0x0000000000401019 <+25>:	syscall
+   0x000000000040101b <+27>:	mov    eax,0x3c
+   0x0000000000401020 <+32>:	mov    edi,0x0
+   0x0000000000401025 <+37>:	syscall
+End of assembler dump.
+```
+
+As we can see, the output we got closely resembles our assembly code and the disassembly output we got from `objdump` in the previous section. We need to focus on the main thing from this disassembly: the memory addresses for each instruction and operands (i.e., arguments).
+
+`Having the memory address is critical for examining the variables/operands and setting breakpoints for a certain instruction.`
+
+You may notice through debugging that some memory addresses are in the form of `0x00000000004xxxxx`, rather than their raw address in memory `0xffffffffaa8a25ff`. This is due to `$rip-relative addressing` in Position-Independent Executables `PIE`, in which the memory addresses are used relative to their distance from the instruction pointer `$rip` within the program's own Virtual RAM, rather than using raw memory addresses. This feature may be disabled to reduce the risk of binary exploitation.
+
+Next, let us go through the basics of debugging with GDB by using breakpoints, examining data, and stepping through the program.

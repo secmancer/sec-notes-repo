@@ -1,139 +1,189 @@
-## Program Control Instructions: Loops in x86 Assembly
+Now that we have covered the basic instructions, we can start learning `Program Control Instructions`. As we already know, Assembly code is line-based, so it will always look to the following line for instructions to process. However, as we can expect, most programs do not follow a simple set of sequential steps but usually have a more complex structure.
 
-### Overview
-Control instructions in assembly language **alter the flow of the program**. Unlike sequential line-by-line execution, control instructions enable features like **loops**, **branching**, and **function calls**. This allows more complex behaviors, such as repeated tasks or conditional logic.
+This is where `Control` instructions come in. Such instructions allow us to change the flow of the program and direct it to another line. There are many examples of how this can be done. We have already discussed `Directives` that tell the program to direct the execution to a specific label.
 
-### Loop Structure
-A **loop** in assembly repeats a set of instructions for a specified number of times, controlled by the **`rcx` register**. The basic structure of a loop involves:
-1. Setting the number of iterations in `rcx`.
-2. Using the `loop` instruction, which decrements `rcx` by 1 after each iteration.
-3. The loop continues until `rcx` reaches 0.
+Other types of `Control Instructions` include:
 
-#### Loop Instructions
-
-| **Instruction** | **Description**                                  | **Example**                     |
-|-----------------|--------------------------------------------------|---------------------------------|
-| `mov rcx, x`    | Sets the loop counter to `x`                     | `mov rcx, 3`                    |
-| `loop label`    | Decrements `rcx` by 1 and jumps to `label` if `rcx` > 0 | `loop exampleLoop`               |
+| `Loops` | `Branching` | `Function Calls` |
+| --- | --- | --- |
 
 ---
 
-### Example Loop Structure
+## Loop Structure
 
-The following code demonstrates a simple loop in assembly:
+Let's start by discussing `Loops`. A loop in assembly is a set of instructions that repeat for `rcx` times. Let's take the following example:
 
-```assembly
+Code: nasm
+
+```nasm
 exampleLoop:
     instruction 1
     instruction 2
+    instruction 3
+    instruction 4
+    instruction 5
     loop exampleLoop
 ```
 
-- **How it works**:
-  - The code at `exampleLoop` is executed.
-  - **`rcx` is decremented** each time `loop` is called.
-  - If `rcx` is not zero, execution jumps back to `exampleLoop`.
-  
----
+Once the assembly code reaches `exampleLoop`, it will start executing the instructions under it. We should set the number of iterations we want the loop to go through in the `rcx` register. Every time the loop reaches the `loop` instruction, it will decrease `rcx` by `1` (i.e., `dec rcx`) and jump back to the specified label, `exampleLoop` in this case. So, before we enter any loop, we should `mov` the number of loop iterations we want to the `rcx` register.
 
-### Fibonacci Sequence with Loops
-
-To automate the calculation of the **Fibonacci sequence**, we can use a loop. The key steps are:
-1. **Initialize `rax` and `rbx`**: These registers will hold the current Fibonacci number and the next Fibonacci number, respectively.
-2. **Use a loop** to continuously calculate the next Fibonacci number by adding the two previous numbers.
-3. **Swap the registers** after each addition using the `xchg` instruction, ensuring `rax` and `rbx` always contain the two most recent Fibonacci numbers.
+| **Instruction** | **Description** | **Example** |
+| --- | --- | --- |
+| `mov rcx, x` | Sets loop (`rcx`) counter to `x` | `mov rcx, 3` |
+| `loop` | Jumps back to the start of `loop` until counter reaches `0` | `loop exampleLoop` |
 
 ---
 
-### Fibonacci Sequence Loop Example
+## loopFib
 
-```assembly
-global _start
+To demonstrate this, let's go back to our `fib.s` code:
+
+Code: nasm
+
+```nasm
+global  _start
 
 section .text
 _start:
-    xor rax, rax        ; Initialize `rax` to 0 (F0)
-    xor rbx, rbx        ; Initialize `rbx` to 0
-    inc rbx             ; Set `rbx` to 1 (F1)
-    mov rcx, 10         ; Set loop to run 10 times
-
-loopFib:
-    add rax, rbx        ; Calculate next Fibonacci number
-    xchg rax, rbx       ; Swap `rax` and `rbx` to store the next two numbers
-    loop loopFib        ; Repeat until `rcx` becomes 0
+    xor rax, rax
+    xor rbx, rbx
+    inc rbx
+    add rax, rbx
 ```
 
-- **Explanation**:
-  - **`xor rax, rax`** initializes `rax` to 0 (first Fibonacci number).
-  - **`inc rbx`** sets `rbx` to 1 (second Fibonacci number).
-  - **`mov rcx, 10`** sets the loop to iterate 10 times.
-  - **`add rax, rbx`** adds the two most recent Fibonacci numbers.
-  - **`xchg rax, rbx`** swaps the values of `rax` and `rbx` to keep track of the two most recent Fibonacci numbers.
-  - **`loop loopFib`** decrements `rcx` and repeats the loop until `rcx` becomes 0.
+Since any current Fibonacci number is the sum of the two numbers preceding it, we can automate this with a loop. Let's assume that the current number is stored in `rax`, so it is `F<sub>n</sub>`, and the next number is stored in `rbx`, so it is `F<sub>n+1</sub>`.
+
+Starting with the last number as `0` and the current number as `1`, we can have our loop as follows:
+
+1. Get next number with `0 + 1 = 1`
+2. Move the current number to the last number (`1 in place of 0`)
+3. Move the next number to the current number (`1 in place of 1`)
+4. Loop
+
+If we do this, we'll end up with `1` as the last number and `1` as the current number. If we loop again, we'll get `1` as the last number and `2` as the current number. So, let's implement this as assembly instructions. Since we can discard the last number `0` after we use it in the add, let's store the result in its place:
+
+- `add rax, rbx`
+
+We need to move the current number to the last number's place and move the following number to the current number. However, we have the following number in `rax` and the now old number in `rbx`, so they are swapped. Can you think of any instruction to swap them?
+
+Let's use the `xchg` instruction to swap both numbers:
+
+- `xchg rax, rbx`
+
+Now we can simply `loop`. However, before we enter a loop, we should set `rcx` to the count of iterations we want. Let's start with `10` iterations and add it after initializing the `rax` and `rbx` to `0` and `1`:
+
+Code: nasm
+
+```nasm
+_start:
+    xor rax, rax    ; initialize rax to 0
+    xor rbx, rbx    ; initialize rbx to 0
+    inc rbx         ; increment rbx to 1
+    mov rcx, 10
+```
+
+Now we can define our loop as discussed above:
+
+Code: nasm
+
+```nasm
+loopFib:
+    add rax, rbx    ; get the next number
+    xchg rax, rbx   ; swap values
+    loop loopFib
+```
+
+So, our final code is:
+
+Code: nasm
+
+```nasm
+global  _start
+
+section .text
+_start:
+    xor rax, rax    ; initialize rax to 0
+    xor rbx, rbx    ; initialize rbx to 0
+    inc rbx         ; increment rbx to 1
+    mov rcx, 10
+loopFib:
+    add rax, rbx    ; get the next number
+    xchg rax, rbx   ; swap values
+    loop loopFib
+```
 
 ---
 
-### Example Output (Using GDB)
+## Loop loopFib
 
-The following shows the Fibonacci sequence calculated through multiple iterations of the loop:
+Let's assemble our code, and run it with `gdb`. We'll break at `b loopFib`, so that we can examine the code at each iteration of the loop. We see the following register values before the first iteration:
 
-1. **Initial State**:
-   - `rax = 0` (F0)
-   - `rbx = 1` (F1)
-   - `rcx = 10` (loop counter)
+gdb
 
-2. **First Iteration**:
-   - `rax = 1`
-   - `rbx = 1`
-   - `rcx = 9`
+$ ./assembler.sh fib.s -g
+gef➤  b loopFib
+Breakpoint 1 at 0x40100e
+gef➤  r
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x0
+$rbx   : 0x1
+$rcx   : 0xa
 
-3. **Second Iteration**:
-   - `rax = 1`
-   - `rbx = 2`
-   - `rcx = 8`
+We see that we start with `rax = 0` and `rbx = 1`. Let's press `c` to continue to the next iteration:
 
-4. **Subsequent Iterations**:
-   - `rax = 2`, `rbx = 3`
-   - `rax = 3`, `rbx = 5`
-   - `rax = 5`, `rbx = 8`
-   - ...
-   - **Final Iteration**: `rax = 34`, `rbx = 55`, `rcx = 0`
+gdb
 
-The loop successfully calculates the Fibonacci numbers as: **0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55**.
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x1
+$rbx   : 0x1
+$rcx   : 0x9
 
----
+Now we have `1` and `1`, as expected, with `9` iterations left. Let's `c`ontinue again:
 
-### Detailed Breakdown of Loop Execution
+gdb
 
-- **Before Loop**:
-  ```assembly
-  xor rax, rax   ; Set `rax = 0`
-  xor rbx, rbx   ; Set `rbx = 0`
-  inc rbx        ; Set `rbx = 1`
-  mov rcx, 10    ; Set loop counter to 10 iterations
-  ```
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x1
+$rbx   : 0x2
+$rcx   : 0x8
 
-- **During Each Loop**:
-  - **`add rax, rbx`**: Calculates the next Fibonacci number by adding `rax` (current Fibonacci) and `rbx` (next Fibonacci).
-  - **`xchg rax, rbx`**: Swaps the current and next Fibonacci numbers to update them for the next iteration.
-  - **`loop loopFib`**: Decrements `rcx` and repeats the loop if `rcx` > 0.
+Now we are at `1` and `2`. Let's check the next three iterations:
 
----
+gdb
 
-### Key Concepts
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x2
+$rbx   : 0x3
+$rcx   : 0x7
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x3
+$rbx   : 0x5
+$rcx   : 0x6
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x5
+$rbx   : 0x8
+$rcx   : 0x5
 
-- **`rcx` Loop Counter**: The **`rcx` register** is used to store the loop counter. It is decremented automatically by the **`loop`** instruction until it reaches zero.
-- **Efficient Fibonacci Calculation**: By using `add` and `xchg`, the Fibonacci sequence can be calculated iteratively, storing and updating the last two numbers.
-- **Control Flow**: The **`loop`** instruction controls the number of iterations, creating a structured flow of repeated actions.
+As we can see, the script is successfully calculating the Fibonacci Sequence as `0, 1, 1, 2, 3, 5, 8`. Let's continue to the last iteration, where `rbx` should be `55`:
 
----
+gdb
 
-### Conclusion
+───────────────────────────────────────────────────────────────────────────────────── registers ────
+$rax   : 0x22
+$rbx   : 0x37
+$rcx   : 0x1
 
-By leveraging loops, you can efficiently compute the Fibonacci sequence in assembly by:
-- **Initializing** the first two Fibonacci numbers (`0` and `1`).
-- **Repeating** the process of summing and swapping numbers using a loop.
-- **Automating** the calculation for a set number of iterations using the `rcx` register and `loop` instruction.
+We see that `rbx` is `0x37`, equal to `55` in decimal. We can confirm that with the `p/d $rbx` command:
+
+Loops
+
+```shell-session
+gef➤  p/d $rbx
+
+$3 = 55
+```
+
+As we can see, we have successfully used loops to automate the calculation of the Fibonacci Sequence. Try increasing `rcx` to see what are the next numbers in the Fibonacci Sequence.
 
 ## Questions
 - Edit the attached assembly code to loop the "loop" label 5 times. What is the hex value of "rax" by the end?
