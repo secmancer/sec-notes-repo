@@ -1,0 +1,14 @@
+{
+  "cmenu-plugin:editor:toggle-bullet-list": [
+    {
+      "modifiers": [],
+      "key": "F9"
+    }
+  ],
+  "cmenu-plugin:editor:toggle-checklist-status": [
+    {
+      "modifiers": [],
+      "key": "F10"
+    }
+  ]
+}
