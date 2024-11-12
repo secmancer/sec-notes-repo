@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a4ba3c6be30afead",
+        "id": "bdb0643d3ed98c0b",
         "type": "tabs",
         "children": [
           {
-            "id": "72260d075a7368dc",
+            "id": "ceda74ffdc15f26e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,8 +199,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "ceda74ffdc15f26e",
   "lastOpenFiles": [
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Connection Establishment/Cryptography.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Connection Establishment/TCP-UDP Connections.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Connection Establishment/Authentication Protocols.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Connection Establishment/Key Exchange Mechanisms.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Vendor Specific Information.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Virtual Private Networks.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Common Protocols.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Networking Key Terminology.md",
+    "HTB Academy/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Wireless Networks.md",
     "HTB Academy/Information Security Foundations/Introduction to Networking/Addressing/IPv6 Addresses.md",
     "HTB Academy/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241111_165316.png",
     "HTB Academy/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241111_165255.png",
@@ -236,16 +245,8 @@
     "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Branches.md",
     "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Loops.md",
     "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Script Control/Input and Output Control.md",
-    "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arithmetic.md",
-    "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Working Components/Comparison Operators.md",
-    "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arguments, Variables, and Arrays.md",
     "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Screenshots",
-    "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Working Components/Conditional Execution.md",
-    "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Introduction/Bourne Again Shell.md",
     "HTB Academy/Information Security Foundations/Introduction to Bash Scripting/Execution Flow",
-    "HTB Academy/Information Security Foundations/Introduction to Windows Command Line/Finish Strong/Beyond This Module.md",
-    "HTB Academy/Information Security Foundations/Introduction to Windows Command Line/Finish Strong/Skills Assessment.md",
-    "HTB Academy/Information Security Foundations/Introduction to Windows Command Line/PowerShell/PowerShell Scripting and Automation.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
