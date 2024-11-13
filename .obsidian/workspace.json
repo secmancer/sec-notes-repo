@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d81a38332ff14f1a",
+        "id": "a6cd8120e331caf4",
         "type": "tabs",
         "children": [
           {
-            "id": "57f912bd03c4a400",
+            "id": "49407d8869bda687",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Intro to CTFs + Web Exploitation"
+              "title": "New tab"
             }
           }
         ]
@@ -91,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 298.5
+    "width": 369.5
   },
   "right": {
     "id": "4317a441acfd56b7",
@@ -218,39 +214,39 @@
     "CPSEC/CTF/Screenshots/Screenshot_20241112_221323.png",
     "CPSEC/CTF/Screenshots",
     "CPSEC/CTF/Intro to Reverse Engineering.md",
+    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
     "CPSEC/CTF/Forensics & OSINT.md",
     "CPSEC/CTF/Cryptography.md",
-    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
     "CPSEC/CTF",
     "CPSEC",
+    "CTF > 101 - CTF Handbook/Binary Exploitation",
+    "CTF > 101 - CTF Handbook/Reverse Engineering",
+    "CTF > 101 - CTF Handbook/Web Exploitation",
+    "CTF > 101 - CTF Handbook/Cryptography",
+    "CTF > 101 - CTF Handbook/Forensics",
+    "CTF > 101 - CTF Handbook/Introduction",
+    "CTF > 101 - CTF Handbook",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
-    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Next Steps/Next Steps.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Introduction to Web Applications/Web Application Layout.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Introduction to Web Applications/Introduction.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Introduction to Web Applications/Front End vs Back End.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Vulnerabilities/Sensitive Data Exposure.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Vulnerabilities/HTML Injection.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Vulnerabilities/Cross-Site Scripting (XSS).md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Vulnerabilities/Cross-Site Request Forgery (CSRF).md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Components/JavaScript.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Components/HTML.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Components/CSS.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Back End Components/Web Servers.md",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Next Steps",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Introduction to Web Applications",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Vulnerabilities",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Front End Components",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications/Back End Components",
-    "HTB Academy/Information Security Foundations/Introduction to Web Applications",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/CPU Architecture.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Computer Architecture.md",
+    "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
+    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
