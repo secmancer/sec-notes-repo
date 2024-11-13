@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a6cd8120e331caf4",
+        "id": "cb0d033d8d114aa1",
         "type": "tabs",
         "children": [
           {
-            "id": "49407d8869bda687",
+            "id": "7f01c393bd1ba331",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -201,6 +201,9 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "CTF > 101 - CTF Handbook/Introduction/How do I host a CTF.md",
+    "CTF > 101 - CTF Handbook/Introduction/Getting Started with CTFs.md",
+    "CTF > 101 - CTF Handbook/Introduction/What is a CTF.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241112_231554.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241112_224735.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241112_224647.png",
@@ -211,7 +214,6 @@
     "CPSEC/CTF/Screenshots/Screenshot_20241112_221356.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241112_221343.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241112_221332.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221323.png",
     "CPSEC/CTF/Screenshots",
     "CPSEC/CTF/Intro to Reverse Engineering.md",
     "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
@@ -245,8 +247,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
