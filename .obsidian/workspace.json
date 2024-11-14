@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cb0d033d8d114aa1",
+        "id": "917b69a9d6bc523d",
         "type": "tabs",
         "children": [
           {
-            "id": "7f01c393bd1ba331",
+            "id": "824f0f79ae10f819",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.7.6"
+                "file": "CPSEC/CTF/Cryptography.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.6"
+              "title": "Cryptography"
             }
           }
         ]
@@ -201,26 +203,27 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7f01c393bd1ba331",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_205418.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_205406.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_205354.png",
+    "CPSEC/CTF/Intro to Reverse Engineering.md",
+    "CPSEC/CTF/Forensics & OSINT.md",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_205330.png",
+    "CPSEC/CTF/Cryptography.md",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_205134.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204924.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204815.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204805.png",
+    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204405.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204353.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241113_204336.png",
     "CTF > 101 - CTF Handbook/Introduction/How do I host a CTF.md",
     "CTF > 101 - CTF Handbook/Introduction/Getting Started with CTFs.md",
     "CTF > 101 - CTF Handbook/Introduction/What is a CTF.md",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_231554.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_224735.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_224647.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_224633.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221554.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221530.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221519.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221356.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221343.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241112_221332.png",
     "CPSEC/CTF/Screenshots",
-    "CPSEC/CTF/Intro to Reverse Engineering.md",
-    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
-    "CPSEC/CTF/Forensics & OSINT.md",
-    "CPSEC/CTF/Cryptography.md",
     "CPSEC/CTF",
     "CPSEC",
     "CTF > 101 - CTF Handbook/Binary Exploitation",
@@ -248,7 +251,6 @@
     "HTB Academy/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
     "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
-    "HTB Academy/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
