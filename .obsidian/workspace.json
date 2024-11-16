@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "65f599923821f5a8",
+        "id": "cd08f72afdd94385",
         "type": "tabs",
         "children": [
           {
-            "id": "d463193debb00e09",
+            "id": "2eb594c40c954b97",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,23 +199,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "2eb594c40c954b97",
   "lastOpenFiles": [
+    "CPSEC/CTF/Forensics & OSINT.md",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_220120.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_220043.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_220029.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_220012.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_215953.png",
+    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
+    "CPSEC/CTF/Intro to Reverse Engineering.md",
+    "CPSEC/CTF/Cryptography.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205418.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205406.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205354.png",
-    "CPSEC/CTF/Intro to Reverse Engineering.md",
-    "CPSEC/CTF/Forensics & OSINT.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205330.png",
-    "CPSEC/CTF/Cryptography.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205134.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204924.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204815.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204805.png",
-    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204405.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204353.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_204336.png",
     "CTF > 101 - CTF Handbook/Introduction/How do I host a CTF.md",
     "CTF > 101 - CTF Handbook/Introduction/Getting Started with CTFs.md",
     "CTF > 101 - CTF Handbook/Introduction/What is a CTF.md",
