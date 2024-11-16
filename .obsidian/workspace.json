@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "917b69a9d6bc523d",
+        "id": "65f599923821f5a8",
         "type": "tabs",
         "children": [
           {
-            "id": "824f0f79ae10f819",
+            "id": "d463193debb00e09",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CPSEC/CTF/Cryptography.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Cryptography"
+              "title": "New tab"
             }
           }
         ]
