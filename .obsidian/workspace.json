@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cd08f72afdd94385",
+        "id": "f9f0939ba6476fbf",
         "type": "tabs",
         "children": [
           {
-            "id": "2eb594c40c954b97",
+            "id": "aa1555cc4e726107",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,22 +199,23 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2eb594c40c954b97",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_222040.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_221933.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_221350.png",
+    "CPSEC/CTF/Screenshots/Screenshot_20241115_221237.png",
+    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
     "CPSEC/CTF/Forensics & OSINT.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_220120.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_220043.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_220029.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_220012.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_215953.png",
-    "CPSEC/CTF/Intro to CTFs + Web Exploitation.md",
     "CPSEC/CTF/Intro to Reverse Engineering.md",
     "CPSEC/CTF/Cryptography.md",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205418.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241113_205406.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_205354.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_205330.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241113_205134.png",
     "CTF > 101 - CTF Handbook/Introduction/How do I host a CTF.md",
     "CTF > 101 - CTF Handbook/Introduction/Getting Started with CTFs.md",
     "CTF > 101 - CTF Handbook/Introduction/What is a CTF.md",
