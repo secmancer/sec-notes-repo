@@ -212,4 +212,4 @@ We can remove the `push` and `pop` instructions from our code for now, and we wi
 
 ## Questions
 - Debug the attached binary to find the flag being pushed to the stack
-	- answer
+	- HTB{pu5h1n9_4_57r1n9_1n_r3v3r53}

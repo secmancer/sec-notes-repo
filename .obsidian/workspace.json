@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "21ea552bf98c710c",
+        "id": "5e55f1df7dd07dd2",
         "type": "tabs",
         "children": [
           {
-            "id": "58665909531e36b8",
+            "id": "144bbc496dc279d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
+                "file": "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Using the Stack"
+              "title": "Procedures"
             }
           }
         ]
@@ -206,9 +206,9 @@
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
-    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
     "CTF > 101 Handbook/Binary Exploitation/The Heap/Heap Exploitation.md",
     "CTF > 101 Handbook/Binary Exploitation/The Heap/What is the Heap.md",
     "CTF > 101 Handbook/Binary Exploitation/Binary Security/Relocation Read-Only (RELRO).md",
