@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8f45cbef9e021e9b",
+        "id": "d51445f8eb8340d6",
         "type": "tabs",
         "children": [
           {
-            "id": "4ce45cb22c6688dd",
+            "id": "f5a7c4ca1963786b",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -201,6 +201,14 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "CTF > 101 Handbook/Reverse Engineering/Assembly - Machine Code.md",
+    "CTF > 101 Handbook/Reverse Engineering/Overview.md",
+    "CTF > 101 Handbook/Web Exploitation/PHP.md",
+    "CTF > 101 Handbook/Web Exploitation/Server Side Request Forgery.md",
+    "CTF > 101 Handbook/Web Exploitation/Cross Site Scripting (XSS).md",
+    "CTF > 101 Handbook/Web Exploitation/Cross Site Request Forgery.md",
+    "CTF > 101 Handbook/Web Exploitation/Directory Traversal.md",
+    "CTF > 101 Handbook/Web Exploitation/Command Injection.md",
     "CTF > 101 Handbook/Web Exploitation/SQL Injection.md",
     "CTF > 101 Handbook/Web Exploitation/Overview.md",
     "CTF > 101 Handbook/Cryptography/Asymmetric Encryption/RSA.md",
@@ -226,19 +234,12 @@
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Detection & Analysis Stage (Part 1).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 2).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 1).md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Incident Handling Process Overview.md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process",
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction",
     "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process",
     "HTB Academy/Job Role Paths/SOC Analyst",
     "HTB Academy/Job Role Paths",
     "HTB Academy/Skill Paths",
-    "Untitled.md",
-    "CTF > 101 Handbook/Web Exploitation/Server Side Request Forgery.md",
-    "CTF > 101 Handbook/Web Exploitation/PHP.md",
-    "CTF > 101 Handbook/Web Exploitation/Directory Traversal.md",
     "CTF > 101 Handbook/Web Exploitation",
     "CTF > 101 Handbook/Reverse Engineering",
     "CTF > 101 Handbook/Introduction",
