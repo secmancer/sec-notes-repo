@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f6116faa364f4dc2",
+        "id": "8f45cbef9e021e9b",
         "type": "tabs",
         "children": [
           {
-            "id": "f094a59ebef09191",
+            "id": "4ce45cb22c6688dd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CTF > 101 Handbook/Web Exploitation/SQL Injection.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "SQL Injection"
+              "title": "New tab"
             }
           }
         ]
@@ -203,8 +199,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f094a59ebef09191",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "CTF > 101 Handbook/Web Exploitation/SQL Injection.md",
     "CTF > 101 Handbook/Web Exploitation/Overview.md",
     "CTF > 101 Handbook/Cryptography/Asymmetric Encryption/RSA.md",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
@@ -240,7 +237,6 @@
     "HTB Academy/Skill Paths",
     "Untitled.md",
     "CTF > 101 Handbook/Web Exploitation/Server Side Request Forgery.md",
-    "CTF > 101 Handbook/Web Exploitation/SQL Injection.md",
     "CTF > 101 Handbook/Web Exploitation/PHP.md",
     "CTF > 101 Handbook/Web Exploitation/Directory Traversal.md",
     "CTF > 101 Handbook/Web Exploitation",
