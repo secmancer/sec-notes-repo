@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "62f7c937d7ffbb74",
+        "id": "21ea552bf98c710c",
         "type": "tabs",
         "children": [
           {
-            "id": "a009efb2e68fd092",
+            "id": "58665909531e36b8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Using the Stack"
             }
           }
         ]
@@ -199,8 +203,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a009efb2e68fd092",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots",
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
     "CTF > 101 Handbook/Binary Exploitation/The Heap/Heap Exploitation.md",
     "CTF > 101 Handbook/Binary Exploitation/The Heap/What is the Heap.md",
     "CTF > 101 Handbook/Binary Exploitation/Binary Security/Relocation Read-Only (RELRO).md",
@@ -225,8 +233,6 @@
     "CTF > 101 Handbook/Reverse Engineering/Overview.md",
     "CTF > 101 Handbook/Web Exploitation/PHP.md",
     "CTF > 101 Handbook/Web Exploitation/Server Side Request Forgery.md",
-    "CTF > 101 Handbook/Web Exploitation/Cross Site Scripting (XSS).md",
-    "CTF > 101 Handbook/Web Exploitation/Cross Site Request Forgery.md",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011811.png",
@@ -242,11 +248,9 @@
     "HTB Academy/Skill Paths",
     "CTF > 101 Handbook/Web Exploitation",
     "CTF > 101 Handbook/Reverse Engineering",
-    "CTF > 101 Handbook/Introduction",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_222040.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_221933.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_221350.png",
-    "CPSEC/CTF/Screenshots/Screenshot_20241115_221237.png",
     "Cybersecurity/HTB Academy/Introduction to Networking/Untitled.canvas"
   ]
 }
