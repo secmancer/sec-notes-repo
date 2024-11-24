@@ -11,10 +11,14 @@
             "id": "796aad5fb3736a40",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Tools.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Shellcoding Tools"
             }
           }
         ]
@@ -199,10 +203,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "796aad5fb3736a40",
   "lastOpenFiles": [
-    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Tools.md",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Techniques.md",
+    "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Tools.md",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcodes.md",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md",

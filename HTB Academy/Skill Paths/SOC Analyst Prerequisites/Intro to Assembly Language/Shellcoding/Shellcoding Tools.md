@@ -241,3 +241,8 @@ Final size of hex file: 142 bytes
 - Finally, we can always search online resources like [Shell-Storm](http://shell-storm.org/shellcode/) or [Exploit DB](https://www.exploit-db.com/shellcodes) for existing shellcodes.
 - For example, if we search [Shell-Storm](http://shell-storm.org/shellcode/) for a `/bin/sh` shellcode on `Linux/x86_64`, we will find several examples of varying sizes, like this [27-bytes shellcode](http://shell-storm.org/shellcode/files/shellcode-806.php). We can search [Exploit DB](https://www.exploit-db.com/shellcodes) for the same, and we find a more optimized [22-bytes shellcode](https://www.exploit-db.com/shellcodes/47008), which can be helpful if our Binary Exploitation only had around 22-bytes of overflow space. We can also search for encoded shellcodes, which are bound to be larger.
 - The shellcode we wrote above is 27-bytes long as well, so it looks to be a very optimized shellcode. With all of that, we should be comfortable with writing, generating, and using shellcodes.
+
+
+### Questions
+- The above server simulates an exploitable server you can execute shellcodes on. Use one of the tools to generate a shellcode that prints the content of '/flag.txt', then connect to the server with "nc SERVER_IP PORT" to send the shellcode.
+	- answer
