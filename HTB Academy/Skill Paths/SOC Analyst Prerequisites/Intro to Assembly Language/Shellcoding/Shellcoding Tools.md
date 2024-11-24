@@ -245,4 +245,4 @@ Final size of hex file: 142 bytes
 
 ### Questions
 - The above server simulates an exploitable server you can execute shellcodes on. Use one of the tools to generate a shellcode that prints the content of '/flag.txt', then connect to the server with "nc SERVER_IP PORT" to send the shellcode.
-	- answer
+	- HTB{r3m073_5h3llc0d3_3x3cu710n}
