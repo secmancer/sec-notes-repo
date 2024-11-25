@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "42b7275dff83c339",
+        "id": "781b30eaa282f3fb",
         "type": "tabs",
         "children": [
           {
-            "id": "4f13e0c670b9f561",
+            "id": "5cf625a665659de8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,7 +199,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "5cf625a665659de8",
   "lastOpenFiles": [
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Skills Assessment/Skills Assessment.md",
     "HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Skills Assessment",
