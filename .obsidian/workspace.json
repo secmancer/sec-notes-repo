@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e972f755b5cb32b4",
+        "id": "b666e9b40726acb8",
         "type": "tabs",
         "children": [
           {
-            "id": "2bc063ca5fd46d2c",
+            "id": "43afca2d02ba4ca4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Introduction to The Elastic Stack"
+              "title": "New tab"
             }
           }
         ]
@@ -203,10 +199,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2bc063ca5fd46d2c",
+  "active": "43afca2d02ba4ca4",
   "lastOpenFiles": [
-    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Untitled",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4 - Users Added or Removed From a Local Group (Within a Specific Timeframe).md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3 - Successful RDP Logon Related to Service Accounts.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1 - Failed Logon Attempts (All Users).md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2 - Failed Logon Attempts (Disabled Users).md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/MITRE ATT&CK & Security Operations.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development",
@@ -231,15 +237,6 @@
     "CTF > 101 Handbook/Binary Exploitation/Binary Security/Stack Canaries.md",
     "CTF > 101 Handbook/Binary Exploitation/Binary Security/Address Space Layout Randomization (ASLR).md",
     "CTF > 101 Handbook/Binary Exploitation/Binary Security/No eXecute (NX).md",
-    "CTF > 101 Handbook/Binary Exploitation/Binary Security/What is Binary Security.md",
-    "CTF > 101 Handbook/Binary Exploitation/Buffers/Buffer Overflow.md",
-    "CTF > 101 Handbook/Binary Exploitation/Buffers/What are Buffers.md",
-    "CTF > 101 Handbook/Binary Exploitation/Return Oriented Programming (ROP).md",
-    "CTF > 101 Handbook/Binary Exploitation/Format String Vulnerability.md",
-    "CTF > 101 Handbook/Binary Exploitation/Global Offset Table (GOT).md",
-    "CTF > 101 Handbook/Binary Exploitation/Calling Conventions.md",
-    "CTF > 101 Handbook/Binary Exploitation/The Stack.md",
-    "CTF > 101 Handbook/Binary Exploitation/Registers.md",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011811.png",
@@ -247,7 +244,6 @@
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011709.png",
     "CTF > 101 Handbook/Screenshots",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_010941.png",
-    "HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_222040.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_221933.png",
     "CPSEC/CTF/Screenshots/Screenshot_20241115_221350.png",
