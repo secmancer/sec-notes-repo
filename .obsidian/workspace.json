@@ -11,10 +11,14 @@
             "id": "2bc063ca5fd46d2c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Introduction to The Elastic Stack"
             }
           }
         ]
@@ -202,6 +206,7 @@
   "active": "2bc063ca5fd46d2c",
   "lastOpenFiles": [
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development",
@@ -235,7 +240,6 @@
     "CTF > 101 Handbook/Binary Exploitation/Calling Conventions.md",
     "CTF > 101 Handbook/Binary Exploitation/The Stack.md",
     "CTF > 101 Handbook/Binary Exploitation/Registers.md",
-    "CTF > 101 Handbook/Binary Exploitation/Overview.md",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011811.png",
