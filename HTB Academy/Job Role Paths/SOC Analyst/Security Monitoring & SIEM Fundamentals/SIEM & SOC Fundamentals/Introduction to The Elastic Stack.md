@@ -101,6 +101,6 @@ event.code:4625 AND winlog.event_data.SubStatus:0xC0000072 AND @timestamp >= "20
 
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Discover". Then, click on the calendar icon, specify "last 15 years", and click on "Apply". Finally, choose the "windows*" index pattern. Now, execute the KQL query that is mentioned in the "Comparison Operators" part of this section and enter the username of the disabled account as your answer. Just the username; no need to account for the domain.
-	- answer
+	- anni
 - Now, execute the KQL query that is mentioned in the "Wildcards and Regular Expressions" part of this section and enter the number of returned results (hits) as your answer.
-	- answer
+	- 8

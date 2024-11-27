@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b666e9b40726acb8",
+        "id": "2b567258c55d99f1",
         "type": "tabs",
         "children": [
           {
-            "id": "43afca2d02ba4ca4",
+            "id": "037bbb20b32e5db1",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,8 +199,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "43afca2d02ba4ca4",
+  "active": "037bbb20b32e5db1",
   "lastOpenFiles": [
+    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Untitled",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
@@ -211,7 +212,6 @@
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/MITRE ATT&CK & Security Operations.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
