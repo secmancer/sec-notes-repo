@@ -1,8 +1,3 @@
-## Learning Objectives
-- Learn how to investigate malicious link files.
-- Learn about OPSEC and OPSEC mistakes.
-- Understand how to track and attribute digital identities in cyber investigations.
-
 ### Questions
 - Looks like the song.mp3 file is not what we expected! Run "exiftool song.mp3" in your terminal to find out the author of the song. Who is the author?
 	- Tyler Ramsbery
