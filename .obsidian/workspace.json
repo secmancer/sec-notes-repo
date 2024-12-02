@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b1fe5347f8ec9d02",
+        "id": "0e989422021bf3c2",
         "type": "tabs",
         "children": [
           {
-            "id": "248fbf1bb5d663db",
+            "id": "5fe9eaca38cc1e68",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -203,8 +203,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "248fbf1bb5d663db",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Add files or folders here!.md",
@@ -214,7 +215,6 @@
     "CTF",
     "Hack The Box",
     "TryHackMe",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3 - Successful RDP Logon Related to Service Accounts.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2 - Failed Logon Attempts (Disabled Users).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1 - Failed Logon Attempts (All Users).md",
