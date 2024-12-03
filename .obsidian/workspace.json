@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "0e989422021bf3c2",
+        "id": "cf0359916d9c78b2",
         "type": "tabs",
         "children": [
           {
-            "id": "5fe9eaca38cc1e68",
+            "id": "7253dc1083fc2a15",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 1.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Day 1"
+              "title": "New tab"
             }
           }
         ]
@@ -203,10 +199,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "7253dc1083fc2a15",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber",
