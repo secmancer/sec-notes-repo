@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "cf0359916d9c78b2",
+        "id": "74ed805a0544832b",
         "type": "tabs",
         "children": [
           {
-            "id": "7253dc1083fc2a15",
+            "id": "452a4bee97da356d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -199,8 +199,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7253dc1083fc2a15",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "TryHackMe/Advent of Cyber/2024/Day 2.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024",
@@ -236,8 +238,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
-    "CTF > 101 Handbook/Binary Exploitation/The Heap/Heap Exploitation.md",
-    "CTF > 101 Handbook/Binary Exploitation/The Heap/What is the Heap.md",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011811.png",

@@ -1,0 +1,11 @@
+### Questions
+- What is the name of the account causing all the failed login attempts?
+	- answer
+- How many failed logon attempts were observed?
+	- answer
+- What is the IP address of Glitch?
+	- answer
+- When did Glitch successfully logon to ADM-01? Format: MMM D, YYYY HH:MM:SS.SSS
+	- answer
+- What is the decoded command executed by Glitch to fix the systems of Wareville?
+	- answer
