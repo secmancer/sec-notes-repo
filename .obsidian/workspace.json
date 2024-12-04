@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "74ed805a0544832b",
+        "id": "59b7aaab7b5e6959",
         "type": "tabs",
         "children": [
           {
-            "id": "452a4bee97da356d",
+            "id": "c1264c86659e256a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 2.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 2"
             }
           }
         ]
@@ -201,9 +205,10 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "Untitled Kanban.md",
     "TryHackMe/Advent of Cyber/2024/Day 2.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
+    "conflict-files-obsidian-git.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Add files or folders here!.md",
@@ -236,7 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
