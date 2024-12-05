@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "68b55c17539a7ff9",
+        "id": "c890b1fc1a5a8e73",
         "type": "tabs",
         "children": [
           {
-            "id": "7fea73138fb589d7",
+            "id": "2257a5d14e62b329",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 4.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 4"
             }
           }
         ]
@@ -199,14 +203,15 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "7fea73138fb589d7",
+  "active": "2257a5d14e62b329",
   "lastOpenFiles": [
     "TryHackMe/Advent of Cyber/2024/Day 3.md",
-    "TryHackMe/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024/Day 2.md",
+    "TryHackMe/Advent of Cyber/2024/Day 1.md",
+    "TryHackMe/Advent of Cyber/2024/Day 4.md",
+    "TryHackMe/Add files or folders here!.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "Untitled Kanban.md",
-    "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "conflict-files-obsidian-git.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
@@ -236,7 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcodes.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",

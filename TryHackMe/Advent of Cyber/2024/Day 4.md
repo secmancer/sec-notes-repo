@@ -1,0 +1,13 @@
+### Questions
+- What was the flag found in the .txt file that is found in the same directory as the PhishingAttachment.xslm artefact?
+	- answer
+- What ATT&CK technique ID would be our point of interest?
+	- answer
+- What ATT&CK subtechnique ID focuses on the Windows Command Shell?
+	- answer
+- What is the name of the Atomic Test to be simulated?
+	- answer
+- What is the name of the file used in the test?
+	- answer
+- What is the flag found from this Atomic Test?
+	- answer
