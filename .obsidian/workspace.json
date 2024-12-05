@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 4.md",
+                "file": "TryHackMe/Advent of Cyber/2024/Day 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Day 4"
+              "title": "Day 5"
             }
           }
         ]
@@ -206,6 +206,7 @@
   "active": "2257a5d14e62b329",
   "lastOpenFiles": [
     "TryHackMe/Advent of Cyber/2024/Day 3.md",
+    "TryHackMe/Advent of Cyber/2024/Day 5.md",
     "TryHackMe/Advent of Cyber/2024/Day 2.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "TryHackMe/Advent of Cyber/2024/Day 4.md",
@@ -240,7 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Techniques.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcodes.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Screenshots/Screenshot_20241121_145751.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011918.png",
     "CTF > 101 Handbook/Screenshots/Screenshot_20241121_011848.png",
