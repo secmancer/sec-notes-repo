@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c890b1fc1a5a8e73",
+        "id": "f9467f3cbd4f92ba",
         "type": "tabs",
         "children": [
           {
-            "id": "2257a5d14e62b329",
+            "id": "ff2bb1c465d7198e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 5.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Day 5"
+              "title": "New tab"
             }
           }
         ]
@@ -203,10 +199,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2257a5d14e62b329",
+  "active": "ff2bb1c465d7198e",
   "lastOpenFiles": [
-    "TryHackMe/Advent of Cyber/2024/Day 3.md",
     "TryHackMe/Advent of Cyber/2024/Day 5.md",
+    "TryHackMe/Advent of Cyber/2024/Day 3.md",
     "TryHackMe/Advent of Cyber/2024/Day 2.md",
     "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "TryHackMe/Advent of Cyber/2024/Day 4.md",
