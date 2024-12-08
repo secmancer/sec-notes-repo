@@ -11,10 +11,14 @@
             "id": "ff2bb1c465d7198e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 3.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 3"
             }
           }
         ]
@@ -201,11 +205,11 @@
   },
   "active": "ff2bb1c465d7198e",
   "lastOpenFiles": [
-    "TryHackMe/Advent of Cyber/2024/Day 5.md",
-    "TryHackMe/Advent of Cyber/2024/Day 3.md",
     "TryHackMe/Advent of Cyber/2024/Day 2.md",
-    "TryHackMe/Advent of Cyber/2024/Day 1.md",
+    "TryHackMe/Advent of Cyber/2024/Day 3.md",
     "TryHackMe/Advent of Cyber/2024/Day 4.md",
+    "TryHackMe/Advent of Cyber/2024/Day 5.md",
+    "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "TryHackMe/Add files or folders here!.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "Untitled Kanban.md",
