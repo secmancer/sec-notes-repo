@@ -1,0 +1,19 @@
+### Questions
+- What is the other activity made by the user glitch aside from the ListObject action?
+	- answer
+- What is the source IP related to the S3 bucket activities of the user glitch?
+	- answer
+- Based on the eventSource field, what AWS service generates the ConsoleLogin event?
+	- answer
+- When did the anomalous user trigger the ConsoleLogin event?
+	- answer
+- What was the name of the user that was created by the mcskidy user?
+	- answer
+- What type of access was assigned to the anomalous user?
+	- answer
+- Which IP does Mayor Malware typically use to log into AWS?
+	- answer
+- What is McSkidy's actual IP address?
+	- answer
+- What is the bank account number owned by Mayor Malware?
+	- answer
