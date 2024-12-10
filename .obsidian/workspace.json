@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "144cae60273adfd9",
+        "id": "fe6a5309d24fd932",
         "type": "tabs",
         "children": [
           {
-            "id": "bbd7e44fc978c84f",
+            "id": "8df9a4b47d9b3f58",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 10.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 10"
             }
           }
         ]
@@ -199,8 +203,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bbd7e44fc978c84f",
+  "active": "8df9a4b47d9b3f58",
   "lastOpenFiles": [
+    "TryHackMe/Advent of Cyber/2024/Day 10.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
@@ -232,7 +237,6 @@
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3 - Successful RDP Logon Related to Service Accounts.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2 - Failed Logon Attempts (Disabled Users).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1 - Failed Logon Attempts (All Users).md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Untitled",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
