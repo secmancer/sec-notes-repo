@@ -1,5 +1,3 @@
--  Finishing this module, we are now ready to start taking on more boxes and challenges!
-
 ### Boxes & Challenges
 - We can now create some more ambitious goals after feeling the water with the box in the module.
 - It's recommended to try retired boxes, as they often are a great challenge, while also having documentation and media to help you when you are stuck.

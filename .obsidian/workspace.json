@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "df6007b340a7c7e8",
+        "id": "149bbdc2e639cf8d",
         "type": "tabs",
         "children": [
           {
-            "id": "a81fd32a2298c68e",
+            "id": "30369a1f77cf04df",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,10 +198,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "30369a1f77cf04df",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Infosec Overview.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
