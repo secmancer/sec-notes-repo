@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8eec1c7b54fd897c",
+        "id": "df6007b340a7c7e8",
         "type": "tabs",
         "children": [
           {
-            "id": "f22f41eefa9eaa48",
+            "id": "a81fd32a2298c68e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 11.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Day 11"
+              "title": "New tab"
             }
           }
         ]
@@ -138,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 11.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Day 11"
+              "title": "Outline"
             }
           },
           {
@@ -204,8 +198,21 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f22f41eefa9eaa48",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Infosec Overview.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Getting Help.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Paths and Certifications.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Sections.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Modules.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
     "TryHackMe/Advent of Cyber/2024/Day 11.md",
     "TryHackMe/Advent of Cyber/2024/Day 10.md",
     "TryHackMe/Advent of Cyber/2024/Day 9.md",
@@ -219,25 +226,12 @@
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
     "TryHackMe/Advent of Cyber/2024/Day 7.md",
-    "TryHackMe/Advent of Cyber/2024/Day 6.md",
-    "TryHackMe/Advent of Cyber/2024/Day 5.md",
-    "TryHackMe/Advent of Cyber/2024/Day 4.md",
-    "TryHackMe/Advent of Cyber/2024/Day 3.md",
-    "TryHackMe/Advent of Cyber/2024/Day 2.md",
-    "TryHackMe/Advent of Cyber/2024/Day 1.md",
-    "TryHackMe/Add files or folders here!.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
-    "Untitled Kanban.md",
-    "conflict-files-obsidian-git.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
-    "Hack The Box/HTB Labs/Add files or folders here!.md",
     "Hack The Box/HTB Labs",
     "CTF",
     "Hack The Box",
     "TryHackMe",
-    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3 - Successful RDP Logon Related to Service Accounts.md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2 - Failed Logon Attempts (Disabled Users).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Untitled",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
