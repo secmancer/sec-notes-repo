@@ -1,26 +1,31 @@
 ### Folder Structure
-- When attacking a single box, lab, or client environment, we should have a clear folder structure on our attack machine to save data such as: scoping information, enumeration data, evidence of exploitation attempts, sensitive data such as credentials, and other data obtained during recon, exploitation, and post-exploitation. A sample folder structure may look like follows:
+- We should always have a clear folder structure when documentation our progress.
+	-This may include scoping information, enumeration data, evidence of exploitation attempts, sensitive data such as credentials, and other data obtained during recon, exploitation, and post-exploitation. 
+- A sample folder structure may look like follows:
 ![[Screenshot_20241107_115800.png]]
-- Here we have a folder for the client `Acme Company` with two assessments, Internal Penetration Test (IPT) and External Penetration Test (EPT). 
-- Under each folder, we have subfolders for saving scan data, any relevant tools, logging output, scoping information (i.e., lists of IPs/networks to feed to our scanning tools), and an evidence folder that may contain any credentials retrieved during the assessment, any relevant data retrieved as well as screenshots.
-- It is a personal preference, but some folks create a folder for each target host and save screenshots within it. 
-- Others organize their notes by host or network and save screenshots directly into the note-taking tool. Experiment with folder structures and see what works best for you to stay organized and work most efficiently.
+- Folders and subfolders are used to organize data based on what they are representing. This can be anything from text documents to images/screenshots.
+- Some create a folder for each target host and save screenshots within it.
+- Others create their notes by host or network and save screenshots directly into the note-taking tool. 
+- Ultimately, it is up to you. Find something that works for you the best.
 
 
 ### Note Taking
-- Productivity and organization are very important. A very technical but unorganized penetration tester will have a difficult time succeeding in this industry. Various tools can be used for organization and note-taking. Selecting a note-taking tool is very individual. 
-- Some of us may not need a feature that another person requires based on their workflow. Some great options to explore include:
+- This is very important, as it allows for us to keep track of all of our information in a easily-accessible format.
+- We can use any note taking app, some may have features that work better for us.
+- A few examples include:
 ![[Screenshot_20241107_115844.png]]
-- Some of these are more focused on note-taking, while others such as Notion and GitBook have richer features that can be used to create Wiki-type pages, cheat sheets, and more. It is important to make sure that any client data is only stored locally and not synced to the cloud if using one of these tools on real-world assessments.
+- Some tools like Notion and GitBook offer richer features for creating Wiki-type pages, cheat sheets, and more.
+- Remember: client data should always be local to the machine when doing real-world assessments to ensure maximum privacy/security.
 
 > Tip: Learning [Markdown](https://en.wikipedia.org/wiki/Markdown) language is easy and very useful for note taking, as it can be easily represented in a visually appealing and organized way.
 
 
-
 ### Other Tools and Tips
-- Every infosec professional should maintain a knowledge base. This can be in the format of your choosing (though the tools above are recommended.) 
-- This knowledge base should contain quick reference guides for setup tasks that we perform on most assessments and cheat sheets for common commands that we use for each phase of an assessment.
-- As we complete boxes, labs, assessments, training courses, etc., we should be aggregating every payload, command, tip as we never know when one may come in handy. 
-- Having them accessible will increase our overall efficiency and productivity. Each HTB Academy Module has a cheat sheet of relevant commands showcased within the Module sections, which you can download and keep for future reference.
-- We should also maintain checklists, report templates for various assessment types, and build a findings/vulnerability database. This database can take the form of a spreadsheet or something more complex and include a finding title, description, impact, remediation advice, and references. 
-- Having these findings already written will save us considerable time and re-work during the reporting phase as the bulk of the findings will be written already and likely only require some customization to the target environment.
+- Every infosec professional has and should have a knowledge base. 
+- This knowledge base is ultimately up to you on whatever works the base.
+- This includes quick reference guides for setup tasks performed on most assessments, along with cheat sheets for common commands we may need for that specific phase.
+- Any payload, command, or tip we learn should always be documented. It may be proven useful later on.
+- HTB Academy Modules have cheat sheets of relevant commands from their sections, so that can be downloaded and used for future reference. 
+- Checklists and report templates for various assessment types, and findings/vulnerability database are also useful to us as well.  
+- Having this system in place saves us us time during the reporting phase.
+- That way, we can use the bulk of it and just modify it based on the current target environment.

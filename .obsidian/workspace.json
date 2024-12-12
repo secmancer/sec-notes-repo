@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "149bbdc2e639cf8d",
+        "id": "8cc53c70d4bbde14",
         "type": "tabs",
         "children": [
           {
-            "id": "30369a1f77cf04df",
+            "id": "7d783d9d187bf041",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,10 +198,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "30369a1f77cf04df",
+  "active": "7d783d9d187bf041",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Web Enumeration.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Basic Tools.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Problem Solving/Getting Help.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Problem Solving/Common Pitfalls.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Getting Started with a Pentest Demo.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Staying Organized.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Connecting using VPN.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Infosec Overview.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
@@ -218,14 +226,6 @@
     "TryHackMe/Advent of Cyber/2024/Day 9.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
-    "TryHackMe/Advent of Cyber/2024/Day 8.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
-    "TryHackMe/Advent of Cyber/2024/Day 7.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",

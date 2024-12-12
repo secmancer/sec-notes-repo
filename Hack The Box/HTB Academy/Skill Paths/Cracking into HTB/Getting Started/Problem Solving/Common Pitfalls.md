@@ -1,11 +1,7 @@
-- While performing penetration tests or attacking HTB boxes/labs, we may make many common mistakes that will hamper our progress.
-- In this section, we will discuss some of these common pitfalls and how to overcome them.
-
-## VPN Issues
-- We may sometimes face issues related to VPN connections to the HTB labs network. First, we should ensure that we are indeed connected to the HTB network.
-- #### Still Connected to VPN\
-	- The easiest method of checking if we have successfully connected to the VPN network is by checking whether we have `Initialization Sequence Completed` at the end of our VPN connection messages:
-	- Common Pitfalls
+### VPN Issues
+- First, we should check if we have a connection to the HTB network.
+- #### Still Connected to VPN
+	- Easiest way is seeing if we have a `Initialization Sequence Completed`message:
 ```shell-session
 secmancer@htb[/htb]$ sudo openvpn ./htb.ovpn
 
@@ -14,8 +10,7 @@ secmancer@htb[/htb]$ sudo openvpn ./htb.ovpn
 Initialization Sequence Completed
 ```
 - #### Getting VPN Address
-	- Another way of checking whether we are connected to the VPN network is by checking our VPN `tun0` address, which we can find with the following command:
-	- Common Pitfalls
+	- We can also check by attempting to get our `tun0` address:
 ```shell-session
 secmancer@htb[/htb]$ ip -4 a show tun0
 
@@ -24,10 +19,9 @@ secmancer@htb[/htb]$ ip -4 a show tun0
        valid_lft forever preferred_lft forever
 ```
 
-- As long we get our IP back, then we should be connected to the VPN network.
+- If we get our IP back, then we should be connected.
 - #### Checking Routing Table
-	- Another way to check for connectivity is to use the command `sudo netstat -rn` to view our routing table:
-	- Common Pitfalls
+	- We can use the command `sudo netstat -rn` to view our routing table:
 ```shell-session
 secmancer@htb[/htb]$ sudo netstat -rn
 
@@ -41,8 +35,8 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 192.168.1.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
 ```
 - #### Pinging Gateway
-	- From here, we can see that we are connected to the `10.10.14.0/23` network on the `tun0` adapter and have access to the `10.129.0.0/16` network and can ping the gateway `10.10.14.1` to confirm access.
-	- Common Pitfalls
+	- Here, we can check if we have a connection to the `10.10.14.0/23` network on the `tun0` adapter and confirm we have access to the `10.129.0.0/16` network.
+	- From there, we can ping the gateway `10.10.14.1` to confirm access.
 ```shell-session
 secmancer@htb[/htb]$ ping -c 4 10.10.14.1
 PING 10.10.14.1 (10.10.14.1) 56(84) bytes of data.
@@ -55,27 +49,32 @@ PING 10.10.14.1 (10.10.14.1) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 3012ms
 rtt min/avg/max/mdev = 110.574/110.793/111.056/0.174 ms
 ```
-- Finally, we can either attack an assigned target host on the 10.129.0.0/16 network or begin enumeration for live hosts.
-- #### Working on Two Devices
-	- The HTB VPN cannot be connected to more than one device simultaneously. If we are connected on one device and try to connect from another device, the second connection attempt will fail.
-	-  For example, this can happen when our VPN connection is connected in our PwnBox, and then we try to connect to it from our Parrot VM at the same time. Alternatively, perhaps we are connected on our Parrot VM, and then we want to switch to a Windows VM to test something.
-- #### Checking Region
-	- If we feel a noticeable lag in our VPN connection, such as latency in pings or ssh connections, we should ensure that we are connected to the most appropriate region. HTB provides VPN servers worldwide, in `Europe`, `USA`, `Australia`, and `Singapore`. Ideally, it would help if we tried to connect to the server closest to us to get the best possible connection.
-	- To change our VPN Server, go to [HackTheBox](https://app.hackthebox.eu/home), click on the top-right icon that says `Lab Access` or `Offline`, click on `Labs`, and then click on `OpenVPN`. Once we do, we should be able to pick our VPN server location and pick any of the servers within that region:
+- After all of that is situated, then we should be ready to go!
+
+
+### Attempting to Working on Two Devices
+- HTB VPN only provides connection to one device only.
+
+### Checking VPN Region
+- Picking a different region or one closer to you may also relieve issues as well.
+- This can be changed by going to [HackTheBox](https://app.hackthebox.eu/home) and changing our VPN server location.
 
 > Note: Users with a free subscription only can connect to 1-3 free servers in each region. Users with a VPN subscription can connect to VIP servers, which provide a faster connection with less traffic.
 
-- #### VPN Troubleshooting
-	- In case we face any technical issues when connecting to the VPN, we can find detailed guidance on troubleshooting VPN connections on this [HackTheBox Help page](https://help.hackthebox.eu/troubleshooting/v2-vpn-connection-troubleshooting).
-- #### Burp Suite Proxy Issues
-	- [Burp Suite](https://portswigger.net/burp/communitydownload) is a crucial tool during web application penetration tests (as well as other assessment types). Burp Suite is a web application proxy and can cause a few issues on our systems.
+### Additional VPN Troubleshooting
+- Detailed guidance on troubleshooting VPN connections are available on this [HackTheBox Help page](https://help.hackthebox.eu/troubleshooting/v2-vpn-connection-troubleshooting).
+
+### Burp Suite Proxy Issue
+- [Burp Suite](https://portswigger.net/burp/communitydownload) may cause some issues due to its web application proxy feature.
 - #### Not Disabling Proxy
-	- When we turn the Burp proxy in our browser, Burp will start to capture our traffic and intercept our requests. This will make it stop any requests we make in the browser, i.e., visiting a page until we go to Burp, examine the request, and forward the request.
-	- A common pitfall is forgetting to turn off the browser proxy after closing Burp, so it keeps intercepting our requests. If this happens, we will see that our browser is not loading any pages, so we should check if the browser proxy is still on. We can do that by clicking on the `Foxy Proxy` plugin icon in `Firefox`, and making sure it's set to `Turn Off`:
-	- If we are not using a plugin like `Foxy Proxy`, we can check the browser's connection settings and make sure the proxy is turned off. Once we do, we should be able to continue browsing without any issues.
-- #### Changing SSH Key and Password
-	- In case we start facing some issues with connecting to SSH servers or connecting to our machine from a remote server, we may want to renew or change our SSH key and password to make sure they are not causing any issues. We can do this with the `ssh-keygen` command, as follows:
-	- Common Pitfalls
+	- Turning the Burp proxy on, it will start to capture our traffic and intercept our requests. 
+	- This stops any requests we make in the browser like visiting a webpage from happening, as it's intended for us to scourge through them.
+	- Make sure this is turned off if you don't plan on using it.
+	- After doing this, we should be able to continue browsing without any issues.
+
+### Changing SSH Key and Password
+- If we have issues connecting to SSH servers or to our machine from a remote server, we are able to renew or change our SSH key and password.
+- We can do this with the `ssh-keygen` command:
 ```shell-session
 secmancer@htb[/htb]$ ssh-keygen
 
@@ -102,5 +101,5 @@ The key's randomart image is:
 ```
 
 - By default, SSH keys are stored in the `.ssh` folder within our home folder (for example, `/home/htb-student/.ssh`). 
-- If we wanted to create an ssh key in a different directory, we could enter an absolute path for the key when prompted. 
-- We can encrypt our SSH key with a password when prompted or keep it empty if we do not want to use a password.
+- If we wanted to create an ssh key in a different directory, we could can specify a path when prompted. 
+- Encrypting our SSH key with a password is also an option, but we are also able to not set one as well.

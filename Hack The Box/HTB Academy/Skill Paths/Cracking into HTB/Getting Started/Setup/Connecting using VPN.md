@@ -1,27 +1,27 @@
-- A [virtual private network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) allows us to connect to a private (internal) network and access hosts and resources as if we were directly connected to the target private network.
-- It is a secured communications channel over shared public networks to connect to a private network (i.e., an employee remotely connecting to their company's corporate network from their home). 
-- VPNs provide a degree of privacy and security by encrypting communications over the channel to prevent eavesdropping and access to data traversing the channel.
+- [Virtual private network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) allows for connections to a private (internal) network to access hosts and resources as like we are connected on the same network.
+	- For example, an employee remotely connecting to their company's corporate network from their home allows that employee to get work done like they are on the corporate network in a secure fashion.
+- Additionally provides a degree of privacy and security through encrypting communications over the channel to prevent eavesdropping on data traversing through it.
 ![[GettingStarted.png]]
-- At a high-level, VPN works by routing our connecting device's internet connection through the target VPN's private server instead of our internet service provider (ISP). 
-- When connected to a VPN, data originates from the VPN server rather than our computer and will appear to originate from a public IP address other than our own.
+- VPNs, at a high level, route our device's connection through the target VPN's private server, rather than our internet service provider (ISP). 
+- When connected, data comes from the VPN server instead of our computer, so we will have a different public IP address assigned to us.
 - There are two main types of remote access VPNs: client-based VPN and SSL VPN. SSL VPN uses the web browser as the VPN client. 
-- The connection is established between the browser and an SSL VPN gateway can be configured to only allow access to web-based applications such as email and intranet sites, or even the internal network but without the need for the end user to install or use any specialized software. 
-- Client-based VPN requires the use of client software to establish the VPN connection. Once connected, the user's host will work mostly as if it were connected directly to the company network and will be able to access any resources (applications, hosts, subnets, etc.) allowed by the server configuration. 
-- Some corporate VPNs will provide employees with full access to the internal corporate network, while others will place users on a specific segment reserved for remote workers.
+- Control on aspects like access to web-based applications like email/intranet sites are able to be done easily with a VPN without anything else additional.
+- Clients download software to establish this connection for it to function.
+- Some corporate VPNs provides employees with full access, while others may assigns users to a specific segment reserved for remote workers.
 
 
 ### Why Use VPNs?
-- We can use a VPN service such as `NordVPN` or `Private Internet Access` and connect to a VPN server in another part of our country or another region of the world to obscure our browsing traffic or disguise our public IP address. 
-- This can provide us with some level of security and privacy. Still, since we are connecting to a company's server, there is always the chance that data is being logged or the VPN service is not following security best practices or the security features that they advertise. 
-- Using a VPN service comes with the risk that the provider is not doing what they are saying and are logging all data. 
-- Usage of a VPN service **does not** guarantee anonymity or privacy but is useful for bypassing certain network/firewall restrictions or when connected to a possible hostile network (i.e., a public airport wireless network). 
-- A VPN service should never be used with the thought that it will protect us from the consequences of performing nefarious activities.
+- `NordVPN` or `Private Internet Access` are VPN services we can subscribe to. These allow us to connect to various VPN servers in other parts of the world.
+	- While this might provide some security/privacy benefit to us, there is always the great chance that your data is being logged, or even that you are trusting that the service uses the best security practices possible, which isn't always easy to tell from our end.
+	- Therefore, there is always some level of risk when doing this avenue.
+- Usage of these VPN service are more useful for bypassing certain network/firewall restrictions or when connected to a possible hostile network, like public Wi-Fi. 
+- Therefore, don't use these services for anything illegal. By law, they are required to work with law enforcement agencies on this kind of thing.
 
 ### Connecting to the HTB VPN
-- HTB and other services offering purposefully vulnerable VMs/networks require players to connect to the target network via a VPN to access the private lab network.
-- Hosts within HTB networks cannot connect directly out to the internet. When connected to HTB VPN (or any penetration testing/hacking-focused lab), we should always consider the network to be "hostile." 
-- We should only connect from a virtual machine, disallow password authentication if SSH is enabled on our attacking VM, lockdown any web servers, and not leave sensitive information on our attack VM (i.e., do not play HTB or other vulnerable networks with the same VM that we use to perform client assessments). 
-- When connecting to a VPN (either within HTB Academy or the main HTB platform), we connect using the following command:
+- To access HTB, a VPN connection is available to us. Note that this is intended only for VMs/targets that are in the scope of learning. Basically, no funny business while connected.
+- if using the AttackBox, we don't have to worry. This is automatically handled for us.
+- However, we want to use our own toolset/VM, then additional setup is required.
+- Downloading our VPN configuration file, we can connect using OpenVPN, one of many different VPN tools, by running the following command:
 ```
 secmancer@htb[/htb]$ sudo openvpn user.ovpn
 
@@ -35,9 +35,8 @@ Thu Dec 10 18:42:41 2020 UDP link local: (not bound)
 <SNIP>
 Thu Dec 10 18:42:41 2020 Initialization Sequence Completed
 ```
-- The last line `Initialization Sequence Completed` tells us that we successfully connected to the VPN.
-- Where `sudo` tells our host to run the command as the elevated root user, `openvpn` is the VPN client, and the `user.ovpn` file is the VPN key that we download from either the Academy module section or the main HTB platform. 
-- If we type `ifconfig` in another terminal window, we will see a `tun` adapter if we successfully connected to the VPN.
+- `Initialization Sequence Completed` lets us know we successfully connected to it.
+- Therefore, typing `ifconfig`, we are given `tun` adapter to demonstrate our connection.
 ```
 secmancer@htb[/htb]$ ifconfig
 
@@ -49,7 +48,7 @@ tun0: flags=4305<UP,POINTOPOINT,RUNNING,NOARP,MULTICAST>  mtu 1500
         inet6 fe80::d82f:301a:a94a:8723  prefixlen 64  scopeid 0x20<link>
         unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen
 ```
-- Typing `netstat -rn` will show us the networks accessible via the VPN.
+- We can show ourselves networks accessible within the VPN by running `netstat -rn`.
 ```
 secmancer@htb[/htb]$ netstat -rn
 
@@ -60,4 +59,4 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 10.129.0.0      10.10.14.1      255.255.0.0     UG        0 0          0 tun0
 192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
 ```
-- Here can see that the 10.129.0.0/16 network used for HTB Academy machines is accessible via the `tun0` adapter via the 10.10.14.0/23 network.
+- Here, the 10.129.0.0/16 network, intended for HTB Academy machines, can be accessed by the `tun0` adapter via the 10.10.14.0/23 network.
