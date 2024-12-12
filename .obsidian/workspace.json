@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "efabc07cb05cea50",
+        "id": "8eec1c7b54fd897c",
         "type": "tabs",
         "children": [
           {
-            "id": "c3eefdd6f07a5371",
+            "id": "f22f41eefa9eaa48",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 11.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 11"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 11.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Day 11"
             }
           },
           {
@@ -198,15 +204,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "f22f41eefa9eaa48",
   "lastOpenFiles": [
+    "TryHackMe/Advent of Cyber/2024/Day 11.md",
     "TryHackMe/Advent of Cyber/2024/Day 10.md",
+    "TryHackMe/Advent of Cyber/2024/Day 9.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
     "TryHackMe/Advent of Cyber/2024/Day 8.md",
-    "TryHackMe/Advent of Cyber/2024/Day 9.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
@@ -231,7 +238,6 @@
     "TryHackMe",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3 - Successful RDP Logon Related to Service Accounts.md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2 - Failed Logon Attempts (Disabled Users).md",
-    "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1 - Failed Logon Attempts (All Users).md",
     "HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Untitled",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging",
