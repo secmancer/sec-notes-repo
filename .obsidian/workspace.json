@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ed045f015a6ea875",
+        "id": "07219b0e43f2f354",
         "type": "tabs",
         "children": [
           {
-            "id": "35f100776ed1e959",
+            "id": "be4379491c5670a5",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "35f100776ed1e959",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Initial Foothold.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Enumeration.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Getting Started with HTB/Navigating HTB.md",
@@ -208,8 +210,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Transferring Files.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Web Footprinting.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Initial Foothold.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Service Scanning.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Public Exploits.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Privilege Escalation.md",
