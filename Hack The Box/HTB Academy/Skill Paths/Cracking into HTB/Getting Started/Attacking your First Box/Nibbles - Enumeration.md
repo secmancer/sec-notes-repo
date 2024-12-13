@@ -1,20 +1,21 @@
-- There are 201 standalone boxes of various operating systems and difficulty levels available to us on the HTB platform with VIP membership when writing this. 
-- This membership includes an official HTB created walkthrough for each retired machine. We can also find blog and video walkthroughs for most boxes with a quick Google search.
-- For our purposes, let us walk through the box `Nibbles`, an easy-rated Linux box that showcases common enumeration tactics, basic web application exploitation, and a file-related misconfiguration to escalate privileges.
-- Let us first look at some machine statistics:
+### Setup
+- VIP Membership: Provides access to 201 standalone machines of various OS types and difficulty levels.
+- Official HTB walkthroughs for retired machines, along with blog and video guides available online.
+- For this module, we will be completing Nibbles, an easy-rated Linux box focusing on enumeration tactics, web application exploitation, and file misconfigurations for privilege escalation.
+- Let’s examine the statistics for the `Nibbles` box.
 ![[Screenshot_20241107_131032.png]]
-- Our first step when approaching any machine is to perform some basic enumeration. 
-- First, let us start with what we do know about the target. We already know the target's IP address, that it is Linux, and has a web-related attack vector. 
-- We call this a grey-box approach because we have some information about the target. On the HTB platform, the 20 "active" weekly-release machines are all approached from a black-box perspective. 
-- Users are given the IP address and operating system type beforehand but no additional information about the target to formulate their attacks. This is why the thorough enumeration is critical and is often an iterative process.
-- Before we continue, let us take a quick step back and look at the various approaches to penetration testing actions. There are three main types, `black-box`, `grey-box`, and `white-box`, and each differs in the goal and approach.
+- Start with basic enumeration to gather known details like IP address, OS, and attack vector.
+- Three main types of penetration testing approaches—black-box, grey-box, and white-box—each with distinct goals and methodologies.
+- **Grey-Box Approach**: Partial information about the target (IP, OS) is known, while additional details must be uncovered through enumeration.
+- **Black-Box Approach**: Used in HTB’s active machines, where only IP and OS type are provided, forcing complete discovery from scratch.
+- Since black-box is so hidden, this makes iterative enumeration a critical process due to the limited information in black-box scenarios.
 ![[Screenshot_20241107_131101.png]]
 
 
 ### Nmap
-- Let us begin with a quick `nmap` scan to look for open ports using the command `nmap -sV --open -oA nibbles_initial_scan <ip address>`. 
-- This will run a service enumeration (`-sV`) scan against the default top 1,000 ports and only return open ports (`--open`). We can check which ports `nmap` scans for a given scan type by running a scan with no target specified, using the command `nmap -v -oG -`. 
-- Here we will output the greppable format to stdout with `-oG -` and `-v` for verbose output. Since no target is specified, the scan will fail but will show the ports scanned.
+- To start, let's use `nmap -sV --open -oA nibbles_initial_scan <ip address>` to scan for open ports and enumerate services.
+- **Port and Service Enumeration**: `-sV` runs a service enumeration against top 1,000 ports, `--open` filters only open ports.
+- We can also use `nmap -v -oG -` with no target to display ports scanned in verbose greppable format.
 ```shell-session
 secmancer@htb[/htb]$ nmap -v -oG -
 
@@ -26,10 +27,9 @@ WARNING: No targets were specified, so 0 hosts scanned.
 
 # Nmap done at Wed Dec 16 23:22:26 2020 -- 0 IP addresses (0 hosts up) scanned in 0.04 seconds
 ```
-- Finally, we will output all scan formats using `-oA`. This includes XML output, greppable output, and text output that may be useful to us later. 
-- It is essential to get in the habit of taking extensive notes and saving all console output early on. The better we get at this while practicing, the more second nature it will become when on real-world engagements. 
-- Proper notetaking is critical for us as penetration testers and will significantly speed up the reporting process and ensure no evidence is lost. 
-- It is also essential to keep detailed time-stamped logs of scanning and exploitation attempts in an outage or incident in which the client needs information about our activities.
+- We can use `-oA` to generate XML, greppable, and text outputs for future reference.
+- Develop the habit of saving and documenting all console output to ensure no information is lost, as it also speeds up reporting and ensures evidence is not lost.
+- **Time-Stamped Logs**: Essential for incident response, especially in case clients need detailed logs of scanning and exploitation activities.
 ```shell-session
 secmancer@htb[/htb]$ nmap -sV --open -oA nibbles_initial_scan 10.129.42.190
 
@@ -47,32 +47,32 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 11.82 seconds
 ```
-- From the initial scan output, we can see that the host is likely Ubuntu Linux and exposes an Apache web server on port 80 and an OpenSSH server on port 22. SSH, or [Secure Shell](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)), is a protocol typically used for remote access to Linux/Unix hosts. 
-- SSH can also be used to access Windows host and is now native to Windows 10 since version 1809. We can also see that all three types of scan output were created in our working directory.
+- Host likely Ubuntu Linux, Apache web server on port 80, and OpenSSH server on port 22.
+- This is because SSH is actually now supported on Windows 10 since version 1809.
+- **Scan Outputs**: All three scan formats (XML, greppable, text) were generated in the working directory.
 ```shell-session
 secmancer@htb[/htb]$ ls
 
 nibbles_initial_scan.gnmap  nibbles_initial_scan.nmap  nibbles_initial_scan.xml
 ```
-- Before we start poking around at the open ports, we can run a full TCP port scan using the command `nmap -p- --open -oA nibbles_full_tcp_scan 10.129.42.190`. 
-- This will check for any services running on non-standard ports that our initial scan may have missed. 
-- Since this scans all 65,535 TCP ports, it can take a long time to finish depending on the network. We can leave this running in the background and move on with our enumeration. 
-- Using `nc` to do some banner grabbing confirms what `nmap` told us; the target is running an Apache web server and an OpenSSH server.
+- Run `nmap -p- --open -oA nibbles_full_tcp_scan 10.129.42.190` to scan all 65,535 TCP ports for any missed services. We should note that this scan may take a while depending on the network, so we can run it in the background.
+- We would also want to grab banners from these services as well.
+- To do that, we can use `nc` to confirm that, in fact, Apache and OpenSSH services are running on their respective, default ports.
 ```shell-session
 secmancer@htb[/htb]$ nc -nv 10.129.42.190 22
 
 (UNKNOWN) [10.129.42.190] 22 (ssh) open
 SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.8
 ```
-- `nc` tells us that port 80 runs an HTTP (web) server but does not show the banner.
+- According to nc, port 80 has an HTTP web server, but doesn't display the banner telling us that.
 ```shell-session
 secmancer@htb[/htb]$ nc -nv 10.129.42.190 80
 
 (UNKNOWN) [10.129.42.190] 80 (http) open
 ```
-- Checking our other terminal window, we can see that the full port scan (`-p-`) has finished and has not found any additional ports. Let's do perform an `nmap` [script](https://nmap.org/book/man-nse.html) scan using the `-sC` flag. 
-- This flag uses the default scripts, which are listed [here](https://nmap.org/nsedoc/categories/default.html). These scripts can be intrusive, so it is always important to understand exactly how our tools work. 
-- We run the command `nmap -sC -p 22,80 -oA nibbles_script_scan 10.129.42.190`. Since we already know which ports are open, we can save time and limit unnecessary scanner traffic by specifying the target ports with `-p`.
+- Use `nmap -sC -p 22,80 -oA nibbles_script_scan 10.129.42.190` to run default scripts on specified ports.
+- Scripts can be intrusive, so we must be aware of their behavior to ensure we have the proper authorization when doing this on more critical systems.
+- By specifying `-p`, we reduce unnecessary traffic and save time.
 ```shell-session
 secmancer@htb[/htb]$ nmap -sC -p 22,80 -oA nibbles_script_scan 10.129.42.190
 
@@ -91,7 +91,8 @@ PORT   STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 4.42 seconds
 ```
-- The script scan did not give us anything handy. Let us round out our `nmap` enumeration using the [http-enum script](https://nmap.org/nsedoc/scripts/http-enum.html), which can be used to enumerate common web application directories. This scan also did not uncover anything useful.
+- So... looks like this script didn't really pan out.
+- We can instead use [http-enum script](https://nmap.org/nsedoc/scripts/http-enum.html) to enumerate common web application directories. 
 ```shell-session
 secmancer@htb[/htb]$ nmap -sV --script=http-enum -oA nibbles_nmap_http_enum 10.129.42.190 
 
@@ -108,7 +109,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 19.23 seconds
 ```
-
+- This scan also did not uncover anything useful.
 
 
 ### Questions

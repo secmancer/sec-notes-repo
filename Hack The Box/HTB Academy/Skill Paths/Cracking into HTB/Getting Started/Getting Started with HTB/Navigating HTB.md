@@ -1,81 +1,60 @@
-- `Hack The Box` provides a wealth of information for anyone getting started in penetration testing or looking to enhance their skillset. The website offers many learning opportunities so understanding its structure and layout is imperative to make the most of the learning experience.
-
-
 ### Profile
-- You can access your HTB profile page either on the left pane or by clicking on your username on the top pane.
-- Your profile page shows your HTB statistics, including your rank, progress towards the next rank, percentage towards owning various HTB challenges and labs, and other similar statistics.
-- You can also find detailed statistics about your machine and challenge progress, along with your progress history for each. You can also find various badges and certificates you've earned. You can share your profile page by clicking on the `Share Profile` button.
-
+- Access your profile via the left pane or by clicking your username in the top pane.
+- View rank, progress, challenge and lab statistics, badges, certificates, and progress history.
+- Share your profile using the `Share Profile` button.
 
 ### Rankings
-- The HTB Rankings page shows current rankings of users, teams, universities, countries, and VIP members.
-- You can also view your ranking among other users, your best rank, and your general progress. 
-- In addition to that, your ranking and points add up to your country ranking, which you can view as well on the country ranking page. 
-- If you are in a team or university, your points would add up to them as well. 
-- If you are a user with a VIP subscription, you can view your VIP rank, which counts points gained on all machines. When we start on the main `HackTheBox` page, we see the `Labs` tab on the side panel, which includes the following main sections.
-
+- Displays rankings for users, teams, universities, countries, and VIP members.
+- View your rank, best rank, and progress, with your points contributing to country, team, or university rankings.
+- VIP users can view their exclusive rank, including points from all machines.
+- The main `HackTheBox` page features a `Labs` tab in the side panel with various sections.
 
 ### Tracks
-- `HTB Tracks` is a great feature that helps in planning your next machines and challenges.
-- A Track is a selection of machines and challenges tied together for users to progress through mastering a particular subject. Whether you are just getting started, or want to test your Active Directory skills, or are ready for a challenge in the Expert track, you will find an appropriate track that includes a great selection of machines and challenges that will help you enhance your skill set in a specific area. 
-- Tracks are created by the `HTB` team, companies, universities, and even users. When you click on a track, you will see all of its machines and challenges, your progress in each, and your general progress in the track.
-- You can easily enroll into the track and start working your way through it.
-
+- Tracks group machines and challenges to help users master specific subjects, from beginner to expert levels.
+- Tracks are curated by the HTB team, companies, universities, and users.
+- Each track displays its machines, challenges, and your progress, with easy enrollment to start learning.
 
 ### Machines
-- Next, we have the `Machines` page, one of the most popular pages on `HackTheBox`.
-- The first thing you'll see is two recommended machines that you can play, one is the latest released weekly machine, and the other is a `Staff Pick` machine that is recommended by `HTB` staff.
-- If you scroll down, you'll find a list of all `HTB` machines in two tabs: `Active` and `Retired`.
-- `Active Machines` are the ones that give you points for your ranking, but you will have to solve them on your own using your pentesting knowledge. 
-- There are always 20 active machines distributed between difficulties.
-- A new machine is added weekly, and one of the active ones gets retired, and its points get cleared for everyone.
-- `Retired Machines` are all machines previously featured as a weekly active machine. 
-- You can find a walkthrough for each of them to follow, but the retired machines will not give you any points towards your ranking, though they do provide you VIP ranking points, as previously discussed.
+- One of the most popular HTB pages featuring recommended and user-suggested machines.
+- Recommended machines includes the latest weekly machine and a `Staff Pick` by HTB staff.
+- Active machines provide points for your ranking and require solving with pentesting knowledge.
+- Retired machines that were previously featured, offer walkthroughs but no ranking points. They provide VIP ranking points instead.
 
 > Note: Retired machines are only accessible with a VIP subscription, as only the two most recently retired machines are accessible for free.
 
-- You can filter machines based on machines you've completed or not and based on their difficulty or operating system type. You can also sort the machines by their release date, rating, or user-rated difficulty. 
-- If we click on any machine, we are taken to its machine-specific page.
-- You will be able to play the machine by clicking on `Join Machine`, after which you will get the machine's IP, which you can access once you are connected through `HTB` VPN. 
-- You can also submit the user and root flags you find on this page.
-- If the machine is retired, you can click on the `Walkthroughs` tab to see a list of provided walkthroughs, both written and videos. 
-- Finally, you can check the statistics and activity tabs for the most recent user statistics and activity.
-
+- You can filter machines by completion status, difficulty, or OS type, and sort by release date, rating, or user-rated difficulty.
+- You are able to click on a machine to take you to its page, where you can join the machine and access its IP via the HTB VPN.
+- Access walkthroughs (written or video) from the `Walkthroughs` tab for retired machines.
+- You can also check user statistics and activity on the statistics and activity tabs.
 
 ## Challenges
-- The layout of the challenges page is similar to the machines page. 
-- You will find both `Active` and `Retired` challenges sorted into ten different categories, each of which has a maximum of 10 challenges. 
-- You can click on any category to preview the list of challenges within it, and then you can click on any challenge to view its page and submit its flags.
-
+- Similar to the Machines page, featuring `Active` and `Retired` challenges sorted into categories.
+- Divided into ten categories, each containing up to 10 challenges.
+- Click on a category to preview challenges, then access a challenge page to submit flags.
 
 ## Fortress
-- Fortresses are vulnerable labs created by external companies and hosted on `HackTheBox`.
-- Each lab has several flags that can be found and submitted to the Fortress page. 
-- Once you completed the lab by finding all flags, you are awarded a badge from the company that created the fortress. Some companies also provide job offers that are linked to completing the labs to qualify. 
-- You need to hold `HTB` rank `Hacker` and above to play fortresses. 
-- Try to up your ranking by playing active machines and challenges to qualify.
+- Vulnerable labs hosted by external companies on HackTheBox.
+- You can submit flags to earn badges and, in some cases, job offers from the company that created the fortress.
+- They are available to users with HTB rank `Hacker` or above.
+- Play active machines and challenges to improve your rank and qualify for fortresses.
 
+## Endgame
+- Virtual labs with multiple interconnected machines, simulating real-world pentesting scenarios.
+- Require following specific exploit paths across multiple machines.
+- Provide broader attack paths not limited to single machines.
+- Active Endgames are for HTB rank `Guru` and above. Retired Endgames are available to VIP subscribers at any rank.
 
-### Endgame
-- Endgames are virtual labs that contain several machines connected to a single network. 
-- The scenarios strive to reflect a real-world situation you may encounter when performing a pentest for an actual company.
-- Just like machines, each Endgame lab has a specific attack path that you need to exploit. 
-- However, as Endgames have multiple machines, we can learn specific attack paths that we cannot otherwise learn using a single machine only. 
-- You need to be of `HTB` rank `Guru` and above to play Active Endgames. Retired Endgames are only available to users with a VIP subscription, and they can be played at any rank.
-
-### Pro Labs
-- Pro Labs are the ultimate lab experience, as they are designed to simulate a real-world enterprise infrastructure, which is an excellent chance for testing out your pentesting skills.
-- Pro Labs are large and can take a while to finish and learn all of their attack paths and security challenges. Each Pro Lab has a specific scenario and level of difficulty:
+## Pro Labs
+- Simulate real-world enterprise infrastructures for advanced pentesting practice.
+- Large and time-consuming, with specific scenarios and difficulty levels.
+- Require a separate subscription plan for Pro Labs.
+- Awarded upon successful completion of a Pro Lab.
 ![[Screenshot_20241107_130725.png]]
-- Pro Labs require a separate subscription plan. Once you complete a Pro Lab, you get an HTB Certificate of Completion.
 
-
-### Battlegrounds
-- The latest addition to `HackThebox` is `HTB Battlegrounds`.
-- `HTB Battlegrounds` is a real-time game of strategy and hacking. You can play in a team of 4 or a team of 2.
-- `Cyber Mayhem` battles are based on the attack/defense style, in which each team is assigned several machines that they have to defend against attacks while attacking the other team's machines. 
-- Each attack/defense gives you a certain amount of points, and each flag collected counts as well. You play for a certain amount of time, and the team with the most points at the end wins.
-- `HTB Battlegrounds` is available for everyone to play, but there's a limit on the number of allowed matches, as follows:
+## Battlegrounds
+- A real-time game of strategy and hacking, played in teams of 2 or 4.
+- Attack/defend style where teams defend their machines while attacking the opponent's, earning points from attacks and flags.
+- Server Siege Mode: Attack-only style where the team who hacks faster wins.
+- Available to all users, but with limits on the number of allowed matches.
+- More info can be found in [this article](https://help.hackthebox.com/en/articles/5185620-gs-how-to-play-battlegrounds).
 ![[Screenshot_20241107_130809.png]]
-- `Server Siege` mode is an attack-only style, in which the team who can hack the other team faster wins. 
-- You can find a detailed article about `HTB Battlegrounds` in this [link](https://help.hackthebox.com/en/articles/5185620-gs-how-to-play-battlegrounds).
