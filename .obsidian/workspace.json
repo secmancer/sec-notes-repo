@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "94462947b7203281",
+        "id": "b3dcaa5cbdbf619f",
         "type": "tabs",
         "children": [
           {
-            "id": "d900536ff854b45a",
+            "id": "b91786adc5a94baf",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d900536ff854b45a",
+  "active": "b91786adc5a94baf",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Virtualization.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Organization.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Containers.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
@@ -224,8 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Source Code.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Deobfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
