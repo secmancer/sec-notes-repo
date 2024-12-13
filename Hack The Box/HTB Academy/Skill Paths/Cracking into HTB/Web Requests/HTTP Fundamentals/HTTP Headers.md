@@ -1,5 +1,8 @@
-- We have seen examples of HTTP requests and response headers in the previous section. Such HTTP headers pass information between the client and the server. Some headers are only used with either requests or responses, while some other general headers are common to both.
-- Headers can have one or multiple values, appended after the header name and separated by a colon. We can divide headers into the following categories:
+- We’ve seen examples of HTTP requests and response headers in earlier sections.
+- HTTP headers transfer information between the client and server.
+- Some headers are specific to requests or responses, while others are commonly used in both.
+- Headers can have one or multiple values, appended after the header name and separated by a colon. 
+- We can divide headers into the following categories:
 	1. `General Headers`
 	2. `Entity Headers`
 	3. `Request Headers`
@@ -35,7 +38,10 @@
 
 
 ### cURL
-- In the previous section, we saw how using the `-v` flag with cURL shows us the full details of the HTTP request and response. If we were only interested in seeing the response headers, then we can use the `-I` flag to send a `HEAD` request and only display the response headers. Furthermore, we can use the `-i` flag to display both the headers and the response body (e.g. HTML code). The difference between the two is that `-I` sends a `HEAD` request (as will see in the next section), while `-i` sends any request we specify and prints the headers as well.
+- In the previous section, we used the `-v` flag with cURL to view detailed HTTP requests and responses.
+- To view only response headers, use the `-I` flag to send a `HEAD` request.
+- The `-i` flag displays both headers and the response body (e.g., HTML code).
+- The key difference is that `-I` sends a `HEAD` request, while `-i` sends a regular request with headers.
 ```shell-session
 secmancer@htb[/htb]$ curl -I https://www.inlanefreight.com
 
@@ -61,7 +67,9 @@ Referrer-Policy: origin
 
 > **Exercise:** Try to go through all of the above headers, and see whether you can recall the usage for each of them.
 
-- In addition to viewing headers, cURL also allows us to set request headers with the `-H` flag, as we will see in a later section. Some headers, like the `User-Agent` or `Cookie` headers, have their own flags. For example, we can use the `-A` to set our `User-Agent`, as follows:
+- In addition to viewing headers, cURL also allows us to set request headers with the `-H` flag.
+- Some headers, like the `User-Agent` or `Cookie` headers, have their own flags. 
+- We can use the `-A` to set our `User-Agent`.
 ```shell-session
 secmancer@htb[/htb]$ curl https://www.inlanefreight.com -A 'Mozilla/5.0'
 
@@ -74,8 +82,10 @@ secmancer@htb[/htb]$ curl https://www.inlanefreight.com -A 'Mozilla/5.0'
 
 
 ### Browser DevTools
-- Finally, let's see how we can preview the HTTP headers using the browser devtools. Just as we did in the previous section, we can go to the `Network` tab to view the different requests made by the page.
-- In the first `Headers` tab, we see both the HTTP request and HTTP response headers. The devtools automatically arrange the headers into sections, but we can click on the `Raw` button to view their details in their raw format. Furthermore, we can check the `Cookies` tab to see any cookies used by the request, as discussed in an upcoming section.
+- Finally, we can view HTTP headers using browser devtools by navigating to the `Network` tab.
+- In the `Headers` tab, we can see both HTTP request and response headers, arranged into sections.
+- Clicking the `Raw` button displays the headers in their raw format.
+- The `Cookies` tab allows us to view any cookies used in the request, as discussed in upcoming sections.
 
 
 ## Questions

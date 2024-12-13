@@ -1,4 +1,4 @@
-- After doing the exercise in the previous section, we got a strange block of text that seems to be encoded:
+- After doing the exercise in the previous section, we got a strange block of text that seems to be encoded.
 ```shell-session
 secmancer@htb[/htb]$ curl http://SERVER_IP:PORT/serial.php -X POST -d "param1=sample"
 
@@ -75,11 +75,11 @@ https://www.hackthebox.eu/
 - Another option to encode/decode rot13 would be using an online tool, like [rot13](https://rot13.com/).
 
 
-### Other Types of Encoding
-- There are hundreds of other encoding methods we can find online. Even though these are the most common, sometimes we will come across other encoding methods, which may require some experience to identify and decode.
-- `If you face any similar types of encoding, first try to determine the type of encoding, and then look for online tools to decode it.`
-- Some tools can help us automatically determine the type of encoding, like [Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier). Try the encoded strings above with [Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier), to see if it can correctly identify the encoding method.
-- Other than encoding, many obfuscation tools utilize encryption, which is encoding a string using a key, which may make the obfuscated code very difficult to reverse engineer and deobfuscate, especially if the decryption key is not stored within the script itself.
+### Other Encoding Types
+- There are many other encoding methods beyond the common ones discussed.
+- If you encounter different types of encoding, try identifying the encoding method first, then use online tools to decode it.
+- Tools like [Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier) can help identify encoding methods.
+- Additionally, obfuscation often uses encryption, which may obscure the decryption key, making it harder to reverse engineer or deobfuscate the code.
 
 
 ### Questions

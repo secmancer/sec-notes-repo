@@ -1,10 +1,6 @@
-- In the previous section, we found out that the `secret.js` main function is sending an empty `POST` request to `/serial.php`. 
-- In this section, we will attempt to do the same using `cURL` to send a `POST` request to `/serial.php`.
-- To learn more about `cURL` and web requests, you can check out the [Web Requests](https://academy.hackthebox.com/module/details/35) module.
-
 ### cURL
 - `cURL` is a powerful command-line tool used in Linux distributions, macOS, and even the latest Windows PowerShell versions. 
-- We can request any website by simply providing its URL, and we would get it in text-format, as follows:
+- We can request any website by simply providing its URL, and we would get it in text-format.
 ```shell-session
 secmancer@htb[/htb]$ curl http://SERVER_IP:PORT/
 
@@ -31,7 +27,7 @@ secmancer@htb[/htb]$ curl http://SERVER_IP:PORT/
 
 
 ### POST Request
-- To send a `POST` request, we should add the `-X POST` flag to our command, and it should send a `POST` request:
+- To send a `POST` request, we should add the `-X POST` flag to our command, and it should send a `POST` request.
 ```shell-session
 secmancer@htb[/htb]$ curl -s http://SERVER_IP:PORT/ -X POST
 ```
@@ -40,7 +36,7 @@ secmancer@htb[/htb]$ curl -s http://SERVER_IP:PORT/ -X POST
 ```shell-session
 secmancer@htb[/htb]$ curl -s http://SERVER_IP:PORT/ -X POST -d "param1=sample"
 ```
-- Now that we know how to use `cURL` to send basic `POST` requests, in the next section, we will utilize this to replicate what `server.js` is doing to understand its purpose better.
+- Now that we know how to use `cURL` to send basic `POST` requests, we will be able to utilize this to replicate what `server.js` is doing to understand its purpose better.
 
 
 ### Questions

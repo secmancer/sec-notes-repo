@@ -1,20 +1,18 @@
-- Most websites nowadays utilize JavaScript to perform their functions. While `HTML` is used to determine the website's main fields and parameters, and `CSS` is used to determine its design, `JavaScript` is used to perform any functions necessary to run the website. 
-- This happens in the background, and we only see the pretty front-end of the website and interact with it.
-- Even though all of this source code is available at the client-side, it is rendered by our browsers, so we do not often pay attention to the HTML source code. 
-- However, if we wanted to understand a certain page's client-side functionalities, we usually start by taking a look at the page's source code. 
-- This section will show how we can uncover the source code that contains all of this and understand its general usage.
-
+### Introduction
+- Websites primarily use JavaScript for functionality, while HTML and CSS define structure and design.
+- The source code, though client-side, is executed in browsers and often hidden from view.
+- Understanding a website’s client-side functions requires looking at its source code.
+- This section explains how to uncover and analyze the source code for better understanding.
 
 ### HTML
-- We will start by starting the exercise below, open Firefox in our PwnBox, and visit the url shown in the question.
-- As we can see, the website says `Secret Serial Generator`, without having any input fields or showing any clear functionality. So, our next step is to peak at its source code. 
-- We can do that by pressing `[CTRL + U]`, which should open the source view of the website.
-- As we can see, we can view the `HTML` source code of the website.
-
+- Visiting any website, we can press `[CTRL + U]` on our browser to open the browser's source code viewer.
+- This allows us to view the code of the website, specifically, the `HTML` portion of it.
 
 ### CSS
-- `CSS` code is either defined `internally` within the same `HTML` file between `<style>` elements, or defined `externally` in a separate `.css` file and referenced within the `HTML` code.
-- In this case, we see that the `CSS` is internally defined, as seen in the code snippet below:
+- `CSS` code is can either:
+	- be defined `internally` within the same `HTML` file between `<style>` elements
+	- be defined `externally` in a separate `.css` file and referenced within the `HTML` code.
+- In this case, we see that the `CSS` is internally defined.
 ```html
     <style>
         *,
@@ -32,7 +30,7 @@
         }
     </style>
 ```
-- If a page `CSS` style is externally defined, the external `.css` file is referred to with the `<link>` tag within the HTML head, as follows:
+- If a page `CSS` style is externally defined, the external `.css` file is referred to with the `<link>` tag within the HTML head.
 ```html
 <head>
     <link rel="stylesheet" href="style.css">
@@ -41,7 +39,9 @@
 
 
 ### JavaScript
-- The same concept applies to `JavaScript`. It can be internally written between `<script>` elements or written into a separate `.js` file and referenced within the `HTML` code.
+- The same concept applies to `JavaScript`. 
+- It can be internally written between `<script>` elements.
+- However, it can also be written into a separate `.js` file and referenced within the `HTML` code.
 - We can see in our `HTML` source that the `.js` file is referenced externally:
 ```html
 <script src="secret.js"></script>
