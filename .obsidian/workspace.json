@@ -134,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/POST.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of POST"
+              "title": "Outline"
             }
           },
           {
