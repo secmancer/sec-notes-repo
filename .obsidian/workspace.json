@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "07219b0e43f2f354",
+        "id": "289f170f85f9e1f4",
         "type": "tabs",
         "children": [
           {
-            "id": "be4379491c5670a5",
+            "id": "254aa5c81a4b9b4f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Advanced Obfuscation"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Advanced Obfuscation"
             }
           },
           {
@@ -198,8 +204,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "254aa5c81a4b9b4f",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Initial Foothold.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Enumeration.md",
@@ -222,10 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Connecting using VPN.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Infosec Overview.md",
-    "TryHackMe/Advent of Cyber/2024/Day 12.md",
-    "TryHackMe/Advent of Cyber/2024/Day 9.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",

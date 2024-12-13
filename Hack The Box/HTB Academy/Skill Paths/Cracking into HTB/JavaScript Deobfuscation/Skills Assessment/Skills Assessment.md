@@ -1,5 +1,3 @@
-During our Penetration Test, we came across a web server that contains JavaScript and APIs. We need to determine their functionality to understand how it can negatively affect our customer.
-
 ### Questions
 - Try to study the HTML code of the webpage, and identify used JavaScript code within it. What is the name of the JavaScript file being used?
 	- api.min.js
