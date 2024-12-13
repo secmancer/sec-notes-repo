@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b3af8fc103d00d2f",
+        "id": "94462947b7203281",
         "type": "tabs",
         "children": [
           {
-            "id": "f9c86ca15a24f106",
+            "id": "d900536ff854b45a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "d900536ff854b45a",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Containers.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Getting Help.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Modules.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Paths and Certifications.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Sections.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/CRUD API.md",
@@ -216,16 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Initial Foothold.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Getting Started with HTB/Navigating HTB.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Getting Started with HTB/Starting Out.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Web Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
