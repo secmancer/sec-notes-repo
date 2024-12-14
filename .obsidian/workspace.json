@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7044a9f41d0e524a",
+        "id": "ee7851b3dd420a8c",
         "type": "tabs",
         "children": [
           {
-            "id": "29dd928954186348",
+            "id": "1563b6c1545ddd74",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,15 +198,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "29dd928954186348",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "TryHackMe/Advent of Cyber/2024/Day 13.md",
-    "TryHackMe/Advent of Cyber/2024/Day 1.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Capturing With Tcpdump (Fundamentals Labs).md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "Hack The Box/HTB Labs/Add files or folders here!.md",
+    "TryHackMe/Advent of Cyber/2024/Day 13.md",
+    "TryHackMe/Advent of Cyber/2024/Day 1.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Linux.md",
@@ -221,11 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Providers.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Hardening.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Windows.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Virtualization.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Organization.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Introduction.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Containers.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",

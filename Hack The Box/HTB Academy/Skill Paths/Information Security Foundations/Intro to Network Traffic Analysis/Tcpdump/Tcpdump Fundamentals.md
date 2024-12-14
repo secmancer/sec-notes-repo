@@ -1,35 +1,33 @@
-- `Tcpdump` is a command-line packet sniffer that can directly capture and interpret data frames from a file or network interface. It was built for use on any Unix-like operating system and had a Windows twin called `WinDump`. It is a potent and straightforward tool used on most Unix-based systems. It does not require a GUI and can be used through any terminal or remote connection, such as SSH. Nevertheless, this tool can seem overwhelming at first due to the many different functions and filters it offers us. However, once we learn the essential functions, we will find it much easier to use this tool efficiently. To capture network traffic from "off the wire," it uses the libraries `pcap` and `libpcap`, paired with an interface in promiscuous mode to listen for data. This allows the program to see and capture packets sourcing from or destined for any device in the local area network, not just the packets destined for us.
-- TCPDump is available for most Unix systems and Unix derivatives, such as AIX, BSD, Linux, Solaris, and is supplied by many manufacturers already in the system. Due to the direct access to the hardware, we need the `root` or the `administrator's` privileges to run this tool. For us that means we will have to utilize `sudo` to execute TCPDump as seen in the examples below. `TCPDump` often comes preinstalled on the majority of Linux operating systems.
-- It should be noted that Windows had a port of TCPDump called Windump. Support for windump has ceased. As an alternative running a Linux distribution such as Parrot or Ubuntu in Windows Subsystem for Linux can be an easy way to have a Linux virtual host right on our computer, allowing for the use of TCPDump and many other Linux built tools.
+### Introduction
+- **Tcpdump Overview**:
+    - `Tcpdump` is a command-line packet sniffer for capturing and interpreting data frames from a file or network interface.
+    - Designed for Unix-like operating systems, it has a Windows counterpart called `WinDump`. However, `WinDump` is no longer supported.
+- **Features and Usage**:
+    - Lightweight and powerful, it requires no GUI and can be accessed through any terminal or remote connection, such as SSH.
+    - Relies on `pcap` and `libpcap` libraries with an interface in promiscuous mode, enabling packet capture from any device on the local network, not just traffic directed to the capturing device.
+    - It offers numerous functions and filters, which may seem daunting initially, but mastering the basics simplifies its use significantly.
+- **Platform Availability**:
+    - Supported on most Unix systems and derivatives, including AIX, BSD, Linux, and Solaris.
+    - Often preinstalled on Linux systems.
+- **Privileges**:
+    - Requires `root` or administrator privileges due to direct hardware access. Use `sudo` to run `tcpdump` commands.
+- **Alternative for Windows Users**:
+    - Since `WinDump` is no longer supported, running a Linux distribution (e.g., Parrot or Ubuntu) in Windows Subsystem for Linux (WSL) offers access to `tcpdump` and other Linux tools.
 
 
-
-#### Locate Tcpdump
-- To validate if the package exists on our host, use the following command:
-- Tcpdump Fundamentals
-
+### Tcpdump Basics
+- #### Locate Tcpdump
+	- To validate if the package exists on our host, use the command below.
+	- Often it can be found in `/usr/sbin/tcpdump`. However, if the package does not exist, we can install it.
 ```shell-session
 secmancer@htb[/htb]$ which tcpdump
 ```
-
-- Often it can be found in `/usr/sbin/tcpdump`. However, if the package does not exist, we can install it with:
-
-
-
-#### Install Tcpdump
-- Tcpdump Fundamentals
-
+- #### Install Tcpdump
+	- We can run the tcpdump package with the `--version` switch to check our install and current package version to validate our install.
 ```shell-session
 secmancer@htb[/htb]$ sudo apt install tcpdump 
 ```
-
-- We can run the tcpdump package with the `--version` switch to check our install and current package version to validate our install.
-
-
-
-#### Tcpdump Version Validation
-- Tcpdump Fundamentals
-
+- #### Tcpdump Version Validation
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump --version
 
@@ -40,13 +38,12 @@ OpenSSL 1.1.1f  31 Mar 2020
 
 ---
 
-## Traffic Captures with Tcpdump
-- Because of the many different functions and filters, we should first familiarize ourselves with the tool's essential features. Let us discuss some basic TCPDump options, demo some commands, and show how to save traffic to `PCAP` files and read from these.
-
-
-
-#### Basic Capture Options
-- Below is a table of basic Tcpdump switches we can use to modify how our captures run. These switches can be chained together to craft how the tool output is shown to us in STDOUT and what is saved to the capture file. This is not an exhaustive list, and there are many more we can use, but these are the most common and valuable.
+### Traffic Captures with Tcpdump
+- Because of the many different functions and filters, we should first familiarize ourselves with the tool's essential features.
+- Let us discuss some basic TCPDump options, demo some commands, and show how to save traffic to `PCAP` files and read from these.
+- #### Basic Capture Options
+	- Below is a table of basic Tcpdump switches we can use to modify how our captures run. These switches can be chained together to craft how the tool output is shown to us in STDOUT and what is saved to the capture file. 
+	- This is not an exhaustive list, and there are many more we can use, but these are the most common and valuable.
 
 | **Switch Command** | **Result** |
 | :-: | --- |
@@ -65,25 +62,15 @@ OpenSSL 1.1.1f  31 Mar 2020
 | r file.pcap | Read from a file. |
 | w file.pcap | Write into a file |
 
-#### Man Page Utilization
-- To see the complete list of switches, we can utilize the man pages:
-
-
-
-#### Tcpdump Man Page
-- Tcpdump Fundamentals
-
+- #### Man Page Utilization
+	- To see the complete list of switches, we can utilize the man pages:
+- #### Tcpdump Man Page
+- Here are some examples of basic Tcpdump switch usage along with descriptions of what is happening:
 ```shell-session
 secmancer@htb[/htb]$ man tcpdump
 ```
-
-- Here are some examples of basic Tcpdump switch usage along with descriptions of what is happening:
-
-
-
-#### Listing Available Interfaces
-- Tcpdump Fundamentals
-
+- #### Listing Available Interfaces
+	- The above command calls tcpdump using sudo privileges and lists the usable network interfaces. We can choose one of these network interfaces and tell tcpdump which interfaces it should listen to.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -D
 
@@ -97,11 +84,7 @@ secmancer@htb[/htb]$ sudo tcpdump -D
 8.dbus-system (D-Bus system bus) [none]
 9.dbus-session (D-Bus session bus) [none]
 ```
-
-- The above command calls tcpdump using sudo privileges and lists the usable network interfaces. We can choose one of these network interfaces and tell tcpdump which interfaces it should listen to.
-
-#### Choosing an Interface to Capture From
-- Tcpdump Fundamentals
+- #### Choosing an Interface to Capture From
 
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0
@@ -113,12 +96,10 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 10:58:33.750393 IP 172.16.146.2.52195 > 172.16.146.1.domain: 7579+ PTR? 1.1.67.172.in-addr.arpa. (41)
 ```
 
-- In this terminal, we are calling tcpdump and selecting the interface eth0 to capture traffic. Once we issue the command, tcpdump will begin to sniff traffic and see the first few packets across the interface. By issuing the `-nn` switches as seen below, we tell TCPDump to refrain from resolving IP addresses and port numbers to their hostnames and common port names. In this representation, the last octet is the port from/to which the connection goes.
-
-
-#### Disable Name Resolution
-- Tcpdump Fundamentals
-
+- In this terminal, we are calling tcpdump and selecting the interface eth0 to capture traffic. Once we issue the command, tcpdump will begin to sniff traffic and see the first few packets across the interface. 
+- By issuing the `-nn` switches as seen below, we tell TCPDump to refrain from resolving IP addresses and port numbers to their hostnames and common port names. In this representation, the last octet is the port from/to which the connection goes.
+- #### Disable Name Resolution
+	- When utilizing the `-e` switch, we are tasking tcpdump to include the ethernet headers in the capture's output along with its regular content. We can see this worked by examining the output. Usually, the first and second fields consist of the Timestamp and then the IP header's beginning. Now it consists of Timestamp and the source MAC Address of the host.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 -nn
 
@@ -133,12 +114,8 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 11:02:35.729081 IP 172.16.146.2.48402 > 52.31.199.148.443: Flags [.], ack 65, win 501, options [nop,nop,TS val 214282388 ecr 77434740], length 0
 11:02:35.729348 IP 52.31.199.148.443 > 172.16.146.2.48402: Flags [F.], seq 65, ack 37, win 118, options [nop,nop,TS val 77434740 ecr 214282239], length 0
 ```
-
-- When utilizing the `-e` switch, we are tasking tcpdump to include the ethernet headers in the capture's output along with its regular content. We can see this worked by examining the output. Usually, the first and second fields consist of the Timestamp and then the IP header's beginning. Now it consists of Timestamp and the source MAC Address of the host.
-
-#### Display the Ethernet Header
-- Tcpdump Fundamentals
-
+- #### Display the Ethernet Header
+	- By issuing the `-X` switch, we can see the packet a bit clearer now. We get an ASCII output on the right to interpret anything in clear text that corresponds to the hexadecimal output on the left.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 -e
 
@@ -149,13 +126,8 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 11:05:46.047731 00:0c:29:97:52:65 (oui Unknown) > 8a:66:5a:11:8d:64 (oui Unknown), ethertype IPv4 (0x0800), length 85: 172.16.146.2.54006 > 172.16.146.1.domain: 31772+ PTR? 207.22.80.99.in-addr.arpa. (43)
 11:05:46.049134 8a:66:5a:11:8d:64 (oui Unknown) > 00:0c:29:97:52:65 (oui Unknown), ethertype IPv4 (0x0800), length 147: 172.16.146.1.domain > 172.16.146.2.54006: 31772 1/0/0 PTR ec2-99-80-22-207.eu-west-1.compute.amazonaws.com. (105)
 ```
-
-- By issuing the `-X` switch, we can see the packet a bit clearer now. We get an ASCII output on the right to interpret anything in clear text that corresponds to the hexadecimal output on the left.
-
-
-#### Include ASCII and Hex Output
-- Tcpdump Fundamentals
-
+- #### Include ASCII and Hex Output
+	- Pay attention to the level of detail in the output above. We will notice that we have information on the IP header options like time to live, offset, and other flags and more details into the upper layer protocols. Below, we are combining the switches to craft the output to our liking.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 -X
 
@@ -180,12 +152,8 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
     0x0030:  3830 0239 3907 696e 2d61 6464 7204 6172  80.99.in-addr.ar
     0x0040:  7061 0000 0c00 01                        pa.....
 ```
-
-- Pay attention to the level of detail in the output above. We will notice that we have information on the IP header options like time to live, offset, and other flags and more details into the upper layer protocols. Below, we are combining the switches to craft the output to our liking.
-
-#### Tcpdump Switch Combinations
-- Tcpdump Fundamentals
-
+- #### Tcpdump Switch Combinations
+	- When utilizing the switches, chaining them together as in the example `above` is best practice.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 -nnvXX
 
@@ -225,15 +193,10 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
     0x0040:  042e 0000 0000 0103 0307                 ..........
 ```
 
-- When utilizing the switches, chaining them together as in the example `above` is best practice.
-
-
-
-## Tcpdump Output
-- When looking at the output from TCPDump, it can be a bit overwhelming. Running through these basic switches has already shown us several different views. We are going to take a minute to dissect that output and explain what we are seeing. The image and table below will define each field. Keep in mind that the more verbose we are with our filters, the more detail from each header is shown.
-
-#### Tcpdump Shell Breakdown
-
+### Tcpdump Output
+- When looking at the output from TCPDump, it can be a bit overwhelming. Running through these basic switches has already shown us several different views. We are going to take a minute to dissect that output and explain what we are seeing. 
+- The image and table below will define each field. Keep in mind that the more verbose we are with our filters, the more detail from each header is shown.
+- #### Tcpdump Shell Breakdown
 ![image](https://academy.hackthebox.com/storage/modules/81/breakdown.png)
 
 | **Filter** | **Result** |
@@ -246,17 +209,18 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
 | Protocol Options | `Blue` Here, we will see any negotiated TCP values established between the client and server, such as window size, selective acknowledgments, window scale factors, and more. |
 | Notes / Next Header | `White` Misc notes the dissector found will be present here. As the traffic we are looking at is encapsulated, we may see more header information for different protocols. In our example, we can see the TCPDump dissector recognizes FTP traffic within the encapsulation to display it for us. |
 
-- There are many other options and information that can be shown. This information varies based on the amount of verbosity that is enabled. For a more detailed understanding of IP and other protocol headers, check out the `Networking Primer` in section two or the `Networking fundamentals` path.
-- There is a great advantage in knowing how a network functions and how to use the filters that TCPDump provides. With them, we can view the network traffic, parse it for any issues, and identify suspicious network interactions quickly. Theoretically, we can use `tcpdump` to create an IDS/IPS system by having a Bash script analyze the intercepted packets according to a specific pattern. We can then set conditions to, for example, ban a particular IP address that has sent too many ICMP echo requests for a certain period.
+- There are many other options and information that can be shown. This information varies based on the amount of verbosity that is enabled. 
+- For a more detailed understanding of IP and other protocol headers, check out the `Networking Primer` in section two or the `Networking fundamentals` path.
+- There is a great advantage in knowing how a network functions and how to use the filters that TCPDump provides. With them, we can view the network traffic, parse it for any issues, and identify suspicious network interactions quickly. 
+- Theoretically, we can use `tcpdump` to create an IDS/IPS system by having a Bash script analyze the intercepted packets according to a specific pattern. We can then set conditions to, for example, ban a particular IP address that has sent too many ICMP echo requests for a certain period.
 
 
 
-## File Input/Output with Tcpdump
-- Using `-w` will write our capture to a file. Keep in mind that as we capture traffic off the wire, we can quickly use up open disk space and run into storage issues if we are not careful. The larger our network segment, the quicker we will use up storage. Utilizing the switches demonstrated above can help tune the amount of data stored in our PCAPs.
-
-#### Save our PCAP Output to a File
-- Tcpdump Fundamentals
-
+### File Input/Output with Tcpdump
+- Using `-w` will write our capture to a file. Keep in mind that as we capture traffic off the wire, we can quickly use up open disk space and run into storage issues if we are not careful.
+- The larger our network segment, the quicker we will use up storage. Utilizing the switches demonstrated above can help tune the amount of data stored in our PCAPs.
+- #### Save our PCAP Output to a File
+	- This capture above will generate the output to a file called `output.pcap`. When running tcpdump in this way, the output will not scroll our terminal as usual. All output from tcpdump is being redirected to the file we specified for the capture.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 -w ~/output.pcap
 
@@ -265,14 +229,8 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
 131 packets received by filter
 0 packets dropped by kernel
 ```
-
-- This capture above will generate the output to a file called `output.pcap`. When running tcpdump in this way, the output will not scroll our terminal as usual. All output from tcpdump is being redirected to the file we specified for the capture.
-
-
-
-#### Reading Output From a File
-- Tcpdump Fundamentals
-
+- #### Reading Output From a File
+	- This will read the capture stored in `output.pcap`. Notice it is back to a basic view. To get more detailed information out of the capture file, reapply our switches.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -r ~/output.pcap
 
@@ -289,7 +247,6 @@ reading from file /home/trey/output.pcap, link-type EN10MB (Ethernet), snapshot 
 11:15:40.458964 IP 172.16.146.2.57236 > ec2-99-80-22-207.eu-west-1.compute.amazonaws.com.https: Flags [F.], seq 68, ack 65, win 501, options [nop,nop,TS val 1368866539 ecr 65799068], length 0
 ```
 
-- This will read the capture stored in `output.pcap`. Notice it is back to a basic view. To get more detailed information out of the capture file, reapply our switches.
 
 ### Questions
 - Utilizing the output shown in question-1.png, who is the server in this communication? (IP Address)
