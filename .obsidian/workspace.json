@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b3dcaa5cbdbf619f",
+        "id": "b357457c46523590",
         "type": "tabs",
         "children": [
           {
-            "id": "b91786adc5a94baf",
+            "id": "c6f190f315a00482",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Attention"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Attention"
             }
           },
           {
@@ -198,8 +204,20 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b91786adc5a94baf",
+  "active": "c6f190f315a00482",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Focus.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Handling Frustration.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Questioning.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Obstacles.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Learning Progress.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Comfort.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Setup.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Providers.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Hardening.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Windows.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Linux.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Virtualization.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Organization.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Introduction.md",
@@ -214,18 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Sections.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/CRUD API.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocol Secure (HTTPS).md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocl (HTTP).md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HTTP Headers.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/HTTP Requests.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Decoding.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Code Analysis.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Source Code.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Deobfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",

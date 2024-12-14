@@ -1,25 +1,29 @@
-- Another necessary step in our configuration and setup of our VPS is the hardening of the system and access. We should limit our access to the VPS to SSH and disable all other services on the VPS. Finally, we will reduce the attack vectors to a minimum and provide only one possible access to our VPS, which we will secure in the best possible way. We should keep in mind that, if possible, we should not store any sensitive data on the VPS, or at least only for a short period when we perform an internal penetration test. In doing so, we should follow the principle that someone could gain access to the system sooner or later.
-- However, since in this case, the VPS is only used as a source for our organization and tools and we can access these resources via SSH, we should secure and harden the SSH server accordingly so that no one else (or at least no one other than the team members) can access it. There are many ways to harden it, and this includes the following precautions, but not limited to:
-	- Install Fail2ban
-	- Working only with SSH keys
-	- Reduce Idle timeout interval
-	- Disable passwords
-	- Disable x11 forwarding
-	- Use a different port
-	- Limit users' SSH access
-	- Disable root logins
-	- Use SSH proto 2
-	- Enable 2FA Authentication for SSH
-- `It is highly recommended to try these settings and precautions first in a local VM we have created before making these settings on a VPS.`
-- One of the first steps in hardening our system is updating and bringing the system `up-to-date`. We can do this with the following commands:
-- #### Update the System
+### Debrief
+- Hardening the VPS system and access by limiting it to SSH and disabling all other services to minimize attack vectors.
+- Avoid storing sensitive data on the VPS, especially for internal penetration tests.
+- Secure the SSH server by implementing the following precautions:
+    - Install Fail2ban.
+    - Use SSH keys instead of passwords.
+    - Reduce the idle timeout interval.
+    - Disable password logins.
+    - Disable X11 forwarding.
+    - Use a non-standard SSH port.
+    - Limit SSH user access.
+    - Disable root logins.
+    - Use SSH protocol 2.
+    - Enable 2FA authentication for SSH.
+- It’s recommended to test these settings in a local VM before applying them to the VPS.
+- Ensure the VPS system is fully updated before applying hardening configurations.
+
+### Update the Systems
 ```shell-session
 [cry0l1t3@VPS ~]$ sudo apt update -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
 ```
 
 
 ### SSH Hardening
-- SSH is always installed on the VPS, giving us guaranteed access to the server in advance. Now we can change some of the settings in the configuration file `/etc/ssh/sshd_config` to enforce these security measures for our SSH server. In this file, we will comment out, change or add some lines. The entire list of possible settings that can be made for the SSH daemon can be found on the [man page](https://man.openbsd.org/sshd_config).
+- SSH is always installed on the VPS, giving us guaranteed access to the server in advance. Now we can change some of the settings in the configuration file `/etc/ssh/sshd_config` to enforce these security measures for our SSH server. 
+- In this file, we will comment out, change or add some lines. The entire list of possible settings that can be made for the SSH daemon can be found on the [man page](https://man.openbsd.org/sshd_config).
 - #### Install Fail2Ban
 ```shell-session
 [cry0l1t3@VPS ~]$ sudo apt install fail2ban -y
@@ -39,7 +43,9 @@ enabled = true
 bantime = 4w
 maxretry = 3
 ```
-- With this, we enable monitoring for the SSH server, set the `ban time` to four weeks, and allow a maximum of 3 `attempts`. The advantage of this is that once we have configured our `2FA` feature for SSH, fail2ban will ban the IP address that has entered the `verification code` incorrectly three times too. We should make the following configurations in the `/etc/ssh/sshd_config` file:
+- With this, we enable monitoring for the SSH server, set the `ban time` to four weeks, and allow a maximum of 3 `attempts`. 
+- The advantage of this is that once we have configured our `2FA` feature for SSH, fail2ban will ban the IP address that has entered the `verification code` incorrectly three times too. 
+- We should make the following configurations in the `/etc/ssh/sshd_config` file:
 - #### Editing OpenSSH Config
 ```shell-session
 [cry0l1t3@VPS ~]$ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
@@ -48,9 +54,13 @@ maxretry = 3
 ![[Screenshot_20241107_152226.png]]
 ![[Screenshot_20241107_152235.png]]
 
+
 ### 2FA Authentication
-- With the configuration shown above, we have already taken essential steps to harden our SSH. Therefore, we can now go one step further and configure `2-factor authentication` (`2FA`). With this, we use a third-party software called Google Authenticator, which generates a six-digit code every 30 seconds that is needed to authenticate our identity. These six-digit codes represent a so-called `One-Time-Password` (OTP). `2FA` has proven itself an authentication method, not least because of its relatively high-security standard compared to the time required for implementation. Two different and independent authentication factors verify the identity of a person requesting access. We can find more information about `2FA` [here](https://en.wikipedia.org/wiki/Multi-factor_authentication).
-- We will use Google Authenticator as our authentication application on our Android or iOS smartphone. For this, we need to download and install the application from the Google/Apple Store. A guide on setting up Google Authenticator on our smartphone can be found [here](https://support.google.com/accounts/answer/185839?co=GENIE.Platform%3DDesktop&hl=en). To configure 2FA with Google Authenticator on our VPS, we need the [Google-Authenticator PAM module](https://github.com/google/google-authenticator-libpam). We can then install it and execute it to start configuring it as follows:
+- Enable 2-factor authentication (2FA) using Google Authenticator for increased security.
+- Google Authenticator generates six-digit OTPs every 30 seconds, providing an additional authentication factor.
+- The 2FA method offers high-security standards with relatively low implementation effort.
+- Download and install Google Authenticator on Android or iOS from the respective app stores.
+- Set up Google Authenticator on the VPS using the [Google-Authenticator PAM module](https://github.com/google/google-authenticator-libpam) for configuring 2FA.
 - #### Installing Google-Authenticator PAM Module
 ```shell-session
 [cry0l1t3@VPS ~]$ sudo apt install libpam-google-authenticator -y
@@ -66,8 +76,11 @@ Warning: pasting the following URL into your browser exposes the OTP secret to G
 Your new secret key is: ***************
 Enter code from app (-1 to skip):
 ```
-- If we follow these steps, then a `QR code` and a `secret key` will appear in our terminal, which we can then scan with the Google Authenticator app or enter the secret key there. Once we have scanned the QR code or entered the secret key, we will see the first `OTP` (six-digit number) on our smartphone. We enter this in our terminal to synchronize and authorize Google Authenticator on our smartphone and our VPS with Google.
-- The module will then generate several `emergency scratch codes` (`backup codes`), which we should save safely. These will be used in case we lose our smartphone. Should this happen, we can then log in with the `backup codes`.
+- A QR code and secret key will appear in the terminal, which we can scan with Google Authenticator or manually enter.
+- After scanning or entering the secret key, Google Authenticator will display the first OTP (six-digit number) on the smartphone.
+- Enter this OTP in the terminal to synchronize Google Authenticator on the smartphone and VPS.
+- The module will generate emergency scratch codes (backup codes) as a backup, which should be stored securely.
+- Backup codes can be used to log in if the smartphone is lost.
 - #### Google-Authenticator Configuration
 ```shell-session
 Enter code from app (-1 to skip): <Google-Auth Code>
@@ -151,6 +164,7 @@ secmancer@htb[/htb]$ scp -i ~/.ssh/vps-ssh -r ~/Pentesting cry0l1t3@VPS:~/
 Enter passphrase for key 'cry0l1t3': *************
 Verification code: <Google-Auth Code>
 ```
+
 
 ### Questions
 - What does the acronym Linux PAM stand for?

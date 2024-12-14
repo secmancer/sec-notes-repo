@@ -1,11 +1,12 @@
-- Whether we are on an internal or external penetration test, a VPS that we can use is of great importance to us in many different cases. We can store all our resources on it and access them from almost any point with internet access. Apart from the fact that we first have to set up the VPS, we also have to prepare the corresponding folder structure and its services. In this example, we will deal with the provider called [Vultr](https://www.vultr.com/) and set up our VPS there. For the other providers, the configuration options look almost identical.
-- We should still read the individual information about their components carefully and understand what kind of VPS we will be working with in the future. In Vultr, we can choose one of the four different servers. For our purposes, the `Cloud Computer` server is sufficient for now.
-- Next, we need to select the location closest to us. This will ensure an excellent connection to our server. If we need to perform a penetration test on another continent, we can also set up a VPS there using our automation scripts and perform the penetration test from there.
-- For the server type, we select which operating system should be installed on the VPS. ParrotOS is based on `Debian`, just like Ubuntu. Here we can choose one of these two or go to advanced options and upload our ISO.
-- If we want to upload our ISO, we have to do it via a public link to that ISO. We can go to the [ParrotOS website](https://www.parrotsec.org/security-edition/), copy the link to the `mirror server` for the appropriate version, and paste it into Vultr.
-- Next, we need to choose the performance level for our VPS. This is one of the points where the cost can change a lot. For our purposes, however, we can choose one of the two options on the left. However, here we need to select the performance for which we want to use the VPS. If the VPS is to be used for advanced purposes and provides many requests and services, 1024MB memory will not be enough. Therefore, it is always advisable to first set up the installation of our OS locally in a VM and then check the services' load.
-- Next, we have the choice if we want to use [IPv6](https://en.wikipedia.org/wiki/IPv6) for our VPS. This is highly recommended because many firewalls are only protected against IPv4, and `IPv6` is forgotten. We can also allow `automatic backups`, `private networking`, and `DDOS protection`, but at a higher cost.
-- After that, we can generate our SSH keys, which we can use to log in to the VPS via SSH later. We can also generate these keys later on our VPS or our VM or own host operating system. Let's use our VM to generate the key pair.
+### Introduction
+- A VPS is crucial for internal and external penetration tests, storing resources and providing remote access from almost anywhere with internet access.
+- Setting up the VPS involves configuring the folder structure and services, with Vultr as an example provider offering nearly identical configurations to others.
+- In Vultr, we select a `Cloud Compute` server, ensuring optimal connection by choosing the closest server location.
+- For the operating system, we can choose ParrotOS (based on Debian) or upload our own ISO via a public link from sites like the [ParrotOS website](https://www.parrotsec.org/security-edition/).
+- Select the performance level based on the VPS’s intended use, balancing cost and resource needs. Use a local VM to test OS loads before final configuration.
+- Consider using IPv6, as many firewalls still focus on IPv4, enhancing security. Options like automatic backups, private networking, and DDOS protection are available at additional costs.
+- Generate SSH keys during setup for secure remote access, which can also be generated later on the VPS, VM, or host system.
+
 
 ### Generate SSH Keys
 ```shell-session
@@ -22,7 +23,9 @@ SHA256:zXyVAWK00000000000000000000VS4a/f0000+ag cry0l1t3@parrot
 The key's randomart image is:
 ...SNIP...
 ```
-- With the command shown above, we generate two different keys. The `vps-ssh` is the `private key` and must not be shared anywhere or with anyone. The second `vps-ssh.pub` is the `public key` which we can now insert in the Vultr control panel.
+- With the command shown above, we generate two different keys. 
+- The `vps-ssh` is the `private key` and must not be shared anywhere or with anyone. 
+- The second `vps-ssh.pub` is the `public key` which we can now insert in the Vultr control panel.
 
 
 ### SSH Keys
@@ -45,7 +48,8 @@ root@<vps-ip-address>'s password:
 
 [root@VPS ~]# 
 ```
-- After that, we should add a new user for the VPS to not run our services with root or administrator privileges. For this, we can then generate another SSH key and insert it for this user.
+- After that, we should add a new user for the VPS to not run our services with root or administrator privileges. 
+- For this, we can then generate another SSH key and insert it for this user.
 
 
 ### Adding a New Sudo User
