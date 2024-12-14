@@ -1,5 +1,10 @@
-- `Network Traffic Analysis (NTA)` can be described as the act of examining network traffic to characterize common ports and protocols utilized, establish a baseline for our environment, monitor and respond to threats, and ensure the greatest possible insight into our organization's network.
-- This process helps security specialists determine anomalies, including security threats in the network, early and effectively pinpoint threats. Network Traffic Analysis can also facilitate the process of meeting security guidelines. Attackers update their tactics frequently to avoid detection and leverage legitimate credentials with tools that most companies allow in their networks, making detection and, subsequently, response challenging for defenders. In such cases, Network Traffic Analysis can again prove helpful. Everyday use cases of NTA include:
+### Introduction
+- **Characterizing network traffic** to identify common ports and protocols.
+- **Establishing a baseline** for network behavior to detect deviations.
+- **Monitoring and responding to threats** effectively by identifying anomalies early.
+- **Facilitating compliance** with security guidelines.
+- **Detecting advanced threats** as attackers adapt tactics to bypass defenses.
+- **Supporting proactive defense** by leveraging NTA to pinpoint and address potential threats.****
 
 |                                                                                                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -8,37 +13,32 @@
 | `Identifying` and analyzing traffic from non-standard ports, suspicious hosts, and issues with networking protocols such as HTTP errors, problems with TCP, or other networking misconfigurations. |
 | `Detecting` malware on the wire, such as ransomware, exploits, and non-standard interactions.                                                                                                      |
 | NTA is also useful when investigating past incidents and during threat hunting.                                                                                                                    |
-
-- Try to picture a threat actor targeting and infiltrating our network. If they wish to breach the network, attackers must inevitably interact and communicate with our infrastructure. Network communication takes place over many different ports and protocols, all being utilized concurrently by employees, equipment, and customers. To spot malicious traffic, we would need to use our knowledge of typical network traffic within our enclave. Doing so will narrow down our search and help us quickly find and disrupt adversarial communication.
-- For example, if we detect many `SYN` packets on ports that we never (or rarely) utilize in our network, we can conclude that this is most likely someone trying to determine what ports are open on our hosts. Actions like this are typical markers of a `portscan`. Performing such an analysis and coming to such conclusions requires specific skills and knowledge.
-
-
-
-## Required Skills and Knowledge
-- The skills we are about to list and describe require theoretical and practical knowledge acquired over time. We do not have to know everything by heart, but we should know what to look for when certain aspects of the content seem unfamiliar. This applies not only to NTA but also to most other topics we will deal with in cybersecurity.
-
-#### TCP/IP Stack & OSI Model
-- This understanding will ensure we grasp how networking traffic and the host applications interact.
-
-#### Basic Network Concepts
-- Understanding what types of traffic we will see at each level includes an understanding of the individual layers that make up the TCP/IP and OSI model and the concepts of switching and routing. If we tap a network on a backbone link, we will see much more traffic than usual, and it will be vastly different from what we find tapping an office switch.
+- Picture a threat actor infiltrating our network, relying on communication with our infrastructure via various ports and protocols.
+- Detecting malicious traffic requires understanding typical network traffic patterns within our environment.
+- Identifying unusual traffic, such as `SYN` packets on uncommon ports, often indicates a `port scan` or other suspicious activity.
+- Effective analysis of such traffic requires specialized skills and knowledge.
 
 
-#### Common Ports and Protocols
-- Identifying standard ports and protocols quickly and having a functional understanding of how they communicate will ensure we can identify potentially malicious or malformed network traffic.
 
+### Required Skills and Knowledge
+- The skills we are about to list and describe require theoretical and practical knowledge acquired over time. 
+- We do not have to know everything by heart, but we should know what to look for when certain aspects of the content seem unfamiliar. 
+- This applies not only to NTA but also to most other topics we will deal with in cybersecurity.
+- #### TCP/IP Stack & OSI Model
+	- This understanding will ensure we grasp how networking traffic and the host applications interact.
+- #### Basic Network Concepts
+	- Understanding what types of traffic we will see at each level includes an understanding of the individual layers that make up the TCP/IP and OSI model and the concepts of switching and routing. If we tap a network on a backbone link, we will see much more traffic than usual, and it will be vastly different from what we find tapping an office switch.
+- #### Common Ports and Protocols
+	- Identifying standard ports and protocols quickly and having a functional understanding of how they communicate will ensure we can identify potentially malicious or malformed network traffic.
+- #### Concepts of IP Packets and the Sublayers
+	- Foundational knowledge of how TCP and UDP communicate will, at a minimum, ensure we understand what we see or are searching for. TCP, for example, is stream-oriented and allows us to follow a conversation between hosts easily. UDP is quick but not concerned with completeness, so it would be harder to recreate something from this packet type.
+- #### Protocol Transport Encapsulation
+	- Each layer will encapsulate the previous. Being able to read or dissect when this encapsulation changes will help us move through data quicker. It is easy to see hints based on encapsulation headers.
 
-#### Concepts of IP Packets and the Sublayers
-- Foundational knowledge of how TCP and UDP communicate will, at a minimum, ensure we understand what we see or are searching for. TCP, for example, is stream-oriented and allows us to follow a conversation between hosts easily. UDP is quick but not concerned with completeness, so it would be harder to recreate something from this packet type.
-
-
-#### Protocol Transport Encapsulation
-- Each layer will encapsulate the previous. Being able to read or dissect when this encapsulation changes will help us move through data quicker. It is easy to see hints based on encapsulation headers.
-
-## Environment and Equipment
-- The list below contains many different tools and equipment types that can be utilized to perform network traffic analysis. Each will provide a different way to capture or dissect the traffic. Some offer ways to copy and capture, while others read and ingest. This module will explore just a few of these ([Wireshark](https://www.wireshark.org/) and [tcpdump](https://www.tcpdump.org/) mostly). Keep in mind these tools are not strictly geared for admins. Many of these can be used for malicious reasons as well.
-
-#### Common Traffic Analysis Tools
+### Environment and Equipment
+- The list below contains many different tools and equipment types that can be utilized to perform network traffic analysis. Each will provide a different way to capture or dissect the traffic. Some offer ways to copy and capture, while others read and ingest. 
+- This module will explore just a few of these ([Wireshark](https://www.wireshark.org/) and [tcpdump](https://www.tcpdump.org/) mostly). Keep in mind these tools are not strictly geared for admins. Many of these can be used for malicious reasons as well.
+- #### Common Traffic Analysis Tools
 
 | **Tool** | **Description** |
 | --- | --- |
@@ -55,37 +55,38 @@
 
 ---
 
-## BPF Syntax
-- Many of the tools mentioned above have their syntax and commands to utilize, but one that is shared among them is [Berkeley Packet Filter (BPF)](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) syntax. This syntax is the primary method we will use. In essence, BPF is a technology that enables a raw interface to read and write from the Data-Link layer. With all this in mind, we care for BPF because of the filtering and decoding abilities it provides us. We will be utilizing BPF syntax through the module, so a basic understanding of how a BPF filter is set up can be helpful. For more information on BPF syntax, check out this [reference](https://www.ibm.com/docs/en/qsip/7.4?topic=queries-berkeley-packet-filters).
+### BPF Syntax
+- **Berkeley Packet Filter (BPF) Syntax**: A shared syntax among many tools for filtering and decoding network traffic.
+- **Functionality**: Provides a raw interface to read and write data from the Data-Link layer.
+- **Importance**: Key for filtering and decoding network packets effectively.
+- **Usage**: Understanding BPF syntax helps in setting up effective filters within modules.
+- **Resources**: Refer to the [Wikipedia article on BPF](https://en.wikipedia.org/wiki/Berkeley_Packet_Filter) or [IBM's BPF guide](https://www.ibm.com/docs/en/qsip/7.4?topic=queries-berkeley-packet-filters) for more information.
 
 
-## Performing Network Traffic Analysis
-- Performing analysis can be as simple as watching live traffic roll by in our console or as complex as capturing data with a tap, sending it back to a SIEM for ingestion, and analyzing the pcap data for signatures and alerts related to common tactics and techniques./
-- At a minimum, to listen passively, we need to be connected to the network segment we wish to listen on. This is especially true in a switched environment where VLANS and switch ports will not forward traffic outside their broadcast domain. With that in mind, if we wish to capture traffic from a specific VLAN, our capture device should be connected to that same network. Devices like network taps, switch or router configurations like span ports, and port mirroring can allow us to get a copy of all traffic traversing a specific link, regardless of what network segment or destination it belongs to.
+### Performing Network Traffic Analysis
+- **Analysis Methods**: Can range from live traffic monitoring in the console to capturing data with taps for SIEM ingestion and pcap analysis for tactics and techniques.
+- **Network Connection**: Passive listening requires connection to the target network segment, especially in switched environments with VLANs.
+- **VLAN-Specific Capture**: To capture traffic from a VLAN, the capture device must be on the same network.
+- **Traffic Access**: Tools like network taps, span ports, and port mirroring enable capturing traffic across specific links regardless of network segment or destination.
 
-#### NTA Workflow
-- Traffic analysis is not an exact science. NTA can be a very dynamic process and is not a direct loop. It is greatly influenced by what we are looking for (network errors vs. malicious actions) and where we have visibility into our network. Performing traffic analysis can distill down to a few basic tenants.
-
-#### NTA Workflow
+### NTA Workflow
+- Traffic analysis is not an exact science. NTA can be a very dynamic process and is not a direct loop. 
+- It is greatly influenced by what we are looking for (network errors vs. malicious actions) and where we have visibility into our network. 
+- Performing traffic analysis can distill down to a few basic tenants.
 
 ![image](https://academy.hackthebox.com/storage/modules/81/workflow.png)
-
-#### 1\. Ingest Traffic
-- Once we have decided on our placement, begin capturing traffic. Utilize capture filters if we already have an idea of what we are looking for.
-
-#### 2\. Reduce Noise by Filtering
-- Capturing traffic of a link, especially one in a production environment, can be extremely noisy. Once we complete the initial capture, an attempt to filter out unnecessary traffic from our view can make analysis easier. (Broadcast and Multicast traffic, for example.)
-
-#### 3\. Analyze and Explore
-- Now is the time to start carving out data pertinent to the issue we are chasing down. Look at specific hosts, protocols, even things as specific as flags set in the TCP header. The following questions will help us:
-	1. Is the traffic encrypted or plain text? Should it be?
-	2. Can we see users attempting to access resources to which they should not have access?
-	3. Are different hosts talking to each other that typically do not?
-#### 4\. Detect and Alert
-1. Are we seeing any errors? Is a device not responding that should be?
-2. Use our analysis to decide if what we see is benign or potentially malicious.
-3. Other tools like IDS and IPS can come in handy at this point. They can run heuristics and signatures against the traffic to determine if anything within is potentially malicious.
-    
-
-#### 5\. Fix and Monitor
-- Fix and monitor is not a part of the loop but should be included in any workflow we perform. If we make a change or fix an issue, we should continue to monitor the source for a time to determine if the issue has been resolved.
+- #### 1\. Ingest Traffic
+	- Once we have decided on our placement, begin capturing traffic. Utilize capture filters if we already have an idea of what we are looking for.
+- #### 2\. Reduce Noise by Filtering
+	- Capturing traffic of a link, especially one in a production environment, can be extremely noisy. Once we complete the initial capture, an attempt to filter out unnecessary traffic from our view can make analysis easier. (Broadcast and Multicast traffic, for example.)
+- #### 3\. Analyze and Explore
+	- Now is the time to start carving out data pertinent to the issue we are chasing down. Look at specific hosts, protocols, even things as specific as flags set in the TCP header. The following questions will help us:
+		1. Is the traffic encrypted or plain text? Should it be?
+		2. Can we see users attempting to access resources to which they should not have access?
+		3. Are different hosts talking to each other that typically do not?
+- #### 4\. Detect and Alert
+	1. Are we seeing any errors? Is a device not responding that should be?
+	2. Use our analysis to decide if what we see is benign or potentially malicious.
+	3. Other tools like IDS and IPS can come in handy at this point. They can run heuristics and signatures against the traffic to determine if anything within is potentially malicious.
+- #### 5\. Fix and Monitor
+	- Fix and monitor is not a part of the loop but should be included in any workflow we perform. If we make a change or fix an issue, we should continue to monitor the source for a time to determine if the issue has been resolved.

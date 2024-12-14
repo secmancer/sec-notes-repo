@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b357457c46523590",
+        "id": "8e5e453c6494ead2",
         "type": "tabs",
         "children": [
           {
-            "id": "c6f190f315a00482",
+            "id": "a36f6608eabd319e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Attention"
+              "title": "New tab"
             }
           }
         ]
@@ -138,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Attention"
+              "title": "Outline"
             }
           },
           {
@@ -204,34 +198,34 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c6f190f315a00482",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Linux.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Focus.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Handling Frustration.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Questioning.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Obstacles.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Learning Progress.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Comfort.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Setup.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Providers.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Hardening.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Windows.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Linux.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Virtualization.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Organization.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Containers.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Getting Help.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Modules.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Paths and Certifications.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Sections.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
