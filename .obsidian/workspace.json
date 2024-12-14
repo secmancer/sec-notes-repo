@@ -11,10 +11,14 @@
             "id": "1563b6c1545ddd74",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Wireshark Advanced Usage"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Wireshark Advanced Usage"
             }
           },
           {
@@ -198,8 +204,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "1563b6c1545ddd74",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Decrypting RDP connections.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Analysis with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
@@ -221,11 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Questioning.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Obstacles.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Learning Progress.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Comfort.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Setup.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Providers.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Virtual Private Server/VPS Hardening.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Windows.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
