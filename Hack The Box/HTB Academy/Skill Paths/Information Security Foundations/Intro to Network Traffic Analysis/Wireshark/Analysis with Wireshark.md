@@ -1,11 +1,8 @@
 ### Introduction
 -  `Wireshark` is a network traffic analyzer, capable of capturing live data off many different interface types (WIFI, USB, Bluetooth, etc.).
 - It then saves the traffic to several different formats.
-- Wireshark also aids users in diving deeper into the inspection of network packets than other tools.
-
-- `Wireshark` is a free and open-source network traffic analyzer much like tcpdump but with a graphical interface. Wireshark is multi-platform and capable of capturing live data off many different interface types (to include WiFi, USB, and Bluetooth) and saving the traffic to several different formats. Wireshark allows the user to dive much deeper into the inspection of network packets than other tools. What makes Wireshark truly powerful is the analysis capability it provides, giving a detailed insight into the traffic.
-- Depending on the host we are using, we may not always have a GUI to utilize traditional Wireshark. Lucky for us, several variants allow us to use it from the command line.
-
+- Wireshark also aids users in diving deeper into the inspection of network packets, bringing you powerful analysis capability.
+- While the GUI is what we will try to use the most, several CLI implementations also exist.
 
 
 #### Features and Capabilities:
