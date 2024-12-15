@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "062b90f37b5598bc",
+        "id": "d51b2d6b497645dc",
         "type": "tabs",
         "children": [
           {
-            "id": "92fa742a66d7cb15",
+            "id": "e1f4debff9246ca3",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "e1f4debff9246ca3",
   "lastOpenFiles": [
+    "TryHackMe/Advent of Cyber/2024/Day 14.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
@@ -225,7 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Focus.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Handling Frustration.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Questioning.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Obstacles.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
