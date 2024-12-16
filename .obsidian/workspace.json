@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e7b9cb4fdee86e02",
+        "id": "ff8a6cf7295f64b9",
         "type": "tabs",
         "children": [
           {
-            "id": "145f92ab6e47f2a3",
+            "id": "59e64d4196f5c64a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Packet Inception, Dissecting Network Traffic with Wireshark"
+              "title": "New tab"
             }
           }
         ]
@@ -138,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Packet Inception, Dissecting Network Traffic with Wireshark"
+              "title": "Outline"
             }
           },
           {
@@ -192,8 +186,8 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "templates:Insert template": false,
       "obsidian-git:Open Git source control": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-kanban:Create new board": false,
@@ -204,12 +198,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "145f92ab6e47f2a3",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Decrypting RDP connections.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Analysis with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Capturing With Tcpdump (Fundamentals Labs).md",
