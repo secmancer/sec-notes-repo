@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "346a318af3ab2ed9",
+        "id": "147c9520e0eba9fc",
         "type": "tabs",
         "children": [
           {
-            "id": "94e1ff376e81dd65",
+            "id": "ce2e5afb961e6ff7",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "94e1ff376e81dd65",
+  "active": "ce2e5afb961e6ff7",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Why Active Directory.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Active Directory Research over the Years.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Terminology.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Structure.md",
@@ -225,7 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
     "TryHackMe/Advent of Cyber/2024/Day 14.md",
     "Hack The Box/HTB Labs/Add files or folders here!.md",
-    "TryHackMe/Advent of Cyber/2024/Day 13.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
