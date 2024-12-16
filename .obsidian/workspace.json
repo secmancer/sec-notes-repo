@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ff8a6cf7295f64b9",
+        "id": "346a318af3ab2ed9",
         "type": "tabs",
         "children": [
           {
-            "id": "59e64d4196f5c64a",
+            "id": "94e1ff376e81dd65",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "94e1ff376e81dd65",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Active Directory Research over the Years.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Terminology.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Functionality.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
@@ -221,11 +226,6 @@
     "TryHackMe/Advent of Cyber/2024/Day 14.md",
     "Hack The Box/HTB Labs/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024/Day 13.md",
-    "TryHackMe/Advent of Cyber/2024/Day 1.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Linux.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
