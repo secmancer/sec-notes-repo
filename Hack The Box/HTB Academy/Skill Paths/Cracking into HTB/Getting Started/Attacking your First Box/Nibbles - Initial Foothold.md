@@ -1,3 +1,4 @@
+### Overview
 - We are able to log into the admin portal, so let's turn this access into a way of creating a reverse shell access to the web server.
 - A Metasploit module may do the trick, but let's use other avenues to do this instead.
 ![[Screenshot_20241107_131847.png]]

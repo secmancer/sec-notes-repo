@@ -79,6 +79,6 @@ Use the user manual `man curl` or the "--help all" flag for all options.
 - If we need more in-depth documentation, we can use `man curl` to access the full cURL manual page.
 - In the upcoming sections, we will explore many of the flags discussed here and understand how to apply them effectively in different scenarios.
 
-## Questions
+### Questions
 - To get the flag, start the above exercise, then use cURL to download the file returned by '/download.php' in the server shown above.
 	- HTB{64$!c_cURL_u$3r}

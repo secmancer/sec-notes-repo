@@ -161,6 +161,6 @@ secmancer@htb[/htb]$ curl -s http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City
 - To authenticate our user to use the API, we would need to pass a cookie or an authorization header (e.g. JWT), as we did in an earlier section. 
 - Other than that, the operations are similar to what we practiced in this section.
 
-## Questions
+### Questions
 - First, try to update any city's name to be 'flag'. Then, delete any city. Once done, search for a city named 'flag' to get the flag.
 	- HTB{crud_4p!_m4n!pul4t0r}

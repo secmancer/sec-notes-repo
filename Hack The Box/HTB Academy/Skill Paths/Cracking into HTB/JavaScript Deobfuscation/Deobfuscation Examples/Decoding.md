@@ -1,3 +1,4 @@
+### Introduction
 - After doing the exercise in the previous section, we got a strange block of text that seems to be encoded.
 ```shell-session
 secmancer@htb[/htb]$ curl http://SERVER_IP:PORT/serial.php -X POST -d "param1=sample"

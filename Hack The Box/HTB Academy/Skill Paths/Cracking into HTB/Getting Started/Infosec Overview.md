@@ -1,3 +1,4 @@
+### Introduction
 - [Information security](https://en.wikipedia.org/wiki/Information_security), or more shorten to InfoSec, is quite a large field, with many specializations available, like:
 	- Network and infrastructure security
 	- Application security

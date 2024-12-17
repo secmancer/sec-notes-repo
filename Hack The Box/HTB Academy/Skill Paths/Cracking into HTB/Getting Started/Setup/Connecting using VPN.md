@@ -1,3 +1,4 @@
+### Introduction
 - [Virtual private network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) allows for connections to a private (internal) network to access hosts and resources as like we are connected on the same network.
 	- For example, an employee remotely connecting to their company's corporate network from their home allows that employee to get work done like they are on the corporate network in a secure fashion.
 - Additionally provides a degree of privacy and security through encrypting communications over the channel to prevent eavesdropping on data traversing through it.

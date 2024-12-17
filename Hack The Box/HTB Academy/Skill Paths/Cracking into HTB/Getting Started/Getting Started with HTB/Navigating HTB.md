@@ -27,31 +27,31 @@
 - Access walkthroughs (written or video) from the `Walkthroughs` tab for retired machines.
 - You can also check user statistics and activity on the statistics and activity tabs.
 
-## Challenges
+### Challenges
 - Similar to the Machines page, featuring `Active` and `Retired` challenges sorted into categories.
 - Divided into ten categories, each containing up to 10 challenges.
 - Click on a category to preview challenges, then access a challenge page to submit flags.
 
-## Fortress
+### Fortress
 - Vulnerable labs hosted by external companies on HackTheBox.
 - You can submit flags to earn badges and, in some cases, job offers from the company that created the fortress.
 - They are available to users with HTB rank `Hacker` or above.
 - Play active machines and challenges to improve your rank and qualify for fortresses.
 
-## Endgame
+### Endgame
 - Virtual labs with multiple interconnected machines, simulating real-world pentesting scenarios.
 - Require following specific exploit paths across multiple machines.
 - Provide broader attack paths not limited to single machines.
 - Active Endgames are for HTB rank `Guru` and above. Retired Endgames are available to VIP subscribers at any rank.
 
-## Pro Labs
+### Pro Labs
 - Simulate real-world enterprise infrastructures for advanced pentesting practice.
 - Large and time-consuming, with specific scenarios and difficulty levels.
 - Require a separate subscription plan for Pro Labs.
 - Awarded upon successful completion of a Pro Lab.
 ![[Screenshot_20241107_130725.png]]
 
-## Battlegrounds
+### Battlegrounds
 - A real-time game of strategy and hacking, played in teams of 2 or 4.
 - Attack/defend style where teams defend their machines while attacking the opponent's, earning points from attacks and flags.
 - Server Siege Mode: Attack-only style where the team who hacks faster wins.

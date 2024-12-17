@@ -1,3 +1,4 @@
+### Introduction
 - As a beginner in information security, it can be extremely daunting to know where to start. 
 - We have seen folks from all walks of life start from little to no knowledge and become successful on the HTB platform and consequently begin the journey down a technical career path.
 - There are many great resources out there for beginners, including free and paid training, purposefully vulnerable machines and labs, tutorial websites, blogs, YouTube channels, etc.
