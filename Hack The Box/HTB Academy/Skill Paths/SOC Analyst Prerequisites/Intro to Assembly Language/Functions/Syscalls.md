@@ -1,8 +1,9 @@
+### Introduction
 - Even though we are talking directly to the CPU through machine instructions in Assembly, we do not have to invoke every type of command using basic machine instructions only. Programs regularly use many kinds of operations. The Operating System can help us through syscalls to not have to execute these operations every time manually.
 - For example, suppose we need to write something on the screen, without syscalls. In that case, we will need to talk to the Video Memory and Video I/O, resolve any encoding required, send our input to be printed, and wait for the confirmation that it has been printed. As expected, if we had to do all of this to print a single character, it would make assembly codes much longer.
 
 
-## Linux Syscall
+### Linux Syscall
 - A `syscall` is like a globally available function written in `C`, provided by the Operating System Kernel. A syscall takes the required arguments in the registers and executes the function with the provided arguments. For example, if we wanted to write something to the screen, we can use the `write` syscall, provide the string to be printed and other required arguments, and then call the syscall to issue the print.
 - There are many available syscalls provided by the Linux Kernel, and we can find a list of them and the `syscall number` of each one by reading the `unistd_64.h` system file:
 
@@ -27,7 +28,7 @@ secmancer@htb[/htb]$ cat /usr/include/x86_64-linux-gnu/asm/unistd_64.h
 - Let's practice using syscalls with the `write` syscall that prints to the screen. We will not be printing the Fibonacci numbers just yet, but will instead start by printing an intro message, `Fibonacci Sequence`, at the beginning of our program.
 
 
-## Syscall Function Arguments
+### Syscall Function Arguments
 - To use the `write` syscall, we must first know what arguments it accepts. To find the arguments accepted by a syscall, we can use the `man -s 2` command with the syscall name from the above list:
 
 ```shell-session
@@ -51,7 +52,7 @@ ssize_t write(int fd, const void *buf, size_t count);
 > Tip: The `-s 2` flag specifies `syscall` man pages. We can check `man man` to see various sections for each man page.
 
 
-## Syscall Calling Convention
+### Syscall Calling Convention
 - Now that we understand how to locate various syscall and their arguments let's start learning how to call them. To call a syscall, we have to:
 	1. Save registers to stack
 	2. Set its syscall number in `rax`
@@ -60,7 +61,7 @@ ssize_t write(int fd, const void *buf, size_t count);
 - `We usually should save any registers we use to the stack before any function call or syscall.` However, as we are running this syscall at the beginning of our program before using any registers, we don't have any values in the registers, so we should not worry about saving them. 
 - We will discuss saving registers to the stack when we get to `Function Calls`.
 
-#### Syscall Number
+### Syscall Number
 - Let's start by moving the syscall number to the `rax` register. As we saw earlier, the `write` syscall has a number `1`, so we can start with the following command:
 ```nasm
 mov rax, 1
@@ -68,7 +69,7 @@ mov rax, 1
 - Now, if we reach the syscall instruction, the Kernel would know which syscall we are calling.
 
 
-#### Syscall Arguments
+### Syscall Arguments
 - Next, we should put each of the function's arguments in its corresponding register. The `x86_64` architecture's calling convention specifies in which register each argument should be placed (e.g., first arg should be in `rdi`). All functions and syscalls should follow this standard and take their arguments from the corresponding registers. We have discussed the following table in the `Registers` section:
 ![[Screenshot_20241121_145751.png]]
 - As we can see, we have a register for each of the first `6` arguments. Any additional arguments can be stored in the stack (though not many syscalls use more than `6` arguments.).
@@ -104,7 +105,7 @@ mov rdx, 20      ; rdx: print length of 20 bytes
 - We may also use a dynamically calculated `length` variable by using `equ`, similarly to what we did with the `Hello World` program.
 
 
-## Calling Syscall
+### Calling Syscall
 - Now that we have our syscall number and arguments in place, the only thing left is to do the syscall instruction. So, let's add a syscall instruction and add the instructions to the beginning of our `fib.s` code, which should look as follows:
 ```nasm
 global  _start
@@ -166,7 +167,7 @@ Fibonacci Sequence:
 - Now, we have successfully used the `write` syscall to print our intro message.
 
 
-## Exit Syscall
+### Exit Syscall
 - Finally, since we have understood how syscalls work, let's go through another essential syscall used in programs: `Exit syscall`. We may have noticed that so far, whenever our program finishes executing, it exits with a `segmentation fault`, as we just saw when we ran `./fib`. This is because we are ending our program abruptly, without going through the proper procedure of exiting programs in Linux, by calling the `exit syscall` and passing an exit code.
 - So, let's add this to the end of our code. First, we need to find the `exit syscall` number, as follows:
 ```shell-session

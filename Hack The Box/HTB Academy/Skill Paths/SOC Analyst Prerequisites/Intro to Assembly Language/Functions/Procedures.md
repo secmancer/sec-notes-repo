@@ -1,6 +1,6 @@
+### Introduction
 - As our code grows in complexity, we need to start refactoring our code to make more efficient use of the instructions and make it easier to read and understand. A common way to do so is through the use of `functions` and `procedures`. While functions require a calling procedure to call them and pass their arguments (as we will discuss in the next section), `procedures` are usually more straightforward and mainly used for code refactoring.
 - A `procedure` (sometimes referred to as a `subroutine`) is usually a set of instructions we want to execute at specific points in the program. So instead of reusing the same code, we define it under a procedure label and `call` it whenever we need to use it. This way, we only need to write the code once but can use it multiple times. Furthermore, we can use procedures to split a larger and more complex code into smaller, simpler segments.
-- Let's go back to our code:
 ```nasm
 global  _start
 
@@ -36,7 +36,7 @@ loopFib:
 
 
 
-## Defining Procedures
+### Defining Procedures
 - As a starting point, let's add a label above each of the three parts of the code we want to turn into procedures:
 ```nasm
 global  _start
@@ -73,7 +73,7 @@ Exit:
 - We see that our code already looks better. However, this is not any more efficient than it was, as we could have achieved the same by using comments. So, our next step is to use `calls` to direct the program to each of our procedures.
 
 
-## CALL/RET
+### CALL/RET
 - When we want to start executing a procedure, we can `call` it, and it will go through its instructions. The `call` instruction pushes (i.e., saves) the next instruction pointer `rip` to the stack and then jumps to the specified procedure.
 - Once the procedure is executed, we should end it with a `ret` instruction to return to the point we were at before jumping to the procedure. The `ret` instruction `pops` the address at the top of the stack into `rip`, so the program's next instruction is restored to what it was before jumping to the procedure.
 - The `ret` instruction plays an essential role in [Return-Oriented Programming (ROP)](https://en.wikipedia.org/wiki/Return-oriented_programming), an exploitation technique usually used with Binary Exploitation.
@@ -82,7 +82,7 @@ Exit:
 | ----------- | ------------------------------------------------------------------------------------------- | ----------------- |
 | call        | push the next instruction pointer `rip` to the stack, then jumps to the specified procedure | call printMessage |
 | rest        | pop the address at rsp into rip, then jump to it                                            | ret               |
-- So with that, we can set up our calls at the beginning of our code to define the execution flow we want:
+- So with that, we can set up our calls at the beginning of our code to define the execution flow we want.
 
 ```nasm
 global  _start

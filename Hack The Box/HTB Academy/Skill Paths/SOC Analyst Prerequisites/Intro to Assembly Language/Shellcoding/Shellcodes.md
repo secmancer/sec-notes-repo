@@ -1,8 +1,9 @@
+### Introduction
 - We should have a very good understanding of the computer and processor architecture and how programs interact with this underlying architecture through what we have learned in this module. We should also be able to disassemble and debug binaries and get a good understanding of what machine instructions they are executing and what their general purpose is. Now we will learn about `shellcodes`, which is an essential concept for penetration testers.
 
 
 
-## What is a Shellcode
+### What is a Shellcode
 - We know that each executable binary is made of machine instructions written in Assembly and then assembled into machine code. A `shellcode` is the hex representation of a binary's executable machine code. For example, let's take our `Hello World` program, which executes the following instructions:
 
 ```nasm
@@ -32,7 +33,7 @@ _start:
 - This shellcode should properly represent the machine instructions, and if passed to the processor memory, it should understand it and execute it properly.
 
 
-## Use in Pentesting
+### Use in Pentesting
 - Having the ability to pass a shellcode directly to the processor memory and have it executed plays an essential role in `Binary Exploitation`. For example, with a buffer overflow exploit, we can pass a `reverse shell` shellcode, have it executed, and receive a reverse shell.
 - Modern `x86_64` systems may have protections against loading shellcodes into memory. This is why `x86_64` binary exploitation usually relies on `Return Oriented Programming (ROP)`, which also requires a good understanding of the assembly language and computer architecture covered in this module.
 - Furthermore, some attack techniques rely on infecting existing executables (like `elf` or `.exe`) or libraries (like `.so` or `.dll`) with shellcode, such that this shellcode is loaded into memory and executed once these files are run. Another advantage of using shellcodes in pentesting is the ability to directly execute code into memory without writing anything to the disk, which is very important for reducing our visibility and footprint on the remote server.
@@ -41,7 +42,7 @@ _start:
 
 
 
-## Assembly to Machine Code
+### Assembly to Machine Code
 - To understand how shellcodes are generated, we must first understand how each instruction is converted into a machine code. Each `x86` instruction and each register has its own `binary` machine code (usually represented in `hex`), which represents the binary code passed directly to the processor to tell it what instruction to execute (through the Instruction Cycle.)
 - Furthermore, common combinations of instructions and registers have their own machine code as well. For example, the `push rax` instruction has the machine code `50`, while `push rbx` has the machine code `53`, and so on. When we assemble our code with `nasm`, it converts our assembly instructions to their respective machine code so that the processor can understand them.
 - Remember: Assembly language is made for human readability, and the processor cannot understand it without being converted into machine code. We will use `pwntools` to assemble and disassemble our machine code, as it is an essential tool for Binary Exploitation, and this is an excellent opportunity to start learning it. First, we can install `pwntools` with the following command (it should be already installed in PwnBox):
@@ -69,7 +70,7 @@ secmancer@htb[/htb]$ pwn disasm '50' -c 'amd64'
 
 
 
-## Extract Shellcode
+### Extract Shellcode
 - Now that we understand how each assembly instruction is converted into machine code (and vice-versa), let's see how to extract the shellcode from any binary.
 - A binary's shellcode represents its executable `.text` section only, as shellcodes are meant to be directly executable. To extract the `.text` section with `pwntools`, we can use the `ELF` library to load an `elf` binary, which would allow us to run various functions on it. So, let's run the `python3` interpreter to understand better how to use it. First, we'll have to import `pwntools`, and then we can read the `elf` binary, as follows:
 
@@ -127,7 +128,7 @@ secmancer@htb[/htb]$ ./shellcoder.sh helloworld
 
 ---
 
-## Loading Shellcode
+### Loading Shellcode
 - Now that we have a shellcode, let's try to run it, allowing us to test any shellcode we have prepared before using it in Binary Exploitation. The shellcode we extracted above does not meet the `Shellcoding Requirements` we'll discuss in the next section, and so it won't run. To demonstrate how to run shellcodes, we'll use the following (`fixed`) shellcode, that meets all `Shellcoding Requirements`:
 
 ```shellcode
@@ -174,12 +175,12 @@ Hello HTB Academy!
 
 
 
-## Debugging Shellcode
+### Debugging Shellcode
 - Finally, let's see how we can debug our shellcode with `gdb`. If we are loading the machine code directly into memory, how would we run it with `gdb`? There are many ways to do so, and we'll go through some of them here.
 - We can always run our shellcode with `loader.py`, and then attach its process to `gdb` with `gdb -p PID`. However, this will only work if our process does not exit before we attach to it. So, we will instead build our shellcode to an `elf` binary and then use this binary with `gdb` like we've been doing throughout the module.
 
 
-#### Pwntools
+### Pwntools
 - We can use `pwntools` to build an `elf` binary from our shellcode using the `ELF` library, and then the `save` function to save it to a file:
 
 ```python
@@ -226,7 +227,7 @@ Breakpoint 1, 0x0000000000401000 in ?? ()
      0x401003                  mov    bx, 0x2179
      0x401007                  push   rbx
 
-#### GCC
+### GCC
 - There are other methods to build our shellcode into an `elf` executable. We can add our shellcode to the following `C` code, write it to a `helloworld.c`, and then build it with `gcc` (hex bytes must be escaped with `\x`):
 
 ```c
@@ -258,7 +259,7 @@ Hello HTB Academy!
 
 
 
-## Exercise Shellcode
+### Exercise Shellcode
 ```
 4831db536a0a48b86d336d307279217d5048b833645f316e37305f5048b84854427b6c303464504889e64831c0b0014831ff40b7014831d2b2190f054831c0043c4030ff0f05
 ```

@@ -1,8 +1,8 @@
-# Shellcoding Techniques
+### Shellcoding Techniques
 - As we have seen in the previous section, our `Hello World` assembly code had to be modified to produce a working shellcode. So, in this section, we'll go through some of the techniques and tricks we can use to work around any issues found in our assembly code.
 
 
-## Shellcoding Requirements
+### Shellcoding Requirements
 - As we briefly mentioned in the previous section, not all binaries give working shellcodes that can be loaded directly to the memory and run. This is because there are specific requirements a shellcode must meet. Otherwise, it won't be properly disassembled on runtime into its correct assembly instructions.
 - To better understand this, let's try to disassemble the shellcode we extracted in the previous section from the `Hello World` program, using the same `pwn disasm` tool we previously used:
 

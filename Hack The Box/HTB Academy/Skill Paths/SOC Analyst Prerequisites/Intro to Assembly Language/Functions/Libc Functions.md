@@ -1,3 +1,4 @@
+### Introduction
 - So far, we have only been printing Fibonacci numbers that are less than `10`. But this way, our program is static and will print the same output every time. To make it more dynamic, we can ask the user for the max Fibonacci number they want to print and then use it with `cmp`. Before we start, let's recall the function calling convention:
 	1. `Save Registers` on the Stack (`Caller Saved`)
 	2. Pass `Function Arguments` (like syscalls)
@@ -6,7 +7,7 @@
 - So, let's import our function and start with the calling convention steps.
 
 
-## Importing libc Functions
+### Importing libc Functions
 - To do so, we can use the `scanf` function from `libc` to take user input and have it properly converted to an integer, which we will later use with `cmp`. First, we must import the `scanf`, as follows:
 ```nasm
 global  _start
@@ -20,12 +21,12 @@ getInput:
 
 
 
-## Saving Registers
+### Saving Registers
 - As we are at the beginning of our program and have not yet used any register, we don't have to worry about saving registers to the Stack. So, we can proceed with the second point, and pass the required arguments to `scanf`.
 
 
 
-## Function Arguments
+### Function Arguments
 - Next, we need to know what arguments are accepted by `scanf`, as follows:
 ```shell-session
 secmancer@htb[/htb]$ man -s 3 scanf
@@ -53,7 +54,7 @@ getInput:
     mov rsi, userInput  ; set 2nd parameter (userInput)
 ```
 
-## Stack Alignment
+### Stack Alignment
 - Next, we have to ensure that a 16-bytes boundary aligns our Stack. We are currently inside the `getInput` procedure, so we have 1 `call` instruction and no `push` instructions, so we have an `8-byte` boundary. So, we can use `sub` to fix `rsp`, as follows:
 ```nasm
 getInput:
@@ -64,7 +65,7 @@ getInput:
 - We can `push rax` instead, and this will properly align the Stack as well. This way, our Stack should be perfectly aligned with a 16-byte boundary.
 
 
-## Function Call
+### Function Call
 - Now, we set the function arguments and `call scanf`, as follows:
 ```nasm
 getInput:
@@ -145,7 +146,7 @@ Exit:
 ```
 
 
-## Dynamic Linker
+### Dynamic Linker
 - Let's assemble our code, link it, and try to print Fibonacci numbers up to `100`:
 ```shell-session
 secmancer@htb[/htb]$ nasm -f elf64 fib.s &&  ld fib.o -o fib -lc --dynamic-linker /lib64/ld-linux-x86-64.so.2 && ./fib

@@ -1,4 +1,4 @@
-# Shellcoding Tools
+### Shellcoding Tools
 - We should now be able to modify our code and make it `shellcode` compatible, such that it meets all `Shellcoding Requirements`. This understanding is crucial for crafting our own shellcodes and minimizing their size, which may become very handy when dealing with Binary Exploitation, especially when we don't have a lot of room for a large shellcode.
 - In certain other cases, we may not need to write our own shellcode every time, as a similar shellcode may already exist, or we can use tools to generate our shellcode, so we don't have to reinvent the wheel.
 - We will come across many common shellcodes through Binary Exploitation, like a `Reverse Shell` shellcode or a `/bin/sh` shellcode. We can find many shellcodes that perform these functions, which we may be able to use with minimal or no modification. We can also use tools to generate both of these shellcodes.
@@ -237,7 +237,7 @@ Final size of hex file: 142 bytes
 - As we can see, our payload was encoded and became much larger as well.
 
 
-## Shellcode Resources
+### Shellcode Resources
 - Finally, we can always search online resources like [Shell-Storm](http://shell-storm.org/shellcode/) or [Exploit DB](https://www.exploit-db.com/shellcodes) for existing shellcodes.
 - For example, if we search [Shell-Storm](http://shell-storm.org/shellcode/) for a `/bin/sh` shellcode on `Linux/x86_64`, we will find several examples of varying sizes, like this [27-bytes shellcode](http://shell-storm.org/shellcode/files/shellcode-806.php). We can search [Exploit DB](https://www.exploit-db.com/shellcodes) for the same, and we find a more optimized [22-bytes shellcode](https://www.exploit-db.com/shellcodes/47008), which can be helpful if our Binary Exploitation only had around 22-bytes of overflow space. We can also search for encoded shellcodes, which are bound to be larger.
 - The shellcode we wrote above is 27-bytes long as well, so it looks to be a very optimized shellcode. With all of that, we should be comfortable with writing, generating, and using shellcodes.
