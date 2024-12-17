@@ -44,13 +44,15 @@
 - This is because it is in the order that it was unencapsulated.
 
 
-### Addressing Mechanisms
-- #### MAC-Addressing
-	- Each logical or physical interface attached to a host has a Media Access Control (`MAC`) address. This address is a 48-bit `six octet` address represented in hexadecimal format. If we look at the image below, we can see an example of one by the `red` arrow.
-	- MAC-addressing is utilized in Layer two ( `the data-link or link-layer depending on which model you look at` ) communications between hosts. 
-	- This works through host-to-host communication within a broadcast domain. If layer two traffic needs to cross a layer three interface, that PDU is sent to the layer three egress interface, and it is routed to the correct network. 
-	- At layer two, this looks as though the PDU is addressed to the router interface, and the router will take the layer three address into account when determining where to send it next. 
-	- Once it makes a choice, it strips the encapsulation at layer two and replaces it with new information that indicates the next physical address in the route.
+### MAC-Addressing
+- Every logical/physical interface on the host has  Media Access Control (`MAC`) address.
+	- 48-bit address in a hexadecimal format. One is shown next to the red arrow.
+- MAC-addressing is utilized in Layer 2.
+	- Remember: Layer 2 is the data-link or link-layer depending on which model you look at communications between hosts. 
+- This works through host-to-host communication within a broadcast domain. 
+- If layer two traffic needs to cross a layer three interface, that PDU is sent to the layer three egress interface, and it is routed to the correct network. 
+- At layer two, this looks as though the PDU is addressed to the router interface, and the router will take the layer three address into account when determining where to send it next. 
+- Once it makes a choice, it strips the encapsulation at layer two and replaces it with new information that indicates the next physical address in the route.
 ![image](https://academy.hackthebox.com/storage/modules/81/Addressing.png)
 
 
