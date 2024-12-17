@@ -1,15 +1,15 @@
 ### Introduction
 - **Networking Refresher**: Understanding standard protocols and network flow is essential for capturing and analyzing traffic.
 - **Core Concepts**: Knowing ports, protocols, and typical network flow is critical for accurate traffic dissection.
-- **Recommendation**: Beginners should complete the [Introduction to Networking](https://academy.hackthebox.com/course/preview/introduction-to-networking) module for foundational knowledge.
+
 
 ### OSI / TCP-IP Models
 - #### Networking Models
 
 ![image](https://academy.hackthebox.com/storage/modules/81/net_models4.png)
 
-- The image above gives a great view of the Open Systems Interconnect (`OSI`) model and the Transmission Control Protocol - Internet Protocol (`TCP-IP`) model side by side. 
-- The models are a graphical representation of how communication is handled between networked computers. Let's take a second to compare the two:
+- Above is a great view of the Open Systems Interconnect (`OSI`) model and the Transmission Control Protocol - Internet Protocol (`TCP-IP`) model side by side. 
+- The models are a graphical representation of how communication is handled between networked computers.
 - #### Model Traits Comparison.
 	- **OSI vs. TCP-IP Models**:
 	    - OSI is segmented into more layers, offering detailed functional chunks.
@@ -33,20 +33,18 @@
 - #### PDU Example
 ![image](https://academy.hackthebox.com/storage/modules/81/net_models_pdu2.png)
 	- When inspecting a PDU, we need to keep the idea of encapsulation in mind. 
-	- As our data moves down the protocol stack, each layer will wrap the previous layers' data in a new bubble we call encapsulation.
+	- Encapsulation: a layer will wrap data from the previous layer.
 	- This bubble adds the necessary information of that layer into the header of the PDU. 
 	- This information can vary by level, but it includes what is held by the previous layer, operational flags, any options required to negotiate communications, the source and destination IP addresses, ports, transport, and application layer protocols.
 - #### PDU Packet Breakdown
 
 ![image](https://academy.hackthebox.com/storage/modules/81/pdu-wireshark.png)
 
-- The image above shows us the makeup of a PDU side by side with a packet breakout from Wireshark's Packet Details pane. 
-- Please take note that when we see the breakout in Wireshark, it is in reverse order. 
-- Wireshark shows us the PDU in reverse because it is in the order that it was unencapsulated.
+- Above shows us the makeup of a PDU side by side with a packet breakout from Wireshark's Packet Details pane, which is in reverse order when viewed in Wireshark.
+- This is because it is in the order that it was unencapsulated.
 
 
 ### Addressing Mechanisms
-- Now that we have gone over the basic concepts driving networking behavior let us take some time to discuss the addressing mechanisms that enable the delivery of our packets to the correct hosts. We will begin with Media Access Control addresses first.
 - #### MAC-Addressing
 	- Each logical or physical interface attached to a host has a Media Access Control (`MAC`) address. This address is a 48-bit `six octet` address represented in hexadecimal format. If we look at the image below, we can see an example of one by the `red` arrow.
 	- MAC-addressing is utilized in Layer two ( `the data-link or link-layer depending on which model you look at` ) communications between hosts. 
