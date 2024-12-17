@@ -1,6 +1,5 @@
----
-
-Nmap Scripting Engine (`NSE`) is another handy feature of `Nmap`. It provides us with the possibility to create scripts in Lua for interaction with certain services. There are a total of 14 categories into which these scripts can be divided:
+### Introduction
+- Nmap Scripting Engine (`NSE`) is another handy feature of `Nmap`. It provides us with the possibility to create scripts in Lua for interaction with certain services.
 
 | **Category** | **Description** |
 | --- | --- |
@@ -19,37 +18,22 @@ Nmap Scripting Engine (`NSE`) is another handy feature of `Nmap`. It provides us
 | `version` | Extension for service detection. |
 | `vuln` | Identification of specific vulnerabilities. |
 
-We have several ways to define the desired scripts in `Nmap`.
-
-#### Default Scripts
-
-Nmap Scripting Engine
-
+- We have several ways to define the desired scripts in `Nmap`.
+- #### Default Scripts
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap <target> -sC
 ```
-
-#### Specific Scripts Category
-
-Nmap Scripting Engine
-
+- #### Specific Scripts Category
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap <target> --script <category>
 ```
-
-#### Defined Scripts
-
-Nmap Scripting Engine
-
+- #### Defined Scripts
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap <target> --script <script-name>,<script-name>,...
 ```
 
-For example, let us keep working with the target SMTP port and see the results we get with two defined scripts.
-
-#### Nmap - Specifying Scripts
-
-Nmap Scripting Engine
+- For example, let us keep working with the target SMTP port and see the results we get with two defined scripts.
+- #### Nmap - Specifying Scripts
 
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 25 --script banner,smtp-commands
@@ -71,12 +55,9 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 | `-p 25` | Scans only the specified port. |
 | `--script banner,smtp-commands` | Uses specified NSE scripts. |
 
-We see that we can recognize the **Ubuntu** distribution of Linux by using the' banner' script. The `smtp-commands` script shows us which commands we can use by interacting with the target SMTP server. In this example, such information may help us to find out existing users on the target. `Nmap` also gives us the ability to scan our target with the aggressive option (`-A`). This scans the target with multiple options as service detection (`-sV`), OS detection (`-O`), traceroute (`--traceroute`), and with the default NSE scripts (`-sC`).
-
-#### Nmap - Aggressive Scan
-
-Nmap Scripting Engine
-
+- We see that we can recognize the **Ubuntu** distribution of Linux by using the' banner' script. The `smtp-commands` script shows us which commands we can use by interacting with the target SMTP server. 
+- In this example, such information may help us to find out existing users on the target. `Nmap` also gives us the ability to scan our target with the aggressive option (`-A`). This scans the target with multiple options as service detection (`-sV`), OS detection (`-O`), traceroute (`--traceroute`), and with the default NSE scripts (`-sC`).
+- #### Nmap - Aggressive Scan
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 80 -A
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-17 01:38 CEST
@@ -110,18 +91,14 @@ Nmap done: 1 IP address (1 host up) scanned in 11.36 seconds
 | `-p 80` | Scans only the specified port. |
 | `-A` | Performs service detection, OS detection, traceroute and uses defaults scripts to scan the target. |
 
-With the help of the used scan option (`-A`), we found out what kind of web server (`Apache 2.4.29`) is running on the system, which web application (`WordPress 5.3.4`) is used, and the title (`blog.inlanefreight.com`) of the web page. Also, `Nmap` shows that it is likely to be `Linux` (`96%`) operating system.
+- With the help of the used scan option (`-A`), we found out what kind of web server (`Apache 2.4.29`) is running on the system, which web application (`WordPress 5.3.4`) is used, and the title (`blog.inlanefreight.com`) of the web page. 
+- Also, `Nmap` shows that it is likely to be `Linux` (`96%`) operating system.
 
----
 
-## Vulnerability Assessment
 
-Now let us move on to HTTP port 80 and see what information and vulnerabilities we can find using the `vuln` category from `NSE`.
-
-#### Nmap - Vuln Category
-
-Nmap Scripting Engine
-
+### Vulnerability Assessment
+- Now let us move on to HTTP port 80 and see what information and vulnerabilities we can find using the `vuln` category from `NSE`.
+- #### Nmap - Vuln Category
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 80 -sV --script vuln 
 
@@ -161,8 +138,9 @@ PORT   STATE SERVICE VERSION
 | `-sV` | Performs service version detection on specified ports. |
 | `--script vuln` | Uses all related scripts from specified category. |
 
-The scripts used for the last scan interact with the webserver and its web application to find out more information about their versions and check various databases to see if there are known vulnerabilities. More information about NSE scripts and the corresponding categories we can find at: [https://nmap.org/nsedoc/index.html](https://nmap.org/nsedoc/index.html)
+- The scripts used for the last scan interact with the webserver and its web application to find out more information about their versions and check various databases to see if there are known vulnerabilities. More information about NSE scripts and the corresponding categories we can find at: [https://nmap.org/nsedoc/index.html](https://nmap.org/nsedoc/index.html)
 
-## Questions
+
+### Questions
 - Use NSE and its scripts to find the flag that one of the services contain and submit it as the answer.
 	- HTB{873nniuc71bu6usbs1i96as6dsv26}

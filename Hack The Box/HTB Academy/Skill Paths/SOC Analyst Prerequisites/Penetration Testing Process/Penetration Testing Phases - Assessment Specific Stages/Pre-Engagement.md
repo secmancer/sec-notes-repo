@@ -1,17 +1,11 @@
-Pre-engagement is the stage of preparation for the actual penetration test. During this stage, many questions are asked, and some contractual agreements are made. The client informs us about what they want to be tested, and we explain in detail how to make the test as efficient as possible.
-
+### Introduction
+- Pre-engagement is the stage of preparation for the actual penetration test. During this stage, many questions are asked, and some contractual agreements are made. The client informs us about what they want to be tested, and we explain in detail how to make the test as efficient as possible.
 ![](https://academy.hackthebox.com/storage/modules/90/0-PT-Process-PRE.png)
-
-The entire pre-engagement process consists of three essential components:
-
-1. Scoping questionnaire
-    
-2. Pre-engagement meeting
-    
-3. Kick-off meeting
-    
-
-Before any of these can be discussed in detail, a `Non-Disclosure Agreement` (`NDA`) must be signed by all parties. There are several types of NDAs:
+- The entire pre-engagement process consists of three essential components:
+	- Scoping questionnaire
+	- Pre-engagement meeting
+	- Kick-off meeting
+- Before any of these can be discussed in detail, a `Non-Disclosure Agreement` (`NDA`) must be signed by all parties
 
 | **Type** | **Description** |
 | --- | --- |
@@ -19,9 +13,8 @@ Before any of these can be discussed in detail, a `Non-Disclosure Agreement` (`N
 | `Bilateral NDA` | In this type, both parties are obligated to keep the resulting and acquired information confidential. This is the most common type of NDA that protects the work of penetration testers. |
 | `Multilateral NDA` | Multilateral NDA is a commitment to confidentiality by more than two parties. If we conduct a penetration test for a cooperative network, all parties responsible and involved must sign this document. |
 
-Exceptions can also be made in urgent cases, where we jump into the kick-off meeting, which can also occur via an online conference. It is essential to know `who in the company is permitted` to contract us for a penetration test. Because we cannot accept such an order from everyone. Imagine, for example, that a company employee hires us with the pretext of checking the corporate network's security. However, after we finished the assessment, it turned out that this employee wanted to harm their own company and had no authorization to have the company tested. This would put us in a critical situation from a legal point of view.
-
-Below is a sample (not exhaustive) list of company members who may be authorized to hire us for penetration testing. This can vary from company to company, with larger organizations not involving the C-level staff directly and the responsibility falling on IT, Audit, or IT Security senior management or the like.
+- Exceptions can also be made in urgent cases, where we jump into the kick-off meeting, which can also occur via an online conference. It is essential to know `who in the company is permitted` to contract us for a penetration test. Because we cannot accept such an order from everyone. Imagine, for example, that a company employee hires us with the pretext of checking the corporate network's security. However, after we finished the assessment, it turned out that this employee wanted to harm their own company and had no authorization to have the company tested. This would put us in a critical situation from a legal point of view.
+- Below is a sample (not exhaustive) list of company members who may be authorized to hire us for penetration testing. This can vary from company to company, with larger organizations not involving the C-level staff directly and the responsibility falling on IT, Audit, or IT Security senior management or the like.
 
 |  |  |  |
 | --- | --- | --- |
@@ -29,9 +22,8 @@ Below is a sample (not exhaustive) list of company members who may be authorized
 | Chief Security Officer (CSO) | Chief Risk Officer (CRO) | Chief Information Officer (CIO) |
 | VP of Internal Audit | Audit Manager | VP or Director of IT/Information Security |
 
-It is vital to determine early on in the process who has signatory authority for the contract, Rules of Engagement documents, and who will be the primary and secondary points of contact, technical support, and contact for escalating any issues.
-
-This stage also requires the preparation of several documents before a penetration test can be conducted that must be signed by our client and us so that the declaration of consent can also be presented in written form if required. Otherwise the penetration test could breach the [Computer Misuse Act](https://www.legislation.gov.uk/ukpga/1990/18/contents). These documents include, but are not limited to:
+- It is vital to determine early on in the process who has signatory authority for the contract, Rules of Engagement documents, and who will be the primary and secondary points of contact, technical support, and contact for escalating any issues.
+- This stage also requires the preparation of several documents before a penetration test can be conducted that must be signed by our client and us so that the declaration of consent can also be presented in written form if required. Otherwise the penetration test could breach the [Computer Misuse Act](https://www.legislation.gov.uk/ukpga/1990/18/contents).
 
 | **Document** | **Timing for Creation** |
 | --- | --- |
@@ -43,17 +35,14 @@ This stage also requires the preparation of several documents before a penetrati
 | `6. Contractors Agreement` (Physical Assessments) | `Before` the Kick-Off Meeting |
 | `7. Reports` | `During` and `after` the conducted Penetration Test |
 
-Note: Our client may provide a separate scoping document listing in-scope IP addresses/ranges/URLs and any necessary credentials but this information should also be documented as an appendix in the RoE document.
+- Note: Our client may provide a separate scoping document listing in-scope IP addresses/ranges/URLs and any necessary credentials but this information should also be documented as an appendix in the RoE document.
+- **Important Note:**
+	- These documents should be reviewed and adapted by a lawyer after they have been prepared.
 
-**Important Note:**
 
-These documents should be reviewed and adapted by a lawyer after they have been prepared.
 
----
-
-## Scoping Questionnaire
-
-After initial contact is made with the client, we typically send them a `Scoping Questionnaire` to better understand the services they are seeking. This scoping questionnaire should clearly explain our services and may typically ask them to choose one or more from the following list:
+### Scoping Questionnaire
+- After initial contact is made with the client, we typically send them a `Scoping Questionnaire` to better understand the services they are seeking. This scoping questionnaire should clearly explain our services and may typically ask them to choose one or more from the following list.
 
 |  |  |
 | --- | --- |
@@ -63,9 +52,8 @@ After initial contact is made with the client, we typically send them a `Scoping
 | ☐ Physical Security Assessment | ☐ Social Engineering Assessment |
 | ☐ Red Team Assessment | ☐ Web Application Security Assessment |
 
-Under each of these, the questionnaire should allow the client to be more specific about the required assessment. Do they need a web application or mobile application assessment? Secure code review? Should the Internal Penetration Test be black box and semi-evasive? Do they want just a phishing assessment as part of the Social Engineering Assessment or also vishing calls? This is our chance to explain the depth and breadth of our services, ensure that we understand our client's needs and expectations, and ensure that we can adequately deliver the assessment they require.
-
-Aside from the assessment type, client name, address, and key personnel contact information, some other critical pieces of information include:
+- Under each of these, the questionnaire should allow the client to be more specific about the required assessment. Do they need a web application or mobile application assessment? Secure code review? Should the Internal Penetration Test be black box and semi-evasive? Do they want just a phishing assessment as part of the Social Engineering Assessment or also vishing calls? This is our chance to explain the depth and breadth of our services, ensure that we understand our client's needs and expectations, and ensure that we can adequately deliver the assessment they require.
+- Aside from the assessment type, client name, address, and key personnel contact information, some other critical pieces of information.
 
 |  |  |
 | --- | --- |
@@ -81,26 +69,17 @@ Aside from the assessment type, client name, address, and key personnel contact 
 | Will network testing be conducted from an anonymous user on the network or a standard domain user? |  |
 | Do we need to bypass Network Access Control (NAC)? |  |
 
-Finally, we will want to ask about information disclosure and evasiveness (if applicable to the assessment type):
+- Finally, we will want to ask about information disclosure and evasiveness (if applicable to the assessment type):
+	- Is the Penetration Test black box (no information provided), grey box (only IP address/CIDR ranges/URLs provided), white box (detailed information provided)
+	- Would they like us to test from a non-evasive, hybrid-evasive (start quiet and gradually become "louder" to assess at what level the client's security personnel detect our activities), or fully evasive.
+- This information will help us ensure we assign the right resources and deliver the engagement based on the client's expectations. This information is also necessary for providing an accurate proposal with a project timeline (for example, a Vulnerability Assessment will take considerably less time than a Red Team Assessment) and cost (an External Penetration Test against 10 IPs will cost significantly less than an Internal Penetration Test with 30 /24 networks in-scope).
+- Based on the information we received from the scoping questionnaire, we create an overview and summarize all information in the `Scoping Document`.
 
-- Is the Penetration Test black box (no information provided), grey box (only IP address/CIDR ranges/URLs provided), white box (detailed information provided)
-    
-- Would they like us to test from a non-evasive, hybrid-evasive (start quiet and gradually become "louder" to assess at what level the client's security personnel detect our activities), or fully evasive.
-    
 
-This information will help us ensure we assign the right resources and deliver the engagement based on the client's expectations. This information is also necessary for providing an accurate proposal with a project timeline (for example, a Vulnerability Assessment will take considerably less time than a Red Team Assessment) and cost (an External Penetration Test against 10 IPs will cost significantly less than an Internal Penetration Test with 30 /24 networks in-scope).
-
-Based on the information we received from the scoping questionnaire, we create an overview and summarize all information in the `Scoping Document`.
-
----
-
-## Pre-Engagement Meeting
-
-Once we have an initial idea of the client's project requirements, we can move on to the `pre-engagement meeting`. This meeting discusses all relevant and essential components with the customer before the penetration test, explaining them to our customer. The information we gather during this phase, along with the data collected from the scoping questionnaire, will serve as inputs to the `Penetration Testing Proposal`, also known as the `Contract` or `Scope of Work` (`SoW`). We can think of the whole process as a visit to the doctor to inform ourselves regarding the planned examinations. This phase typically occurs via e-mail and during an online conference call or in-person meeting.
-
-Note: We may encounter clients during our career that are undergoing their first ever penetration test, or the direct client PoC is not familiar with the process. It is not uncommon to use part of the pre-engagement meeting to review the scoping questionnaire either in part or step-by-step.
-
-#### Contract - Checklist
+### Pre-Engagement Meeting
+- Once we have an initial idea of the client's project requirements, we can move on to the `pre-engagement meeting`. This meeting discusses all relevant and essential components with the customer before the penetration test, explaining them to our customer. The information we gather during this phase, along with the data collected from the scoping questionnaire, will serve as inputs to the `Penetration Testing Proposal`, also known as the `Contract` or `Scope of Work` (`SoW`). We can think of the whole process as a visit to the doctor to inform ourselves regarding the planned examinations. This phase typically occurs via e-mail and during an online conference call or in-person meeting.
+- Note: We may encounter clients during our career that are undergoing their first ever penetration test, or the direct client PoC is not familiar with the process. It is not uncommon to use part of the pre-engagement meeting to review the scoping questionnaire either in part or step-by-step.
+- #### Contract - Checklist
 
 | **Checkpoint** | **Description** |
 | --- | --- |
@@ -121,13 +100,10 @@ Note: We may encounter clients during our career that are undergoing their first
 | `☐ Reporting` | Apart from the report's structure, any customer-specific requirements the report should contain are also discussed. In addition, we clarify how the reporting is to take place and whether a presentation of the results is desired. |
 | `☐ Payment Terms` | Finally, prices and the terms of payment are explained. |
 
-The most crucial element of this meeting is the detailed presentation of the penetration test to our client and its focus. As we already know, each piece of infrastructure is unique for the most part, and each client has particular preferences on which they place the most importance. Finding out these priorities is an essential part of this meeting.
-
-We can think of it as ordering in a restaurant. If we want a medium-rare steak and the chef gives us a well-done steak because he believes it is better, it will not be what we were hoping for. Therefore, we should prioritize our client's wishes and serve the steak as they ordered.
-
-Based on the `Contract Checklist` and the input information shared in scoping, the `Penetration Testing Proposal` (`Contract`) and the associated `Rules of Engagement` (`RoE`) are created.
-
-#### Rules of Engagement - Checklist
+- The most crucial element of this meeting is the detailed presentation of the penetration test to our client and its focus. As we already know, each piece of infrastructure is unique for the most part, and each client has particular preferences on which they place the most importance. Finding out these priorities is an essential part of this meeting.
+- We can think of it as ordering in a restaurant. If we want a medium-rare steak and the chef gives us a well-done steak because he believes it is better, it will not be what we were hoping for. Therefore, we should prioritize our client's wishes and serve the steak as they ordered.
+- Based on the `Contract Checklist` and the input information shared in scoping, the `Penetration Testing Proposal` (`Contract`) and the associated `Rules of Engagement` (`RoE`) are created.
+- #### Rules of Engagement - Checklist
 
 | **Checkpoint** | **Contents** |
 | --- | --- |
@@ -155,25 +131,18 @@ Based on the `Contract Checklist` and the input information shared in scoping, t
 | `☐ Disclaimers and Limitation of Liability` | System damage, data loss |
 | `☐ Permission to Test` | Signed contract, contractors agreement |
 
----
 
-## Kick-Off Meeting
 
-The `kick-off meeting` usually occurs at a scheduled time and in-person after signing all contractual documents. This meeting usually includes client POC(s) (from Internal Audit, Information Security, IT, Governance & Risk, etc., depending on the client), client technical support staff (developers, sysadmins, network engineers, etc.), and the penetration testing team (someone in a management role (such as the Practice Lead), the actual penetration tester(s), and sometimes a Project Manager or even the Sales Account Executive or similar). We will go over the nature of the penetration test and how it will take place. Usually, there is no Denial of Service (DoS) testing. We also explain that if a critical vulnerability is identified, penetration testing activities will be paused, a vulnerability notification report will be generated, and the emergency contacts will be contacted. Typically these are only generated during External Penetration Tests for critical flaws such as unauthenticated remote code execution (RCE), SQL injection, or another flaw that leads to sensitive data disclosure. The purpose of this notification is to allow the client to assess the risk internally and determine if the issue warrants an emergency fix. We would typically only stop an Internal Penetration Test and alert the client if a system becomes unresponsive, we find evidence of illegal activity (such as illegal content on a file share) or the presence of an external threat actor in the network or a prior breach.
+### Kick-Off Meeting
+- The `kick-off meeting` usually occurs at a scheduled time and in-person after signing all contractual documents. This meeting usually includes client POC(s) (from Internal Audit, Information Security, IT, Governance & Risk, etc., depending on the client), client technical support staff (developers, sysadmins, network engineers, etc.), and the penetration testing team (someone in a management role (such as the Practice Lead), the actual penetration tester(s), and sometimes a Project Manager or even the Sales Account Executive or similar). We will go over the nature of the penetration test and how it will take place. Usually, there is no Denial of Service (DoS) testing. We also explain that if a critical vulnerability is identified, penetration testing activities will be paused, a vulnerability notification report will be generated, and the emergency contacts will be contacted. Typically these are only generated during External Penetration Tests for critical flaws such as unauthenticated remote code execution (RCE), SQL injection, or another flaw that leads to sensitive data disclosure. The purpose of this notification is to allow the client to assess the risk internally and determine if the issue warrants an emergency fix. We would typically only stop an Internal Penetration Test and alert the client if a system becomes unresponsive, we find evidence of illegal activity (such as illegal content on a file share) or the presence of an external threat actor in the network or a prior breach.
+- We must also inform our customers about potential risks during a penetration test. For example, we should mention that a penetration test can leave many `log entries and alarms` in their security applications. In addition, if brute forcing or any similar attack is used, it is also worth mentioning that we may accidentally `lock some users` found during the penetration test. We also must inform our customers that they must contact us immediately if the penetration test performed `negatively impacts their network`.
+- Explaining the penetration testing process gives everyone involved a clear idea of our entire process. This demonstrates our professional approach and convinces our questioners that we know what we are doing. Because apart from the technical staff, CTO, and CISO, it will sound like a certain kind of magic that is very difficult for non-technical professionals to understand. So we must be mindful of our audience and target the most technically inexperienced questioner so our approach can be followed by everyone we talk to.
+- All points related to testing need to be discussed and clarified. It is crucial to respond precisely to the wishes and expectations of the customer/client. Every company structure and network is different and requires an adapted approach. Each client has different goals, and we should adjust our testing to their wishes. We can typically see how experienced our clients are in undergoing penetration tests early in the call, so we may have to shift our focus to explain things in more detail and be prepared to field more questions, or the kickoff call may be very quick and straightforward.
 
-We must also inform our customers about potential risks during a penetration test. For example, we should mention that a penetration test can leave many `log entries and alarms` in their security applications. In addition, if brute forcing or any similar attack is used, it is also worth mentioning that we may accidentally `lock some users` found during the penetration test. We also must inform our customers that they must contact us immediately if the penetration test performed `negatively impacts their network`.
 
-Explaining the penetration testing process gives everyone involved a clear idea of our entire process. This demonstrates our professional approach and convinces our questioners that we know what we are doing. Because apart from the technical staff, CTO, and CISO, it will sound like a certain kind of magic that is very difficult for non-technical professionals to understand. So we must be mindful of our audience and target the most technically inexperienced questioner so our approach can be followed by everyone we talk to.
-
-All points related to testing need to be discussed and clarified. It is crucial to respond precisely to the wishes and expectations of the customer/client. Every company structure and network is different and requires an adapted approach. Each client has different goals, and we should adjust our testing to their wishes. We can typically see how experienced our clients are in undergoing penetration tests early in the call, so we may have to shift our focus to explain things in more detail and be prepared to field more questions, or the kickoff call may be very quick and straightforward.
-
----
-
-## Contractors Agreement
-
-If the penetration test also includes physical testing, then an additional contractor's agreement is required. Since it is not only a virtual environment but also a physical intrusion, completely different laws apply here. It is also possible that many of the employees have not been informed about the test. Suppose we encounter employees with a very high-security awareness during the physical attack and social engineering attempts, and we get caught. In that case, the employees will, in most cases, contact the police. This additional `contractor's agreement` is our "`get out of jail free card`" in this case.
-
-#### Contractors Agreement - Checklist for Physical Assessments
+### Contractors Agreement
+- If the penetration test also includes physical testing, then an additional contractor's agreement is required. Since it is not only a virtual environment but also a physical intrusion, completely different laws apply here. It is also possible that many of the employees have not been informed about the test. Suppose we encounter employees with a very high-security awareness during the physical attack and social engineering attempts, and we get caught. In that case, the employees will, in most cases, contact the police. This additional `contractor's agreement` is our "`get out of jail free card`" in this case.
+- #### Contractors Agreement - Checklist for Physical Assessments
 
 | **Checkpoint** |
 | --- |
@@ -192,12 +161,12 @@ If the penetration test also includes physical testing, then an additional contr
 | `☐ Notarization` |
 | `☐ Permission to Test` |
 
----
 
-## Setting Up
 
-After all the above points have been worked through, and we have the necessary information, we plan our approach and prepare everything. We will find that the penetration test results are still unknown, but we can prepare our VMs, VPS, and other tools/systems for all scenarios and situations. More information and how to prepare these systems can be found in the [Setting Up](https://academy.hackthebox.com/module/details/87) module.
+### Setting Up
+- After all the above points have been worked through, and we have the necessary information, we plan our approach and prepare everything. We will find that the penetration test results are still unknown, but we can prepare our VMs, VPS, and other tools/systems for all scenarios and situations. More information and how to prepare these systems can be found in the [Setting Up](https://academy.hackthebox.com/module/details/87) module.
 
-## Questions
+
+### Questions
 - How many documents must be prepared in total for a penetration test?
 	- 7
