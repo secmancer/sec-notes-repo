@@ -1,26 +1,32 @@
-### Debrief
-- **Dynamic Process** – Network Traffic Analysis (NTA) is a dynamic and evolving process, influenced by tools, permissions, and network visibility. Our goal is to establish a repeatable framework for traffic analysis that can be applied consistently.
-- **Purpose of NTA** – Traffic analysis is a detailed examination of network events and processes to determine their origin, impact, and potential risks. It focuses on identifying deviations from normal network behavior, detecting malicious traffic such as unauthorized remote communications (e.g., RDP, SSH, Telnet), and addressing unique issues that precede network disruptions. Ultimately, it helps establish a baseline of regular network traffic to detect anomalies.
-- **Versatility and Importance** – Traffic analysis is a crucial tool in network defense. Without visibility into network traffic, critical insights into usage patterns, host-server communication, and internal traffic are missing. A baseline of traffic helps administrators identify when unexpected changes occur, making it easier to detect and respond to incidents. Advanced NTA implementations that incorporate tools like IDS/IPS, firewalls, and centralized logging (e.g., Splunk, ELK Stack) enhance these capabilities by automating alerts on malicious activity.
-- **Daily Operations and Troubleshooting** – NTA goes beyond incident detection by aiding in daily operational tasks, such as troubleshooting network issues and verifying that infrastructure and protocols are functioning correctly. By monitoring traffic, administrators can pinpoint problem areas, ensuring reliable network operations.
-- **Human Oversight and Automation** – While automated tools enhance NTA, human oversight remains indispensable. Automated tools can be bypassed, and relying solely on them reduces the human element in identifying threats. Manual analysis and checks are necessary to complement automated defenses and maintain vigilance against evolving threats.
+### Introduction
+- Network Traffic Analysis (NTA) is a dynamic process, influenced by multiple factors like tools, permissions, and network visibility, with the idea of establishing a repeatable framework that can be applied to traffic analysis consistently.
+- It's a detailed examination of network events/processes.
+	- Goal: determine their origin, impact, and potential risks.
+	- Finding deviations from what is considered normal network behavior, like unauthorized remote communications in an easy and timely fashion.
+	- Helps gives us visibility into our network, making it a crucial tool for our network defense. 
+	- Aids with troubleshooting the network.
+- Advanced implementations may also have IDS/IPS, firewalls, and centralized logging solutions to automate these alerts.
+- Even with automation, a human aspect to the oversight is still needed to ensure nothing is glanced over, as computers can really only go so far.
 
 
-### Analysis Dependencies
-- **Active vs. Passive Traffic Analysis** – Traffic capturing and analysis can be performed in two primary methods: **active** and **passive**, each with distinct dependencies and approaches.
-    - **Passive Traffic Analysis** – In passive analysis, we simply observe and copy the data from the network without interacting with the packets directly. This method provides visibility without disrupting the network traffic. Tools like network taps, port mirroring, or packet capture devices are commonly used. The focus is on collecting data from the network and then analyzing it later.
-    - **Active Traffic Analysis** – Active capture requires hands-on intervention where we interact with the traffic in real-time. This can be done through in-line devices like intrusion detection systems (IDS), firewalls, or custom traffic monitoring tools that apply filtering or other rules to capture specific traffic types. The goal is to analyze traffic as it happens.
-- **Analysis Approach** – Regardless of the capturing method, the analysis can be performed in two ways:
-    - **Post-Capture Analysis** – Captured traffic is stored, and we analyze the data after collection. Tools like Wireshark, tcpdump, or SIEMs allow us to review traffic logs, packet captures, and metrics offline.
-    - **Real-Time Analysis** – Tools like IDS/IPS systems, Splunk, or ELK Stack can analyze traffic as it flows, providing immediate alerts and insights.    
-- **Dependencies** – The table below outlines key dependencies for each capturing method:
 
-|Method|Dependencies|Example Tools|
-|---|---|---|
-|**Passive**|- Network tap/port mirroring- Packet capture devices- Storage for packet data|Wireshark, tcpdump, Snort, Security Onion, SIEMs|
-|**Active**|- In-line devices (IDS, firewalls, probes)- Filtering rules and policies- Real-time processing|IDS/IPS, Firewalls, Splunk, ELK Stack|
+### Analysis and Capturing Methods
+- Two methods for traffic analysis: **active** and **passive**.
+	- **Passive**: Simply look over and get data from the network without any packet interaction.
+		- Tools: network taps, port mirroring, packet capture
+	- **Active**: Direct intervention with the network, often through packet interaction
+		- Tools: IDS, firewalls, custom traffic monitoring tools with filters/rule sets
+- Now with our capturing methods laid out, we also have two options for analysis we can use.
+	- **Post-Capture**: Captured traffic gets stored and analyzed after collection
+		- Tools: Wireshark, SIEMS, tcpdump
+	- **Real-Time**: Analyze traffic as it's flowing through the network'
+		- Tools: IDS/IPS, Splunk, ELK Stack
 
-- Both methods have their use cases, and choosing between them depends on factors like network size, visibility needs, and the organization's requirements for real-time monitoring versus retrospective analysis.
+| Method      | Dependencies                                                                                   | Example Tools                                    |
+| ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| **Passive** | - Network tap/port mirroring- Packet capture devices- Storage for packet data                  | Wireshark, tcpdump, Snort, Security Onion, SIEMs |
+| **Active**  | - In-line devices (IDS, firewalls, probes)- Filtering rules and policies- Real-time processing | IDS/IPS, Firewalls, Splunk, ELK Stack            |
+
 
 
 ### Traffic Capture Dependencies
@@ -33,9 +39,8 @@
 | `In-line Placement` | ☐ | `☑` | Placing a Tap in-line requires a topology change for the network you are working in. The source and destination hosts will not notice a difference in the traffic, but for the sake of routing and switching, it will be an invisible next hop the traffic passes through on its way to the destination. |
 | `Network Tap or Host With Multiple NIC's` | ☐ | `☑` | A computer with two NIC's, or a device such as a Network Tap is required to allow the data we are inspecting to flow still. Think of it as adding another router in the middle of a link. To actively capture the traffic, we will be duplicating data directly from the sources. The best placement for a tap is in a layer three link between switched segments. It allows for the capture of any traffic routing outside of the local network. A switched port or VLAN segmentation does not filter our view here. |
 | `Storage and Processing Power` | `☑` | `☑` | You will need plenty of storage space and processing power for traffic capture off a tap. Much more traffic is traversing a layer three link than just inside a switched LAN. Think of it like this; When we passively capture traffic inside a LAN, it's like pouring water into a cup from a water fountain. It's a steady stream but manageable. Actively grabbing traffic from a routed link is more like using a water hose to fill up a teacup. There is a lot more pressure behind the flow, and it can be a lot for the host to process and store. |
-- The last dependency we’ll cover is more of a recommendation than a strict requirement, but we believe it’s essential to mention. A thorough understanding of how day-to-day traffic flows in your network is critical to effective traffic analysis. While you can perform traffic analysis without this understanding, doing so will be far more time-consuming and challenging. The baseline provides context, allowing us to quickly filter out common, expected traffic, speeding up the analysis and helping us identify outliers or issues more promptly. Let’s explore this scenario:
-    - You are a network administrator at a large corporation with thousands of employees on campus. Reports indicate a segment of your network is experiencing connectivity issues, with high latency and new files appearing on user desktops. To investigate, you attach a computer to that segment and begin capturing traffic. After collecting data for several minutes, you stop the capture and start your analysis.
-    - Without a clear understanding of your network’s traffic baseline, how would you know what is typical for that network? You’ve gathered a significant amount of data during the capture, but now you need to sift through it to remove any known-good traffic. This process becomes time-consuming, as you’ll need to examine every conversation to ensure they’re legitimate, determine if the hosts are authorized or rogue, and identify any potential issues—making the task both overwhelming and lengthy.
-    - With a network baseline, you can efficiently filter out normal, expected traffic. Tools like the “top talkers” module in Wireshark help identify hosts that transmit large amounts of data, which can then be compared against their baseline to spot unusual activity. For instance, you notice connections on ports like 8080 and 445 between internal user PCs. While these ports may not be unusual in themselves, seeing two user hosts communicating directly over these ports is suspicious. Typically, web traffic flows from a host to a web server, and SMB traffic flows from a host to infrastructure like file shares or domain controllers. Unexpected peer-to-peer communication over these ports should raise concern.
-    - With this newfound visibility, you can quickly escalate a ticket to investigate a potential breach before it causes further damage.
-- When dealing with network intrusions, the faster you gain visibility, the less damage occurs. Understanding how traffic typically flows in your network and recognizing patterns of standard and abnormal behavior is key to efficient traffic analysis.
+- **Understanding network traffic baselines** is a critical recommendation for effective traffic analysis.
+- **Without a baseline**, analyzing captured data becomes time-consuming and overwhelming, as every conversation must be examined to filter out known-good traffic.
+- **With a baseline**, normal traffic can be quickly filtered out, allowing focus on outliers or suspicious activity.
+- **Tools like Wireshark’s “top talkers”** help identify unusual data patterns, such as peer-to-peer communication on ports like 8080 or 445, which may indicate potential issues.
+- **Faster visibility** into network traffic reduces damage from intrusions, making baseline understanding essential for spotting abnormal behavior efficiently.

@@ -5,7 +5,7 @@
 - The analysis process can be broken down into fundamental principles, though.
 
 
-## Descriptive Analysis
+### Descriptive Analysis
 - Descriptive analysis is crucial for identifying data set characteristics, detecting errors, and identifying outliers.
 - Key steps in descriptive analysis:
     1. **Identify the issue** – Is it a suspected breach or a networking issue?
@@ -17,7 +17,7 @@
 - Descriptive analysis helps clarify these components and ensures a structured approach to network analysis.
 
 
-## Diagnostic Analysis
+### Diagnostic Analysis
 - Diagnostic analysis focuses on understanding the causes, effects, and interactions of conditions through correlations and interpretation.
 - Key steps in diagnostic analysis:
     1. **Capture network traffic** – Use a link with access to the 192.168.100.0/24 network to capture live traffic, pulling PCAP/netflow data from the SIEM for historical data.
@@ -26,7 +26,7 @@
 - By capturing, filtering, and analyzing traffic, we validate the cause of the issue through diagnostic analysis, examining events and interactions.
 
 
-## Predictive Analysis
+### Predictive Analysis
 - Predictive analysis uses historical and current data to create models for future probabilities, identifying trends and deviations to anticipate future occurrences.
 - Key steps in predictive analysis:
     1. **Note-taking and mind mapping** – Document all findings, including traffic timeframes, suspicious hosts, and packet-level details, such as conversations containing the targeted files.
@@ -34,7 +34,7 @@
 - By evaluating data against baselines and identifying markers of potential threats (like malicious signatures), predictive analysis helps ensure appropriate actions are taken in response.
 
 
-## Prescriptive Analysis
+### Prescriptive Analysis
 - Prescriptive analysis focuses on determining the actions needed to eliminate or prevent future issues.
 - Steps for prescriptive analysis:
     1. **Identify the issue** – Suspected breach or networking issue?
@@ -48,7 +48,7 @@
 - This process is often iterative, requiring revisiting and reanalyzing previous steps for larger, more complex incidents.
 
 
-## Key Components of an Effective Analysis
+### Key Components of an Effective Analysis
 - #### 1. Know your environment
 	- **Know the environment** – Understanding the network topology, asset inventories, and network maps is essential for effective traffic analysis.
 	- **Identify rogue hosts** – If unsure whether a host belongs to the network, compare it against asset inventories and network maps to determine if it is rogue.
@@ -63,7 +63,7 @@
 	- **Perseverance** – Staying persistent in monitoring and investigation can help detect and prevent attacks that would otherwise go unnoticed.
 
 
-## Analysis Approach
+### Analysis Approach
 - **Standard Protocols First** – Start with common protocols like HTTP/S, FTP, email, TCP/UDP, SSH, RDP, Telnet, and clear out unnecessary traffic before moving on to more specific, less common protocols.
 - **Identify Patterns** – Look for patterns like regular, daily check-ins or C2 profiles from specific hosts, as these can signal malicious activity.
 - **Host-to-Host Traffic** – Be suspicious of host-to-host traffic, as typical setups rarely involve direct communication between user hosts.

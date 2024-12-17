@@ -27,11 +27,14 @@
 - #### TCP/IP Stack & OSI Model
 	- This understanding will ensure we grasp how networking traffic and the host applications interact.
 - #### Basic Network Concepts
-	- Understanding what types of traffic we will see at each level includes an understanding of the individual layers that make up the TCP/IP and OSI model and the concepts of switching and routing. If we tap a network on a backbone link, we will see much more traffic than usual, and it will be vastly different from what we find tapping an office switch.
+	- Understanding what types of traffic we will see at each level includes an understanding of the individual layers that make up the TCP/IP and OSI model and the concepts of switching and routing. 
+	- If we tap a network on a backbone link, we will see much more traffic than usual, and it will be vastly different from what we find tapping an office switch.
 - #### Common Ports and Protocols
 	- Identifying standard ports and protocols quickly and having a functional understanding of how they communicate will ensure we can identify potentially malicious or malformed network traffic.
 - #### Concepts of IP Packets and the Sublayers
-	- Foundational knowledge of how TCP and UDP communicate will, at a minimum, ensure we understand what we see or are searching for. TCP, for example, is stream-oriented and allows us to follow a conversation between hosts easily. UDP is quick but not concerned with completeness, so it would be harder to recreate something from this packet type.
+	- Foundational knowledge of how TCP and UDP communicate will, at a minimum, ensure we understand what we see or are searching for. 
+	- TCP, for example, is stream-oriented and allows us to follow a conversation between hosts easily. 
+	- UDP is quick but not concerned with completeness, so it would be harder to recreate something from this packet type.
 - #### Protocol Transport Encapsulation
 	- Each layer will encapsulate the previous. Being able to read or dissect when this encapsulation changes will help us move through data quicker. It is easy to see hints based on encapsulation headers.
 

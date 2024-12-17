@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "48b6f0aee5016aae",
+        "id": "a104717a562748c2",
         "type": "tabs",
         "children": [
           {
-            "id": "e2297da5863f2081",
+            "id": "24b78a28b6631152",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Networking Primer - Layers 1-4"
             }
           }
         ]
@@ -135,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/POST.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of POST"
+              "title": "Outline of Networking Primer - Layers 1-4"
             }
           },
           {
@@ -200,8 +204,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "24b78a28b6631152",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Sections.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Paths and Certifications.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Modules.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/HTB Academy Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Getting Help.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Exercises.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/POST.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/CRUD API.md",
@@ -214,20 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Deobfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Source Code.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/HTTP Requests.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Decoding.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Code Analysis.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Infosec Overview.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Staying Organized.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Getting Started with a Pentest Demo.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Connecting using VPN.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Problem Solving/Getting Help.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Problem Solving/Common Pitfalls.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

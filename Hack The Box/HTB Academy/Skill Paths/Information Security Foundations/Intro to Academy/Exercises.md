@@ -5,7 +5,7 @@
 > **Note:** Only a single target per user can be active at any one time. Each target has a timer that shows how much time is left before it is terminated, but it can be manually extended or re-spawned by clicking on the appropriate buttons.
 
 
-## Exercise Targets
+### Exercise Targets
 - Commonly, targets use the Docker container engine for easily spawning and accessible machines to use. Many can often be accessed outside of the AttackBox/your pentesting VM.
 - More complex/advanced machines may use a virtual machine (VM) as their target. These take longer to spawn and setup. These require use of the AttackBox/your pentesting VM.
 
