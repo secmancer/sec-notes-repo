@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "94494736030ec2c7",
+        "id": "71a87cc3b5ab3e90",
         "type": "tabs",
         "children": [
           {
-            "id": "2322e548bd4806a0",
+            "id": "51a311afd0463014",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,9 +134,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Skills Assessment"
             }
           },
           {
@@ -200,32 +202,32 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/MITRE ATT&CK & Security Operations.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 2).md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 1).md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Post-Incident Activity Stage.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Incident Handling Process Overview.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Detection & Analysis Stage (Part 2).md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Detection & Analysis Stage (Part 1).md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Containment, Eradication, & Recovery Stage.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Using Academy Effectively/Introduction to Penetration Tester Path.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Using Academy Effectively/Academy Modules Layout.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Using Academy Effectively/Academy Exercises & Questions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Preparing for Real-World Pentests/Practice.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Proof-of-Concept.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Post-Engagement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Vulnerability Assessment.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Pre-Engagement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Post-Exploitation.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Lateral Movement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Information Gathering.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Exploitation.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Background & Preparation/Penetration Testing Process.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Background & Preparation/Penetration Testing Overview.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Background & Preparation/Laws and Regulations.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Service Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Saving the Results.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Nmap Scripting Engine.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host Discovery.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host and Port Scanning.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210504.png",

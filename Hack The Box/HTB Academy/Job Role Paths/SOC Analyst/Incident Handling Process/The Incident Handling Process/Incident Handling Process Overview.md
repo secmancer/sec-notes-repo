@@ -1,3 +1,4 @@
+### Overview
 - Now that we are familiar with the cyber kill chain and its stages, we can better predict/anticipate next steps in an attack and also suggest appropriate measures against them.
 - Just like the cyber kill chain, there are different stages, when responding to an incident, defined as the `incident handling process`. The `incident handling process` defines a capability for organizations to prepare, detect, and respond to malicious events. Note that this process is suited for responding to IT security events, but its stages do not correspond to the stages of the cyber kill chain in a one-to-one manner.
 - As defined by NIST, the incident handling process consists of the following four (4) distinct stages: ![Handling Process](https://academy.hackthebox.com/storage/modules/148/handling_process.png)

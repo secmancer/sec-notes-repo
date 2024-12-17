@@ -1,8 +1,9 @@
+### Introduction
 - In this stage, our objective is to document the incident and improve our capabilities based on lessons learned from it. This stage gives us an opportunity to reflect on the threat by understanding what occurred, what we did, and how our actions and activities worked out. This information is best gathered and analyzed in a meeting with all stakeholders that were involved during the incident. It generally takes place within a few days after the incident, when the incident report has been finalized.
 
 
 
-## Reporting
+### Reporting
 - The final report is a crucial part of the entire process. A complete report will contain answers to questions such as:
 	- What happened and when?
 	- Performance of the team dealing with the incident in regard to plans, playbooks, policies, and procedures

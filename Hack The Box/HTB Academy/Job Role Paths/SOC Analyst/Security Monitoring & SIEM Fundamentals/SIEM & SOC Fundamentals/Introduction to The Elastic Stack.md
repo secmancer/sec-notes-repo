@@ -1,4 +1,4 @@
-## What Is The Elastic Stack?
+### What Is The Elastic Stack?
 - The Elastic stack, created by Elastic, is an open-source collection of mainly three applications (Elasticsearch, Logstash, and Kibana) that work in harmony to offer users comprehensive search and visualization capabilities for real-time analysis and exploration of log file sources.
 ![The Elastic Stack](https://academy.hackthebox.com/storage/modules/211/elastic.png)
 - The high-level architecture of the Elastic stack can be enhanced in resource-intensive environments with the addition of Kafka, RabbitMQ, and Redis for buffering and resiliency, and nginx for security.
@@ -19,7 +19,7 @@
 
 
 
-## The Elastic Stack As A SIEM Solution
+### The Elastic Stack As A SIEM Solution
 - The Elastic stack can be used as a Security Information and Event Management (SIEM) solution to collect, store, analyze, and visualize security-related data from various sources.
 - To implement the Elastic stack as a SIEM solution, security-related data from various sources such as firewalls, IDS/IPS, and endpoints should be ingested into the Elastic stack using Logstash. Elasticsearch should be configured to store and index the security data, and Kibana should be used to create custom dashboards and visualizations to provide insights into security-related events.
 - To detect security-related incidents, Elasticsearch can be used to perform searches and correlations on the collected security data.
@@ -59,7 +59,7 @@ event.code:4625 AND user.name: admin*
 
 
 
-## How To Identify The Available Data
+### How To Identify The Available Data
 - "How can I identify the available fields and values?", you may ask. Let's see how we could have identified the available fields and values that we used in this section.
 - **Example**: Identify failed login attempts against disabled accounts that took place between March 3rd 2023 and March 6th 2023 KQL:
 ```shell-session
@@ -88,7 +88,7 @@ event.code:4625 AND winlog.event_data.SubStatus:0xC0000072 AND @timestamp >= "20
 
 
 
-## The Elastic Common Schema (ECS)
+### The Elastic Common Schema (ECS)
 - Elastic Common Schema (ECS) is a shared and extensible vocabulary for events and logs across the Elastic Stack, which ensures consistent field formats across different data sources. When it comes to Kibana Query Language (KQL) searches within the Elastic Stack, using ECS fields presents several key advantages:
 	- `Unified Data View`: ECS enforces a structured and consistent approach to data, allowing for unified views across multiple data sources. For instance, data originating from Windows logs, network traffic, endpoint events, or cloud-based data sources can all be searched and correlated using the same field names.
 	- `Improved Search Efficiency`: By standardizing the field names across different data types, ECS simplifies the process of writing queries in KQL. This means that analysts can efficiently construct queries without needing to remember specific field names for each data source.

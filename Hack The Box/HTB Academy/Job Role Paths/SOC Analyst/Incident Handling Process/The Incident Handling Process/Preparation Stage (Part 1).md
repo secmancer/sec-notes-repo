@@ -1,7 +1,8 @@
+### Introduction
 - In the `preparation` stage, we have two separate objectives. The first one is the establishment of incident handling capability within the organization. The second is the ability to protect against and prevent IT security incidents by implementing appropriate protective measures. Such measures include endpoint and server hardening, active directory tiering, multi-factor authentication, privileged access management, and so on and so forth. While protecting against incidents is not the responsibility of the incident handling team, this activity is fundamental to the overall success of that team.
 
 
-## Preparation Prerequisites
+### Preparation Prerequisites
 - During the preparation, we need to ensure that we have:
 	- Skilled incident handling team members (incident handling team members can be outsourced, but a basic capability and understanding of incident handling are necessary in-house regardless)
 	- Trained workforce (as much as possible, through security awareness activities or other means of training)
@@ -9,7 +10,7 @@
 	- Tools (software and hardware)
 
 
-## Clear Policies & Documentation
+### Clear Policies & Documentation
 - Some of the written policies and documentation should contain an up-to-date version of the following information:
 	- Contact information and roles of the incident handling team members
 	- Contact information for the legal and compliance department, management team, IT support, communications and media relations department, law enforcement, internet service providers, facility management, and external incident response team

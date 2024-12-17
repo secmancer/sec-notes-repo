@@ -1,4 +1,4 @@
-## What Is The Cyber Kill Chain?
+### What Is The Cyber Kill Chain?
 - Before we start talking about handling incidents, we need to understand the attack lifecycle (a.k.a. the cyber kill chain). This lifecycle describes how attacks manifest themselves. Understanding this lifecycle will provide us with valuable insights on how far in the network an attacker is and what they may have access to during the investigation phase of an incident.
 - The cyber kill chain consists of seven (7) different stages, as depicted in the image below:
 ![Cyber Kill Chain](https://academy.hackthebox.com/storage/modules/148/Cyber_kill_chain.png)
