@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "147c9520e0eba9fc",
+        "id": "3bc036f308ecd3c8",
         "type": "tabs",
         "children": [
           {
-            "id": "ce2e5afb961e6ff7",
+            "id": "c74674f25245ab30",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ce2e5afb961e6ff7",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Module Summary/Wrapping It Up.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Getting our Hands Dirty/AD Administration - Guided Lab Part II.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Getting our Hands Dirty/AD Administration - Guided Lab Part I.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Digging in Deeper/Security in Active Directory.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Digging in Deeper/Examining Group Policy.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/User and Machine Accounts.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/Active Directory Rights and Privileges.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/Active Directory Groups.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Why Active Directory.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Active Directory Research over the Years.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Terminology.md",
@@ -216,16 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Introduction/Containers.md",
-    "TryHackMe/Advent of Cyber/2024/Day 16.md",
-    "TryHackMe/Advent of Cyber/2024/Day 15.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Fundamentals.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
-    "TryHackMe/Advent of Cyber/2024/Day 14.md",
-    "Hack The Box/HTB Labs/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",
