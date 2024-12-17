@@ -1,3 +1,4 @@
+### Introduction
 - We can significantly increase our productivity on any operating system by relying more on the keyboard and using the mouse less. 
 - This is because we can quickly type commands and shortcuts through our keyboard, while we need to manually move our cursor to a specific point on the screen multiple times if we rely on the mouse. 
 - To utilize this, we can start by learning shortcuts to navigate folders quickly and open applications quickly. 

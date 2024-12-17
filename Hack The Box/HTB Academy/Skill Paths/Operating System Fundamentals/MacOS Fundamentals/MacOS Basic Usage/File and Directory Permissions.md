@@ -51,11 +51,11 @@ d rwx r-x r-x@  1 htb-user staff 6512375 Aug 30  2019 nmap-output
 	- We may also click on the `+` icon to add a new user to this list or on the `-` icon to remove any of the shown users.
 	- However, be careful how you set permissions on files and folders, as you could quickly expose data you may not wish for everyone to access.
 
-## Terminal Permissions Management
+### Terminal Permissions Management
 - Next, let's take a bit to look at permissions from within the terminal. 
 - We will utilize the [chmod](https://ss64.com/osx/chmod.html) and [chown](https://ss64.com/osx/chown.html) commands to manage file permissions and other attributes.
 
-## chmod
+### chmod
 ```
 secmancer@htb[/htb]$ ls -l  
 

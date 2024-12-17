@@ -1,3 +1,4 @@
+### Introduction
 - Containerization is a process of packaging and running applications in isolated environments, such as a container, virtual machine, or serverless environment. 
 - Technologies like Docker, Docker Compose, and Linux Containers make this process possible in Linux systems. These technologies allow users to create, deploy, and manage applications quickly, securely, and efficiently. With these tools, users can configure their applications in various ways, allowing them to tailor the application to their needs. 
 - Additionally, containers are incredibly lightweight, perfect for running multiple applications simultaneously and providing scalability and portability. Containerization is a great way to ensure that applications are managed and deployed efficiently and securely.

@@ -1,3 +1,4 @@
+### Introduction
 - Since we will be working with many different Linux systems, we need to learn the structure and the information about the system, its processes, network configurations, users, directories, user settings, and the corresponding parameters. Here is a list of the necessary tools that will help us get the above information. Most of them are installed by default.
 ![[Screenshot_20241107_185504.png]]
 - Let us look at a few examples.

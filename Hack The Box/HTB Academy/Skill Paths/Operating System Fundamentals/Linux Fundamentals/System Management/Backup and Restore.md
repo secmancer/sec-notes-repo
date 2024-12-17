@@ -1,3 +1,4 @@
+### Introduction
 - Linux systems offer a variety of software tools for backing up and restoring data. These tools are designed to be efficient and secure, ensuring that data is protected while also allowing us to easily access the data we need.
 - When backing up data on an Ubuntu system, we can utilize tools such as:
 	- Rsync
@@ -31,7 +32,7 @@ secmancer@htb[/htb]$ rsync -avz --backup --backup-dir=/path/to/backup/folder --d
 secmancer@htb[/htb]$ rsync -av user@remote_host:/path/to/backup/directory /path/to/mydirectory
 ```
 
-## Encrypted Rsync
+### Encrypted Rsync
 - To ensure the security of our `rsync` file transfer between our local host and our backup server, we can combine the use of SSH and other security measures. 
 - By using SSH, we are able to encrypt our data as it is being transferred, making it much more difficult for any unauthorized individual to access it. Additionally, we can also use firewalls and other security protocols to ensure that our data is kept safe and secure during the transfer. 
 - By taking these steps, we can be confident that our data is protected and our file transfer is secure. Therefore we tell `rsync` to use SSH like the following:

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9fc19673a459d9e5",
+        "id": "5eb60b0a6c2039ca",
         "type": "tabs",
         "children": [
           {
-            "id": "6c41e30ddfb78861",
+            "id": "bb10360338459769",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,9 +134,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Windows Services & Processes.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Windows Services & Processes"
             }
           },
           {
@@ -198,34 +200,34 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6c41e30ddfb78861",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Questioning.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Obstacles.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Learning Progress.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Handling Frustration.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Focus.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Comfort.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/The Process/Attention.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Mindset/Way of Thinking.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Mindset/Think Outside the Box.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Mindset/Talent.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Mindset/Occam's Razor.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Overview/Organization.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Overview/Documentation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/Way Of Learning.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/The Will.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/The Goal.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/The Brain.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/Learning Types.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/Learning Efficiency.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Learning Process/Learning Dependencies/Decision Making.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/Working with the Windows Event Log.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/Working with the Registry.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/Working with Services.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/Working with Files and Directories.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/User and Group Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/PowerShell Scripting and Automation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Service Permissions.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Introduction/Introduction to Windows.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Sessions.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Interacting with the Windows Operating System.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Windows Subsystem for Linux (WSL).md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/NTFS vs. Share Permissions.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/File System.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/What is macOS.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/System Hierarchy.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Navigating around the OS.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Graphical User Interface.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Security Tips.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Productivity Tips.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Terminal.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Automation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Working with Files and Directories.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Regular Expressions.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210504.png",

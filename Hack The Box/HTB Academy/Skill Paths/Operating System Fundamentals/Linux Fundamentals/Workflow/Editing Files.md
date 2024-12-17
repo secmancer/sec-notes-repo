@@ -1,3 +1,4 @@
+### File Editors and their Features
 - There are several ways to edit a file. One of the most common text editors for this is `Vi` and `Vim`. More rarely, there is the `Nano` editor. We will first deal with the Nano editor here, as it is a bit easier to understand. We can create a new file directly with the Nano editor by specifying the file's name directly as the first parameter. In this case, we create a new file named `notes.txt`.
 ```shell-session
 secmancer@htb[/htb]$ nano notes.txt

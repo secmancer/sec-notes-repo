@@ -1,4 +1,5 @@
-- Most operating systems are designed with user productivity tools, and macOS is no different. P
+### Introduction
+- Most operating systems are designed with user productivity tools, and macOS is no different.
 - roductivity tools can help us be more productive with any operating system (desktop or mobile). 
 - There are a few more macOS-specific features that can also go a long way in making us more productive in our jobs and day-to-day use of the system.
 - When it comes to being productive in this day and age, computers and smarts phones make a massive difference in our productivity through certain features they provide. 

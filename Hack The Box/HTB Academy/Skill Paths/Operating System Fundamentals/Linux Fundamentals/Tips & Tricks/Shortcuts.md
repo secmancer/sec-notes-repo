@@ -1,3 +1,4 @@
+### Introduction
 - There are many shortcuts that we can use to make working with Linux easier and faster. After we have familiarized ourselves with the most important of them and have made them a habit, we will save ourselves much typing. Some of them will even help us to avoid using our mouse in the terminal.
 
 ### Auto-Complete
