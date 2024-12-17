@@ -1,3 +1,4 @@
+### Introduction
 - Up to this point, we have discussed the built-in Windows Command-line interpreter `cmd.exe`. Moving forward, we will look at Window's modern successor to CMD, [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2). This section will cover what PowerShell is, the differences between PowerShell and CMD, how to get help within the CLI, and basic navigation within the CLI.
 
 

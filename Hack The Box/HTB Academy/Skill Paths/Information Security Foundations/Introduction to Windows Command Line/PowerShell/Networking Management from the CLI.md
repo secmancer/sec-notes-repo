@@ -1,3 +1,4 @@
+### Introduction
 - PowerShell has expanded our capabilities within the `Windows OS` when dealing with Networking settings, applications, and more. This section will cover how to check your network settings, such as IP addresses, adapter settings, and DNS settings. We will also cover How to enable and manage remote host access utilizing `WinRM` and `SSH`.
 
 > **Scenario: To ensure Mr. Tanaka's host is functioning properly and we can manage it from the IT office remotely, we are going to perform a quick checkup, validate his host settings, and enable remote management for the host.**
@@ -301,13 +302,11 @@ PingReplyDetails (RTT) : 44 ms
 - When we cannot access Windows systems or need to manage hosts remotely, we can utilize PowerShell, SSH, and RDP, among other tools, to perform our work. Let's cover the main ways we can enable and use remote access. First, we will discuss `SSH`.
 
 
-## How to Enable Remote Access? ( SSH, PSSessions, etc.)
-
-### Enabling SSH Access
-- We can use `SSH` to access `PowerShell` on a Windows system over the network. Starting in 2018, SSH via the [OpenSSH](https://www.openssh.com/) client and server applications has been accessible and included in all Windows Server and Client versions. It makes for an easy-to-use and extensible communication mechanism for our administrative use. Setting up OpenSSH on our hosts is simple. Let's give it a try. We must install the SSH Server component and the client application to access a host via SSH remotely.
-
-### Setting up SSH on a Windows Target
-- We can set up an SSH server on a Windows target using the [Add-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/add-windowscapability?view=windowsserver2022-ps) cmdlet and confirm that it is successfully installed using the [Get-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/get-windowscapability?view=windowsserver2022-ps) cmdlet.
+### How to Enable Remote Access? ( SSH, PSSessions, etc.)
+- #### Enabling SSH Access
+	- We can use `SSH` to access `PowerShell` on a Windows system over the network. Starting in 2018, SSH via the [OpenSSH](https://www.openssh.com/) client and server applications has been accessible and included in all Windows Server and Client versions. It makes for an easy-to-use and extensible communication mechanism for our administrative use. Setting up OpenSSH on our hosts is simple. Let's give it a try. We must install the SSH Server component and the client application to access a host via SSH remotely.
+- #### Setting up SSH on a Windows Target
+	- We can set up an SSH server on a Windows target using the [Add-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/add-windowscapability?view=windowsserver2022-ps) cmdlet and confirm that it is successfully installed using the [Get-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/get-windowscapability?view=windowsserver2022-ps) cmdlet.
 ```powershell-session
 PS C:\Users\htb-student> Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
 
@@ -346,12 +345,12 @@ Name  : OpenSSH.Server~~~~0.0.1.0
 State : Installed
 ```
 - #### Starting the SSH Service & Setting Startup Type
-- Once we have confirmed SSH is installed, we can use the [Start-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.2) cmdlet to start the SSH service. We can also use the [Set-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2) cmdlet to configure the startup settings of the SSH service if we choose.
+	- Once we have confirmed SSH is installed, we can use the [Start-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.2) cmdlet to start the SSH service. We can also use the [Set-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2) cmdlet to configure the startup settings of the SSH service if we choose.
 
 > Note: Initial setup of remote access services will not be a requirement in this module to complete challenge questions. With each of the challenges in this module, remote access is already set up & configured. However, understanding how to connect and apply concepts covered throughout the module will be required. The setup & configuration steps are provided to help develop an understanding of common configuration mistakes and, in some cases, best security practices. Feel free to try some setup steps on your own personal VM.
 
 - #### Accessing PowerShell over SSH
-- With SSH installed and running on a Windows target, we can connect over the network with an SSH client.
+	- With SSH installed and running on a Windows target, we can connect over the network with an SSH client.
 - #### Connecting from Windows
 ```powershell-session
 PS C:\Users\administrator> ssh htb-student@10.129.224.248
@@ -388,7 +387,7 @@ PS C:\Users\htb-student>
 - [Windows Remote Management (WinRM)](https://docs.microsoft.com/en-us/windows/win32/winrm/portal) can be configured using dedicated PowerShell cmdlets and we can enter into a PowerShell interactive session as well as issue commands on remote Windows target(s). We will notice that WinRM is more commonly enabled on Windows Server operating systems, so IT admins can perform tasks on one or multiple hosts. It's enabled by default in Windows Server.
 - Because of the increasing demand for the ability to remotely manage and automate tasks on Windows systems, we will likely see WinRM enabled on more & more Windows desktop operating systems (Windows 10 & Windows 11) as well. When WinRM is enabled on a Windows target, it listens on logical ports `5985` & `5986`.
 - #### Enabling & Configuring WinRM
-- WinRM can be enabled on a Windows target using the following commands:
+	- WinRM can be enabled on a Windows target using the following commands.
 ```powershell-session
 PS C:\WINDOWS\system32> winrm quickconfig
 

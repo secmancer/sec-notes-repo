@@ -1,3 +1,4 @@
+### Introduction
 - We need to familiarize ourselves with our brain and get to know some of its components to understand the role of the upcoming sections better, how they are structured, and how they can influence our learning process.
 - Our brain is a fascinating organ that makes us who we are. It is also the most unexplored area we know. There are also many myths that we all know. One is that we use only 5-10% of our brainpower. It is a myth that is entirely false. Our brain is always active in all regions. 
 - This has been tested in many different studies using electroencephalography (EEG) and functional MRI (fMRI).

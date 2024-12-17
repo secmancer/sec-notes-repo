@@ -1,5 +1,7 @@
-- As a junior penetration tester or sysadmin, one could expect the tasks in this module to be everyday tasks for you to take action on. Sometimes under direct guidance and supervision, sometimes not. A deep understanding of Windows, its CLI, and what we can glean from it (access and enumeration-wise) is essential to fulfilling the role's duties. By the end of the skills assessment, we should feel comfortable accessing and operating in a windows environment without access to a GUI. Using CLI to take care of administrative tasks can increase our workflow and allow us to spend more time working on the things that require more attention. What can we do next to continue our learning journey in the wide world of Windows?
-
+### Introduction
+- As a junior penetration tester or sysadmin, one could expect the tasks in this module to be everyday tasks for you to take action on. Sometimes under direct guidance and supervision, sometimes not. 
+- A deep understanding of Windows, its CLI, and what we can glean from it (access and enumeration-wise) is essential to fulfilling the role's duties. By the end of the skills assessment, we should feel comfortable accessing and operating in a windows environment without access to a GUI. Using CLI to take care of administrative tasks can increase our workflow and allow us to spend more time working on the things that require more attention. 
+- What can we do next to continue our learning journey in the wide world of Windows?
 
 
 ### What's Next?
@@ -23,7 +25,7 @@
 
 
 
-#### Great Videos to Check Out
+### Great Videos to Check Out
 - [APT's Love PowerShell, You Should Too](https://youtu.be/GhfiNTsxqxA) from `DEFCON SafeMode` is an excellent watch for a dive into how adversaries utilize PowerShell for exploitation. Anthony and Jake do a great job of breaking down what defenses are bypassed and even show you a few tips and tricks you can utilize.
 - [PowerShell For Pentesting](https://youtu.be/jU1Pz641zjM) was presented at KringleCon 2018 by Mick Douglas provides an interesting look at how you can take basic PowerShell tasks and weaponize them for Pentesting.
 - [PowerShell & Under The Wire](https://youtu.be/864S16g_SQs) John Hammond goes over a cool platform called UnderTheWire, where you can practice your PowerShell Kung-Fu.

@@ -1,6 +1,3 @@
-- Now that we have our feet under us when it comes to using the Command Prompt let us discuss one of the more critical topics when thinking about how applications and scripting work in Windows, `Environment Variables`. In this section, we will discuss what they are, their uses, and how we can manage the variables in our system.
-
-
 ### What an Environment Variable Is
 - Environment variables are settings that are often applied globally to our hosts. They can be found on Windows, Linux, and macOS hosts. This concept is not specific to one OS type, but they function differently on each OS. Environment variables can be accessed by most users and applications on the host and are used to run scripts and speed up how applications function and reference data. On a Windows host, environment variables are `not` case sensitive and can have spaces and numbers in the name. The only real catch we will find is that they cannot have a name that starts with a number or include an equal sign. When referenced, we will see these variables called like so:
 ```cmd-session
@@ -129,7 +126,7 @@ C:\htb> echo %DCIP%
 ```
 - We have successfully edited our initial custom variable to reflect the DC's IP change. We can now move on and discuss removing variables.
 - #### Removing Variables
-- Much like creating and editing variables, we can also remove environment variables in a very similar manner. To remove variables, we cannot directly delete them like we would a file or directory; instead, we must clear their values by setting them equal to nothing. This action will effectively delete the variable and prevent it from being used as intended due to the value being removed. In our first example, we created the variable `%DCIP%` containing the value of the IP address of the domain controller on the network and permanently saved it into the registry. We can attempt to remove it by doing the following:
+	- Much like creating and editing variables, we can also remove environment variables in a very similar manner. To remove variables, we cannot directly delete them like we would a file or directory; instead, we must clear their values by setting them equal to nothing. This action will effectively delete the variable and prevent it from being used as intended due to the value being removed. In our first example, we created the variable `%DCIP%` containing the value of the IP address of the domain controller on the network and permanently saved it into the registry. We can attempt to remove it by doing the following:
 - #### Using setx
 ```cmd-session
 C:\htb> setx DCIP ""
@@ -152,7 +149,7 @@ C:\htb> echo %DCIP%
 ### Important Environment Variables
 - Now that we are comfortable creating, editing, and removing our own environment variables, let us discuss some crucial variables we should be aware of when performing enumeration on a host's environment. Remember that all information found here is provided to us in clear text due to the nature of environment variables. As an attacker, this can provide us with a wealth of information about the current system and the user account accessing it.
 ![[Screenshot_20241110_201425.png]]
-- Provided here is only a tiny fraction of the information we can learn through enumerating the environment variables on a system. However, the abovementioned ones will often appear when performing enumeration on an engagement. For a complete list, we can visit the following [link](https://ss64.com/nt/syntax-variables.html). Using this information as a guide, we can start gathering any required information from these variables to help us learn about our host and its target environment inside and out.
+- Provided here is only a tiny fraction of the information we can learn through enumerating the environment variables on a system. However, the above mentioned ones will often appear when performing enumeration on an engagement. For a complete list, we can visit the following [link](https://ss64.com/nt/syntax-variables.html). Using this information as a guide, we can start gathering any required information from these variables to help us learn about our host and its target environment inside and out.
 
 
 ### Moving On

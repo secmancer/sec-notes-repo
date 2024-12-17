@@ -1,3 +1,4 @@
+### Introduction
 - In our previous section, we discussed filtering and the pipeline using an example of finding services on the host from the eyes of a pentester. In this section, we will dive deeper into this and flip it on its head. We are going to look at it from the eyes of an administrator.
 
 > **Scenario:** Mr. Tanaka messaged the Helpdesk stating that he noticed a window pop up earlier in the day and thought it was just Windows updates running, as lots of information flashed by in the window. However, now he reports that alerts stating that Defender is turned off also popped up, and his host is acting sluggish. We need to look into this, determine what services related to Defender are shut off, and enable them again if we can. Later we will look into the event logs and see what happened.
@@ -5,7 +6,7 @@
 - Service administration is crucial in managing hosts and ensuring our security posture remains unchanged. This section will cover how to query, start, stop, and edit services and their permissions as needed. We will also discuss ways to interact with them locally and remotely. It is time to dive in and acquire our next CLI Kung-Fu Belt.
 
 
-## What Are Services and How Do We Interact with Them Using Powershell?
+### What Are Services and How Do We Interact with Them Using Powershell?
 - Services in the Windows Operating system at their core are singular instances of a component running in the background that manages and maintains processes and other needed components for applications used on the host. Services usually do not require interaction from the user and have no tangible interface for them to interact with. They also exist as a singular instance of the service on the host, while a service can maintain multiple instances of a process. A process can be considered a temporary container for a user or application to perform tasks. Windows has three categories of services: Local Services, Network Services, and System Services. Many different services (including the core components within the Windows operating system) handle multiple instances of processes simultaneously. PowerShell provides us with the module `Microsoft.PowerShell.Management`, which contains several cmdlets for interacting with Services. As with everything in PowerShell, if you are unsure where to start or what cmdlet you need, take advantage of the built-in help to get you started.
 - #### Getting Help (Services)
 ```powershell-session
@@ -131,7 +132,7 @@ StartType
 - Ok, now our Spooler service has been stopped, and its Startup changed to Disabled for now. Modifying a running service is reasonably straightforward. Ensure that if you attempt to make any modifications, you are an Administrator for the host or on the domain. Removing services in PowerShell is difficult right now. The cmdlet `Remove-Service` only works if you are using PowerShell version 7. By default, our hosts will open and run PowerShell version 5.1. For now, if you wish to remove a service and its entries, use the `sc.exe` tool.
 
 
-## How Do We Interact with Remote Services using PowerShell?
+### How Do We Interact with Remote Services using PowerShell?
 - Now that we know how to work with services, let us look at how we can interact with remote hosts. Since Mr. Tanaka's host is in a domain, we can easily query and check the running services on other hosts. The `-ComputerName` parameter allows us to specify that we want to query a remote host.
 - #### Remotely Query Services
 ```powershell-session

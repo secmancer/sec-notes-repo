@@ -1,6 +1,3 @@
-- Now, we are comfortable creating, modifying, moving, and deleting files and directories. We should cover a beneficial concept that can make or break it during an engagement or in our day-to-day tasks as a `System Administrator` or `Penetration Tester`, known as `enumeration`. This section will cover how to search for particular files and directories utilizing CMD, why enumerating system files and directories are vital, and provide an essential list of what to look out for while enumerating the system.
-
-
 ### Searching with CMD
 - #### Using Where
 ```cmd-session
@@ -42,6 +39,9 @@ C:\Users\student\Desktop> find /N /I /V "IP Address" example.txt
 ```cmd-session
 C:\Users\student\Desktop> findstr  
 ```
+
+
+
 
 ### Evaluating and Sorting Files
 - We have seen how to work with, search for certain files and search for strings inside files. Additionally, we have also learned how to create and modify files. Now let us discuss a few options to evaluate those files and compare them against each other. The [comp](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/comp), [fc](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fc), and [sort](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sort) commands are how we will accomplish this.
@@ -180,6 +180,7 @@ w
 ```
 - Notice how we have fewer overall results now. This is because `sort` did not write duplicate entries from the file to the console.
 - Finding files and directories, sorting datasets, and comparing files are all essential skills we should have in our arsenal. Next, we will discuss Environment variables and what they provide us as a cmd-prompt user.
+
 
 
 ### Questions

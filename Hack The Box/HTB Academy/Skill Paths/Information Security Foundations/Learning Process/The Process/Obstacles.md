@@ -1,3 +1,4 @@
+### Introduction
 - Besides all the effective qualities we have come to know so far, many obstacles slow us down or even completely prevent us from reaching our goals, solving specific tasks, or acquiring and mastering skills. These are all factors that prevent us from leaving our comfort zone and daring to try something new.
 
 

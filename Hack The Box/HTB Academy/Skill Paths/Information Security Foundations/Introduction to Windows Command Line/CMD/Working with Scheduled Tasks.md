@@ -1,3 +1,4 @@
+### Introduction
 - Scheduled tasks are an excellent way for administrators to ensure that tasks they want to run regularly happen, but they are also an excellent persistence point for attackers. In this section, we will discuss using schtasks to:
 	- Learn how to check what tasks exist.
 	- Create a new task to help us automate actions or acquire a shell on the host.

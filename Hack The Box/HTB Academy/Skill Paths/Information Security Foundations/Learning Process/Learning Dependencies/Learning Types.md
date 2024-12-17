@@ -1,3 +1,4 @@
+### Introduction
 - The Learning Pyramid can be represented in many different ways. It describes the learning efficiency of different types of practice.
 
 ### Passive Learning

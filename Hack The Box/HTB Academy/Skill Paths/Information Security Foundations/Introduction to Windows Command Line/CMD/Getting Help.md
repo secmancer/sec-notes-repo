@@ -1,3 +1,4 @@
+### Introduction
 - In the previous section, we were introduced to the general concepts of the Command Prompt and how we can access it. This section will expand upon the previous one by introducing the `help` functionality within Command Prompt, example output, and some additional resources and concepts.
 - The Command Prompt has a built-in `help` function that can provide us with detailed information about the available commands on our system and how to utilize those functions. In this section, we are going to cover the following in greater detail:
 	- How do we utilize the help functionality within Command Prompt?

@@ -1,3 +1,4 @@
+### Introduction
 - So far, most of what we have covered is introductory information to help us get a basic understanding and feel of the Command Prompt. Continuing with that flow, our next goal should be utilizing our Command Prompt to successfully `navigate` and move around on the system. In this section, we attempt to conquer our surroundings by:
 	- Listing A Directory
 	- Finding Our Place on the System

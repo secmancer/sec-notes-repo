@@ -1,3 +1,4 @@
+### Introduction
 - From a SOC Analyst or IT Administrator's perspective, monitoring, collecting, and categorizing events occurring on all machines across the network is an invaluable source of information for defenders proactively analyzing and protecting their network from suspicious activity. On the other hand, attackers can see this as an opportunity to gain insight into the target environment, disrupt the flow of information, and as a way to hide their tracks. As we will see in later modules, sometimes we can find juicy information such as credentials hiding in event logs as a target system that we compromise during a penetration test. Other times, enumerating event logs can help us understand the level of logging in the environment (are just the defaults in place, or has the target organization configured more granular logging?). In this section, we will discuss the following:
 	- What is the Windows Event Log?
 	- What information does it log, and where does it store this information?
@@ -31,7 +32,7 @@
 ![[Screenshot_20241111_140754.png]]
 
 
-## Event Severity Levels
+### Event Severity Levels
 - Each log can have one of five severity levels associated with it, denoted by a number:
 ![[Screenshot_20241111_140816.png]]
 

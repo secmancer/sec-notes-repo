@@ -1,7 +1,8 @@
+### Introduction
 - As an administrator, we can `automate` how we perform remote updates, install applications, and much more with tools and cmdlets through PowerShell. This will ensure that we can get the software, updates, and other objects we need on hosts locally and remotely without manually browsing for them via the GUI. This will save us time and enable us to remotely administer the hosts instead of sitting at its keyboard or RDP'ing in. As a pentester, this is a quick way to get tools and other items we need into the environment and to exfiltrate data if we have the infrastructure to send it to. This section will cover how we interact with the web and show several ways to utilize PowerShell to serve this purpose.
 
 
-## How Do We Interact With The Web Using PowerShell?
+### How Do We Interact With The Web Using PowerShell?
 - When it comes to interacting with the web via PowerShell, the [Invoke-WebRequest](https://learn.microsoft.com/bs-latn-ba/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1) cmdlet is our champion. We can use it to perform basic HTTP/HTTPS requests (like `GET` and `POST`), parse through HTML pages, download files, authenticate, and even maintain a session with a site. It's very versatile and easy to use in scripting and automation. If you prefer aliases, the Invoke-WebRequest cmdlet is aliased to `wget`, `iwr` and `curl`. Those familiar with Linux Fundamentals may be familiar with cURL and wget, as they are used to download files from the command line in Linux distributions. Let's look at the help from Invoke-WebRequest for a minute.
 - #### Invoke-WebRequest Help
 ```powershell-session
@@ -44,7 +45,7 @@ DESCRIPTION
 - "`Gets content from a web page on the Internet.`"
 - While this is the core functionality, we can also use it to get content that we host on web servers in the same network environment. We have talked it up, and now let's try and do a simple web request using Invoke-WebRequest.
 
-## A Simple Web Request
+### A Simple Web Request
 - We can perform a basic Get request of a website using the `-Method GET` modifier with the Invoke-WebRequest cmdlet, as seen below. We will specify the URI as `https://web.ics.purdue.edu/~gchopra/class/public/pages/webdesign/05_simple.html` for this example. We will also send it to `Get-Member` to inspect the object's output methods and properties.
 - #### Get Request with Invoke-WebRequest
 ```powershell-session
@@ -140,7 +141,7 @@ RawContent : HTTP/1.1 200 OK
 - We could carve out this site's `raw content` instead of looking at everything from the request all at once. Notice how much easier it is to read? As a quick way to recon a website or pull key information out, such as names, addresses, and emails, it doesn't get much easier than this. Where `Invoke-WebRequest` gets handy is its ability to download files via the CLI. Let's look at downloading files now.
 
 
-## Downloading Files using PowerShell
+### Downloading Files using PowerShell
 - Whether performing sys admin, pentesting engagement, or disaster recovery-related tasks, files of all kinds will inevitably need to be downloaded to a Windows host. On a pentesting engagement, we may have compromised a target and want to transfer tools onto that host to enumerate the environment further and identify ways to get to other hosts & networks. PowerShell gives us some built-in options to do this. We will be focusing on Invoke-WebRequest for this module, but understand there are many different ways (some it's what they were meant for, others are unintentional by the tool creators) we could perform web requests and downloads.
 - ### Downloading PowerView.ps1 from GitHub
 - We can practice using Invoke-WebRequest by downloading a popular tool used by many pentesters called [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1).

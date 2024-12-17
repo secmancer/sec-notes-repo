@@ -1,6 +1,7 @@
+### Introduction
 - As incredible as PowerShell is, it's only as good as how we use it. Much of the PowerShell language and functionality lends itself to being utilized in an automated fashion. Having the ability to build scripts and modules for us in PowerShell (no matter how simple or complex) can ease our administrative burden or clear some easy tasks off our plate as pentesters. This module will discuss the pieces and parts that make up a PowerShell script and module. By the end, we will have created our own easy-to-use and customizable module.
 
-## Understanding PowerShell Scripting
+### Understanding PowerShell Scripting
 - PowerShell, by its nature, is modular and allows for a significant amount of control with its use. The traditional thought when dealing with scripting is that we are writing some form of an executable that performs tasks for us in the language it was created. With PowerShell, this is still true, with the exception that it can handle input from several different languages and file types and can handle many different object types. We can utilize singular scripts in the usual manner by calling them utilizing `.\script` syntax and importing modules using the `Import-Module` cmdlet. Now let's talk a bit about scripts and modules.
 - ### Scripts vs. Modules
 - The easiest way to think of it is that a script is an executable text file containing PowerShell cmdlets and functions, while a module can be just a simple script, or a collection of multiple script files, manifests, and functions bundled together. The other main difference is in their use. You would typically call a script by executing it directly, while you can import a module and all of the associated scripts and functions to call at your whim. For the sake of this section, we will discuss them using the same term, and everything we talk about in a module file works in a standard PowerShell script. First up is `file extensions` and what they mean to us.
@@ -10,7 +11,7 @@
 - These are the main extensions we are concerned with right now. In reality, PowerShell modules can have many different accompanying files with various extensions, but they are not requirements for what we are trying to do. If you wish for a deeper dive into PowerShell script files, and help files, check out this [Post](https://learn.microsoft.com/en-us/powershell/scripting/developer/module/writing-a-windows-powershell-module?view=powershell-7.2)
 
 
-## Making a Module
+### Making a Module
 - So let's get down to it. From this point on, we will cover the components of a PowerShell module, what they contain, and how to create them. This process is simple. It just takes a bit of prior planning. Consider this scenario:
 
 > **Scenario**: We have found ourselves performing the same checks over and over when administering hosts. So to expedite our tasks, we will create a PowerShell module to run the checks for us and then output the information we ask for. Our module, when used, should output the host's `computer name`, `IP address`, and basic `domain information`, and provide us with the output of the `C:\Users\` directory so we can see what users have interactively logged into that host.
@@ -18,7 +19,7 @@
 - Now that we know what's going into our module, it's time to start building it out.
 
 
-## Module Components
+### Module Components
 - A module is made up of `four` essential components:
 	1. A `directory` containing all the required files and content, saved somewhere within `$env:PSModulePath`.
 	- This is done so that when you attempt to import it into your PowerShell session or Profile, it can be automatically found instead of having to specify where it is.
@@ -303,6 +304,8 @@ function Get-Recon {
 
 Export-ModuleMember -Function Get-Recon -Variable Hostname  
 ```
+
+
 ### Scope
 - When dealing with scripts, the PowerShell session, and how stuff is recognized at the Commandline, the concept of Scope comes into play. Scope, in essence, is how PowerShell recognizes and protects objects within the session from unauthorized access or modification. PowerShell currently uses `three` different Scope levels:
 ![[Screenshot_20241111_150149.png]]

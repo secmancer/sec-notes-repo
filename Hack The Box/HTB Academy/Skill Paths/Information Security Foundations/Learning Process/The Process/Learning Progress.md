@@ -1,3 +1,4 @@
+### Introduction + Learning Progress Explanation
 - An important aspect to be considered in the learning process is `progress`. In order to see our progress, two specific states are compared, including a specific time window between the learning process. In other words, we compare our knowledge from the past with the present and try to keep track of the progress to give ourselves the confirmation that we have achieved something new.
 - When the point comes where we cannot give ourselves the confirmation, we look for it from others. However, no one else will be able to give us confirmation without taking the path together with us. To make it clear, let us return to the example of the mountains.
 

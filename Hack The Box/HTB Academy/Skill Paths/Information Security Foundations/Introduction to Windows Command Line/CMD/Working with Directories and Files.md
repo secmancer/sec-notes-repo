@@ -1,6 +1,3 @@
-- Now that we can safely navigate via the command line, it is time to master the art of files and directories. This can be a robust topic; we have several ways to accomplish the same tasks with Windows. We will cover a few but keep in mind that there are many other ways to work with files and directories. Let us dive in.
-
-
 ### Directories
 - What is a directory? In this case, it is an overarching folder structure within the Windows filesystem. Our files are nested within this folder structure, and we can move around utilizing common commands we practiced in the last section, such as `cd` and `dir`.
 - Revisiting our hallway concept from the last section for a second when thinking about directories, we can break it down like this:

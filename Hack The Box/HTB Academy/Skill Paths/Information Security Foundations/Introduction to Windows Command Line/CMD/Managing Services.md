@@ -1,3 +1,4 @@
+### Introduction
 - Monitoring and controlling services on a host is integral to being an administrator. As an attacker, the ability to interrogate services, find solid points to hook into, and turn services on or off is a sought-after ability when landing on a host. In this section, we will look at the usage of `sc`, the Windows command line service controller utility, but we will go about it a little differently. Let's look at this from the perspective of an attacker. We have just landed on a victims host and need to:
 	- Determine what services are running.
 	- Attempt to disable antivirus.
