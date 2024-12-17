@@ -1,8 +1,15 @@
+### Introduction
 - As we have already seen, the branches in flow control include `if-else` and the `case` statements. We have already discussed the `if-else` statements in detail and know how this works. Now we will take a closer look at the case statements.
 
-## Case Statements
-- `Case` statements are also known as `switch-case` statements in other languages, such as C/C++ and C#. The main difference between `if-else` and `switch-case` is that `if-else` constructs allow us to check any boolean expression, while `switch-case` always compares only the variable with the exact value. Therefore, the same conditions as for `if-else`, such as "greater-than," are not allowed for `switch-case`. The syntax for the switch-case statements looks like this:
-- #### Syntax - Switch-Case
+
+
+### Case Statements
+- `Case` statements are also known as `switch-case` statements in other languages, such as C/C++ and C#.
+- The main difference between `if-else` and `switch-case` is that `if-else` constructs allow us to check any boolean expression, while `switch-case` always compares only the variable with the exact value.
+- Therefore, the same conditions as for `if-else`, such as "greater-than," are not allowed for `switch-case`. 
+
+
+### Syntax - Switch-Case
 ```bash
 case <expression> in
 	pattern_1 ) statements ;;
@@ -12,7 +19,10 @@ esac
 ```
 - The definition of switch-case starts with `case`, followed by the variable or value as an expression, which is then compared in the pattern. If the variable or value matches the expression, then the statements are executed after the parenthesis and ended with a double semicolon (`;;`).
 - In our `CIDR.sh` script, we have used such a `case` statement. Here we defined four different options that we assigned to our script, how it should proceed after our decision.
-- #### CIDR.sh
+
+
+
+### CIDR.sh
 ```bash
 <SNIP>
 # Available options

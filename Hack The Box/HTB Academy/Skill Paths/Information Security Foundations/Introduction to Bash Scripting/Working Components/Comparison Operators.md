@@ -1,3 +1,4 @@
+### Introduction
 - To compare specific values with each other, we need elements that are called [comparison operators](https://www.tldp.org/LDP/abs/html/comparison-ops.html). The `comparison operators` are used to determine how the defined values will be compared. For these operators, we differentiate between:
 	- `string` operators
 	- `integer` operators
@@ -5,7 +6,7 @@
 	- `boolean` operators
 
 
-## String Operators
+### String Operators
 - If we compare strings, then we know what we would like to have in the corresponding value.
 ![[Screenshot_20241111_152012.png]]
 - It is important to note here that we put the variable for the given argument (`$1`) in double-quotes (`"$1"`). This tells Bash that the content of the variable should be handled as a string. Otherwise, we would get an error.
@@ -37,7 +38,8 @@ secmancer@htb[/htb]$ man ascii
 
 
 
-## Integer Operators
+
+### Integer Operators
 - Comparing integer numbers can be very useful for us if we know what values we want to compare. Accordingly, we define the next steps and commands how the script should handle the corresponding value.
 ![[Screenshot_20241111_152108.png]]
 ```bash
@@ -61,7 +63,8 @@ fi
 ```
 
 
-## File Operators
+
+### File Operators
 - The file operators are useful if we want to find out specific permissions or if they exist.
 ![[Screenshot_20241111_152136.png]]
 ```bash
@@ -80,7 +83,8 @@ fi
 ```
 
 
-## Boolean and Logical Operators
+
+### Boolean and Logical Operators
 - We get a boolean value "`false`" or "`true`" as a result with logical operators. Bash gives us the possibility to compare strings by using double square brackets `[[ <condition> ]]`. To get these boolean values, we can use the string operators. Whether the comparison matches or not, we get the boolean value "`false`" or "`true`".
 ```bash
 #!/bin/bash
@@ -103,7 +107,8 @@ fi
 ```
 
 
-## Logical Operators
+
+### Logical Operators
 - With logical operators, we can define several conditions within one. This means that all the conditions we define must match before the corresponding code can be executed.
 ![[Screenshot_20241111_152207.png]]
 ```bash
@@ -133,7 +138,8 @@ fi
 
 
 
-## Exercise Script
+
+### Exercise Script
 ```bash
 #!/bin/bash
 

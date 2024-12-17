@@ -1,6 +1,6 @@
+### Introduction
 - Conditional execution allows us to control the flow of our script by reaching different conditions. This function is one of the essential components. Otherwise, we could only execute one command after another.
 - When defining various conditions, we specify which functions or sections of code should be executed for a specific value. If we reach a specific condition, only the code for that condition is executed, and the others are skipped. As soon as the code section is completed, the following commands will be executed outside the conditional execution. Let us look at the first part of the script again and analyze it.
-- #### Script.sh
 ```bash
 #!/bin/bash
 
@@ -25,7 +25,8 @@ fi
 	- `domain` - Variables.
 - The conditions of the conditional executions can be defined using variables (`$#`, `$0`, `$1`, `domain`), values (`0`), and strings, as we will see in the next examples. These values are compared with the `comparison operators` (`-eq`) that we will look at in the next section.
 
-## Shebang
+
+### Shebang
 - The shebang line is always at the top of each script and always starts with "`#!`". This line contains the path to the specified interpreter (`/bin/bash`) with which the script is executed. We can also use Shebang to define other interpreters like Python, Perl, and others.
 ```python
 #!/usr/bin/env python
@@ -35,9 +36,8 @@ fi
 ```
 
 
-## If-Else-Fi
-- One of the most fundamental programming tasks is to check different conditions to deal with these. Checking of conditions usually has two different forms in programming and scripting languages, the `if-else condition` and `case statements`. In pseudo-code, the if condition means the following:
-- #### Pseudo-Code
+### If-Else-Fi
+- One of the most fundamental programming tasks is to check different conditions to deal with these. Checking of conditions usually has two different forms in programming and scripting languages, the `if-else condition` and `case statements`.
 ```bash
 if [ the number of given arguments equals 0 ]
 then
@@ -51,7 +51,6 @@ else
 finish the if-condition
 ```
 - By default, an `If-Else` condition can contain only a single "`If`", as shown in the next example.
- - #### If-Only.sh
 ```bash
 #!/bin/bash
 
@@ -62,7 +61,6 @@ then
         echo "Given argument is greater than 10."
 fi
 ```
-- #### If-Only.sh - Execution
 ```shell-session
 secmancer@htb[/htb]$ bash if-only.sh 5
 ```
@@ -72,7 +70,6 @@ secmancer@htb[/htb]$ bash if-only.sh 12
 Given argument is greater than 10.
 ```
 - When adding `Elif` or `Else`, we add alternatives to treat specific values or statuses. If a particular value does not apply to the first case, it will be caught by others.
-- #### If-Elif-Else.sh
 ```bash
 #!/bin/bash
 
@@ -88,7 +85,6 @@ else
 	echo "Given argument is not a number."
 fi
 ```
-- #### If-Elif-Else.sh - Execution
 ```shell-session
 secmancer@htb[/htb]$ bash if-elif-else.sh 5
 
@@ -107,7 +103,6 @@ if-elif-else.sh: line 8: [: HTB: integer expression expected
 Given argument is not a number.
 ```
 - We could extend our script and specify several conditions. This could look something like this:
-- #### Several Conditions - Script.sh
 ```bash
 #!/bin/bash
 
@@ -131,7 +126,8 @@ fi
 - Here we define another condition (`elif [<condition>];then`) that prints a line telling us (`echo -e "..."`) that we have given more than one argument and exits the program with an error (`exit 1`).
 
 
-## Exercise Script
+
+### Exercise Script
 ```bash
 #!/bin/bash
 # Count number of characters in a variable:
@@ -147,6 +143,6 @@ done
 ```
 
 
-## Questions
+### Questions
 - Create an "If-Else" condition in the "For"-Loop of the "Exercise Script" that prints you the number of characters of the 35th generated value of the variable "var". Submit the number as the answer.
 	- 1197735

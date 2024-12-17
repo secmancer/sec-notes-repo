@@ -1,9 +1,7 @@
 - In Bash, we have seven different `arithmetic operators` we can work with. These are used to perform different mathematical operations or to modify certain integers.
-
-#### Arithmetic Operators
+- #### Arithmetic Operators
 ![[Screenshot_20241111_152301.png]]
-- We can summarize all these operators in a small script:
-- #### Arithmetic.sh
+- We can summarize all these operators in a small script, shown below.
 ```bash
 #!/bin/bash
 
@@ -22,8 +20,7 @@ echo "Increase Variable: $increase"
 ((decrease--))
 echo "Decrease Variable: $decrease"
 ```
-- The output of this script looks like this:
-- #### Arithmetic.sh - Execution
+- The output of this script gives something like this.
 ```shell-session
 secmancer@htb[/htb]$ ./Arithmetic.sh
 
@@ -36,7 +33,6 @@ Increase Variable: 2
 Decrease Variable: 0
 ```
 - We can also calculate the length of the variable. Using this function `${#variable}`, every character gets counted, and we get the total number of characters in the variable.
-- #### VarLength.sh
 ```bash
 #!/bin/bash
 
@@ -44,14 +40,13 @@ htb="HackTheBox"
 
 echo ${#htb}
 ```
-- #### VarLength.sh
 ```shell-session
 secmancer@htb[/htb]$ ./VarLength.sh
 
 10
 ```
-- If we look at our `CIDR.sh` script, we will see that we have used the `increase` and `decrease` operators several times. This ensures that the while loop, which we will discuss later, runs and pings the hosts while the variable "`stat`" has a value of `1`. If the ping command ends with code `0` (successful), we get a message that the `host is up` and the "`stat`" variable, as well as the variables "`hosts_up`" and "`hosts_total`" get changed.
-- #### CIDR.sh
+- If we look at our `CIDR.sh` script, we will see that we have used the `increase` and `decrease` operators several times.
+- This ensures that the while loop, which we will discuss later, runs and pings the hosts while the variable "`stat`" has a value of `1`. If the ping command ends with code `0` (successful), we get a message that the `host is up` and the "`stat`" variable, as well as the variables "`hosts_up`" and "`hosts_total`" get changed.
 ```bash
 <SNIP>
 	echo -e "\nPinging host(s):"

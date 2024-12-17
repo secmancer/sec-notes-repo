@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "eedda850d3417563",
+        "id": "234e8f895a94a46f",
         "type": "tabs",
         "children": [
           {
-            "id": "32d4e0d3de1922fd",
+            "id": "730a15083e62ad83",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "32d4e0d3de1922fd",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Conditional Execution.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Comparison Operators.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arithmetic.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arguments, Variables, and Arrays.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Input and Output Control.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Loops.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Branches.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Introduction/Bourne Again Shell.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Execution Flow/Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Execution Flow/Debugging.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Module Summary/Wrapping It Up.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Getting our Hands Dirty/AD Administration - Guided Lab Part II.md",
@@ -217,15 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Structure.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Functionality.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Wireshark Advanced Usage.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Packet Inception, Dissecting Network Traffic with Wireshark.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Guided Lab - Traffic Analysis Workflow.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Familiarity with Wireshark.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Decrypting RDP connections.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Wireshark/Analysis with Wireshark.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Capturing With Tcpdump (Fundamentals Labs).md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Tcpdump Packet Filtering.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Tcpdump/Interrogating Network Traffic with Capture and Display Filters.md",
     "TryHackMe/Advent of Cyber/2024",
     "TryHackMe/Advent of Cyber",
     "Hack The Box/HTB Labs",

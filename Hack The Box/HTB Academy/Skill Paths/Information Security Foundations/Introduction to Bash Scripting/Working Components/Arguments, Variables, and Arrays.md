@@ -1,11 +1,10 @@
-## Arguments
+### Arguments
 - The advantage of bash scripts is that we can always pass up to 9 arguments (`$0`-`$9`) to the script without assigning them to variables or setting the corresponding requirements for these. `9 arguments` because the first argument `$0` is reserved for the script. As we can see here, we need the dollar sign (`$`) before the name of the variable to use it at the specified position. The assignment would look like this in comparison:
 ```shell-session
 secmancer@htb[/htb]$ ./script.sh ARG1 ARG2 ARG3 ... ARG9
        ASSIGNMENTS:       $0      $1   $2   $3 ...   $9
 ```
 - This means that we have automatically assigned the corresponding arguments to the predefined variables in this place. These variables are called special variables. These special variables serve as placeholders. If we now look at the code section again, we will see where and which arguments have been used.
-- #### CIDR.sh
 ```bash
 #!/bin/bash
 
@@ -47,14 +46,15 @@ Usage:
 ```
 
 
-## Special Variables
+
+### Special Variables
 - Special variables use the [Internal Field Separator](https://bash.cyberciti.biz/guide/$IFS) (`IFS`) to identify when an argument ends and the next begins. Bash provides various special variables that assist while scripting. Some of these variables are:
 ![[Screenshot_20241111_151816.png]]
 - Of the ones shown above, we have 3 such special variables in our `if-else` condition.
 ![[Screenshot_20241111_151830.png]]
 
 
-## Variables
+### Variables
 - We also see at the end of the if-else loop that we assign the value of the first argument to the variable called "`domain`". The assignment of variables takes place without the dollar sign (`$`). The dollar sign is only intended to allow this variable's corresponding value to be used in other code sections. When assigning variables, there must be no spaces between the names and values.
 ```bash
 <SNIP>
@@ -79,10 +79,8 @@ Declared without an error.
 ```
 
 
-
-## Arrays
+### Arrays
 - There is also the possibility of assigning several values to a single variable in Bash. This can be beneficial if we want to scan multiple domains or IP addresses. These variables are called `arrays` that we can use to store and process an ordered sequence of specific type values. `Arrays` identify each stored entry with an `index` starting with `0`. When we want to assign a value to an array component, we do so in the same way as with standard shell variables. All we do is specify the field index enclosed in square brackets. The declaration for `arrays` looks like this in Bash:
-- #### Arrays.sh
 ```bash
 #!/bin/bash
 
@@ -97,7 +95,6 @@ secmancer@htb[/htb]$ ./Arrays.sh
 www.inlanefreight.com
 ```
 - It is important to note that single quotes (`'` ... `'`) and double quotes (`"` ... `"`) prevent the separation by a space of the individual values in the array. This means that all spaces between the single and double quotes are ignored and handled as a single value assigned to the array.
-- #### Arrays.sh
 ```bash
 #!/bin/bash
 
@@ -109,6 +106,7 @@ secmancer@htb[/htb]$ ./Arrays.sh
 
 www.inlanefreight.com ftp.inlanefreight.com vpn.inlanefreight.com
 ```
+
 
 
 ### Questions

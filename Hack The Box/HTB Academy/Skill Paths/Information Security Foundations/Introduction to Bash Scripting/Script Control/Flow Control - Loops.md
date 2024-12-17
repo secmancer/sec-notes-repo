@@ -1,4 +1,7 @@
-- The control of the flow of our scripts is essential. We have already learned about the `if-else` conditions, which are also part of flow control. After all, we want our script to work quickly and efficiently, and for this, we can use other components to increase efficiency and allow error-free processing. Each control structure is either a `branch` or a `loop`. Logical expressions of boolean values usually control the execution of a control structure. These control structures include:
+### Introduction
+ - The control of the flow of our scripts is essential. We have already learned about the `if-else` conditions, which are also part of flow control. 
+ - After all, we want our script to work quickly and efficiently, and for this, we can use other components to increase efficiency and allow error-free processing. 
+ - Each control structure is either a `branch` or a `loop`. Logical expressions of boolean values usually control the execution of a control structure.
 	- Branches:
 	    - `If-Else` Conditions
 	    - `Case` Statements
@@ -7,9 +10,14 @@
 	    - `While` Loops
 	    - `Until` Loops
 
-## For Loops
-- Let us start with the `For` loops. The `For` loop is executed on each pass for precisely one parameter, which the shell takes from a list, calculates from an increment, or takes from another data source. The for loop runs as long as it finds corresponding data. This type of loop can be structured and defined in different ways. For example, the for loops are often used when we need to work with many different values from an array. This can be used to scan different hosts or ports. We can also use it to execute specific commands for known ports and their services to speed up our enumeration process. The syntax for this can be as follows:
-- #### Syntax - Examples
+
+
+### For Loops
+- Let us start with the `For` loops. The `For` loop is executed on each pass for precisely one parameter, which the shell takes from a list, calculates from an increment, or takes from another data source. The for loop runs as long as it finds corresponding data. This type of loop can be structured and defined in different ways. For example, the for loops are often used when we need to work with many different values from an array. This can be used to scan different hosts or ports. We can also use it to execute specific commands for known ports and their services to speed up our enumeration process.
+
+
+
+### Syntax - Examples
 ```bash
 for variable in 1 2 3 4
 do
@@ -46,7 +54,10 @@ PING 10.10.10.174 (10.10.10.174): 56 data bytes
 round-trip min/avg/max/stddev = 45.700/45.700/45.700/0.000 ms
 ```
 - Let us have another look at our `CIDR.sh` script. We have added several for loops to the script, but let us stick with this little code section.
-- #### CIDR.sh
+
+
+
+### CIDR.sh
 ```bash
 <SNIP>
 
@@ -64,14 +75,19 @@ function network_range {
 
 <SNIP>
 ```
-- As in the previous example, for each IP address from the array "`ipaddr`" we make a "`whois`" request, whose output is filtered for "`NetRange`" and "`CIDR`." This helps us to determine which address range our target is located in. We can use this information to search for additional hosts during a penetration test, `if approved by the client`. The results that we receive are displayed accordingly and stored in the file "`CIDR.txt`."
+- As in the previous example, for each IP address from the array "`ipaddr`" we make a "`whois`" request, whose output is filtered for "`NetRange`" and "`CIDR`." This helps us to determine which address range our target is located in. 
+- We can use this information to search for additional hosts during a penetration test, `if approved by the client`. The results that we receive are displayed accordingly and stored in the file "`CIDR.txt`."
 
 
-## While Loops
+
+### While Loops
 - The `while` loop is conceptually simple and follows the following principle:
 	- A statement is executed as long as a condition is fulfilled (`true`).
 - We can also combine loops and merge their execution with different values. It is important to note that the excessive combination of several loops in each other can make the code very unclear and lead to errors that can be hard to find and follow. Such a combination can look like in our `CIDR.sh` script.
-- #### CIDR.sh
+
+
+
+### CIDR.sh
 ```bash
 <SNIP>
 		stat=1
@@ -92,8 +108,12 @@ function network_range {
 		done
 <SNIP>
 ```
-- The `while` loops also work with conditions like `if-else`. A while loop needs some sort of a counter to orientate itself when it has to stop executing the commands it contains. Otherwise, this leads to an endless loop. Such a counter can be a variable that we have declared with a specific value or a boolean value. `While` loops run while the boolean value is "`True`". Besides the counter, we can also use the command "`break`," which interrupts the loop when reaching this command like in the following example:
-- #### WhileBreaker.sh
+- The `while` loops also work with conditions like `if-else`. A while loop needs some sort of a counter to orientate itself when it has to stop executing the commands it contains. Otherwise, this leads to an endless loop. Such a counter can be a variable that we have declared with a specific value or a boolean value. `While` loops run while the boolean value is "`True`". Besides the counter, we can also use the command "`break`," which interrupts the loop when reaching this command.
+
+
+
+
+### WhileBreaker.sh
 ```bash
 #!/bin/bash
 
@@ -114,7 +134,6 @@ do
   fi
 done
 ```
-- #### WhileBreaker.sh
 ```shell-session
 secmancer@htb[/htb]$ ./WhileBreaker.sh
 
@@ -126,11 +145,11 @@ Counter: 4
 
 
 
-## Until Loops
+
+### Until Loops
 - There is also the `until` loop, which is relatively rare. Nevertheless, the `until` loop works precisely like the `while` loop, but with the difference:
 	- The code inside a `until` loop is executed as long as the particular condition is `false`.
 - The other way is to let the loop run until the desired value is reached. The "`until`" loops are very well suited for this. This type of loop works similarly to the "`while`" loop but, as already mentioned, with the difference that it runs until the boolean value is "`False`."
-- #### Until.sh
 ```bash
 #!/bin/bash
 
@@ -143,7 +162,6 @@ do
   echo "Counter: $counter"
 done
 ```
-- #### Until.sh
 ```shell-session
 secmancer@htb[/htb]$ ./Until.sh
 
@@ -160,7 +178,9 @@ Counter: 10
 ```
 
 
-## Exercise Script
+
+
+### Exercise Script
 ```bash
 #!/bin/bash
 
@@ -206,6 +226,7 @@ fi
 ```
 
 
-## Questions
+
+### Questions
 - Create a "For" loop that encodes the variable "var" 28 times in "base64". The number of characters in the 28th hash is the value that must be assigned to the "salt" variable.
 	- HTBL00p5r0x

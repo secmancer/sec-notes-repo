@@ -1,6 +1,8 @@
-## Input Control
-- We may get results from our sent requests and executed commands, which we have to decide manually on how to proceed. Another example would be that we have defined several functions in our script designed for different scenarios. We have to decide which of them should be executed after a manual check and based on the results. It is also quite possible that specific scans or activities may not be allowed to be performed. Therefore, we need to be familiar with how to get a running script to wait for our instructions. If we look at our `CIDR.sh` script again, we see that we have added such a call to decide further steps.
-- #### CIDR.sh
+### Input Control
+- We may get results from our sent requests and executed commands, which we have to decide manually on how to proceed. 
+- Another example would be that we have defined several functions in our script designed for different scenarios. 
+- We have to decide which of them should be executed after a manual check and based on the results. It is also quite possible that specific scans or activities may not be allowed to be performed. 
+- Therefore, we need to be familiar with how to get a running script to wait for our instructions. If we look at our `CIDR.sh` script again, we see that we have added such a call to decide further steps.
 ```bash
 # Available options
 <SNIP>
@@ -19,11 +21,14 @@ case $opt in
 	"*") exit 0 ;;
 esac
 ```
-- The first `echo` lines serve as a display menu for the options available to us. With the `read` command, the line with "`Select your option:`" is displayed, and the additional option `-p` ensures that our input remains on the same line. Our input is stored in the variable `opt`, which we then use to execute the corresponding functions with the `case` statement, which we will look at later. Depending on the number we enter, the `case` statement determines which functions are executed.
+- The first `echo` lines serve as a display menu for the options available to us. With the `read` command, the line with "`Select your option:`" is displayed, and the additional option `-p` ensures that our input remains on the same line. 
+- Our input is stored in the variable `opt`, which we then use to execute the corresponding functions with the `case` statement, which we will look at later. Depending on the number we enter, the `case` statement determines which functions are executed.
 
-## Output Control
+
+
+
+### Output Control
 - We have already learned about the output redirections of output in the `Linux Fundamentals` module. Nevertheless, the problem with the redirections is that we do not get any output from the respective command. It will be redirected to the appropriate file. If our scripts become more complicated later, they can take much more time than just a few seconds. To avoid sitting inactively and waiting for our script's results, we can use the [tee](https://man7.org/linux/man-pages/man1/tee.1.html) utility. It ensures that we see the results we get immediately and that they are stored in the corresponding files. In our `CIDR.sh` script, we have used this utility twice in different ways.
-- #### CIDR.sh
 ```bash
 <SNIP>
 
