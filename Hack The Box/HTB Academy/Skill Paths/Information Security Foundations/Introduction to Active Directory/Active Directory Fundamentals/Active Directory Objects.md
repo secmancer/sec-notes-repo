@@ -4,10 +4,8 @@
 	- An object can be defined as ANY resource present within an Active Directory environment such as OUs, printers, users, domain controllers.
 
 
-
-### AD Objects
+### AD Objects Overview
 ![image](https://academy.hackthebox.com/storage/modules/74/adobjects.png)
-
 
 
 
@@ -24,59 +22,96 @@
 
 
 ### Contacts
-- Usually used to represent an external user and contains informational attributes such as first name, last name, email address, telephone number, etc. They are `leaf objects` and are NOT security principals (securable objects), so they don't have a SID, only a GUID. An example would be a contact card for a third-party vendor or a customer.
+- Usually represents an external users.
+	- Contains attributes like first name, last name, email address, telephone number, etc.
+- They're leaf objects, but NOT a security principal.
+	- So, no SID is given to them, only a GUID.
+- Example: contact card for a third party vendor/customer.
+
 
 
 ### Printers
-- A printer object points to a printer accessible within the AD network. Like a contact, a printer is a `leaf object` and not a security principal, so it only has a GUID. Printers have attributes such as the printer's name, driver information, port number, etc.
+- Object that points to a printer that can be accessed from within the AD network.
+- Similar to a contact, it's a leaf object, while not being a security principal.
+- Has attributes like the name, driver information, port number, etc.
+
 
 
 ### Computers
-- A computer object is any computer joined to the AD network (workstation or server). Computers are `leaf objects` because they do not contain other objects. 
-- However, they are considered security principals and have a SID and a GUID. 
-- Like users, they are prime targets for attackers since full administrative access to a computer (as the all-powerful `NT AUTHORITY\SYSTEM` account) grants similar rights to a standard domain user and can be used to perform the majority of the enumeration tasks that a user account can (save for a few exceptions across domain trusts.)
+- Object for any computer that has ever joined the AD network, whether a workstation or server.
+- Leaf objects, but is a security principal.
+	- Has both a SID and GUID.
+- Prime targets for attackers, as full administrative access to them gives them similar rights to that of a standard domain user.
+	- Can be used to perform a lot of enumeration tasks a user account can do, with a few exceptions when dealing with domain trusts.
+
 
 
 ### Shared Folders
-- A shared folder object points to a shared folder on the specific computer where the folder resides. Shared folders can have stringent access control applied to them and can be either accessible to everyone (even those without a valid AD account), open to only authenticated users (which means anyone with even the lowest privileged user account OR a computer account (`NT AUTHORITY\SYSTEM`) could access it), or be locked down to only allow certain users/groups access. 
-- Anyone not explicitly allowed access will be denied from listing or reading its contents. Shared folders are NOT security principals and only have a GUID. A shared folder's attributes can include the name, location on the system, security access rights.
+- Object that points to a shared folder on a specific computer that stores it.
+- Stringent access control applied to them.
+- Can be accessed by everyone, regardless of account status, only open to authenticated users, or to only certain users/groups.
+- Anyone with the proper permissions will be denied from accessing it.
+- Not a security principal.
+- Attributes for it include the name, location on the system, and security access rights.
+
 
 
 ### Groups
-- A group is considered a `container object` because it can contain other objects, including users, computers, and even other groups. A group IS regarded as a security principal and has a SID and a GUID. In AD, groups are a way to manage user permissions and access to other securable objects (both users and computers). Let's say we want to give 20 help desk users access to the Remote Management Users group on a jump host. Instead of adding the users one by one, we could add the group, and the users would inherit the intended permissions via their membership in the group. 
-- In Active Directory, we commonly see what are called "[nested groups](https://docs.microsoft.com/en-us/windows/win32/ad/nesting-a-group-in-another-group)" (a group added as a member of another group), which can lead to a user(s) obtaining unintended rights. Nested group membership is something we see and often leverage during penetration tests. 
-- The tool [BloodHound](https://github.com/BloodHoundAD/BloodHound) helps to discover attack paths within a network and illustrate them in a graphical interface. It is excellent for auditing group membership and uncovering/seeing the sometimes unintended impacts of nested group membership. Groups in AD can have many [attributes](http://www.selfadsi.org/group-attributes.htm), the most common being the name, description, membership, and other groups that the group belongs to. Many other attributes can be set, which we will discuss more in-depth later in this module.
+- Considered a `container object` as it contains other objects within it.
+- Does have a ID and a GUID, so is a security principal.
+- Manages user permissions and access to other securable objects in a more easy and effective way.
+- We often see what is called "[nested groups](https://docs.microsoft.com/en-us/windows/win32/ad/nesting-a-group-in-another-group)", or a group that was added to another group.
+	- This leads to users getting unintended rights that they probably shouldn't have.
+	- This can be leveraged during penetration tests.
+- Example: [BloodHound](https://github.com/BloodHoundAD/BloodHound) can help us discover attack paths and give us an GUI interface of it.
+	- This can include these groups, along with the many attributes that are associated with them.
 
 
 ### Organizational Units (OUs)
-- An organizational unit, or OU from here on out, is a container that systems administrators can use to store similar objects for ease of administration. OUs are often used for administrative delegation of tasks without granting a user account full administrative rights. For example, we may have a top-level OU called Employees and then child OUs under it for the various departments such as Marketing, HR, Finance, Help Desk, etc. If an account were given the right to reset passwords over the top-level OU, this user would have the right to reset passwords for all users in the company. 
-- However, if the OU structure were such that specific departments were child OUs of the Help Desk OU, then any user placed in the Help Desk OU would have this right delegated to them if granted. Other tasks that may be delegated at the OU level include creating/deleting users, modifying group membership, managing Group Policy links, and performing password resets. OUs are very useful for managing Group Policy (which we will study later in this module) settings across a subset of users and groups within a domain. 
-- For example, we may want to set a specific password policy for privileged service accounts so these accounts could be placed in a particular OU and then have a Group Policy object assigned to it, which would enforce this password policy on all accounts placed inside of it. A few OU attributes include its name, members, security settings, and more.
+- Organizational Units (OUs) are containers used by system administrators to group similar objects for easier administration and delegation of tasks.
+- OUs allow delegation of tasks like resetting passwords, creating/deleting users, modifying group memberships, managing Group Policy links, etc., without granting full administrative rights.
+- **Hierarchy and Permissions**:
+    - Top-level OUs (e.g., "Employees") can have child OUs for departments (e.g., "Marketing," "HR").
+    - Permissions granted at a parent OU (e.g., "Help Desk") can extend to its child OUs, enabling delegation within specific scopes.
+- OUs are instrumental in applying Group Policy settings to subsets of users and groups, such as enforcing specific password policies for accounts placed in a designated OU.
+- Key attributes of OUs include their name, members, and security settings.
+
 
 
 ### Domain
-- A domain is the structure of an AD network. Domains contain objects such as users and computers, which are organized into container objects: groups and OUs. Every domain has its own separate database and sets of policies that can be applied to any and all objects within the domain. Some policies are set by default (and can be tweaked), such as the domain password policy.
-- In contrast, others are created and applied based on the organization's need, such as blocking access to cmd.exe for all non-administrative users or mapping shared drives at log in.
+- A domain is the foundational structure of an Active Directory (AD) network, containing objects like users and computers organized into containers such as groups and OUs.
+- **Each domain has its own database and policies that govern its objects.
+- Domains come with default policies (e.g., domain password policy) that can be customized.
+- Organizations can create and apply policies tailored to their needs, such as restricting cmd.exe access for non-admin users or mapping shared drives at login.
 
 
 ### Domain Controllers
-- Domain Controllers are essentially the brains of an AD network. They handle authentication requests, verify users on the network, and control who can access the various resources in the domain. 
-- All access requests are validated via the domain controller and privileged access requests are based on predetermined roles assigned to users. It also enforces security policies and stores information about every other object in the domain.
+- Domain Controllers: brains of an AD network. 
+- Handle authentication requests, verification of users, and control access to the various resources in the domain. 
+- All requests are validated using the domain controller, with privileged access requests being based on predetermined roles assigned to users. 
+- It also enforces security policies and stores information about every other object in the domain.
+
 
 
 ### Sites
-- A site in AD is a set of computers across one or more subnets connected using high-speed links. They are used to make replication across domain controllers run efficiently.
+- A site in AD is a set of computers across one or more subnets connected using high-speed links. 
+- They are used to make replication across domain controllers run efficiently.
+
 
 
 ### Built-in
-- In AD, built-in is a container that holds [default groups](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups) in an AD domain. They are predefined when an AD domain is created.
+- In AD, built-in is a container that holds [default groups](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups) in an AD domain. 
+- They are predefined when an AD domain is created.
 
 
 
 ### Foreign Security Principals
-- A foreign security principal (FSP) is an object created in AD to represent a security principal that belongs to a trusted external forest. They are created when an object such as a user, group, or computer from an external (outside of the current) forest is added to a group in the current domain. 
-- They are created automatically after adding a security principal to a group. 
-- Every foreign security principal is a placeholder object that holds the SID of the foreign object (an object that belongs to another forest.) Windows uses this SID to resolve the object's name via the trust relationship. FSPs are created in a specific container named ForeignSecurityPrincipals with a distinguished name like `cn=ForeignSecurityPrincipals,dc=inlanefreight,dc=local`.
+- Object to represent a security principal that belongs to a trusted external forest. 
+	- Created when an object such as a user, group, or computer from an external forest is added to a group in the current domain. 
+- Automatically created after adding a security principal to a group. 
+- Every foreign security principal is a placeholder object that holds the SID of the foreign object. 
+- Windows uses this SID to resolve the object's name via the trust relationship. 
+- FSPs are created in a specific container named ForeignSecurityPrincipals with a distinguished name like `cn=ForeignSecurityPrincipals,dc=inlanefreight,dc=local`.
 
 
 

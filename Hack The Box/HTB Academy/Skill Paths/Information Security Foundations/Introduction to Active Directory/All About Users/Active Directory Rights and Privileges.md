@@ -1,16 +1,17 @@
 ### Introduction
-- Rights and privileges are the cornerstones of AD management and, if mismanaged, can easily lead to abuse by attackers or penetration testers. 
-- Access rights and privileges are two important topics in AD (and infosec in general), and we must understand the difference. 
-- `Rights` are typically assigned to users or groups and deal with permissions to `access` an object such as a file, while `privileges` grant a user permission to `perform an action` such as run a program, shut down a system, reset passwords, etc. 
-- Privileges can be assigned individually to users or conferred upon them via built-in or custom group membership. 
-- Windows computers have a concept called `User Rights Assignment`, which, while referred to as rights, are actually types of privileges granted to a user. We will discuss these later in this section. 
-- We must have a firm grasp of the differences between rights and privileges in a broader sense and precisely how they apply to an AD environment.
+- **Rights** and **privileges** are critical aspects of AD management and must be carefully managed to avoid abuse by attackers or penetration testers.
+- **Rights** are permissions to access objects (e.g., files), while **privileges** grant permission to perform actions (e.g., run programs, reset passwords).
+- Privileges can be assigned individually or granted through group membership, either built-in or custom.
+- Windows has a concept of **User Rights Assignment**, which assigns privileges to users but is often referred to as rights.
+- Understanding the difference between rights and privileges is essential for effective AD management and security.
 
 
 
 ### Built-in AD Groups
-- AD contains many [default or built-in security groups](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups), some of which grant their members powerful rights and privileges which can be abused to escalate privileges within a domain and ultimately gain Domain Admin or SYSTEM privileges on a Domain Controller (DC). 
-- Membership in many of these groups should be tightly managed as excessive group membership/privileges is a common flaw in many AD networks that attackers look to abuse. Some of the most common built-in groups are listed below.
+- AD has many **default or built-in security groups**, some of which grant powerful rights and privileges that can be abused to escalate privileges and gain Domain Admin or SYSTEM access on a Domain Controller (DC).
+- **Excessive group membership/privileges** is a common security flaw in AD environments, often targeted by attackers.
+- Tight management of membership in these built-in groups is crucial to prevent privilege escalation within the domain.
+- Some of the most common built-in groups should be carefully monitored to avoid misuse.
 
 | Group Name                           | Description                                                                                                                                                                                                                                                                                                                                                                       |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,9 +88,10 @@ whenChanged                     : 10/28/2021 1:47:52 PM
 whenCreated                     : 10/27/2021 8:14:34 AM
 ```
 
-- As we can see above, the default state of the `Server Operators` group is to have no members and is a domain local group by default. 
-- In contrast, the `Domain Admins` group seen below has several members and service accounts assigned to it. Domain Admins are also Global groups instead of domain local. More on group membership can be found later in this module. Be wary of who, if anyone, you give access to these groups. 
-- An attacker could easily gain the keys to the enterprise if they gain access to a user assigned to these groups.
+- The **`Server Operators`** group is by default empty and is a domain local group.
+- The **`Domain Admins`** group has several members and service accounts assigned, and it is a global group.
+- It's critical to be cautious about who is given access to these groups, as they confer powerful administrative privileges.
+- If an attacker gains access to a user in these groups, they could potentially gain full control over the enterprise.
 
 
 
@@ -107,16 +109,22 @@ Members           : {CN=htb-student_adm,CN=Users,DC=INLANEFREIGHT,DC=LOCAL, CN=s
                     Accounts,OU=Corp,DC=INLANEFREIGHT,DC=LOCAL, CN=PROXYAGENT,OU=Service
                     Accounts,OU=Corp,DC=INLANEFREIGHT,DC=LOCAL...}
 ```
-
+- The **`Server Operators`** group is by default empty and is a domain local group.
+- The **`Domain Admins`** group has several members and service accounts assigned, and it is a global group.
+- It's critical to be cautious about who is given access to these groups, as they confer powerful administrative privileges.
+- If an attacker gains access to a user in these groups, they could potentially gain full control over the enterprise.
 
 
 
 ### User Rights Assignment
-- Depending on their current group membership, and other factors such as privileges that administrators can assign via Group Policy (GPO), users can have various rights assigned to their account. 
-- This Microsoft article on [User Rights Assignment](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment) provides a detailed explanation of each of the user rights that can be set in Windows. 
-- Not every right listed here is important to us from a security standpoint as penetration testers or defenders, but some rights granted to an account can lead to unintended consequences such as privilege escalation or access to sensitive files. 
-- For example, let's say we can gain write access over a Group Policy Object (GPO) applied to an OU containing one or more users that we control. 
-- In this example, we could potentially leverage a tool such as [SharpGPOAbuse](https://github.com/FSecureLABS/SharpGPOAbuse) to assign targeted rights to a user. We may perform many actions in the domain to further our access with these new rights. A few examples include:
+- Users can have various rights assigned to their accounts based on their group membership and Group Policy settings.
+- The [User Rights Assignment](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment) article from Microsoft provides a detailed breakdown of the rights that can be configured in Windows.
+- While not all rights are crucial from a security perspective, some can lead to privilege escalation or unauthorized access to sensitive files.
+- For instance, gaining write access over a Group Policy Object (GPO) applied to an OU could allow an attacker to assign targeted rights to a user.
+- Tools like [SharpGPOAbuse](https://github.com/FSecureLABS/SharpGPOAbuse) can be used to exploit such privileges for further access in the domain.
+- There are various techniques available to abuse user rights, detailed in resources like [this blog post](https://blog.palantir.com/windows-privilege-abuse-auditing-detection-and-defense-3078a403d74e) and [HackTricks](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/privilege-escalation-abusing-tokens).
+- It's crucial to understand the significant impact of incorrectly assigning privileges in Active Directory.
+- A small administrative mistake in privilege assignment can lead to a complete system or enterprise compromise.
 
 | **Privilege**                   | **Description**                                                                                                                                                                                                                                                                                   |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -126,15 +134,14 @@ Members           : {CN=htb-student_adm,CN=Users,DC=INLANEFREIGHT,DC=LOCAL, CN=s
 | `SeImpersonatePrivilege`        | This privilege allows us to impersonate a token of a privileged account such as `NT AUTHORITY\SYSTEM`. This could be leveraged with a tool such as JuicyPotato, RogueWinRM, PrintSpoofer, etc., to escalate privileges on a target system.                                                        |
 | `SeLoadDriverPrivilege`         | A user with this privilege can load and unload device drivers that could potentially be used to escalate privileges or compromise a system.                                                                                                                                                       |
 | `SeTakeOwnershipPrivilege`      | This allows a process to take ownership of an object. At its most basic level, we could use this privilege to gain access to a file share or a file on a share that was otherwise not accessible to us.                                                                                           |
-- There are many techniques available to abuse user rights detailed [here](https://blog.palantir.com/windows-privilege-abuse-auditing-detection-and-defense-3078a403d74e) and [here](https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/privilege-escalation-abusing-tokens). 
-- Though outside the scope of this module, it is essential to understand the impact that assigning the wrong privilege to an account can have within Active Directory. A small admin mistake can lead to a complete system or enterprise compromise.
 
 
 
 ### Viewing a User's Privileges
-- After logging into a host, typing the command `whoami /priv` will give us a listing of all user rights assigned to the current user. Some rights are only available to administrative users and can only be listed/leveraged when running an elevated CMD or PowerShell session. 
-- These concepts of elevated rights and [User Account Control (UAC)](https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/how-user-account-control-works) are security features introduced with Windows Vista that default to restricting applications from running with full permissions unless absolutely necessary. If we compare and contrast the rights available to us as an admin in a non-elevated console vs. an elevated console, we will see that they differ drastically. 
-- First, let's look at the rights available to a standard Active Directory user.
+- The command `whoami /priv` lists all user rights assigned to the current user after logging into a host. Some rights are restricted to administrative users and can only be accessed with an elevated CMD or PowerShell session.
+- Elevated rights and **User Account Control (UAC)**, introduced in Windows Vista, limit applications from running with full permissions unless necessary. These security features help prevent unauthorized actions from gaining full system control.
+- A comparison of rights between a non-elevated and elevated console shows significant differences in available privileges for an admin.
+- The next step is to examine the rights available to a standard Active Directory user.
 - #### Standard Domain User's Rights
 
 ```powershell-session
@@ -149,13 +156,15 @@ SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
 ```
 
-- We can see that the rights are very `limited`, and none of the "dangerous" rights outlined above are present. Next, let's take a look at a privileged user. Below are the rights available to a Domain Admin user.
+- We can see that the rights are very `limited`, and none of the "dangerous" rights outlined above are present. 
+- Next, let's take a look at a privileged user. Below are the rights available to a Domain Admin user.
 
 
 
 ### Domain Admin Rights Non-Elevated
-- We can see the following in a `non-elevated` console which does not appear to be anything more than available to the standard domain user. This is because, by default, Windows systems do not enable all rights to us unless we run the CMD or PowerShell console in an elevated context. 
-- This is to prevent every application from running with the highest possible privileges. This is controlled by something called [User Account Control (UAC)](https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/how-user-account-control-works) which is covered in-depth in the [Windows Privilege Escalation](https://academy.hackthebox.com/course/preview/windows-privilege-escalation) module.
+- In a **non-elevated** console, standard domain users typically see only the basic rights available to them. Windows systems don't grant all rights unless the console is run with elevated privileges.
+- This approach helps prevent every application from running with the highest possible privileges, a process controlled by **User Account Control (UAC)**.
+- UAC is designed to restrict the escalation of privileges for applications unless explicitly required, ensuring a layer of security.
 
 ```powershell-session
 PS C:\htb> whoami /priv
@@ -175,7 +184,10 @@ SeTimeZonePrivilege           Change the time zone                 Disabled
 
 
 ### Domain Admin Rights Elevated
-- If we enter the same command from an elevated PowerShell console, we can see the complete listing of rights available to us:
+- If we enter the same command from an elevated PowerShell console, we can see the complete listing of rights available to us.
+- **User rights** increase depending on the groups a user belongs to or the privileges assigned to them. For example, a **Backup Operators** group member gains additional rights compared to a standard user.
+- Even though **UAC** may restrict some rights (such as `SeBackupPrivilege`), a user in this group can still have rights like `SeShutdownPrivilege`, which allows them to shut down a domain controller.
+- While this privilege doesn’t directly provide access to sensitive data, it can cause significant service interruptions if the user logs onto a domain controller locally (as opposed to remotely via RDP or WinRM).
 
 ```powershell-session
 PS C:\htb> whoami /priv
@@ -213,15 +225,14 @@ SeCreateSymbolicLinkPrivilege             Create symbolic links                 
 SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Disabled
 ```
 
-- User rights increase based on the groups they are placed in or their assigned privileges. Below is an example of the rights granted to a `Backup Operators` group member.
-- Users in this group have other rights currently restricted by UAC (additional rights such as the powerful `SeBackupPrivilege` are not enabled by default in a standard console session). 
-- Still, we can see from this command that they have the `SeShutdownPrivilege`, which means they can shut down a domain controller. 
-- This privilege on its own could not be used to gain access to sensitive data but could cause a massive service interruption should they log onto a domain controller locally (not remotely via RDP or WinRM).
-
 
 
 ### Backup Operator Rights
-
+- Both **attackers** and **defenders** must understand the rights granted to users through membership in **built-in security groups** in Active Directory.
+- It's common to find low-privileged users mistakenly added to high-privileged groups, which can be exploited to compromise the domain.
+- Access to these groups should be **strictly controlled**. It's recommended to leave most groups empty and only add accounts when necessary for specific tasks.
+- Accounts in these groups or granted additional privileges should be **carefully monitored**, have **strong passwords** or **passphrases**, and be separate from sysadmin accounts used for daily tasks.
+- Now that we've covered security considerations around user privileges and group memberships, let’s review **best practices** for securing an **Active Directory** installation.
 ```powershell-session
 PS C:\htb> whoami /priv
 
@@ -235,11 +246,6 @@ SeChangeNotifyPrivilege       Bypass traverse checking       Enabled
 SeIncreaseWorkingSetPrivilege Increase a process working set Disabled
 ```
 
-- As attackers and defenders, we need to understand the rights that are granted to users via membership from built-in security groups in Active Directory.
-- It's not uncommon to find seemingly low privileged users added to one or more of these groups, which can be used to further access or compromise the domain. 
-- Access to these groups should be strictly controlled. It is typically best practice to leave most of these groups empty and only add an account to a group if a one-off action needs to be performed or a repetitive task needs to be set up. 
-- Any accounts added to one of the groups discussed in this section or granted extra privileges should be strictly controlled and monitored, assigned a very strong password or passphrase, and should be separate from an account used by a sysadmin to perform their day-to-day duties.
-- Now that we've begun to touch on some security considerations in AD related to user privileges and built-in group membership let's walk through some critical points for securing an Active Directory installation.
 
 
 ## Questions

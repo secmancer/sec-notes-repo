@@ -1,10 +1,14 @@
 ### Introduction
-- Group Policy is a Windows feature that provides administrators with a wide array of advanced settings that can apply to both user and computer accounts in a Windows environment. Every Windows host has a Local Group Policy editor to manage local settings. 
-- For our purposes, we will focus on Group Policy in a domain context for managing users and computers in Active Directory. Group Policy is a powerful tool for managing and configuring user settings, operating systems, and applications. Group Policy is also a potent tool for managing security in a domain environment. 
-- From a security context, leveraging Group Policy is one of the best ways to widely affect your enterprise's security posture. Active Directory is by no means secure "out of the box," and Group Policy, when used properly, is a crucial part of a defense-in-depth strategy.
-- While Group Policy is an excellent tool for managing the security of a domain, it can also be abused by attackers. Gaining rights over a Group Policy Object could lead to lateral movement, privilege escalation, and even full domain compromise if the attacker can leverage them in a way to take over a high-value user or computer. 
-- They can also be used as a way for an attacker to maintain persistence within a network. Understanding how Group Policy works will give us a leg up against attackers and can help us greatly on penetration tests, sometimes finding nuanced misconfigurations that other penetration testers may miss.
-
+- **Group Policy**:
+    - A powerful tool for administrators to configure and manage user and computer settings in a Windows environment.
+    - Each Windows host has a Local Group Policy editor, but in a domain, Group Policy is used to manage settings for users and computers within Active Directory.
+    - Crucial for managing security in a domain environment; helps with security posture and is part of a defense-in-depth strategy.
+- **Security Context**:
+    - When properly configured, Group Policy strengthens the security of a domain.
+    - Misconfigurations or abuse of Group Policy can lead to lateral movement, privilege escalation, or domain compromise.
+    - Attackers can use Group Policy for persistence or to take control of high-value users/computers in the domain.
+- **Penetration Testing**:
+    - Understanding Group Policy is valuable for identifying misconfigurations that may be overlooked by other testers and can be leveraged to strengthen defenses or exploit vulnerabilities.
 
 
 
