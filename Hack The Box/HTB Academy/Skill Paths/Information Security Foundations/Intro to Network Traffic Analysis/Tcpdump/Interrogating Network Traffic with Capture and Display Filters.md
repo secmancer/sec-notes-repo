@@ -1,13 +1,13 @@
-### Introduction
-- This lab aims to provide some exposure to interrogating network traffic and give everyone some valuable practice implementing packet filters. 
-- We will be utilizing filters like `host`, `port`, `protocol`, and more to change our view while digging through a .PCAP file.
-- Now that we have proven capable of capturing network traffic for the Corporation, management has tasked us with performing a quick analysis of the traffic our team has captured while surveying the network. 
-- The goal is to determine what servers are answering DNS and HTTP/S requests in our local network.
-- If you wish to take a more exploratory approach to this lab, I have posted the overall tasks to accomplish. 
-- For a more detailed walkthrough of how to complete each step, look below each task in the solution bubble.
+### Debrief
+- This lab focuses on interrogating network traffic and practicing packet filtering.
+- Filters like `host`, `port`, and `protocol` will be used to analyze a `.PCAP` file.
+- The task is to analyze captured traffic to identify servers answering **DNS** and **HTTP/S** requests on the local network.
+- Exploratory and guided approaches are available:
+    - Tasks are listed for independent exploration.
+    - Detailed walkthroughs are provided for step-by-step guidance.
 
 
-## Tasks
+### Tasks
 - Utilizing `TCPDump-lab-2.zip` in the optional resources, perform the lab to the best of your ability. Finding everything on the first shot is not the goal. Our understanding of the concepts is our primary concern. As we perform these actions repeatedly, it will get easier.
 - #### Task #1
 	- `Read a capture from a file without filters implemented.`
@@ -66,29 +66,31 @@ secmancer@htb[/htb]$ sudo tcpdump -r (file.pcap) udp and port 53
 	- Let's take a closer look. What can be determined about the webserver in the first conversation? Does anything stick out? For some clarity, make sure our view includes the Hex and ASCII output for the pcap.
 	- Can we determine what application is running the webserver?
 	- Often the webserver will include pertinent information in the post responses such as OS or web server name. You may also be able to determine what service is running the webserver based on these responses. This task is a bit difficult to perform utilizing tcpdump. It requires us to look at the ASCII of the HTTP responses. In future sections, when we move into Wireshark, this will be much easier to do.
-
-
-## Summary
-- Through this lab, we expanded our horizons while utilizing TCPDump to analyze PCAP traffic. 
-- We learned how to capture and display filters effectively, dissected traffic to determine what protocols were running in the environment, and even gleaned some critical information about our enterprise segments, DNS, and Webservers. 
-- Continue to play on your own and see how deep the rabbit hole goes. Can you capture traffic in your home network and answer the same questions?
+- #### Summary
+	- Through this lab, we expanded our horizons while utilizing TCPDump to analyze PCAP traffic. 
+	- We learned how to capture and display filters effectively, dissected traffic to determine what protocols were running in the environment, and even gleaned some critical information about our enterprise segments, DNS, and Webservers. 
+	- Continue to play on your own and see how deep the rabbit hole goes. Can you capture traffic in your home network and answer the same questions?
 
 
 
-## Tips For Analysis
-- Below is a list of questions we can ask ourselves during the analysis process to keep on track.
+### Tips For Analysis
+- We can use the following list of questions during the process to keep ourselves on track.
+	- What type of traffic do you see?
+		- Protocols, Ports, etc.
+	- Is there more than one conversation?
+		- How many?
+	- How many unique hosts?
+	- What is the timestamp of the first conversation in the pcap?
+		- Basically: the tcp traffic
+	- What traffic can I filter out to clean up my view?
+	- Who are the servers in the PCAP?
+		- Answering on well-known ports like 53, 80, etc.
+	- What records were requested or methods used?
+		- GET, POST, DNS A records, etc.
 
-|  |
-| --- |
-| what type of traffic do you see? (protocol, port, etc.) |
-| Is there more than one conversation? (how many?) |
-| How many unique hosts? |
-| What is the timestamp of the first conversation in the pcap (tcp traffic) |
-| What traffic can I filter out to clean up my view? |
-| Who are the servers in the PCAP? (answering on well-known ports, 53, 80, etc.) |
-| What records were requested or methods used? (GET, POST, DNS A records, etc.) |
 
-## Questions
+
+### Questions
 - What are the client and server port numbers used in first full TCP three-way handshake? (low number first then high number)
 	- 80 43806
 - Based on the traffic seen in the pcap file, who is the DNS server in this network segment? (ip address)

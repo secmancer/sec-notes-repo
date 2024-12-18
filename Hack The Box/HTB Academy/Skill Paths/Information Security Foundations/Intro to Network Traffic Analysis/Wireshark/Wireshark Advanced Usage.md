@@ -5,15 +5,19 @@
 
 ### The Statistics and Analyze Tabs
 - The Statistics and Analyze tabs can provide us with great insight into the data we are examining. From these points, we can utilize many of the baked-in plugins Wireshark has to offer.
-- The plugins here can give us detailed reports about the network traffic being utilized. It can show us everything from the top talkers in our environment to specific conversations and even breakdown by IP and protocol.
+- The plugins here can give us detailed reports about the network traffic being utilized.
+- It can show us everything from the top talkers in our environment to specific conversations and even breakdown by IP and protocol.
 - #### Statistics Tab
 ![image](https://academy.hackthebox.com/storage/modules/81/wireshark-statistics.png)
 - #### Analyze
-	- From the Analyze tab, we can utilize plugins that allow us to do things such as following TCP streams, filter on conversation types, prepare new packet filters and examine the expert info Wireshark generates about the traffic. Below are a few examples of how to use these plugins.
+	- From the Analyze tab, we can utilize plugins that allow us to do things such as following TCP streams, filter on conversation types, prepare new packet filters and examine the expert info Wireshark generates about the traffic.
+	- Below are a few examples of how to use these plugins.
 - #### Analyze Tab
 ![image](https://academy.hackthebox.com/storage/modules/81/analyze.png)
 - #### Following TCP Streams
-	- Wireshark can stitch TCP packets back together to recreate the entire stream in a readable format. This ability also allows us to pull data (`images, files, etc.`) out of the capture. This works for almost any protocol that utilizes TCP as a transport mechanism.
+	- Wireshark can stitch TCP packets back together to recreate the entire stream in a readable format. 
+	- This ability also allows us to pull data (`images, files, etc.`) out of the capture.
+	- This works for almost any protocol that utilizes TCP as a transport mechanism.
 	- To utilize this feature:
 		- right-click on a packet from the stream we wish to recreate.
 		- select follow → TCP
@@ -22,16 +26,23 @@
 ![image](https://academy.hackthebox.com/storage/modules/81/follow-tcp.gif)
 - Alternatively, we can utilize the filter `tcp.stream eq #` to find and track conversations captured in the pcap file.
 - #### Filter For A Specific TCP Stream
-	- Notice that the first three packets in the image above have a full TCP handshake. Following those packets, we can see the stream transferring data. We have cleared anything not related out of view by utilizing the filter, and we now can see the conversation in order.
+	- Notice that the first three packets in the image above have a full TCP handshake. Following those packets, we can see the stream transferring data.
+	- We have cleared anything not related out of view by utilizing the filter, and we now can see the conversation in order.
 ![image](https://academy.hackthebox.com/storage/modules/81/tcp-stream.gif)
 - #### Extracting Data and Files From a Capture
-	- Wireshark can recover many different types of data from streams. It requires you to have captured the entire conversation. Otherwise, this ability will fail to put an incomplete datagram back together. If we want a more in-depth understanding of how this capability works, check out the Networking 101 Module or research TCP/IP fragmentation.
+	- Wireshark can recover many different types of data from streams. It requires you to have captured the entire conversation. 
+	- Otherwise, this ability will fail to put an incomplete datagram back together. 
+	- If we want a more in-depth understanding of how this capability works, check out the Networking 101 Module or research TCP/IP fragmentation.
 	- To extract files from a stream:
 		- stop your capture.
 		- Select the File radial → Export → , then select the protocol format to extract from.
 		- (DICOM, HTTP, SMB, etc.)
 - #### Extract Files From The GUI
-	- Another exciting way to grab data out of the pcap file comes from FTP. The File Transfer Protocol moves data between a server and host to pull it out of the raw bytes and reconstruct the file. (image, text documents, etc.) FTP utilizes TCP as its transport protocol and uses ports `20 & 21` to function. TCP port 20 is used to transfer data between the server and host, while port 21 is used as the FTP control port. Any commands such as login, listing files, and issuing download or uploads happen over this port. To do so, we need to look at the different `FTP` display filters in Wireshark. A complete list of these can be found [here](https://www.wireshark.org/docs/dfref/f/ftp.html). For now, we will look at three:
+	- Another exciting way to grab data out of the pcap file comes from FTP.
+	- The File Transfer Protocol moves data between a server and host to pull it out of the raw bytes and reconstruct the file. (image, text documents, etc.) 
+	- FTP utilizes TCP as its transport protocol and uses ports `20 & 21` to function. TCP port 20 is used to transfer data between the server and host, while port 21 is used as the FTP control port. 
+	- Any commands such as login, listing files, and issuing download or uploads happen over this port.
+	- To do so, we need to look at the different `FTP` display filters in Wireshark. A complete list of these can be found [here](https://www.wireshark.org/docs/dfref/f/ftp.html). For now, we will look at three:
 		- `ftp` - Will display anything about the FTP protocol.
 		    - We can utilize this to get a feel for what hosts/servers are transferring data over FTP.
 ![image](https://academy.hackthebox.com/storage/modules/81/extract-http.gif)

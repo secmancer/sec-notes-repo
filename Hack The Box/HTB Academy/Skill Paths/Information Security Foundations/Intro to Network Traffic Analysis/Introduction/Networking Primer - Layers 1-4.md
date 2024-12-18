@@ -58,23 +58,34 @@
 
 
 ### IP Addressing
-- The Internet Protocol (`IP`) was developed to deliver data from one host to another across network boundaries. IP is responsible for routing packets, the encapsulation of data, and fragmentation and reassembly of datagrams when they reach the destination host. 
-- By nature, IP is a connectionless protocol that provides no assurances that data will reach its intended recipient. For the reliability and validation of data delivery, IP relies on upper-layer protocols such as TCP. 
-- Currently, there exist two main versions of IP. IPv4, which is the current dominant standard, and IPv6, which is intended to be the successor of IPv4.
-- #### IPv4
-	- The most common addressing mechanism most are familiar with is the Internet Protocol address version 4 (`IPv4`). IPv4 addressing is the core method of routing packets across networks to hosts located outside our immediate vicinity. The image below shows us an example of an IPv4 address by the `green` arrow.
-	- An IPv4 address is made up of a 32-bit `four octet` number represented in decimal format. In our example, we can see the address `192.168.86.243`. 
-	- Each octet of an IP address can be represented by a number ranging from `0` to `255`. When examining a PDU, we will find IP addresses in layer three (`Network`) of the OSI model and layer two (`internet`) of the TCP-IP model. 
-	- We will not deep dive into IPv4 here, but for the sake of this module, understand what these addresses are, what they do for us, and at which layer they are used.
+- Internet Protocol (IP) intends to get data from one host to another across network boundaries, responsible for routing packets, encapsulating the data, along with the fragmentation/reassembly of datagrams when reaching the destination host.
+- IP is a connectionless protocol with no assurance that any data will reach the intended destination.
+	- Therefore, for more reliability, IP needs to rely on something like TCP to get around this problem.
+- Two versions of IP: IPv4 (current, common standard) and IPv6 (intended successor).
+
+
+### IPv4
+	- Most common addressing mechanism.
+	- Example shown below by the green arrow.
+	- Made up of a 32-bit four octet number, represented in decimal format.
+	- Each octet is represented by a number from 0 to 255.
+- When looking at a PDU, we find addresses in both layer 3 (Network) and layer 2 (Internet) in the TCP-IP model.
 ![image](https://academy.hackthebox.com/storage/modules/81/Addressing.png)
-- #### IPv6
-	- After a little over a decade of utilizing IPv4, it was determined that we had quickly exhausted the pool of usable IP addresses. With such large chunks sectioned off for special use or private addressing, the world had quickly used up the available space. To help solve this issue, two things were done. 
-	- The first was implementing variable-length subnet masks (`VLSM`) and Classless Inter-Domain Routing (`CIDR`). This allowed us to redefine the useable IP addresses in the v4 format changing how addresses were assigned to users. The second was the creation and continued development of `IPv6` as a successor to IPv4.
-	- IPv6 provides us a much larger address space that can be utilized for any networked purpose. IPv6 is a 128-bit address `16 octets` represented in Hexadecimal format. We can see an example of a shortened IPv6 address in the image below by the blue arrow.
-	- Along with a much larger address space, IPv6 provides: Better support for Multicasting (sending traffic from one to many) Global addressing per device Security within the protocol in the form of IPSec Simplified Packet headers allow for easier processing and move from connection to connection without being re-assigned an address.
-	- IPv6 uses four main types of addresses within its schema:
+
+
+### IPv6
+- We have quickly starting to run out of IPv4 addresses. So, two things were done to solve this problem.
+	- Implement variable-length subnet masks (VLSM) and Classless Inter-Domain Routing (CIDR).
+		- Allows us to redefine usable addresses in how they are assigned to users.
+	- Creation and continued development of IPv6.
+- Much larger address space is provided.
+	- 128-bit address 16 octets in hexadecimal format.
+	- Shorten example shown with the blue arrow.
+- Better support for Multicasting, which allows for sending traffic from one to many.
+	- Overall allows for easier processing/moving from connection to connection
+	- No reassigning required.
 ![image](https://academy.hackthebox.com/storage/modules/81/Addressing.png)
-- #### IPv6 Addressing Types
+- Below is a table with several IPv6 types of addresses is given below.
 
 | **Type**    | **Description**                                                                |
 | ----------- | ------------------------------------------------------------------------------ |
@@ -83,23 +94,20 @@
 | `Multicast` | Addresses for multiple interfaces, where all of them receive the same packet.  |
 | `Broadcast` | Does not exist and is realized with multicast addresses.                       |
 
-- When thinking about each address type, it is helpful to remember that Unicast traffic is host to host, while Multicast is one to many, and Anycast is one to many in a group where only one will answer the packet. (think load balancing).
-- Even with its current state providing many advantages over IPv4, the adoption of IPv6 has been slow to catch on.
+- Remember: Unicast traffic is host to host while Multicast is one to many, and Anycast is one to many in a group of only one that can answer the packet.
+- Even with its advantages over IPv4, the adoption of IPv6 has been slow to catch on.
 - #### Adoption of IPv6
-
+	- At the time of writing, according to statistics published by Google, the adoption rate is only around 40 percent globally.
 ![image](https://academy.hackthebox.com/storage/modules/81/ipv6-adoption.png)
 
-- At the time of writing, according to statistics published by Google, the adoption rate is only around 40 percent globally.
 
 
-
-### TCP / UDP, Transport Mechanisms
-- The Transport Layer has several mechanisms to help ensure the seamless delivery of data from source to destination. 
-- Think about the Transport layer as a control hub. Application data from the higher layers have to traverse down the stack to the Transport layer. 
-- This layer directs how the traffic will be encapsulated and thrown to the lower layer protocols ( IP and MAC ). Once the data reaches its intended recipient, the Transport layer, working with the Network / Internet layer protocols, is responsible for reassembling the encapsulated data back in the correct order. 
-- The two mechanisms used to accomplish this task are the Transmission Control (`TCP`) and the User Datagram Protocol (`UDP`).
-	- #### TCP vs. UDP
-	- Let us take a second to examine these two protocols side by side.
+###  Transport Mechanisms: TCP and UDP
+- Transport layer has several ways to ensure seamless delivery of data from source to destination.
+	- Application data from higher layers traverse down the stack to the Transport layer.
+- This layer directs the way traffic is encapsulated and thrown into the lower layer protocols, like IP and MAC.
+- Once reaching its destination, the Transport layers reassembles the encapsulated data back into the correct order with help from the Network/Internet layer protocols.
+- To accomplish this, we have two protocols: Transmission Control (`TCP`) and User Datagram Protocol (`UDP`).
 
 | **Characteristic** | **TCP** | **UDP** |
 | --- | --- | --- |
@@ -108,44 +116,55 @@
 | `Data Delivery` | Stream-based conversations | packet by packet, the source does not care if the destination is active |
 | `Receipt of data` | Sequence and Acknowledgement numbers are utilized to account for data. | UDP does not care. |
 | `Speed` | TCP has more overhead and is slower because of its built-in functions. | UDP is fast but unreliable. |
-- **TCP vs. UDP**:
-    - **TCP**: Reliable protocol with error checking and data acknowledgment; ensures completeness over speed.
-    - **UDP**: Faster, "fire-and-forget" protocol, prioritizing speed over reliability.
-- **TCP Characteristics**:
-    - Used for applications requiring reliable data transfer, e.g., SSH.
-    - Ensures data integrity by acknowledging packets and preventing partial fragments from being processed.
-    - Example: Prevents errors in critical commands like `sudo passwd user`.
-- **UDP Characteristics**:
-    - Suited for speed-critical applications like video streaming or DNS queries.
-    - Dropped packets do not cause major issues (e.g., minor video glitches or reissued DNS requests).
-    - No acknowledgment or response, making it lightweight but less reliable.
-- **Connection Behavior**: TCP traffic involves connection establishment, whereas UDP traffic consists of single packets without acknowledgment.
-- #### TCP Three-way Handshake
-	- **TCP Session Establishment**:
-	    - Uses a **three-way handshake** to ensure reliable communication between client and server.
-	    - Relies on **SYN** (synchronization) and **ACK** (acknowledgment) flags in the TCP header.
-	- **Three-Way Handshake Process**:
-	    1. **Client Sends SYN**:
-	        - Initiates connection with a synchronization packet containing negotiable options like sequence number, window size, and maximum segment size.
-	    2. **Server Responds with SYN-ACK**:
-	        - Acknowledges the client's SYN packet and includes its own sequence number and any required TCP option changes.
-	    3. **Client Sends ACK**:
-	        - Acknowledges the server's response, completing the handshake and establishing the session.
+
+### TCP vs. UDP
+- #### TCP
+	- Reliable protocol that ensures all packets get to where they need to go
+	- Great for applications that need reliable data transfer
+	- Connection establishment
+- #### UDP
+	- Protocol that is fine with some dropped packets along the way
+	- Great for applications that need fast data transfer
+	- Single packets
+
+
+
+### TCP 3-Way Handshake
+- This is used by TCP to ensure reliable communication between the client and server, using **SYN** (synchronization) and **ACK** (acknowledgment) flags to do so.
+- #### Process
+	1. Client Sends SYN
+		- Initiate connection with a synchronization packet with negotiable options:
+			- Sequence number, window size, maximum segment size
+	 2. Server Responds with SYN-ACK
+		- Acknowledge the SYN packet sent from the client
+		- Include its own sequence number and any required TCP option changes
+	3. Client Sends ACK
+		- Acknowledge the server's response
+		- This completes the handshake, hence completes the connection.
+- #### Example
 	- **Practical Relevance**: Understanding this process helps recognize handshake patterns in packet captures later in the module.
-- When examining this output, we can see the start of our handshake on line one. Looking at the information highlighted in the `red box`, we can see our initial Syn flag is set. If we look at the port numbers underlined in `green`, we can see two numbers, `57678` and `80`. 
-- The first number is the random high port number in use by the client, and the second is the well-known port for HTTP used by the server to listen for incoming web request connections. In line 2, we can see the server's response to the client with an `SYN / ACK` packet sent to the same ports. On line 3, we can see the client acknowledge the server's synchronization packet to establish the connection.
-- Packet 4 shows us that the HTTP request was sent, and a session is established to stream the data for the image requested. We can see as the stream continues that TCP sends acknowledgments for each chunk of data sent. This is an example of typical TCP communication.
-- We have seen how a session is established with TCP; now, let us examine how a session is concluded.
-
+	- When examining this output, we can see the start of our handshake on line one. 
+	- Looking at the information highlighted in the `red box`, we can see our initial Syn flag is set. If we look at the port numbers underlined in `green`, we can see two numbers, `57678` and `80`. 
+	- The first number is the random high port number in use by the client, and the second is the well-known port for HTTP used by the server to listen for incoming web request connections. 
+	- In line 2, we can see the server's response to the client with an `SYN / ACK` packet sent to the same ports. 
+	- On line 3, we can see the client acknowledge the server's synchronization packet to establish the connection.
+	- Packet 4 shows us that the HTTP request was sent, and a session is established to stream the data for the image requested. We can see as the stream continues that TCP sends acknowledgments for each chunk of data sent. This is an example of typical TCP communication.
+	- We have seen how a session is established with TCP; now, let us examine how a session is concluded.
 ![image](https://academy.hackthebox.com/storage/modules/81/three-way-handshake.png)
-- #### TCP Session Teardown
-![image](https://academy.hackthebox.com/storage/modules/81/session-teardown.png)
 
-- In the image above, a set of packets similar to our three-way handshake visible at the end of the output. This is how TCP gracefully shuts connections. Another flag we will see with TCP is the `FIN` flag. It is used for signaling that the data transfer is finished and the sender is requesting termination of the connection. The client acknowledges the receipt of the data and then sends a `FIN` and `ACK` to begin session termination. The server responds with an acknowledgment of the FIN and sends back its own FIN. Finally, the client acknowledges the session is complete and closes the connection. Before session termination, we should see a packet pattern of:
+
+### TCP Session Teardown
+![image](https://academy.hackthebox.com/storage/modules/81/session-teardown.png)
+- In the image above, a set of packets similar to our three-way handshake visible at the end of the output. 
+- This is how TCP gracefully shuts connections. Another flag we will see with TCP is the `FIN` flag. It is used for signaling that the data transfer is finished and the sender is requesting termination of the connection. 
+- The client acknowledges the receipt of the data and then sends a `FIN` and `ACK` to begin session termination. 
+- The server responds with an acknowledgment of the FIN and sends back its own FIN. 
+- Finally, the client acknowledges the session is complete and closes the connection. Before session termination, we should see a packet pattern of:
 	1. `FIN, ACK`
 	2. `FIN, ACK`,
 	3. `ACK`
 - If we look at the image above detailing a session, we will see that this is the case. An output similar to this is considered an adequately terminated connection.
+
 
 
 ### Questions

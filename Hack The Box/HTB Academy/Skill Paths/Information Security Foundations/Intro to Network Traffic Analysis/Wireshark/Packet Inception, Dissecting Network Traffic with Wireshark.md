@@ -1,8 +1,11 @@
 ### Debrief
-- The purpose of this lab is to provide experience with dissecting traffic in Wireshark. We will have the chance to pull objects out of previously captured network traffic along with pulling data from live traffic.
-- We have been provided with a packet capture file that contains data from an unencrypted web session. There is an image embedded that needs to be used as evidence of improper network usage. 
+- The purpose of this lab is to provide experience with dissecting traffic in Wireshark. 
+- We will have the chance to pull objects out of previously captured network traffic along with pulling data from live traffic.
+- We have been provided with a packet capture file that contains data from an unencrypted web session. 
+- There is an image embedded that needs to be used as evidence of improper network usage. 
 - The Security manager thinks the user is sending messages hidden behind the image. Using Wireshark, apply filters to locate and extract the evidence.
-- If you wish to take a more exploratory approach to this lab, I have posted the overall tasks to accomplish. For a more detailed walkthrough of how to complete each step, look below each task in the solution bubble.
+- If you wish to take a more exploratory approach to this lab, I have posted the overall tasks to accomplish. 
+- For a more detailed walkthrough of how to complete each step, look below each task in the solution bubble.
 
 
 ### Tasks
@@ -12,17 +15,29 @@
 	- In Wireshark, Select File → Open → , then browse to Wireshark-lab-2.pcap. Open the file.
 - #### Task #2
 	- `Filter the results.`
-	- Now that we have the pcap file open in Wireshark, we can see quite a lot of traffic within this capture file. It has around 1171 packets total, and of those, less than 20 are HTTP packets specifically. Take a minute to examine the pcap file, become familiar with the conversations being had while thinking of the task to accomplish. Our goal is to extract potential images embedded for evidence. Based on what has been asked of us, let's clear our view by filtering for HTTP traffic only.
+	- Now that we have the pcap file open in Wireshark, we can see quite a lot of traffic within this capture file.
+	- It has around 1171 packets total, and of those, less than 20 are HTTP packets specifically. 
+	- Take a minute to examine the pcap file, become familiar with the conversations being had while thinking of the task to accomplish. 
+	- Our goal is to extract potential images embedded for evidence. 
+	- Based on what has been asked of us, let's clear our view by filtering for HTTP traffic only.
 	- Apply a filter to include only HTTP (80/TCP) requests.
 	- `Step one`: Click inside the Display Filter toolbar at the top of your screen and type `HTTP`. If correct, the bar will light up green.
-	- Please note how this removes any additional TCP or IP datagrams from the window and allows us to focus on communication solely with HTTP. From here, we can see several basic HTTP datagrams containing the GET method and 200 OK responses. These are interesting because we can now see that a client requested several files, and the server responded with an OK. If we select one of the OK responses, we can follow that stream and see the data transfer over TCP. Let's give this a shot.
+	- Please note how this removes any additional TCP or IP datagrams from the window and allows us to focus on communication solely with HTTP. 
+	- From here, we can see several basic HTTP datagrams containing the GET method and 200 OK responses. 
+	- These are interesting because we can now see that a client requested several files, and the server responded with an OK. 
+	- If we select one of the OK responses, we can follow that stream and see the data transfer over TCP. Let's give this a shot.
 - #### Task #3
 	- `Follow the stream and extract the item(s) found.`
-	- So now that we have established there is HTTP traffic in this capture file, let's try to grab some of the items inside as requested. The first thing we need to do is follow the stream for one of the file transfers. With our `http` filter still applied, look for one of the lines in which the Web Server responds with a “200 OK” message which acts as an acknowledgment/receipt to a users’ GET request. Now let's select that packet and follow the TCP stream.
+	- So now that we have established there is HTTP traffic in this capture file, let's try to grab some of the items inside as requested.
+	- The first thing we need to do is follow the stream for one of the file transfers. 
+	- With our `http` filter still applied, look for one of the lines in which the Web Server responds with a “200 OK” message which acts as an acknowledgment/receipt to a users’ GET request. Now let's select that packet and follow the TCP stream.
 	- `Step one`: Select a packet with 200 OK in the info field. Right-click the packet.
 	- `Step two`: From the menu presented, select Follow → TCP Stream. This will open up a new window with the entire TCP stream in it. It will also apply the display filter `tcp.stream eq #`.
 	- `Step three`: Take a second to look at the data to ensure the file appears to be transferred.
-	- Now that we validated the transfer happened, Wireshark can make it extremely easy to extract files from HTTP traffic. We can check to see if an image file was pulled down by looking for the `JFIF` format in the packets. The JPEG File Interchange Format `JFIF` will alert us to the presence of any JPEG image files. We are looking for this format because it is the most common file type for images alongside the png format. With that in mind, we will likely see an image in this format for our investigation.
+	- Now that we validated the transfer happened, Wireshark can make it extremely easy to extract files from HTTP traffic. 
+	- We can check to see if an image file was pulled down by looking for the `JFIF` format in the packets. 
+	- The JPEG File Interchange Format `JFIF` will alert us to the presence of any JPEG image files. 
+	- We are looking for this format because it is the most common file type for images alongside the png format. With that in mind, we will likely see an image in this format for our investigation.
 	- Check for the presence of JFIF files in the HTTP traffic.
 	- Clear the display filter previously being used and apply `http && image-jfif` as a display filter. Apply the filter “http && image-jfif” to include only HTTP (80/TCP) packets along with a filter to include only JPEG Files should pare down our results to just a few packets. `3` or so.
 	- Now that we are sure image files were transferred between the suspicious host and the server let's grab them out of the capture. To do this, we need to export the objects out of the HTTP traffic.
@@ -32,7 +47,7 @@
 
 
 
-## Live Capture and Analysis
+### Live Capture and Analysis
 - In the scenario above, we practiced filtering on a pre-captured file. Now it's time to do some live packet captures. 
 - We will connect to the academy lab and sniff traffic live from a host in the network to complete this portion.
 - After we analyzed the pcap traffic, the Security Manager has come back and confirmed the user was smuggling data out of the network via the images. 
@@ -82,7 +97,7 @@ xfreerdp /v:<target IP> /u:htb-student /p:HTB_@cademy_stdnt!
 		- Select “File > Export Objects > HTTP > `file.JPG`
 
 
-## Summary
+### Summary
 - By the end of this lab, we should be able to open previously captured .pcap files, apply display filters, follow streams, and extract items from the capture file. 
 - Experiment with ways to capture new traffic and applying filters to find specific traffic. To check our understanding, answer the questions below with the traffic you capture on your own.
 - Check your understanding:
@@ -92,7 +107,7 @@ xfreerdp /v:<target IP> /u:htb-student /p:HTB_@cademy_stdnt!
 	• What filter would you use if you wanted to only see TCP traffic from the client?
 
 
-## Questions
+### Questions
 - What was the filename of the image that contained a certain Transformer Leader? (name.filetype)
 	- Rise-Up.jpg
 - Which employee is suspected of performing potentially malicious actions in the live environment?

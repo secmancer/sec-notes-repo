@@ -8,7 +8,7 @@
 - Attempt to utilize the concepts from the Analysis Process sections to complete an analysis of the RDP-analysis.zip provided.
 
 
-## Tasks
+### Tasks
 - #### Task #1
 	- `Open the rdp.pcapng file in Wireshark.`
 	- Unzip the zip file included in the optional resources and open it in Wireshark.
@@ -54,7 +54,7 @@
 
 
 
-## Perform Analysis of the Unencrypted Traffic
+### Perform Analysis of the Unencrypted Traffic
 - Now that we have broken RDP out of the TLS tunnel, what can we find? Perform the analysis steps and attempt to answer the questions below.
 - #### Questions:
 	- What host initiated the RDP session with our server?
@@ -66,12 +66,12 @@
 
 
 
-## Summary
+### Summary
 - This lab was to serve as an example of what Wireshark can do with captured data and its plugins. 
 - Wireshark's capability to ingest information and illuminate the obscure is robust. Having the ability to decrypt data after ingestion is a powerful capability. 
 - This concept could be applied to any protocol that utilizes encryption as long as we have the key that will be utilized to establish the connections.
 
 
-## Questions
+### Questions
 - What user account was used to initiate the RDP connection?
 	- bucky

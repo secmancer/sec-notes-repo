@@ -4,14 +4,15 @@
 
 
 ### Filtering and Advanced Syntax Options
-- Utilizing more advanced filtering options like those listed below will enable us to trim down what traffic is printed to output or sent to file.
-- By reducing the amount of info we capture and write to disk, we can help reduce the space needed to write the file and help the buffer process data quicker. 
-- Filters can be handy when paired with standard tcpdump syntax options. We can capture as widely as we wish, or be super specific only to capture packets from a particular host, or even with a particular bit in the TCP header set to on.
-- It is highly recommended to explore the more advanced filters and find different combinations.
-- These filters and advanced operators are by no means an exhaustive list. They were chosen because they are the most frequently used and will get us up and running quickly. 
-- When implemented, these filters will inspect any packets captured and look for the given values in the protocol header to match.
+- Advanced filters allow for more specific traffic output or file captures, reducing disk space usage and improving buffer processing.
+- Filters can capture traffic broadly or target specifics, such as a particular host or TCP header bit.
+- Exploring advanced filters and combinations is highly recommended for efficiency.
+- The provided filters are not exhaustive but are commonly used to get started quickly.
+- Filters inspect captured packets for protocol header values that match specified criteria.
 - #### Helpful TCPDump Filters
-	- With these filters, we can filter the network traffic on most properties to facilitate the analysis. Let us look at some examples of these filters and how they look when we use them. When using the `host` filter, whatever IP we input will be checked for in the source or destination IP field. This can be seen in the output below.
+	- With these filters, we can filter the network traffic on most properties to facilitate the analysis. 
+	- Let us look at some examples of these filters and how they look when we use them.
+	- When using the `host` filter, whatever IP we input will be checked for in the source or destination IP field.
 
 | **Filter** | **Result** |
 | --- | --- |
@@ -27,7 +28,10 @@
 | not | `not` is a modifier saying anything but x. For example, not UDP. |
 
 - #### Host Filter
-	- This filter is often used when we want to examine only a specific host or server. With this, we can identify with whom this host or server communicates and in which way. Based on our network configurations, we will understand if this connection is legitimate. If the communication seems strange, we can use other filters and options to view the content in more detail. Besides the individual hosts, we can also define the source host as well as the target host. We can also define entire networks and their ports.
+	- This filter is often used when we want to examine only a specific host or server. With this, we can identify with whom this host or server communicates and in which way. 
+	- Based on our network configurations, we will understand if this connection is legitimate. 
+	- If the communication seems strange, we can use other filters and options to view the content in more detail. 
+	- Besides the individual hosts, we can also define the source host as well as the target host. We can also define entire networks and their ports.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: host [IP]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 host 172.16.146.2
@@ -41,7 +45,9 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 14:50:53.175714 IP 172.16.146.1.domain > 172.16.146.2.35744: 55991 1/0/0 PTR ec2-52-31-199-148.eu-west-1.compute.amazonaws.com. (107) 
 ```
 - #### Source/Destination Filter
-	- Source and destination allow us to work with the directions of communication. For example, in the last output, we have specified that our `source` host is `172.16.146.2`, and only packets sent from this host will be intercepted. This can be done for ports, and network ranges as well. An example of this utilizing `src port #` is shown below.
+	- Source and destination allow us to work with the directions of communication. 
+	- For example, in the last output, we have specified that our `source` host is `172.16.146.2`, and only packets sent from this host will be intercepted. 
+	- This can be done for ports, and network ranges as well. An example of this utilizing `src port #` is shown below.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: src/dst [host|net|port] [IP|Network Range|Port]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 src host 172.16.146.2
@@ -60,7 +66,10 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 14:53:36.370791 IP 172.16.146.2.32972 > 172.16.146.1.domain: 3856+ PTR? 1.146.16.172.in-addr.arpa. (43)
 ```
 - #### Utilizing Source With Port as a Filter
-	- Notice now that we only see one side of the conversation? This is because we are filtering on the source port of 80 (HTTP). Used in this manner, `net` will grab anything matching the `/` notation for a network. In the example, we are looking for anything destined for the `172.16.146.0/24` network.
+	- Notice now that we only see one side of the conversation? 
+	- This is because we are filtering on the source port of 80 (HTTP). 
+	- Used in this manner, `net` will grab anything matching the `/` notation for a network. 
+	- In the example, we are looking for anything destined for the `172.16.146.0/24` network.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 tcp src port 80
 
@@ -73,9 +82,12 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 tcp src port 80
 06:17:09.945011 IP 65.208.228.223.http > dialin-145-254-160-237.pools.arcor-ip.net.3372: Flags [.], seq 5521:6901, ack 480, win 6432, length 1380: HTTP
 ```
 - #### Using Destination in Combination with the Net Filter
-	- This filter can utilize the common protocol name or protocol number for any IP, IPv6, or Ethernet protocol. Common examples would be `tcp[6], udp[17], or icmp[1]`. We can utilize both the common name `top` and the protocol number `bottom` in the outputs above. 
+	- This filter can utilize the common protocol name or protocol number for any IP, IPv6, or Ethernet protocol. 
+	- Common examples would be `tcp[6], udp[17], or icmp[1]`. 
+	- We can utilize both the common name `top` and the protocol number `bottom` in the outputs above. 
 	- We can see it produced the same output. For the most part, these are interchangeable, but utilizing `proto` will become more useful when you are starting to dissect a specific part of the IP or other protocol headers. 
-	- It will be more apparent later in this section when we talk about looking for TCP flags. We can take a look at this [resource](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) for a helpful list covering protocol numbers.
+	- It will be more apparent later in this section when we talk about looking for TCP flags.
+	- We can take a look at this [resource](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) for a helpful list covering protocol numbers.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 dest net 172.16.146.0/24
 
@@ -101,8 +113,13 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 udp
 06:17:10.225414 IP 145.253.2.203.domain > dialin-145-254-160-237.pools.arcor-ip.net.3009: 35 4/0/0 CNAME pagead2.google.com., CNAME pagead.google.akadns.net., A 216.239.59.104, A 216.239.59.99 (146)
 ```
 - #### Protocol Number Filter
-	- Using the `port` filter, we should keep in mind what we are looking for and how that protocol functions. Some standard protocols like HTTP or HTTPS only use ports 80 and 443 with the transport protocol of TCP. With that in mind, picture ports as a simple way to establish connections and protocols like TCP and UDP to determine if they use an established method. Ports by themselves can be used for anything, so filtering on port 80 will show all traffic over that port number. However, if we are looking to capture all HTTP traffic, utilizing `tcp port 80` will ensure we only see HTTP traffic.
-	- With protocols that use both TCP and UDP for different functions, such as DNS, we can filter looking at one or the other `TCP/UDP port 53` or filter for `port 53`. By doing this, we will see any traffic-utilizing that port, regardless of the transport protocol.
+	- Using the `port` filter, we should keep in mind what we are looking for and how that protocol functions.
+	- Some standard protocols like HTTP or HTTPS only use ports 80 and 443 with the transport protocol of TCP.
+	- With that in mind, picture ports as a simple way to establish connections and protocols like TCP and UDP to determine if they use an established method. 
+	- Ports by themselves can be used for anything, so filtering on port 80 will show all traffic over that port number. 
+	- However, if we are looking to capture all HTTP traffic, utilizing `tcp port 80` will ensure we only see HTTP traffic.
+	- With protocols that use both TCP and UDP for different functions, such as DNS, we can filter looking at one or the other `TCP/UDP port 53` or filter for `port 53`.
+	- By doing this, we will see any traffic-utilizing that port, regardless of the transport protocol.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: proto [protocol number]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 proto 17
@@ -111,8 +128,10 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 proto 17
 06:17:10.225414 IP 145.253.2.203.domain > dialin-145-254-160-237.pools.arcor-ip.net.3009: 35 4/0/0 CNAME pagead2.google.com., CNAME pagead.google.akadns.net., A 216.239.59.104, A 216.239.59.99 (146)
 ```
 - #### Port Filter
-	- Apart from the individual ports, we can also define specific ranges of these ports, which are then listened to by TCPdump. Listening on a range of ports can be especially useful when we see network traffic from ports that do not match the services running on our servers. For example, if we have a web server with TCP ports 80 and 443 running in a particular segment of our network and suddenly have outgoing network traffic from TCP port 10000 or others, it is very suspicious.
-	- The `portrange` filter, as seen below, allows us to see everything from within the port range. In the example, we see some DNS traffic along with some HTTP web requests.
+	- Apart from the individual ports, we can also define specific ranges of these ports, which are then listened to by TCPdump. 
+	- Listening on a range of ports can be especially useful when we see network traffic from ports that do not match the services running on our servers. 
+	- For example, if we have a web server with TCP ports 80 and 443 running in a particular segment of our network and suddenly have outgoing network traffic from TCP port 10000 or others, it is very suspicious.
+	- The `portrange` filter, as seen below, allows us to see everything from within the port range.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: port [port number]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 tcp port 443
@@ -135,8 +154,12 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 tcp port 443
 06:17:10.295515 IP dialin-145-254-160-237.pools.arcor-ip.net.3371 > 216.239.59.99.http: Flags [P.], seq 918691368:918692089, ack 778785668, win 8760, length 721: HTTP: GET /pagead/ads?client=ca-pub-2309191948673629&random=1084443430285&lmt=1082467020&format=468x60_as&output=html&url=http%3A%2F%2Fwww.ethereal.com%2Fdownload.html&color_bg=FFFFFF&color_text=333333&color_link=000000&color_url=666633&color_border=666633 HTTP/1.1
 ```
 - #### Port Range Filter
-	- Next, we are looking for any packet less than 64 bytes. From the following output, we can see that for this capture, those packets mainly consisted of `SYN`, `FIN`, or `KeepAlive` packets. Less than and greater than can be a helpful modifier set. 
-	- For example, let us say we are looking to capture traffic that includes a file transfer or set of files. We know these files will be larger than regular traffic. To demonstrate, we can utilize `greater 500` (alternatively `'>500'`), which will only show us packets with a size larger than 500 bytes. 
+	- Next, we are looking for any packet less than 64 bytes.
+	- From the following output, we can see that for this capture, those packets mainly consisted of `SYN`, `FIN`, or `KeepAlive` packets. 
+	- Less than and greater than can be a helpful modifier set. 
+	- For example, let us say we are looking to capture traffic that includes a file transfer or set of files. 
+	- We know these files will be larger than regular traffic. 
+	- To demonstrate, we can utilize `greater 500` (alternatively `'>500'`), which will only show us packets with a size larger than 500 bytes. 
 	- This will strip out all the extra packets from the view we know we are not concerned with already.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: portrange [portrange 0-65535]
@@ -156,7 +179,9 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 13:10:35.208007 IP atl26s18-in-f3.1e100.net.http > 172.16.146.2.55074: Flags [.], ack 379, win 261, options [nop,nop,TS val 1000152462 ecr 1337520305], length 0
 ```
 - #### Less/Greater Filter
-	- Above was an excellent example of using `less`. We can utilize the modifier `greater 500` to only show me packets with 500 or more bytes. It came back with a unique response in the ASCII. Can we tell what happened here?
+	- Above was an excellent example of using `less`. 
+	- We can utilize the modifier `greater 500` to only show me packets with 500 or more bytes. 
+	- It came back with a unique response in the ASCII. Can we tell what happened here?
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: less/greater [size in bytes]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 less 64
@@ -185,7 +210,8 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 less 64
 06:17:37.704928 IP 65.208.228.223.http > dialin-145-254-160-237.pools.arcor-ip.net.3372: Flags [.], ack 481, win 6432, length 0
 ```
 - #### Utilizing Greater
-	- `AND` as a modifier will show us anything that meets both requirements set. For example, `host 10.12.1.122 and tcp port 80` will look for anything from the source host and contain port 80 TCP or UDP traffic.
+	- `AND` as a modifier will show us anything that meets both requirements set. 
+	- For example, `host 10.12.1.122 and tcp port 80` will look for anything from the source host and contain port 80 TCP or UDP traffic.
 	- Both criteria have to be met for the filter to capture the packet. We can see this in action above. Here we utilize `host 192.168.0.1 and port 23` as a filter. 
 	- So we will see only traffic that is from this particular host that is only port 23 traffic.
 ```shell-session
@@ -205,7 +231,9 @@ enough information to reproduce the problem is enclosed, and if a
 known fix for it exists, include that as well.
 ```
 - #### AND Filter
-	- The other modifiers, `OR` and `NOT` provide us with a way to specify multiple conditions or negate something. Let us play with that a bit now. What do we notice about this output?
+	- The other modifiers, `OR` and `NOT` provide us with a way to specify multiple conditions or negate something. 
+	- Let us play with that a bit now. 
+	- What do we notice about this output?
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: and [requirement]
 secmancer@htb[/htb]$ sudo tcpdump -i eth0 host 192.168.0.1 and port 23
@@ -217,7 +245,9 @@ secmancer@htb[/htb]$ sudo tcpdump -i eth0 host 192.168.0.1 and port 23
 21:12:38.537538 IP 192.168.0.1.telnet > 192.168.0.2.1550: Flags [P.], seq 1:4, ack 28, win 17349, options [nop,nop,TS val 2467372 ecr 10233636], length 3 [telnet DO AUTHENTICATION]
 ```
 - #### Basic Capture With No Filter
-	- We have a mix of different sources and destinations along with multiple protocol types. If we were to use the `OR` (alternatively `||`) modifier, we could ask for traffic from a specific host or just ICMP traffic as an example. Let us rerun it and add in an `OR`.
+	- We have a mix of different sources and destinations along with multiple protocol types. 
+	- If we were to use the `OR` (alternatively `||`) modifier, we could ask for traffic from a specific host or just ICMP traffic as an example.
+	- Let us rerun it and add in an `OR`.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -i eth0
 
@@ -241,7 +271,11 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 14:39:52.712283 IP 151.139.128.14.http > 172.16.146.2.47004: Flags [.], ack 1, win 507, options [nop,nop,TS val 2103326900 ecr 1585692473], length 0
 ```
 - #### OR Filter
-	- Our traffic looks a bit different now. That is because a lot of the packets matched the ICMP variable while some matched the host variable. So in this output, we can see some ARP traffic and ICMP traffic. The filter worked since 172.16.146.2 matched the other variable and appeared as a host in either the source or destination field. Now, what happens if we utilize the `NOT` (alternatively `!`) modifier.
+	- Our traffic looks a bit different now. 
+	- That is because a lot of the packets matched the ICMP variable while some matched the host variable. 
+	- So in this output, we can see some ARP traffic and ICMP traffic. 
+	- The filter worked since 172.16.146.2 matched the other variable and appeared as a host in either the source or destination field. 
+	- Now, what happens if we utilize the `NOT` (alternatively `!`) modifier.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: or/|| [requirement]
 secmancer@htb[/htb]$ sudo tcpdump -r sus.pcap icmp or host 172.16.146.1
@@ -267,7 +301,9 @@ reading from file sus.pcap, link-type EN10MB (Ethernet), snapshot length 262144
 14:54:10.697834 IP dns.google > 172.16.146.2: ICMP echo reply, id 51661, seq 28, length 64
 ```
 - #### NOT Filter
-	- It looks much different now. We only see some ARP traffic, and then we see some HTTPS traffic we did not get to before. This is because we negated any ICMP traffic from being displayed using `not icmp`.
+	- It looks much different now. 
+	- We only see some ARP traffic, and then we see some HTTPS traffic we did not get to before. 
+	- This is because we negated any ICMP traffic from being displayed using `not icmp`.
 ```shell-session
 secmancer@htb[/htb]$ ### Syntax: not/! [requirement]
 secmancer@htb[/htb]$ sudo tcpdump -r sus.pcap not icmp
@@ -289,7 +325,8 @@ secmancer@htb[/htb]$ sudo tcpdump -r sus.pcap not icmp
 ```
 
 
-## Pre-Capture Filters VS. Post-Capture Processing
+
+### Pre-Capture Filters VS. Post-Capture Processing
 - **Using Filters in Tcpdump**:
     - Filters can be applied either during the capture process or when analyzing a saved capture file.
     - **Applying Filters During Capture**:
@@ -301,11 +338,14 @@ secmancer@htb[/htb]$ sudo tcpdump -r sus.pcap not icmp
         - This method retains all data in the original capture file, preserving valuable information for further analysis.
         - Changing or clearing a filter requires re-running the `tcpdump` command with updated syntax.
 
-## Interpreting Tips and Tricks
+
+
+### Interpreting Tips and Tricks
 - **Using the `-S` Switch**:
     - The `-S` switch enables the display of absolute sequence numbers in packets. These numbers are very large and can be difficult to read.
     - By default, `tcpdump` shows relative sequence numbers, which are easier to follow for most users.
-    - Absolute sequence numbers, however, are useful when cross-referencing with other tools or logs, as they match the exact values logged elsewhere. For instance, instead of `100`, you might see `13245768092588`.
+    - Absolute sequence numbers, however, are useful when cross-referencing with other tools or logs, as they match the exact values logged elsewhere. 
+    - For instance, instead of `100`, you might see `13245768092588`.
 - **Increasing Captured Data**:
     - The `-v`, `-X`, and `-e` switches can provide more detailed packet information:
         - `-v`: Adds verbosity, displaying extra information.
@@ -355,8 +395,10 @@ E..4FQ@.@.s...................e...}x.0.....
 - #### Piping a Capture to Grep
 	- Using `-l` in this way allowed us to examine the capture quickly and grep for keywords or formatting we suspected could be there. 
 	- In this case, we used the `-l` to pass the output to `grep` and looking for any instance of the phrase `mailto:*`. 
-	- This shows us every line with our search in it, and we can see the results above. Using modifiers and redirecting output can be a quick way to scrape websites for email addresses, naming standards, and much more.
-	- We can dig as deep as we wish into the packets we captured. It requires a bit of knowledge of how the protocols are structured, however. For example, if we wanted to see only packets with the TCP SYN flag set, we could use the following command:
+	- This shows us every line with our search in it, and we can see the results above. 
+	- Using modifiers and redirecting output can be a quick way to scrape websites for email addresses, naming standards, and much more.
+	- We can dig as deep as we wish into the packets we captured. It requires a bit of knowledge of how the protocols are structured, however. 
+	- For example, if we wanted to see only packets with the TCP SYN flag set, we could use some commands, which are shown below.
 ```shell-session
 secmancer@htb[/htb]$ sudo tcpdump -Ar http.cap -l | grep 'mailto:*'
 
@@ -403,7 +445,8 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 | [UDP Protocol](https://tools.ietf.org/html/rfc768) | `RFC 768` describes UDP and how it operates. |
 | [RFC Quick Links](https://en.wikipedia.org/wiki/List_of_RFCs#Topical_list) | This Wikipedia article contains a large list of protocols tied to the RFC that explains their implementation. |
 
-## Questions
+
+### Questions
 - What filter will allow me to see traffic coming from or destined to the host with an ip of 10.10.20.1?
 	- host 10.10.20.1
 - What filter will allow me to capture based on either of two options?

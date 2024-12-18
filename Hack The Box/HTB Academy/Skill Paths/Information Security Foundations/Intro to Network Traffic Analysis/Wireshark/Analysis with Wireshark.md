@@ -13,7 +13,9 @@
 - #### Requirements for Use
 	- Wireshark requires the following for use:
 - #### Windows:
-	- The Universal C Runtime. This is included with Windows 10 and Windows Server 2019 and is installed automatically on earlier versions if Microsoft Windows Update is enabled. Otherwise, KB2999226 or KB3118401 must be installed.
+	- The Universal C Runtime. 
+	- This is included with Windows 10 and Windows Server 2019 and is installed automatically on earlier versions if Microsoft Windows Update is enabled. 
+	- Otherwise, KB2999226 or KB3118401 must be installed.
 	- Any modern 64-bit AMD64/x86-64 or 32-bit x86 processor.
 	- 500 MB available RAM. Larger capture files require more RAM.
 	- 500 MB available disk space. Capture files require additional disk space.
@@ -44,7 +46,6 @@ secmancer@htb[/htb]$ sudo apt install wireshark
 - TShark is great for machines with no desktop environment installed on them, allowing them to easily pass capture information it gets to another tool.
 - Wireshark is the main tool to use, since it offers a feature rich GUI to use, but if you need to, TShark is also another great option to use as well.
 - #### Basic TShark Switches
-- To see the full list of switches you can utilize:
 
 | **Switch Command** | **Result** |
 | :-: | --- |
@@ -115,7 +116,10 @@ Capturing on 'eth0'
 - Termshark can be found at [Termshark](https://github.com/gcla/termshark). It can be built from the source by cloning the repo, or pull down one of the current stable releases from https://github.com/gcla/termshark/releases , extract the file, and hit the ground running.
 - #### Termshark Help
 ![image](https://academy.hackthebox.com/storage/modules/81/termshark-help.png)
-- To start Termshark, issue the same strings, much like TShark or tcpdump. We can specify an interface to capture on, filters, and other settings from the terminal. The Termshark window will not open until it senses traffic in its capture filter. So give it a second if nothing happens.
+- To start Termshark, issue the same strings, much like TShark or tcpdump. 
+- We can specify an interface to capture on, filters, and other settings from the terminal. 
+- The Termshark window will not open until it senses traffic in its capture filter. 
+- So give it a second if nothing happens.
 
 
 
@@ -176,8 +180,10 @@ Capturing on 'eth0'
     - This improves performance and speeds up filtering and analysis tasks.
 - **Note**: Despite Wireshark’s extensive built-in functionality, handling large capture files can be a challenge.
 - #### Capture Filters
-	- `Capture Filters-` are entered before the capture is started. These use BPF syntax like `host 214.15.2.30` much in the same fashion as TCPDump. We have fewer filter options this way, and a capture filter will drop all other traffic not explicitly meeting the criteria set. This is a great way to trim down the data you write to disk when troubleshooting a connection, such as capturing the conversations between two hosts.
-	- Here is a table of common and helpful capture filters with a description of each:
+	- `Capture Filters-` are entered before the capture is started. 
+	- These use BPF syntax like `host 214.15.2.30` much in the same fashion as TCPDump.
+	- We have fewer filter options this way, and a capture filter will drop all other traffic not explicitly meeting the criteria set. 
+	- This is a great way to trim down the data you write to disk when troubleshooting a connection, such as capturing the conversations between two hosts.
 
 | **Capture Filters** | **Result** |
 | :-: | --- |
@@ -194,15 +200,17 @@ Capturing on 'eth0'
 - #### Applying a Capture Filter
 	- Before we apply a capture filter, let us take a look at the built-in filters. To do so: Click on the capture radial at the top of the Wireshark window → then select capture filters from the drop-down.
 	- From here, we can modify the existing filters or add our own.
-	- To apply the filter to a capture, we will: Click on the capture radial at the top of the Wireshark window → then select Options from the drop-down → in the new window select the drop-down for Capture filter for selected interfaces or type in the filter we wish to use. `below the red arrow in the picture below`
+	- To apply the filter to a capture, we will: Click on the capture radial at the top of the Wireshark window → then select Options from the drop-down → in the new window select the drop-down for Capture filter for selected interfaces or type in the filter we wish to use.
 - #### Filter List
 ![image](https://academy.hackthebox.com/storage/modules/81/capture-filter-list.png)
 - #### Applying A Capture Filter
 ![image](https://academy.hackthebox.com/storage/modules/81/how-to-add-cap.png)
 - #### Display Filters
-	- `Display Filters-` are used while the capture is running and after the capture has stopped. Display filters are proprietary to Wireshark, which offers many different options for almost any protocol.
+	- `Display Filters-` are used while the capture is running and after the capture has stopped. 
+	- Display filters are proprietary to Wireshark, which offers many different options for almost any protocol.
 	- Here is a table of common and helpful display filters, shown below.
-	- Keep in mind, while utilizing Display filters traffic is processed to show only what is requested but the rest of the capture file will not be overwritten. Applying Display filters and analysis options will cause Wireshark to reprocess the pcap data in order to apply.
+	- Keep in mind, while utilizing Display filters traffic is processed to show only what is requested but the rest of the capture file will not be overwritten. 
+	- Applying Display filters and analysis options will cause Wireshark to reprocess the pcap data in order to apply.
 
 | **Display Filters** | **Result** |
 | :-: | --- |
@@ -215,10 +223,14 @@ Capturing on 'eth0'
 | and / or / not | AND will concatenate, OR will find either of two options, NOT will exclude your input option. |
 
 - #### Applying a Display Filter
-	- Applying a display filter is even easier than a capture filter. From the main Wireshark capture window, all we need to do is: select the bookmark in the Toolbar → , then select an option from the drop-down. Alternatively, place the cursor in the text radial → and type in the filter we wish to use. If the field turns green, the filter is correct. `Just like in the image below.`
+	- Applying a display filter is even easier than a capture filter. From the main Wireshark capture window, all we need to do is: select the bookmark in the Toolbar → , then select an option from the drop-down. 
+	- Alternatively, place the cursor in the text radial → and type in the filter we wish to use. If the field turns green, the filter is correct. `Just like in the image below.`
 - #### Applying Display Filters
 ![image](https://academy.hackthebox.com/storage/modules/81/display-filter.png)
-- When using capture and display filters, keep in mind that what we specify is taken in a literal sense. For example, filtering for port 80 traffic is not the same as filtering for HTTP. Think of ports and protocols more like guidelines instead of rigid rules. Ports can be bound and used for different purposes other than what they were originally intended. For example, filtering for HTTP will look for key markers that the protocol uses, such as GET/POST requests, and show results from them. Filtering for port 80 will show anything sent or received over that port regardless of the transport protocol.
+- When using capture and display filters, keep in mind that what we specify is taken in a literal sense. 
+- For example, filtering for port 80 traffic is not the same as filtering for HTTP. 
+- Think of ports and protocols more like guidelines instead of rigid rules. Ports can be bound and used for different purposes other than what they were originally intended.
+- For example, filtering for HTTP will look for key markers that the protocol uses, such as GET/POST requests, and show results from them. Filtering for port 80 will show anything sent or received over that port regardless of the transport protocol.
 - In the next section, we will work with some of the more advanced features of Wireshark.
 
 

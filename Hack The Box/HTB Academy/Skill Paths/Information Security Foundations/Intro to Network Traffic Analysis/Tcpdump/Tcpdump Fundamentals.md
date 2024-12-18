@@ -36,7 +36,8 @@ libpcap version 1.9.1 (with TPACKET_V3)
 OpenSSL 1.1.1f  31 Mar 2020
 ```
 
----
+
+
 
 ### Traffic Captures with Tcpdump
 - Because of the many different functions and filters, we should first familiarize ourselves with the tool's essential features.
@@ -194,10 +195,19 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
 ```
 
 ### Tcpdump Output
-- When looking at the output from TCPDump, it can be a bit overwhelming. Running through these basic switches has already shown us several different views. We are going to take a minute to dissect that output and explain what we are seeing. 
-- The image and table below will define each field. Keep in mind that the more verbose we are with our filters, the more detail from each header is shown.
+- **TCPDump output can be overwhelming**, but basic switches provide varied views of the data.
+- The output will be dissected to understand each field.
+- A **table and image** below define the fields for clarity.
+- Using more **verbose filters** reveals additional header details.
 - #### Tcpdump Shell Breakdown
 ![image](https://academy.hackthebox.com/storage/modules/81/breakdown.png)
+- The information displayed by TCPDump varies based on the verbosity level enabled.
+- For more details on IP and protocol headers, refer to the **Networking Primer** or the **Networking Fundamentals** path.
+- Understanding network functionality and using TCPDump filters allows for:
+    - Monitoring network traffic.
+    - Parsing data for issues.
+    - Quickly identifying suspicious interactions.
+- TCPDump can theoretically be used to create an **IDS/IPS system** by scripting packet analysis and automating actions, like banning IPs with abnormal activity patterns.
 
 | **Filter** | **Result** |
 | --- | --- |
@@ -208,11 +218,6 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 
 | Sequence and Acknowledgement Numbers | `Red` This section shows the sequence and acknowledgment numbers used to track the TCP segment. Our example is utilizing low numbers to assume that relative sequence and ack numbers are being displayed. |
 | Protocol Options | `Blue` Here, we will see any negotiated TCP values established between the client and server, such as window size, selective acknowledgments, window scale factors, and more. |
 | Notes / Next Header | `White` Misc notes the dissector found will be present here. As the traffic we are looking at is encapsulated, we may see more header information for different protocols. In our example, we can see the TCPDump dissector recognizes FTP traffic within the encapsulation to display it for us. |
-
-- There are many other options and information that can be shown. This information varies based on the amount of verbosity that is enabled. 
-- For a more detailed understanding of IP and other protocol headers, check out the `Networking Primer` in section two or the `Networking fundamentals` path.
-- There is a great advantage in knowing how a network functions and how to use the filters that TCPDump provides. With them, we can view the network traffic, parse it for any issues, and identify suspicious network interactions quickly. 
-- Theoretically, we can use `tcpdump` to create an IDS/IPS system by having a Bash script analyze the intercepted packets according to a specific pattern. We can then set conditions to, for example, ban a particular IP address that has sent too many ICMP echo requests for a certain period.
 
 
 
