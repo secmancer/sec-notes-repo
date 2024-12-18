@@ -1,5 +1,5 @@
 ### FSMO
-- As mentioned before, there are five Flexible Single Master Operation (FSMO) roles. These roles can be defined as follows:
+- As mentioned before, there are five Flexible Single Master Operation (FSMO) roles.
 
 | **Roles**                  | **Description**                                                                                                                                                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
