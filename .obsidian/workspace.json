@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "aab4dd4230f82cc4",
+        "id": "46085668ff879e5f",
         "type": "tabs",
         "children": [
           {
-            "id": "e79e69f35ad85360",
+            "id": "71ef2b4195fbcd4e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -134,9 +134,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Wireless Networks.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Wireless Networks"
             }
           },
           {
@@ -198,34 +200,34 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e79e69f35ad85360",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Virtual Private Networks.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Vendor Specific Information.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Networking Key Terminology.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Common Protocols.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Workflow/Networking Models.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Workflow/The TCP-IP Model.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Workflow/The OSI Model.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Structure/Proxies.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Structure/Networking Topologies.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Structure/Network Types.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Introduction/Networking Overview.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Connection Establishment/TCP-UDP Connections.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Connection Establishment/Key Exchange Mechanisms.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Connection Establishment/Cryptography.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Connection Establishment/Authentication Protocols.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/Subnetting.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/Network Layer.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/MAC Addresses.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv6 Addresses.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv4 Addresses.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Conditional Execution.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Comparison Operators.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arithmetic.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arguments, Variables, and Arrays.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Input and Output Control.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Loops.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Branches.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Introduction/Bourne Again Shell.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Execution Flow/Functions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Execution Flow/Debugging.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Module Summary/Wrapping It Up.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Getting our Hands Dirty/AD Administration - Guided Lab Part II.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Getting our Hands Dirty/AD Administration - Guided Lab Part I.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Digging in Deeper/Security in Active Directory.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Digging in Deeper/Examining Group Policy.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/User and Machine Accounts.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/Active Directory Rights and Privileges.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/All About Users/Active Directory Groups.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Protocols/NTLM Authentication.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Protocols/Kerberos, DNS, LDAP, MSRPC.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Why Active Directory.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Overview/Active Directory Research over the Years.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Terminology.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Objects.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Active Directory/Active Directory Fundamentals/Active Directory Functionality.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

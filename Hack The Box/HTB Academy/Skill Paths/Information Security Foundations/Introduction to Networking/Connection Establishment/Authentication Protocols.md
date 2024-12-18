@@ -1,6 +1,12 @@
-- Many different authentication protocols are used in networking to verify the identity of devices and users. Those protocols are essential because they provide a secure and standardized way of `verifying the identity` of users, devices, and other entities in a network. 
-- Without authentication protocols, it would be difficult to securely and reliably identify entities in a network, making it easy for attackers to gain unauthorized access and potentially compromise the network.
-- Authentication protocols also provide a means for `securely exchanging information` between entities in a network which we will discuss briefly. This is important for ensuring the confidentiality and integrity of sensitive data and preventing unauthorized access and other security threats. 
+- Authentication protocols are crucial for securely verifying the identity of users, devices, and entities in a network.
+- Without these protocols, identifying entities securely would be difficult, leaving the network vulnerable to unauthorized access and attacks.
+- These protocols also enable secure information exchange, ensuring confidentiality, integrity, and protection against security threats.
+- LEAP and PEAP are used to authenticate wireless clients and remote employees connecting to a network via VPN.
+- PEAP is more secure than LEAP because it uses server-side certificates for authentication, encrypts MSCHAPv2 hashes, and supports stronger encryption algorithms like AES and 3DES, while LEAP uses weaker RC4 and relies on a shared secret.
+- Both LEAP and PEAP have vulnerabilities and have been largely replaced by more secure protocols like EAP-TLS.
+- SSL/TLS-based protocols like SSH and HTTPS are used for physical connections, providing robust encryption to protect authentication data and prevent interception or tampering.
+- SSH and HTTPS also support digital certificates and PKI to authenticate the server, preventing MITM attacks.
+- SSH and HTTPS are widely supported across various platforms, making them easy to deploy and use in diverse environments.
 
 | **Protocol** | **Description** |
 | --- | --- |
@@ -23,11 +29,3 @@
 | `HTTPS` | This is a secure version of the HTTP protocol used for communication on the internet. HTTPS uses SSL/TLS to encrypt communication and provide authentication, ensuring that third parties cannot intercept and read the transmitted data. It is widely used for secure communication over the internet, particularly for web browsing. |
 | `LEAP` | LEAP is a wireless authentication protocol developed by Cisco. It uses EAP to provide mutual authentication between a wireless client and a server and uses the RC4 encryption algorithm to encrypt communication between the two. Unfortunately, LEAP is vulnerable to dictionary attacks and other security vulnerabilities and has been largely replaced by more secure protocols such as EAP-TLS and PEAP. |
 | `PEAP` | PEAP on the other hand is a secure tunneling protocol used for wireless and wired networks. It is based on EAP and uses TLS to encrypt communication between a client and a server. PEAP uses a server-side certificate to authenticate the server and can also be used to authenticate the client using various methods, such as passwords, certificates, or biometric data. PEAP is widely used in enterprise networks for secure authentication. |
-
-- For example, LEAP and PEAP may be used to authenticate wireless clients when they access the wireless network or to authenticate remote employees connecting to the network via a VPN. 
-- In these cases, using SSH or HTTPS would be challenging to implement, as they are designed for different purposes. In terms of security, `PEAP` is generally more secure than LEAP because it uses a server-side public key certificate to authenticate the server and encrypting `MSCHAPv2` hash, while `LEAP` relies on a shared secret that is negotiated between the client and the server and does `not` encrypt `MSCHAPv2` hashes. 
-- PEAP also supports the use of stronger encryption algorithms, such as AES and 3DES, for encrypting the authentication information, whereas LEAP uses the weaker RC4 algorithm.
-- However, both protocols are vulnerable to specific attacks and have been largely replaced by more secure protocols such as EAP-TLS.
-- As physical connections, protocols with `SSL` or `TLS` are used by default, such as `SSH` or `HTTPS`. Both protocols use robust encryption algorithms to protect the authentication information transmitted between the client and the server. This helps to prevent interception or to tamper the authentication data, which is essential for maintaining the security of the authentication process.
-- Also, they support using digital certificates and `PKI` for authenticating the server to the client. This ensures that the client can verify the server's identity and helps to prevent MITM attacks. 
-- SSH and HTTPS are widely used and well-supported protocols, with implementations available for various operating systems and devices and makes them easy to use and deploy in a variety of environments.

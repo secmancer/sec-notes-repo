@@ -1,62 +1,73 @@
 ### Introduction
-- Wireless networks are computer networks that use wireless data connections between network nodes. These networks allow devices such as laptops, smartphones, and tablets to communicate with each other and the Internet without needing physical connections such as cables.
-- Wireless networks use radio frequency (`RF`) technology to transmit data between devices. Each device on a wireless network has a wireless adapter that converts data into RF signals and sends them over the air. Other devices on the network receive these signals with their own wireless adapters, and the data is then converted back into a usable form. Those can operate over various ranges, depending on the technology used. For example, a local area network (LAN) that covers a small area, such as a home or small office, might use a wireless technology called `WiFi`, which has a range of a few hundred feet. On the other hand, a wireless wide area network (`WWAN`) might use mobile telecommunication technology such as cellular data (`3G`, `4G LTE`, `5G`), which can cover a much larger area, such as an entire city or region.
-- Therefore, to connect to a wireless network, a device must be within range of the network and configured with the correct network settings, such as the network name and password. Once connected, devices can communicate with each other and the Internet, allowing users to access online resources and exchange data.
-- Communication between devices occurs over RF in the `2.4 GHz` or `5 GHz` bands in a WiFi network. When a device, like a laptop, wants to send data over the network, it first communicates with the [Wireless Access Point](https://en.wikipedia.org/wiki/Wireless_access_point) (`WAP`) to request permission to transmit. The WAP is a central device, like a router, that connects the wireless network to a wired network and controls access to the network. Once the WAP grants permission, the transmitting device sends the data as RF signals, which are received by the wireless adapters of other devices on the network. The data is then converted back into a usable form and passed on to the appropriate application or system.
-- The strength of the RF signal and the distance it can travel are influenced by factors such as the transmitter's power, the presence of obstacles, and the density of RF noise in the environment. So, to ensure reliable communication, WiFi networks use techniques such as spread spectrum transmission and error correction to overcome these challenges.
+- **Wireless networks** allow devices like laptops, smartphones, and tablets to communicate without physical connections, using **radio frequency (RF)** technology to transmit data between devices.
+- Devices on the network have wireless adapters that convert data into RF signals, which are transmitted and received by other devices with their own adapters. The data is then converted back into a usable form.
+- **WiFi** is commonly used for local area networks (LANs) with a range of a few hundred feet, while **WWANs** (using cellular technology like **3G, 4G LTE, 5G**) cover larger areas like cities or regions.
+- To connect to a wireless network, devices must be within range and have the correct settings (e.g., network name and password). Once connected, devices can communicate with each other and access the internet.
+- Communication in **WiFi networks** occurs over the **2.4 GHz** or **5 GHz** bands. Devices communicate with a **Wireless Access Point (WAP)**, which grants permission for data transmission. The data is sent as RF signals, received by wireless adapters, and processed by the appropriate applications.
+- RF signal strength and range are influenced by factors like transmitter power, obstacles, and RF noise. To ensure reliable communication, WiFi networks use techniques such as **spread spectrum transmission** and **error correction**.
 
 
 
 ### WiFi Connection
-- The device must also be configured with the correct network settings, such as the network name / [Service Set Identifier](https://www.geeksforgeeks.org/service-set-identifier-ssid-in-computer-network/) (`SSID`) and `password`. So, to connect to the router, the laptop uses a wireless networking protocol called [IEEE 802.11](https://en.wikipedia.org/wiki/IEEE_802.11). This protocol defines the technical details of how wireless devices communicate with each other and with WAPs. When a device wants to join a WiFi network, it sends a request to the WAP to initiate the connection process. This request is known as a `connection request frame` or `association request` and is sent using the `IEEE 802.11` wireless networking protocol.
+- To connect to a WiFi network, the device must be configured with the correct **network settings**, such as the **SSID** (Service Set Identifier) and **password**.
+- The device uses the **IEEE 802.11** wireless networking protocol, which defines how devices communicate with each other and **Wireless Access Points (WAPs)**. The device sends a **connection request frame** (or **association request**) to initiate the connection process.
+- Once the device's wireless adapter is configured and the connection is established, it can communicate with the WAP, access other network devices, and use the Internet via the WAP, which acts as a gateway to the wired network.
+- The **SSID** can be **hidden** by disabling broadcasting, making it unidentifiable by devices searching for the network. However, the **SSID** can still be found in the **authentication packet**.
+- Additional protocols like **TCP/IP**, **DHCP**, and **WPA2** are used in WiFi networks for tasks such as assigning IP addresses, routing traffic, and providing security.
 ![[Screenshot_20241216_210424.png]]
-- The device then uses this information to configure its wireless adapter and connect to the WAP. Once the connection is established, the device can communicate with the WAP and other network devices. It can also access the Internet and other online resources through the WAP, which acts as a gateway to the wired network. However, the `SSID` can be hidden by disabling broadcasting. That means that devices that search for that specific WAP will not be able to identify its `SSID`. Nevertheless, the `SSID` can still be found in the authentication packet.
-- In addition to the `IEEE 802.11` protocol, other networking protocols and technologies may also be used, like TCP/IP, DHCP, and WPA2, in a WiFi network to perform tasks such as assigning IP addresses to devices, routing traffic between devices, and providing security.
 
 
 
 ### WEP Challenge-Response Handshake
-- The challenge-response handshake is a process to establish a secure connection between a WAP and a client device in a wireless network that uses the WEP security protocol. This involves exchanging packets between the WAP and the client device to authenticate the device and establish a secure connection.
+- The **challenge-response handshake** is a process used in the **WEP** security protocol to establish a secure connection between a **WAP** and a client device, involving the exchange of packets for authentication.
+- To protect against data corruption, **Cyclic Redundancy Check (CRC)** is used in WEP to verify the integrity of transmitted data. 
+- The CRC value is calculated for each packet and checked at the destination device to ensure the data was transmitted correctly.
+- If the CRC values match, the data is successfully transmitted; if they don't, the data is considered corrupted and needs retransmission.
+- However, a **design flaw** in the CRC mechanism allows decryption of a single packet **without knowing the encryption key**, since the CRC is calculated using the **plaintext** data, not the encrypted data. 
+- This enables attackers to determine the plaintext data in a packet, even if it is encrypted.
 ![[Screenshot_20241216_210504.png]]
-- Nevertheless, some packets can get lost, so the so-called `CRC` checksum has been integrated. [Cyclic Redundancy Check](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) (`CRC`) is an error-detection mechanism used in the WEP protocol to protect against data corruption in wireless communications. A CRC value is calculated for each packet transmitted over the wireless network based on the packet's data. It is used to verify the integrity of the data. When the destination device receives the packet, the CRC value is recalculated and compared to the original value. If the values match, the data has been transmitted successfully without any errors. However, if the values do not match, the data has been corrupted and needs to be retransmitted.
-- The design of the `CRC` mechanism has a flaw that allows us to decrypt a single packet `without` knowing the `encryption key`. This is because the `CRC` value is calculated using the `plaintext` data in the packet rather than the encrypted data. In WEP, the CRC value is included in the packet header along with the encrypted data. When the destination device receives the packet, the `CRC` value is recalculated and compared to the original one to ensure that the data has been transmitted successfully without any errors. However, we can use the `CRC` to determine the plaintext data in the packet, even if the data is encrypted.
 
 
 
 ### Security Features
-- WiFi networks have several security features to protect against unauthorized access and ensure the privacy and integrity of data transmitted over the network. Some of the leading security features include but are not limited to:
+- WiFi networks have several security features to protect against unauthorized access and ensure the privacy and integrity of data transmitted over the network.
+- Some of the leading security features include but are not limited to:
 	- Encryption
 	- Access Control
 	- Firewall
 - #### Encryption
-	- We can use various encryption algorithms to protect the confidentiality of data transmitted over wireless networks. The most common encryption algorithms in WiFi networks are [Wired Equivalent Privacy](https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy) (`WEP`), [WiFi Protected Access 2](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA2) (`WPA2`), and [WiFi Protected Access 3](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA3) (`WPA3`).
+	- We can use various encryption algorithms to protect the confidentiality of data transmitted over wireless networks. 
+	- The most common encryption algorithms in WiFi networks are [Wired Equivalent Privacy](https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy) (`WEP`), [WiFi Protected Access 2](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA2) (`WPA2`), and [WiFi Protected Access 3](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA3) (`WPA3`).
 - #### Access Control
-	- WiFi networks are configured by default to allow authorized devices to join the network using specific authentication methods. However, these methods can be changed by requiring a password or a unique identifier (such as a MAC address) to identify authorized devices.
+	- WiFi networks are configured by default to allow authorized devices to join the network using specific authentication methods. 
+	- However, these methods can be changed by requiring a password or a unique identifier (such as a MAC address) to identify authorized devices.
 - #### Firewall
-	- A firewall is a security system that controls incoming and outgoing network traffic based on predetermined security rules. For example, WiFi routers often have built-in firewalls that can block incoming traffic from the Internet and protect against various types of cyber threats.
-
+	- A firewall is a security system that controls incoming and outgoing network traffic based on predetermined security rules.
+	- For example, WiFi routers often have built-in firewalls that can block incoming traffic from the Internet and protect against various types of cyber threats.
 
 
 
 ### Encryption Protocols
-- [Wired Equivalent Privacy](https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy) (`WEP`) and [WiFi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access) (`WPA`) are encryption protocols that secure data transmitted over a WiFi network. WPA can use different encryption algorithms, including [Advanced Encryption Standard](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (`AES`).
+- [Wired Equivalent Privacy](https://en.wikipedia.org/wiki/Wired_Equivalent_Privacy) (`WEP`) and [WiFi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access) (`WPA`) are encryption protocols that secure data transmitted over a WiFi network. 
+- WPA can use different encryption algorithms, including [Advanced Encryption Standard](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (`AES`).
 
 
 
 ### WEP
-- `WEP` uses a `40-bit` or `104-bit` key to encrypt data, while `WPA using AES` uses a `128-bit` key. Longer keys provide more robust encryption and are more resistant to attacks. However, it is vulnerable to various attacks that can allow an attacker to decrypt data transmitted over the network. In addition, WEP is not compatible with newer devices and operating systems and is generally no longer considered secure. Finally, `WEP` uses the `RC4 cipher` encryption algorithm, which makes it vulnerable to attacks.
-- However, WEP uses a `shared key` for authentication, which means the same key is used for encryption and authentication. There are two versions of the WEP protocol:
-	- `WEP-40`/`WEP-64`
-	- `WEP-104`
-- `WEP-40`, also known as `WEP-64`, uses a `40-bit` (secret) key, while `WEP-104` uses a `104-bit` key. The key is divided into an [Initialization Vector](https://en.wikipedia.org/wiki/Initialization_vector) (`IV`) and a `secret key`.
-- The `IV` is a small value included in the packet header along with the encrypted data and is used to create the key for both `WEP-40` and `WEP-104` and is included to ensure that each key is unique. The secret key is a series of random bits used to encrypt the data. However, the `WEP-104` has a `80-bits` long `secret key`.
+- **WEP** uses either a **40-bit** or **104-bit** key for data encryption, while **WPA with AES** uses a **128-bit** key, offering more robust encryption. However, WEP is considered insecure due to its vulnerabilities and incompatibility with newer devices and operating systems.
+- **WEP** employs the **RC4 cipher** encryption algorithm, which is vulnerable to various attacks, allowing attackers to potentially decrypt data.
+- **WEP uses a shared key** for both encryption and authentication. There are two versions:
+    - **WEP-40/WEP-64**: Uses a **40-bit** secret key.
+    - **WEP-104**: Uses a **104-bit** key and an **80-bit secret key**.
+- The **Initialization Vector (IV)** in WEP is a small value included in the packet header, used to create unique keys for encryption. However, the **small size of the IV** allows attackers to brute-force it, trying every possible combination to determine the correct IV and decrypt the data, compromising network security.
 ![[Screenshot_20241216_210658.png]]
-- However, since the IV in WEP is relatively small, we can brute force it, try every possible combination of characters for it, and determine the correct value. Afterward, we can use it to decrypt the data in the packet. This allows us to access the data transmitted over the wireless network and potentially compromise the network's security.
 
 
 
 ### WPA
-- `WPA` provides the highest level of security and is not susceptible to the same types of attacks as WEP. In addition, WPA uses more secure authentication methods, such as a [Pre-Shared Key](https://en.wikipedia.org/wiki/Pre-shared_key) (`PSK`) or an 802.1X authentication server, which provide stronger protection against unauthorized access. Although older devices may not support WPA is compatible with most devices and operating systems. All wireless networks, especially in critical infrastructure like offices, should generally implement at least `WPA2` or even `WPA3` encryption.
+- `WPA` provides the highest level of security and is not susceptible to the same types of attacks as WEP. In addition, WPA uses more secure authentication methods, such as a [Pre-Shared Key](https://en.wikipedia.org/wiki/Pre-shared_key) (`PSK`) or an 802.1X authentication server, which provide stronger protection against unauthorized access. 
+- Although older devices may not support WPA is compatible with most devices and operating systems. 
+- All wireless networks, especially in critical infrastructure like offices, should generally implement at least `WPA2` or even `WPA3` encryption.
 
 
 
@@ -74,7 +85,6 @@
 - `TACACS+` is a protocol used to authenticate and authorize users accessing network devices, such as routers and switches. When a WAP sends an authentication request to a `TACACS+` server, the request typically includes the user's credentials and other information about the session.
 - Encrypting the authentication request helps to ensure that this sensitive information is not visible to unauthorized parties who may be able to intercept the request. At the same time, it is being transmitted over the network. It also helps prevent tampering with the request or replacing it with a malicious request of their own.
 - Several encryption methods may be used to encrypt the authentication request, such as `SSL`/`TLS` or `IPSec`. The specific encryption method used may depend on the configuration of the `TACACS+` server and the capabilities of the WAP.
-
 
 
 

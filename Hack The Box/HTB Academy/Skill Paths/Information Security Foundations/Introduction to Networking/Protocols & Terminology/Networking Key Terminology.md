@@ -1,8 +1,8 @@
-- There are many different terms in the field of information technology. However, we only need to know some of them, only the essential ones. Information technology has become so big that it equals the medical sector, if not already surpasses it.
-- The number of programming languages, functions, protocols, different procedures, areas of application, details, and at the same time, the number of errors that can occur. All these areas are so large that you can specialize your entire career in 1-2 areas.
-- The key terminology is the rough alphabet we need to know to understand what we will talk about in the other modules. 
-- We have created a list with many different but still with the most common protocols and their descriptions to create this foundation. It is important to note that this list is incomplete, and we will cover one or two protocols in other modules. 
-- However, we recommend that you review this list from time to time and expand it as you learn new protocols.
+- **Information Technology's Vastness**: IT is a vast field, comparable to or even surpassing the medical sector, with a large number of programming languages, protocols, functions, and areas of application.
+- **Specialization**: Due to the complexity and size of IT, it’s possible to specialize in specific areas, with numerous potential errors and challenges within each.
+- **Key Terminology**: The foundational terminology in IT is essential for understanding future topics covered in various modules.
+- **Protocol List**: A list of common protocols and their descriptions has been created as a foundation, though it is incomplete. Further exploration of specific protocols will happen in later modules.
+- **Ongoing Learning**: It’s encouraged to regularly review and expand this list as new protocols and concepts are learned.
 
 | **Protocol** | **Acronym** | **Description** |
 | --- | --- | --- |

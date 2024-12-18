@@ -5,8 +5,6 @@
 - With `TCP/IP`, every application can transfer and exchange data over any network, and it does not matter where the receiver is located. 
 - `IP` ensures that the data packet reaches its destination, and `TCP` controls the data transfer and ensures the connection between data stream and application. 
 - The main difference between `TCP/IP` and `OSI` is the number of layers, some of which have been combined.
-
 ![image](https://academy.hackthebox.com/storage/modules/34/redesigned/net_models4.png)
-
-- The most important tasks of `TCP/IP` are:
+- The most important tasks of `TCP/IP` are shown below.
 ![[Screenshot_20241111_160525.png]]
