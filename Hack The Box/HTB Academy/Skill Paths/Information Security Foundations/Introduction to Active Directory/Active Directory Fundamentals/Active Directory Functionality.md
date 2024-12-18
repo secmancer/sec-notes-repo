@@ -1,5 +1,7 @@
 ### FSMO
 - As mentioned before, there are five Flexible Single Master Operation (FSMO) roles.
+- These roles may be assigned to specific DCs or has a default DC depending on the organization.
+- Issues with FSMO can lead to authentication/authorization difficulties within a domain.
 
 | **Roles**                  | **Description**                                                                                                                                                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -9,15 +11,18 @@
 | `PDC Emulator`             | The host with this role would be the authoritative DC in the domain and respond to authentication requests, password changes, and manage Group Policy Objects (GPOs). The PDC Emulator also maintains time within the domain.                                                                                      |
 | `Infrastructure Master`    | This role translates GUIDs, SIDs, and DNs between domains. This role is used in organizations with multiple domains in a single forest. The Infrastructure Master helps them to communicate. If this role is not functioning properly, Access Control Lists (ACLs) will show SIDs instead of fully resolved names. |
 
-- Depending on the organization, these roles may be assigned to specific DCs or as defaults each time a new DC is added. Issues with FSMO roles will lead to authentication and authorization difficulties within a domain.
 
 
 
-## Domain and Forest Functional Levels
-- Microsoft introduced functional levels to determine the various features and capabilities available in Active Directory Domain Services (AD DS) at the domain and forest level. 
-- They are also used to specify which Windows Server operating systems can run a Domain Controller in a domain or forest. [This](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754918\(v=ws.10\)?redirectedfrom=MSDN) and [this](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels) article describe both the domain and forest functional levels from Windows 2000 native to Windows Server 2012 R2. 
-- Here's 
-- a quick overview of the differences in `domain functional levels` from Windows 2000 native up to Windows Server 2016, aside from all default Active Directory Directory Services features from the level just below it (or just the default AD DS features in the case of Windows 2000 native.)
+### Domain and Forest Functional Levels
+- Functional levels determine various features/capabilities available to us in Active Directory Domain Services (AD DS) at both the domain and forest level.
+- Used to specify which Window Server versions can run a Domain Controller at the domain or forest level.
+	- [This](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754918\(v=ws.10\)?redirectedfrom=MSDN) and [this](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels) article shows this, from Windows 2000 to Windows Server 2012.
+- Below is a table of differences in `domain functional levels` from different Windows Server operating systems.
+- A new functional level was not added with the release of Windows Server 2019. 
+	- However, Windows Server 2008 functional level is the minimum requirement for adding Server 2019 Domain Controllers to an environment. 
+	- Also, the target domain has to use [DFS-R](https://docs.microsoft.com/en-us/windows-server/storage/dfs-replication/dfsr-overview) for SYSVOL replication.
+- Forest functional levels have introduced a few key capabilities over the years.
 
 | Domain Functional Level | Features Available                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Supported Domain Controller Operating Systems                                                                 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -28,9 +33,6 @@
 | Windows Server 2012     | KDC support for claims, compound authentication, and Kerberos armoring                                                                                                                                                                                                                                                                                                                                                                                                                     | Windows Server 2012 R2, Windows Server 2012                                                                   |
 | Windows Server 2012 R2  | Extra protections for members of the Protected Users group, Authentication Policies, Authentication Policy Silos                                                                                                                                                                                                                                                                                                                                                                           | Windows Server 2012 R2                                                                                        |
 | Windows Server 2016     | [Smart card required for interactive logon](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-require-smart-card) new [Kerberos](https://docs.microsoft.com/en-us/windows-server/security/kerberos/whats-new-in-kerberos-authentication) features and new [credential protection](https://docs.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection) features | Windows Server 2019 and Windows Server 2016                                                                   |
-
-- A new functional level was not added with the release of Windows Server 2019. However, Windows Server 2008 functional level is the minimum requirement for adding Server 2019 Domain Controllers to an environment. Also, the target domain has to use [DFS-R](https://docs.microsoft.com/en-us/windows-server/storage/dfs-replication/dfsr-overview) for SYSVOL replication.
-- Forest functional levels have introduced a few key capabilities over the years:
 
 | **Version**              | **Capabilities**                                                                                                                                                                                               |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,9 +45,23 @@
 
 
 
-## Trusts
-- A trust is used to establish `forest-forest` or `domain-domain` authentication, allowing users to access resources in (or administer) another domain outside of the domain their account resides in. A trust creates a link between the authentication systems of two domains.
-- There are several trust types.
+### Trusts
+- Used to establish both `forest-forest` or `domain-domain` authentication.
+	- Allows users to access resources or administer other domains outside of the domain that user was originally created in.
+	- Creates a link between the authentication systems of two domains.
+- Several trust types exist, which are shown in the table below.
+- Example is given in the image below.
+- Can be either transitive or non-transitive.
+	- Transitive: trust is extended to objects that the child domain trusts
+	- Non-transitive: only the child domain itself is trusted.
+- Can also either be one-way or two way.
+	- One-way: only users within a trusted domain can access those resources
+	- Two way:  both uses from a trust domain can access those resources
+- Often, these are created improperly, allowing for unintended attack paths.
+- They can also may not be reviewed for a god time for potential security implications.
+- Merges/acquisitions can result in these trusts, especially from acquired companies, to become vulnerable.
+- It's uncommon to be able to perform an attack, like Kerberoasting, against a domain outside the principle domain, to get access to an administrator account.
+![image](https://academy.hackthebox.com/storage/modules/74/trusts-diagram.png)
 
 | **Trust Type** | **Description**                                                                                                                                                        |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,20 +71,9 @@
 | `Tree-root`    | a two-way transitive trust between a forest root domain and a new tree root domain. They are created by design when you set up a new tree root domain within a forest. |
 | `Forest`       | a transitive trust between two forest root domains.                                                                                                                    |
 
-- #### Trust Example
-![image](https://academy.hackthebox.com/storage/modules/74/trusts-diagram.png)
-
-- Trusts can be transitive or non-transitive.
-	- A transitive trust means that trust is extended to objects that the child domain trusts.
-	- In a non-transitive trust, only the child domain itself is trusted.
-- Trusts can be set up to be one-way or two-way (bidirectional).
-	- In bidirectional trusts, users from both trusting domains can access resources.
-	- In a one-way trust, only users in a trusted domain can access resources in a trusting domain, not vice-versa. The direction of trust is opposite to the direction of access.
-- Often, domain trusts are set up improperly and provide unintended attack paths. Also, trusts set up for ease of use may not be reviewed later for potential security implications. Mergers and acquisitions can result in bidirectional trusts with acquired companies, unknowingly introducing risk into the acquiring company’s environment. It is not uncommon to be able to perform an attack such as Kerberoasting against a domain outside the principal domain and obtain a user that has administrative access within the principal domain.
 
 
-
-## Questions
+### Questions
 - What role maintains time for a domain?
 	- PDC Emulator
 - What domain functional level introduced Managed Service Accounts?
