@@ -1,5 +1,7 @@
 ### Introduction
-- As we have already seen, the branches in flow control include `if-else` and the `case` statements. We have already discussed the `if-else` statements in detail and know how this works. Now we will take a closer look at the case statements.
+- As we have already seen, the branches in flow control include `if-else` and the `case` statements. 
+- We have already discussed the `if-else` statements in detail and know how this works. 
+- Now we will take a closer look at the case statements.
 
 
 
@@ -7,6 +9,7 @@
 - `Case` statements are also known as `switch-case` statements in other languages, such as C/C++ and C#.
 - The main difference between `if-else` and `switch-case` is that `if-else` constructs allow us to check any boolean expression, while `switch-case` always compares only the variable with the exact value.
 - Therefore, the same conditions as for `if-else`, such as "greater-than," are not allowed for `switch-case`. 
+
 
 
 ### Syntax - Switch-Case
@@ -17,8 +20,10 @@ case <expression> in
 	pattern_3 ) statements ;;
 esac
 ```
-- The definition of switch-case starts with `case`, followed by the variable or value as an expression, which is then compared in the pattern. If the variable or value matches the expression, then the statements are executed after the parenthesis and ended with a double semicolon (`;;`).
-- In our `CIDR.sh` script, we have used such a `case` statement. Here we defined four different options that we assigned to our script, how it should proceed after our decision.
+- The definition of switch-case starts with `case`, followed by the variable or value as an expression, which is then compared in the pattern. 
+- If the variable or value matches the expression, then the statements are executed after the parenthesis and ended with a double semicolon (`;;`).
+- In our `CIDR.sh` script, we have used such a `case` statement. 
+- Here we defined four different options that we assigned to our script, how it should proceed after our decision.
 
 
 
@@ -42,4 +47,5 @@ case $opt in
 esac
 <SNIP>
 ```
-- With the first two options, this script executes different functions that we had defined before. With the third option, both functions are executed, and with any other option, the script will be terminated.
+- With the first two options, this script executes different functions that we had defined before. 
+- With the third option, both functions are executed, and with any other option, the script will be terminated.

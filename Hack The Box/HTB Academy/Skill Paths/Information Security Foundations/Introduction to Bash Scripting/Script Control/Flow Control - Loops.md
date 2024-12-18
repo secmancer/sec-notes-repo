@@ -1,19 +1,25 @@
 ### Introduction
- - The control of the flow of our scripts is essential. We have already learned about the `if-else` conditions, which are also part of flow control. 
- - After all, we want our script to work quickly and efficiently, and for this, we can use other components to increase efficiency and allow error-free processing. 
- - Each control structure is either a `branch` or a `loop`. Logical expressions of boolean values usually control the execution of a control structure.
-	- Branches:
-	    - `If-Else` Conditions
-	    - `Case` Statements
-	- Loops:
-	    - `For` Loops
-	    - `While` Loops
-	    - `Until` Loops
+- Controlling the flow of scripts is crucial for efficiency and error-free processing, and we've already covered `if-else` conditions as part of flow control.
+- To enhance efficiency, we can use additional components that help streamline execution.
+- Control structures are divided into two categories: branches and loops, typically controlled by logical expressions with boolean values.
+    - **Branches**:
+        - `If-Else` Conditions
+        - `Case` Statements
+    - **Loops**:
+        - `For` Loops
+        - `While` Loops
+        - `Until` Loops
 
 
 
 ### For Loops
-- Let us start with the `For` loops. The `For` loop is executed on each pass for precisely one parameter, which the shell takes from a list, calculates from an increment, or takes from another data source. The for loop runs as long as it finds corresponding data. This type of loop can be structured and defined in different ways. For example, the for loops are often used when we need to work with many different values from an array. This can be used to scan different hosts or ports. We can also use it to execute specific commands for known ports and their services to speed up our enumeration process.
+- Let us start with the `For` loops. 
+- The `For` loop is executed on each pass for precisely one parameter, which the shell takes from a list, calculates from an increment, or takes from another data source. 
+- The for loop runs as long as it finds corresponding data. 
+- This type of loop can be structured and defined in different ways. 
+- For example, the for loops are often used when we need to work with many different values from an array.
+- This can be used to scan different hosts or ports. 
+- We can also use it to execute specific commands for known ports and their services to speed up our enumeration process.
 
 
 
@@ -36,7 +42,8 @@ do
 	ping -c 1 $ip
 done
 ```
-- Of course, we can also write these commands in a single line. Such a command would look like this:
+- Of course, we can also write these commands in a single line. 
+- Such a command would look like this shown below.
 ```shell-session
 secmancer@htb[/htb]$ for ip in 10.10.10.170 10.10.10.174;do ping -c 1 $ip;done
 
@@ -53,7 +60,8 @@ PING 10.10.10.174 (10.10.10.174): 56 data bytes
 1 packets transmitted, 1 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 45.700/45.700/45.700/0.000 ms
 ```
-- Let us have another look at our `CIDR.sh` script. We have added several for loops to the script, but let us stick with this little code section.
+- Let us have another look at our `CIDR.sh` script. 
+- We have added several for loops to the script, but let us stick with this little code section.
 
 
 
@@ -75,15 +83,19 @@ function network_range {
 
 <SNIP>
 ```
-- As in the previous example, for each IP address from the array "`ipaddr`" we make a "`whois`" request, whose output is filtered for "`NetRange`" and "`CIDR`." This helps us to determine which address range our target is located in. 
-- We can use this information to search for additional hosts during a penetration test, `if approved by the client`. The results that we receive are displayed accordingly and stored in the file "`CIDR.txt`."
+- As in the previous example, for each IP address from the array "`ipaddr`" we make a "`whois`" request, whose output is filtered for "`NetRange`" and "`CIDR`." 
+- This helps us to determine which address range our target is located in. 
+- We can use this information to search for additional hosts during a penetration test, `if approved by the client`. 
+- The results that we receive are displayed accordingly and stored in the file "`CIDR.txt`."
 
 
 
 ### While Loops
 - The `while` loop is conceptually simple and follows the following principle:
 	- A statement is executed as long as a condition is fulfilled (`true`).
-- We can also combine loops and merge their execution with different values. It is important to note that the excessive combination of several loops in each other can make the code very unclear and lead to errors that can be hard to find and follow. Such a combination can look like in our `CIDR.sh` script.
+- We can also combine loops and merge their execution with different values. 
+- It is important to note that the excessive combination of several loops in each other can make the code very unclear and lead to errors that can be hard to find and follow. 
+- Such a combination can look like in our `CIDR.sh` script.
 
 
 
@@ -108,8 +120,11 @@ function network_range {
 		done
 <SNIP>
 ```
-- The `while` loops also work with conditions like `if-else`. A while loop needs some sort of a counter to orientate itself when it has to stop executing the commands it contains. Otherwise, this leads to an endless loop. Such a counter can be a variable that we have declared with a specific value or a boolean value. `While` loops run while the boolean value is "`True`". Besides the counter, we can also use the command "`break`," which interrupts the loop when reaching this command.
-
+- The `while` loops also work with conditions like `if-else`. 
+- A while loop needs some sort of a counter to orientate itself when it has to stop executing the commands it contains. 
+- Otherwise, this leads to an endless loop. 
+- Such a counter can be a variable that we have declared with a specific value or a boolean value. `While` loops run while the boolean value is "`True`". 
+- Besides the counter, we can also use the command "`break`," which interrupts the loop when reaching this command.
 
 
 
@@ -147,9 +162,12 @@ Counter: 4
 
 
 ### Until Loops
-- There is also the `until` loop, which is relatively rare. Nevertheless, the `until` loop works precisely like the `while` loop, but with the difference:
+- There is also the `until` loop, which is relatively rare. 
+- Nevertheless, the `until` loop works precisely like the `while` loop, but with the difference:
 	- The code inside a `until` loop is executed as long as the particular condition is `false`.
-- The other way is to let the loop run until the desired value is reached. The "`until`" loops are very well suited for this. This type of loop works similarly to the "`while`" loop but, as already mentioned, with the difference that it runs until the boolean value is "`False`."
+- The other way is to let the loop run until the desired value is reached. 
+- The "`until`" loops are very well suited for this. 
+- This type of loop works similarly to the "`while`" loop but, as already mentioned, with the difference that it runs until the boolean value is "`False`."
 ```bash
 #!/bin/bash
 
@@ -176,7 +194,6 @@ Counter: 8
 Counter: 9
 Counter: 10
 ```
-
 
 
 

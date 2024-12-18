@@ -1,6 +1,11 @@
 ### Introduction
-- Conditional execution allows us to control the flow of our script by reaching different conditions. This function is one of the essential components. Otherwise, we could only execute one command after another.
-- When defining various conditions, we specify which functions or sections of code should be executed for a specific value. If we reach a specific condition, only the code for that condition is executed, and the others are skipped. As soon as the code section is completed, the following commands will be executed outside the conditional execution. Let us look at the first part of the script again and analyze it.
+- Conditional execution allows us to control the flow of our script by reaching different conditions. 
+- This function is one of the essential components. 
+- Otherwise, we could only execute one command after another.
+- When defining various conditions, we specify which functions or sections of code should be executed for a specific value. 
+- If we reach a specific condition, only the code for that condition is executed, and the others are skipped. 
+- As soon as the code section is completed, the following commands will be executed outside the conditional execution. 
+- Let us look at the first part of the script again and analyze it.
 ```bash
 #!/bin/bash
 
@@ -23,11 +28,15 @@ fi
 	- `echo` - Prints specific output.
 	- `$#` / `$0` / `$1` - Special variables.
 	- `domain` - Variables.
-- The conditions of the conditional executions can be defined using variables (`$#`, `$0`, `$1`, `domain`), values (`0`), and strings, as we will see in the next examples. These values are compared with the `comparison operators` (`-eq`) that we will look at in the next section.
+- The conditions of the conditional executions can be defined using variables (`$#`, `$0`, `$1`, `domain`), values (`0`), and strings, as we will see in the next examples. 
+- These values are compared with the `comparison operators` (`-eq`) that we will look at in the next section.
+
 
 
 ### Shebang
-- The shebang line is always at the top of each script and always starts with "`#!`". This line contains the path to the specified interpreter (`/bin/bash`) with which the script is executed. We can also use Shebang to define other interpreters like Python, Perl, and others.
+- The shebang line is always at the top of each script and always starts with "`#!`". 
+- This line contains the path to the specified interpreter (`/bin/bash`) with which the script is executed. 
+- We can also use Shebang to define other interpreters like Python, Perl, and others.
 ```python
 #!/usr/bin/env python
 ```
@@ -36,8 +45,10 @@ fi
 ```
 
 
+
 ### If-Else-Fi
-- One of the most fundamental programming tasks is to check different conditions to deal with these. Checking of conditions usually has two different forms in programming and scripting languages, the `if-else condition` and `case statements`.
+- One of the most fundamental programming tasks is to check different conditions to deal with these. 
+- Checking of conditions usually has two different forms in programming and scripting languages, the `if-else condition` and `case statements`.
 ```bash
 if [ the number of given arguments equals 0 ]
 then
@@ -102,7 +113,8 @@ if-elif-else.sh: line 5: [: HTB: integer expression expected
 if-elif-else.sh: line 8: [: HTB: integer expression expected
 Given argument is not a number.
 ```
-- We could extend our script and specify several conditions. This could look something like this:
+- We could extend our script and specify several conditions. 
+- This could look something like this,
 ```bash
 #!/bin/bash
 
@@ -141,6 +153,8 @@ do
         var=$(echo $var | base64)
 done
 ```
+
+
 
 
 ### Questions

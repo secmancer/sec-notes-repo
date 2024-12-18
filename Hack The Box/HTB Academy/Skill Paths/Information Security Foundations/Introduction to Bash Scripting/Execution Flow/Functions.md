@@ -1,10 +1,9 @@
 ### Introduction
-- The bigger our scripts get, the more chaotic they become. If we use the same routines several times in the script, the script's size will increase accordingly. In such cases, `functions` are the solution that improves both the size and the clarity of the script many times. 
-- We combine several commands in a block between curly brackets ( `{` ... `}` ) and call them with a function name defined by us with `functions`. Once a function has been defined, it can be called and used again during the script.
-- `Functions` are an essential part of scripts and programs, as they are used to execute recurring commands for different values and phases of the script or program. Therefore, we do not have to repeat the whole section of code repeatedly but can create a single function that executes the specific commands. 
-- The definition of such functions makes the code easier to read and helps to keep the code as short as possible. It is important to note that functions must always be defined logically `before` the first call since a script is also processed from top to bottom. 
-- Therefore the definition of a function is always `at the beginning` of the script.
-- We can two ways of creating functions.
+- As scripts grow larger, they can become chaotic. Using functions helps improve both the size and clarity of the script.
+- Functions combine multiple commands into a block between curly brackets (`{` ... `}`) and are called by a user-defined name.
+- Functions are essential for executing recurring commands, avoiding repetition, and making code more concise and readable.
+- Functions should always be defined logically before their first use, typically at the beginning of the script.
+- There are two ways to create functions in Bash.
 
 
 
@@ -59,11 +58,17 @@ esac
 
 
 
+
 ### Parameter Passing
-- Such functions should be designed so that they can be used with a fixed structure of the values or at least only with a fixed format. Like we have already seen in our `CIDR.sh` script, we used the format of an IP address for the function "`network_range`". 
-- The parameters are optional, and therefore we can call the function without parameters. In principle, the same applies to the passed parameters as to parameters passed to a shell script. 
-- These are `$1` - `$9` (`${n}`), or `$variable` as we have already seen. Each function has its own set of parameters. So they do not collide with those of other functions or the parameters of the shell script.
-- An important difference between bash scripts and other programming languages is that all defined variables are always processed `globally` unless otherwise declared by "[local](https://www.tldp.org/LDP/abs/html/localvar.html)." This means that the first time we have defined a variable in a function, we will call it in our main script (outside the function). 
+- Such functions should be designed so that they can be used with a fixed structure of the values or at least only with a fixed format. 
+- Like we have already seen in our `CIDR.sh` script, we used the format of an IP address for the function "`network_range`". 
+- The parameters are optional, and therefore we can call the function without parameters. 
+- In principle, the same applies to the passed parameters as to parameters passed to a shell script. 
+- These are `$1` - `$9` (`${n}`), or `$variable` as we have already seen.
+- Each function has its own set of parameters. 
+- So they do not collide with those of other functions or the parameters of the shell script.
+- An important difference between bash scripts and other programming languages is that all defined variables are always processed `globally` unless otherwise declared by "[local](https://www.tldp.org/LDP/abs/html/localvar.html)." 
+- This means that the first time we have defined a variable in a function, we will call it in our main script (outside the function). 
 - Passing the parameters to the functions is done the same way as we passed the arguments to our script.
 
 
@@ -89,11 +94,15 @@ First parameter Second parameter Third parameter
 ```
 
 
+
 ### Return Values
 - When we start a new process, each `child process` (for example, a `function` in the executed script) returns a `return code` to the `parent process` (`bash shell` through which we executed the script) at its termination, informing it of the status of the execution. 
-- This information is used to determine whether the process ran successfully or whether specific errors occurred. Based on this information, the `parent process` can decide on further program flow.
+- This information is used to determine whether the process ran successfully or whether specific errors occurred. 
+- Based on this information, the `parent process` can decide on further program flow.
 ![[Screenshot_20241111_153521.png]]
-- To get the value of a function back, we can use several methods like `return`, `echo`, or a `variable`. In the next example, we will see how to use "`$?`" to read the "`return code`," how to pass the arguments to the function and how to assign the result to a variable.
+- To get the value of a function back, we can use several methods like `return`, `echo`, or a `variable`. 
+- In the next example, we will see how to use "`$?`" to read the "`return code`," how to pass the arguments to the function and how to assign the result to a variable.
+
 
 
 ### Return.sh

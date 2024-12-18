@@ -1,17 +1,12 @@
 ### Introduction
-- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) is the scripting language we use to communicate with Unix-based OS and give commands to the system. Since May 2019, Windows provides a [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) that allows us to use `Bash` in a Windows environment. 
-- It is essential to master the language to work efficiently with it. The main difference between scripting and programming languages is that we don't need to compile the code to execute the scripting language, as opposed to programming languages.
-- As penetration testers, we must be able to work with any operating system, whether it is Windows or Unix-based. Efficiency depends mainly on the knowledge of the systems, especially in the privilege escalation field. 
-- On Unix-based systems, it is essential to learn how to use the terminal, filter data, and automate these processes. Especially in large Unix-based enterprise networks, we will have to deal with large amounts of data. We have to sort and filter out accordingly to determine potential gaps and information as fast as possible.
-- It is also essential to learn how to combine several commands and work with individual results. This is where scripting comes in, increasing our speed and efficiency. Like a programming language, a scripting language has almost the same structure, which can be divided into:
-	- `Input` & `Output`
-	- `Arguments`, `Variables` & `Arrays`
-	- `Conditional execution`
-	- `Arithmetic`
-	- `Loops`
-	- `Comparison operators`
-	- `Functions`
-- It is often common to automate some processes not to repeat them all the time or process and filter a large amount of information. In general, a script does not create a process, but it is executed by the interpreter that executes the script, in this case, the `Bash`. To execute a script, we have to specify the interpreter and tell it which script it should process.
+- Bash is a scripting language used to interact with Unix-based OS and give commands to the system. Since May 2019, Windows supports Bash via the Windows Subsystem for Linux (WSL).
+- Unlike programming languages, scripting languages like Bash do not require compilation to execute.
+- As penetration testers, proficiency in both Windows and Unix-based systems is essential, especially for tasks like privilege escalation.
+- On Unix-based systems, learning how to use the terminal, filter data, and automate tasks is crucial, especially when dealing with large data sets in enterprise networks.
+- Scripting increases efficiency by automating tasks and combining commands to process results quickly.
+- Like programming languages, Bash scripting has key components: Input & Output, Arguments, Variables & Arrays, Conditional Execution, Arithmetic, Loops, Comparison Operators, and Functions.
+- Scripting is often used to automate repetitive tasks or process large amounts of information. Scripts are executed by an interpreter, like Bash, which processes the specified script.
+
 
 
 ### Script Execution - Examples
@@ -24,7 +19,9 @@ secmancer@htb[/htb]$ sh script.sh <optional arguments>
 ```shell-session
 secmancer@htb[/htb]$ ./script.sh <optional arguments>
 ```
-- Let us look at such a script and see how they can be created to get specific results. If we execute this script and specify a domain, we see what information this script provides.
+- Let us look at such a script and see how they can be created to get specific results. 
+- If we execute this script and specify a domain, we see what information this script provides.
+
 
 
 ### CIDR.sh - Running the script
@@ -51,7 +48,8 @@ Pinging host(s):
 
 1 out of 1 hosts are up.
 ```
-- Now let us look at that script in detail and read it line by line in the best possible way. In the next sections, we will look at and analyze all the parts of this script.
+- Now let us look at that script in detail and read it line by line in the best possible way. 
+- In the next sections, we will look at and analyze all the parts of this script.
 
 
 
@@ -133,7 +131,6 @@ case $opt in
 	"*") exit 0 ;;
 esac
 ```
-- ---
 - As we can see, we have commented here several parts of the script into which we can split it.
 	1. Check for given arguments
 	2. Identify network range for the specified IP address(es)
