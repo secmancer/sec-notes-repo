@@ -1,5 +1,6 @@
 ### Connection Instructions
-- For this lab, you will utilize RDP and have access to a non-domain-joined Windows host from which you can perform any actions needed to complete the lab. You will be using an RDP connection, much like in Part one.
+- For this lab, you will utilize RDP and have access to a non-domain-joined Windows host from which you can perform any actions needed to complete the lab.
+You will be using an RDP connection, much like in Part one.
 - Click below in the Questions section to spawn the target host and obtain an IP address.
     - IP ==
     - Username == `image`
@@ -8,7 +9,9 @@
 
 
 ### Task 4 Add and Remove Computers To The Domain
-- Our new users will need computers to perform their daily duties. The helpdesk has just finished provisioning them and requires us to add them to the INLANEFREIGHT domain. Since these analyst positions are new, we will need to ensure that the hosts end up in the correct OU once they join the domain so that group policy can take effect properly.
+- Our new users will need computers to perform their daily duties. 
+- The help desk has just finished provisioning them and requires us to add them to the INLANEFREIGHT domain. 
+- Since these analyst positions are new, we will need to ensure that the hosts end up in the correct OU once they join the domain so that group policy can take effect properly.
 - The host we need to join to the INLANEFREIGHT domain is named: `ACADEMY-IAD-W10` and has the following credentials for use to login and finish the provisioning process:
 	- User == `image`
 	- Password == `Academy_student_AD!`
@@ -19,14 +22,24 @@
 ```powershell-session
 PS C:\htb> Add-Computer -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\HTB-student_adm -Restart
 ```
-- This string utilizes the `domain` (INLANEFREIGHT.LOCAL) we wish to join the host to, and we must specify the `user` whose credentials we will use to authorize the join. (HTB-student\_ADM). Specifying the restart at the string is necessary because the join will not occur until the host restarts again, allowing it to acquire settings and policies from the domain.
+- This string utilizes the `domain` (INLANEFREIGHT.LOCAL) we wish to join the host to, and we must specify the `user` whose credentials we will use to authorize the join. (HTB-student\_ADM).
+- Specifying the restart at the string is necessary because the join will not occur until the host restarts again, allowing it to acquire settings and policies from the domain.
 - #### Add via the GUI
 	- To add the computer to the domain from the localhost GUI is a bit different. Follow these steps to join it to the domain:
 	- From the computer you wish to join the domain, open the `Control Panel` and navigate to "System and Security > System."
-	- Now select the "Change Settings" icon in the `Computer name` section. Another dialog box will pop up asking you for administrator credentials. In the next window, we need to select the change icon next to the portion that says, "To rename this computer or change its domain or workgroup, click change" This will open yet another window for you to modify the computer's name, domain, and workgroup. Check that the computer's name matches the naming standard you wish to use for the domain before joining. Doing so will ease the administrative burden of renaming a domain-joined host later.
-	- next, we need to enter the name of the domain we wish to join the computer to (`INLANEFREIGHT.LOCAL`) and click OK. You may receive a warning about NetBIOS name resolution. That is an issue outside the scope of this lab. For now, move forward.
-	    - You will be prompted for domain credentials to complete this action. Utilize the domain administrator account you have been given at the beginning of this lab. (`htb-student_adm`).
-	    - If all goes well, you will be presented with a prompt welcoming you to the domain. The computer needs to restart to apply changes and new group policy settings it will receive from the domain.
+	- Now select the "Change Settings" icon in the `Computer name` section. 
+	- Another dialog box will pop up asking you for administrator credentials. 
+	- In the next window, we need to select the change icon next to the portion that says, "To rename this computer or change its domain or workgroup, click change".
+	- This will open yet another window for you to modify the computer's name, domain, and workgroup. 
+	- Check that the computer's name matches the naming standard you wish to use for the domain before joining. 
+	- Doing so will ease the administrative burden of renaming a domain-joined host later.
+	- next, we need to enter the name of the domain we wish to join the computer to (`INLANEFREIGHT.LOCAL`) and click OK. 
+	- You may receive a warning about NetBIOS name resolution. 
+	- That is an issue outside the scope of this lab. For now, move forward.
+	    - You will be prompted for domain credentials to complete this action. 
+	    - Utilize the domain administrator account you have been given at the beginning of this lab. (`htb-student_adm`).
+	    - If all goes well, you will be presented with a prompt welcoming you to the domain.
+	    - The computer needs to restart to apply changes and new group policy settings it will receive from the domain.
 
 
 
@@ -37,6 +50,7 @@ PS C:\htb> Add-Computer -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGH
 	3\. Enter the domain you wish to join the host to. (INLANEFREIGHT.LOCAL) Hit OK.
 	4\. Enter the domain administrator credentials provided to join the host to the domain.
 	5\. If all goes well, you will be prompted with a Welcome to the domain popup.
+
 
 
 ### Add a Remote Computer to a Domain
@@ -52,7 +66,8 @@ PS C:\htb> Add-Computer -ComputerName ACADEMY-IAD-W10 -LocalCredential ACADEMY-I
 PS C:\htb> Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName,IPv4Address
 ```
 
-- The CanonicalName property (seen above) will tell us the full path of the host by printing out the name in the format "Domain/OU/Name." We can use this to locate the host and validate where it is in our AD structure.
+- The CanonicalName property (seen above) will tell us the full path of the host by printing out the name in the format "Domain/OU/Name."
+- We can use this to locate the host and validate where it is in our AD structure.
 - Utilizing the ADUC snap-in, you can also move computer objects pretty quickly. 
 
 
@@ -65,15 +80,22 @@ PS C:\htb> Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,
 	4. If we look in that OU we will now see a new Computer object within.
 
 
+
 ### Summary
-- This wraps up our administration duties for the day. Hopefully, this lab helped reinforce the basic concepts surrounding AD management. It is always great to get hands-on experience with topics and technologies like Active Directory. 
+- This wraps up our administration duties for the day. 
+- Hopefully, this lab helped reinforce the basic concepts surrounding AD management. 
+- It is always great to get hands-on experience with topics and technologies like Active Directory. 
 - This experience provides a better understanding of how it functions and how it can possibly be taken advantage of. New vulnerabilities and attacks are being released every day that affect the Windows operating system, and by extension, Active Directory. 
 - A fundamental understanding of AD, the attacks that plague it, and defensive measures will take us a long way as security Professionals.
+
+
 
 
 > Note: It may take 2-3 minutes for your target instance to spawn. If you receive the error message `Timeout waiting for activation` when attempting to connect via RDP, wait a few seconds and run the command again. Furthermore, loading the Active Directory PowerShell module or the MMC snap-ins may take a bit longer on the first run.
 
 
-## Questions
+
+
+### Questions
 - Once you have finished the tasks, type "COMPLETE" to move on.
 	- COMPLETE

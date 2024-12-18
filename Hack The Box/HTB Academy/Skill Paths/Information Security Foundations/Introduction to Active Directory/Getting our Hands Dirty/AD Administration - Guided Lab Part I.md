@@ -1,13 +1,16 @@
 ### Debrief
 - Let us consider the following case:
-
 ![image](https://academy.hackthebox.com/storage/modules/74/helping-out.png)
-- In this section, we will serve as domain administrators to Inlanefreight for a day. We have been tasked to help the IT department close some work orders, so we will be performing actions such as adding and removing users and groups, managing group policy, and more. Successful completion of the tasks can lead to us gaining a promotion to the Tier II IT team from the helpdesk.
+- In this section, we will serve as domain administrators to Inlanefreight for a day. 
+- We have been tasked to help the IT department close some work orders, so we will be performing actions such as adding and removing users and groups, managing group policy, and more. 
+- Successful completion of the tasks can lead to us gaining a promotion to the Tier II IT team from the help desk.
 
 
 
 ### Connection Instructions
-- For this lab, you will have access to a domain-joined Windows server from which you can perform any actions needed to complete the lab. The environment will require you to RDP from Pwnbox or your own VM over VPN to the Windows server. Follow the steps below to utilize `RDP` and connect to the lab's Windows host.
+- For this lab, you will have access to a domain-joined Windows server from which you can perform any actions needed to complete the lab. 
+- The environment will require you to RDP from Pwnbox or your own VM over VPN to the Windows server. 
+- Follow the steps below to utilize `RDP` and connect to the lab's Windows host.
 - Click below in the `Questions` section to spawn the target host and obtain an IP address. The image below shows where to spawn the target and acquire a VPN key for the lab if needed.
     - IP ==
     - Username == `htb-student_adm`
@@ -20,9 +23,17 @@
 
 
 ### Tasks
-- Attempt to complete the challenges on your own. If you get stuck, the `Solutions` dropdown below each task can help you. [This](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) reference on the Active Directory PowerShell module will be extremely helpful. As an introductory course on AD, we do not expect you to know everything about the topic and how to administer it. The Solutions below each task offer a step-by-step of how to complete the task. This section is provided to give you a taste of the daily tasks that AD administrators perform. Instead of providing the information to you in a static format, we have opted to provide it in a more hands-on manner.
+- Attempt to complete the challenges on your own. 
+- If you get stuck, the `Solutions` dropdown below each task can help you. 
+- [This](https://docs.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps) reference on the Active Directory PowerShell module will be extremely helpful. As an introductory course on AD, we do not expect you to know everything about the topic and how to administer it. 
+- The Solutions below each task offer a step-by-step of how to complete the task. 
+- This section is provided to give you a taste of the daily tasks that AD administrators perform. 
+- Instead of providing the information to you in a static format, we have opted to provide it in a more hands-on manner.
 - #### Task 1: Manage Users
-	- Our first task of the day includes adding a few new-hire users into AD. We are just going to create them under the `"inlanefreight.local"` scope, drilling down into the `"Corp > Employees > HQ-NYC > IT "` folder structure for now. Once we create our other groups, we will move them into the new folders. You can utilize the Active Directory PowerShell module (New-ADUser), the Active Directory Users and Computers snap-in, or MMC to perform these actions.
+	- Our first task of the day includes adding a few new-hire users into AD. 
+	- We are just going to create them under the `"inlanefreight.local"` scope, drilling down into the `"Corp > Employees > HQ-NYC > IT "` folder structure for now. 
+	- Once we create our other groups, we will move them into the new folders. 
+	- You can utilize the Active Directory PowerShell module (New-ADUser), the Active Directory Users and Computers snap-in, or MMC to perform these actions.
 - #### Users to Add:
 
 | **User**            |
@@ -48,10 +59,14 @@
 | `Mike O'Hare`   |
 | `Paul Valencia` |
 
-- Lastly `Adam Masters` has submitted a trouble ticket over the phone saying his account is locked because he typed his password wrong too many times. The helpdesk has verified his identity and that his Cyber awareness training is up to date. The ticket requests that you unlock his user account and force him to change his password at the next login.
+- Lastly `Adam Masters` has submitted a trouble ticket over the phone saying his account is locked because he typed his password wrong too many times. 
+- The help desk has verified his identity and that his Cyber awareness training is up to date. 
+- The ticket requests that you unlock his user account and force him to change his password at the next login.
 ![image](https://academy.hackthebox.com/storage/modules/74/troubleticket.png)
 - `Solution: Task 1`
-	- Open PowerShell as an administrator. To ADD a user into Active Directory, we First need to load the module with the "Import-Module -Name ActiveDirectory" cmdlet. The AD module can be installed via the RSAT feature pack, but for now, it's already installed on the host used in this lab.
+	- Open PowerShell as an administrator. 
+	- To ADD a user into Active Directory, we first need to load the module with the "Import-Module -Name ActiveDirectory" cmdlet. 
+	- The AD module can be installed via the RSAT feature pack, but for now, it's already installed on the host used in this lab.
 - #### PowerShell Terminal Output for Adding a User
 
 ```powershell-session
@@ -60,9 +75,13 @@ PS C:\htb> New-ADUser -Name "Orion Starchaser" -Accountpassword (ConvertTo-Secur
 
 - After you hit enter, a prompt will appear, enter a secure password for the user.
 - #### Adding a User from the MMC Snap-in
-	- Before adding a user from the GUI we need to open the Active Directory Users and Computers (ADUC) MMC tool. As a standard user, we may have access to view the ADUC objects, but we will not be able to modify or add. We need to log in as our administrator account (credentials above) to complete these actions. Once logged in, open the ADUC snap-in by performing the following actions:
+	- Before adding a user from the GUI we need to open the Active Directory Users and Computers (ADUC) MMC tool. 
+	- As a standard user, we may have access to view the ADUC objects, but we will not be able to modify or add. 
+	- We need to log in as our administrator account (credentials above) to complete these actions. 
+	- Once logged in, open the ADUC snap-in by performing the following actions:
 	- From the Server Manager window, select Tools > then ADUC
-	- Expand the scope "inlanefreight.local" and drill down to "Corp > Employees > HQ-NYC > IT ". This is where we will be creating our new users, OU's, and Groups.
+	- Expand the scope "inlanefreight.local" and drill down to "Corp > Employees > HQ-NYC > IT ". 
+	- This is where we will be creating our new users, OU's, and Groups.
 - #### Adding an AD User via the GUI
 	- To add an AD user via the GUI we first need to open Active Directory Users and Computers via the Start Menu folder Administrative Tools.
 
@@ -97,13 +116,19 @@ PS C:\htb> New-ADUser -Name "Orion Starchaser" -Accountpassword (ConvertTo-Secur
 PS C:\htb> Remove-ADUser -Identity pvalencia
 ```
 
-- The `Remove-ADUser` cmdlet above targets the user by its user logon name. Ensure you are targeting the right user before executing it. If we are unsure of the value needed, we can use the `Get-ADUser` command to validate first.
+- The `Remove-ADUser` cmdlet above targets the user by its user logon name. 
+- Ensure you are targeting the right user before executing it. 
+- If we are unsure of the value needed, we can use the `Get-ADUser` command to validate first.
 - #### Remove a User from the MMC Snap-in
 	- Now we will remove a user `Paul Valencia` from our domain. We can do so by:
-	- The most straightforward method from the ADUC snap-in will be to use the `find` functionality. Inlanefreight has many users across several OU's. To use find:
+	- The most straightforward method from the ADUC snap-in will be to use the `find` functionality. Inlanefreight has many users across several OU's.
+	- To use find:
 	    - Right-click on `Employees` and select "find".
-	    - Type in the username you wish to search for, in this case, "Paul Valencia" and hit "Find Now." If a user has that name, the search results will appear lower in the find window.
-	- Now, right-click on the user and select delete. A popup window will appear to confirm the deletion of the user. Hit yes.
+	    - Type in the username you wish to search for, in this case, "Paul Valencia" and hit "Find Now." 
+	    - If a user has that name, the search results will appear lower in the find window.
+	- Now, right-click on the user and select delete. 
+	- A popup window will appear to confirm the deletion of the user.
+	- Hit yes.
 	- To validate the user is deleted, you can use the `Find` feature again to search for the user.
 - #### Deleting a User via the GUI
 	- To delete a user via the GUI, we will use the ADUC snap-in just like when we added a user to the domain above.
@@ -131,7 +156,8 @@ PS C:\htb> Remove-ADUser -Identity pvalencia
 PS C:\htb> Unlock-ADAccount -Identity amasters 
 ```
 
-- We also need to set a new password for the user and force them to change the password at the next logon. We will do this with the `SetADAccountPassword` and `Set-ADUser` cmdlets.
+- We also need to set a new password for the user and force them to change the password at the next logon. 
+- We will do this with the `SetADAccountPassword` and `Set-ADUser` cmdlets.
 - #### Reset User Password (Set-ADAccountPassword)
 
 ```powershell-session
@@ -145,16 +171,22 @@ PS C:\htb> Set-ADUser -Identity amasters -ChangePasswordAtLogon $true
 ```
 
 - #### Unlock from Snap-in
-	- Unlocking this user account will take several steps. The first is to unlock the account, then we set it so that the user must change his password at the next login, and then we reset his password to a temporary one so that he can log in and reset it himself. We can do so by:
-	- right-click on the user and select `Reset Password`.
-	- In the next window, type in the temporary password, confirm it, and check the boxes for "User must change password at next logon" and "Unlock the user's account."
-	- Once done, hit OK to apply changes. If no error occurs, you will get a prompt informing you that the user's password was changed.
+	- Unlocking this user account will take several steps. 
+	- The first is to unlock the account, then we set it so that the user must change his password at the next login, and then we reset his password to a temporary one so that he can log in and reset it himself. 
+	- We can do so by:
+		- right-click on the user and select `Reset Password`.
+		- In the next window, type in the temporary password, confirm it, and check the boxes for "User must change password at next logon" and "Unlock the user's account."
+		- Once done, hit OK to apply changes. 
+		- If no error occurs, you will get a prompt informing you that the user's password was changed.
 - #### Unlock Users Account From GUI
 	- To unlock Adam Masters' account, we will use the ADUC snap-in just like when we added a user to the domain above.
 	1. Right click on Adam Master's account and select "Reset Password".
 	2. Set a new temporary password and select the "Unlock" and "User must change password" dialog boxes.
 - #### Task 2: Manage Groups and Other Organizational Units
-	- Next up for us is to create a new Security Group called `Analysts` and then add our new hires into the group. This group should also be nested in an OU named the same under the `IT` hive. The `New-ADOrganizationalUnit` PowerShell command should enable you to quickly add a new security group. We can also utilize the AD Users and Computers snap-in like in Task-1 to complete this task.
+	- Next up for us is to create a new Security Group called `Analysts` and then add our new hires into the group. 
+	- This group should also be nested in an OU named the same under the `IT` hive. 
+	- The `New-ADOrganizationalUnit` PowerShell command should enable you to quickly add a new security group. 
+	- We can also utilize the AD Users and Computers snap-in like in Task-1 to complete this task.
 - `Solution: Task 2`
 - #### Create a New AD OU and Security Group from PowerShell
 	- To create a new OU and Group, we can use some commands.
@@ -169,10 +201,12 @@ PS C:\htb> New-ADOrganizationalUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ
 PS C:\htb> New-ADGroup -Name "Security Analysts" -SamAccountName analysts -GroupCategory Security -GroupScope Global -DisplayName "Security Analysts" -Path "OU=Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=LOCAL" -Description "Members of this group are Security Analysts under the IT OU"
 ```
 - #### From MMC Snap-in
-- This will be a quick two-step process for us. We first need to create a new OU to host our Security Analysts. To do so, we will :
+- This will be a quick two-step process for us. 
+- We first need to create a new OU to host our Security Analysts. 
+- To do so, we will :
 	- navigate to the "Corp > Employees > HQ-NYC > IT "OU. We are going to build out a new container within `IT`.
 	- Right-click on `IT` and select "New > Organizational Unit". A new window should appear.
-	    - input the name `Security Analysts` into the Name field and leave the default option set for the Protect checkbox. Hit OK, and the OU should be created.
+	    - Input the name `Security Analysts` into the Name field and leave the default option set for the Protect checkbox. Hit OK, and the OU should be created.
 - #### Create A New OU Under I.T.
 	- Our new OU "Security Analysts" should exist in the IT hive.
 
@@ -199,7 +233,9 @@ PS C:\htb> New-ADGroup -Name "Security Analysts" -SamAccountName analysts -Group
 ![](/storage/modules/74/new-group2.png)
 
 - 2\. Enter a Name, scope, and type, then hit OK.
-	- When done, a new Security Group should exist in our OU. We need to move our new users into the OU and add them to the security group. Keep in mind the purpose of this is to logically organize our AD objects for easy location and administration.
+	- When done, a new Security Group should exist in our OU. 
+	- We need to move our new users into the OU and add them to the security group. 
+	- Keep in mind the purpose of this is to logically organize our AD objects for easy location and administration.
 	- Utilizing the security groups, we can quickly assign permissions and resources to specific users instead of managing each user individually.
 - To ADD a user to a `group`, we can:
 - #### Add User to Group via PowerShell
@@ -208,12 +244,15 @@ PS C:\htb> New-ADGroup -Name "Security Analysts" -SamAccountName analysts -Group
 PS C:\htb> Add-ADGroupMember -Identity analysts -Members ACepheus,OStarchaser,ACallisto
 ```
 
-- Here we use the `SAMAccountName` of the users to add them to the Analysts group via the `Add-ADGroup Member` Cmdlet. Ensure your list is comma separated without spaces between each.
+- Here we use the `SAMAccountName` of the users to add them to the Analysts group via the `Add-ADGroup Member` Cmdlet. 
+- Ensure your list is comma separated without spaces between each.
 - #### From MMC Snap-in
 - To add the users to the security group, we can:
 	- Find the user you wish to add
 	- Right-click on the user and select "Add to a group". A new window will appear for you to specify the group name.
-	- type in part or all of the group you wish to add the user to. In this case, we are adding Andromeda to the Security Analysts group. If our query matches one or more groups, another dialog box will appear, providing us with a list of groups to choose from. Pick the group you need and hit "OK".
+	- Type in part or all of the group you wish to add the user to. In this case, we are adding Andromeda to the Security Analysts group. 
+	- If our query matches one or more groups, another dialog box will appear, providing us with a list of groups to choose from. 
+	- Pick the group you need and hit "OK".
 	- The choice you selected will now be highlighted in the previous window. More than one group can be selected at a time if necessary. Once done, hit "OK."
 	- If no issues arise, you will get a new popup informing you that the operation is completed. To validate, we can view the group or user properties.
 	1. Right click on the user and select "Add to a group"
@@ -221,9 +260,11 @@ PS C:\htb> Add-ADGroupMember -Identity analysts -Members ACepheus,OStarchaser,AC
 	3. Once you have selected the correct group, hit OK.
 - #### Task 3: Manage Group Policy Objects
 	- Next, we have been asked to duplicate the group policy `Logon Banner`, rename it `Security Analysts Control`, and modify it to work for the new Analysts OU. We will need to make the following changes to the Policy Object:
-	- we will be modifying the Password policy settings for users in this group and expressly allowing users to access PowerShell and CMD since their daily duties require it.
+	- We will be modifying the Password policy settings for users in this group and expressly allowing users to access PowerShell and CMD since their daily duties require it.
 	- For computer settings, we need to ensure the Logon Banner is applied and that removable media is blocked from access.
-	- Once done, make sure the Group Policy is applied to the `Security Analysts` OU. This will require the use of the Group Policy Management snap-in found under `Tools` in the Server Manager window. For more of a challenge, the `Copy-GPO` cmdlet in PowerShell can also be utilized.
+	- Once done, make sure the Group Policy is applied to the `Security Analysts` OU. 
+	- This will require the use of the Group Policy Management snap-in found under `Tools` in the Server Manager window. 
+	- For more of a challenge, the `Copy-GPO` cmdlet in PowerShell can also be utilized.
 	- `Solution: Task 3` To Duplicate a Group Policy Object we can use the \`Copy-GPO\` cmdlet or do it from the Group Policy Management Console.
 - #### Duplicate the Object via PowerShell
 ```powershell-session
@@ -275,9 +316,15 @@ PS C:\htb> New-GPLink -Name "Security Analysts Control" -Target "ou=Security Ana
 		9. Validate all the settings match what we wished to define. If all looks well, we have completed this task!
 
 
+
 ### Summary
-- This wraps it up for the first part of the guided lab. We covered how to manage users, groups, and Group Policy. In the next section, we will add a Computer to the INLANEFREIGHT domain, change the OU it exists in, ensuring that it is in the proper group to receive the Group Policy we created earlier.
-- Note: It may take 2-3 minutes for your target instance to spawn. If you receive the error message `Timeout waiting for activation` when attempting to connect via RDP, wait a few seconds and run the command again. Furthermore, loading the Active Directory PowerShell module or the MMC snap-ins may take a bit longer on the first run.
+- This wraps it up for the first part of the guided lab. 
+- We covered how to manage users, groups, and Group Policy.
+- In the next section, we will add a Computer to the INLANEFREIGHT domain, change the OU it exists in, ensuring that it is in the proper group to receive the Group Policy we created earlier.
+- Note: It may take 2-3 minutes for your target instance to spawn. 
+- If you receive the error message `Timeout waiting for activation` when attempting to connect via RDP, wait a few seconds and run the command again. 
+- Furthermore, loading the Active Directory PowerShell module or the MMC snap-ins may take a bit longer on the first run.
+
 
 
 ### Questions
