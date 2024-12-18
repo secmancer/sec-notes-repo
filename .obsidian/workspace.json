@@ -11,10 +11,14 @@
             "id": "71ef2b4195fbcd4e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Common Web Vulnerabilities"
             }
           }
         ]
@@ -135,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Wireless Networks.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Wireless Networks"
+              "title": "Outline of Common Web Vulnerabilities"
             }
           },
           {
@@ -202,6 +206,13 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Web Servers.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Development Frameworks & APIs.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Databases.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Back End Servers.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Wireless Networks.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Virtual Private Networks.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Vendor Specific Information.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Networking Key Terminology.md",
@@ -221,13 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/Network Layer.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/MAC Addresses.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv6 Addresses.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv4 Addresses.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Conditional Execution.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Comparison Operators.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arithmetic.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Working Components/Arguments, Variables, and Arrays.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Input and Output Control.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Bash Scripting/Script Control/Flow Control - Loops.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
