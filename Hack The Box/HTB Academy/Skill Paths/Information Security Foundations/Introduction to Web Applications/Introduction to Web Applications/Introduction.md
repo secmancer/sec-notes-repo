@@ -1,78 +1,67 @@
-[Web applications](https://en.wikipedia.org/wiki/Web_application) are interactive applications that run on web browsers. Web applications usually adopt a [client-server architecture](https://cio-wiki.org/wiki/Client_Server_Architecture) to run and handle interactions. They typically have front end components (i.e., the website interface, or "what the user sees") that run on the client-side (browser) and other back end components (web application source code) that run on the server-side (back end server/databases).
+### Introduction
+- **Web Applications**: Interactive applications that run on web browsers, offering functionalities such as online email, retail, and word processing.
+- **Client-Server Architecture**: Web applications typically use a client-server model, with front-end components running on the client side (browser) and back-end components running on the server side (server/databases).
+- **Global Accessibility**: Web applications can be hosted by organizations, offering powerful tools with near-complete control over design and functionality while being accessible worldwide.
+- **Wide Availability**: Web applications are not limited to large providers like Google or Microsoft; they can be developed by anyone and hosted on common services, making them widely available on the internet.
+- **Ubiquity**: Millions of web applications are used by billions of people daily.
 
-This allows organizations to host powerful applications with near-complete real-time control over their design and functionality while being accessible worldwide. Some examples of typical web applications include online email services like `Gmail`, online retailers like `Amazon`, and online word processors like `Google Docs`.
 
-![](/storage/modules/75/htb-web-app_1.jpg)
 
-Web applications are not exclusive to giant providers like Google or Microsoft but can be developed by any web developer and hosted online in any of the common hosting services, to be used by anyone on the internet. This is why today we have millions of web applications all over the internet, with billions of users interacting with them every day.
-
----
-
-## Web Applications vs. Websites
-
-In the past, we interacted with websites that are static and cannot be changed in real-time. This means that traditional websites were statically created to represent specific information, and this information would not change with our interaction. To change the website's content, the corresponding page has to be edited by the developers manually. These types of static pages do not contain functions and, therefore, do not produce real-time changes. That type of website is also known as [Web 1.0](https://en.wikipedia.org/wiki/Web_2.0#Web_1.0).
-
+### Web Applications vs. Websites
+- **Web 1.0 (Traditional Websites)**: Static websites with fixed content that do not change in real-time based on user interaction. Content updates require manual editing by developers.
+- **Web 2.0 (Web Applications)**: Dynamic websites that present content based on user interaction and perform various functionalities. Web applications are fully functional and respond to user input in real-time.
+- **Key Differences**:
+    - **Modularity**: Web applications are often modular, allowing for more flexible updates and maintenance.
+    - **Responsive**: Web applications are designed to run on any display size, adjusting to different devices and screen resolutions.
+    - **Cross-Platform Compatibility**: Web applications run on various platforms without the need for optimization specific to each.
 ![web sites vs web apps](https://academy.hackthebox.com/storage/modules/75/website_vs_webapps.jpg)
 
-On the other hand, most websites run web applications, or [Web 2.0](https://en.wikipedia.org/wiki/Web_2.0) presenting dynamic content based on user interaction. Another significant difference is that web applications are fully functional and can perform various functionalities for the end-user, while web sites lack this type of functionality. Other key differences between traditional websites and web applications include:
 
-- Being modular
-- Running on any display size
-- Running on any platform without being optimized
 
----
+### Web Applications vs. Native Operating System Applications
+- **Web Applications**: Platform-independent and run in a browser on any operating system, without needing installation on the user's system. The functionality is executed remotely on a server, saving space on the user's hard drive.
+    - **Version Unity**: All users access the same version of the web application, allowing for continuous updates at the server level without needing to push updates to each individual user.
+    - **Reduced Maintenance**: Web applications can be updated centrally, which reduces maintenance and support costs, eliminating the need to notify or manage updates for each user individually.
+- **Native OS Applications**: Built to operate on specific operating systems and utilize native OS libraries and hardware, making them faster and more capable than web applications. They are not limited to the capabilities of a browser.
+    - **Speed & Capability**: Native applications load and interact more quickly due to their deeper integration with the operating system.
+- **Hybrid and Progressive Web Applications (PWA)**: Emerging technologies that combine the advantages of both web and native applications, using modern frameworks to leverage native OS capabilities, improving performance and capabilities compared to traditional web applications.
 
-## Web Applications vs. Native Operating System Applications
 
-Unlike native operating system (native OS) applications, web applications are platform-independent and can run in a browser on any operating system. These web applications do not have to be installed on a user's system because these web applications and their functionality are executed remotely on the remote server and hence do not consume any space on the end user's hard drive.
 
-Another advantage of web applications over native OS applications is version unity. All users accessing a web application use the same version and the same web application, which can be continuously updated and modified without pushing updates to each user. Web applications can be updated in a single location (webserver) without developing different builds for each platform, which dramatically reduces maintenance and support costs removing the need to communicate changes to all users individually.
+### Web Application Distribution
+- There are many open-source web applications used by organizations worldwide that can be customized to meet each organization's needs. 
+- Some common open source web applications include:
+	- [WordPress](https://wordpress.com/)
+	- [OpenCart](https://www.opencart.com/)
+	- [Joomla](https://www.joomla.org/)
+- There are also proprietary 'closed source' web applications, which are usually developed by a certain organization and then sold to another organization or used by organizations through a subscription plan model. 
+- Some common closed source web applications include:
+	- [Wix](https://www.wix.com/)
+	- [Shopify](https://www.shopify.com/)
+	- [DotNetNuke](https://www.dnnsoftware.com/)
 
-On the other hand, native OS applications have certain advantages over web applications, mainly their operation speed and the ability to utilize native operating system libraries and local hardware. As native applications are built to utilize native OS libraries, they are much faster to load and interact with. Furthermore, native applications are usually more capable than web applications, as they have a deeper integration to the operating system and are not limited to the browser's capabilities only.
 
-More recently, however, hybrid and progressive web applications are becoming more common. They utilize modern frameworks to run web applications using native OS capabilities and resources, making them faster than regular web applications and more capable.
 
----
+### Security Risks of Web Applications
+- **Prevalence of Web Application Attacks**: Web applications are accessible globally, offering a large attack surface, making them attractive targets for attackers. The complexity of modern web applications increases the likelihood of critical vulnerabilities being present in their design.
+- **Impact of Successful Attacks**: Attacks on web applications can lead to significant data breaches, business interruptions, and compromise of sensitive information, including data stored in databases connected to the application.
+- **Importance of Security Testing**: Regular testing for vulnerabilities and prompt patching is essential to securing web applications. Testing should verify that patches fix flaws without introducing new ones.
+- **Penetration Testing and Secure Coding**: Web application penetration testing is crucial for organizations to secure their web applications, both internal and external. Secure coding practices should be implemented throughout the development life cycle.
+- **OWASP Web Security Testing Guide**: The OWASP Web Security Testing Guide is a widely used framework for testing web applications, beginning with a review of the front end components (HTML, CSS, JavaScript) for vulnerabilities such as Sensitive Data Exposure and Cross-Site Scripting (XSS).
+- **Testing Methodology**: Web applications should be tested from both an unauthenticated and authenticated perspective to ensure comprehensive coverage. This involves reviewing the application's front end and core functionality, as well as evaluating the interaction between the browser and web server to identify exploitable flaws.
 
-## Web Application Distribution
 
-There are many open-source web applications used by organizations worldwide that can be customized to meet each organization's needs. Some common open source web applications include:
 
-- [WordPress](https://wordpress.com/)
-- [OpenCart](https://www.opencart.com/)
-- [Joomla](https://www.joomla.org/)
-
-There are also proprietary 'closed source' web applications, which are usually developed by a certain organization and then sold to another organization or used by organizations through a subscription plan model. Some common closed source web applications include:
-
-- [Wix](https://www.wix.com/)
-- [Shopify](https://www.shopify.com/)
-- [DotNetNuke](https://www.dnnsoftware.com/)
-
----
-
-## Security Risks of Web Applications
-
-Web application attacks are prevalent and present a challenge for most organizations with a web presence, regardless of their size. After all, they are usually accessible from any country by everyone with an internet connection and a web browser and usually offer a vast attack surface. There are many automated tools for scanning and attacking web applications that, in the wrong hands, can cause significant damage. As web applications become more complicated and advanced, so does the possibility of critical vulnerabilities being incorporated into their design.
-
-A successful web application attack can lead to significant losses and massive business interruptions. Since web applications are run on servers that may host other sensitive information and are often also linked to databases containing sensitive user or corporate data, all of this data could be compromised if a web site is successfully attacked. This is why it is critical for any business that utilizes web applications to properly test these applications for vulnerabilities and patch them promptly while testing that the patch fixes the flaw and does not inadvertently introduce any new flaws.
-
-Web application penetration testing is an increasingly critical skill to learn. Any organization looking to secure their internet-facing (and internal) web applications should undergo frequent web application tests and implement secure coding practices at every development life cycle stage. To properly pentest web applications, we need to understand how they work, how they are developed, and what kind of risk lies at each layer and component of the application depending on the technologies in use.
-
-We will always come across various web applications that are designed and configured differently. One of the most current and widely used methods for testing web applications is the [OWASP Web Security Testing Guide](https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing).
-
-One of the most common procedures is to start by reviewing a web application's front end components, such as `HTML`, `CSS` and `JavaScript` (also known as the front end trinity), and attempt to find vulnerabilities such as [Sensitive Data Exposure](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure) and [Cross-Site Scripting (XSS)](https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_\(XSS\)). Once all front end components are thoroughly tested, we would typically review the web application's core functionality and the interaction between the browser and the webserver to enumerate the technologies the webserver uses and look for exploitable flaws. We typically assess web applications from both an unauthenticated and authenticated perspective (if the application has login functionality) to maximize coverage and review every possible attack scenario.
-
----
-
-## Attacking Web Applications
-
-In this day and age most every company, no matter the size has one or more web applications within their external perimeter. These applications can be everything from simple static websites to blogs powered by Content Management Systems (CMS) such as `WordPress` to complicated applications with sign-up/login functionality supporting various user roles from basic users to super admins. Nowadays, it is not very common to find an externally facing host directly exploitable via a known public exploit (such as a vulnerable service or Windows remote code execution (RCE) vulnerability), though it does happen. Web applications provide a vast attack surface, and their dynamic nature means that they are constantly changing (and overlooked!). A relatively simple code change may introduce a catastrophic vulnerability or a series of vulnerabilities that can be chained together to gain access to sensitive data or remote code execution on the webserver or other hosts in the environment, such as database servers.
-
-It is not uncommon to find flaws that can lead directly to code execution, such as a file upload form that allows for the upload of malicious code or a file inclusion vulnerability that can be leveraged to obtain remote code execution. A well-known vulnerability that is still quite prevalent in various types of web applications is SQL injection. This type of vulnerability arises from the unsafe handling of user-supplied input. It can result in access to sensitive data, reading/writing files on the database server, and even remote code execution.
-
-We often find SQL injection vulnerabilities on web applications that use Active Directory for authentication. While we can usually not leverage this to extract passwords (since Active Directory administers them), we can often pull most or all Active Directory user email addresses, which are often the same as their usernames. This data can then be used to perform a [password spraying](https://us-cert.cisa.gov/ncas/current-activity/2019/08/08/acsc-releases-advisory-password-spraying-attacks) attack against web portals that use Active Directory for authentication such as VPN or Microsoft Outlook Web Access/Microsoft O365. A successful password spray can often result in access to sensitive data such as email or even a foothold directly into the corporate network environment.
-
-This example shows the damage that can arise from a single web application vulnerability, especially when "chained" to extract data from one application that can be used to attack other portions of a company's external infrastructure. A well-rounded infosec professional should have a deep understanding of web applications and be as comfortable attacking web applications as performing network penetration testing and Active Directory attacks. A penetration tester with a strong foundation in web applications can often set themselves apart from their peers and find flaws that others may overlook. A few more real-world examples of web application attacks and the impact are as follows:
+### Attacking Web Applications
+- **Prevalence of Web Applications**: Most companies, regardless of size, have one or more web applications, ranging from simple websites to complex applications with user roles, such as super admins and regular users. These applications often present a significant attack surface due to their dynamic nature and constant updates.
+- **Potential Vulnerabilities**: Code changes in web applications can introduce critical vulnerabilities, including SQL injection and file upload flaws, leading to unauthorized access, remote code execution, or data leaks. These vulnerabilities may allow attackers to gain control of the server or access sensitive data.
+- **SQL Injection and Active Directory**: SQL injection remains a common vulnerability, particularly in web applications using Active Directory for authentication. While attackers may not directly extract passwords from Active Directory, they can retrieve user email addresses, which are often used as usernames. This can enable password spraying attacks against services like VPNs and Microsoft O365, potentially granting access to sensitive data or even a foothold in the corporate network.
+- **Chaining Vulnerabilities**: Web application vulnerabilities can often be chained together to exploit other parts of the organization's infrastructure. For example, extracting data from one web application may facilitate attacks on other services within the network, highlighting the interconnected risks.
+- **Importance of Web Application Expertise**: Understanding web applications is essential for a well-rounded infosec professional. Penetration testers with a solid foundation in web application security can identify vulnerabilities that others might miss, setting them apart and enhancing their ability to detect security flaws across various systems and networks.
+- **Web Application Attacks**: Familiarizing yourself with common web application attacks and their implications is crucial. Even if some terms seem unfamiliar initially, you will gain a deeper understanding through hands-on practice and a step-by-step learning approach.
+- **Iterative Learning**: Web application attacks will be a recurring theme throughout your journey, both in the HTB Academy and real-world assessments. By progressively studying these attacks, you will refine your skills and knowledge over time.
+- **Understanding Web Application Structure**: It's essential to deeply understand the inner workings of web applications and their various tech stacks. A solid foundation will allow you to identify vulnerabilities more effectively.
+- **Becoming an Informed Attacker**: By learning the structure and function of web applications, you'll become better-equipped to spot flaws others may overlook. This expertise will set you apart from your peers and give you an edge in penetration testing and vulnerability assessment.
 
 | Flaw | Real-world Scenario |
 | --- | --- |
@@ -81,7 +70,3 @@ This example shows the damage that can arise from a single web application vulne
 | [Unrestricted File Upload](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload) | A web application that allows a user to upload a profile picture that allows any file type to be uploaded (not just images). This can be leveraged to gain full control of the web application server by uploading malicious code. |
 | [Insecure Direct Object Referencing (IDOR)](https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html) | When combined with a flaw such as broken access control, this can often be used to access another user's files or functionality. An example would be editing your user profile browsing to a page such as /user/701/edit-profile. If we can change the `701` to `702`, we may edit another user's profile! |
 | [Broken Access Control](https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control) | Another example is an application that allows a user to register a new account. If the account registration functionality is designed poorly, a user may perform privilege escalation when registering. Consider the `POST` request when registering a new user, which submits the data `username=bjones&password=Welcome1&email=bjones@inlanefreight.local&roleid=3`. What if we can manipulate the `roleid` parameter and change it to `0` or `1`. We have seen real-world applications where this was the case, and it was possible to quickly register an admin user and access many unintended features of the web application. |
-
-Start becoming familiar with common web application attacks and their implications. Don't worry if any of these terms sound foreign at this point; they will become clearer as you progress and apply an iterative approach to learning.
-
-It is imperative to study web applications in-depth and become familiar with how they work and many different application stacks. We will see web application attacks repeatedly during our Academy journey, on the main HTB platform, and in real-life assessments. Let's dive in and learn the structure/function of web applications to become better-informed attackers, set us apart from our peers, and find flaws that others may overlook.

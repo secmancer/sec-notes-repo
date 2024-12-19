@@ -1,15 +1,18 @@
 ### Introduction
-- Another major aspect of front end security is validating and sanitizing accepted user input. In many cases, user input validation and sanitization is carried out on the back end. However, some user input would never make it to the back end in some cases and is completely processed and rendered on the front end. Therefore, it is critical to validate and sanitize user input on both the front end and the back end.
-- [HTML injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection) occurs when unfiltered user input is displayed on the page. This can either be through retrieving previously submitted code, like retrieving a user comment from the back end database, or by directly displaying unfiltered user input through `JavaScript` on the front end.
-- When a user has complete control of how their input will be displayed, they can submit `HTML` code, and the browser may display it as part of the page. This may include a malicious `HTML` code, like an external login form, which can be used to trick users into logging in while actually sending their login credentials to a malicious server to be collected for other attacks.
-- Another example of `HTML Injection` is web page defacing. This consists of injecting new `HTML` code to change the web page's appearance, inserting malicious ads, or even completely changing the page. This type of attack can result in severe reputational damage to the company hosting the web application.
+- **Dual Validation & Sanitization**: Validate and sanitize user input on both the front end and back end, as some input may only be processed and rendered on the front end.
+- **HTML Injection Risk**: Unfiltered user input displayed on the page can lead to HTML injection, whether from back-end-retrieved data or directly processed input via JavaScript on the front end.
+- **Malicious Input Examples**: Attackers can inject malicious HTML, such as fake login forms, to steal user credentials or perform phishing attacks.
+- **Web Page Defacement**: HTML injection can be used to alter the page's appearance, insert malicious ads, or completely change the page, causing reputational harm to the host organization.
+- **Critical Need for Input Control**: Effective validation and sanitization reduce the risk of such attacks, protecting users and the organization's reputation.
 
 
 
 ### Example
-- The following example is a very basic web page with a single button "`Click to enter your name`." When we click on the button, it prompts us to input our name and then displays our name as "`Your name is ...`".
+- The following example is a very basic web page with a single button "`Click to enter your name`." 
+- When we click on the button, it prompts us to input our name and then displays our name as "`Your name is ...`".
 ![HTML Example](https://academy.hackthebox.com/storage/modules/75/web_apps_html_injection_5.jpg)
-- If no input sanitization is in place, this is potentially an easy target for `HTML Injection` and `Cross-Site Scripting (XSS)` attacks. We take a look at the page source code and see no input sanitization in place whatsoever, as the page takes user input and directly displays it.
+- If no input sanitization is in place, this is potentially an easy target for `HTML Injection` and `Cross-Site Scripting (XSS)` attacks. 
+- We take a look at the page source code and see no input sanitization in place whatsoever, as the page takes user input and directly displays it.
 ```html
 <!DOCTYPE html>
 <html>
@@ -31,7 +34,8 @@
 
 </html>
 ```
-- To test for `HTML Injection`, we can simply input a small snippet of `HTML` code as our name, and see if it is displayed as part of the page. We will test the following code, which changes the background image of the web page/
+- To test for `HTML Injection`, we can simply input a small snippet of `HTML` code as our name, and see if it is displayed as part of the page.
+- We will test the following code, which changes the background image of the web page/
 ```html
 <style> body { background-image: url('https://academy.hackthebox.com/images/logo.svg'); } </style>
 ```
