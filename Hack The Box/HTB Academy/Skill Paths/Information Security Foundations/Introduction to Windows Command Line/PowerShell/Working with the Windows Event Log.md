@@ -1,44 +1,55 @@
 ### Introduction
-- From a SOC Analyst or IT Administrator's perspective, monitoring, collecting, and categorizing events occurring on all machines across the network is an invaluable source of information for defenders proactively analyzing and protecting their network from suspicious activity. On the other hand, attackers can see this as an opportunity to gain insight into the target environment, disrupt the flow of information, and as a way to hide their tracks. As we will see in later modules, sometimes we can find juicy information such as credentials hiding in event logs as a target system that we compromise during a penetration test. Other times, enumerating event logs can help us understand the level of logging in the environment (are just the defaults in place, or has the target organization configured more granular logging?). In this section, we will discuss the following:
-	- What is the Windows Event Log?
-	- What information does it log, and where does it store this information?
-	- Interacting with the Event Log via the `wevtutil` command line utility
-	- Interacting with the Event Log using PowerShell cmdlets
+- **Windows Event Logs** are invaluable for SOC Analysts and IT Administrators to monitor, collect, and categorize network-wide events, aiding in proactive defense against suspicious activity.
+- **Attackers** can exploit event logs for reconnaissance, disruption, or hiding traces, and sometimes uncover sensitive information like credentials during penetration testing.
+- Enumerating event logs provides insights into an organization’s logging configuration (default or granular).
+- Key topics discussed include:
+    - The purpose and function of the Windows Event Log.
+    - Types of information logged and storage locations.
+    - Using the `wevtutil` command-line utility to interact with logs.
+    - Utilizing PowerShell cmdlets for log management.
+
 
 
 ### What is the Windows Event Log?
-- A clear understanding of event logging is crucial to success in infosec. To kickstart our journey into gaining a thorough understanding of the Windows Event Log, there are a few key concepts that we need to define before diving in. These concepts will become the base upon which everything else will be built. The first one that needs to be explained is an `event` definition. Simply put, an `event` is any action or occurrence that can be identified and classified by a system's hardware or software. `Events` can be generated or triggered through a variety of different ways including some of the following:
-	- User-Generated Events
-	    - Movement of a mouse, typing on a keyboard, other user-controlled peripherals, etc.
-	- Application Generated Events
-	    - Application updates, crashes, memory usage/consumption, etc.
-	- System Generated Events
-	    - System uptime, system updates, driver loading/unloading, user login, etc.
-- With so many events occurring at different intervals of time from various sources, how does a Windows system keep track of and categorize all of them? This is where our second key concept, known as `event logging` comes into play.
-- [Event Logging](https://learn.microsoft.com/en-us/windows/win32/eventlog/event-logging) as defined by Microsoft:
-- "`...provides a standard, centralized way for applications (and the operating system) to record important software and hardware events.`"
-- This definition sums up the question quite nicely. However, let us attempt to break it down a bit. As we discussed beforehand, there are a lot of events that are being triggered or generated concurrently on a system. Each event will have its own source that provides the information and details behind the event in its own format. So how does it handle all of this information?
-- Windows attempts to resolve this issue by providing a standardized approach to recording, storing, and managing events and event information through a service known as the `Windows Event Log`. As its name suggests, the `Event Log` manages events and event logs, however, in addition to this functionality it also opens up a special API that allows applications to maintain and manage their own separate logs. In the [Windows Fundamentals](https://academy.hackthebox.com/module/details/49) module, we discussed `services` in logs in greater detail in the [Windows Services and Processes](https://academy.hackthebox.com/module/49/section/457) section, however, it is essential to understand that the `Event Log` is a required Windows service starting upon system initialization that runs in the context of another executable and not it's own.
-- Before we dig into querying the Event Log from cmd.exe and PowerShell we need to understand the possible types of events available to us, the elements of a log, and various other elements.
+- **Events** are actions or occurrences identifiable by hardware or software, categorized as:
+    - **User-Generated Events**: Mouse movements, keyboard input, etc.
+    - **Application-Generated Events**: Updates, crashes, memory usage, etc.
+    - **System-Generated Events**: Uptime, updates, driver activity, logins, etc.
+- **Event Logging** is a standardized, centralized method for recording key software and hardware events, as defined by Microsoft:
+    - It enables consistent handling of event data from various sources.
+- **Windows Event Log**:
+    - A core Windows service managing events and logs.
+    - Provides an API for applications to manage their own logs.
+    - Runs at system initialization and operates within another executable's context.
+- Before querying Event Logs via **cmd.exe** or **PowerShell**, it’s essential to understand:
+    - Types of events.
+    - Log elements.
+    - Additional foundational concepts.
+
 
 
 ### Event Log Categories and Types
-- The main four log categories include application, security, setup, and system. Another type of category also exists called `forwarded events`.
+- The main four log categories include application, security, setup, and system. 
+- Another type of category also exists called `forwarded events`.
 ![[Screenshot_20241111_140734.png]]
 
 
+
 ### Event Types
-- There are five types of events that can be logged on Windows systems:
+- There are five types of events that can be logged on Windows systems.
 ![[Screenshot_20241111_140754.png]]
 
 
+
 ### Event Severity Levels
-- Each log can have one of five severity levels associated with it, denoted by a number:
+- Each log can have one of five severity levels associated with it, denoted by a number.
 ![[Screenshot_20241111_140816.png]]
 
 
+
 ### Elements of a Windows Event Log
-- The Windows Event Log provides information about hardware and software events on a Windows system. All event logs are stored in a standard format and include the following elements:
+- The Windows Event Log provides information about hardware and software events on a Windows system. 
+- All event logs are stored in a standard format and include the following elements:
 	- `Log name`: As discussed above, the name of the event log where the events will be written. By default, events are logged for `system`, `security`, and `applications`.
 	- `Event date/time`: Date and time when the event occurred
 	- `Task Category`: The type of recorded event log
@@ -47,12 +58,19 @@
 	- `Level`: Severity level of the event. This can be information, error, verbose, warning, critical
 	- `User`: Username of who logged onto the host when the event occurred
 	- `Computer`: Name of the computer where the event is logged
-- There are many Event IDs that an organization can monitor to detect various issues. In an Active Directory environment, [this list](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor) includes key events that are recommended to be monitored for to look for signs of a compromise. [This](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/) searchable database of Event IDs is worth perusing to understand the depth of logging possible on a Windows system.
+- There are many Event IDs that an organization can monitor to detect various issues. 
+- In an Active Directory environment, [this list](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor) includes key events that are recommended to be monitored for to look for signs of a compromise.
+- [This](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/) searchable database of Event IDs is worth perusing to understand the depth of logging possible on a Windows system.
+
 
 
 ### Windows Event Log Technical Details
-- The Windows Event Log is handled by the `EventLog` services. On a Windows system, the service's display name is `Windows Event Log`, and it runs inside the service host process [svchost.exe](https://en.wikipedia.org/wiki/Svchost.exe). It is set to start automatically at system boot by default. 
-- It is difficult to stop the EventLog service as it has multiple dependency services. If it is stopped, it will likely cause significant system instability. By default, Windows Event Logs are stored in `C:\Windows\System32\winevt\logs` with the file extension `.evtx`.
+- The Windows Event Log is handled by the `EventLog` services. 
+- On a Windows system, the service's display name is `Windows Event Log`, and it runs inside the service host process [svchost.exe](https://en.wikipedia.org/wiki/Svchost.exe). 
+- It is set to start automatically at system boot by default. 
+- It is difficult to stop the EventLog service as it has multiple dependency services.
+- If it is stopped, it will likely cause significant system instability. 
+- By default, Windows Event Logs are stored in `C:\Windows\System32\winevt\logs` with the file extension `.evtx`.
 ```powershell-session
 PS C:\htb> ls C:\Windows\System32\winevt\logs
 
@@ -73,7 +91,9 @@ Mode                 LastWriteTime         Length Name
 
 <SNIP>
 ```
-- We can interact with the Windows Event log using the [Windows Event Viewer](https://en.wikipedia.org/wiki/Event_Viewer) GUI application via the command line utility [wevtutil](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil), or using the [Get-WinEvent](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) PowerShell cmdlet. Both `wevtutil` and `Get-WinEvent` can be used to query Event Logs on both local and remote Windows systems via cmd.exe or PowerShell.
+- We can interact with the Windows Event log using the [Windows Event Viewer](https://en.wikipedia.org/wiki/Event_Viewer) GUI application via the command line utility [wevtutil](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil), or using the [Get-WinEvent](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) PowerShell cmdlet. 
+- Both `wevtutil` and `Get-WinEvent` can be used to query Event Logs on both local and remote Windows systems via cmd.exe or PowerShell.
+
 
 
 ### Interacting with the Windows Event Log - wevtutil
@@ -165,7 +185,9 @@ attributes: 32
 numberOfLogRecords: 9496
 oldestRecordNumber: 1
 ```
-- There are many ways we can query for events. For example, let's say we want to display the last 5 most recent events from the Security log in text format. Local admin access is needed for this command.
+- There are many ways we can query for events. 
+- For example, let's say we want to display the last 5 most recent events from the Security log in text format. 
+- Local admin access is needed for this command.
 - #### Querying Events
 ```cmd-session
 C:\htb> wevtutil qe Security /c:5 /rd:true /f:text
@@ -255,14 +277,18 @@ Subject:
 
 <SNIP>
 ```
-- We can also export events from a specific log for offline processing. Local admin is also needed to perform this export.
+- We can also export events from a specific log for offline processing. 
+- Local admin is also needed to perform this export.
 - #### Exporting Events
 ```cmd-session
 C:\htb> wevtutil epl System C:\system_export.evtx
 ```
 
+
+
 ### Interacting with the Windows Event Log - PowerShell
-- Similarly, we can interact with Windows Event Logs using the [Get-WinEvent](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) PowerShell cmdlet. Like with the `wevtutil` examples, some commands require local admin-level access.
+- Similarly, we can interact with Windows Event Logs using the [Get-WinEvent](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) PowerShell cmdlet. 
+- Like with the `wevtutil` examples, some commands require local admin-level access.
 - To start, we can list all logs on the computer, giving us the number of records in each log.
 - #### PowerShell - Listing All Logs
 ```powershell-session
@@ -296,7 +322,9 @@ LogMode   MaximumSizeInBytes RecordCount LogName
 -------   ------------------ ----------- -------
 Circular            20971520       26060 Security
 ```
-- We can query for the last X number of events, looking specifically for the last five events using the `-MaxEvents` parameter. Here we will list the last five events recorded in the Security log. By default, the newest logs are listed first. If we want to get older logs first, we can reverse the order to list the oldest ones first using the `-Oldest` parameter.
+- We can query for the last X number of events, looking specifically for the last five events using the `-MaxEvents` parameter. 
+- Here we will list the last five events recorded in the Security log. 
+- By default, the newest logs are listed first. If we want to get older logs first, we can reverse the order to list the oldest ones first using the `-Oldest` parameter.
 - #### Querying Last Five Events
 ```powershell-session
 PS C:\htb> Get-WinEvent -LogName 'Security' -MaxEvents 5 | Select-Object -ExpandProperty Message
@@ -336,7 +364,9 @@ An account was successfully logged on.
 
 <SNIP>
 ```
-- We can dig deeper and look at specific event IDs in specific logs. Let's say we only want to look at logon failures in the Security log, checking for Event ID [4625: An account failed to log on](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625). From here, we could use the `-ExpandProperty` parameter to dig deeper into specific events, list logs from oldest to newest, etc.
+- We can dig deeper and look at specific event IDs in specific logs. 
+- Let's say we only want to look at logon failures in the Security log, checking for Event ID [4625: An account failed to log on](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625). 
+- From here, we could use the `-ExpandProperty` parameter to dig deeper into specific events, list logs from oldest to newest, etc.
 - #### Filtering for Logon Failures
 ```powershell-session
 PS C:\htb> Get-WinEvent -FilterHashTable @{LogName='Security';ID='4625 '}
@@ -360,13 +390,20 @@ PS C:\htb> Get-WinEvent -FilterHashTable @{LogName='System';Level='1'} | select-
 
 The system has rebooted without cleanly shutting down first. This error could be caused if the system stopped re
 ```
-- Practice more with `wevtutil` and `Get-WinEvent` to become more comfortable with searching logs. Microsoft provides some [examples](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) for `Get-WinEvent`, while [this site](https://www.thewindowsclub.com/what-is-wevtutil-and-how-do-you-use-it) shows examples for `wevtutil`, and [this site](https://4sysops.com/archives/search-the-event-log-with-the-get-winevent-powershell-cmdlet/) has some additional examples for using `Get-WinEvent`.
+- Practice more with `wevtutil` and `Get-WinEvent` to become more comfortable with searching logs. 
+- Microsoft provides some [examples](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.3) for `Get-WinEvent`, while [this site](https://www.thewindowsclub.com/what-is-wevtutil-and-how-do-you-use-it) shows examples for `wevtutil`, and [this site](https://4sysops.com/archives/search-the-event-log-with-the-get-winevent-powershell-cmdlet/) has some additional examples for using `Get-WinEvent`.
+
 
 
 ### Moving On
-- This section introduced the Windows Event Log, a vast topic that we will dig much deeper into in later modules. Try out the various examples in this section and get comfortable using both tools to query for specific information. In later modules, we will see how we can sometimes find sensitive data, such as passwords, in Event Logs. Logging on Windows is very powerful when configured properly. Each system generates a massive amount of logs, and, as we saw with all the possible Event IDs, we can get quite granular with what exactly we choose to log. All of this data on its own would be very difficult to constantly query and is most effective when forwarded to a SIEM tool that can be used to set up alerts on specific Event IDs which may be indicative of an attack, such as Kerberoasting, Password 
-- Spraying, or other less common attacks. As penetration testers, we should be familiar with Windows Event Log, how we can use it to gain information about the environment, and sometimes even extract sensitive data. For blue teamers, in-depth knowledge of Windows Event Log and how to leverage it for effective alerting and monitoring is critical.
-- In the next section, we will cover working with networking operations from the command line on a Windows system.
+- The **Windows Event Log** is a powerful tool for logging and monitoring when configured properly, allowing granular control over what is logged.
+- Sensitive data, such as passwords, can sometimes be found in logs, highlighting its importance for both **penetration testers** and **blue teamers**.
+- **SIEM tools** enhance log management by forwarding logs and setting up alerts for specific Event IDs (e.g., Kerberoasting or Password Spraying).
+- Mastery of Event Logs is essential:
+    - **Penetration testers**: Use logs to gather environmental insights and potentially extract sensitive data.
+    - **Blue teamers**: Leverage Event Logs for effective alerting and monitoring.
+- The next topic will explore **networking operations via the command line** on Windows systems.
+
 
 
 ### Questions

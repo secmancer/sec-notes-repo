@@ -1,10 +1,14 @@
 ### Introduction
-- Since we will be working with many different Linux systems, we need to learn the structure and the information about the system, its processes, network configurations, users, directories, user settings, and the corresponding parameters. Here is a list of the necessary tools that will help us get the above information. Most of them are installed by default.
+- Since we will be working with many different Linux systems, we need to learn the structure and the information about the system, its processes, network configurations, users, directories, user settings, and the corresponding parameters. 
+- Here is a list of the necessary tools that will help us get the above information. 
+- Most of them are installed by default.
 ![[Screenshot_20241107_185504.png]]
 - Let us look at a few examples.
 
+
+
 ### Hostname
-- The `hostname` command is pretty self-explanatory and will just print the name of the computer that we are logged into
+- The `hostname` command is pretty self-explanatory and will just print the name of the computer that we are logged into.
 ```shell-session
 secmancer@htb[/htb]$ hostname
 
@@ -12,8 +16,11 @@ nixfund
 ```
 
 
+
 ### Whoami
-- This quick and easy command can be used on both Windows and Linux systems to get our current username. During a security assessment, we obtain reverse shell access on a host, and one of the first bits of situational awareness we should do is figuring out what user we are running as. From there, we can figure out if the user has any special privileges/access.
+- This quick and easy command can be used on both Windows and Linux systems to get our current username. 
+- During a security assessment, we obtain reverse shell access on a host, and one of the first bits of situational awareness we should do is figuring out what user we are running as. 
+- From there, we can figure out if the user has any special privileges/access.
 ```shell-session
 cry0l1t3@htb[/htb]$ whoami
 
@@ -21,8 +28,11 @@ cry0l1t3
 ```
 
 
+
+
 ### Id
-- The `id` command expands on the `whoami` command and prints out our effective group membership and IDs. This can be of interest to penetration testers looking to see what access a user may have and sysadmins looking to audit account permissions and group membership. 
+- The `id` command expands on the `whoami` command and prints out our effective group membership and IDs. 
+- This can be of interest to penetration testers looking to see what access a user may have and sysadmins looking to audit account permissions and group membership. 
 - In this output, the `hackthebox` group is of interest because it is non-standard, the `adm` group means that the user can read log files in `/var/log` and could potentially gain access to sensitive information, membership in the `sudo` group is of particular interest as this means our user can run some or all commands as the all-powerful `root` user. 
 - Sudo rights could help us escalate privileges or could be a sign to a sysadmin that they may need to audit permissions and group memberships to remove any access that is not required for a given user to carry out their day-to-day tasks.
 ```shell-session
@@ -32,8 +42,10 @@ uid=1000(cry0l1t3) gid=1000(cry0l1t3) groups=1000(cry0l1t3),1337(hackthebox),4(a
 ```
 
 
+
 ### Uname
-- Let's dig into the `uname` command a bit more. If we type `man uname` in our terminal, we will bring up the man page for the command, which will show the possible options we can run with the command and the results.
+- Let's dig into the `uname` command a bit more.
+- If we type `man uname` in our terminal, we will bring up the man page for the command, which will show the possible options we can run with the command and the results.
 ```shell-session
 
 UNAME(1)                                    User Commands                                   UNAME(1)
@@ -79,7 +91,9 @@ cry0l1t3@htb[/htb]$ uname -a
 
 Linux box 4.15.0-99-generic #100-Ubuntu SMP Wed Apr 22 20:32:56 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
-- From the above command, we can see that the kernel name is `Linux`, the hostname is `box`, the kernel release is `4.15.0-99-generic`, the kernel version is `#100-Ubuntu SMP Wed Apr 22 20:32:56 UTC 2020`, and so on. Running any of these options on their own will give us the specific bit output we are interested in.
+- From the above command, we can see that the kernel name is `Linux`, the hostname is `box`, the kernel release is `4.15.0-99-generic`, the kernel version is `#100-Ubuntu SMP Wed Apr 22 20:32:56 UTC 2020`, and so on. 
+- Running any of these options on their own will give us the specific bit output we are interested in.
+
 
 
 ### Uname to Obtain Kernel Release
@@ -90,19 +104,25 @@ cry0l1t3@htb[/htb]$ uname -r
 4.15.0-99-generic
 ```
 - With this info, we could go and search for "4.15.0-99-generic exploit," and the first [result](https://www.exploit-db.com/exploits/47163) immediately appears useful to us.
-- It is highly recommended to study the commands and understand what they are for and what information they can provide. Though a bit tedious, we can learn much from studying the manpages for common commands. 
-- We may even find out things that we did not even know were possible with a given command. This information is not only used for working with Linux. However, it will also be used later to discover vulnerabilities and misconfigurations on the Linux system that may contribute to privilege escalation. 
+- It is highly recommended to study the commands and understand what they are for and what information they can provide. 
+- Though a bit tedious, we can learn much from studying the manpages for common commands. 
+- We may even find out things that we did not even know were possible with a given command. 
+- This information is not only used for working with Linux. 
+- However, it will also be used later to discover vulnerabilities and misconfigurations on the Linux system that may contribute to privilege escalation. 
 - Here are a few optional exercises that we can solve for practice purposes, which will help us become familiar with some of the commands.
 
 
+
 ### Logging In via SSH
-- `Secure Shell` (`SSH`) refers to a protocol that allows clients to access and execute commands or actions on remote computers. On Linux-based hosts and servers running or another Unix-like operating system, SSH is one of the permanently installed standard tools and is the preferred choice for many administrators to configure and maintain a computer through remote access. 
+- `Secure Shell` (`SSH`) refers to a protocol that allows clients to access and execute commands or actions on remote computers.
+- On Linux-based hosts and servers running or another Unix-like operating system, SSH is one of the permanently installed standard tools and is the preferred choice for many administrators to configure and maintain a computer through remote access. 
 - It is an older and very proven protocol that does not require or offer a graphical user interface (GUI). For this reason, it works very efficiently and occupies very few resources. We use this type of connection in the following sections and in most of the other modules to offer the possibility to try out the learned commands and actions in a safe environment. 
 - We can connect to our targets with the following command:
 - #### SSH Login
 ```shell-session
 secmancer@htb[/htb]$ ssh [username]@[IP address]
 ```
+
 
 
 ## Questions

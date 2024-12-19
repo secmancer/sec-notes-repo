@@ -1,24 +1,28 @@
 ### Introduction
-- Remote desktop protocols are used in Windows, Linux, and macOS to provide graphical remote access to a system. The administrators can utilize remote desktop protocols in many scenarios like troubleshooting, software or system upgrading, and remote systems administration. The administrator needs to connect to the remote system they will administer remotely, and therefore, they use the appropriate protocol accordingly. In addition, they can log in using different protocols if they want to install an application on their remote system. The most common protocols for this usage are RDP (Windows) and VNC (Linux).
+- **Remote Desktop Protocols**: These protocols allow graphical remote access to systems, commonly used for troubleshooting, software/system upgrades, and remote administration.
+- **Common Protocols**:
+    - **RDP (Remote Desktop Protocol)**: Primarily used for remote access to Windows systems.
+    - **VNC (Virtual Network Computing)**: Often used for remote access to Linux systems.
+- **Administrator Usage**: Administrators connect to remote systems using the appropriate protocol for tasks like installing applications or performing system maintenance.
+
 
 
 ### XServer
-- The XServer is the user-side part of the `X Window System network protocol` (`X11` / `X`). The `X11` is a fixed system that consists of a collection of protocols and applications that allow us to call application windows on displays in a graphical user interface. X11 is predominant on Unix systems, but X servers are also available for other operating systems. Nowadays, the XServer is a part of almost every desktop installation of Ubuntu and its derivatives and does not need to be installed separately.
-- When a desktop is started on a Linux computer, the communication of the graphical user interface with the operating system happens via an X server. The computer's internal network is used, even if the computer should not be in a network. The practical thing about the X protocol is network transparency. 
-- This protocol mainly uses TCP/IP as a transport base but can also be used on pure Unix sockets. The ports that are utilized for X server are typically located in the range of `TCP/6001-6009`, allowing communication between the client and server. When starting a new desktop session via X server the `TCP port 6000` would be opened for the first X display `:0`. 
-- This range of ports enables the server to perform its tasks such as hosting applications, as well as providing services to clients. They are often used to provide remote access to a system, allowing users to access applications and data from anywhere in the world. Additionally, these ports are also essential for the secure sharing of files and data, making them an integral part of the Open X Server. 
-- Thus an X server is not dependent on the local computer, it can be used to access other computers, and other computers can use the local X server. Provided that both local and remote computers contain Unix/Linux systems, additional protocols such as VNC and RDP are superfluous. VNC and RDP generate the graphical output on the remote computer and transport it over the network. 
-- Whereas with X11, it is rendered on the local computer. This saves traffic and a load on the remote computer. However, X11's significant disadvantage is the unencrypted data transmission. However, this can be overcome by tunneling the SSH protocol.
-- For this, we have to allow X11 forwarding in the SSH configuration file (`/etc/ssh/sshd_config`) on the server that provides the application by changing this option to `yes`.
+- **XServer & X11 Protocol**: The XServer is the user-side part of the X Window System (X11), a protocol that enables graphical user interfaces (GUIs) on Unix-based systems and other OSes. It facilitates communication between the desktop environment and the operating system.
+- **Network Transparency**: X11 supports network transparency, allowing the XServer to run on one machine while the graphical user interface can be displayed on another, even over a network.
+- **Ports & Communication**: XServer uses ports in the `TCP/6000-6009` range for communication. Port 6000 is used for the first X display (`:0`), enabling client-server interaction for applications.
+- **Remote Access**: X11 allows remote access to applications, enabling users to access graphical interfaces across systems without needing additional protocols like VNC or RDP, which handle graphical output over the network.
+- **Tunneling for Security**: X11 communication is unencrypted by default but can be secured using SSH tunneling. Enabling X11 forwarding in SSH (`/etc/ssh/sshd_config`) ensures secure data transmission between client and server.
 
 
-### X11Forwarding
+
+### X-11 Forwarding
 ```shell-session
 secmancer@htb[/htb]$ cat /etc/ssh/sshd_config | grep X11Forwarding
 
 X11Forwarding yes
 ```
-- With this we can start the application from our client with the following command:
+- With this we can start the application from our client with the following command.
 ```shell-session
 secmancer@htb[/htb]$ ssh -X htb-student@10.129.23.11 /usr/bin/firefox
 
@@ -27,31 +31,38 @@ htb-student@10.129.14.130's password: ********
 ```
 
 
+
 ### X11 Security
-- X11 is not a secure protocol without suitable security measures since X11 communication is entirely unencrypted. A completely open X server lets anyone on the network read the contents of its windows, for example, and this goes unnoticed by the user sitting in front of it. Therefore, it is not even necessary to sniff the network. This standard X11 functionality is realized with simple X11 tools like `xwd` and `xgrabsc`. In short, as penetration testers, we could read users' keystrokes, obtain screenshots, move the mouse cursor and send keystrokes from the server over the network.
-- A good example is several security vulnerabilities found in XServer, where a local attacker can exploit vulnerabilities in XServer to execute arbitrary code with user privileges and gain user privileges. The operating systems affected by these vulnerabilities were UNIX and Linux, Red Hat Enterprise Linux, Ubuntu Linux, and SUSE Linux. These vulnerabilities are known as CVE-2017-2624, CVE-2017-2625, and CVE-2017-2626.
+- **X11 Security Risks**: X11 is an insecure protocol by default because it transmits data unencrypted. This allows anyone on the network to potentially access sensitive information, such as reading window contents, capturing keystrokes, taking screenshots, or controlling the mouse cursor without the user's awareness.
+- **Exploitation by Penetration Testers**: With tools like `xwd` and `xgrabsc`, penetration testers could potentially read users' keystrokes, capture screenshots, or inject keystrokes over the network.
+- **Vulnerabilities in XServer**: Security flaws in XServer have allowed local attackers to exploit vulnerabilities (e.g., CVE-2017-2624, CVE-2017-2625, CVE-2017-2626) to execute arbitrary code and gain user privileges. These vulnerabilities affected UNIX and Linux distributions such as Red Hat Enterprise Linux, Ubuntu, and SUSE Linux.
+
 
 
 ### XDMCP
-- The `X Display Manager Control Protocol` (`XDMCP`) protocol is used by the `X Display Manager` for communication through UDP port 177 between X terminals and computers operating under Unix/Linux. It is used to manage remote X Window sessions on other machines and is often used by Linux system administrators to provide access to remote desktops. XDMCP is an insecure protocol and should not be used in any environment that requires high levels of security. 
-- With this, it is possible to redirect an entire graphical user interface (`GUI`) (such as KDE or Gnome) to a corresponding client. For a Linux system to act as an XDMCP server, an X system with a GUI must be installed and configured on the server. After starting the computer, a graphical interface should be available locally to the user.
-- One potential way that XDMCP could be exploited is through a man-in-the-middle attack. In this type of attack, an attacker intercepts the communication between the remote computer and the X Window System server, and impersonates one of the parties in order to gain unauthorized access to the server.
-- The attacker could then use the server to run arbitrary commands, access sensitive data, or perform other actions that could compromise the security of the system.
+- **XDMCP Protocol**: The `X Display Manager Control Protocol` (XDMCP) is used by the X Display Manager to manage remote X Window sessions via UDP port 177. It allows system administrators to provide remote desktop access to X terminals in Unix/Linux environments.
+- **Insecurity of XDMCP**: XDMCP is an insecure protocol and should not be used in high-security environments. It can be exploited in various ways, including through man-in-the-middle attacks, where an attacker intercepts and impersonates parties involved in the communication.
+- **Potential Exploitation**: In a man-in-the-middle attack, the attacker could gain unauthorized access to the server, run arbitrary commands, and access sensitive data, potentially compromising system security.
+- **XDMCP Server Setup**: For a Linux system to act as an XDMCP server, it must have a graphical user interface (GUI) like KDE or GNOME installed and configured. This setup allows remote clients to access the GUI.
+
 
 
 ### VNC
-- `Virtual Network Computing` (`VNC`) is a remote desktop sharing system based on the RFB protocol that allows users to control a computer remotely. It allows a user to view and interact with a desktop environment remotely over a network connection. The user can control the remote computer as if sitting in front of it. This is also one of the most common protocols for remote graphical connections for Linux hosts.
-- VNC is generally considered to be secure. It uses encryption to ensure the data is safe while in transit and requires authentication before a user can gain access. Administrators make use of VNC to access computers that are not physically accessible. This could be used to troubleshoot and maintain servers, access applications on other computers, or provide remote access to workstations. VNC can also be used for screen sharing, allowing multiple users to collaborate on a project or troubleshoot a problem.
-- There are two different concepts for VNC servers. The usual server offers the actual screen of the host computer for user support. Because the keyboard and mouse remain usable at the remote computer, an arrangement is recommended. The second group of server programs allows user login to virtual sessions, similar to the terminal server concept.
-- Server and viewer programs for VNC are available for all common operating systems. Therefore, many IT services are performed with VNC. The proprietary TeamViewer, and RDP have similar uses.
-- Traditionally, the VNC server listens on TCP port 5900. So it offers its `display 0` there. Other displays can be offered via additional ports, mostly `590[x]`, where `x` is the display number. Adding multiple connections would be assigned to a higher TCP port like 5901, 5902, 5903, etc.
-	- [TigerVNC](https://tigervnc.org/)
-	- [TightVNC](https://www.tightvnc.com/)
-	- [RealVNC](https://www.realvnc.com/en/)
-	- [UltraVNC](https://uvnc.com/)
-- The most used tools for such kinds of connections are UltraVNC and RealVNC because of their encryption and higher security.
-- In this example, we set up a `TigerVNC` server, and for this, we need, among other things, also the `XFCE4` desktop manager since VNC connections with GNOME are somewhat unstable. 
-- Therefore we need to install the necessary packages and create a password for the VNC connection.
+- **VNC Overview**: `Virtual Network Computing` (VNC) is a remote desktop sharing system based on the RFB protocol, allowing users to control a computer remotely and interact with its desktop environment as if physically present. It's a common protocol for remote graphical connections on Linux hosts.
+- **Security**: VNC is generally secure, using encryption to protect data in transit and requiring authentication before access. It's commonly used for troubleshooting, server maintenance, remote application access, and collaborative screen sharing.
+- **VNC Server Types**: There are two main types of VNC servers:
+    - One displays the host computer's screen for remote support.
+    - The other allows users to log into virtual sessions, similar to terminal servers.
+- **Availability**: VNC server and viewer programs are available for all major operating systems, making it widely used in IT services. Similar tools include proprietary TeamViewer and RDP.
+- **Default Ports**: The VNC server typically listens on TCP port 5900 for `display 0`, with additional displays accessible through ports 5901, 5902, etc.
+- **Popular VNC Tools**:
+    - [TigerVNC](https://tigervnc.org/)
+    - [TightVNC](https://www.tightvnc.com/)
+    - [RealVNC](https://www.realvnc.com/en/)
+    - [UltraVNC](https://uvnc.com/)
+- UltraVNC and RealVNC are often preferred for their encryption and security features.
+- **Example Setup**: For a TigerVNC server setup, installing `XFCE4` as the desktop manager is recommended for stability, as GNOME can be unstable with VNC. Necessary packages should be installed, and a password must be created for the VNC connection.
+
 
 
 ### TigerVNC Installation
@@ -63,7 +74,9 @@ Password: ******
 Verify: ******
 Would you like to enter a view-only password (y/n)? n
 ```
-- During installation, a hidden folder is created in the home directory called `.vnc`. Then, we have to create two additional files, `xstartup` and `config`. The `xstartup` determines how the VNC session is created in connection with the display manager, and the `config` determines its settings.
+- During installation, a hidden folder is created in the home directory called `.vnc`. 
+- Then, we have to create two additional files, `xstartup` and `config`. 
+- The `xstartup` determines how the VNC session is created in connection with the display manager, and the `config` determines its settings.
 - #### Configuration
 ```shell-session
 htb-student@ubuntu:~$ touch ~/.vnc/xstartup ~/.vnc/config
@@ -111,7 +124,8 @@ TigerVNC server sessions:
 X DISPLAY #     RFB PORT #      PROCESS ID
 :1              5901            79746
 ```
-- To encrypt the connection and make it more secure, we can create an SSH tunnel over which the whole connection is tunneled. How tunneling works in detail we will learn in the [Pivoting, Tunneling, and Port Forwarding](https://academy.hackthebox.com/module/details/158) module.
+- To encrypt the connection and make it more secure, we can create an SSH tunnel over which the whole connection is tunneled. 
+- How tunneling works in detail we will learn in the [Pivoting, Tunneling, and Port Forwarding](https://academy.hackthebox.com/module/details/158) module.
 - #### Setting Up an SSH Tunnel
 ```shell-session
 secmancer@htb[/htb]$ ssh -L 5901:127.0.0.1:5901 -N -f -l htb-student 10.129.14.130
@@ -119,6 +133,8 @@ secmancer@htb[/htb]$ ssh -L 5901:127.0.0.1:5901 -N -f -l htb-student 10.129.14.1
 htb-student@10.129.14.130's password: *******
 ```
 - Finally, we can connect to the server through the SSH tunnel using the `xtightvncviewer`.
+
+
 
 ### Connecting to the VNC Server
 ```shell-session

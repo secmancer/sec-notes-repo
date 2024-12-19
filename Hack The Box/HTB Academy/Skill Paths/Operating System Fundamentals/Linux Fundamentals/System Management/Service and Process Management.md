@@ -1,7 +1,11 @@
 ### Introduction
-- In general, there are two types of services: internal, the relevant services that are required at system startup, which for example, perform hardware-related tasks, and services that are installed by the user, which usually include all server services. Such services run in the background without any user interaction. These are also called `daemons` and are identified by the letter '`d`' at the end of the program name, for example, `sshd` or `systemd`.
-- Most Linux distributions have now switched to `systemd`. This daemon is an `Init process` started first and thus has the process ID (PID) 1. This daemon monitors and takes care of the orderly starting and stopping of other services. All processes have an assigned PID that can be viewed under `/proc/` with the corresponding number. Such a process can have a parent process ID (PPID), and if so, it is known as the child process.
-- Besides `systemctl` we can also use `update-rc.d` to manage SysV init script links. Let us have a look at some examples. We will use the `OpenSSH` server in these examples. If we do not have this installed, please install it before proceeding to this section.
+- **Types of Services**: There are two main types of services on Linux:
+    - **Internal services**: These are essential services required for system startup, such as those handling hardware-related tasks.
+    - **User-installed services**: These are typically server services running in the background without user interaction, known as `daemons`. Daemons are identified by a '`d`' at the end of their name (e.g., `sshd`, `systemd`).
+- **Systemd**: Most Linux distributions now use `systemd` as the init process, which starts first with PID 1. `systemd` monitors and controls the orderly startup and shutdown of other services.
+- **Process IDs (PIDs)**: Every process has a PID, which can be viewed in `/proc/`. Processes can also have a parent process ID (PPID), and processes with a PPID are known as child processes.
+- **Service Management**: `systemctl` is used to manage services on systems with `systemd`. Additionally, `update-rc.d` is used to manage SysV init script links for older systems. An example service like the `OpenSSH` server can be managed using these tools.
+
 
 
 ### Systemctl
@@ -30,7 +34,7 @@ Mai 14 15:08:31 inlane sshd[846]: Received SIGHUP; restarting.
 Mai 14 15:08:31 inlane sshd[846]: Server listening on 0.0.0.0 port 22.
 Mai 14 15:08:31 inlane sshd[846]: Server listening on :: port 22.
 ```
-- To add OpenSSH to the SysV script to tell the system to run this service after startup, we can link it with the following command:
+- To add OpenSSH to the SysV script to tell the system to run this service after startup, we can link it with the following command.
 ```shell-session
 secmancer@htb[/htb]$ systemctl enable ssh
 
@@ -56,7 +60,8 @@ apport.service                                             loaded active exited 
 avahi-daemon.service                                       loaded active running Avahi mDNS/DNS-SD Stack  
 bolt.service                                               loaded active running Thunderbolt system service
 ```
-- It is quite possible that the services do not start due to an error. To see the problem, we can use the tool `journalctl` to view the logs.
+- It is quite possible that the services do not start due to an error. 
+- To see the problem, we can use the tool `journalctl` to view the logs.
 ```shell-session
 secmancer@htb[/htb]$ journalctl -u ssh.service --no-pager
 
@@ -75,13 +80,17 @@ Mai 14 02:04:49 inlane systemd[1]: Stopped OpenBSD Secure Shell server.
 -- Reboot --
 ```
 
+
+
 ### Kill a Process
 - A process can be in the following states:
 	- Running
 	- Waiting (waiting for an event or system resource)
 	- Stopped
 	- Zombie (stopped but still has an entry in the process table).
-- Processes can be controlled using `kill`, `pkill`, `pgrep`, and `killall`. To interact with a process, we must send a signal to it. We can view all signals with the following command:
+- Processes can be controlled using `kill`, `pkill`, `pgrep`, and `killall`. 
+- To interact with a process, we must send a signal to it.
+- We can view all signals with the following command.
 ```shell-session
 secmancer@htb[/htb]$ kill -l
 
@@ -101,13 +110,17 @@ secmancer@htb[/htb]$ kill -l
 ```
 - The most commonly used are:
 ![[Screenshot_20241109_000533.png]]
-- For example, if a program were to freeze, we could force to kill it with the following command:
+- For example, if a program were to freeze, we could force to kill it with the following command.
 ```shell-session
 secmancer@htb[/htb]$ kill 9 <PID> 
 ```
 
+
+
 ### Background a Process
-- Sometimes it will be necessary to put the scan or process we just started in the background to continue using the current session to interact with the system or start other processes. As we have already seen, we can do this with the shortcut `[Ctrl + Z]`. As mentioned above, we send the `SIGTSTP` signal to the kernel, which suspends the process.
+- Sometimes it will be necessary to put the scan or process we just started in the background to continue using the current session to interact with the system or start other processes. 
+- As we have already seen, we can do this with the shortcut `[Ctrl + Z]`.
+- As mentioned above, we send the `SIGTSTP` signal to the kernel, which suspends the process.
 ```shell-session
 secmancer@htb[/htb]$ ping -c 10 www.hackthebox.eu
 
@@ -122,7 +135,8 @@ secmancer@htb[/htb]$ jobs
 [1]+  Stopped                 ping -c 10 www.hackthebox.eu
 [2]+  Stopped                 vim tmpfile
 ```
-- The `[Ctrl] + Z` shortcut suspends the processes, and they will not be executed further. To keep it running in the background, we have to enter the command `bg` to put the process in the background.
+- The `[Ctrl] + Z` shortcut suspends the processes, and they will not be executed further. 
+- To keep it running in the background, we have to enter the command `bg` to put the process in the background.
 ```shell-session
 secmancer@htb[/htb]$ bg
 
@@ -151,8 +165,12 @@ secmancer@htb[/htb]$
 [1]+  Exit 1                  ping -c 10 www.hackthebox.eu
 ```
 
+
+
 ### Foreground a Process
-- After that, we can use the `jobs` command to list all background processes. Backgrounded processes do not require user interaction, and we can use the same shell session without waiting until the process finishes first. Once the scan or process finishes its work, we will get notified by the terminal that the process is finished.
+- After that, we can use the `jobs` command to list all background processes. 
+- Backgrounded processes do not require user interaction, and we can use the same shell session without waiting until the process finishes first. 
+- Once the scan or process finishes its work, we will get notified by the terminal that the process is finished.
 ```shell-session
 secmancer@htb[/htb]$ jobs
 
@@ -168,12 +186,16 @@ ping -c 10 www.hackthebox.eu
 ```
 
 
+
+
 ### Execute Multiple Commands
-- There are three possibilities to run several commands, one after the other. These are separated by:
+- There are three possibilities to run several commands, one after the other. 
+- These are separated by:
 	- Semicolon (`;`)
 	- Double `ampersand` characters (`&&`)
 	- Pipes (`|`)
-- The difference between them lies in the previous processes' treatment and depends on whether the previous process was completed successfully or with errors. The semicolon (`;`) is a command separator and executes the commands by ignoring previous commands' results and errors.
+- The difference between them lies in the previous processes' treatment and depends on whether the previous process was completed successfully or with errors. 
+- The semicolon (`;`) is a command separator and executes the commands by ignoring previous commands' results and errors.
 ```shell-session
 secmancer@htb[/htb]$ echo '1'; echo '2'; echo '3'
 
@@ -189,7 +211,8 @@ secmancer@htb[/htb]$ echo '1'; ls MISSING_FILE; echo '3'
 ls: cannot access 'MISSING_FILE': No such file or directory
 3
 ```
-- However, it looks different if we use the double AND characters (`&&`) to run the commands one after the other. If there is an error in one of the commands, the following ones will not be executed anymore, and the whole process will be stopped.
+- However, it looks different if we use the double AND characters (`&&`) to run the commands one after the other. 
+- If there is an error in one of the commands, the following ones will not be executed anymore, and the whole process will be stopped.
 ```shell-session
 secmancer@htb[/htb]$ echo '1' && ls MISSING_FILE && echo '3'
 
@@ -197,6 +220,8 @@ secmancer@htb[/htb]$ echo '1' && ls MISSING_FILE && echo '3'
 ls: cannot access 'MISSING_FILE': No such file or directory
 ```
 - Pipes (`|`) depend not only on the correct and error-free operation of the previous processes but also on the previous processes' results.
+
+
 
 ### Questions
 - Use the "systemctl" command to list all units of services and submit the unit name with the description "Load AppArmor profiles managed internally by snapd" as the answer.
