@@ -1,21 +1,34 @@
 ### Introduction
-- PowerShell has expanded our capabilities within the `Windows OS` when dealing with Networking settings, applications, and more. This section will cover how to check your network settings, such as IP addresses, adapter settings, and DNS settings. We will also cover How to enable and manage remote host access utilizing `WinRM` and `SSH`.
+- PowerShell has expanded our capabilities within the `Windows OS` when dealing with Networking settings, applications, and more. 
+- This section will cover how to check your network settings, such as IP addresses, adapter settings, and DNS settings.
+- We will also cover How to enable and manage remote host access utilizing `WinRM` and `SSH`.
 
 > **Scenario: To ensure Mr. Tanaka's host is functioning properly and we can manage it from the IT office remotely, we are going to perform a quick checkup, validate his host settings, and enable remote management for the host.**
 
 
+
 ### What Is Networking Within a Windows Network?
-- Networking with Windows hosts functions much like any other Linux or Unix-based host. The TCP/IP stack, wireless protocols, and other applications treat most devices the same, so there isn't much to learn there that's new. This module assumes you know basic networking protocols and how typical network traffic traverses the Internet. 
-- If you wish for a primer on networking, check out the [Introduction to Networking](https://academy.hackthebox.com/course/preview/introduction-to-networking) module, or for a more in-depth dissection of network traffic, you can play through the [Introduction to Network Traffic Analysis](https://academy.hackthebox.com/course/preview/intro-to-network-traffic-analysis) module. Where things get a bit different lies in how Windows hosts communicate with each other, domains, and other Linux hosts. 
+- Networking with Windows hosts functions much like any other Linux or Unix-based host. 
+- The TCP/IP stack, wireless protocols, and other applications treat most devices the same, so there isn't much to learn there that's new. 
+- This module assumes you know basic networking protocols and how typical network traffic traverses the Internet. 
+- If you wish for a primer on networking, check out the [Introduction to Networking](https://academy.hackthebox.com/course/preview/introduction-to-networking) module, or for a more in-depth dissection of network traffic, you can play through the [Introduction to Network Traffic Analysis](https://academy.hackthebox.com/course/preview/intro-to-network-traffic-analysis) module. 
+- Where things get a bit different lies in how Windows hosts communicate with each other, domains, and other Linux hosts. 
 - Below we will quickly cover some standard protocols you could run into when administering or pentesting Windows hosts.
 ![[Screenshot_20241111_143502.png]]
-- Of course, this list is not all-encompassing, but it is an excellent general start of what we would typically see when communicating with Windows hosts. Now let's discuss local access vs. remote access.
+- Of course, this list is not all-encompassing, but it is an excellent general start of what we would typically see when communicating with Windows hosts. 
+- Now let's discuss local access vs. remote access.
+
+
 
 ### Local vs. Remote Access?
 - ### Local Access
-- Local host access is when we are directly at the terminal utilizing its resources as you are right now from your PC. Usually, this will not require us to use any specific access protocols except when we request resources from networked hosts or attempt to access the Internet. Below we will showcase some cmdlets and other ways to check and validate network settings on our hosts.
+- Local host access is when we are directly at the terminal utilizing its resources as you are right now from your PC. 
+- Usually, this will not require us to use any specific access protocols except when we request resources from networked hosts or attempt to access the Internet. 
+- Below we will showcase some cmdlets and other ways to check and validate network settings on our hosts.
 - ### Querying Networking Settings
-- Before doing anything else, let's validate the network settings on Mr. Tanaka's host. We will start by running the `IPConfig` command. This isn't a PowerShell native command, but it is compatible.
+- Before doing anything else, let's validate the network settings on Mr. Tanaka's host. 
+- We will start by running the `IPConfig` command. 
+- This isn't a PowerShell native command, but it is compatible.
 - #### IPConfig
 ```powershell-session
 PS C:\htb> ipconfig 
@@ -31,7 +44,9 @@ Ethernet adapter Ethernet0:
    Default Gateway . . . . . . . . . : fe80::250:56ff:feb9:b9fc%11
                                        10.129.0.1
 ```
-- As we can see, `ipconfig` will show us the basic settings of your network interface. We have as output the IPv4/6 addresses, our gateway, subnet masks, and DNS suffix if one is set. We can output the full network settings by appending the `/all` modifier to the ipconfig command like so:
+- As we can see, `ipconfig` will show us the basic settings of your network interface. 
+- We have as output the IPv4/6 addresses, our gateway, subnet masks, and DNS suffix if one is set. 
+- We can output the full network settings by appending the `/all` modifier to the ipconfig command like so.
 ```powershell-session
 PS C:\htb> ipconfig /all 
 
@@ -87,9 +102,16 @@ Ethernet adapter Ethernet2:
    DNS Servers . . . . . . . . . . . : 172.16.5.155
    NetBIOS over Tcpip. . . . . . . . : Enabled
 ```
-- Now we can see much more information than before. We are presented with output containing multiple adapters, `Host settings`, more details about if our IP addresses were `manually` set or `DHCP leases`, how long those leases are, and more. So, it appears Mr. Tanaka's host has a proper IP address configuration. Of note, and particularly interesting to us as pentesters, is that this host is dual-homed. 
-- We mean it has multiple network interfaces connected to separate networks. This makes Mr. Tanakas host a great target if we are looking for a foothold in the network and wish to have a way to migrate between networks.
-- Let's look at `Arp` settings and see if his host has communicated with others on the network. As a refresher, ARP is a protocol utilized to `translate IP addresses to Physical addresses`. The physical address is used at lower levels of the `OSI/TCP-IP` models for communication. To have it display the host's current ARP entries, we will use the `-a` switch.
+- Now we can see much more information than before. 
+- We are presented with output containing multiple adapters, `Host settings`, more details about if our IP addresses were `manually` set or `DHCP leases`, how long those leases are, and more.
+- So, it appears Mr. Tanaka's host has a proper IP address configuration. 
+- Of note, and particularly interesting to us as pentesters, is that this host is dual-homed. 
+- We mean it has multiple network interfaces connected to separate networks. 
+- This makes Mr. Tanakas host a great target if we are looking for a foothold in the network and wish to have a way to migrate between networks.
+- Let's look at `Arp` settings and see if his host has communicated with others on the network. 
+- As a refresher, ARP is a protocol utilized to `translate IP addresses to Physical addresses`. 
+- The physical address is used at lower levels of the `OSI/TCP-IP` models for communication. 
+- To have it display the host's current ARP entries, we will use the `-a` switch.
 
 
 
@@ -117,8 +139,14 @@ Interface: 172.16.5.100 --- 0xe
   224.0.0.252           01-00-5e-00-00-fc     static
   239.255.255.250       01-00-5e-7f-ff-fa     static
 ```
-- The output from `Arp -a` is pretty simple. We are provided with entries from our network adapters about the hosts it is aware of or has communicated with recently. Not surprisingly, since this host is fairly new, it has yet to communicate with too many hosts. Just the gateways, our remote host, and the host 172.16.5.155, the `Domain Controller` for `Greenhorn.corp`. Nothing crazy to be seen here. 
-- Now let's validate our DNS configuration is working properly. We will utilize `nslookup`, a built-in DNS querying tool, to attempt to resolve the IP address / DNS name of the Greenhorn domain controller.
+- The output from `Arp -a` is pretty simple. 
+- We are provided with entries from our network adapters about the hosts it is aware of or has communicated with recently. 
+- Not surprisingly, since this host is fairly new, it has yet to communicate with too many hosts. 
+- Just the gateways, our remote host, and the host 172.16.5.155, the `Domain Controller` for `Greenhorn.corp`. 
+- Nothing crazy to be seen here. 
+- Now let's validate our DNS configuration is working properly.
+- We will utilize `nslookup`, a built-in DNS querying tool, to attempt to resolve the IP address / DNS name of the Greenhorn domain controller.
+
 
 
 ### Nslookup
@@ -133,7 +161,11 @@ Address:  172.16.5.155
 Name:    ACADEMY-ICL-DC.greenhorn.corp
 Address:  172.16.5.155
 ```
-- Now that we have validated Mr. Tanakas DNS settings, let's check the open ports on the host. We can do so using `netstat -an`. Netstat will display current network connections to our host. The `-an` switch will print all connections and listening ports and place them in numerical form.
+- Now that we have validated Mr. Tanakas DNS settings, let's check the open ports on the host. 
+- We can do so using `netstat -an`. 
+- Netstat will display current network connections to our host. 
+- The `-an` switch will print all connections and listening ports and place them in numerical form.
+
 
 
 ### Netstat
@@ -183,15 +215,24 @@ Active Connections
   UDP    172.16.5.100:1900      *:*
   UDP    172.16.5.100:54453     *:*
 ```
-- Now, you may need to gain a background in looking at network traffic or an understanding of standard ports and protocols, or else the above may look like gibberish. That's ok, though. Looking above, we can see what ports are open and if we have any active connections. From the output above, the ports open are all commonly used in Windows environments and would be expected. Most deal with Active Directory services and SSH. When looking at the connections, we see only one currently active session: our own `SSH` connection over TCP port 22.
-- Most of these commands we have practiced with up to this point are Windows built-in executables and are helpful for quick insight into a host, but not for much more. Below we will cover several cmdlets that are additions from PowerShell that allow us to manage our network connections granularly.
+- Now, you may need to gain a background in looking at network traffic or an understanding of standard ports and protocols, or else the above may look like gibberish. 
+- That's ok, though. 
+- Looking above, we can see what ports are open and if we have any active connections. 
+- From the output above, the ports open are all commonly used in Windows environments and would be expected. 
+- Most deal with Active Directory services and SSH. 
+- When looking at the connections, we see only one currently active session: our own `SSH` connection over TCP port 22.
+- Most of these commands we have practiced with up to this point are Windows built-in executables and are helpful for quick insight into a host, but not for much more.
+- Below we will cover several cmdlets that are additions from PowerShell that allow us to manage our network connections granularly.
+
 
 
 ### PowerShell Net Cmdlets
-- PowerShell has several powerful built-in cmdlets made to handle networking services and administration. The NetAdapter, NetConnection, and NetTCPIP modules are just a few that we will practice with today.
+- PowerShell has several powerful built-in cmdlets made to handle networking services and administration. 
+- The NetAdapter, NetConnection, and NetTCPIP modules are just a few that we will practice with today.
 - #### Net Cmdlets
 ![[Screenshot_20241111_144720.png]]
-- We aren't going to show each cmdlet in use, but it would be prudent to provide a quick reference for your use. First, we will start with Get-NetIPInterface.
+- We aren't going to show each cmdlet in use, but it would be prudent to provide a quick reference for your use. 
+- First, we will start with Get-NetIPInterface.
 - #### Get-NetIPInterface
 ```powershell-session
 PS C:\htb> get-netIPInterface
@@ -220,7 +261,12 @@ et8   IPv6                  1500              35 Enabled  Connected       Active
 7       Local Area Connection           IPv4                  1500               1 Disabled Disconnected    ActiveStore
 1       Loopback Pseudo-Interface 1     IPv4            4294967295              75 Disabled Connected       ActiveStore
 ```
-- This listing shows us our available interfaces on the host in a bit of a convoluted manner. We are provided plenty of metrics, but the adapters are broken up by `AddressFamily`. So we see entries for each adapter twice if IPv4 and IPv6 are enabled on that particular interface. The `ifindex` and `InterfaceAlias` properties are particularly useful. These properties make it easy for us to use the other cmdlets provided by the `NetTCPIP` module. Let's get the Adapter information for our Wi-Fi connection at `ifIndex 25` utilizing the [Get-NetIPAddress](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-netipaddress?view=windowsserver2022-ps) cmdlet.
+- This listing shows us our available interfaces on the host in a bit of a convoluted manner. 
+- We are provided plenty of metrics, but the adapters are broken up by `AddressFamily`.
+- So we see entries for each adapter twice if IPv4 and IPv6 are enabled on that particular interface. 
+- The `ifindex` and `InterfaceAlias` properties are particularly useful. 
+- These properties make it easy for us to use the other cmdlets provided by the `NetTCPIP` module. 
+- Let's get the Adapter information for our Wi-Fi connection at `ifIndex 25` utilizing the [Get-NetIPAddress](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-netipaddress?view=windowsserver2022-ps) cmdlet.
 - #### Get-NetIPAddress
 ```powershell-session
 PS C:\htb> Get-NetIPAddress -ifIndex 25
@@ -253,13 +299,19 @@ PreferredLifetime : 21:35:36
 SkipAsSource      : False
 PolicyStore       : ActiveStore
 ```
-- This cmdlet has returned quite a bit of information as well. Notice how we used the ifIndex number to request the information? We can do the same with the InterfaceAlias as well. This cmdlet returns quite a bit of information, such as the index, alias, DHCP state, interface type, and other metrics. This mirrors most of what we would see if we issued the `IPconfig` executable from the command prompt. 
-- Now, what if we want to modify a setting on the interface? We can do so with the [Set-NetIPInterface](https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipinterface?view=windowsserver2022-ps) and [Set-NetIPAddress](https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipaddress?view=windowsserver2022-ps) cmdlets. In this example, let's say we want to change the DHCP status of the interface from `enabled`, to `disabled`, and change the IP from one automatically assigned by DHCP to one of our choosing manually set. We would accomplish this like so:
+- This cmdlet has returned quite a bit of information as well. 
+- Notice how we used the ifIndex number to request the information? 
+- We can do the same with the InterfaceAlias as well. This cmdlet returns quite a bit of information, such as the index, alias, DHCP state, interface type, and other metrics. 
+- This mirrors most of what we would see if we issued the `IPconfig` executable from the command prompt. 
+- Now, what if we want to modify a setting on the interface? We can do so with the [Set-NetIPInterface](https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipinterface?view=windowsserver2022-ps) and [Set-NetIPAddress](https://learn.microsoft.com/en-us/powershell/module/nettcpip/set-netipaddress?view=windowsserver2022-ps) cmdlets. 
+- In this example, let's say we want to change the DHCP status of the interface from `enabled`, to `disabled`, and change the IP from one automatically assigned by DHCP to one of our choosing manually set. 
+- We would accomplish this like so.
 - #### Set-NetIPInterface
 ```powershell-session
 PS C:\htb> Set-NetIPInterface -InterfaceIndex 25 -Dhcp Disabled
 ```
-- By disabling the DHCP property with the Set-NetIPInterface cmdlet, we can now set our manual IP Address. We do that with the `Set-NetIPAddress` cmdlet.
+- By disabling the DHCP property with the Set-NetIPInterface cmdlet, we can now set our manual IP Address. 
+- We do that with the `Set-NetIPAddress` cmdlet.
 - #### Set-NetIPAddress
 ```powershell-session
 PS C:\htb> Set-NetIPAddress -InterfaceIndex 25 -IPAddress 10.10.100.54 -PrefixLength 24
@@ -278,12 +330,17 @@ ifIndex InterfaceAlias     Dhcp
      20 Ethernet 3     Disabled
      20 Ethernet 3     Disabled
 ```
-- The above command now sets our IP address to `10.10.100.54` and the PrefixLength ( also known as the subnet mask ) to `24`. Looking at our checks, we can see that those settings are in place. To be safe, let's restart our network adapter and test our connection to see if it sticks.
+- The above command now sets our IP address to `10.10.100.54` and the PrefixLength ( also known as the subnet mask ) to `24`. 
+- Looking at our checks, we can see that those settings are in place. 
+- To be safe, let's restart our network adapter and test our connection to see if it sticks.
 - #### Restart-NetAdapter
 ```powershell-session
 PS C:\htb> Restart-NetAdapter -Name 'Ethernet 3'
 ```
-- As long as nothing goes wrong, you will not receive output. So when it comes to `Restart-NetAdapter`, no news is good news. The easiest way to tell the cmdlet which interface to restart is with the `Name` property, which is the same as the `InterfaceAlias` from previous commands we ran. Now, to ensure we still have a connection, we can use the Test-NetConnection cmdlet.
+- As long as nothing goes wrong, you will not receive output. 
+- So when it comes to `Restart-NetAdapter`, no news is good news. 
+- The easiest way to tell the cmdlet which interface to restart is with the `Name` property, which is the same as the `InterfaceAlias` from previous commands we ran. 
+- Now, to ensure we still have a connection, we can use the Test-NetConnection cmdlet.
 - #### Test-NetConnection
 ```powershell-session
 PS C:\htb> Test-NetConnection
@@ -295,16 +352,28 @@ SourceAddress          : 10.10.100.54
 PingSucceeded          : True
 PingReplyDetails (RTT) : 44 ms
 ```
-- The Test-NetConnection is a powerful cmdlet, capable of testing beyond basic network connectivity to determine whether we can reach another host. It can tell us about our TCP results, detailed metrics, route diagnostics and more. It would be worthwhile to look at this article by Microsoft on [Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection?view=windowsserver2022-ps). Now that we have completed our task and validated Mr. Tanaka's network settings on his host, let's discuss remote access connectivity for a bit.
+- The Test-NetConnection is a powerful cmdlet, capable of testing beyond basic network connectivity to determine whether we can reach another host. 
+- It can tell us about our TCP results, detailed metrics, route diagnostics and more. 
+- It would be worthwhile to look at this article by Microsoft on [Test-NetConnection](https://learn.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection?view=windowsserver2022-ps). 
+- Now that we have completed our task and validated Mr. Tanaka's network settings on his host, let's discuss remote access connectivity for a bit.
+
 
 
 ### Remote Access
-- When we cannot access Windows systems or need to manage hosts remotely, we can utilize PowerShell, SSH, and RDP, among other tools, to perform our work. Let's cover the main ways we can enable and use remote access. First, we will discuss `SSH`.
+- When we cannot access Windows systems or need to manage hosts remotely, we can utilize PowerShell, SSH, and RDP, among other tools, to perform our work. 
+- Let's cover the main ways we can enable and use remote access. 
+- First, we will discuss `SSH`.
+
 
 
 ### How to Enable Remote Access? ( SSH, PSSessions, etc.)
 - #### Enabling SSH Access
-	- We can use `SSH` to access `PowerShell` on a Windows system over the network. Starting in 2018, SSH via the [OpenSSH](https://www.openssh.com/) client and server applications has been accessible and included in all Windows Server and Client versions. It makes for an easy-to-use and extensible communication mechanism for our administrative use. Setting up OpenSSH on our hosts is simple. Let's give it a try. We must install the SSH Server component and the client application to access a host via SSH remotely.
+	- We can use `SSH` to access `PowerShell` on a Windows system over the network. 
+	- Starting in 2018, SSH via the [OpenSSH](https://www.openssh.com/) client and server applications has been accessible and included in all Windows Server and Client versions. 
+	- It makes for an easy-to-use and extensible communication mechanism for our administrative use. 
+	- Setting up OpenSSH on our hosts is simple.
+	- Let's give it a try. 
+	- We must install the SSH Server component and the client application to access a host via SSH remotely.
 - #### Setting up SSH on a Windows Target
 	- We can set up an SSH server on a Windows target using the [Add-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/add-windowscapability?view=windowsserver2022-ps) cmdlet and confirm that it is successfully installed using the [Get-WindowsCapability](https://docs.microsoft.com/en-us/powershell/module/dism/get-windowscapability?view=windowsserver2022-ps) cmdlet.
 ```powershell-session
@@ -345,7 +414,8 @@ Name  : OpenSSH.Server~~~~0.0.1.0
 State : Installed
 ```
 - #### Starting the SSH Service & Setting Startup Type
-	- Once we have confirmed SSH is installed, we can use the [Start-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.2) cmdlet to start the SSH service. We can also use the [Set-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2) cmdlet to configure the startup settings of the SSH service if we choose.
+	- Once we have confirmed SSH is installed, we can use the [Start-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.2) cmdlet to start the SSH service. 
+	- We can also use the [Set-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2) cmdlet to configure the startup settings of the SSH service if we choose.
 
 > Note: Initial setup of remote access services will not be a requirement in this module to complete challenge questions. With each of the challenges in this module, remote access is already set up & configured. However, understanding how to connect and apply concepts covered throughout the module will be required. The setup & configuration steps are provided to help develop an understanding of common configuration mistakes and, in some cases, best security practices. Feel free to try some setup steps on your own personal VM.
 
@@ -383,9 +453,14 @@ PS C:\Users\htb-student>
 - Now that we have covered SSH let's spend some time covering enabling and using `WinRM` for remote access and management.
 
 
+
 ### Enabling WinRM
-- [Windows Remote Management (WinRM)](https://docs.microsoft.com/en-us/windows/win32/winrm/portal) can be configured using dedicated PowerShell cmdlets and we can enter into a PowerShell interactive session as well as issue commands on remote Windows target(s). We will notice that WinRM is more commonly enabled on Windows Server operating systems, so IT admins can perform tasks on one or multiple hosts. It's enabled by default in Windows Server.
-- Because of the increasing demand for the ability to remotely manage and automate tasks on Windows systems, we will likely see WinRM enabled on more & more Windows desktop operating systems (Windows 10 & Windows 11) as well. When WinRM is enabled on a Windows target, it listens on logical ports `5985` & `5986`.
+- [Windows Remote Management (WinRM)](https://docs.microsoft.com/en-us/windows/win32/winrm/portal) can be configured using dedicated 
+- PowerShell cmdlets and we can enter into a PowerShell interactive session as well as issue commands on remote Windows target(s).
+- We will notice that WinRM is more commonly enabled on Windows Server operating systems, so IT admins can perform tasks on one or multiple hosts. 
+- It's enabled by default in Windows Server.
+- Because of the increasing demand for the ability to remotely manage and automate tasks on Windows systems, we will likely see WinRM enabled on more & more Windows desktop operating systems (Windows 10 & Windows 11) as well.
+- When WinRM is enabled on a Windows target, it listens on logical ports `5985` & `5986`.
 - #### Enabling & Configuring WinRM
 	- WinRM can be enabled on a Windows target using the following commands.
 ```powershell-session
@@ -409,10 +484,13 @@ Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely
 	- Enable the WinRM service
 	- Allow WinRM through the Windows Defender Firewall (Inbound and Outbound)
 	- Grant administrative rights remotely to local users
-- As long as credentials to access the system are known, anyone who can reach the target over the network can connect after that command is run. IT admins should take further steps to harden these WinRM configurations, especially if the system will be remotely accessible over the Internet. Among some of these hardening options are:
+- As long as credentials to access the system are known, anyone who can reach the target over the network can connect after that command is run. 
+- IT admins should take further steps to harden these WinRM configurations, especially if the system will be remotely accessible over the Internet. 
+- Among some of these hardening options are:
 	- Configure TrustedHosts to include just IP addresses/hostnames that will be used for remote management
 	- Configure HTTPS for transport
 	- Join Windows systems to an Active Directory Domain Environment and Enforce Kerberos Authentication
+
 
 
 ### Testing PowerShell Remote Access
@@ -426,7 +504,9 @@ ProtocolVersion : http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd
 ProductVendor   : Microsoft Corporation
 ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 3.0
 ```
-- Running this cmdlet sends a request that checks if the WinRM service is running. Keep in mind that this is unauthenticated, so no credentials are used, which is why no `OS` version is detected. This shows us that the WinRM service is running on the target.
+- Running this cmdlet sends a request that checks if the WinRM service is running. 
+- Keep in mind that this is unauthenticated, so no credentials are used, which is why no `OS` version is detected. 
+- This shows us that the WinRM service is running on the target.
 - #### Testing Authenticated Access
 ```powershell-session
 PS C:\Users\administrator> Test-WSMan -ComputerName "10.129.224.248" -Authentication Negotiate
@@ -459,7 +539,8 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
-- We can perform this same action from a Linux-based attack host with PowerShell core installed (like in Pwnbox). Remember that PowerShell is not exclusive to Windows and will run on other operating systems now.
+- We can perform this same action from a Linux-based attack host with PowerShell core installed (like in Pwnbox). 
+- Remember that PowerShell is not exclusive to Windows and will run on other operating systems now.
 - #### Using Enter-PSSession from Linux
 ```shell-session
 secmancer@htb[/htb]$ [PS]> Enter-PSSession -ComputerName 10.129.224.248 -Credential htb-student -Authentication Negotiate
@@ -481,8 +562,12 @@ WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3                                             
 SerializationVersion           1.1.0.1
 ```
-- Along with being OS agnostic, there are now tons of different tools that we can use to interact remotely with hosts. Picking a means to remotely administer our hosts mostly comes down to what you are comfortable with and what you can use based on the engagement or your environment security settings.
-- Networking is a pretty straightforward task to manage on Windows hosts. As your environments get more complex with cloud servers, multiple domains, and multiple sites across large geographical distances, network management at the level can get tedious. Luckily, we are only focused on our local host and how to manage a singular host. Moving forward, we will look at how we can interact with the web using PowerShell.
+- Along with being OS agnostic, there are now tons of different tools that we can use to interact remotely with hosts. 
+- Picking a means to remotely administer our hosts mostly comes down to what you are comfortable with and what you can use based on the engagement or your environment security settings.
+- Networking is a pretty straightforward task to manage on Windows hosts. 
+- As your environments get more complex with cloud servers, multiple domains, and multiple sites across large geographical distances, network management at the level can get tedious.
+- Luckily, we are only focused on our local host and how to manage a singular host. Moving forward, we will look at how we can interact with the web using PowerShell.
+
 
 
 ### Questions

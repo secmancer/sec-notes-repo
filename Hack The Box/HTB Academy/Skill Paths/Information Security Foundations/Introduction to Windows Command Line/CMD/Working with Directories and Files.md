@@ -727,7 +727,8 @@ Approximate round trip times in milli-seconds:
 a b c d e
 f g h i j k see how this works now?
 ```
-- If we care about the result or state of the commands being run, we can utilize `&&` to say run command A, and if it succeeds, run command B. This can be useful if you are doing something that is results dependent such as our cmd-session below.
+- If we care about the result or state of the commands being run, we can utilize `&&` to say run command A, and if it succeeds, run command B. 
+- This can be useful if you are doing something that is results dependent such as our cmd-session below.
 - #### State Dependent &&
 ```cmd-session
 C:\Users\student\Documents>cd C:\Users\student\Documents\Backup && echo 'did this work' > yes.txt
@@ -735,8 +736,11 @@ C:\Users\student\Documents>cd C:\Users\student\Documents\Backup && echo 'did thi
 C:\Users\student\Documents\Backup>type yes.txt
 'did this work'
 ```
-- We can see that on my first line with `&&`, we asked to change our working directory, then echo a string into a file if it succeeded. We can tell it succeeded because our cmd path changed and when we `type` the file, it echo'd our string into the file. You can also accomplish the opposite of this with `||`. By using (pipe pipe), we are saying run command A. If it fails, run command B.
+- We can see that on my first line with `&&`, we asked to change our working directory, then echo a string into a file if it succeeded. 
+- We can tell it succeeded because our cmd path changed and when we `type` the file, it echo'd our string into the file. 
+- You can also accomplish the opposite of this with `||`. By using (pipe pipe), we are saying run command A. If it fails, run command B.
 - We have spent much time leveling up our file creation and modification skills. Now, what if we want to remove objects from the host? Let us look at the `del` and `erase` commands.
+
 
 
 ### Deleting Files
@@ -780,7 +784,9 @@ C:\Users\htb\Desktop\example>dir
                6 File(s)             30 bytes
                2 Dir(s)  38,633,730,048 bytes free
 ```
-- When utilizing `del` or `erase`, remember that we can specify a directory, a filename, a list of names, or even a specific attribute to target when trying to delete files. Above, we listed the example directory and then deleted `file-1`. Simple enough, right? Now let us erase a list of files.
+- When utilizing `del` or `erase`, remember that we can specify a directory, a filename, a list of names, or even a specific attribute to target when trying to delete files. 
+- Above, we listed the example directory and then deleted `file-1`. Simple enough, right? 
+- Now let us erase a list of files.
 - #### Using Del And Erase to remove a list of files
 ```cmd-session
 C:\Users\htb\Desktop\example> erase file-3 file-5
@@ -800,8 +806,15 @@ dir
                4 File(s)             20 bytes
                2 Dir(s)  38,633,218,048 bytes free
 ```
-- We can see in the session above that we utilized erase instead of del this time. This was to show the interoperability of both commands. Think of them as symbolic links. Both commands do the same thing. This time we fed erase a list of two files, `file-3` and `file-5`. It erased the files without issue.
-- Let us say we want to get rid of a read-only or hidden file. We can do that with the `/A:` switch. /A can delete files based on a specific attribute. Let us look at the help for del quickly and see what those attributes are.
+- We can see in the session above that we utilized erase instead of del this time. 
+- This was to show the interoperability of both commands.
+- Think of them as symbolic links. 
+- Both commands do the same thing. 
+- This time we fed erase a list of two files, `file-3` and `file-5`. It erased the files without issue.
+- Let us say we want to get rid of a read-only or hidden file. 
+- We can do that with the `/A:` switch. /A can delete files based on a specific attribute. 
+- Let us look at the help for del quickly and see what those attributes are.
+
 
 
 ### Del Help Documentation
@@ -828,7 +841,11 @@ ERASE [/P] [/F] [/S] [/Q] [/A[[:]attributes]] names
                 I  Not content indexed Files  L  Reparse Points
                 O  Offline files              -  Prefix meaning not
 ```
-- So, to delete a read-only file, we can use `A:R`. This will remove anything within our path that is Read-only. However, how do we identify if a file is read-only, hidden, or has some other attribute? Dir can come to the rescue again. Utilizing `dir /A:R` will show us anything with the Read-only attribute. Let us give it a try.
+- So, to delete a read-only file, we can use `A:R`.
+- This will remove anything within our path that is Read-only. 
+- However, how do we identify if a file is read-only, hidden, or has some other attribute? Dir can come to the rescue again. 
+- Utilizing `dir /A:R` will show us anything with the Read-only attribute. 
+- Let us give it a try.
 - #### View Files With the Read-only Attribute
 ```cmd-session
 C:\Users\htb\Desktop\example> dir /A:R
@@ -842,7 +859,8 @@ C:\Users\htb\Desktop\example> dir /A:R
                1 File(s)              5 bytes
                0 Dir(s)  38,632,652,800 bytes free
 ```
-- Now we know one file matches our Read-only attribute in the example directory. Let us delete it.
+- Now we know one file matches our Read-only attribute in the example directory. 
+- Let us delete it.
 - #### Delete a Read-only File
 ```cmd-session
 C:\Users\htb\Desktop\example > del /A:R *
@@ -863,7 +881,10 @@ C:\Users\htb\Desktop\example>dir
                3 File(s)             15 bytes
                2 Dir(s)  38,632,529,920 bytes free
 ```
-- Notice that we used `*` to specify any file. Now when we look at the example directory again, file-66 is missing, but files 2, 4, and 6 are still there. Let us give del a swing again with the hidden attribute. To identify if there are any hidden files within the directory, we can use `dir /A:H`
+- Notice that we used `*` to specify any file. 
+- Now when we look at the example directory again, file-66 is missing, but files 2, 4, and 6 are still there. 
+- Let us give del a swing again with the hidden attribute. 
+- To identify if there are any hidden files within the directory, we can use `dir /A:H`
 - #### Viewing Hidden Files
 ```cmd-session
 C:\Users\htb\Desktop\example> dir /A:H
@@ -877,7 +898,8 @@ C:\Users\htb\Desktop\example> dir /A:H
                0 Dir(s)  38,632,202,240 bytes free
 
 ```
-- Notice the new file we did not see before? Now `file-99` is showing up in our directory listing hidden files. Remember that much like Linux, you can hide files from the view of users. 
+- Notice the new file we did not see before? Now `file-99` is showing up in our directory listing hidden files. 
+- Remember that much like Linux, you can hide files from the view of users. 
 - With the hidden attribute, the file exists and can be called, but it will not be visible within a directory listing or from the GUI unless specifically looking for them. 
 - To delete the hidden file, we can perform the same del command as earlier, just changing the attribute from `R` to `H`.
 - #### Removing Hidden Files
@@ -917,11 +939,16 @@ C:\Users\htb\Desktop\example>dir /A:H
 
 File Not Found
 ```
-- Now we successfully deleted a file with the hidden attribute. To erase the directory with the rest of its contents, we can feed the `del` command with the directory name to remove the contents and follow it up with the `rd` command to eliminate the directory structure. If a file resides within the directory with the Read-only attribute or some other, utilizing the `/F` switch will force delete the file.
+- Now we successfully deleted a file with the hidden attribute. 
+- To erase the directory with the rest of its contents, we can feed the `del` command with the directory name to remove the contents and follow it up with the `rd` command to eliminate the directory structure. 
+- If a file resides within the directory with the Read-only attribute or some other, utilizing the `/F` switch will force delete the file.
+
 
 
 ### Copying and Moving Files
-- Just like directories, we have several options to copy or move files. `Copy` and `move` are the easiest ways to accomplish this. We can use them to make copies of a file in the same directory or move it into another. As a task, this is one of the simplest we will do.
+- Just like directories, we have several options to copy or move files. `Copy` and `move` are the easiest ways to accomplish this. 
+- We can use them to make copies of a file in the same directory or move it into another. 
+- As a task, this is one of the simplest we will do.
 - #### copy
 ```cmd-session
 C:\Users\student\Documents\Backup>copy secrets.txt C:\Users\student\Downloads\not-secrets.txt
@@ -939,14 +966,17 @@ C:\Users\student\Downloads>dir
                1 File(s)          2,418 bytes
                2 Dir(s)  39,021,146,112 bytes free
 ```
-- In the example above, we copied `secrets.txt` and moved it to the Downloads folder, renamed it as `not-secrets.txt`. By default, `copy` will complete its task and close. If we wish to ensure the files copied are copied correctly, we can use the `/V` switch to turn on file validation.
+- In the example above, we copied `secrets.txt` and moved it to the Downloads folder, renamed it as `not-secrets.txt`. 
+- By default, `copy` will complete its task and close. 
+- If we wish to ensure the files copied are copied correctly, we can use the `/V` switch to turn on file validation.
 - #### Copy Validation
 ```cmd-session
 C:\Windows\System32> copy calc.exe C:\Users\student\Downloads\copied-calc.exe /V
 Overwrite C:\Users\student\Downloads\copied-calc.exe? (Yes/No/All): A
         1 file(s) copied.
 ```
-- With `move`, we can move files and directories from one place to another and rename them. Move differs from copy because it can also rename and move directories.
+- With `move`, we can move files and directories from one place to another and rename them. 
+- Move differs from copy because it can also rename and move directories.
 - #### move
 ```cmd-session
 C:\Users\student\Desktop>move C:\Users\student\Desktop\bio.txt C:\Users\student\Downloads
@@ -967,8 +997,12 @@ C:\Users\student\Desktop>dir C:\Users\student\Downloads
                3 File(s)         31,206 bytes
                2 Dir(s)  39,122,550,784 bytes free
 ```
-- Above, we took the `bio.txt` file and moved it to the Downloads folder. Manipulating files is as easy as that.
-- Great job! We have now tackled the task of mastering file and folder manipulation. Next up, we will tackle gathering up some critical system information.
+- Above, we took the `bio.txt` file and moved it to the Downloads folder.
+- Manipulating files is as easy as that.
+- Great job! 
+- We have now tackled the task of mastering file and folder manipulation. Next up, we will tackle gathering up some critical system information.
+
+
 
 ### Questions
 - What command can display the contents of a file and redirect the contents of the file into another file or to the console?
