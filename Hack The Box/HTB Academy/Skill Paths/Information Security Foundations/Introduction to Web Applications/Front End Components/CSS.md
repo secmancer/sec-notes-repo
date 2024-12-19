@@ -1,9 +1,13 @@
 ### Introduction
-- [CSS (Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) is the stylesheet language used alongside HTML to format and set the style of HTML elements. Like HTML, there are several versions of CSS, and each subsequent version introduces a new set of capabilities that can be used for formatting HTML elements. Browsers are updated alongside it to support these new features.
+- [CSS (Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) is the stylesheet language used alongside HTML to format and set the style of HTML elements. 
+- Like HTML, there are several versions of CSS, and each subsequent version introduces a new set of capabilities that can be used for formatting HTML elements.
+- Browsers are updated alongside it to support these new features.
+
 
 
 ### Example
-- At a fundamental level, CSS is used to define the style of each class or type of HTML elements (i.e., `body` or `h1`), such that any element within that page would be represented as defined in the CSS file. This could include the font family, font size, background color, text color and alignment, and more.
+- At a fundamental level, CSS is used to define the style of each class or type of HTML elements (i.e., `body` or `h1`), such that any element within that page would be represented as defined in the CSS file. 
+- This could include the font family, font size, background color, text color and alignment, and more.
 ```css
 body {
   background-color: black;
@@ -21,6 +25,7 @@ p {
 ```
 
 - As previously mentioned, this is why we may set unique IDs or class names for certain HTML elements so that we can later refer to them within CSS or JavaScript when needed.
+
 
 
 ### Syntax
@@ -47,6 +52,7 @@ p {
 	- [Foundation](https://en.wikipedia.org/wiki/Foundation_\(framework\))
 	- [Bulma](https://bulma.io/)
 	- [Pure](https://purecss.io/)
+
 
 
 ### Questions

@@ -1,5 +1,9 @@
 ### Introduction
-- The first and most dominant component of the front end of web applications is [HTML (HyperText Markup Language)](https://en.wikipedia.org/wiki/HTML). HTML is at the very core of any web page we see on the internet. It contains each page's basic elements, including titles, forms, images, and many other elements. The web browser, in turn, interprets these elements and displays them to the end-user.
+- The first and most dominant component of the front end of web applications is [HTML (HyperText Markup Language)](https://en.wikipedia.org/wiki/HTML).
+- HTML is at the very core of any web page we see on the internet. It contains each page's basic elements, including titles, forms, images, and many other elements. 
+- The web browser, in turn, interprets these elements and displays them to the end-user.
+
+
 
 ### Example
 ```html
@@ -17,6 +21,7 @@
 - This would display this page shown below.
 ![HTML Example](https://academy.hackthebox.com/storage/modules/75/web_apps_html_2.jpg)
 - As we can see, HTML elements are displayed in a tree form, similar to `XML` and other languages.
+
 
 
 ### HTML Structure
@@ -48,7 +53,8 @@ document
     </body>
 
 </html>
-- Each HTML element is opened and closed with a tag that specifies the element's type 'e.g. `<p>` for paragraphs', where the content would be placed between these tags. Tags may also hold the element's id or class 'e.g. `<p id='para1'>` or `<p id='red-paragraphs'>`', which is needed for CSS to properly format the element. Both tags and the content comprise the entire element.
+- Each HTML element is opened and closed with a tag that specifies the element's type 'e.g. `<p>` for paragraphs', where the content would be placed between these tags. 
+- Tags may also hold the element's id or class 'e.g. `<p id='para1'>` or `<p id='red-paragraphs'>`', which is needed for CSS to properly format the element. Both tags and the content comprise the entire element.
 
 
 ### URL Encoding

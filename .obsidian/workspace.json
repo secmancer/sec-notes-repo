@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Front End Components/HTML.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Common Web Vulnerabilities"
+              "title": "HTML"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Front End Components/HTML.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Common Web Vulnerabilities"
+              "title": "Outline of HTML"
             }
           },
           {
@@ -206,6 +206,7 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Front End Components/CSS.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Public Vulnerabilities.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Vulnerabilities/Common Web Vulnerabilities.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Web Servers.md",
@@ -231,7 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/Subnetting.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/Network Layer.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/MAC Addresses.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv6 Addresses.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
