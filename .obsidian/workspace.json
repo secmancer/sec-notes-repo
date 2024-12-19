@@ -11,10 +11,14 @@
             "id": "70467e018a69c517",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Working with Directories and Files.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Working with Directories and Files"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Working with Directories and Files.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Working with Directories and Files"
             }
           },
           {
@@ -198,8 +204,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "70467e018a69c517",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/System Navigation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Managing Services.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Getting Help.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Gathering System Information.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Finding Files and Directories.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Environmental Variables.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Command Prompt Basics.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Next Steps/Next Steps.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Introduction to Web Applications/Web Application Layout.md",
@@ -220,12 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Back End Components/Back End Servers.md",
     "Hack The Box/HTB Labs/Add files or folders here!.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Wireless Networks.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Virtual Private Networks.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Vendor Specific Information.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Networking Key Terminology.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Protocols & Terminology/Common Protocols.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Workflow/Networking Models.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Networking Workflow/The TCP-IP Model.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
