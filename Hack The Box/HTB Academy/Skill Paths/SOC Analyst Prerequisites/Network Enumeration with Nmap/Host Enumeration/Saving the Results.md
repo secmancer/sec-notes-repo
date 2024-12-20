@@ -1,9 +1,12 @@
 ### Different Formats
-- While we run various scans, we should always save the results. We can use these later to examine the differences between the different scanning methods we have used. `Nmap` can save the results in 3 different formats.
+- While we run various scans, we should always save the results. 
+- We can use these later to examine the differences between the different scanning methods we have used.
+- `Nmap` can save the results in 3 different formats.
 	- Normal output (`-oN`) with the `.nmap` file extension
 	- Grepable output (`-oG`) with the `.gnmap` file extension
 	- XML output (`-oX`) with the `.xml` file extension
-- We can also specify the option (`-oA`) to save the results in all formats. The command could look like this.
+- We can also specify the option (`-oA`) to save the results in all formats. 
+- The command could look like this.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p- -oA target
 
@@ -26,7 +29,8 @@ Nmap done: 1 IP address (1 host up) scanned in 10.22 seconds
 | `-p-` | Scans all ports. |
 | `-oA target` | Saves the results in all formats, starting the name of each file with 'target'. |
 
-- If no full path is given, the results will be stored in the directory we are currently in. Next, we look at the different formats `Nmap` has created for us.
+- If no full path is given, the results will be stored in the directory we are currently in.
+- Next, we look at the different formats `Nmap` has created for us.
 
 ```shell-session
 secmancer@htb[/htb]$ ls
@@ -90,8 +94,11 @@ secmancer@htb[/htb]$ cat target.xml
 ```
 
 
+
 ### Style sheets
-- With the XML output, we can easily create HTML reports that are easy to read, even for non-technical people. This is later very useful for documentation, as it presents our results in a detailed and clear way. To convert the stored results from XML format to HTML, we can use the tool `xsltproc`.
+- With the XML output, we can easily create HTML reports that are easy to read, even for non-technical people. 
+- This is later very useful for documentation, as it presents our results in a detailed and clear way. 
+- To convert the stored results from XML format to HTML, we can use the tool `xsltproc`.
 ```shell-session
 secmancer@htb[/htb]$ xsltproc target.xml -o target.html
 ```
@@ -99,6 +106,8 @@ secmancer@htb[/htb]$ xsltproc target.xml -o target.html
 - #### Nmap Report
 ![image](https://academy.hackthebox.com/storage/modules/19/nmap-report.png)
 - More information about the output formats can be found at: [https://nmap.org/book/output.html](https://nmap.org/book/output.html)
+
+
 
 ### Questions
 - Perform a full TCP port scan on your target and create an HTML report. Submit the number of the highest port as the answer.

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "93bd626be0b353b1",
+        "id": "bb9e5574fba01e88",
         "type": "tabs",
         "children": [
           {
-            "id": "c306eab1362be439",
+            "id": "9ea24d45fa0c314f",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -135,10 +135,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Libc Functions"
+              "title": "Outline of Introduction to Nmap"
             }
           },
           {
@@ -202,32 +202,32 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Enumeration.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Introduction/Introduction to Nmap.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Service Enumeration.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Saving the Results.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Performance.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Nmap Scripting Engine.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host Discovery.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Host Enumeration/Host and Port Scanning.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Medium Lab.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Hard Lab.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion - Easy Lab.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Network Enumeration with Nmap/Bypass Security Measures/Firewall and IDS-IPS Evasion.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Skills Assessment/Skills Assessment.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Tools.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcoding Techniques.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Shellcoding/Shellcodes.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Module Project/Module Project.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Using the Stack.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Syscalls.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Procedures.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/CPU Architecture.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Computer Architecture.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Windows Services & Processes.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Service Permissions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Introduction/Introduction to Windows.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Sessions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Interacting with the Windows Operating System.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Windows Subsystem for Linux (WSL).md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

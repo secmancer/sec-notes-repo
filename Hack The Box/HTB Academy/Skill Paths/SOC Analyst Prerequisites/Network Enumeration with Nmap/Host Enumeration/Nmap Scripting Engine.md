@@ -1,5 +1,6 @@
 ### Introduction
-- Nmap Scripting Engine (`NSE`) is another handy feature of `Nmap`. It provides us with the possibility to create scripts in Lua for interaction with certain services.
+- Nmap Scripting Engine (`NSE`) is another handy feature of `Nmap`. 
+- It provides us with the possibility to create scripts in Lua for interaction with certain services.
 
 | **Category** | **Description** |
 | --- | --- |
@@ -34,7 +35,6 @@ secmancer@htb[/htb]$ sudo nmap <target> --script <script-name>,<script-name>,...
 
 - For example, let us keep working with the target SMTP port and see the results we get with two defined scripts.
 - #### Nmap - Specifying Scripts
-
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 25 --script banner,smtp-commands
 
@@ -55,8 +55,10 @@ MAC Address: DE:AD:00:00:BE:EF (Intel Corporate)
 | `-p 25` | Scans only the specified port. |
 | `--script banner,smtp-commands` | Uses specified NSE scripts. |
 
-- We see that we can recognize the **Ubuntu** distribution of Linux by using the' banner' script. The `smtp-commands` script shows us which commands we can use by interacting with the target SMTP server. 
-- In this example, such information may help us to find out existing users on the target. `Nmap` also gives us the ability to scan our target with the aggressive option (`-A`). This scans the target with multiple options as service detection (`-sV`), OS detection (`-O`), traceroute (`--traceroute`), and with the default NSE scripts (`-sC`).
+- We see that we can recognize the **Ubuntu** distribution of Linux by using the' banner' script.
+- The `smtp-commands` script shows us which commands we can use by interacting with the target SMTP server. 
+- In this example, such information may help us to find out existing users on the target. `Nmap` also gives us the ability to scan our target with the aggressive option (`-A`). 
+- This scans the target with multiple options as service detection (`-sV`), OS detection (`-O`), traceroute (`--traceroute`), and with the default NSE scripts (`-sC`).
 - #### Nmap - Aggressive Scan
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p 80 -A
@@ -138,7 +140,9 @@ PORT   STATE SERVICE VERSION
 | `-sV` | Performs service version detection on specified ports. |
 | `--script vuln` | Uses all related scripts from specified category. |
 
-- The scripts used for the last scan interact with the webserver and its web application to find out more information about their versions and check various databases to see if there are known vulnerabilities. More information about NSE scripts and the corresponding categories we can find at: [https://nmap.org/nsedoc/index.html](https://nmap.org/nsedoc/index.html)
+- The scripts used for the last scan interact with the webserver and its web application to find out more information about their versions and check various databases to see if there are known vulnerabilities. 
+- More information about NSE scripts and the corresponding categories we can find at: [https://nmap.org/nsedoc/index.html](https://nmap.org/nsedoc/index.html)
+
 
 
 ### Questions

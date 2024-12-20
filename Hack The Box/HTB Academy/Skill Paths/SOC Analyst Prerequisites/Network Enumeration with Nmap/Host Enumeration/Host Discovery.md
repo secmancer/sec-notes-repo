@@ -21,12 +21,15 @@ secmancer@htb[/htb]$ sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" "
 | `-sn` | Disables port scanning. |
 | `-oA tnet` | Stores the results in all formats starting with the name 'tnet'. |
 
-- This scanning method works only if the firewalls of the hosts allow it. Otherwise, we can use other scanning techniques to find out if the hosts are active or not. We will take a closer look at these techniques in "`Firewall and IDS Evasion`".
+- This scanning method works only if the firewalls of the hosts allow it. 
+- Otherwise, we can use other scanning techniques to find out if the hosts are active or not. 
+- We will take a closer look at these techniques in "`Firewall and IDS Evasion`".
+
 
 
 ### Scan IP List
-- During an internal penetration test, it is not uncommon for us to be provided with an IP list with the hosts we need to test. `Nmap` also gives us the option of working with lists and reading the hosts from this list instead of manually defining or typing them in.
-
+- During an internal penetration test, it is not uncommon for us to be provided with an IP list with the hosts we need to test.
+- `Nmap` also gives us the option of working with lists and reading the hosts from this list instead of manually defining or typing them in.
 ```shell-session
 secmancer@htb[/htb]$ cat hosts.lst
 
@@ -53,11 +56,15 @@ secmancer@htb[/htb]$ sudo nmap -sn -oA tnet -iL hosts.lst | grep for | cut -d" "
 | `-oA tnet` | Stores the results in all formats starting with the name 'tnet'. |
 | `-iL` | Performs defined scans against targets in provided 'hosts.lst' list. |
 
-- In this example, we see that only 3 of 7 hosts are active. Remember, this may mean that the other hosts ignore the default **ICMP echo requests** because of their firewall configurations. Since `Nmap` does not receive a response, it marks those hosts as inactive.
+- In this example, we see that only 3 of 7 hosts are active. 
+- Remember, this may mean that the other hosts ignore the default **ICMP echo requests** because of their firewall configurations. 
+- Since `Nmap` does not receive a response, it marks those hosts as inactive.
+
 
 
 ### Scan Multiple IPs
-- It can also happen that we only need to scan a small part of a network. An alternative to the method we used last time is to specify multiple IP addresses.
+- It can also happen that we only need to scan a small part of a network. 
+- An alternative to the method we used last time is to specify multiple IP addresses.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap -sn -oA tnet 10.129.2.18 10.129.2.19 10.129.2.20| grep for | cut -d" " -f5
 
@@ -77,7 +84,8 @@ secmancer@htb[/htb]$ sudo nmap -sn -oA tnet 10.129.2.18-20| grep for | cut -d" "
 
 
 ### Scan Single IP
-- Before we scan a single host for open ports and its services, we first have to determine if it is alive or not. For this, we can use the same method as before.
+- Before we scan a single host for open ports and its services, we first have to determine if it is alive or not. 
+- For this, we can use the same method as before.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.18 -sn -oA host 
 
@@ -96,7 +104,8 @@ Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
 
 - If we disable port scan (`-sn`), Nmap automatically ping scan with `ICMP Echo Requests` (`-PE`). 
 - Once such a request is sent, we usually expect an `ICMP reply` if the pinging host is alive. 
-- The more interesting fact is that our previous scans did not do that because before Nmap could send an ICMP echo request, it would send an `ARP ping` resulting in an `ARP reply`. We can confirm this with the "`--packet-trace`" option. 
+- The more interesting fact is that our previous scans did not do that because before Nmap could send an ICMP echo request, it would send an `ARP ping` resulting in an `ARP reply`. 
+- We can confirm this with the "`--packet-trace`" option. 
 - To ensure that ICMP echo requests are sent, we also define the option (`-PE`) for this.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.18 -sn -oA host -PE --packet-trace 
@@ -139,9 +148,9 @@ Nmap done: 1 IP address (1 host up) scanned in 0.03 seconds
 | `-PE`                | Performs the ping scan by using 'ICMP Echo requests' against the target. |
 | `--reason`           | Displays the reason for specific result.                                 |
 
----
-
-- We see here that `Nmap` does indeed detect whether the host is alive or not through the `ARP request` and `ARP reply` alone. To disable ARP requests and scan our target with the desired `ICMP echo requests`, we can disable ARP pings by setting the "`--disable-arp-ping`" option. Then we can scan our target again and look at the packets sent and received.
+- We see here that `Nmap` does indeed detect whether the host is alive or not through the `ARP request` and `ARP reply` alone. 
+- To disable ARP requests and scan our target with the desired `ICMP echo requests`, we can disable ARP pings by setting the "`--disable-arp-ping`" option. 
+- Then we can scan our target again and look at the packets sent and received.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.18 -sn -oA host -PE --packet-trace --disable-arp-ping 
 
@@ -153,8 +162,11 @@ Host is up (0.086s latency).
 MAC Address: DE:AD:00:00:BE:EF
 Nmap done: 1 IP address (1 host up) scanned in 0.11 seconds
 ```
-- We have already mentioned in the "`Learning Process`," and at the beginning of this module, it is essential to pay attention to details. An `ICMP echo request` can help us determine if our target is alive and identify its system. More strategies about host discovery can be found at:
+- We have already mentioned in the "`Learning Process`," and at the beginning of this module, it is essential to pay attention to details. 
+- An `ICMP echo request` can help us determine if our target is alive and identify its system. 
+- More strategies about host discovery can be found at:
 - [https://nmap.org/book/host-discovery-strategies.html](https://nmap.org/book/host-discovery-strategies.html)
+
 
 
 ### Questions

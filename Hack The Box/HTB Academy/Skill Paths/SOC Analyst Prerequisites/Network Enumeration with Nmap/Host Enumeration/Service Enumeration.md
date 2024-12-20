@@ -1,13 +1,17 @@
 ### Introduction
-- For us, it is essential to determine the application and its version as accurately as possible. We can use this information to scan for known vulnerabilities and analyze the source code for that version if we find it. An exact version number allows us to search for a more precise exploit that fits the service and the operating system of our target.
+- For us, it is essential to determine the application and its version as accurately as possible. 
+- We can use this information to scan for known vulnerabilities and analyze the source code for that version if we find it.
+- An exact version number allows us to search for a more precise exploit that fits the service and the operating system of our target.
 
 
 
 ### Service Version Detection
 - It is recommended to perform a quick port scan first, which gives us a small overview of the available ports. 
-- This causes significantly less traffic, which is advantageous for us because otherwise we can be discovered and blocked by the security mechanisms. We can deal with these first and run a port scan in the background, which shows all open ports (`-p-`). 
+- This causes significantly less traffic, which is advantageous for us because otherwise we can be discovered and blocked by the security mechanisms. 
+- We can deal with these first and run a port scan in the background, which shows all open ports (`-p-`). 
 - We can use the version scan to scan the specific ports for services and their versions (`-sV`).
-- A full port scan takes quite a long time. To view the scan status, we can press the `[Space Bar]` during the scan, which will cause `Nmap` to show us the scan status.
+- A full port scan takes quite a long time. 
+- To view the scan status, we can press the `[Space Bar]` during the scan, which will cause `Nmap` to show us the scan status.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p- -sV
 
@@ -66,17 +70,17 @@ Discovered open port 22/tcp on 10.129.2.28
 <SNIP>
 ```
 
-| **Scanning Options** | **Description** |
-| --- | --- |
-| `10.129.2.28` | Scans the specified target. |
-| `-p-` | Scans all ports. |
-| `-sV` | Performs service version detection on specified ports. |
-| `-v` | Increases the verbosity of the scan, which displays more detailed information. |
+| **Scanning Options** | **Description**                                                                |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `10.129.2.28`        | Scans the specified target.                                                    |
+| `-p-`                | Scans all ports.                                                               |
+| `-sV`                | Performs service version detection on specified ports.                         |
+| `-v`                 | Increases the verbosity of the scan, which displays more detailed information. |
+
 
 
 ### Banner Grabbing
 - Once the scan is complete, we will see all TCP ports with the corresponding service and their versions that are active on the system.
-
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p- -sV
 
@@ -107,9 +111,10 @@ Nmap done: 1 IP address (1 host up) scanned in 91.73 seconds
 | `-p-` | Scans all ports. |
 | `-sV` | Performs service version detection on specified ports. |
 
-- Primarily, `Nmap` looks at the banners of the scanned ports and prints them out. If it cannot identify versions through the banners, `Nmap` attempts to identify them through a signature-based matching system, but this significantly increases the scan's duration. 
-- One disadvantage to `Nmap`'s presented results is that the automatic scan can miss some information because sometimes `Nmap` does not know how to handle it. Let us look at an example of this.
-
+- Primarily, `Nmap` looks at the banners of the scanned ports and prints them out. 
+- If it cannot identify versions through the banners, `Nmap` attempts to identify them through a signature-based matching system, but this significantly increases the scan's duration. 
+- One disadvantage to `Nmap`'s presented results is that the automatic scan can miss some information because sometimes `Nmap` does not know how to handle it. 
+- Let us look at an example of this.
 ```shell-session
 secmancer@htb[/htb]$ sudo nmap 10.129.2.28 -p- -sV -Pn -n --disable-arp-ping --packet-trace
 
@@ -142,10 +147,14 @@ Nmap done: 1 IP address (1 host up) scanned in 0.47 seconds
 
 ---
 
-- If we look at the results from `Nmap`, we can see the port's status, service name, and hostname. Nevertheless, let us look at this line here:
+- If we look at the results from `Nmap`, we can see the port's status, service name, and hostname. 
+- Nevertheless, let us look at this line here:
 	- `NSOCK INFO [0.4200s] nsock_trace_handler_callback(): Callback: READ SUCCESS for EID 18 [10.129.2.28:25] (35 bytes): 220 inlane ESMTP Postfix (Ubuntu)..`
 - Then we see that the SMTP server on our target gave us more information than `Nmap` showed us. 
-- Because here, we see that it is the Linux distribution `Ubuntu`. It happens because, after a successful three-way handshake, the server often sends a banner for identification. This serves to let the client know which service it is working with. At the network level, this happens with a `PSH` flag in the TCP header. 
+- Because here, we see that it is the Linux distribution `Ubuntu`. 
+- It happens because, after a successful three-way handshake, the server often sends a banner for identification. 
+- This serves to let the client know which service it is working with. 
+- At the network level, this happens with a `PSH` flag in the TCP header. 
 - However, it can happen that some services do not immediately provide such information. It is also possible to remove or manipulate the banners from the respective services. 
 - If we `manually` connect to the SMTP server using `nc`, grab the banner, and intercept the network traffic using `tcpdump`, we can see what `Nmap` did not show us.
 - #### Tcpdump
@@ -187,9 +196,11 @@ Connection to 10.129.2.28 port 25 [tcp/*] succeeded!
 
 - The last TCP packet that we sent confirms the receipt of the data with an `ACK`.
 
-|  |  |  |
-| --- | --- | --- |
-| 5. | `[ACK]` | `18:28:07.319426 IP 10.10.14.2.59618 > 10.129.2.28.smtp: Flags [.], <SNIP>` |
+|     |         |                                                                             |
+| --- | ------- | --------------------------------------------------------------------------- |
+| 5.  | `[ACK]` | `18:28:07.319426 IP 10.10.14.2.59618 > 10.129.2.28.smtp: Flags [.], <SNIP>` |
+
+
 
 ### Questions
 - Enumerate all ports and their services. One of the services contains the flag you have to submit as the answer.
