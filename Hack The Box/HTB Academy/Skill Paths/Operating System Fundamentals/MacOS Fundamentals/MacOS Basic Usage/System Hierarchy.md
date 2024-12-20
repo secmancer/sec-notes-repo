@@ -1,10 +1,9 @@
 > **Note:** As macOS is essentially unix-based, many of the things and commands covered in the [Linux Fundamentals](https://academy.hackthebox.com/module/details/18) module also apply here and can be used with macOS, though some may use slightly difference syntax. This module will not repeat the Linux basics as covered in the [Linux Fundamentals](https://academy.hackthebox.com/module/details/18) module, but will mainly be covering macOS-specific topics, so you are advised to also go through that module to have a wholistic understanding of both macOS and Linux.
 
 
+
 ### MacOS Domains
-
 ![[D3.png]]
-
 - In macOS, a file system is divided into multiple domains that separate files and resources depending on their intended usage.
 - Domains apply `access privilege` to the files and resources in that domain, preventing unauthorized users from changing files.
 
@@ -15,9 +14,14 @@
 | User Domain    | Contains resources specific to the users who log in to the system. This domain reflects the home directory of the current user at runtime. |
 | Network Domain | Contains resources such as apps and documents that are shared among users of a local area network.                                         |
 
+
+
 ### macOS File System Structure
 ![[D1.png]]
-#### Standard Directories
+
+
+
+### Standard Directories
 - #### /Applications
 	- The `Applications` directory contains applications that users would commonly use. 
 	- There are multiple `/Applications` folders, each belonging to a different domain.
@@ -53,14 +57,14 @@ htb-student
 		- `Library/Caches`: Contains app-specific support files that the app can re-create easily
 		- `Library/Frameworks`: Stores libraries that are used, or needed, to create an application
 		- `Library/Preferences`: contains the application preferences (PowerManagement, SoftwareUpdate, Logging, Calendar, etc.)
-
 - #### /Network
 	- The `Network` directory contains files that belong to the network domain. 
 	- This directory contains the list of computers in the local area network.
-
 - #### /System
 	- The `System` directory contains the system resources required by macOS to run. 
 	- These files are installed by Apple and shouldn't be modified.
+
+
 
 ### Unix-Specific Directories
 - macOS also has some Unix-specific directories structured in a tree-like hierarchy.
@@ -70,6 +74,7 @@ htb-student
 - This was not an exhaustive list of every directory or subdirectory on our hosts. 
 - We recommend if you run into a specific folder you do not quite understand the purpose of, check the man page or Google what that specific directory is for. 
 - The `man hier` command is also helpful for getting an initial understanding of the standard Unix folder structure.
+
 
 
 ### Questions

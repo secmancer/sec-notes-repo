@@ -3,6 +3,8 @@
 - Widely used, second largest in market share (behind Windows)
 - Seen in daily home use, business management, graphical design, and the arts
 
+
+
 ### Timeline
 - 2000-2002
 	- Fall 2000: public beta named Kodiak
@@ -86,6 +88,8 @@
 		- Stage Manager added, a new window management tool
 		- Continuity Camera implemented
 
+
+
 ### OS + Arch
 - Kernel: XNU
 	- The Mach kernel is the basis (along with portions from BSD) of the macOS and iOS `XNU` Kernel architecture, which handles our memory, processors, drivers, and other low-level processes.
@@ -97,6 +101,7 @@
 	- Intel (for now, planned deprecation)
 
 
+
 ### Core Elements
 - GUI: Aqua
 	- Basis for the Graphical interface and visual theme for macOS. As technology has advanced, so has Aqua, providing more and more support for other displays, rendering technologies, and much more. It is known for its flowy style, animations, and transparency with windows and taskbars.
@@ -106,6 +111,7 @@
 	- By default, macOS and any apps within it utilize the concept of sandboxing, which restricts the application's access outside of the resources necessary for it to run. This security feature would limit the risk of a vulnerability to the application itself and prevent harm to the macOS system or other files/applications within it.
 - Cocoa
 	- Application management layer and API used with macOS. It is responsible for the behavior of many built-in applications within macOS. Cocoa is also a development framework made for bringing applications into the Apple ecosystem. Things like notifications, Siri, and more, function because of Cocoa.
+
 
 
 ### Questions

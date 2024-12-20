@@ -8,9 +8,11 @@
 > **Tip:** Converting between permission attributes and their octal value may be difficult to do in our heads, so there are tools like [chmod-calculator](https://chmod-calculator.com) that can help us do the conversion quickly.
 
 
+
+
 ### Basic File Permissions
 ![[Screenshot_20241106_221130.png]]
-- From the output above, we can see the terminal output for the file `HTB-Wallpaper-1.png`. 
+- From the output above, we can see the terminal output for the file `HTB-Wallpaper-1.png`
 - This breakdown shows us how our permissions are implemented and other attributes, such as the date of creation/modification, the number of links associated with the file, size, and the object type.
 - From this output, we can see that the User owner is the user `htb-user` and the group owner is `staff`. 
 - This is likely due to the host being managed by a central IT department and their policies. 
@@ -20,7 +22,8 @@
 > **Tip:** To make it easier to remember when reading the attributes from left to right, remember the acronym `UGO`, which stands for User/Group/Others.
 
 - If we were to modify these permissions, we would notice that the attributes listed to the left would change to reflect the new permission set. 
-- For example, below, we can see a script with the execute attribute set for the User owner. Notice the difference?
+- For example, below, we can see a script with the execute attribute set for the User owner. 
+- Notice the difference?
 ```
 secmancer@htb[/htb]$ ls -l 
 
@@ -32,6 +35,7 @@ d rwx r-x r-x@  1 htb-user staff 6512375 Aug 30  2019 nmap-output
 - Looking at the line for `nmap-output`, we can see that this is a directory because of the Filetype marked with `d` before our permissions. 
 - The execute attribute is also required to traverse into the directory and read the contents. 
 - Without it, a user would not be able to access the directory.
+
 
 
 ### GUI Permissions Management
@@ -51,9 +55,13 @@ d rwx r-x r-x@  1 htb-user staff 6512375 Aug 30  2019 nmap-output
 	- We may also click on the `+` icon to add a new user to this list or on the `-` icon to remove any of the shown users.
 	- However, be careful how you set permissions on files and folders, as you could quickly expose data you may not wish for everyone to access.
 
+
+
 ### Terminal Permissions Management
 - Next, let's take a bit to look at permissions from within the terminal. 
 - We will utilize the [chmod](https://ss64.com/osx/chmod.html) and [chown](https://ss64.com/osx/chown.html) commands to manage file permissions and other attributes.
+
+
 
 ### chmod
 ```
@@ -90,6 +98,8 @@ secmancer@htb[/htb]$ ls -l
 - However, there is also the `chgrp` command that deals specifically with groups.
 - Permissions are an essential aspect of any administrator's workload when it comes to ensuring systems are secure and that the integrity of a file is not compromised by someone without a need to access it. 
 - Maintaining confidentiality, integrity, and availability is a constant process.
+
+
 
 ### Questions
 - If a file has a permission set of "rw-rw-rw-" applied, what would that equal in Octal format? (number only)

@@ -1,8 +1,10 @@
 ### Basics
 - #### Validate Networking Hardware
-	- Before managing our settings, we can validate what hardware devices we have available and are active for use in several ways. The first is by checking the `Network` tab in the `System Information` application.
+	- Before managing our settings, we can validate what hardware devices we have available and are active for use in several ways. 
+	- The first is by checking the `Network` tab in the `System Information` application.
 - We can get to this screen by searching for "System Information" using `Spotlight`, or by launching the application from the `Launchpad`. 
-- Here we will see all hardware, software, and OS information. By selecting the Networking tab (highlighted in green above), we can see our active network interfaces, along with their details.
+- Here we will see all hardware, software, and OS information.
+- By selecting the Networking tab (highlighted in green above), we can see our active network interfaces, along with their details.
 - #### System Settings
 	- The other route to view network details is through the `System Preferences` or `System Settings`, then selecting the `Network` tab.
 
@@ -17,9 +19,13 @@
 
 > **Note:** As of now, the recommended way to manage your networking settings for macOS is through the System Settings Network Manager. It is possible to make changes via the CLI, but they may not persist through a reboot as the manager will overwrite the settings you place at boot.
 
+
+
 ### Control Center
 - The Control Center provides a quick way to manage our networking settings and much more. 
 - If we wish to modify one, click on the arrow beside the interface we want to manage, turn it on/off, or select system settings to customize our settings.
+
+
 
 ### Managing Networking Settings via the CLI
 - Even though managing interface settings via the CLI is not the preferred method, we can still glean important information from it. 
@@ -61,6 +67,8 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 ```
 - Looking at our output now, it's much easier to discern what we need instead of sifting through multiple interfaces' worth of output. If we wish to change our interface settings, we can use the `ifconfig` command.
 
+
+
 ### Setting a Manual IP with ifconfig
 ```
 ifconfig en0 inet <192.168.1.1> netmask < 255.255.255.0 >  
@@ -68,6 +76,8 @@ ifconfig en0 inet <192.168.1.1> netmask < 255.255.255.0 >
 - This will set our interface (en0 in the example) to an IP address of `192.168.1.1` with a network mask of `255.255.255.0`. To modify it, change the IP to your networking scheme and apply the proper network mask to match.
 
 > **Note:** Changes made with `ifconfig` are temporary and will be overwritten by the networking service manager after a reboot. For the changes to be persistent, make sure you utilize the NetworkManager in the GUI or through the `networksetup` command.
+
+
 
 ### Isof
 - Another common task you may find yourself doing is checking the state of ports on your host. We can use [lsof](https://linux.die.net/man/8/lsof) to see port states and what files have them bound.
@@ -96,6 +106,7 @@ VMware    1613 User   54u  IPv4 0xdc227b7f83572eb7      0t0  TCP 127.0.0.1:51095
 vmrest    1625 User   45u  IPv4 0xdc227b7f83df5407      0t0  TCP 127.0.0.1:8698 (LISTEN)
 ```
 - This is a quick and easy way to diagnose issues from the CLI. In a later section, `Security Tips`, we will talk about a tool called `Netiquette` that can help give us a detailed look into our network connections and what is happening.
+
 
 
 ### Networksetup
@@ -159,12 +170,16 @@ secmancer@htb[/htb]$ networksetup -getinfo Wi-Fi
 - The above commands are not an exhaustive list of the tool's use. 
 - Use `networksetup -help` for a more detailed listing of the possible actions that can be taken with the networksetup command.
 
+
+
 ### NetworkQuality
 - The first is the ability to check your interface's network quality using the `networkQuality` command. We can input this into our shell to see live feedback about our network:
 ```
 secmancer@htb[/htb]$ networkQuality -I <interface>  
 Downlink: capacity 104.874 Mbps, responsiveness 66 RPM - Uplink: capacity 100.708 Mbps, responsiveness 66 RPM
 ```
+
+
 
 
 ### Find Wi-Fi Password
@@ -178,8 +193,11 @@ Sup3r$ecure
 - Furthermore, in macOS 13 Ventura, we can read the Wi-Fi passwords for any network from the `Wi-Fi` tab in `System Settings`
 
 
+
 ### VPNs
 - A VPN allows us to remotely `tunnel` our traffic through a network to egress at another point in the world. This is great for masking internet traffic or connecting to corporate environments
+
+
 
 ### Tunnelblick
 - The first and most popular option is '[Tunnelblick](https://tunnelblick.net/)', our free and open-source option. 
@@ -189,6 +207,8 @@ Sup3r$ecure
 - What makes Tunnelblick unique is that it allows a lot of configurations and customizations to a vast set of variables for our VPN files and connection info. 
 - This makes it ideal for non-standard VPN connections, like work networks, where we may be provided a key to connect to a network and perform a penetration test. 
 - However, beginners may find it a little bit intimidating at first due to the many available options, but once you get to know the tool, it is relatively easy to use.
+
+
 
 ### Viscosity
 - Our next option is a paid option [Viscosity](https://www.sparklabs.com/viscosity/). It's an excellent choice for a single user, small business, and enterprise use alike. It is intuitive to use and provides live statistics about our network use. 
