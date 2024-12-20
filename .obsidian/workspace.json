@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Filter Contents.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Navigation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Filter Contents"
+              "title": "Navigation"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Filter Contents.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Navigation.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Filter Contents"
+              "title": "Outline of Navigation"
             }
           },
           {
@@ -206,6 +206,8 @@
   },
   "active": "c312a86331230c39",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Find Files and Directories.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Filter Contents.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/File Descriptors and Redirections.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Editing Files.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks/Shortcuts.md",
@@ -230,8 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Structure.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Distributions.md",
     "TryHackMe/Advent of Cyber/2024/Day 17.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Introduction to Shell.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Setting Up/Operating Systems/Windows.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

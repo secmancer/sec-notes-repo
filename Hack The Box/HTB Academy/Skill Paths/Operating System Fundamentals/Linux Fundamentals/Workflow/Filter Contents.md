@@ -223,8 +223,11 @@ htb-student /HTB/bash
 ```
 
 
+
 ### Wc
-- Last but not least, it will often be useful to know how many successful matches we have. To avoid counting the lines or characters manually, we can use the tool `wc`. With the "`-l`" option, we specify that only the lines are counted.
+- Last but not least, it will often be useful to know how many successful matches we have. 
+- To avoid counting the lines or characters manually, we can use the tool `wc`. 
+- With the "`-l`" option, we specify that only the lines are counted.
 ```shell-session
 secmancer@htb[/htb]$ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | wc -l
 
@@ -232,10 +235,20 @@ secmancer@htb[/htb]$ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | a
 ```
 
 
+
 ### Practice
-- It may be a bit overwhelming at first to deal with so many different tools and their functions if we are not familiar with them. Take your time and experiment with the tools. Have a look at the man pages (`man <tool>`) or call the help for it (`<tool> -h` / `<tool> --help`). The best way to become familiar with all the tools is to practice. Try to use them as often as possible, and we will be able to filter many things intuitively after a short time.
-- Here are a few optional exercises we can use to improve our filtering skills and get more familiar with the terminal and the commands. The file we will need to work with is the `/etc/passwd` file on our `target` and we can use any shown command above. Our goal is to filter and display only specific contents. Read the file and filter its contents in such a way that we see only:
+- It may be a bit overwhelming at first to deal with so many different tools and their functions if we are not familiar with them. 
+- Take your time and experiment with the tools. 
+- Have a look at the man pages (`man <tool>`) or call the help for it (`<tool> -h` / `<tool> --help`). 
+- The best way to become familiar with all the tools is to practice.
+- Try to use them as often as possible, and we will be able to filter many things intuitively after a short time.
+- Here are a few optional exercises we can use to improve our filtering skills and get more familiar with the terminal and the commands. 
+- The file we will need to work with is the `/etc/passwd` file on our `target` and we can use any shown command above. 
+- Our goal is to filter and display only specific contents. 
+- Read the file and filter its contents in such a way that we see only:
 ![[Screenshot_20241108_195633.png]]
+
+
 
 ### Questions
 - How many services are listening on the target system on all interfaces? (Not on localhost and IPv4 only)
