@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Assembly Language"
+              "title": "Functions"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Assembly Language"
+              "title": "Outline of Functions"
             }
           },
           {
@@ -204,8 +204,22 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a14f51ec02b6566f",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Data Movement.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Basic Instructions/Arithmetic Instructions.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/GNU Debugger (GDB).md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Debugging with GDB.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembly File Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Assembling & Debugging/Assembling & DIsassembling.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Registers, Addresses, and Data Types.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Instruction Set Architectures.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/CPU Architecture.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Computer Architecture.md",
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Architecture/Assembly Language.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Windows Services & Processes.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Service Permissions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Introduction/Introduction to Windows.md",
@@ -218,20 +232,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/NTFS vs. Share Permissions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/File System.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/What is macOS.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/System Hierarchy.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Navigating around the OS.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Graphical User Interface.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Security Tips.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Productivity Tips.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Terminal.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Automation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Working with Files and Directories.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
