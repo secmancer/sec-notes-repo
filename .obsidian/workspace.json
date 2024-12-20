@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fbb4e5e9f1c04fcb",
+        "id": "93bd626be0b353b1",
         "type": "tabs",
         "children": [
           {
-            "id": "a14f51ec02b6566f",
+            "id": "c306eab1362be439",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Functions"
+              "title": "New tab"
             }
           }
         ]
@@ -139,10 +135,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md"
+                "file": "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Libc Functions.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Functions"
+              "title": "Outline of Libc Functions"
             }
           },
           {
@@ -206,6 +202,7 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Functions/Functions.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Unconditional Branching.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Loops.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Intro to Assembly Language/Control Instructions/Conditional Branching.md",
@@ -231,7 +228,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
