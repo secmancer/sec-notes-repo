@@ -1,5 +1,7 @@
+
 ### Using Finder
-- As discussed in the previous section, `Finder` is the component of macOS that provides the File management functions within the OS. You can use `Finder` to find and browse files present inside your Mac.
+- As discussed in the previous section, `Finder` is the component of macOS that provides the File management functions within the OS. 
+- You can use `Finder` to find and browse files present inside your Mac.
 
 
 
@@ -58,7 +60,8 @@
 
 
 ### Spotlight
-- `Spotlight` is a `system-wide` desktop search feature of Apple's macOS and iOS operating systems, as discussed in previous sections. `Spotlight` can help you quickly find items present on your Mac.
+- `Spotlight` is a `system-wide` desktop search feature of Apple's macOS and iOS operating systems, as discussed in previous sections. 
+- `Spotlight` can help you quickly find items present on your Mac.
 - Let's try opening a `Dictionary` in macOS using Spotlight.
 	1. Click on the `magnifying glass` icon at the top-right corner of the desktop or use the keyboard shortcut (`Command + Space bar`) to open `Spotlight`.
 	2. Type the keyword `dictionary` inside the `Spotlight search bar` and click on the `Dictionary` app to open a Dictionary instance.
@@ -66,7 +69,8 @@
 
 
 ### Moving Around Applications
-- Moving and switching from one app to another can be tedious, especially if there is a frequent need to split apps every few seconds. To improve efficiency while working on multiple apps, macOS provides features like `Mission Control` & `Split View`.
+- Moving and switching from one app to another can be tedious, especially if there is a frequent need to split apps every few seconds. 
+- To improve efficiency while working on multiple apps, macOS provides features like `Mission Control` & `Split View`.
 
 
 
@@ -79,7 +83,8 @@
 
 
 ### Split View
-- By using Split View, you can split your Mac screen between two apps. It would automatically resize the screen without manually moving and resizing windows. 
+- By using Split View, you can split your Mac screen between two apps. 
+- It would automatically resize the screen without manually moving and resizing windows. 
 - Split View only works if you already have two or more apps running in the background.
 - To use Split View with apps, hover the mouse pointer over the `full-screen` button (Green Colored) on the `top-left,` and you will be presented with three options to select from:
 	1. Enter Fullscreen

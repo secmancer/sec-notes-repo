@@ -1,16 +1,24 @@
 ### Introduction
-- Recall that services allow for the management of long-running processes and are a critical part of Windows operating systems. Sysadmins often overlook them as potential threat vectors that can be used to load malicious DLLs, execute applications without access to an admin account, escalate privileges and even maintain persistence. These threat vectors in Windows services often come into existence through service permissions misconfigurations put in place by 3rd party software and easy to make mistakes by admins during install processes.
-- The first step in realizing the importance of service permissions is simply understanding that they exist and being mindful of them. On server operating systems, critical network services like DHCP and Active Directory Domain Services commonly get installed using the account assigned to the admin performing the install. Part of the install process includes assigning a specific service to run using the credentials and privileges of a designated user, which by default is set within the currently logged-on user context.
-- For example, if we are logged on as Bob on a server during DHCP install, then that service will be configured to run as Bob unless specified otherwise. What bad things could come of this? Well, what if Bob leaves the organization or gets fired? The typical business practice would be to disable Bob’s account as part of his exit process. In this case, what would happen to DHCP and other services running using Bob’s account? Those services would fail to start. DHCP or Dynamic Host Configuration Protocol is responsible for leasing IP addresses to computers on the network. If this service stops on a Windows DHCP server, clients requesting an IP address will not receive one. This means a service misconfiguration could lead to downtime and loss of productivity. It is highly recommended to create an individual user account to run critical network services. These are referred to as service accounts.
-- We should also be mindful of service permissions and the permissions of the directories they execute from because it is possible to replace the path to an executable with a malicious DLL or executable file. Let's examine the permissions of services running on Windows 10 to get an even better understanding of this.
+- **Windows Services as Threat Vectors**: Services manage long-running processes but can be exploited due to misconfigurations, allowing malicious DLL loading, privilege escalation, and persistence. These misconfigurations often arise from third-party software or admin errors during installation.
+- **Service Permissions Awareness**: Understanding and managing service permissions is crucial, especially on server OSes. Services often inherit the privileges of the account performing the installation, potentially causing issues if that account becomes unavailable.
+- **Critical Network Services**: For example, if a DHCP service is installed under a specific user's account and that account is disabled, the service will fail, disrupting network IP address allocation. Using dedicated **service accounts** is recommended for such critical services.
+- **Executable Path Vulnerabilities**: Misconfigured service permissions or executable directories can allow attackers to replace legitimate paths with malicious DLLs or executables, emphasizing the need to review and secure service configurations.
+
+
 
 ### Examining Services using services.msc
-- As discussed in the processes and services section, we can use `services.msc` to view and manage just about every detail regarding all services. Let's take a closer look at the service associated with `Windows Update` (`wuauserv`).
+- As discussed in the processes and services section, we can use `services.msc` to view and manage just about every detail regarding all services. 
+- Let's take a closer look at the service associated with `Windows Update` (`wuauserv`).
 ![[service_properties_png.png]]
-- Make a note of the different properties available for viewing and configuration. Knowing the service name is especially useful when using command-line tools to examine and manage services. Path to the executable is the full path to the program and command to execute when the service starts. 
-- If the NTFS permissions of the destination directory are configured with weak permissions, an attacker could replace the original executable with one created for malicious purposes. We discuss NTFS permissions more in the NTFS vs. Share permissions section of this module.
+- Make a note of the different properties available for viewing and configuration. 
+- Knowing the service name is especially useful when using command-line tools to examine and manage services. 
+- Path to the executable is the full path to the program and command to execute when the service starts. 
+- If the NTFS permissions of the destination directory are configured with weak permissions, an attacker could replace the original executable with one created for malicious purposes. 
+- We discuss NTFS permissions more in the NTFS vs. Share permissions section of this module.
 ![[logon_png.png]]
-- Most services run with LocalSystem privileges by default which is the highest level of access allowed on an individual Windows OS. Not all applications need Local System account-level permissions, so it is beneficial to perform research on a case-by-case basis when considering installing new applications in a Windows environment. It is a good practice to identify applications that can run with the least privileges possible to align with the principle of least privilege.
+- Most services run with LocalSystem privileges by default which is the highest level of access allowed on an individual Windows OS. 
+- Not all applications need Local System account-level permissions, so it is beneficial to perform research on a case-by-case basis when considering installing new applications in a Windows environment.
+- It is a good practice to identify applications that can run with the least privileges possible to align with the principle of least privilege.
 - [Here is one breakdown of the principle of least privilege](https://www.cloudflare.com/learning/access-management/principle-of-least-privilege/)
 - Notable built-in service accounts in Windows:
 	- LocalService
@@ -18,7 +26,10 @@
 	- LocalSystem
 - Note: We can also create new accounts and use them for the sole purpose of running a service.
 ![[recovery_screen_png.png]]
-- The recovery tab allows steps to be configured should a service fail. Notice how this service can be set to run a program after the first failure. This is yet another vector that an attacker could use to run malicious programs by utilizing a legitimate service.
+- The recovery tab allows steps to be configured should a service fail. Notice how this service can be set to run a program after the first failure. 
+- This is yet another vector that an attacker could use to run malicious programs by utilizing a legitimate service.
+
+
 
 ### Examining services using sc
 - Sc can also be used to configure and manage services. Let's experiment with a few commands.
@@ -37,7 +48,9 @@ SERVICE_NAME: wuauserv
         DEPENDENCIES       : rpcss
         SERVICE_START_NAME : LocalSystem
 ```
-- The `sc qc` command is used to query the service. This is where knowing the names of services can come in handy. If we wanted to query a service on a device over the network, we could specify the hostname or IP address immediately after `sc`.
+- The `sc qc` command is used to query the service.
+- This is where knowing the names of services can come in handy. 
+- If we wanted to query a service on a device over the network, we could specify the hostname or IP address immediately after `sc`.
 ```cmd-session
 C:\Users\htb-student>sc //hostname or ip of box query ServiceName
 ```
@@ -49,7 +62,8 @@ C:\Users\htb-student> sc stop wuauserv
 
 Access is denied.
 ```
-- Notice how we are denied access from performing this action without running it within an administrative context. If we run a command prompt with `elevated privileges`, we will be permitted to complete this action.
+- Notice how we are denied access from performing this action without running it within an administrative context. 
+- If we run a command prompt with `elevated privileges`, we will be permitted to complete this action.
 ```cmd-session
 C:\WINDOWS\system32> sc config wuauserv binPath=C:\Winbows\Perfectlylegitprogram.exe
 
@@ -70,20 +84,25 @@ SERVICE_NAME: wuauserv
         DEPENDENCIES       : rpcss
         SERVICE_START_NAME : LocalSystem
 ```
-- If we were investigating a situation where we suspected that the system had malware, sc would give us the ability to quickly search and analyze commonly targeted services and newly created services. It’s also much more script-friendly than utilizing GUI tools like `services.msc`.
+- If we were investigating a situation where we suspected that the system had malware, sc would give us the ability to quickly search and analyze commonly targeted services and newly created services. 
+- It’s also much more script-friendly than utilizing GUI tools like `services.msc`.
 - Another helpful way we can examine service permissions using `sc` is through the `sdshow` command.
 ```cmd-session
 C:\WINDOWS\system32> sc sdshow wuauserv
 
 D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOSDRCWDWO;;;WD)
 ```
-- At an initial glance, the output looks crazy. It almost seems that we have done something wrong in our command, but there is a meaning to this madness. Every named object in Windows is a [securable object](https://docs.microsoft.com/en-us/windows/win32/secauthz/securable-objects), and even some unnamed objects are securable. If it's securable in a Windows OS, it will have a [security descriptor](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-descriptors). Security descriptors identify the object’s owner and a primary group containing a `Discretionary Access Control List` (`DACL`) and a `System Access Control List` (`SACL`).
-- Generally, a DACL is used for controlling access to an object, and a SACL is used to account for and log access attempts. This section will examine the DACL, but the same concepts would apply to a SACL.
+- At an initial glance, the output looks crazy. It almost seems that we have done something wrong in our command, but there is a meaning to this madness. 
+- Every named object in Windows is a [securable object](https://docs.microsoft.com/en-us/windows/win32/secauthz/securable-objects), and even some unnamed objects are securable. 
+- If it's securable in a Windows OS, it will have a [security descriptor](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-descriptors). Security descriptors identify the object’s owner and a primary group containing a `Discretionary Access Control List` (`DACL`) and a `System Access Control List` (`SACL`).
+- Generally, a DACL is used for controlling access to an object, and a SACL is used to account for and log access attempts. 
+- This section will examine the DACL, but the same concepts would apply to a SACL.
 ```
 D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)
 ```
 - This amalgamation of characters crunched together and delimited by opened and closed parentheses is in a format known as the `Security Descriptor Definition Language` (`SDDL`).
-- We may be tempted to read from left to right because that is how the English language is typically written, but it can be much different when interacting with computers. Read the entire security descriptor for the `Windows Update` (`wuauserv`) service in this order starting with the first letter and set of parentheses:
+- We may be tempted to read from left to right because that is how the English language is typically written, but it can be much different when interacting with computers. 
+- Read the entire security descriptor for the `Windows Update` (`wuauserv`) service in this order starting with the first letter and set of parentheses:
 - `D: (A;;CCLCSWRPLORC;;;AU)`
 	1. D: - the proceeding characters are DACL permissions
 	2. AU: - defines the security principal Authenticated Users
@@ -94,13 +113,16 @@ D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLO
 	7. RP - SERVICE_START is the full name, and it will start the service
 	8. LO - SERVICE_INTERROGATE is the full name, and it will query the service for its current status
 	9. RC - READ_CONTROL is the full name, and it will query the security descriptor of the service
-- As we read the security descriptor, it can be easy to get lost in the seemingly random order of characters, but recall that we are essentially viewing access control entries in an access control list. Each set of 2 characters in between the semi-colons represents actions allowed to be performed by a specific user or group.
+- As we read the security descriptor, it can be easy to get lost in the seemingly random order of characters, but recall that we are essentially viewing access control entries in an access control list. 
+- Each set of 2 characters in between the semi-colons represents actions allowed to be performed by a specific user or group.
 - `;;CCLCSWRPLORC;;;`
-- After the last set of semi-colons, the characters specify the security principal (User and/or Group) that is permitted to perform those actions.
+	- After the last set of semi-colons, the characters specify the security principal (User and/or Group) that is permitted to perform those actions.
 - `;;;AU`
-- The character immediately after the opening parentheses and before the first set of semi-colons defines whether the actions are Allowed or Denied.
+	- The character immediately after the opening parentheses and before the first set of semi-colons defines whether the actions are Allowed or Denied.
 - `A;;`
-- This entire security descriptor associated with the `Windows Update` (`wuauserv`) service has three sets of access control entries because there are three different security principals. Each security principal has specific permissions applied.
+	- This entire security descriptor associated with the `Windows Update` (`wuauserv`) service has three sets of access control entries because there are three different security principals. Each security principal has specific permissions applied.
+
+
 
 ### Examine service permissions using PowerShell
 - Using the `Get-Acl` PowerShell cmdlet, we can examine service permissions by targeting the path of a specific service in the registry.
@@ -129,5 +151,8 @@ Sddl   : O:SYG:SYD:AI(A;ID;KR;;;BU)(A;CIIOID;GR;;;BU)(A;ID;KA;;;BA)(A;CIIOID;GA;
          721687-432734479-3232135806-4053264122-3456934681)(A;CIIOID;GR;;;S-1-15-3-1024-1065365936-1281604716-351173842
          8-1654721687-432734479-3232135806-4053264122-3456934681)
 ```
-- Notice how this command returns specific account permissions in an easy-to-read format and in SDDL. Also, the SID that represents each security principal (User and/or Group) is present in the SDDL. This is something we do not get when running `sc` from the command prompt.
-- Knowing how to interact with services and their associated permissions from the command line makes it easier to script out these tasks. While it is good to know how to perform these tasks from the GUI, it does not scale well as we start getting into larger network environments and Domains.
+- Notice how this command returns specific account permissions in an easy-to-read format and in SDDL. 
+- Also, the SID that represents each security principal (User and/or Group) is present in the SDDL.
+- This is something we do not get when running `sc` from the command prompt.
+- Knowing how to interact with services and their associated permissions from the command line makes it easier to script out these tasks. 
+- While it is good to know how to perform these tasks from the GUI, it does not scale well as we start getting into larger network environments and Domains.

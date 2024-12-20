@@ -68,7 +68,6 @@ htb-student
 
 ### Unix-Specific Directories
 - macOS also has some Unix-specific directories structured in a tree-like hierarchy.
-- #### Directory Tree
 ![[D2.png]]
 ![[Screenshot_20241106_220812.png]]
 - This was not an exhaustive list of every directory or subdirectory on our hosts. 

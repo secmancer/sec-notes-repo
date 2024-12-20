@@ -1,6 +1,11 @@
 ### Introduction
-- In Windows operating systems, the root directory is <drive_letter>:\ (commonly C drive). The root directory (also known as the boot partition) is where the operating system is installed. Other physical and virtual drives are assigned other letters, for example, Data (E:). The directory structure of the boot partition is as follows:
+- In Windows operating systems, the root directory is <drive_letter>:\ (commonly C drive). 
+- The root directory (also known as the boot partition) is where the operating system is installed. 
+- Other physical and virtual drives are assigned other letters, for example, Data (E:). 
+- The directory structure of the boot partition is as follows.
 ![[Screenshot_20241109_114251.png]]
+
+
 
 ### Exploring Directories Using Command Line
 - We can explore the file system using the [dir](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dir) command.
@@ -78,10 +83,14 @@ C:\PROGRAM FILES (X86)\VMWARE
     ├───tools-upgraders
     └───x64
 ```
-- The `tree` command can provide us with a large amount of information. The following command can be used to walk through all the files in the C drive, one screen at a time. This command can be modified to be run against any directory.
+- The `tree` command can provide us with a large amount of information. 
+- The following command can be used to walk through all the files in the C drive, one screen at a time. 
+- This command can be modified to be run against any directory.
 ```cmd-session
 tree c:\ /f | more
 ```
+
+
 
 ### Questions
 - Find the non-standard directory in the C drive. Submit the contents of the flag file saved in this directory.

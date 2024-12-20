@@ -1,19 +1,39 @@
 ### Graphical User Interface
-- The concept of a graphical user interface (GUI) was introduced in the late 1970s by the Xerox Palo Alto research laboratory. It was added to Apple and Microsoft operating systems to address usability concerns for everyday users that would likely have difficulty navigating the command line. Most casual Windows computer users do not ever need to interact with the operating system via the command line. As the name alludes to, a GUI provides users with an interactive point and click interface for interacting with the operating system and installed applications and services.
-- The introduction of the GUI opened up widespread appeal and access to computers across many demographics since users would be able to interact with their computer without having to memorize commands or know any programming language. Systems administrators commonly use GUI-based systems for administering Active Directory, configuring IIS, or interacting with databases.
+- **Introduction of GUI:**
+    - The concept of a graphical user interface (GUI) was introduced in the late 1970s by Xerox Palo Alto Research Laboratory and later integrated into Apple and Microsoft operating systems to improve usability for everyday users.
+    - GUIs allow users to interact with their operating systems and applications through a point-and-click interface, eliminating the need to memorize commands or know programming languages.
+- **Widespread Appeal:**
+    - The GUI made computers more accessible to a broader demographic, allowing people with no technical knowledge to use them effectively.
+    - Systems administrators commonly use GUI-based tools for tasks like administering Active Directory, configuring IIS, and interacting with databases.
+
 
 
 ### Remote Desktop Protocol (RDP)
-- [RDP](https://support.microsoft.com/en-us/help/186607/understanding-the-remote-desktop-protocol-rdp) is a proprietary Microsoft protocol which allows a user to connect to a remote system over a network connection and obtain a graphical user interface. The user connects using RDP client software to a target system running RDP server software. RDP uses port 3389 to open a dedicated network channel for sending data back and forth. When connecting via RDP, a user can access the GUI as if they were actually sitting at the computer and logging into it locally. RDP is often used by system administrators to administer remote systems quickly. It can also allow users to access their work computers when traveling or working from home after connecting to a Virtual Private Network (VPN).
+- **RDP Overview:**
+    - RDP (Remote Desktop Protocol) is a proprietary Microsoft protocol that enables users to connect to a remote system over a network and access its graphical user interface (GUI).
+    - The user connects through RDP client software to a target system running RDP server software, typically using port 3389 to establish a dedicated network channel for data transfer.
+- **Common Uses:**
+    - RDP allows users to interact with a system as if they were sitting directly at it, making it useful for system administrators to manage remote systems.
+    - It is also commonly used for remote work, allowing users to access their work computers while traveling or working from home after connecting to a Virtual Private Network (VPN).
+
 
 
 ### Windows Command Line
-- Command-line interfaces give users greater control over their systems and can be used to perform a wide variety of day-to-day, administrative, and troubleshooting tasks. It can be leveraged to introduce automation to perform certain tasks quickly (such as adding many users to a domain at once). In Windows operating systems, the main two ways to interact with the system from the command line are via the Command Prompt (CMD) and PowerShell.
-- The [Windows Command Reference](https://download.microsoft.com/download/5/8/9/58911986-D4AD-4695-BF63-F734CD4DF8F2/ws-commands.pdf) from Microsoft is a comprehensive A-Z command reference which includes an overview, usage examples, and command syntax for most Windows commands, and familiarity with it is recommended.
+- **Command-Line Interfaces (CLI):**
+    - CLIs offer users greater control over systems, enabling them to perform a variety of administrative, day-to-day, and troubleshooting tasks.
+    - Automation can be introduced through CLIs to speed up tasks, such as bulk user management (e.g., adding many users to a domain).
+    - In Windows, users primarily interact with the system via **Command Prompt (CMD)** or **PowerShell**.
+- **Windows Command Reference:**
+    - The [Windows Command Reference](https://download.microsoft.com/download/5/8/9/58911986-D4AD-4695-BF63-F734CD4DF8F2/ws-commands.pdf) provides a comprehensive guide to Windows commands, including usage examples and syntax, and is recommended for familiarity.
+
+
 
 ### CMD
-- The Command Prompt (cmd.exe) is used to enter and execute commands. A user can enter one-off commands such as `ipconfig` to view IP address information or perform more advanced tasks such as setting up scheduled tasks or creating scripts and batch files. The Command prompt can be opened from the Start Menu, by typing `cmd` in the run dialogue box, or by directly launching the binary from `C:\Windows\system32\cmd.exe`.
-- After launching `cmd.exe` we can type `help` to see a listing of available commands.
+- **Command Prompt (cmd.exe):**
+    - Used to enter and execute commands in Windows.
+    - Supports one-off commands like `ipconfig` to view IP information or more advanced tasks like setting up scheduled tasks and creating scripts/batch files.
+    - Can be opened via the Start Menu, by typing `cmd` in the run dialog, or directly from `C:\Windows\system32\cmd.exe`.
+    - Typing `help` within Command Prompt will display a list of available commands.
 ```cmd-session
 C:\htb> help
 For more information on a specific command, type HELP command-name
@@ -77,7 +97,8 @@ Examples:
     SCHTASKS /Change /?
     SCHTASKS /ShowSid /?
 ```
-- Note that certain commands have their own help menus, which can be accessed by typing `<command> /?`. For example, information about the `ipconfig` command can be seen below.
+- Note that certain commands have their own help menus, which can be accessed by typing `<command> /?`. 
+- For example, information about the `ipconfig` command can be seen below.
 ```cmd-session
 C:\htb> ipconfig /?
 
@@ -114,17 +135,34 @@ where
 ```
 
 
+
 ### PowerShell
-- Windows PowerShell is a command shell that was designed by Microsoft to be more geared towards system administrators. PowerShell, like the Windows command line, has an interactive command prompt as well as a powerful scripting environment. PowerShell is built on top of the .NET Framework, which is used for building and running applications on Windows. This makes it a very powerful tool for interfacing directly with the operating system.
-- Like the command prompt, PowerShell gives us direct access to the file system, and we run the majority of the same commands that we can within a cmd shell.
+- **Windows PowerShell:**
+    - A command shell designed for system administrators.
+    - Provides an interactive command prompt and a powerful scripting environment.
+    - Built on the .NET Framework, enabling advanced interaction with the operating system.
+    - Gives direct access to the file system, and most commands used in Command Prompt can also be executed in PowerShell.
+
+
 
 ### Cmdlets
-- PowerShell utilizes [cmdlets](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7), which are small single-function tools built into the shell. There are more than 100 core cmdlets, and many additional ones have been written, or we can author our own to perform more complex tasks. PowerShell also supports both simple and complex scripts used for system administration tasks, automation, and more.
-- Cmdlets are in the form of `Verb-Noun`. For example, the command `Get-ChildItem` can be used to list our current directory. Cmdlets also take arguments or flags. We can type `Get-ChildItem -` and hit the tab key to iterate through the arguments. A command such as `Get-ChildItem -Recurse` will show us the contents of our current working directory and all subdirectories. 
-- Another example would be `Get-ChildItem -Path C:\Users\Administrator\Documents` to get the contents of another directory. Finally, we can combine arguments such as this to list all subdirectories' contents within another directory recursively: `Get-ChildItem -Path C:\Users\Administrator\Downloads -Recurse`.
+- **PowerShell Cmdlets:**
+    - Cmdlets are small, single-function tools built into PowerShell.
+    - There are over 100 core cmdlets, with many additional ones available, or users can create their own.
+    - Cmdlets follow the `Verb-Noun` format (e.g., `Get-ChildItem`).
+    - They can accept arguments or flags to modify behavior. For example:
+        - `Get-ChildItem` lists the current directory.
+        - `Get-ChildItem -Recurse` lists the current directory and all subdirectories.
+        - `Get-ChildItem -Path C:\Users\Administrator\Documents` lists contents of a specific directory.
+        - `Get-ChildItem -Path C:\Users\Administrator\Downloads -Recurse` lists all subdirectories' contents recursively within the specified directory.
+
+
 
 ### Aliases
-- Many cmdlets in PowerShell also have aliases. For example, the aliases for the cmdlet `Set-Location`, to change directories, is either `cd` or `sl`. Meanwhile, the aliases for `Get-ChildItem` are `ls` and `gci`. We can view all available aliases by typing `Get-Alias`.
+- Many cmdlets in PowerShell also have aliases. 
+- For example, the aliases for the cmdlet `Set-Location`, to change directories, is either `cd` or `sl`. 
+- Meanwhile, the aliases for `Get-ChildItem` are `ls` and `gci`. 
+- We can view all available aliases by typing `Get-Alias`.
 ```powershell-session
 PS C:\htb> get-alias
 
@@ -153,7 +191,9 @@ CommandType     Name                                               Version    So
 -----------     ----                                               -------    ------
 Alias           Show-Files
 ```
-- PowerShell has a help system for cmdlets, functions, scripts, and concepts. This is not installed by default, but we can either run the `Get-Help <cmdlet-name> -Online` command to open the online help for a cmdlet or function in our web browser. We can type `Update-Help` to download and install help files locally.
+- PowerShell has a help system for cmdlets, functions, scripts, and concepts.
+- This is not installed by default, but we can either run the `Get-Help <cmdlet-name> -Online` command to open the online help for a cmdlet or function in our web browser. 
+- We can type `Update-Help` to download and install help files locally.
 ```powershell-session
 PS C:\htb> help
 
@@ -213,9 +253,16 @@ REMARKS
 ```
 
 
+
 ### Running Scripts
-- The PowerShell ISE (Integrated Scripting Environment) allows users to write PowerShell scripts on the fly. It also has an autocomplete/lookup function for PowerShell commands. The PowerShell ISE allows us to write and run scripts in the same console, which allows for quick debugging.
-- We can run PowerShell scripts in a variety of ways. If we know the functions, we can run the script either locally or after loading into memory with a download cradle like the below example.
+- **PowerShell ISE (Integrated Scripting Environment):**
+    - The PowerShell ISE is a powerful tool for writing, testing, and debugging PowerShell scripts.
+    - It includes features like autocomplete and command lookup, which help users quickly write and correct commands.
+    - Users can write scripts and run them within the same console, making it easier to test and debug.
+- **Running PowerShell Scripts:**
+    - PowerShell scripts can be executed in several ways:
+        - **Locally:** By running the script directly in the PowerShell ISE or from the command line.
+        - **From memory:** Scripts can be loaded into memory using a download cradle or by invoking a script's functions after it has been loaded.
 ```powershell-session
 PS C:\htb> .\PowerView.ps1;Get-LocalGroup |fl
 
@@ -245,7 +292,8 @@ PrincipalSource : Local
 
 <SNIP>
 ```
-- One common way to work with a script in PowerShell is to import it so that all functions are then available within our current PowerShell console session: `Import-Module .\PowerView.ps1`. We can then either start a command and cycle through the options or type `Get-Module` to list all loaded modules and their associated commands.
+- One common way to work with a script in PowerShell is to import it so that all functions are then available within our current PowerShell console session: `Import-Module .\PowerView.ps1`. 
+- We can then either start a command and cycle through the options or type `Get-Module` to list all loaded modules and their associated commands.
 ```powershell-session
 PS C:\htb> Get-Module | select Name,ExportedCommands | fl
 
@@ -273,8 +321,10 @@ ExportedCommands : {[Get-PSReadLineKeyHandler, Get-PSReadLineKeyHandler], [Get-P
 ```
 
 
+
 ### Execution Policy
-- Sometimes we will find that we are unable to run scripts on a system. This is due to a security feature called the `execution policy`, which attempts to prevent the execution of malicious scripts. The possible policies are:
+- Sometimes we will find that we are unable to run scripts on a system.
+- This is due to a security feature called the `execution policy`, which attempts to prevent the execution of malicious scripts.
 ![[Screenshot_20241109_111823.png]]
 - Below is an example of the current execution policy for all scopes.
 ```powershell-session
@@ -288,8 +338,15 @@ MachinePolicy       Undefined
   CurrentUser       Undefined
  LocalMachine    RemoteSigned
 ```
-- The execution policy is not meant to be a security control that restricts user actions. A user can easily bypass the policy by either typing the script contents directly into the PowerShell window, downloading and invoking the script, or specifying the script as an encoded command. It can also be bypassed by adjusting the execution policy (if the user has the proper rights) or setting the execution policy for the current process scope (which can be done by almost any user as it does not require a configuration change and will only be set for the duration of the user's session).
-- Below is an example of changing the execution policy for the current process (session).
+- **Execution Policy in PowerShell:**
+	- The **execution policy** in PowerShell is a safety feature designed to control the conditions under which scripts can run. However, it is not a strict security control, as users can easily bypass it under certain conditions.
+	- Users can bypass the execution policy by:
+	    - Typing script contents directly into the PowerShell window.
+	    - Downloading and executing the script.
+	    - Encoding the script as a command.
+	    - Modifying the execution policy (if the user has the appropriate rights).
+	    - Setting the execution policy for the current session without affecting the system-wide policy.
+- To change the execution policy for the current session, you can use the following commands to do that below.
 ```powershell-session
 PS C:\htb> Set-ExecutionPolicy Bypass -Scope Process
 
@@ -311,6 +368,8 @@ MachinePolicy       Undefined
   CurrentUser       Undefined
  LocalMachine    RemoteSigned
 ```
+
+
 
 ### Questions
  - What is the alias set for the ipconfig.exe command?

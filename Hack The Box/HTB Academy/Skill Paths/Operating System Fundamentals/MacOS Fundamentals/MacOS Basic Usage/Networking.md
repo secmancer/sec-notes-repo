@@ -13,9 +13,10 @@
 - From here, we can view and manage our network devices and their settings and create new networks. 
 - To view the interface's configuration details, click the `Advanced` radial button (green arrow below), and a new pop-up window will appear.
 - #### View or Modify Details
-	- The screen above will appear and provide you with the interface information you wish to view. I
-	- f you want to modify the interface, choose the option you wish to set or change. 
-	- For example, to change our IP, we will need to move the `Configure IPv4` to `Manually` setting instead of "`Using DHCP`". When done, select `Apply` or our changes will not persist.
+	- The screen above will appear and provide you with the interface information you wish to view.
+	- If you want to modify the interface, choose the option you wish to set or change. 
+	- For example, to change our IP, we will need to move the `Configure IPv4` to `Manually` setting instead of "`Using DHCP`".
+	- When done, select `Apply` or our changes will not persist.
 
 > **Note:** As of now, the recommended way to manage your networking settings for macOS is through the System Settings Network Manager. It is possible to make changes via the CLI, but they may not persist through a reboot as the manager will overwrite the settings you place at boot.
 
@@ -31,7 +32,10 @@
 - Even though managing interface settings via the CLI is not the preferred method, we can still glean important information from it. 
 - Below we are going to take a look at several helpful commands and the outputs they provide.
 - #### Finding Info
-	- We have quite a few ways to find information about our network status and settings from the CLI. We are going to start with the easiest first, `ifconfig`. By typing `ifconfig` into the terminal, we can see a printout of our network interfaces and their configurations. Below we can see an example of the output we get back.
+	- We have quite a few ways to find information about our network status and settings from the CLI. 
+	- We are going to start with the easiest first, `ifconfig`.
+	- By typing `ifconfig` into the terminal, we can see a printout of our network interfaces and their configurations. 
+	- Below we can see an example of the output we get back.
 ```
 secmancer@htb[/htb]$ ifconfig  
   
@@ -51,7 +55,8 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 	media: autoselect
 	status: active
 ```
-- We can see this command pushes out a ton of output. So to clean this up a bit, we can single out an interface we wish to see information about specifically by inputting `ifconfig <interface name>`.
+- We can see this command pushes out a ton of output.
+- So to clean this up a bit, we can single out an interface we wish to see information about specifically by inputting `ifconfig <interface name>`.
 ```
 secmancer@htb[/htb]$ ifconfig en0
 
@@ -65,7 +70,8 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 	media: autoselect
 	status: active
 ```
-- Looking at our output now, it's much easier to discern what we need instead of sifting through multiple interfaces' worth of output. If we wish to change our interface settings, we can use the `ifconfig` command.
+- Looking at our output now, it's much easier to discern what we need instead of sifting through multiple interfaces' worth of output. 
+- If we wish to change our interface settings, we can use the `ifconfig` command.
 
 
 
@@ -73,14 +79,16 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 ```
 ifconfig en0 inet <192.168.1.1> netmask < 255.255.255.0 >  
 ```
-- This will set our interface (en0 in the example) to an IP address of `192.168.1.1` with a network mask of `255.255.255.0`. To modify it, change the IP to your networking scheme and apply the proper network mask to match.
+- This will set our interface (en0 in the example) to an IP address of `192.168.1.1` with a network mask of `255.255.255.0`. 
+- To modify it, change the IP to your networking scheme and apply the proper network mask to match.
 
 > **Note:** Changes made with `ifconfig` are temporary and will be overwritten by the networking service manager after a reboot. For the changes to be persistent, make sure you utilize the NetworkManager in the GUI or through the `networksetup` command.
 
 
 
 ### Isof
-- Another common task you may find yourself doing is checking the state of ports on your host. We can use [lsof](https://linux.die.net/man/8/lsof) to see port states and what files have them bound.
+- Another common task you may find yourself doing is checking the state of ports on your host. 
+- We can use [lsof](https://linux.die.net/man/8/lsof) to see port states and what files have them bound.
 ```
 lsof -n -i4TCP -P  
 ```
@@ -105,7 +113,8 @@ Slack\x20  731 User   20u  IPv4 0xdc227b7f83562eb7      0t0  TCP 10.0.7.66:52869
 VMware    1613 User   54u  IPv4 0xdc227b7f83572eb7      0t0  TCP 127.0.0.1:51095->127.0.0.1:8698 (ESTABLISHED)
 vmrest    1625 User   45u  IPv4 0xdc227b7f83df5407      0t0  TCP 127.0.0.1:8698 (LISTEN)
 ```
-- This is a quick and easy way to diagnose issues from the CLI. In a later section, `Security Tips`, we will talk about a tool called `Netiquette` that can help give us a detailed look into our network connections and what is happening.
+- This is a quick and easy way to diagnose issues from the CLI.
+- In a later section, `Security Tips`, we will talk about a tool called `Netiquette` that can help give us a detailed look into our network connections and what is happening.
 
 
 
@@ -173,7 +182,8 @@ secmancer@htb[/htb]$ networksetup -getinfo Wi-Fi
 
 
 ### NetworkQuality
-- The first is the ability to check your interface's network quality using the `networkQuality` command. We can input this into our shell to see live feedback about our network:
+- The first is the ability to check your interface's network quality using the `networkQuality` command. 
+- We can input this into our shell to see live feedback about our network.
 ```
 secmancer@htb[/htb]$ networkQuality -I <interface>  
 Downlink: capacity 104.874 Mbps, responsiveness 66 RPM - Uplink: capacity 100.708 Mbps, responsiveness 66 RPM
@@ -185,7 +195,7 @@ Downlink: capacity 104.874 Mbps, responsiveness 66 RPM - Uplink: capacity 100.70
 ### Find Wi-Fi Password
 - Our next tip is a quick way to find the `Password` for an `SSID` you have previously connected to. We will do this using the [security](https://www.unix.com/man-page/osx/1/security/) command. 
 - Security allows us to list and manage our passwords, keychains, certificates, and more via the CLI. 
-- The command below will print our requested password:
+- The command below will print our requested password.
 ```
 secmancer@htb[/htb]$ security find-generic-password -wa Office-2.4G
 Sup3r$ecure  
@@ -195,13 +205,15 @@ Sup3r$ecure
 
 
 ### VPNs
-- A VPN allows us to remotely `tunnel` our traffic through a network to egress at another point in the world. This is great for masking internet traffic or connecting to corporate environments
+- A VPN allows us to remotely `tunnel` our traffic through a network to egress at another point in the world. 
+- This is great for masking internet traffic or connecting to corporate environments
 
 
 
 ### Tunnelblick
 - The first and most popular option is '[Tunnelblick](https://tunnelblick.net/)', our free and open-source option. 
-- It is an excellent application for controlling our VPN connections. It works with OpenVPN config files and provides a handy user interface. 
+- It is an excellent application for controlling our VPN connections. 
+- It works with OpenVPN config files and provides a handy user interface. 
 - Tunnelblick keeps our privacy in mind and does not log our traffic, IP address, deliver ads, or anything of that sort which is nice to see from a free product. 
 - It also allows persistent VPN connections over device reboots, as it would automatically connect to the last active VPN connection before a reboot.
 - What makes Tunnelblick unique is that it allows a lot of configurations and customizations to a vast set of variables for our VPN files and connection info. 
@@ -211,11 +223,15 @@ Sup3r$ecure
 
 
 ### Viscosity
-- Our next option is a paid option [Viscosity](https://www.sparklabs.com/viscosity/). It's an excellent choice for a single user, small business, and enterprise use alike. It is intuitive to use and provides live statistics about our network use. 
+- Our next option is a paid option [Viscosity](https://www.sparklabs.com/viscosity/). 
+- It's an excellent choice for a single user, small business, and enterprise use alike.
+- It is intuitive to use and provides live statistics about our network use. 
 - For a paid option, what is nice is that Viscosity comes in at $14 USD as a one-time purchase.
 - There are many other free and paid options, like [OpenVPN](https://openvpn.net/community-downloads/), which is an official macOS version developed by none other than OpenVPN. 
 - Furthermore, various VPN providers that offer VPN services also provide macOS versions of their VPN software. 
 - However, these applications would be limited to the VPN services offered by the vendor and do not allow us to install our own VPN configuration (e.g., for work or Hack The Box).
+
+
 
 ### Bonjour
 - We cannot talk about macOS and networking without quickly mentioning [Bonjour](https://developer.apple.com/bonjour/). Bonjour is Apple's `open-source` implementation of zero-configuration networking. 
@@ -223,5 +239,6 @@ Sup3r$ecure
 - Devices like printers, TVs, streaming media devices, and even other applications that allow for media sharing and other everyday actions now use this standard in some form.
 - From an `admin` perspective, this is great since it will enable us to skip a ton of manual configuration needed to set up devices like printers in a corporate environment. But from a `security` perspective, this could cause issues.
 - In macOS, our hosts utilize a protocol called `mDNSResponder` to perform the service discovery actions to use Bonjour and its suite of services. 
-- Through it, our hosts can automatically discover and potentially access other macOS hosts and devices running the protocol suite. This means that any host on our network capable of utilizing mDNS or Bonjour can access hosts or other services they may not have been granted access to. 
+- Through it, our hosts can automatically discover and potentially access other macOS hosts and devices running the protocol suite. 
+- This means that any host on our network capable of utilizing mDNS or Bonjour can access hosts or other services they may not have been granted access to. 
 - With this in mind, it's a good idea to ensure you are utilizing some form of network/device security along with network segmentation and authentication mechanisms within your environment.
