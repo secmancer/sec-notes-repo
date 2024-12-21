@@ -1,35 +1,53 @@
 ### Introduction
-- **IT as a Critical Component**: IT is vital for nearly all companies, with data growing in both importance and sensitivity. The increasing frequency of cyber-attacks, including ransomware, targeting critical company data highlights the importance of securing IT infrastructure. When breaches occur, sensitive information can be exploited, sold, or leaked, potentially causing significant harm to an organization’s reputation and operations. The rising complexity of these attacks makes them harder to prevent and mitigate.
-- **Penetration Testing (Pentest)**: A pentest is a structured, authorized attempt to exploit vulnerabilities in an IT system, simulating real-world attacks to identify weaknesses. By using real attack methods, penetration testers evaluate the impact vulnerabilities can have on an organization's confidentiality, integrity, and availability. This proactive approach allows organizations to detect flaws before malicious actors can exploit them.
+- **IT as a Critical Component**: IT is vital for nearly all companies, with data growing in both importance and sensitivity. 
+- The increasing frequency of cyber-attacks, including ransomware, targeting critical company data highlights the importance of securing IT infrastructure. 
+- When breaches occur, sensitive information can be exploited, sold, or leaked, potentially causing significant harm to an organization’s reputation and operations. 
+- The rising complexity of these attacks makes them harder to prevent and mitigate.
+- **Penetration Testing (Pentest)**: A pentest is a structured, authorized attempt to exploit vulnerabilities in an IT system, simulating real-world attacks to identify weaknesses.
+- By using real attack methods, penetration testers evaluate the impact vulnerabilities can have on an organization's confidentiality, integrity, and availability. 
+- This proactive approach allows organizations to detect flaws before malicious actors can exploit them.
 - **Pentest Objective**: The goal of a pentest is to identify all vulnerabilities within the tested systems and enhance their security posture by addressing these weaknesses.
-- **Red Team Assessment**: Unlike a pentest, a red team assessment is scenario-based, focusing on specific objectives like gaining access to high-value targets (e.g., CEO’s inbox or a critical server’s flag). It often mimics more sophisticated, targeted attacks with a strategic goal in mind, rather than attempting to find every vulnerability.
+- **Red Team Assessment**: Unlike a pentest, a red team assessment is scenario-based, focusing on specific objectives like gaining access to high-value targets (e.g., CEO’s inbox or a critical server’s flag). 
+- It often mimics more sophisticated, targeted attacks with a strategic goal in mind, rather than attempting to find every vulnerability.
 
 
 
 ### Risk Management
-- In general, it is also a part of `risk management` for a company. The main goal of IT security risk management is to identify, evaluate, and mitigate any potential risks that could damage the confidentiality, integrity, and availability of an organization's information systems and data and reduce the overall risk to an acceptable level. This includes identifying potential threats, evaluating their risks, and taking the necessary steps to reduce or eliminate them. This is done by implementing the appropriate security controls and policies, including access control, encryption, and other security measures. By taking the time to properly manage the security risks of an organization's IT systems, it is possible to ensure that the data is kept safe and secure.
-- However, we cannot eliminate every risk. There's still the nature of the inherent risk of a security breach that is present even when the organization has taken all reasonable steps to manage the risk. Therefore, some risks will remain. Inherent risk is the level of risk that is present even when the appropriate security controls are in place. Companies can accept, transfer, avoid and mitigate risks in various ways. For example, they can purchase insurance to cover certain risks, such as natural disasters or accidents. By entering into a contract, they can also transfer their risks to another party, such as a third-party service provider. Additionally, they can implement preventive measures to reduce the likelihood of certain risks occurring, and if certain risks do occur, they can put in place processes to minimize their impact. Finally, they can use financial instruments, such as derivatives, to reduce the economic consequences of specific risks. All of these strategies can help companies effectively manage their risks.
-- During a pentest, we prepare detailed documentation on the steps taken and the results achieved. However, it is the client's responsibility or the operator of their systems under investigation to rectify the vulnerabilities found. Our role is as trusted advisors to report vulnerabilities, detailed reproduction steps, and provide appropriate remediation recommendations, but we do not go in and apply patches or make code changes, etc. It is important to note that a pentest is not monitoring the IT infrastructure or systems but a momentary snapshot of the security status. A statement to this regard should be reflected in our penetration test report deliverable.
+- **IT Security Risk Management**: Focuses on identifying, evaluating, and mitigating risks to protect the confidentiality, integrity, and availability of data. Security controls like access control and encryption are implemented to reduce risks to acceptable levels.
+- **Residual and Inherent Risks**: Not all risks can be eliminated, and inherent risks remain despite controls. Companies can accept, transfer, avoid, or mitigate risks through measures such as insurance, contracts, preventive actions, and financial instruments.
+- **Penetration Testing (Pentest)**: Provides a snapshot of security vulnerabilities, including detailed documentation and remediation recommendations. However, fixing vulnerabilities is the client’s responsibility, not the tester’s. Pentests do not monitor systems continuously but highlight issues at a specific point in time.
+
+
 
 ### Vulnerability Assessments
-- `Vulnerability analysis` is a generic term that can include vulnerability or security assessments and penetration tests. In contrast to a penetration test, vulnerability or security assessments are performed using purely automated tools. Systems are checked against known issues and security vulnerabilities by running scanning tools like [Nessus](https://www.tenable.com/products/nessus), [Qualys](https://www.qualys.com/apps/vulnerability-management/), [OpenVAS](https://www.openvas.org/), and similar. In most cases, these automated checks cannot adapt the attacks to the configurations of the target system. This is why manual testing conducted by an experienced human tester is essential.
-- On the other hand, a pentest is a mix of automated and manual testing/validation and is performed after extensive, in most cases, manual information gathering. It is individually tailored and adjusted to the system being tested. Planning, execution, and selection of the tools used are much more complex in a pentest. Both penetration tests and other security assessments may only be carried out after mutual agreement between the contracting company and the organization that employs the penetration tester. This is because individual tests and activities performed during the pentest could be treated as criminal offenses if the tester does not have explicit written authorization to attack the customer's systems. The organization commissioning the penetration test may only request testing against its' own assets. If they are using any third parties to host websites or other infrastructure, they need to gain explicit written approval from these entities in most cases. Companies like Amazon no longer require prior authorization for testing certain services per this [policy](https://aws.amazon.com/security/penetration-testing/), if a company is using AWS to host some or all of their infrastructure. This varies from provider to provider, so it is always best to confirm asset ownership with the client during the scoping phase and check to see if any third parties they use require a written request process before any testing is performed.
-- A successful pentest requires a considerable amount of organization and preparation. There must be a straightforward process model that we can follow and, at the same time, adapt to the needs of our clients, as every environment we encounter will be different and have its own nuances. In some cases, we may work with clients who have never experienced a pentest before, and we have to be able to explain this process in detail to make sure they have a clear understanding of our planned activities, and we help them scope the assessment accurately.
-- In principle, employees are not informed about the upcoming penetration tests. However, managers may decide to inform their employees about the tests. This is because employees have a right to know when they have no expectation of privacy.
-- Because we, as penetration testers, can find personal data, such as names, addresses, salaries, and much more. The best thing we can do to uphold the [Data Protection Act](https://www.gov.uk/data-protection) is to keep this information private. Another example would be that we get access to a database with credit card numbers, names, and CVV codes. Accordingly, we recommend that our customers improve and change the passwords as soon as possible and encrypt the data on the database.
+- **Vulnerability Analysis vs. Penetration Testing**: Vulnerability analysis uses automated tools (e.g., Nessus, Qualys, OpenVAS) to detect known issues, while penetration tests combine automated and manual methods for deeper validation tailored to specific systems.
+- **Authorization and Scope**: Pentests require explicit written authorization to avoid legal issues, and clients must confirm asset ownership. Providers like AWS may not require prior approval for specific tests, but this varies, so scoping and approvals must be clarified beforehand.
+- **Pentest Preparation**: Effective pentesting requires thorough planning, a flexible process model, and clear communication—especially with clients unfamiliar with the process—to ensure accurate scoping and expectations.
+- **Employee Awareness**: Employees may not be informed about upcoming pentests unless management decides otherwise, balancing operational transparency with security testing effectiveness.
+- **Data Protection**: Testers may access sensitive data (e.g., names, credit card details), so compliance with laws like the Data Protection Act is critical. Recommendations include updating passwords and encrypting databases to safeguard exposed information.
+
 
 
 ### Testing Methods
-- An essential part of the process is the starting point from which we should perform our pentest. Each pentest can be performed from two different perspectives:
+- An essential part of the process is the starting point from which we should perform our pentest.
+- Each pentest can be performed from two different perspectives:
 	- `External` or `Internal`
 - #### External Penetration Test
-	- Many pentests are performed from an external perspective or as an anonymous user on the Internet. Most customers want to ensure that they are as protected as possible against attacks on their external network perimeter. We can perform testing from our own host (hopefully using a VPN connection to avoid our ISP blocking us) or from a VPS. Some clients will not care about stealth, while others will request that we proceed as quietly as possible and approach the target systems to avoid being banned by the firewalls and IDS/IPS systems and avoid triggering an alarm. They may ask for a stealthy or "hybrid" approach where we gradually become "noisier" to test their detection capabilities. Ultimately our goal here is to access external-facing hosts, obtain sensitive data, or gain access to the internal network.
+	- Many pentests are performed from an external perspective or as an anonymous user on the Internet. 
+	- Most customers want to ensure that they are as protected as possible against attacks on their external network perimeter.
+	- We can perform testing from our own host (hopefully using a VPN connection to avoid our ISP blocking us) or from a VPS. Some clients will not care about stealth, while others will request that we proceed as quietly as possible and approach the target systems to avoid being banned by the firewalls and IDS/IPS systems and avoid triggering an alarm. 
+	- They may ask for a stealthy or "hybrid" approach where we gradually become "noisier" to test their detection capabilities. 
+	- Ultimately our goal here is to access external-facing hosts, obtain sensitive data, or gain access to the internal network.
 - #### Internal Penetration Test
-	- In contrast to an external pentest, an internal pentest is when we perform testing from within the corporate network. This stage may be executed after successfully penetrating the corporate network via the external pentest or starting from an assumed breach scenario. Internal pentests may also access isolated systems with no internet access whatsoever, which usually requires our physical presence at the client's facility.
+	- In contrast to an external pentest, an internal pentest is when we perform testing from within the corporate network. 
+	- This stage may be executed after successfully penetrating the corporate network via the external pentest or starting from an assumed breach scenario. 
+	- Internal pentests may also access isolated systems with no internet access whatsoever, which usually requires our physical presence at the client's facility.
+
 
 
 ### Types of Penetration Testing
-- No matter how we begin the pentest, the type of pentest plays an important role. This type determines how much information is made available to us.
+- No matter how we begin the pentest, the type of pentest plays an important role. 
+- This type determines how much information is made available to us.
 
 | **Type**         | **Information Provided**                                                                                                                                                                                                                                              |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,6 +62,7 @@
 - This type of recon can take a considerable amount of time, especially if the client has requested a more stealthy approach to testing.
 
 
+
 ### Types of Testing Environments
 - Apart from the test method and the type of test, another consideration is what is to be tested.
 
@@ -53,4 +72,6 @@
 | IoT | Cloud | Source Code | Physical Security | Employees |
 | Hosts | Server | Security Policies | Firewalls | IDS/IPS |
 
-- It is important to note that these categories can often be mixed. All listed test components may be included depending on the type of test to be performed. Now we'll shift gears and cover the Penetration Process in-depth to see how each phase is broken down and depends on the previous one.
+- It is important to note that these categories can often be mixed. 
+- All listed test components may be included depending on the type of test to be performed. 
+- Now we'll shift gears and cover the Penetration Process in-depth to see how each phase is broken down and depends on the previous one.
