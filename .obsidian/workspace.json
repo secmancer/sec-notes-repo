@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "95e0e777a20682f5",
+        "id": "a4c69e76f9e1ba5a",
         "type": "tabs",
         "children": [
           {
-            "id": "997a08b7ce18b36b",
+            "id": "25e082e020d8d3e3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 20.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Day 20"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "TryHackMe/Advent of Cyber/2024/Day 20.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Day 20"
             }
           },
           {
@@ -198,11 +204,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "997a08b7ce18b36b",
+  "active": "25e082e020d8d3e3",
   "lastOpenFiles": [
-    "TryHackMe/Advent of Cyber/2024/Day 20.md",
     "TryHackMe/Advent of Cyber/2024/Day 19.md",
     "TryHackMe/Advent of Cyber/2024/Day 18.md",
+    "TryHackMe/Advent of Cyber/2024/Day 17.md",
+    "TryHackMe/Advent of Cyber/2024/Day 16.md",
+    "TryHackMe/Advent of Cyber/2024/Day 21.md",
+    "TryHackMe/Advent of Cyber/2024/Day 20.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
@@ -223,9 +232,6 @@
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Containment, Eradication, & Recovery Stage.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Proof-of-Concept.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Project Closeout/Post-Engagement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Vulnerability Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
