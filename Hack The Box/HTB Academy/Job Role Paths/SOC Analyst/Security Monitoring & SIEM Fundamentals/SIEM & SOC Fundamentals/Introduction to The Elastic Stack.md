@@ -112,15 +112,23 @@ event.code:4625 AND winlog.event_data.SubStatus:0xC0000072 AND @timestamp >= "20
 
 
 ### The Elastic Common Schema (ECS)
-- Elastic Common Schema (ECS) is a shared and extensible vocabulary for events and logs across the Elastic Stack, which ensures consistent field formats across different data sources. When it comes to Kibana Query Language (KQL) searches within the Elastic Stack, using ECS fields presents several key advantages:
-	- `Unified Data View`: ECS enforces a structured and consistent approach to data, allowing for unified views across multiple data sources. For instance, data originating from Windows logs, network traffic, endpoint events, or cloud-based data sources can all be searched and correlated using the same field names.
-	- `Improved Search Efficiency`: By standardizing the field names across different data types, ECS simplifies the process of writing queries in KQL. This means that analysts can efficiently construct queries without needing to remember specific field names for each data source.
-	- `Enhanced Correlation`: ECS allows for easier correlation of events across different sources, which is pivotal in cybersecurity investigations. For example, you can correlate an IP address involved in a security incident with network traffic logs, firewall logs, and endpoint data to gain a more comprehensive understanding of the incident.
-	- `Better Visualizations`: Consistent field naming conventions improve the efficacy of visualizations in Kibana. As all data sources adhere to the same schema, creating dashboards and visualizations becomes easier and more intuitive. This can help in spotting trends, identifying anomalies, and visualizing security incidents.
-	- `Interoperability with Elastic Solutions`: Using ECS fields ensures full compatibility with advanced Elastic Stack features and solutions, such as Elastic Security, Elastic Observability, and Elastic Machine Learning. This allows for advanced threat hunting, anomaly detection, and performance monitoring.
-	- `Future-proofing`: As ECS is the foundational schema across the Elastic Stack, adopting ECS ensures future compatibility with enhancements and new features that are introduced into the Elastic ecosystem.
+- **Elastic Common Schema (ECS) and Its Advantages for Kibana Query Language (KQL) Searches**:
+	- **Unified Data View**:
+	    - ECS provides a consistent and structured approach to data, ensuring a unified view across different data sources such as Windows logs, network traffic, endpoint events, and cloud-based data. This standardization allows analysts to seamlessly correlate data across multiple sources using the same field names, enhancing the overall visibility and ease of analysis.
+	- **Improved Search Efficiency**:
+	    - By standardizing field names, ECS simplifies KQL query writing. Analysts no longer need to remember unique field names for each data source, which speeds up the query process and reduces errors. This efficiency is crucial for incident response and investigations where time is of the essence.
+	- **Enhanced Correlation**:
+	    - ECS facilitates easier correlation of events across various sources. For example, an IP address involved in a security incident can be cross-referenced with network traffic logs, firewall logs, and endpoint data. This correlation provides a comprehensive view of the incident, aiding in faster detection and a deeper understanding of the attack.
+	- **Better Visualizations**:
+	    - Consistent field naming conventions improve the creation of visualizations in Kibana. Dashboards and visualizations are more intuitive and streamlined, making it easier to spot trends, detect anomalies, and visualize security incidents. This helps in both monitoring ongoing activities and reviewing historical data.
+	- **Interoperability with Elastic Solutions**:
+	    - ECS ensures compatibility with advanced Elastic Stack features, such as **Elastic Security**, **Elastic Observability**, and **Elastic Machine Learning**. This compatibility allows for more sophisticated threat hunting, anomaly detection, and performance monitoring, empowering analysts to utilize a broader set of tools to tackle cybersecurity challenges.
+	- **Future-proofing**:
+	    - By adopting ECS, organizations ensure that their data is aligned with Elastic's foundational schema, guaranteeing future compatibility with new features and enhancements in the Elastic ecosystem. As the Elastic Stack evolves, ECS helps maintain long-term compatibility with emerging tools and capabilities.
 
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
+
+
 
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Discover". Then, click on the calendar icon, specify "last 15 years", and click on "Apply". Finally, choose the "windows*" index pattern. Now, execute the KQL query that is mentioned in the "Comparison Operators" part of this section and enter the username of the disabled account as your answer. Just the username; no need to account for the domain.

@@ -33,6 +33,7 @@
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
 
 
+
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "Failed logon attempts [All users]" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
 	- answer

@@ -1,8 +1,12 @@
 ## What Is A SIEM Use Case?
-- Utilizing SIEM use cases is a fundamental aspect of crafting a robust cybersecurity strategy, as they enable the effective identification and detection of potential security incidents. Use cases are designed to illustrate specific situations where a product or service can be applied, and they can range from general scenarios, such as failed login attempts, to more complex ones like detecting a ransomware outbreak.
+- Utilizing SIEM use cases is a fundamental aspect of crafting a robust cybersecurity strategy, as they enable the effective identification and detection of potential security incidents. 
+- Use cases are designed to illustrate specific situations where a product or service can be applied, and they can range from general scenarios, such as failed login attempts, to more complex ones like detecting a ransomware outbreak.
+- For instance, consider a situation where a user named Rob experiences 10 consecutive failed authentication attempts. 
+- These events could originate from the actual user who forgot their credentials or from a malicious actor trying to brute force their way into the account.
+- In either case, these 10 events are sent to the SIEM system, which then correlates them into a single event and triggers an alert to the SOC team under the "brute force" use case category.
+- Based on the log data generated within the SIEM, the SOC team is then responsible for taking appropriate action. 
+- This example demonstrates just one of the many possible use cases that can be developed, ranging from straightforward to more intricate situations.
 ![Use Case 1](https://academy.hackthebox.com/storage/modules/211/usecase1.png)
-- For instance, consider a situation where a user named Rob experiences 10 consecutive failed authentication attempts. These events could originate from the actual user who forgot their credentials or from a malicious actor trying to brute force their way into the account. In either case, these 10 events are sent to the SIEM system, which then correlates them into a single event and triggers an alert to the SOC team under the "brute force" use case category.
-- Based on the log data generated within the SIEM, the SOC team is then responsible for taking appropriate action. This example demonstrates just one of the many possible use cases that can be developed, ranging from straightforward to more intricate situations.
 
 
 
@@ -31,17 +35,25 @@
 - Establish a knowledge base document for essential information and updates to case management tools.
 
 
+
 ## Example 1 (Microsoft Build Engine Started By An Office Application)
 - Now, let's explore a practical example using the Elastic stack as a SIEM solution to help understand how to map each of the above points.
 ![Use Case Dev Lifecycle](https://academy.hackthebox.com/storage/modules/211/us1.png)
 - In the provided snapshot (detection use case), we need to determine our risk and the target of our monitoring efforts.
-- MSBuild, part of the Microsoft Build Engine, is a software build system that assembles applications according to its XML input file. Typically, Microsoft Visual Studio generates the input file, but the .NET framework and other compilers can also compile applications without it. Attackers [exploit MSBuild](https://blog.talosintelligence.com/building-bypass-with-msbuild/)'s ability to include malicious source code within its configuration or project file.
-- When monitoring process execution command-line arguments, it is crucial to investigate instances where a web browser or Microsoft Office executable initiates MSBuild. This suspicious behavior suggests a potential breach. Once a baseline is established, unusual MSBuild calls should be easily identifiable and relatively rare, avoiding increased workload for the team.
+- MSBuild, part of the Microsoft Build Engine, is a software build system that assembles applications according to its XML input file. 
+- Typically, Microsoft Visual Studio generates the input file, but the .NET framework and other compilers can also compile applications without it. 
+- Attackers [exploit MSBuild](https://blog.talosintelligence.com/building-bypass-with-msbuild/)'s ability to include malicious source code within its configuration or project file.
+- When monitoring process execution command-line arguments, it is crucial to investigate instances where a web browser or Microsoft Office executable initiates MSBuild. 
+- This suspicious behavior suggests a potential breach. 
+- Once a baseline is established, unusual MSBuild calls should be easily identifiable and relatively rare, avoiding increased workload for the team.
 - To address this risk, we create a detection use case in our SIEM solution that monitors instances of MSBuild initiated by Excel or Word, as this behavior could indicate a malicious script payload execution.
 - Next, let's define priority, impact, and map the alert to the kill chain or MITRE framework.
-- Given the above risk and threat intelligence, this technique, known as Living-off-the-land binaries ([LoLBins](https://www.cynet.com/attack-techniques-hands-on/what-are-lolbins-and-how-do-attackers-use-them-in-fileless-attacks)), poses a significant threat if detected, making it a high global risk category. Consequently, we assign it HIGH severity, though this may vary depending on your organization's specific context and landscape.
-- Regarding MITRE mapping, this use case involves bypassing detection techniques via LoLBins usage, falling under the Defense Evasion ([TA0005](https://attack.mitre.org/tactics/TA0005/)) tactic, the Trusted Developer Utilities Proxy Execution ([T1127](https://attack.mitre.org/techniques/T1127/)) technique, and the Trusted Developer Utilities Proxy Execution: MSBuild ([T1127.001](https://attack.mitre.org/techniques/T1127/001/)) sub-technique. Additionally, executing the MSBuild binary on the endpoint also falls under the Execution ([TA0002](https://attack.mitre.org/tactics/TA0002/)) tactic.
-- To define TTD and TTR, we need to focus on the rule's execution interval and the data ingestion pipeline discussed earlier. For this example, we set the rule to run every five minutes, monitoring all incoming logs.
+- Given the above risk and threat intelligence, this technique, known as Living-off-the-land binaries ([LoLBins](https://www.cynet.com/attack-techniques-hands-on/what-are-lolbins-and-how-do-attackers-use-them-in-fileless-attacks)), poses a significant threat if detected, making it a high global risk category. 
+- Consequently, we assign it HIGH severity, though this may vary depending on your organization's specific context and landscape.
+- Regarding MITRE mapping, this use case involves bypassing detection techniques via LoLBins usage, falling under the Defense Evasion ([TA0005](https://attack.mitre.org/tactics/TA0005/)) tactic, the Trusted Developer Utilities Proxy Execution ([T1127](https://attack.mitre.org/techniques/T1127/)) technique, and the Trusted Developer Utilities Proxy Execution: MSBuild ([T1127.001](https://attack.mitre.org/techniques/T1127/001/)) sub-technique. 
+- Additionally, executing the MSBuild binary on the endpoint also falls under the Execution ([TA0002](https://attack.mitre.org/tactics/TA0002/)) tactic.
+- To define TTD and TTR, we need to focus on the rule's execution interval and the data ingestion pipeline discussed earlier. 
+- For this example, we set the rule to run every five minutes, monitoring all incoming logs.
 - When creating an SOP and documenting alert handling, consider the following:
 	- process.name
 	- process.parent.name
@@ -51,7 +63,10 @@
 	- user activity within +/- 2 days of the alert's generation
 	- After gathering this information, defenders should engage with the user and examine the user's machine to analyze system logs, antivirus logs, and proxy logs from the SIEM for full visibility.
 - The SOC team should document all the above points, along with the Incident Response Plan, so that Incident Handlers can reference them during analysis.
-- For rule fine-tuning, it is essential to understand the conditions that may trigger false positives. For example, while the Build Engine is common among Windows developers, its use by non-engineers is unusual. Excluding legitimate parent process names from the rule helps avoid false positives. Further details on fine-tuning SIEM rules will be given later on.
+- For rule fine-tuning, it is essential to understand the conditions that may trigger false positives.
+- For example, while the Build Engine is common among Windows developers, its use by non-engineers is unusual.
+- Excluding legitimate parent process names from the rule helps avoid false positives. 
+- Further details on fine-tuning SIEM rules will be given later on.
 
 
 

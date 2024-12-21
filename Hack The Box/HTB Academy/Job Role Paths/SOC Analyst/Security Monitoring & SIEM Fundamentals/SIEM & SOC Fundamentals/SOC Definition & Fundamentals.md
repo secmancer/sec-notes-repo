@@ -1,17 +1,17 @@
 ### What Is A SOC?
-- A Security Operations Center (SOC) is an essential facility that houses a team of information security experts responsible for continuously monitoring and evaluating an organization's security status. The main objective of a SOC team is to identify, examine, and address cybersecurity incidents by employing a mix of technology solutions and a comprehensive set of procedures.
-- The SOC team usually consists of proficient security analysts, engineers, and managers overseeing security operations. They collaborate closely with organizational incident response teams to guarantee security concerns are promptly detected and resolved.
-- Various technology solutions, such as Security Information and Event Management (SIEM) systems, Intrusion Detection and Prevention Systems (IDS/IPS), and Endpoint Detection and Response (EDR) tools, are utilized by the SOC team to monitor and identify security threats. They also make use of threat intelligence and engage in threat hunting initiatives to proactively detect potential threats and vulnerabilities.
-- Besides employing technology solutions, the SOC team follows a series of well-defined processes for addressing security incidents. These processes encompass incident triage, containment, elimination, and recovery. The SOC team cooperates closely with the incident response team to ensure proper handling of security incidents, safeguarding the organization's security stance.
-- In summary, a SOC is a vital element of an organization's cybersecurity approach. It offers continuous monitoring and response capabilities, enabling organizations to promptly detect and address security incidents, minimizing the consequences of a security breach and decreasing the likelihood of future attacks.
+- A **Security Operations Center (SOC)** is a facility housing experts who monitor and evaluate an organization's security status, identifying and addressing cybersecurity incidents.
+- The SOC team includes **security analysts**, **engineers**, and **managers**, who collaborate with incident response teams to detect and resolve security concerns quickly.
+- The SOC uses technology solutions like **SIEM**, **IDS/IPS**, and **EDR** tools, along with threat intelligence and proactive **threat hunting**, to detect potential threats.
+- The SOC follows defined processes for **incident triage**, **containment**, **elimination**, and **recovery**, working with incident response teams to handle security incidents.
+- In summary, the SOC provides **continuous monitoring and response** to minimize the impact of security breaches and reduce the likelihood of future attacks.
 
 
 
 ### How Does A SOC Work?
-- The primary function of the SOC team is to manage the ongoing operational aspect of enterprise information security rather than concentrating on the development of security strategies, designing security architecture, or implementing protective measures.
-- The SOC team mainly consists of security analysts who work collectively to detect, assess, respond to, report on, and prevent cybersecurity incidents.
-- Besides the primary responsibilities of a SOC team, some SOCs may possess advanced capabilities like forensic analysis and malware analysis. These abilities enable the SOC team to conduct in-depth investigations of security incidents and examine the root cause of the incident to avert future attacks.
-- As previously mentioned, the SOC team also collaborates closely with the incident response team to guarantee proper handling of security incidents and the preservation of the organization's security posture.
+- The **SOC team** focuses on managing ongoing operational aspects of **enterprise information security**, rather than developing strategies or designing architecture.
+- The team consists primarily of **security analysts** who work together to detect, assess, respond to, report on, and prevent **cybersecurity incidents**.
+- Some SOCs have advanced capabilities, such as **forensic analysis** and **malware analysis**, to conduct in-depth investigations and identify the root causes of security incidents.
+- The SOC collaborates closely with the **incident response team** to ensure proper handling of security incidents and maintain the organization's **security posture**.
 
 
 
@@ -35,12 +35,13 @@
 	- `Tier 3 Analysts`: Often considered the most experienced and knowledgeable analysts on the team, Tier 3 analysts handle the most complex and high-profile security incidents. They may also engage in proactive threat hunting, develop advanced detection and prevention strategies, and collaborate with other teams to improve the organization's overall security posture.
 
 
+
 ### SOC Stages
-- Security Operations Centers (SOCs) have evolved significantly from their early days as Network Operation Centers focused primarily on network security. In the first generation, known as SOC 1.0, organizations invested in certain security layers such as security intelligence platforms or identity management systems. However, the lack of proper integration led to uncorrelated alerts and a buildup of tasks across multiple platforms. This stage was characterized by an emphasis on network and perimeter security, even as threats began exploiting other vectors. Surprisingly, some organizations continue to rely on this outdated approach, seemingly waiting for a major breach to occur.
-- The emergence of sophisticated threats, including multi-vector, persistent, and asynchronous attacks with concealed indicators of compromise, has spurred the transition to SOC 2.0. Malware, including mobile variants, and botnets serve as the primary delivery methods for these attacks. The longevity, evolving behavior, and growth of botnets over time have become focal points for threat intelligence. SOC 2.0 is built on intelligence, integrating security telemetry, threat intelligence, network flow analysis, and other anomaly detection techniques. Additionally, layer-7 analysis is employed at this stage to identify low and slow attacks and other hidden threats. A forward-looking approach to threat research and collaboration between SOCs, either within sectors or at the national level, is crucial for SOC 2.0's success. Emphasis is placed on complete situational awareness, pre-event preparedness through vulnerability management, configuration management, and dynamic risk management, as well as post-event analysis and learning through incident response and in-depth forensics. Refining security intelligence rules and deploying countermeasures are also vital in this stage.
-- The cognitive SOC, or next-generation SOC, seeks to address the remaining shortcomings of SOC 2.0. While SOC 2.0 has all the essential subsystems, it often lacks operational experience and effective collaboration between business and security teams to create rules that detect threats specific to business processes and systems. Moreover, many organizations still lack standardized incident response and recovery procedures.
-- Cognitive SOCs aim to resolve these issues by incorporating learning systems that compensate for experience gaps in security decision-making. While the success rate of this approach may not be perfect in every instance, it is expected to improve over time.
-- [Reference: https://www.linkedin.com/pulse/evolution-security-operations-center-20-beyond-krishnan-jagannathan/](https://www.linkedin.com/pulse/evolution-security-operations-center-20-beyond-krishnan-jagannathan/)
+- **SOC Evolution**: SOCs have transitioned from **SOC 1.0**, which focused on network security and lacked integration, to **SOC 2.0**, addressing advanced threats with better integration of threat intelligence, anomaly detection, and more sophisticated analysis.
+- **SOC 1.0**: Early SOCs used isolated security layers, resulting in uncorrelated alerts and missed threats, relying heavily on network and perimeter security.
+- **SOC 2.0**: Introduces threat intelligence, anomaly detection, and layer-7 analysis to detect multi-vector, persistent attacks, with a focus on **botnets** and evolving malware. It emphasizes situational awareness, vulnerability management, and post-event analysis.
+- **Cognitive SOC**: The next-generation SOC seeks to address the gaps in SOC 2.0, such as the lack of business-process-specific threat detection and standardized incident response, by incorporating **learning systems** to improve security decision-making over time.
+
 
 
 ### Questions
