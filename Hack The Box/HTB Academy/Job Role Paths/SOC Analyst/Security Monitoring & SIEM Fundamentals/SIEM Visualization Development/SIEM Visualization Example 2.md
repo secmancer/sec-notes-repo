@@ -35,6 +35,7 @@
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
 
 
+
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Either create a new visualization or edit the "Failed logon attempts [Disabled user]" visualization, if it is available, so that it includes failed logon attempt data related to disabled users including the logon type. What is the logon type in the returned document?
 	- Interactive

@@ -45,6 +45,7 @@
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
 
 
+
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Extend the visualization we created or the "User added or removed from a local group" visualization, if it is available, and enter the common date on which all returned events took place as your answer. Answer format: 20XX-0X-0X
 	- answer

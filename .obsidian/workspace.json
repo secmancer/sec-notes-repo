@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fdeecd68b338987c",
+        "id": "9c30a286e137afa0",
         "type": "tabs",
         "children": [
           {
-            "id": "ba8a812141d98f99",
+            "id": "50973f09b77d242e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,11 +198,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "ba8a812141d98f99",
+  "active": "50973f09b77d242e",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
@@ -225,7 +226,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Pre-Engagement.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Post-Exploitation.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Lateral Movement.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Penetration Testing Phases - Assessment Specific Stages/Information Gathering.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

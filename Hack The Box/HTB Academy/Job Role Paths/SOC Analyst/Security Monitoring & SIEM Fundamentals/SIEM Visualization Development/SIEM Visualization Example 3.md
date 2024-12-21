@@ -49,6 +49,7 @@ user.name: svc-*
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
 
 
+
 ### Questions
 - Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Browse the visualization we created or the "RDP logon for service account" visualization, if it is available, and enter the IP of the machine that initiated the successful RDP logon using service account credentials as your answer.
 	- answer

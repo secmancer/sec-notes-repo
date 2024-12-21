@@ -3,6 +3,7 @@
 - In this and the following sections, we will create a dashboard and some visualizations from scratch.
 
 
+
 ### Developing Our First Dashboard & Visualization
 - Navigate to the bottom of this section and click on `Click here to spawn the target system!`
 - Now, navigate to `http://[Target IP]:5601`, click on the side navigation toggle, and click on "Dashboard".
@@ -88,6 +89,7 @@ NOT user.name: *$ AND winlog.channel.keyword: Security
 - Don't forget to click on the "Save" button (the one on the upper-right hand side of the window).
 
 > Please allow 3-5 minutes for Kibana to become available after spawning the target of the questions below.
+
 
 
 ### Questions
