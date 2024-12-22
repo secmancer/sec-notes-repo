@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a4c69e76f9e1ba5a",
+        "id": "cc4f42ba16637721",
         "type": "tabs",
         "children": [
           {
-            "id": "25e082e020d8d3e3",
+            "id": "1f5a51592e1d5a9c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 21.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Day 21"
+              "title": "New tab"
             }
           }
         ]
@@ -138,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "TryHackMe/Advent of Cyber/2024/Day 21.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Day 21"
+              "title": "Outline"
             }
           },
           {
@@ -204,10 +198,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "25e082e020d8d3e3",
+  "active": "1f5a51592e1d5a9c",
   "lastOpenFiles": [
-    "TryHackMe/Advent of Cyber/2024/Day 20.md",
     "TryHackMe/Advent of Cyber/2024/Day 21.md",
+    "TryHackMe/Advent of Cyber/2024/Day 20.md",
     "TryHackMe/Advent of Cyber/2024/Day 19.md",
     "TryHackMe/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024/Day 18.md",

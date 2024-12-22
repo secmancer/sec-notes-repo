@@ -1,11 +1,11 @@
 ### Questions
 - What is the function name that downloads and executes files in the WarevilleApp.exe?
-	- answer
+	- DownloadAndExecuteFile
 - Once you execute the WarevilleApp.exe, it downloads another binary to the Downloads folder. What is the name of the binary?
-	- answer
+	- explorer.exe
 - What domain name is the one from where the file is downloaded after running WarevilleApp.exe?
-	- answer
+	- mayorc2.thm
 - The stage 2 binary is executed automatically and creates a zip file comprising the victim's computer data; what is the name of the zip file?
-	- answer
+	- CollectedFiles.zip
 - What is the name of the C2 server where the stage 2 binary tries to upload files?
-	- answer
+	- anonymousc2.thm
