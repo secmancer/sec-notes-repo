@@ -1,15 +1,13 @@
 ### Questions
 - What is the name of the webshell that was used by Mayor Malware?
-	- shelly.php
+	- answer
 - What file did Mayor Malware read from the pod?
-	- db.php
-- What tool did Mayor Malware search for that could be used to create a remote connection from the pod?
-	- nc
+	- answer
 - What IP connected to the docker registry that was unexpected?
-	- 10.10.130.253
+	- answer
 - At what time is the first connection made from this IP to the docker registry?
-	- 29/Oct/2024:10:06:33 +0000
+	- answer
 - At what time is the updated malicious image pushed to the registry?
-	- 29/Oct/2024:12:34:28 +0000
+	- answer
 - What is the value stored in the "pull-creds" secret?
 	- answer
