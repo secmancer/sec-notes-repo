@@ -1,0 +1,15 @@
+### Questions
+- What is the name of the webshell that was used by Mayor Malware?
+	- answer
+- What file did Mayor Malware read from the pod?
+	- answer
+- What tool did Mayor Malware search for that could be used to create a remote connection from the pod?
+	- nc
+- What IP connected to the docker registry that was unexpected?
+	- answer
+- At what time is the first connection made from this IP to the docker registry?
+	- answer
+- At what time is the updated malicious image pushed to the registry?
+	- answer
+- What is the value stored in the "pull-creds" secret?
+	- answer
