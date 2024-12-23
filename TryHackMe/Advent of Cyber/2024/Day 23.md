@@ -1,13 +1,5 @@
 ### Questions
-- What is the name of the webshell that was used by Mayor Malware?
+- Crack the hash value stored in `hash1.txt`. What was the password?
 	- answer
-- What file did Mayor Malware read from the pod?
-	- answer
-- What IP connected to the docker registry that was unexpected?
-	- answer
-- At what time is the first connection made from this IP to the docker registry?
-	- answer
-- At what time is the updated malicious image pushed to the registry?
-	- answer
-- What is the value stored in the "pull-creds" secret?
+- What is the flag at the top of the `private.pdf` file?
 	- answer

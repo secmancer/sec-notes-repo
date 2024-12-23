@@ -12,4 +12,4 @@
 - At what time is the updated malicious image pushed to the registry?
 	- 29/Oct/2024:12:34:28 +0000
 - What is the value stored in the "pull-creds" secret?
-	- answer
+	- {"auths":{"http://docker-registry.nicetown.loc:5000":{"username":"mr.nice","password":"Mr.N4ughty","auth":"bXIubmljZTpNci5ONHVnaHR5"}}}
