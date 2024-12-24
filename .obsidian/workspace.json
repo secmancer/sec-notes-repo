@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "758bef50aa25ee1d",
+        "id": "ecf259ddbbe09c13",
         "type": "tabs",
         "children": [
           {
-            "id": "feeb72ee6b975fe1",
+            "id": "a95c90a3ef4684da",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,16 +198,16 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "feeb72ee6b975fe1",
+  "active": "a95c90a3ef4684da",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
     "TryHackMe/Advent of Cyber/2024/The End.md",
     "TryHackMe/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024/Day 24.md",
     "TryHackMe/Advent of Cyber/2024/Day 23.md",
     "Hack The Box/HTB Labs/Add files or folders here!.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles",
