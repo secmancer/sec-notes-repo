@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7262a483583e1619",
+        "id": "06b6049f555cffec",
         "type": "tabs",
         "children": [
           {
-            "id": "9d758eb912b993a2",
+            "id": "26f0f3435d7959f2",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,7 +198,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "9d758eb912b993a2",
+  "active": "26f0f3435d7959f2",
   "lastOpenFiles": [
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
