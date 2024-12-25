@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ecf259ddbbe09c13",
+        "id": "7262a483583e1619",
         "type": "tabs",
         "children": [
           {
-            "id": "a95c90a3ef4684da",
+            "id": "9d758eb912b993a2",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -198,8 +198,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "a95c90a3ef4684da",
+  "active": "9d758eb912b993a2",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
     "TryHackMe/Advent of Cyber/2024/The End.md",
@@ -234,7 +235,6 @@
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
