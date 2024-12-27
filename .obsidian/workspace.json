@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "06b6049f555cffec",
+        "id": "663e24dab1c8e643",
         "type": "tabs",
         "children": [
           {
-            "id": "26f0f3435d7959f2",
+            "id": "7acd45f0fc517f51",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Physical Security.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Physical Security"
             }
           }
         ]
@@ -134,9 +138,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Physical Security.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Physical Security"
             }
           },
           {
@@ -178,7 +184,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 203.5
+    "width": 203.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,19 +205,27 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "26f0f3435d7959f2",
+  "active": "7acd45f0fc517f51",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Cloud Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Disaster Recovery and Business Continuity.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Operational Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Application Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Network Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Physical Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Internet of Things Security.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Mobile Security.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "TryHackMe/Advent of Cyber/2024/The End.md",
     "TryHackMe/Add files or folders here!.md",
     "TryHackMe/Advent of Cyber/2024/Day 24.md",
     "TryHackMe/Advent of Cyber/2024/Day 23.md",
     "Hack The Box/HTB Labs/Add files or folders here!.md",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats",
@@ -226,15 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Using Academy Effectively/Introduction to Penetration Tester Path.md",
     "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Preparing for Real-World Pentests/Practice.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
-    "TryHackMe/Advent of Cyber/2024/Day 21.md",
-    "TryHackMe/Advent of Cyber/2024/Day 20.md",
-    "TryHackMe/Advent of Cyber/2024/Day 19.md",
-    "TryHackMe/Advent of Cyber/2024/Day 18.md",
-    "TryHackMe/Advent of Cyber/2024/Day 17.md",
-    "TryHackMe/Advent of Cyber/2024/Day 16.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",

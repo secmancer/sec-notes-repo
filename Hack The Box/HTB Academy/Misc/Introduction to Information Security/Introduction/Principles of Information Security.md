@@ -103,7 +103,9 @@
 	- Metasploit: Exploitation framework
 	- Burp Suite: Web application security testing
 	- John the Ripper: Password cracking
+
 > **Note:** As a penetration tester, you'll be using many of these tools to simulate attacks and identify vulnerabilities. However, it's crucial to understand the ethical and legal implications of using these tools. Always ensure you have proper authorization before conducting any security tests.
+
 
 
 ### Conclusion
