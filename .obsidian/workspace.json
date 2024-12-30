@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "3929ab50158fe465",
+        "id": "1bf2e3f0eb475843",
         "type": "tabs",
         "children": [
           {
-            "id": "3962993151a75b33",
+            "id": "a7774ddd50adc2ae",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Purple Team.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Purple Team"
             }
           }
         ]
@@ -201,8 +205,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "a7774ddd50adc2ae",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Blue Team.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Purple Team.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Red Team.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Threat Actors.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Advanced Persistent Threats.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Insider Threat.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Social Engineering.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Ransomware.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Distributed Denial of Service.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Internet of Things Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Mobile Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Physical Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Cloud Security.md",
@@ -214,7 +228,6 @@
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Internet of Things Security.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "TryHackMe/Advent of Cyber/2024/The End.md",
     "TryHackMe/Add files or folders here!.md",
@@ -229,14 +242,6 @@
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security",
     "Hack The Box/HTB Academy/Misc",
-    "TryHackMe/Advent of Cyber/2024/Day 22.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
-    "Untitled.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Using Academy Effectively/Introduction to Penetration Tester Path.md",
-    "Hack The Box/HTB Academy/Skill Paths/SOC Analyst Prerequisites/Penetration Testing Process/Preparing for Real-World Pentests/Practice.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Web Applications/Screenshots",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
