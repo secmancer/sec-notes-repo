@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3c7ccf21b0d7da2c",
+        "id": "afcf09a64a42d82b",
         "type": "tabs",
         "children": [
           {
-            "id": "1906f3854ad51679",
+            "id": "ab38d2e11b013160",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -201,12 +201,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "1906f3854ad51679",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Threat Actors.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Bug Bounty Hunter.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Security Operations Center.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Chief Information Security Officer.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Penetration Testers.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Purple Team.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Blue Team.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Red Team.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Threat Actors.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Advanced Persistent Threats.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Insider Threat.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Threats/Social Engineering.md",
@@ -223,13 +228,8 @@
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "TryHackMe/Advent of Cyber/2024/The End.md",
-    "TryHackMe/Add files or folders here!.md",
-    "TryHackMe/Advent of Cyber/2024/Day 24.md",
-    "TryHackMe/Advent of Cyber/2024/Day 23.md",
-    "Hack The Box/HTB Labs/Add files or folders here!.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams",
