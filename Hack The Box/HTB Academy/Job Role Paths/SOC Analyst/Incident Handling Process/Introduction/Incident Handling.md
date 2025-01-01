@@ -1,25 +1,51 @@
-### Incident Handling Definition & Scope
-- IH is crucial for protecting data confidentiality, integrity, and availability in organizations, with some handling it in-house and others relying on third-party providers.
-- **Event**: A system or network action, such as sending an email, a mouse click, or a firewall allowing a connection.
-- **Incident**: An event with negative consequences, like a system crash or unauthorized data access.
-- **IT Security Incident**: An event with the intent to cause harm, such as data theft, unauthorized access, or malware installation.
--  Incident handling involves a set of procedures to manage and respond to security incidents, not just intrusions but also issues caused by insiders, availability problems, or intellectual property loss.
-- A comprehensive plan should cover various incident types and provide measures to identify, contain, eradicate, and recover from them.
-- Events may not immediately be recognized as incidents, so suspicious events should be treated as incidents until proven otherwise.
+### Overview
+- Incident handling has become an integral part of an organization's defense against cybercrime. 
+- While measures exist to prevent or reduce security incidents, IH is essential for protecting data confidentiality, integrity, and availability.
+- Incident handling involves structured procedures to manage and respond to security incidents in a computer or network environment. It encompasses:
+	- Intrusion incidents
+	- Malicious insiders
+	- Availability issues
+	- Intellectual property loss
 
 
 
-### Incident Handling's Value & Generic Notes
-- **Importance of Quick Response**
-    - IT security incidents often involve compromised personal and business data, making quick and effective response crucial.
-    - The impact of incidents can range from a few devices affected to large-scale environment compromise.
-    - An incident handling team (or incident response team) responds systematically, minimizing data theft or service disruption through investigation and remediation.
-    - Decisions made before, during, and after an incident will impact its overall consequences.
-- **Incident Prioritization**
-    - Incidents should be prioritized based on severity, with high-priority incidents receiving immediate attention and resources.
-    - Lower-severity incidents may still need initial investigation to determine if they qualify as security incidents.
-- **Incident Management**
-    - The incident handling team is led by an incident manager, often a SOC manager, CISO/CIO, or trusted third-party vendor.
-    - The incident manager has the authority to direct employees and track activities and statuses during the investigation.
-- **Guidelines and Resources**\
-    - NIST's Computer Security Incident Handling Guide provides widely-used practical guidelines for responding to incidents effectively and mitigating risks.
+### Key Concepts
+- **Event**: Any action occurring in a system or network, e.g.:
+  - Sending an email
+  - Mouse click
+  - Firewall allowing a connection request
+- **Incident**: An event with negative consequences, such as:
+  - System crash
+  - Unauthorized access to sensitive data
+  - Natural disasters or power failures
+- **IT Security Incident**: Events with a clear intent to cause harm, e.g.:
+  - Data theft
+  - Funds theft
+  - Unauthorized data access
+  - Usage of malware or remote access tools
+
+
+
+### Importance
+- Protects personal and business data from compromise.
+- Mitigates impacts ranging from localized device issues to widespread environmental compromise.
+- Facilitates systematic and effective responses through trained incident response teams.
+
+
+
+### Prioritization
+- High-severity incidents require immediate attention and resource allocation.
+- Lower-severity incidents also need initial investigation to confirm their nature.
+
+
+
+### Role of the Incident Manager
+- Leads the incident handling team.
+- Commonly assigned to a SOC manager, CISO/CIO, or third-party vendor.
+- Acts as the single point of communication during the investigation.
+- Coordinates activities, tracks progress, and ensures timely response.
+
+
+
+### NIST's Computer Security Incident Handling Guide
+- NIST's guide offers practical guidelines for effective and efficient incident response, helping organizations mitigate risks associated with security incidents.
