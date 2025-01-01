@@ -1,64 +1,89 @@
-### Introduction
-- **Detection & Analysis Phase**:
-    - Involves detecting incidents through sensors, logs, trained personnel, and context-based threat intelligence.
-    - Key factors include segmentation of architecture, network visibility, and information sharing.
-- **Threat Detection Sources**:
-    - Employee observations of abnormal behavior.
-    - Alerts from tools like EDR, IDS, Firewall, SIEM.
-    - Threat hunting activities.
-    - Third-party notifications about potential compromises.
-- **Levels of Detection**:
-    - **Network Perimeter**: Firewalls, intrusion detection/prevention systems, DMZ.
-    - **Internal Network**: Local firewalls, host intrusion detection/prevention systems.
-    - **Endpoint Level**: Antivirus, endpoint detection & response systems.
-    - **Application Level**: Application logs, service logs.
+## Overview
+- This phase focuses on detecting incidents through sensors, logs, trained personnel, and threat intelligence. 
+- A clear understanding of the network architecture and segmentation is essential to locate and analyze threats effectively.
 
 
 
-### Initial Investigation
-- **Initial Investigation**:
-    - Collect critical information before assembling the incident response team, such as the date/time, who detected and reported the incident, and how it was detected.
-    - Document details like impacted systems, actions taken, physical location, operating systems, IP addresses, and hostnames.
-    - For malware-related incidents, gather data on IP addresses, type of malware, and forensic information like file hashes.
-- **Decision Making**:
-    - Use gathered information to guide actions based on the severity and context of the incident (e.g., CEO's laptop vs. intern's).
-- **Building an Incident Timeline**:
-    - Create a time-sorted timeline of events to organize findings and understand the sequence of the incident.
-    - The timeline should include date, time, hostname, event description, and data source.
-- **Example of Timeline Entry**:
-    - `09/09/2021 13:31 CET | SQLServer01 | Hacker tool 'Mimikatz' detected | Antivirus Software`
-- **Focus on Attacker Behavior**:
-    - Record key attacker actions, such as system access, network connections, and file downloads, with corresponding system associations and data sources.
+## Detection Sources
+- Threats can be detected from:
+	- An employee reporting abnormal behavior.
+	- Alerts from tools (e.g., EDR, IDS, firewalls, SIEM).
+	- Threat hunting activities.
+	- Notifications from third parties about a compromise.
 
 
 
-### Incident Severity & Extent Questions
-- **Questions to Assess Incident Severity and Extent**:
-    - What is the impact of the exploitation?
-    - What are the exploitation requirements?
-    - Can business-critical systems be affected?
-    - Are there any suggested remediation steps?
-    - How many systems have been impacted?
-    - Is the exploit being used in the wild?
-    - Does the exploit have worm-like capabilities?
-- **Indicators of Sophistication**:
-    - The last two questions can reveal the adversary's level of sophistication, particularly if the exploit is widely used or has worm-like capabilities.
-- **Handling High-Impact Incidents**:
-    - High-impact incidents require prompt handling, and incidents affecting many systems should be escalated for more resources and attention.
+## Levels of Detection
+1. **Network Perimeter**: Firewalls, internet-facing IDS/IPS, DMZ systems.
+2. **Internal Network**: Local firewalls, host-based intrusion systems.
+3. **Endpoint Level**: Antivirus, endpoint detection and response (EDR) systems.
+4. **Application Level**: Application logs, service logs.
 
 
 
-### Incident Confidentiality & Communication
-- Incidents are very confidential topics and as such, all of the information gathered should be kept on a need-to-know basis, unless applicable laws or a management decision instruct us otherwise.
-- There are multiple reasons for this. 
-- The adversary may be, for example, an employee of the company, or if a breach has occurred, the communication to internal and external parties should be handled by the appointed person in accordance with the legal department.
-- When an investigation is launched, we will set some expectations and goals. 
-- These often include the type of incident that occurred, the sources of evidence that we have available, and a rough estimation of how much time the team needs for the investigation. 
-- Also, based on the incident, we will set expectations on whether we will be able to uncover the adversary or not.
-- Of course, a lot of the above may change as the investigation evolves and new leads are discovered. It is important to keep everyone involved and the management informed about any advancements and expectations.
+## Initial Investigation
+- When an incident is detected, conduct a preliminary investigation before declaring an organization-wide response:
+	- Gather details about:
+	    - **Date/Time** of report, **detector**, and **how it was detected**.
+	    - Nature of the incident (e.g., phishing, system unavailability).
+	    - Impacted systems (if relevant).
+	    - Actions taken and access details of affected systems.
+	    - Physical location, OS, IP addresses, hostnames, owners, and system purposes.
+	    - **For malware**: Document malicious IPs, detection times, malware type, impacted systems, and forensic information (e.g., file hashes).
+	- Use this information to:
+	    - Assess incident severity.
+	    - Formulate targeted responses.
+	    - Decide appropriate actions based on the context (e.g., CEO’s laptop vs. an intern’s laptop).
 
 
 
-### Questions
+## Incident Timeline
+- **Purpose**: Organize evidence and maintain an event overview.
+- **Structure**:
+    - Date
+    - Time of the event
+    - Hostname
+    - Event description
+    - Data source
+- **Example Entry**:
+    ```
+    Date        Time        Hostname        Event Description                  Data Source
+    09/09/2021  13:31 CET   SQLServer01     Hacker tool 'Mimikatz' detected    Antivirus Software
+    ```
+- **Focus**: Primarily on attacker behavior (e.g., network connections, file downloads).
+- **Goal**: Determine related and unrelated activities for better context.
+
+
+
+## Incident Severity & Extent Questions
+- Key questions to assess severity and extent:
+	1. What is the exploitation impact?
+	2. What are the exploitation requirements?
+	3. Are business-critical systems affected?
+	4. What remediation steps are available?
+	5. How many systems are impacted?
+	6. Is the exploit active in the wild?
+	7. Does the exploit have worm-like capabilities?
+- **Implications**:
+    - High-impact incidents require immediate action.
+    - Incidents involving many systems may need escalation.
+
+
+
+## Incident Confidentiality & Communication
+- **Confidentiality**: Share information on a need-to-know basis, except where laws or management mandate otherwise.
+    - **Reasons**:
+        - The adversary may be an internal employee.
+        - Controlled communication is necessary during a breach.
+- **Communication Handling**:
+    - Use designated points of contact.
+    - Coordinate with legal and compliance teams.
+- **Investigation Goals**:
+    - Define incident type, evidence sources, and timeline.
+    - Update stakeholders as new information emerges.
+
+
+
+## Questions
 - True or False: Can a third party vendor be a source of detecting a compromise?
 	- True
