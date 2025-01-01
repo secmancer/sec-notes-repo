@@ -1,26 +1,48 @@
-### Overview
-- **Cyber Kill Chain vs. Incident Handling Process**:
-    - Understanding the cyber kill chain helps predict attacker steps and determine appropriate defensive measures.
-    - The **incident handling process** is a separate but related concept for responding to security events, with stages that don't directly map to the cyber kill chain.
-- **Incident Handling Process**:
-    - As defined by NIST, it consists of four stages: **Preparation**, **Detection & Analysis**, **Containment, Eradication, and Recovery**, and **Post-Incident Activity**.
-    - **Preparation and Detection & Analysis**: These stages involve ongoing efforts to improve readiness and identify malicious events. Most time is spent here before moving to response.
-    - The process is **cyclic**; as new evidence emerges, responses may change. All steps must be completed before progressing to the next.
-- **Investigation and Recovery**:
-    - **Investigation**:
-        - Identify the first compromised system ("patient zero").
-        - Determine tools and malware used by the attacker.
-        - Document impacted systems and actions taken by the adversary.
-    - **Recovery**:
-        - Develop and implement a recovery plan.
-        - Resume normal business operations if disruptions occurred due to the incident.
-- **Post-Incident**:
-    - Once the incident is resolved, a report detailing the cause, impact, and cost is created.
-    - **Lessons learned** activities follow to improve future prevention strategies.
-![Handling Process](https://academy.hackthebox.com/storage/modules/148/handling_process.png)
+## Overview
+- The incident handling process enables organizations to prepare, detect, and respond to malicious events.
+- It is a cyclic process, meaning steps may be revisited based on new evidence.
 
 
 
-### Questions
+## Key Activities
+1. **Investigation**:
+   - Identify the initial "patient zero" and construct a timeline for the incident.
+   - Determine the tools and malware utilized by the adversary.
+   - Document compromised systems and actions taken by the adversary.
+2. **Recovery**:
+   - Develop and execute a recovery plan.
+   - Resume normal business operations if disruptions occurred.
+
+
+
+## NIST Incident Handling Process: Four Stages
+### 1. Preparation
+- Improve readiness and defenses to anticipate potential malicious events.
+- Enhance detection capabilities.
+### 2. Detection & Analysis
+- Detect and analyze malicious events.
+- This stage requires continuous monitoring and ongoing improvements.
+### 3. Containment, Eradication, and Recovery
+- **Containment**: Isolate infected systems to prevent further spread.
+- **Eradication**: Remove malware or threats from all affected systems.
+- **Recovery**: Restore systems to normal business operations.
+### 4. Post-Incident Activity
+- Review the incident to extract lessons and improve organizational defenses.
+- Create detailed reports to document the incident, its impact, and response.
+## Process Considerations
+- The process is not linear but cyclic; steps may change based on evidence.
+- Each step must be completed before moving to the next.
+  - Example: Fully contain all infected systems before proceeding to eradication.
+- Ongoing preparation and detection must continue during response to avoid capability disruption.
+
+
+
+## Key Takeaway
+- Incident handling revolves around two primary activities: investigating and recovering. 
+- Ensuring thoroughness and continuity in each stage is critical to minimizing the impact of malicious events.
+
+
+
+## Questions
 - True or False: Incident handling contains two main activities. These are investigating and reporting.
 	- False

@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e90eb6a1f81df3f7",
+        "id": "a4b7d1f2f1b34c93",
         "type": "tabs",
         "children": [
           {
-            "id": "b9120ac818603efd",
+            "id": "31ca1bd0e314086d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Incident Handling"
+              "title": "New tab"
             }
           }
         ]
@@ -205,10 +201,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "b9120ac818603efd",
+  "active": "31ca1bd0e314086d",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Incident Handling Process Overview.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Recommendations.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Bug Bounty Hunter.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Security Operations Center.md",
@@ -232,7 +229,6 @@
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Application Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/InfoSec Domains/Network Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Structure of InfoSec.md",
-    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Introduction/Principles of Information Security.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles",
