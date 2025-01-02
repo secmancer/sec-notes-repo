@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b7438b3de0d58f67",
+        "id": "8362206365197d38",
         "type": "tabs",
         "children": [
           {
-            "id": "829df5b2f848432f",
+            "id": "759d988b7fb6cd0c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Post-Incident Activity Stage.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Post-Incident Activity Stage"
+              "title": "New tab"
             }
           }
         ]
@@ -205,14 +201,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "829df5b2f848432f",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Post-Incident Activity Stage.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Containment, Eradication, & Recovery Stage.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Detection & Analysis Stage (Part 2).md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Detection & Analysis Stage (Part 1).md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 2).md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 1).md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Post-Incident Activity Stage.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Incident Handling Process Overview.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Incident Handling.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/Introduction/Cyber Kill Chain.md",
