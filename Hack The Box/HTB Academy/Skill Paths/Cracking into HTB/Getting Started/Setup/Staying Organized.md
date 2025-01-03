@@ -1,31 +1,80 @@
-### Folder Structure
-- We should always have a clear folder structure when documentation our progress.
-	-This may include scoping information, enumeration data, evidence of exploitation attempts, sensitive data such as credentials, and other data obtained during recon, exploitation, and post-exploitation. 
-- A sample folder structure may look like follows:
-![[Screenshot_20241107_115800.png]]
-- Folders and subfolders are used to organize data based on what they are representing. This can be anything from text documents to images/screenshots.
-- Some create a folder for each target host and save screenshots within it.
-- Others create their notes by host or network and save screenshots directly into the note-taking tool. 
-- Ultimately, it is up to you. Find something that works for you the best.
+### **The Importance of Organization in Infosec**
+- Organization is essential for:
+    - Client assessments.
+    - CTFs (Capture The Flag challenges).
+    - Labs and educational exercises.
+- Clear documentation is a key skill, benefiting both infosec and other career paths.
 
 
-### Note Taking
-- This is very important, as it allows for us to keep track of all of our information in a easily-accessible format.
-- We can use any note taking app, some may have features that work better for us.
-- A few examples include:
-![[Screenshot_20241107_115844.png]]
-- Some tools like Notion and GitBook offer richer features for creating Wiki-type pages, cheat sheets, and more.
-- Remember: client data should always be local to the machine when doing real-world assessments to ensure maximum privacy/security.
 
-> Tip: Learning [Markdown](https://en.wikipedia.org/wiki/Markdown) language is easy and very useful for note taking, as it can be easily represented in a visually appealing and organized way.
+### **Folder Structure**
+- A well-organized folder structure helps track data during an assessment, such as scoping information, recon data, and evidence.
+- **Sample Folder Structure**:
+    ```
+    Projects/
+    └── Client Name
+        ├── Assessment Type (e.g., EPT, IPT)
+        │   ├── evidence
+        │   │   ├── credentials
+        │   │   ├── data
+        │   │   └── screenshots
+        │   ├── logs
+        │   ├── scans
+        │   ├── scope
+        │   └── tools
+    ```
+    - **Subfolders**:
+        - **Evidence**: Store credentials, data, screenshots, etc.
+        - **Logs**: Output from tools or manual commands.
+        - **Scans**: Results of automated scanning.
+        - **Scope**: IP lists, domains, or network ranges in scope.
+        - **Tools**: Specific utilities or scripts used during the assessment.
+- Customize based on workflow:
+    - Folder per target host.
+    - Notes and screenshots integrated into a note-taking tool.
 
 
-### Other Tools and Tips
-- Every infosec professional has and should have a knowledge base. 
-- This knowledge base is ultimately up to you on whatever works the base.
-- This includes quick reference guides for setup tasks performed on most assessments, along with cheat sheets for common commands we may need for that specific phase.
-- Any payload, command, or tip we learn should always be documented. It may be proven useful later on.
-- HTB Academy Modules have cheat sheets of relevant commands from their sections, so that can be downloaded and used for future reference. 
-- Checklists and report templates for various assessment types, and findings/vulnerability database are also useful to us as well.  
-- Having this system in place saves us us time during the reporting phase.
-- That way, we can use the bulk of it and just modify it based on the current target environment.
+
+### **Note-Taking Tools**
+- **Why It Matters**:
+    - A technically skilled but disorganized tester may struggle.
+    - Choose tools that fit your workflow.
+- **Popular Tools**:
+    - **Cherrytree**: Hierarchical note-taking.
+    - **Visual Studio Code**: Versatile for notes and code.
+    - **Notion/GitBook**: Rich features for Wiki-style pages and cheat sheets.
+    - **Notepad++/Sublime Text**: Lightweight text editors.
+    - **Evernote**: Cloud-based (caution: avoid storing sensitive client data on the cloud).
+
+
+
+### **Best Practices for Note-Taking**
+1. **Use Markdown**:
+    - Easy to learn and visually appealing.
+    - Useful for creating organized and readable notes.
+2. **Maintain a Knowledge Base**:
+    - Store:
+        - Setup procedures for common assessments.
+        - Cheat sheets for commands used in various phases.
+        - Aggregated payloads, commands, and tips.
+3. **Build Templates and Checklists**:
+    - Report templates for different assessment types.
+    - Findings/vulnerability database:
+        - Include title, description, impact, remediation advice, and references.
+
+
+
+### **Efficiency Tips**
+- Aggregate useful commands and payloads from:
+    - Labs
+    - CTFs
+    - Client assessments
+- Use pre-prepared findings to speed up reporting.
+
+
+
+### **Next Steps**
+- Experiment with folder structures and note-taking tools to find your optimal workflow.
+- Start early to develop strong habits.
+- Use exercises, such as the **Nibbles walkthrough**, to practice documentation and refine your methods.
+- Save useful commands and techniques into a common commands cheat sheet for future reference.
