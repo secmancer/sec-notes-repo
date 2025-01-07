@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "22ea6a2962ef679d",
+        "id": "8a7edd8000c40467",
         "type": "tabs",
         "children": [
           {
-            "id": "fafdac6c15b5ee04",
+            "id": "921a64720a999b86",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Public Exploits.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Public Exploits"
             }
           }
         ]
@@ -201,35 +205,35 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fafdac6c15b5ee04",
+  "active": "921a64720a999b86",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Service Scanning.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Common Terms.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Basic Tools.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Web Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Transferring Files.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Service Scanning.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Public Exploits.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Privilege Escalation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Connecting using VPN.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Common Terms.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Basic Tools.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Types of Shells.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Staying Organized.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Getting Started with a Pentest Demo.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Setup/Connecting using VPN.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Introduction/Infosec Overview.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Introduction",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Alert Triaging/The Triaging Process.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles/Bug Bounty Hunter.md",
+    "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Cybersecurity Teams/Blue Team.md",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Containment, Eradication, & Recovery Stage.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 1.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/Skills Assessment/Skills Assessment.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Introduction",
+    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 4.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Use Case Development.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 3.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM Visualization Development/SIEM Visualization Example 2.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/MITRE ATT&CK & Security Operations.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SOC Definition & Fundamentals.md",
     "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/Introduction to The Elastic Stack.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Security Monitoring & SIEM Fundamentals/SIEM & SOC Fundamentals/SIEM Definition & Fundamentals.md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Preparation Stage (Part 2).md",
-    "Hack The Box/HTB Academy/Job Role Paths/SOC Analyst/Incident Handling Process/The Incident Handling Process/Post-Incident Activity Stage.md",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Job Roles",
