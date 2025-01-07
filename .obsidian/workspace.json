@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nibbles - Privilege Escalation"
+              "title": "Nibbles - Alternate User Method - Metasploit"
             }
           }
         ]
@@ -207,11 +207,11 @@
   },
   "active": "921a64720a999b86",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Initial Foothold.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Web Footprinting.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Privilege Escalation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Enumeration.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Attacking your First Box/Nibbles - Alternate User Method - Metasploit.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Getting Started with HTB/Navigating HTB.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Getting Started with HTB/Starting Out.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Pentesting Basics/Transferring Files.md",
