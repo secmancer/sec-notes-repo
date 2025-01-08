@@ -1,21 +1,132 @@
-### Good, General Tips
-- Enumeration is an iterative process. 
-	- So, once we have the initial Nmap port scans, it's always great to perform deeper analysis of those discovered ports, along with any known open ports as well.
-	- Don't forget to document these for later use!
-- Follow a similar process that was used in solving `Nibbles`:
-	- Enumeration/Scanning with `Nmap` - perform a quick scan for open ports followed by a full port scan
-	- Web Footprinting - check any identified web ports for running web applications, and any hidden files/directories. Useful tools for this phase include `whatweb` and `Gobuster`
-		- If you identify the website URL, add it to the '/etc/hosts' file with the IP you get in the question below to load it normally to make it easier to track.
-		- Note that this is highly recommended, it is optional in solving boxes.
-	- After identifying the technologies in use, use tools like `Searchsploit` to find public exploits or search on Google for manual exploitation techniques
-	- After gaining an initial foothold, use the `Python3 pty` trick to upgrade to a pseudo TTY
-	- Perform manual/automated enumeration of the file system, looking for misconfigurations, services with known vulnerabilities, and sensitive data in cleartext such as credentials
-	- Document this data to find ways to escalate privileges to root on this target
-- Two ways to get a foothold into a system: using `Metasploit` and a more manual process
-	- Always try to work through it by trying both methods!
-- We can escalate privileges to root by using helper scripts such as [LinEnum](https://github.com/rebootuser/LinEnum) and [LinPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS).
-	- These filter through the system, looking for well-known privilege escalation techniques.
-- Have fun, never stop learning, and `think outside of the box`!
+### **Knowledge Check: Attacking Your First Box**
+- This exercise will test your understanding and skills by applying the techniques learned in this module. 
+- Below is a high-level workflow to guide you.
+- Tackle the box methodically, take detailed notes, and enjoy the challenge!
+
+
+
+### **Step 1: Enumeration/Scanning**
+1. **Perform Nmap Scans:**
+    - Start with a quick scan to identify open ports:
+        ```bash
+        nmap -sV --open -oA initial_scan <TARGET_IP>
+        ```
+    - Follow with a full TCP port scan:
+        ```bash
+        nmap -p- --open -oA full_scan <TARGET_IP>
+        ```
+2. **Analyze the Results:**
+    - Note services running on open ports (e.g., HTTP, SSH, FTP).
+    - Use service-specific scripts with Nmap:  
+        ```bash
+        nmap -sC -p <PORTS> <TARGET_IP>
+        ```        
+
+
+
+### **Step 2: Web Footprinting (If Web Ports Found)**
+1. **Identify Web Technologies:**
+    - Use tools like WhatWeb or Wappalyzer:
+        ```bash
+        whatweb http://<TARGET_IP>
+        ```
+2. **Search for Hidden Directories/Files:**
+    - Use Gobuster or Dirb:
+        ```bash
+        gobuster dir -u http://<TARGET_IP> -w /usr/share/seclists/Discovery/Web-Content/common.txt
+        ```
+3. **Investigate the Application:**
+    - Look for CMS (e.g., WordPress, Joomla) or web frameworks.
+    - Review source code for comments or hidden clues.
+    - Check for login pages or admin panels.
+4. **Search for Exploits:**
+    - Use Searchsploit or online resources:        
+        ```bash
+        searchsploit <APPLICATION_NAME> <VERSION>
+        ```
+        
+
+
+### **Step 3: Gaining a Foothold**
+1. **Manual Exploitation:**
+    - Craft or modify an exploit based on your findings.
+    - Test payloads on the target (e.g., uploading a reverse shell).
+2. **Metasploit Exploitation (If Applicable):**
+    
+    - Use Metasploit to search for exploits:
+        
+        ```bash
+        msfconsole
+        search <APPLICATION_NAME>
+        use <EXPLOIT_MODULE>
+        set RHOSTS <TARGET_IP>
+        set LHOST <YOUR_IP>
+        exploit
+        ```
+        
+
+---
+
+### **Step 4: Post-Exploitation**
+1. **Upgrade Shell:**
+    - If you obtain a basic shell, upgrade it to a pseudo-TTY:
+        ```bash
+        python3 -c 'import pty; pty.spawn("/bin/bash")'
+        ```
+2. **Enumerate the System:**
+    - Perform manual checks for sensitive data:
+        ```bash
+        cat /etc/passwd
+        find / -name "*.conf" 2>/dev/null
+        ```
+    - Use automated tools like LinPEAS or LinEnum:    
+        ```bash
+        ./linpeas.sh
+        ```        
+
+
+
+### **Step 5: Privilege Escalation**
+1. **Identify Escalation Vectors:**
+    - Check for misconfigured **sudo** permissions:
+        ```bash
+        sudo -l
+        ```
+    - Look for SUID/SGID binaries:
+        ```bash
+        find / -perm -4000 2>/dev/null
+        ```
+2. **Exploit the Vulnerability:**
+    - Use GTFOBins to identify ways to exploit misconfigurations.
+    - Append reverse shell commands to writable files if they run with elevated privileges.
+3. **Automated Assistance:**    
+    - Analyze LinPEAS/LinEnum outputs for potential privilege escalation paths.
+
+
+
+### **Step 6: Root the Box**
+- After escalating privileges, access the root shell.
+- Capture the `root.txt` flag.
+
+
+
+### **Step 7: Reflect and Document**
+1. **Repeat the Attack:**
+    - Try alternate foothold or escalation methods to broaden your understanding.
+    - Experiment with different tools to achieve the same result.
+2. **Take Notes:**
+    - Document every step you performed, including commands, outputs, and observations.
+3. **Review Key Learnings:**    
+    - Identify areas where you got stuck and research further to strengthen your skills.
+
+
+
+### **Challenge: Push Yourself**
+- Use **both manual and Metasploit methods** to gain a foothold.
+- Discover **both privilege escalation paths**.
+- Share your findings with a mentor, colleague, or in a forum to validate your methodology.
+
+
 
 ### Questions
 - Spawn the target, gain a foothold and submit the contents of the user.txt flag.

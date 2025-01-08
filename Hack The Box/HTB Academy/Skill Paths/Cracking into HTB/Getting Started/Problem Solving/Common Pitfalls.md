@@ -1,105 +1,78 @@
-### VPN Issues
-- First, we should check if we have a connection to the HTB network.
-- #### Still Connected to VPN
-	- Easiest way is seeing if we have a `Initialization Sequence Completed`message:
-```shell-session
-secmancer@htb[/htb]$ sudo openvpn ./htb.ovpn
-
-...SNIP...
-
-Initialization Sequence Completed
-```
-- #### Getting VPN Address
-	- We can also check by attempting to get our `tun0` address:
-```shell-session
-secmancer@htb[/htb]$ ip -4 a show tun0
-
-6: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 500
-    inet 10.10.10.1/23 scope global tun0
-       valid_lft forever preferred_lft forever
-```
-
-- If we get our IP back, then we should be connected.
-- #### Checking Routing Table
-	- We can use the command `sudo netstat -rn` to view our routing table:
-```shell-session
-secmancer@htb[/htb]$ sudo netstat -rn
-
-[sudo] password for user: 
-
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-0.0.0.0         192.168.195.2   0.0.0.0         UG        0 0          0 eth0
-10.10.14.0      0.0.0.0         255.255.254.0   U         0 0          0 tun0
-10.129.0.0      10.10.14.1      255.255.0.0     UG        0 0          0 tun0
-192.168.1.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
-```
-- #### Pinging Gateway
-	- Here, we can check if we have a connection to the `10.10.14.0/23` network on the `tun0` adapter and confirm we have access to the `10.129.0.0/16` network.
-	- From there, we can ping the gateway `10.10.14.1` to confirm access.
-```shell-session
-secmancer@htb[/htb]$ ping -c 4 10.10.14.1
-PING 10.10.14.1 (10.10.14.1) 56(84) bytes of data.
-64 bytes from 10.10.14.1: icmp_seq=1 ttl=64 time=111 ms
-64 bytes from 10.10.14.1: icmp_seq=2 ttl=64 time=111 ms
-64 bytes from 10.10.14.1: icmp_seq=3 ttl=64 time=111 ms
-64 bytes from 10.10.14.1: icmp_seq=4 ttl=64 time=111 ms
-
---- 10.10.14.1 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3012ms
-rtt min/avg/max/mdev = 110.574/110.793/111.056/0.174 ms
-```
-- After all of that is situated, then we should be ready to go!
+### **1. VPN Issues**
+- #### **Checking VPN Connection**
+	- Ensure the **Initialization Sequence Completed** message appears when connecting to the VPN:
+    ```bash
+    sudo openvpn ./htb.ovpn
+    ```
+	- Confirm your VPN address:
+    ```bash
+    ip -4 a show tun0
+    ```
+- #### **Checking Routing Table**
+	- Use `netstat` to verify the routing table:
+    ```bash
+    sudo netstat -rn
+    ```
+    - Ensure the `tun0` adapter is connected to the HTB network.
+- #### **Ping the Gateway**
+	- Confirm connectivity to the VPN gateway:
+    ```bash
+    ping -c 4 10.10.14.1
+    ```
+- #### **Avoid Simultaneous Connections**
+	- **HTB VPN cannot connect multiple devices simultaneously.** Ensure you disconnect any other devices using the VPN before switching.
+- #### **Connect to the Correct Region**
+	- Optimize VPN performance by connecting to the nearest server. You can select the region via **HTB Labs > OpenVPN > Select Region**.
+ - #### **Detailed Troubleshooting**
+	- Refer to the [HTB Help Page](https://help.hackthebox.com) for troubleshooting specific VPN issues.
 
 
-### Attempting to Working on Two Devices
-- HTB VPN only provides connection to one device only.
 
-### Checking VPN Region
-- Picking a different region or one closer to you may also relieve issues as well.
-- This can be changed by going to [HackTheBox](https://app.hackthebox.eu/home) and changing our VPN server location.
+### **2. Burp Suite Proxy Issues**
+- #### **Disabling Proxy After Use**
+- When using Burp Suite, ensure the proxy is disabled in your browser after closing Burp:
+    - Use a plugin like **FoxyProxy** in Firefox to toggle the proxy.
+    - Manually check browser connection settings to disable any proxy.
+- #### **Browser Not Loading Pages**
+	- Verify whether Burp is still intercepting requests. Disable interception in Burp or turn off the proxy in the browser.
 
-> Note: Users with a free subscription only can connect to 1-3 free servers in each region. Users with a VPN subscription can connect to VIP servers, which provide a faster connection with less traffic.
 
-### Additional VPN Troubleshooting
-- Detailed guidance on troubleshooting VPN connections are available on this [HackTheBox Help page](https://help.hackthebox.eu/troubleshooting/v2-vpn-connection-troubleshooting).
 
-### Burp Suite Proxy Issue
-- [Burp Suite](https://portswigger.net/burp/communitydownload) may cause some issues due to its web application proxy feature.
-- #### Not Disabling Proxy
-	- Turning the Burp proxy on, it will start to capture our traffic and intercept our requests. 
-	- This stops any requests we make in the browser like visiting a webpage from happening, as it's intended for us to scourge through them.
-	- Make sure this is turned off if you don't plan on using it.
-	- After doing this, we should be able to continue browsing without any issues.
+### **3. SSH Issues**
+- #### **Renew or Change SSH Key**
+	- If facing SSH connection issues, regenerate the SSH key:
+    ```bash
+    ssh-keygen
+    ```
+	- Save the key in the default `.ssh` folder or specify a different path if needed.
+	- Optionally, protect the key with a passphrase for added security.
+- #### **Check SSH Agent**
+	- If SSH keys are not working, ensure the key is added to the agent:
+    ```bash
+    ssh-add ~/.ssh/id_rsa
+    ```
+    
 
-### Changing SSH Key and Password
-- If we have issues connecting to SSH servers or to our machine from a remote server, we are able to renew or change our SSH key and password.
-- We can do this with the `ssh-keygen` command:
-```shell-session
-secmancer@htb[/htb]$ ssh-keygen
 
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/parrot/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
+### **4. Enumerating and Troubleshooting HTB Machines**
+- #### **Thorough Enumeration**
+	- **Use Multiple Tools**: Ensure you use a combination of tools like `nmap`, `gobuster`, and `whatweb` for comprehensive enumeration.
+- #### **Check for Common Configuration Issues**
+	- Firewall restrictions or misconfigured services may hinder access. Test alternative ports or protocols.
+- #### **Revisit Information**
+	- **Iterative Enumeration**: Revisit previously gathered data and cross-check findings. Small clues are often missed during initial scans.
 
-Your identification has been saved in /home/parrot/.ssh/id_rsa
-Our public key has been saved in /home/parrot/.ssh/id_rsa.pub
-The key fingerprint is:
-SHA256:...SNIP... parrot@parrot
-The key's randomart image is:
-+---[RSA 3072]----+
-|            o..  |
-|     ...SNIP     |
-|     ...SNIP     |
-|     ...SNIP     |
-|     ...SNIP     |
-|     ...SNIP     |
-|     ...SNIP     |
-|       + +oo+o   |
-+----[SHA256]-----+
-```
 
-- By default, SSH keys are stored in the `.ssh` folder within our home folder (for example, `/home/htb-student/.ssh`). 
-- If we wanted to create an ssh key in a different directory, we could can specify a path when prompted. 
-- Encrypting our SSH key with a password is also an option, but we are also able to not set one as well.
+
+### **5. General Recommendations**
+- #### **Stay Organized**
+	- Take **extensive notes** during testing to avoid redoing steps.
+	- Keep track of scan results, tools used, and key findings.
+- #### **Test Tools and Commands**
+	- Regularly verify your tools and scripts to ensure they're functioning correctly.
+	- Test common commands in a controlled environment to avoid wasting time on troubleshooting in the middle of a test.
+- #### **Plan Ahead**
+	- Understand the scope and type of penetration test:
+	    - **Black-box**: Limited information.
+	    - **Grey-box**: Some information provided.
+	    - **White-box**: Full access to documentation and internal data.
