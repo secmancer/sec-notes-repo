@@ -1,38 +1,121 @@
-### Introduction
-- Code obfuscation is hard to do manually, so plenty of tools exist for us to use instead.
-- While many exist freely online, many malicious actors or even profession developers make their own suite of tools to make it much more difficult to deobfuscate.
+### **Basic Obfuscation Techniques**
 
-### Running code
-- Let's attempt to obfuscate this:
+Obfuscation is a common way to make code harder to read while preserving its functionality. Below, we'll explore three fundamental techniques: **running JavaScript code, minification, and packing**.
+
+---
+
+### **1. Running JavaScript Code**
+
+Let's start with a simple example:
+
 ```javascript
 console.log('HTB JavaScript Deobfuscation Module');
 ```
-- First, we'll test this code in cleartext to see how it works.
-	- We can use [JSConsole](https://jsconsole.com) to do that.
-- Running it, this line of code prints`HTB JavaScript Deobfuscation Module`.
 
-### Minifying code
-- JavaScript minification reduces code readability by placing everything in a single line.
-- Tools like `javascript-minifier` simplify minifying code by removing whitespace and reducing variable names.
-- Minified code can still function correctly and is often saved with a `.min.js` extension.
-- We can test minified code using tools like JSConsole.
+- **How it works**:
+    - The `console.log()` function outputs the string `HTB JavaScript Deobfuscation Module` to the console.
+- **Testing**:
+    - Paste the code into a tool like [JSConsole](https://jsconsole.com) to verify it works.
 
-> Note: Code minification is not exclusive to JavaScript, and can be applied to many other languages, as can be seen on [javascript-minifier](https://javascript-minifier.com/).
+**Expected Output**:
 
-### Packing code
--  Now, let us obfuscate our line of code to make it more obscure and difficult to read.
-- First, we will try [BeautifyTools](http://beautifytools.com/javascript-obfuscator.php) to obfuscate our code.
+```
+HTB JavaScript Deobfuscation Module
+```
+
+---
+
+### **2. Minifying JavaScript Code**
+
+**Minification** is the process of compressing code by removing unnecessary whitespace, line breaks, and comments.
+
+#### Example:
+
+Original code:
+
+```javascript
+console.log('HTB JavaScript Deobfuscation Module');
+```
+
+Minified code:
+
+```javascript
+console.log('HTB JavaScript Deobfuscation Module');
+```
+
+- For this single-line example, the code remains the same after minification. However, in larger programs, the differences become significant.
+
+#### Tools:
+
+- Use [JavaScript Minifier](https://javascript-minifier.com).
+- Paste your code into the tool, and it outputs a minified version.
+
+#### Usage:
+
+- Minified code is often saved with the `.min.js` extension.
+- Minification primarily improves loading speeds for web applications.
+
+---
+
+### **3. Packing JavaScript Code**
+
+**Packing** is a form of obfuscation that introduces complexity into the code, making it harder for humans to read.
+
+#### Example:
+
+Original code:
+
+```javascript
+console.log('HTB JavaScript Deobfuscation Module');
+```
+
+Packed code:
+
 ```javascript
 eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('5.4(\'3 2 1 0\');',6,6,'Module|Deobfuscation|JavaScript|HTB|log|console'.split('|'),0,{}))
 ```
-- We see that our code became much more obfuscated and difficult to read. 
-- We can copy this code into [https://jsconsole.com](https://jsconsole.com), to verify that it still does its main function.
-- We see that we get the same output.
 
-> Note: The above type of obfuscation is known as "packing", which is usually recognizable from the six function arguments used in the initial function "function(p,a,c,k,e,d)".
+#### Key Characteristics:
 
-- Packer obfuscation tools convert code into a packed format using functions like `(p,a,c,k,e,d)` to rebuild it during execution.
-- The `(p,a,c,k,e,d)` sequence can vary between different packers but follows a specific order to decode.
-- Despite reducing readability, some main strings may still be visible, revealing functionality.
-- For stronger obfuscation, alternative methods may be required.
+- **Structure**:
+    - A packer uses a wrapper function (e.g., `eval(function(p,a,c,k,e,d) {...})`).
+    - The function reorders and maps elements to reconstruct the original code during execution.
+- **Execution**:
+    - Paste the packed code into [JSConsole](https://jsconsole.com) to verify the output.
+- **Expected Output**:
+    
+    ```
+    HTB JavaScript Deobfuscation Module
+    ```
+    
 
+#### Advantages of Packing:
+
+- Hides the original code's structure.
+- Reduces immediate readability.
+
+#### Limitations:
+
+- Strings and certain elements (like `HTB JavaScript Deobfuscation Module`) are still visible in cleartext, potentially revealing key functionality.
+
+---
+
+### **Comparison of Techniques**
+
+|**Method**|**Purpose**|**Difficulty to Reverse**|**Usage**|
+|---|---|---|---|
+|**Running Code**|Basic execution|None|Testing simple functionality.|
+|**Minification**|Compressing code for performance|Low|Optimizing loading speeds in production environments.|
+|**Packing**|Obfuscating code to hide logic|Medium|Protecting intellectual property, deterring reverse engineering.|
+
+---
+
+### **Next Steps**
+
+While packing adds complexity, it is still reversible with appropriate techniques. In the next sections, we'll:
+
+- Explore **advanced obfuscation methods** to further obscure code.
+- Learn techniques for **deobfuscating packed code**.
+- Understand how malicious actors use obfuscation in real-world scenarios.
+
+By mastering these techniques, you'll be better prepared to analyze, reverse-engineer, and understand obfuscated JavaScript code.

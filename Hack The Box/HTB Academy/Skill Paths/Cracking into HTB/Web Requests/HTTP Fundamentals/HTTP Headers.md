@@ -1,92 +1,126 @@
-### Introduction
-- We’ve seen examples of HTTP requests and response headers in earlier sections.
-- HTTP headers transfer information between the client and server.
-- Some headers are specific to requests or responses, while others are commonly used in both.
-- Headers can have one or multiple values, appended after the header name and separated by a colon. 
-- We can divide headers into the following categories:
-	1. `General Headers`
-	2. `Entity Headers`
-	3. `Request Headers`
-	4. `Response Headers`
-	5. `Security Headers`
+### Notes on HTTP Headers
 
+---
 
-### General Headers
-- [General headers](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html) are used in both HTTP requests and responses. They are contextual and are used to `describe the message rather than its contents`.
-![[Screenshot_20241107_155026.png]]
+### **1. Overview of HTTP Headers**
 
+- HTTP headers provide additional metadata about a request or response.
+- Headers are categorized as:
+    1. **General Headers**: Contextual, describing the message itself.
+    2. **Entity Headers**: Describe the content (entity) being transferred.
+    3. **Request Headers**: Sent by the client to provide additional context or data.
+    4. **Response Headers**: Sent by the server to provide additional response information.
+    5. **Security Headers**: Enhance security by enforcing policies.
 
-### Entity Headers
-- Similar to general headers, [Entity Headers](https://www.w3.org/Protocols/rfc2616/rfc2616-sec7.html) can be `common to both the request and response`. These headers are used to `describe the content` (entity) transferred by a message. They are usually found in responses and POST or PUT requests.
-![[Screenshot_20241107_155048.png]]
+---
 
+### **2. Categories of Headers**
 
-### Request Headers
-- The client sends [Request Headers](https://tools.ietf.org/html/rfc2616) in an HTTP transaction. These headers are `used in an HTTP request and do not relate to the content` of the message. The following headers are commonly seen in HTTP requests.
-![[Screenshot_20241107_155114.png]]
+#### **a. General Headers**
 
+|**Header**|**Example**|**Description**|
+|---|---|---|
+|`Date`|`Date: Wed, 16 Feb 2022 10:38:44 GMT`|Specifies the timestamp when the message originated. Preferred format: UTC time zone.|
+|`Connection`|`Connection: keep-alive`|Determines if the connection remains open (`keep-alive`) or closes (`close`) after the request.|
 
-### Response Headers
-- [Response Headers](https://tools.ietf.org/html/rfc7231#section-7) can be `used in an HTTP response and do not relate to the content`. Certain response headers such as `Age`, `Location`, and `Server` are used to provide more context about the response. The following headers are commonly seen in HTTP responses.
-![[Screenshot_20241107_155138.png]]
+---
 
+#### **b. Entity Headers**
 
-### Security Headers
-- Finally, we have [Security Headers](https://owasp.org/www-project-secure-headers/). With the increase in the variety of browsers and web-based attacks, defining certain headers that enhanced security was necessary. HTTP Security headers are `a class of response headers used to specify certain rules and policies` to be followed by the browser while accessing the website.
-![[Screenshot_20241107_155203.png]]
+|**Header**|**Example**|**Description**|
+|---|---|---|
+|`Content-Type`|`Content-Type: text/html`|Specifies the type of resource being transferred (e.g., `text/html`, `application/json`).|
+|`Media-Type`|`Media-Type: application/pdf`|Describes the data format, often paired with `charset` for encoding (e.g., `UTF-8`).|
+|`Boundary`|`boundary="b4e4fbd93540"`|Separates content within a message, useful for multipart/form-data.|
+|`Content-Length`|`Content-Length: 385`|Specifies the size of the message body in bytes. Automatically set by browsers and tools.|
+|`Content-Encoding`|`Content-Encoding: gzip`|Indicates transformations (e.g., compression) applied to the message.|
 
-> **Note:** This section only mentions a small subset of commonly seen HTTP headers. There are many other contextual headers that can be used in HTTP communications. It's also possible for applications to define custom headers based on their requirements. A complete list of standard HTTP headers can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers).
+---
 
+#### **c. Request Headers**
 
-### cURL
-- In the previous section, we used the `-v` flag with cURL to view detailed HTTP requests and responses.
-- To view only response headers, use the `-I` flag to send a `HEAD` request.
-- The `-i` flag displays both headers and the response body (e.g., HTML code).
-- The key difference is that `-I` sends a `HEAD` request, while `-i` sends a regular request with headers.
-```shell-session
-secmancer@htb[/htb]$ curl -I https://www.inlanefreight.com
+|**Header**|**Example**|**Description**|
+|---|---|---|
+|`Host`|`Host: www.example.com`|Identifies the target server. Used to resolve multi-host configurations.|
+|`User-Agent`|`User-Agent: curl/7.77.0`|Specifies the client making the request (e.g., browser or tool).|
+|`Referer`|`Referer: https://google.com`|Indicates the URL of the previous page that led to the current request.|
+|`Accept`|`Accept: */*`|Lists the content types the client accepts (e.g., `application/json`, `text/html`).|
+|`Cookie`|`Cookie: PHPSESSID=b4e4fbd93540`|Contains session identifiers or preferences sent from client to server.|
+|`Authorization`|`Authorization: BASIC cGFzc3dvcmQK`|Provides credentials (e.g., tokens) for authenticated requests.|
 
-Host: www.inlanefreight.com
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko)
-Cookie: cookie1=298zf09hf012fh2; cookie2=u32t4o3tb3gg4
-Accept: text/plain
-Referer: https://www.inlanefreight.com/
-Authorization: BASIC cGFzc3dvcmQK
+---
 
-Date: Sun, 06 Aug 2020 08:49:37 GMT
-Connection: keep-alive
-Content-Length: 26012
-Content-Type: text/html; charset=ISO-8859-4
-Content-Encoding: gzip
-Server: Apache/2.2.14 (Win32)
-Set-Cookie: name1=value1,name2=value2; Expires=Wed, 09 Jun 2021 10:18:14 GMT
-WWW-Authenticate: BASIC realm="localhost"
-Content-Security-Policy: script-src 'self'
-Strict-Transport-Security: max-age=31536000
-Referrer-Policy: origin
-```
+#### **d. Response Headers**
 
-> **Exercise:** Try to go through all of the above headers, and see whether you can recall the usage for each of them.
+|**Header**|**Example**|**Description**|
+|---|---|---|
+|`Server`|`Server: Apache/2.4.41`|Provides information about the server software.|
+|`Set-Cookie`|`Set-Cookie: PHPSESSID=abc123`|Used to define cookies for the client.|
+|`WWW-Authenticate`|`WWW-Authenticate: Basic realm="Login"`|Specifies the type of authentication required (e.g., Basic, Bearer).|
 
-- In addition to viewing headers, cURL also allows us to set request headers with the `-H` flag.
-- Some headers, like the `User-Agent` or `Cookie` headers, have their own flags. 
-- We can use the `-A` to set our `User-Agent`.
-```shell-session
-secmancer@htb[/htb]$ curl https://www.inlanefreight.com -A 'Mozilla/5.0'
+---
 
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-...SNIP...
-```
+#### **e. Security Headers**
 
-> **Exercise:** Try to use the `-I` or the `-v` flags with the above example, to ensure that we did change our User-Agent with the `-A` flag.
+|**Header**|**Example**|**Description**|
+|---|---|---|
+|`Content-Security-Policy`|`script-src 'self'`|Restricts allowed sources for scripts to prevent XSS attacks.|
+|`Strict-Transport-Security`|`max-age=31536000`|Forces HTTPS communication, preventing plaintext HTTP traffic.|
+|`Referrer-Policy`|`Referrer-Policy: origin`|Controls what information is included in the `Referer` header to avoid leaking sensitive data.|
 
+---
 
-### Browser DevTools
-- Finally, we can view HTTP headers using browser devtools by navigating to the `Network` tab.
-- In the `Headers` tab, we can see both HTTP request and response headers, arranged into sections.
-- Clicking the `Raw` button displays the headers in their raw format.
-- The `Cookies` tab allows us to view any cookies used in the request, as discussed in upcoming sections.
+### **3. Viewing and Modifying Headers with cURL**
+
+- **View Response Headers Only**:
+    
+    ```bash
+    curl -I https://example.com
+    ```
+    
+    - Sends a `HEAD` request and displays response headers.
+- **View Both Headers and Body**:
+    
+    ```bash
+    curl -i https://example.com
+    ```
+    
+- **Modify Headers**:
+    
+    - Use `-H` to set custom headers:
+        
+        ```bash
+        curl -H "Authorization: Bearer token123" https://example.com
+        ```
+        
+- **Set User-Agent**:
+    
+    ```bash
+    curl -A "Mozilla/5.0" https://example.com
+    ```
+    
+
+---
+
+### **4. Inspecting Headers with Browser DevTools**
+
+1. Open DevTools:
+    - **Windows/Linux**: `[CTRL+SHIFT+I]` or `[F12]`.
+    - **Mac**: `[CMD+OPT+I]`.
+2. Go to the **Network Tab**.
+3. Click on a request to view its details:
+    - **Headers Tab**: Displays request and response headers.
+    - **Cookies Tab**: Shows cookies used in the request.
+    - **Raw Button**: Displays raw header format.
+
+---
+
+### **5. Key Takeaways**
+
+- HTTP headers provide essential metadata for requests and responses.
+- Headers are grouped into general, entity, request, response, and security categories.
+- Tools like **cURL** and **DevTools** allow detailed inspection and modification of headers for analysis and testing.
+
 
 
 ### Questions

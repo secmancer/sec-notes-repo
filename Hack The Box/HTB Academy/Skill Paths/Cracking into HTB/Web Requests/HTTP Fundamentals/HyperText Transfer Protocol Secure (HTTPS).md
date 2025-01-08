@@ -1,50 +1,116 @@
-### Introduction
-- In the previous section, we discussed how HTTP requests are sent and processed. However, one major drawback of HTTP is that all data is transmitted in clear-text, making it vulnerable to Man-in-the-Middle (MiTM) attacks, where third parties can intercept and view the data being transferred.
-- To address this issue, the [HTTPS (HTTP Secure) protocol](https://tools.ietf.org/html/rfc2660) was developed, encrypting all communications to prevent unauthorized access.
-- As a result, HTTPS has become the dominant protocol for secure web communications, with HTTP being phased out. In the near future, most web browsers will no longer allow access to HTTP websites.
+### Notes on HyperText Transfer Protocol Secure (HTTPS)
 
-### HTTPS Overview
-- If we examine an HTTP request, we can clearly see the risks associated with not enforcing secure communication between a web browser and a web application.
-- For example, login credentials sent over an unencrypted connection would be transmitted in plain text, making it easy for attackers on the same network (such as those using public Wi-Fi) to intercept and misuse these credentials.
-- On the other hand, when using HTTPS, data is encrypted, making it extremely difficult for attackers to capture sensitive information like credentials or any other personal data.
-- For instance, when visiting a website like Google over HTTPS, all communications are encrypted, ensuring data privacy and security.
+---
 
-> **Note:** Although the data transferred through the HTTPS protocol may be encrypted, the request may still reveal the visited URL if it contacted a clear-text DNS server. For this reason, it is recommended to utilize encrypted DNS servers (e.g. 8.8.8.8 or 1.1.1.1), or utilize a VPN service to ensure all traffic is properly encrypted.
+### **1. What is HTTPS?**
 
+- **HTTPS (HTTP Secure)**:
+    
+    - Encrypts all data transferred between a client and a server.
+    - Prevents third parties from intercepting and reading sensitive data, such as login credentials.
+    - Default port: **443**.
+- **Advantages over HTTP**:
+    
+    - Prevents **Man-in-the-Middle (MITM)** attacks.
+    - Secures sensitive information such as passwords, credit card numbers, and session tokens.
+    - Ensures data integrity and authentication.
 
+---
 
-### HTTPS Flow
-- If we type `http://` instead of `https://` when visiting a website that enforces HTTPS, the browser first tries to connect over the unencrypted HTTP protocol on port `80`.
-- The web server detects this and responds with a `301 Moved Permanently` status code, redirecting the client to port `443`, which is used for secure HTTPS communication.
-- After the redirect, the client (web browser) sends a "client hello" packet, which contains information about the client, like the preferred encryption algorithms and supported protocols.
-- The server then responds with a "server hello" message and sends its SSL/TLS certificate.
-- The client verifies the certificate, and if everything is in order, it sends its own certificate.
-- A key exchange is performed, which ensures that both the client and server agree on secure encryption parameters.
-- Once the handshake is successfully completed, encrypted communication begins, ensuring confidentiality and integrity for all transferred data.
-- This high-level overview covers the key concepts of the HTTPS protocol and the TLS handshake process.
+### **2. HTTP vs. HTTPS**
 
-> **Note:** Depending on the circumstances, an attacker may be able to perform an HTTP downgrade attack, which downgrades HTTPS communication to HTTP, making the data transferred in clear-text. This is done by setting up a Man-In-The-Middle (MITM) proxy to transfer all traffic through the attacker's host without the user's knowledge. However, most modern browsers, servers, and web applications protect against this attack.
+|**Feature**|**HTTP**|**HTTPS**|
+|---|---|---|
+|**Data Transfer**|Clear-text|Encrypted using SSL/TLS.|
+|**Port**|80|443|
+|**Security**|Vulnerable to MITM attacks.|Data is protected against MITM.|
+|**Identification**|No lock icon in URL bar.|Displays a lock icon in URL bar.|
 
+#### **Example Traffic**:
 
-### cURL for HTTPS
-- cURL should automatically handle all HTTPS communication standards and perform a secure handshake.
-- Then, encrypt and decrypt data automatically. 
-- However, if we ever contact a website with an invalid SSL certificate or an outdated one, then cURL by default would not proceed with the communication to protect against the earlier mentioned MITM attacks.
-```shell-session
-secmancer@htb[/htb]$ curl https://inlanefreight.com
+- **HTTP Request**:
+    - Login credentials are visible in plain text.
+- **HTTPS Request**:
+    - Data appears as a single encrypted stream, making interception difficult.
 
+---
+
+### **3. Identifying HTTPS Websites**
+
+- URLs start with `https://`.
+- Lock icon appears in the browser’s address bar.
+
+#### **Note**:
+
+- DNS queries may still expose visited URLs if a **clear-text DNS server** is used.
+- Use **encrypted DNS servers** (e.g., Google’s `8.8.8.8` or Cloudflare’s `1.1.1.1`) or a **VPN** for additional privacy.
+
+---
+
+### **4. HTTPS Communication Flow**
+
+1. **Initial Request**:
+    
+    - Client sends an HTTP request (e.g., `http://example.com`).
+    - Server responds with a `301 Moved Permanently` status, redirecting to HTTPS (e.g., `https://example.com`).
+2. **TLS Handshake**:
+    
+    - **Client Hello**: The browser shares its capabilities (e.g., supported encryption methods).
+    - **Server Hello**: The server responds with its SSL/TLS certificate and encryption options.
+    - **Key Exchange**: Both parties exchange keys for encryption.
+    - **Handshake**: Verifies encryption setup before starting secure communication.
+3. **Encrypted Communication**:
+    
+    - Once the handshake is complete, all HTTP data is encrypted.
+
+---
+
+### **5. Potential Threats**
+
+- **HTTP Downgrade Attack**:
+    - A MITM proxy may force communication to downgrade from HTTPS to HTTP.
+    - Modern browsers and servers mitigate this by enforcing **HSTS (HTTP Strict Transport Security)**.
+
+---
+
+### **6. Using cURL with HTTPS**
+
+- **Default Behavior**:
+    
+    - cURL handles HTTPS automatically, including encryption, decryption, and secure handshakes.
+- **Invalid SSL Certificates**:
+    
+    - By default, cURL stops communication with a server using an invalid SSL certificate to prevent MITM attacks.
+
+#### **Example Error**:
+
+```bash
 curl: (60) SSL certificate problem: Invalid certificate chain
-More details here: https://curl.haxx.se/docs/sslcerts.html
-...SNIP...
 ```
-- Modern web browsers would do the same, warning the user against visiting a website with an invalid SSL certificate.
-- We may face such an issue when testing a local web application or with a web application hosted for practice purposes, as such web applications may not yet have implemented a valid SSL certificate. 
-- To skip the certificate check with cURL, we can use the `-k` flag.
-```shell-session
-secmancer@htb[/htb]$ curl -k https://inlanefreight.com
 
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-...SNIP...
-```
-- As we can see, the request went through this time, and we received the response data.
+- **Skipping Certificate Checks**:
+    - Use the `-k` flag to bypass SSL verification (use only in trusted environments):
+        
+        ```bash
+        curl -k https://example.com
+        ```
+        
+
+---
+
+### **7. Key cURL Flags for HTTPS**
+
+|**Flag**|**Description**|
+|---|---|
+|`-k`|Ignore SSL certificate verification.|
+|`-s`|Silent mode (suppress unnecessary output).|
+|`-O`|Save the response as a file (use the remote name).|
+|`-o <file>`|Save the response with a custom filename.|
+
+---
+
+### **Key Takeaways**
+
+1. HTTPS encrypts data, protecting against eavesdropping and MITM attacks.
+2. Always ensure SSL certificates are valid for secure communication.
+3. Use `cURL` effectively to interact with HTTPS websites, bypassing certificate checks when necessary (e.g., for local or testing environments).

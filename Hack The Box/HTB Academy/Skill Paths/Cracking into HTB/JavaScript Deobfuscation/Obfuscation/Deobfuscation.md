@@ -1,41 +1,95 @@
-### Beautify
-- The current code is minified, written in a single line.
-- To format it properly, we need to beautify the code.
-- Browser Dev Tools (e.g., Firefox) can be used to pretty-print the script by opening the debugger (`CTRL+SHIFT+Z`) and clicking the `{ }` button to format it.
-- Alternatively, online tools like Prettier or Beautifier can also be used to beautify the script.
-- Let’s copy and process the `secret.js` script.
+### Notes on Deobfuscation
+
+#### Overview
+
+- Deobfuscation is the process of reversing code obfuscation to make it readable and understandable.
+- Tools and methods are available for automatic code beautification and deobfuscation.
+
+---
+
+### **1. Beautification**
+
+#### Minified JavaScript
+
+- **Minified code**: A single-line JavaScript code optimized for size and performance.
+- **Beautification**: The process of formatting the code into a human-readable format.
+
+#### Browser Dev Tools Example:
+
+1. **Firefox Steps**:
+    - Open the debugger: `[CTRL + SHIFT + Z]`.
+    - Select the script (e.g., `secret.js`).
+    - Click the `{ }` button to **Pretty Print** the script.
+
+#### Tools for Beautification:
+
+- **Browser Dev Tools**.
+- **Online Tools**: Websites like Beautifier.
+- **Code Editor Plugins**: Prettier or Beautifier.
+
+##### Example of Minified Code:
+
 ```javascript
-eval(function (p, a, c, k, e, d) { e = function (c) { return c.toString(36) }; if (!''.replace(/^/, String)) { while (c--) { d[c.toString(a)] = k[c] || c.toString(a) } k = [function (e) { return d[e] }]; e = function () { return '\\w+' }; c = 1 }; while (c--) { if (k[c]) { p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]) } } return p }('g 4(){0 5="6{7!}";0 1=8 a();0 2="/9.c";1.d("e",2,f);1.b(3)}', 17, 17, 'var|xhr|url|null|generateSerial|flag|HTB|flag|new|serial|XMLHttpRequest|send|php|open|POST|true|function'.split('|'), 0, {}))
+eval(function (p, a, c, k, e, d) { ... });
 ```
-- Both websites format the code well, but it’s still hard to read due to minification and obfuscation.
-- Beautifying the code alone isn’t sufficient since the code is also obfuscated.
-- Deobfuscation tools are needed to make the code readable.
 
-### Deobfuscate
-- We can find many good online tools to deobfuscate JavaScript code.
-- That way, we can turn it into something we can understand. 
-- One such tool is [UnPacker](https://matthewfl.com/unPacker.html).
-- Copying our above-obfuscated code, we can run it in UnPacker by clicking the `UnPack` button.
+#### Outcome:
 
-> Tip: Ensure you do not leave any empty lines before the script, as it may affect the deobfuscation process and give inaccurate results.
+- Beautified code is easier to read but may still be obfuscated.
 
-- The tool gives us this in return:
+---
+
+### **2. Deobfuscation**
+
+- Beautification alone may not suffice for heavily obfuscated code.
+- Specialized tools or manual intervention may be required.
+
+#### Tools for Deobfuscation:
+
+- **UnPacker**: A tool to deobfuscate packed JavaScript code.
+
+##### Example Workflow:
+
+1. Copy the obfuscated script into UnPacker.
+2. Click the **UnPack** button.
+3. Ensure no empty lines exist before the script to avoid errors.
+
+##### Example Output:
+
 ```javascript
 function generateSerial() {
-  ...SNIP...
   var xhr = new XMLHttpRequest;
   var url = "/serial.php";
   xhr.open("POST", url, true);
   xhr.send(null);
 };
 ```
-- As previously mentioned, the above-used method of obfuscation is `packing`. 
-- Another way of `unpacking` such code is to find the `return` value at the end and use `console.log` to print it instead of executing it.
 
-### Reverse Engineering
-- Though these tools help us clear up the code into something we can at least understand, more obfuscated and encoded code can become more difficult for these tools to work effectively.
-- This is true with code obfuscated with custom obfuscation tools.
-- Therefore, having a good background in reverse engineering helps out in further deobfuscating code in places where the automated tools have trouble doing.
+---
+
+### **3. Manual Reverse Engineering**
+
+- Required for **custom obfuscation** or highly encoded scripts.
+- Use techniques such as:
+    - Identifying the return values at the end of obfuscated scripts.
+    - Using `console.log` to analyze intermediate steps.
+
+#### Advanced Topics:
+
+- Advanced deobfuscation may require understanding:
+    - How the code was obfuscated.
+    - Custom obfuscation techniques.
+- Resources: **Secure Coding 101 module** for in-depth learning.
+
+---
+
+### Key Takeaways
+
+1. Start with beautification tools for basic readability.
+2. Use deobfuscation tools like UnPacker for packed code.
+3. Resort to manual reverse engineering for custom or advanced obfuscation.
+
+
 
 ### Questions
 - Using what you learned in this section, try to deobfuscate 'secret.js' in order to get the content of the flag. What is the flag?

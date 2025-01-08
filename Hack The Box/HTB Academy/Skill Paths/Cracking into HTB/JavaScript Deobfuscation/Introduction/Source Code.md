@@ -1,56 +1,97 @@
-### Introduction
-- Websites primarily use JavaScript for functionality, while HTML and CSS define structure and design.
-- The source code, though client-side, is executed in browsers and often hidden from view.
-- Understanding a website’s client-side functions requires looking at its source code.
-- This section explains how to uncover and analyze the source code for better understanding.
+### **Understanding the Components of Source Code**
+- Modern websites use a combination of **HTML**, **CSS**, and **JavaScript** to create their structure, design, and functionality. 
+- This section focuses on understanding how to locate, view, and analyze these components, culminating in the identification of **JavaScript obfuscation**, a technique used to obscure code functionality.
 
-### HTML
-- Visiting any website, we can press `[CTRL + U]` on our browser to open the browser's source code viewer.
-- This allows us to view the code of the website, specifically, the `HTML` portion of it.
-
-### CSS
-- `CSS` code is can either:
-	- be defined `internally` within the same `HTML` file between `<style>` elements
-	- be defined `externally` in a separate `.css` file and referenced within the `HTML` code.
-- In this case, we see that the `CSS` is internally defined.
-```html
-    <style>
-        *,
-        html {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-        ...SNIP...
-        h1 {
-            font-size: 144px;
-        }
-        p {
-            font-size: 64px;
-        }
-    </style>
-```
-- If a page `CSS` style is externally defined, the external `.css` file is referred to with the `<link>` tag within the HTML head.
-```html
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-```
+### **1. HTML - The Structure**
+- **Purpose**: Defines the basic structure and content of a webpage (e.g., headings, paragraphs, input fields).
+- **How to View**:
+    - In the browser, press **`CTRL + U`** to open the source view.
+    - Alternatively, use the browser's **Inspect Element** feature (**`CTRL + SHIFT + I`**) to analyze specific elements interactively.
+- **Example**:
+    ```html
+    <h1>Secret Serial Generator</h1>
+    <script src="secret.js"></script>
+    ```
+    - The HTML snippet shows the structure and references an external JavaScript file (`secret.js`).
 
 
-### JavaScript
-- The same concept applies to `JavaScript`. 
-- It can be internally written between `<script>` elements.
-- However, it can also be written into a separate `.js` file and referenced within the `HTML` code.
-- We can see in our `HTML` source that the `.js` file is referenced externally:
-```html
-<script src="secret.js"></script>
-```
-- We can check out the script by clicking on `secret.js`, which should take us directly into the script. When we visit it, we see that the code is very complicated and cannot be comprehended:
-```javascript
-eval(function (p, a, c, k, e, d) { e = function (c) { '...SNIP... |true|function'.split('|'), 0, {}))
-```
-- The reason behind this is `code obfuscation`. What is it? How is it done? Where is it used?
+
+### **2. CSS - The Styling**
+- **Purpose**: Defines the visual appearance and layout of HTML elements.
+- **Types**:
+    - **Inline CSS**: Written within individual HTML elements.
+        ```html
+        <h1 style="color: blue;">Hello, World!</h1>
+        ```
+    - **Internal CSS**: Written inside a `<style>` block within the HTML file.
+        ```html
+        <style>
+            h1 {
+                font-size: 144px;
+                color: blue;
+            }
+        </style>
+        ```
+    - **External CSS**: Linked as a separate file.
+        ```html
+        <head>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        ```
+
+
+
+### **3. JavaScript - The Functionality**
+- **Purpose**: Adds dynamic functionality to the webpage, such as input validation, animations, or API interactions.
+- **Types**:
+    - **Inline JavaScript**: Embedded directly within HTML elements.
+        ```html
+        <button onclick="alert('Hello!')">Click Me</button>
+        ```
+    - **Internal JavaScript**: Written within a `<script>` block in the HTML file.
+        ```html
+        <script>
+            function greet() {
+                alert('Welcome!');
+            }
+        </script>
+        ```
+    - **External JavaScript**: Linked as a separate `.js` file.
+        ```html
+        <script src="script.js"></script>
+        ```
+
+
+
+### **4. Analyzing External JavaScript**
+- In the given example, the webpage references an external JavaScript file:
+    ```html
+    <script src="secret.js"></script>
+    ```
+- **How to View**:
+    - Click the link to `secret.js` in the source code or navigate to it directly in the browser.
+
+
+
+### **5. Encountering Obfuscated JavaScript**
+- **What It Looks Like**:
+    - The `secret.js` file contains code that is **obfuscated** to obscure its functionality.
+    - Example:
+        ```javascript
+        eval(function (p, a, c, k, e, d) { e = function (c) { ... |true|function'.split('|'), 0, {}))
+        ```
+    - This unreadable code is typical of obfuscation techniques designed to:
+        - Protect intellectual property.
+        - Hide malicious intent.
+        - Reduce readability for reverse engineering.
+
+
+
+### **Next Steps**
+- **Understanding Obfuscation**:
+    - Learn what code obfuscation is, its common techniques, and its legitimate and malicious use cases.
+    - Explore how to deobfuscate and analyze such code.
+
 
 
 ### Questions

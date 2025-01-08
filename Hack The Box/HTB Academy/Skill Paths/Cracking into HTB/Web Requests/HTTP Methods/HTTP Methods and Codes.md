@@ -1,25 +1,95 @@
-### Introduction
-- HTTP supports multiple methods for accessing a resource. In the HTTP protocol, several request methods allow the browser to send information, forms, or files to the server.
-- These methods are used, among other things, to tell the server how to process the request we send and how to reply.
-- We saw different HTTP methods used in the HTTP requests we tested in the previous sections.
-- With cURL, if we use `-v` to preview the full request, the first line contains the HTTP method (e.g. `GET / HTTP/1.1`), while with browser devtools, the HTTP method is shown in the `Method` column.
-- Furthermore, the response headers also contain the HTTP response code, which states the status of processing our HTTP request.
+### Notes on HTTP Methods and Response Codes
 
+---
 
-### Request Methods
-- The following are some of the commonly used methods:
-![[Screenshot_20241107_155419.png]]
-- The list only highlights a few of the most commonly used HTTP methods. 
-- The availability of a particular method depends on the server as well as the application configuration. 
-- For a full list of HTTP methods, you can visit this [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+### **1. HTTP Request Methods**
 
-> **Note:** Most modern web applications mainly rely on the `GET` and `POST` methods. However, any web application that utilizes REST APIs also rely on `PUT` and `DELETE`, which are used to update and delete data on the API endpoint, respectively. Refer to the [Introduction to Web Applications](https://academy.hackthebox.com/module/details/75) module for more details.
+HTTP methods specify the action the client wants the server to perform on a resource. Common methods include:
 
+|**Method**|**Description**|
+|---|---|
+|`GET`|Requests a resource. Additional data can be passed using query strings (e.g., `?param=value`).|
+|`POST`|Sends data to the server in the request body. Used for submitting forms, uploading files, etc.|
+|`HEAD`|Requests headers only (no body). Useful for checking resource metadata (e.g., size) before downloading.|
+|`PUT`|Creates or replaces a resource on the server. Can be dangerous if improperly secured.|
+|`DELETE`|Deletes a specified resource on the server. Must be secured to prevent abuse (e.g., DoS attacks).|
+|`OPTIONS`|Returns the HTTP methods supported by the server.|
+|`PATCH`|Applies partial modifications to an existing resource.|
 
-### Response Codes
-- HTTP status codes are used to tell the client the status of their request. An HTTP server can return five types of response codes.
-![[Screenshot_20241107_155449.png]]
-- The following are some of the commonly seen examples from each of the above HTTP method types.
-![[Screenshot_20241107_155507.png]]
-- For a full list of standard HTTP response codes, you can visit this [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status). 
-- Apart from the standard HTTP codes, various servers and providers such as [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/115003014432-HTTP-Status-Codes) or [AWS](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/APIError.html) implement their own codes.
+#### **Notes**:
+
+- **Common Usage**:
+    - `GET` and `POST` are the most frequently used methods in modern web applications.
+    - **REST APIs** often utilize `PUT`, `DELETE`, and `PATCH` for managing resources.
+- The server and application configuration determine the availability of specific methods.
+
+---
+
+### **2. HTTP Response Codes**
+
+HTTP response codes indicate the status of the client’s request. They are grouped into five categories:
+
+|**Type**|**Description**|
+|---|---|
+|`1xx`|Informational responses, indicating the request is being processed.|
+|`2xx`|Success responses, indicating the request was successfully received, understood, and processed.|
+|`3xx`|Redirects, indicating the client must take additional actions to complete the request.|
+|`4xx`|Client errors, indicating problems with the request (e.g., malformed or unauthorized requests).|
+|`5xx`|Server errors, indicating problems on the server side.|
+
+---
+
+### **3. Common HTTP Status Codes**
+
+|**Code**|**Description**|
+|---|---|
+|**`200 OK`**|Indicates a successful request. The response usually contains the requested resource.|
+|**`302 Found`**|Redirects the client to another URL. Often used after a successful login.|
+|**`400 Bad Request`**|Indicates a malformed request (e.g., syntax errors or missing line terminators).|
+|**`403 Forbidden`**|Denies access to a resource due to insufficient permissions or detected malicious input.|
+|**`404 Not Found`**|Indicates the requested resource does not exist on the server.|
+|**`500 Internal Server Error`**|Indicates a server-side problem preventing the request from being processed.|
+
+---
+
+### **4. Observing HTTP Methods and Codes**
+
+#### **Using cURL**:
+
+- **View HTTP Methods**:
+    
+    ```bash
+    curl -v http://example.com
+    ```
+    
+    - The first line of the request shows the method (e.g., `GET / HTTP/1.1`).
+- **Change HTTP Method**:
+    
+    - Example for `POST`:
+        
+        ```bash
+        curl -X POST -d "param=value" http://example.com
+        ```
+        
+- **View Response Codes**:
+    
+    - Response codes are included in the headers:
+        
+        ```bash
+        < HTTP/1.1 200 OK
+        ```
+        
+
+#### **Using Browser DevTools**:
+
+1. Open the **Network Tab** ([CTRL+SHIFT+I] or [F12]).
+2. Observe the **Method** column for the HTTP method.
+3. Check the **Status** column for the response code.
+
+---
+
+### **5. Key Takeaways**
+
+1. HTTP methods define the type of operation to perform on a resource.
+2. Response codes communicate the outcome of the request, whether successful, erroneous, or requiring further actions.
+3. Tools like **cURL** and **Browser DevTools** allow detailed analysis of methods and status codes during web interactions.

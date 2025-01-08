@@ -1,86 +1,193 @@
-### Introduction
-- After doing the exercise in the previous section, we got a strange block of text that seems to be encoded.
-```shell-session
-secmancer@htb[/htb]$ curl http://SERVER_IP:PORT/serial.php -X POST -d "param1=sample"
+### Notes on Decoding Encoded Strings
 
-ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=
+#### **Overview**
+
+Encoded text is often used in obfuscated scripts to make it less human-readable and harder to analyze. Decoding such strings is an essential skill for reverse engineering obfuscated code. Below are some common encoding techniques and how to handle them.
+
+---
+
+### **1. Base64 Encoding**
+
+#### **Characteristics**:
+
+- Uses only alphanumeric characters, plus `+` and `/`.
+- Padded with `=` to ensure the string length is a multiple of 4.
+
+#### **Commands**:
+
+- **Encoding**:
+    
+    ```bash
+    echo "text" | base64
+    ```
+    
+    Example:
+    
+    ```bash
+    echo "https://www.hackthebox.eu/" | base64
+    ```
+    
+    Output:
+    
+    ```
+    aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K
+    ```
+    
+- **Decoding**:
+    
+    ```bash
+    echo "encoded_text" | base64 -d
+    ```
+    
+    Example:
+    
+    ```bash
+    echo "aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K" | base64 -d
+    ```
+    
+    Output:
+    
+    ```
+    https://www.hackthebox.eu/
+    ```
+    
+
+#### **Use Case**:
+
+The string `ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=` from the previous section is base64-encoded.
+
+**Decoding Command**:
+
+```bash
+echo "ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=" | base64 -d
 ```
-- This is another important aspect of obfuscation that we referred to in `More Obfuscation` in the `Advanced Obfuscation` section. 
-- Many techniques can further obfuscate the code and make it less readable by humans and less detectable by systems. 
-- For that reason, you will very often find obfuscated code containing encoded text blocks that get decoded upon execution. We will cover 3 of the most commonly used text encoding methods:
-	- `base64`
-	- `hex`
-	- `rot13`
 
-### Base64
-- `base64` encoding is usually used to reduce the use of special characters, as any characters encoded in `base64` would be represented in alpha-numeric characters, in addition to `+` and `/` only. 
-- Regardless of the input, even if it is in binary format, the resulting base64 encoded string would only use them.
-- #### Spotting Base64
-	- `base64` encoded strings are easily spotted since they only contain alpha-numeric characters. However, the most distinctive feature of `base64` is its padding using = characters. 
-	- The length of `base64` encoded strings has to be in a multiple of 4. If the resulting output is only 3 characters long, for example, an extra = is added as padding, and so on.
-- #### Base64 Encode
-	- To encode any text into `base64` in Linux, we can echo it and pipe it with '`|`' to `base64`:
-```shell-session
-secmancer@htb[/htb]$ echo https://www.hackthebox.eu/ | base64
+---
 
-aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K
-```
-- #### Base64 Decode
-	- If we want to decode any `base64` encoded string, we can use `base64 -d`, as follows:
-```shell-session
-secmancer@htb[/htb]$ echo aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K | base64 -d
+### **2. Hex Encoding**
 
-https://www.hackthebox.eu/
-```
+#### **Characteristics**:
 
+- Encodes characters into their hexadecimal ASCII values.
+- Uses only characters `0-9` and `a-f`.
 
-### Hex
-- Another common encoding method is `hex` encoding, which encodes each character into its `hex` order in the `ASCII` table. For example, `a` is `61` in hex, `b` is `62`, `c` is `63`, and so on. You can find the full `ASCII` table in Linux using the `man ascii` command.
-- #### Spotting Hex
-	- Any string encoded in `hex` would be comprised of hex characters only, which are 16 characters only: 0-9 and a-f. That makes spotting `hex` encoded strings just as easy as spotting `base64` encoded strings.
-- #### Hex Encode
-	- To encode any string into `hex` in Linux, we can use the `xxd -p` command:
-```shell-session
-secmancer@htb[/htb]$ echo https://www.hackthebox.eu/ | xxd -p
+#### **Commands**:
 
-68747470733a2f2f7777772e6861636b746865626f782e65752f0a
-```
-- #### Hex Decode
-	- To decode a `hex` encoded string, we can use the `xxd -p -r` command:
-```shell-session
-secmancer@htb[/htb]$ echo 68747470733a2f2f7777772e6861636b746865626f782e65752f0a | xxd -p -r
+- **Encoding**:
+    
+    ```bash
+    echo "text" | xxd -p
+    ```
+    
+    Example:
+    
+    ```bash
+    echo "https://www.hackthebox.eu/" | xxd -p
+    ```
+    
+    Output:
+    
+    ```
+    68747470733a2f2f7777772e6861636b746865626f782e65752f0a
+    ```
+    
+- **Decoding**:
+    
+    ```bash
+    echo "hex_string" | xxd -p -r
+    ```
+    
+    Example:
+    
+    ```bash
+    echo "68747470733a2f2f7777772e6861636b746865626f782e65752f0a" | xxd -p -r
+    ```
+    
+    Output:
+    
+    ```
+    https://www.hackthebox.eu/
+    ```
+    
 
-https://www.hackthebox.eu/
-```
+---
 
+### **3. Rot13 (Caesar Cipher)**
 
-### Caesar/Rot13
-- Another common -and very old- encoding technique is a Caesar cipher, which shifts each letter by a fixed number. For example, shifting by 1 character makes `a` become `b`, and `b` becomes `c`, and so on. 
-- Many variations of the Caesar cipher use a different number of shifts, the most common of which is `rot13`, which shifts each character 13 times forward.
-- #### Spotting Caesar/Rot13
-	- Even though this encoding method makes any text looks random, it is still possible to spot it because each character is mapped to a specific character. For example, in `rot13`, `http://www` becomes `uggc://jjj`, which still holds some resemblances and may be recognized as such.
-- #### Rot13 Encode
-	- There isn't a specific command in Linux to do `rot13` encoding. However, it is fairly easy to create our own command to do the character shifting:
-```shell-session
-secmancer@htb[/htb]$ echo https://www.hackthebox.eu/ | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+#### **Characteristics**:
 
-uggcf://jjj.unpxgurobk.rh/
-```
-- #### Rot13 Decode
-	- We can use the same previous command to decode rot13 as well:
-```shell-session
-secmancer@htb[/htb]$ echo uggcf://jjj.unpxgurobk.rh/ | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+- Shifts each letter by a fixed number (rot13 shifts by 13).
+- A simple substitution cipher, easily reversible.
 
-https://www.hackthebox.eu/
-```
-- Another option to encode/decode rot13 would be using an online tool, like [rot13](https://rot13.com/).
+#### **Commands**:
 
+- **Encoding/Decoding**:
+    
+    ```bash
+    echo "text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+    ```
+    
+    Example:
+    
+    ```bash
+    echo "https://www.hackthebox.eu/" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+    ```
+    
+    Output:
+    
+    ```
+    uggcf://jjj.unpxgurobk.rh/
+    ```
+    
+- To decode, run the same command:
+    
+    ```bash
+    echo "uggcf://jjj.unpxgurobk.rh/" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+    ```
+    
+    Output:
+    
+    ```
+    https://www.hackthebox.eu/
+    ```
+    
 
-### Other Encoding Types
-- There are many other encoding methods beyond the common ones discussed.
-- If you encounter different types of encoding, try identifying the encoding method first, then use online tools to decode it.
-- Tools like [Cipher Identifier](https://www.boxentriq.com/code-breaking/cipher-identifier) can help identify encoding methods.
-- Additionally, obfuscation often uses encryption, which may obscure the decryption key, making it harder to reverse engineer or deobfuscate the code.
+---
+
+### **4. Identifying Encoding Types**
+
+- **Spotting Base64**:
+    - Contains alphanumeric characters, `/`, `+`, and `=`.
+    - String length is a multiple of 4.
+- **Spotting Hex**:
+    - Contains only characters `0-9` and `a-f`.
+    - Represents ASCII values.
+- **Spotting Rot13**:
+    - Looks like random text but retains patterns (e.g., URLs may appear scrambled but recognizable).
+
+#### **Tools**:
+
+- **Cipher Identifier**:
+    - A tool to help identify unknown encodings.
+    - Use online or standalone versions.
+
+---
+
+### **5. Advanced Cases: Encryption**
+
+- Some obfuscated scripts use encryption (e.g., AES, RSA).
+- Decoding requires the encryption key.
+- If the key is not stored in the script, decryption becomes significantly harder.
+
+---
+
+### **Key Takeaways**
+
+1. Familiarize yourself with common encoding methods: Base64, Hex, and Rot13.
+2. Use Linux commands to quickly encode or decode text.
+3. For unknown encodings, start by identifying patterns or use tools like Cipher Identifier.
+4. Encryption adds complexity and often requires access to keys for successful decryption.
+
 
 
 ### Questions
