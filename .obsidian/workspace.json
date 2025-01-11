@@ -11,10 +11,14 @@
             "id": "cb44ac74a92c998c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Decoding.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Decoding"
             }
           }
         ]
@@ -203,6 +207,7 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Code Analysis.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/POST.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
@@ -215,7 +220,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/HTTP Requests.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Code Analysis.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Deobfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",

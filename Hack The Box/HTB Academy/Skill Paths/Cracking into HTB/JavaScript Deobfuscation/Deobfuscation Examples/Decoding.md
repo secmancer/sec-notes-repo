@@ -1,161 +1,114 @@
 ### Notes on Decoding Encoded Strings
 
 #### **Overview**
+- Encoded text is often used in obfuscated scripts to make it less human-readable and harder to analyze. 
+- Decoding such strings is an essential skill for reverse engineering obfuscated code. 
+- Below are some common encoding techniques and how to handle them.
 
-Encoded text is often used in obfuscated scripts to make it less human-readable and harder to analyze. Decoding such strings is an essential skill for reverse engineering obfuscated code. Below are some common encoding techniques and how to handle them.
 
----
 
 ### **1. Base64 Encoding**
-
-#### **Characteristics**:
-
+- #### **Characteristics**:
 - Uses only alphanumeric characters, plus `+` and `/`.
-- Padded with `=` to ensure the string length is a multiple of 4.
-
-#### **Commands**:
-
+- Padded with = to ensure the string length is a multiple of 4.
+- #### **Commands**:
 - **Encoding**:
-    
     ```bash
     echo "text" | base64
     ```
-    
-    Example:
-    
+- Example:
     ```bash
     echo "https://www.hackthebox.eu/" | base64
     ```
-    
-    Output:
-    
+- Output:
     ```
     aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K
     ```
-    
 - **Decoding**:
-    
     ```bash
     echo "encoded_text" | base64 -d
     ```
-    
-    Example:
-    
+- Example:
     ```bash
     echo "aHR0cHM6Ly93d3cuaGFja3RoZWJveC5ldS8K" | base64 -d
     ```
-    
-    Output:
-    
+- Output:
     ```
     https://www.hackthebox.eu/
     ```
-    
+
+
 
 #### **Use Case**:
-
-The string `ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=` from the previous section is base64-encoded.
-
-**Decoding Command**:
-
+- The string `ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=` from the previous section is base64-encoded.
+- **Decoding Command**:
 ```bash
 echo "ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=" | base64 -d
 ```
 
----
+
 
 ### **2. Hex Encoding**
-
-#### **Characteristics**:
-
-- Encodes characters into their hexadecimal ASCII values.
-- Uses only characters `0-9` and `a-f`.
-
-#### **Commands**:
-
-- **Encoding**:
-    
+- #### **Characteristics**:
+	- Encodes characters into their hexadecimal ASCII values.
+	- Uses only characters `0-9` and `a-f`.
+- #### **Commands**:
+	- **Encoding**:
     ```bash
     echo "text" | xxd -p
     ```
-    
-    Example:
-    
+	- Example:
     ```bash
     echo "https://www.hackthebox.eu/" | xxd -p
     ```
-    
-    Output:
-    
+	- Output: 
     ```
     68747470733a2f2f7777772e6861636b746865626f782e65752f0a
     ```
-    
-- **Decoding**:
-    
+	- **Decoding**:
     ```bash
     echo "hex_string" | xxd -p -r
     ```
-    
-    Example:
-    
+    - Example:
     ```bash
     echo "68747470733a2f2f7777772e6861636b746865626f782e65752f0a" | xxd -p -r
     ```
-    
-    Output:
-    
+    - Output:
     ```
     https://www.hackthebox.eu/
     ```
     
 
----
 
 ### **3. Rot13 (Caesar Cipher)**
-
-#### **Characteristics**:
-
-- Shifts each letter by a fixed number (rot13 shifts by 13).
-- A simple substitution cipher, easily reversible.
-
-#### **Commands**:
-
-- **Encoding/Decoding**:
-    
+- #### **Characteristics**:
+	- Shifts each letter by a fixed number (rot13 shifts by 13).
+	- A simple substitution cipher, easily reversible.
+- #### **Commands**:
+	- **Encoding/Decoding**:
     ```bash
     echo "text" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
     ```
-    
-    Example:
-    
+    - Example:
     ```bash
     echo "https://www.hackthebox.eu/" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
     ```
-    
-    Output:
-    
+    - Output:
     ```
     uggcf://jjj.unpxgurobk.rh/
     ```
-    
-- To decode, run the same command:
-    
+	- To decode, run the same command:
     ```bash
     echo "uggcf://jjj.unpxgurobk.rh/" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
     ```
-    
-    Output:
-    
+    - Output:
     ```
     https://www.hackthebox.eu/
     ```
-    
 
----
+
 
 ### **4. Identifying Encoding Types**
-
 - **Spotting Base64**:
     - Contains alphanumeric characters, `/`, `+`, and `=`.
     - String length is a multiple of 4.
