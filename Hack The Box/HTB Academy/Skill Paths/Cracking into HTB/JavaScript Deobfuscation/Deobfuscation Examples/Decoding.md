@@ -108,34 +108,30 @@ echo "ZG8gdGhlIGV4ZXJjaXNlLCBkb24ndCBjb3B5IGFuZCBwYXN0ZSA7KQo=" | base64 -d
 
 
 
-### **4. Identifying Encoding Types**
+### **4. Identifying Encoding Types** 
 - **Spotting Base64**:
-    - Contains alphanumeric characters, `/`, `+`, and `=`.
+    - Contains alphanumeric characters, `/`, `+`, and =.
     - String length is a multiple of 4.
 - **Spotting Hex**:
     - Contains only characters `0-9` and `a-f`.
     - Represents ASCII values.
 - **Spotting Rot13**:
     - Looks like random text but retains patterns (e.g., URLs may appear scrambled but recognizable).
+- #### **Tools**:
+	- **Cipher Identifier**:
+	    - A tool to help identify unknown encodings.
+	    - Use online or standalone versions.
 
-#### **Tools**:
 
-- **Cipher Identifier**:
-    - A tool to help identify unknown encodings.
-    - Use online or standalone versions.
-
----
 
 ### **5. Advanced Cases: Encryption**
-
 - Some obfuscated scripts use encryption (e.g., AES, RSA).
 - Decoding requires the encryption key.
 - If the key is not stored in the script, decryption becomes significantly harder.
 
----
+
 
 ### **Key Takeaways**
-
 1. Familiarize yourself with common encoding methods: Base64, Hex, and Rot13.
 2. Use Linux commands to quickly encode or decode text.
 3. For unknown encodings, start by identifying patterns or use tools like Cipher Identifier.
