@@ -2,6 +2,8 @@
 - Modern websites use a combination of **HTML**, **CSS**, and **JavaScript** to create their structure, design, and functionality. 
 - This section focuses on understanding how to locate, view, and analyze these components, culminating in the identification of **JavaScript obfuscation**, a technique used to obscure code functionality.
 
+
+
 ### **1. HTML - The Structure**
 - **Purpose**: Defines the basic structure and content of a webpage (e.g., headings, paragraphs, input fields).
 - **How to View**:
