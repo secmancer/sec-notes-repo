@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/HTB Academy Structure.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Modules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTB Academy Structure"
+              "title": "Modules"
             }
           }
         ]
@@ -207,8 +207,12 @@
   },
   "active": "4997093dc4797051",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Paths and Certifications.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Exercises.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Sections.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Modules.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/HTB Academy Structure.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Introduction",
@@ -232,10 +236,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/HTTP Requests.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Decoding.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Deobfuscation Examples/Code Analysis.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Knowledge Check.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/What's Next/Next Steps.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Problem Solving/Getting Help.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Introduction",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
