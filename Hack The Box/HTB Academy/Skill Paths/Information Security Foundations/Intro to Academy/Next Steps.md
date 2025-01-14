@@ -1,3 +1,0 @@
-- Now that you are situated with HTB Academy, you are now recommended to work towards a specific Job-Role path.
-- The `Information Security Foundations` path is highly recommended for beginners,
-- New stuff is always coming out, so it's also great to keep an eye out for that as well.
