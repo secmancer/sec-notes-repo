@@ -7,10 +7,9 @@
 - Only **one target per user** can be active at a time.
 - Targets have a countdown timer but can be manually extended or re-spawned.
 
----
 
-#### Types of Targets
 
+### Types of Targets
 1. **Docker Targets**:
     - Common in web modules.
     - Faster to spawn; ready to use almost instantly (up to ~1 minute delay in rare cases).
@@ -26,10 +25,9 @@
         - Download and use the **VPN Connection File** for access from your machine.
     - May take longer to start than Docker targets.
 
----
 
-#### Completing an Exercise
 
+### Completing an Exercise
 1. **Hints and Submission**:
     - Hints are available via a **Hint button** for guidance.
     - Enter the answer or flag in the submission field and click **Submit**.
@@ -43,7 +41,10 @@
     - Variance increases with module difficulty:
         - **Easier modules**: Minor variations.
         - **Harder modules**: More significant challenges.
+- These notes summarize the purpose, types, and processes of exercises in HTB Academy, highlighting how they enhance learning through practical application.
 
----
 
-These notes summarize the purpose, types, and processes of exercises in HTB Academy, highlighting how they enhance learning through practical application.
+
+### Questions
+- Start the above target, copy the shown IP:PORT by clicking on them, and then paste them in your browser. What's the proof shown in the page?
+	- t4rg3ts
