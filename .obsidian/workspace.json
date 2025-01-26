@@ -11,10 +11,14 @@
             "id": "4f8a8e71007e533a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Addressing/IPv4 Addresses.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "IPv4 Addresses"
             }
           }
         ]
@@ -201,8 +205,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4f8a8e71007e533a",
+  "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 5-7.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Networking Primer - Layers 1-4.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Introduction/Network Traffic Analysis.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/The Analysis Process.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Network Traffic Analysis/Analysis/Analysis in Practice.md",
+    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps/Next Steps.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Next Steps/Getting Help.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Academy Structure/Paths and Certifications.md",
@@ -219,7 +229,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/CRUD API.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/POST.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/HTTP Methods and Codes.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Methods/GET.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocol Secure (HTTPS).md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HyperText Transfer Protocl (HTTP).md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Web Requests/HTTP Fundamentals/HTTP Requests and Responses.md",
@@ -227,11 +236,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Summary.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Skills Assessment/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Deobfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Code Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Basic Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Obfuscation/Advanced Obfuscation.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Source Code.md",
-    "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/JavaScript Deobfuscation/Introduction/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Cracking into HTB/Getting Started/Introduction",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots",
