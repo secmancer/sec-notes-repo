@@ -1,1 +1,0 @@
-Since the format is a long table refer to this page for a complete list of modules they recommend: https://academy.hackthebox.com/module/90/section/1559.

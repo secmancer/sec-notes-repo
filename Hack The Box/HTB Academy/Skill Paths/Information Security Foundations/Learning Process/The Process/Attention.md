@@ -1,9 +1,0 @@
-- **Attention and Perception**:
-    - Attention involves focusing on a specific topic to gather relevant data and information. It is shaped by personal factors such as interests, needs, goals, and experiences.
-- **Concentration and Focus**:
-    - Concentration is the ability to maintain attention on a subject. When we are interested, we can stay focused until we achieve the desired outcome. However, attention can decrease over time, leading to reduced effectiveness in information absorption and increased frustration.
-- **Managing Attention**:
-    - Information security, like many subjects, is vast and requires repeated learning. Dividing attention effectively is an individual process influenced by personal characteristics, experiences, and emotional states.
-    - Tracking how long we can maintain attention and under which conditions can provide insights into improving focus. Documenting factors like emotional state, work environment, sleep, and break patterns can help identify personal attention spans and how to manage them.
-- **Experimentation and Adaptation**:
-    - By experimenting with changes in work location, work duration, or listening to different types of music, we can optimize our attention. It’s important to avoid forcing focus on a topic, as this can lead to frustration. The goal is to create a comfortable and conducive environment for learning.
