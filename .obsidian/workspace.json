@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/System Logs and Monitoring.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Firewall Setup"
+              "title": "System Logs and Monitoring"
             }
           }
         ]
@@ -207,6 +207,7 @@
   },
   "active": "bbcbf348de77e762",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Linux Security.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Network Configuration.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Containerization.md",
@@ -233,7 +234,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/The Shell/Getting Help.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Introduction to Shell.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Distributions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Structure.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Distros vs Solaris",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening",
