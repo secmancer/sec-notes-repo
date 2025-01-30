@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5ec235d1631f5cfd",
+        "id": "58c30230185bd16c",
         "type": "tabs",
         "children": [
           {
-            "id": "cc85a36f722ff3b6",
+            "id": "315a70dcbb194314",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Windows Security"
             }
           }
         ]
@@ -201,8 +205,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "315a70dcbb194314",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Desktop Experience vs. Server Core.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Skills Assessment - Windows Fundamentals.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out/Windows Security.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Windows Subsystem for Linux (WSL).md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
@@ -234,9 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Backup and Restore.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Working with Web Services.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Network Services.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Task Scheduling.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/User Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Service and Process Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
