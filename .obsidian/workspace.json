@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "99791e5038f7e240",
+        "id": "aa753fda9ff5f198",
         "type": "tabs",
         "children": [
           {
-            "id": "bbcbf348de77e762",
+            "id": "64f4c4bfc3aa98d1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/System Logs and Monitoring.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "System Logs and Monitoring"
+              "title": "New tab"
             }
           }
         ]
@@ -205,8 +201,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "bbcbf348de77e762",
+  "active": "64f4c4bfc3aa98d1",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/System Logs and Monitoring.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Distros vs Solaris/Solaris.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks/Shortcuts.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Linux Security.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Network Configuration.md",
@@ -231,9 +230,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Navigation.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/The Shell/System Information.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/The Shell/Prompt Description.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/The Shell/Getting Help.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Introduction to Shell.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Distributions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Distros vs Solaris",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening",
