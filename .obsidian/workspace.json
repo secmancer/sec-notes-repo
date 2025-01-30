@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bdd56960780a47d8",
+        "id": "121148cdd14d5ae3",
         "type": "tabs",
         "children": [
           {
-            "id": "9822b8ed7dd1d2b2",
+            "id": "c63e826ef5474818",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -201,8 +201,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "9822b8ed7dd1d2b2",
+  "active": "c63e826ef5474818",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Introduction.md",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Finish Strong",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD",
+    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Automation.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Productivity Tips.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Terminal.md",
@@ -230,15 +235,10 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/NTFS vs. Share Permissions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/File System.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/Operating System Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Introduction/Introduction to Windows.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Introduction",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
