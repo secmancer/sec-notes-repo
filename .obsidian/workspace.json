@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4a97ffae794f2200",
+        "id": "99791e5038f7e240",
         "type": "tabs",
         "children": [
           {
-            "id": "cb9fe31fd23320ef",
+            "id": "bbcbf348de77e762",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Network Configuration.md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Network Configuration"
+              "title": "Firewall Setup"
             }
           }
         ]
@@ -205,10 +205,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "78b18c6ed4fc8809",
+  "active": "bbcbf348de77e762",
   "lastOpenFiles": [
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Containerization.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Linux Security.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Network Configuration.md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Containerization.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Networking/Remote Desktop Protocols in Linux.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/File System Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Backup and Restore.md",
@@ -233,7 +234,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Introduction to Shell.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Distributions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Introduction/Linux Structure.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening/Firewall Setup.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Distros vs Solaris",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Linux Hardening",
