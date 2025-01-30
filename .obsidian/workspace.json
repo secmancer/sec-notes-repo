@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "450dde35f0b9afaf",
+        "id": "d97c55ee879e8bfb",
         "type": "tabs",
         "children": [
           {
-            "id": "5f5496944d1d47d9",
+            "id": "bcee02f8e1e6ac58",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
+                "file": "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Windows Management Instrumentation (WMI)"
+              "title": "Microsoft Management Console (MMC)"
             }
           }
         ]
@@ -205,11 +205,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "5f5496944d1d47d9",
+  "active": "bcee02f8e1e6ac58",
   "lastOpenFiles": [
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Windows Subsystem for Linux (WSL).md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Further Windows Usage/Microsoft Management Console (MMC).md",
+    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Interacting with the Windows Operating Systems.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Sessions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Interacting with Windows/Windows Management Instrumentation (WMI).md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Service Permissions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Working with Services & Processes/Windows Services & Processes.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Core of the Operating System/NTFS vs. Share Permissions.md",
@@ -239,8 +241,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Task Scheduling.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/User Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Service and Process Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management/Package Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Workflow/Permission Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/System Management",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Linux Fundamentals/Tips & Tricks",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
