@@ -206,41 +206,6 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "floating": {
-    "id": "5411553ff7c9f45b",
-    "type": "floating",
-    "children": [
-      {
-        "id": "684c30d4b156d333",
-        "type": "window",
-        "children": [
-          {
-            "id": "944b1eb333e570ba",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "c59f6b3d52f2db99",
-                "type": "leaf",
-                "state": {
-                  "type": "empty",
-                  "state": {},
-                  "icon": "lucide-file",
-                  "title": "New tab"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 416,
-        "y": 26,
-        "width": 1504,
-        "height": 996,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "2ab3ac95cd9e181f",
   "lastOpenFiles": [
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Working with Directories and Files.md",
