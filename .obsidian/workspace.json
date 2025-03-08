@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "21d71c1e45e80246",
+        "id": "132caea06842ea3a",
         "type": "tabs",
         "children": [
           {
-            "id": "dd75b8ac335d236d",
+            "id": "f87a390778180ff8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -202,8 +202,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "dd75b8ac335d236d",
+  "active": "f87a390778180ff8",
   "lastOpenFiles": [
+    "README.md",
     "CTF/coming soon!.md",
     "Hack The Box/coming soon!.md",
     "TryHackMe/coming soon!.md",
@@ -236,7 +237,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Security Tips.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out",
