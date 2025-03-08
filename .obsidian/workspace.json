@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3595cef0c7adf571",
+        "id": "21d71c1e45e80246",
         "type": "tabs",
         "children": [
           {
-            "id": "115fc20d7ace1189",
+            "id": "dd75b8ac335d236d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -202,8 +202,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "115fc20d7ace1189",
+  "active": "dd75b8ac335d236d",
   "lastOpenFiles": [
+    "CTF/coming soon!.md",
+    "Hack The Box/coming soon!.md",
+    "TryHackMe/coming soon!.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/CMD vs PowerShell.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Working with Scheduled Tasks.md",
@@ -234,9 +237,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/File and Directory Permissions.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/System Hierarchy.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Navigating Around the OS.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Graphical User Interface.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out",
