@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7892952ac2b74ac6",
+        "id": "d5086a0cd115e5a0",
         "type": "tabs",
         "children": [
           {
-            "id": "e7f4db1bbeeabdec",
+            "id": "9b703ab9d166cba2",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -204,6 +204,7 @@
   },
   "active": "78b18c6ed4fc8809",
   "lastOpenFiles": [
+    "Templates/general-cybersec-template.md",
     "Templates/cheat-sheet-template.md",
     "Templates/ctf-lab-template.md",
     "Templates/exploit-template.md",
@@ -235,7 +236,6 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Command Prompt Basics.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Introduction.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/add stuff here.md",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Finish Strong/Skills Assessment.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Finish Strong",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD",
