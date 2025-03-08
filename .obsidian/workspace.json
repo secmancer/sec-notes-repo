@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "132caea06842ea3a",
+        "id": "84d8f65198b926a6",
         "type": "tabs",
         "children": [
           {
-            "id": "f87a390778180ff8",
+            "id": "7dd953a9b31ad783",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -202,12 +202,19 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f87a390778180ff8",
+  "active": "7dd953a9b31ad783",
   "lastOpenFiles": [
     "README.md",
-    "CTF/coming soon!.md",
-    "Hack The Box/coming soon!.md",
-    "TryHackMe/coming soon!.md",
+    "Talks/coming soon!.md",
+    "Talks",
+    "Projects/coming soon!.md",
+    "Writeups/coming soon!.md",
+    "Projects",
+    "Writeups",
+    "Learning",
+    "Learning/CTF/coming soon!.md",
+    "Learning/Hack The Box/coming soon!.md",
+    "Learning/TryHackMe/coming soon!.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/CMD vs PowerShell.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell/All About Cmdlets and Modules.md",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD/Working with Scheduled Tasks.md",
@@ -230,16 +237,9 @@
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/Finish Strong",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/PowerShell",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line/CMD",
-    "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Windows Command Line",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Automation.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Productivity Tips.md",
     "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/MacOS Terminal.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Security Tips.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS/Application Management.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage/Networking.md",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/Extending MacOS",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/MacOS Fundamentals/MacOS Basic Usage",
-    "Hack The Box/HTB Academy/Skill Paths/Operating System Fundamentals/Windows Fundamentals/Diving Deeper & Close Out",
     "Hack The Box/HTB Academy/Misc/Introduction to Information Security/Screenshots/Screenshot_20241223_190859.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Intro to Academy/Screenshots/Screenshot_20241107_135356.png",
     "Hack The Box/HTB Academy/Skill Paths/Information Security Foundations/Introduction to Networking/Screenshots/Screenshot_20241216_210658.png",
